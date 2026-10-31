@@ -1,0 +1,4 @@
+out/
+*.apk
+*.dex
+!patches/**

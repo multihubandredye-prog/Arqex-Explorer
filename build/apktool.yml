@@ -1,0 +1,28 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: Arqex_Explorer_v6.71.15(26090412)_src.apk
+compressionType: false
+doNotCompress:
+- resources.arsc
+- png
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '9'
+  targetSdkVersion: '37'
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  META-INF/maven/org.jetbrains/annotations/pom.xml: '8'
+  META-INF/maven/org.jetbrains/annotations/pom.properties: '8'
+  META-INF/version-control-info.textproto: '8'
+  META-INF/com/android/build/gradle/app-metadata.properties: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.4.0-261014
+versionInfo:
+  versionCode: 26090412
+  versionName: 6.71.15

@@ -1,0 +1,272 @@
+name: Arqex Explorer - build, verificar e publicar
+
+# Regras:
+#  - push em qualquer branch  -> testes + build + pre-release (branch de trabalho) ou release estavel (branch padrao)
+#  - pull_request             -> apenas testes/build; nunca publica release
+#  - nenhuma tag/release existente e sobrescrita
+
+on:
+  push:
+    branches: ["**"]
+    tags-ignore: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: arqex-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Compilar DEX/APK, testar e assinar
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      version_code: ${{ steps.version.outputs.version_code }}
+      prerelease: ${{ steps.version.outputs.prerelease }}
+      has_apk: ${{ steps.sign.outputs.has_apk }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Android build-tools (zipalign/apksigner/aapt2)
+        uses: android-actions/setup-android@v3
+
+      - name: Instalar build-tools 34.0.0
+        run: |
+          yes | sdkmanager --licenses >/dev/null 2>&1 || true
+          sdkmanager "build-tools;34.0.0" >/dev/null
+          echo "$ANDROID_HOME/build-tools/34.0.0" >> "$GITHUB_PATH"
+
+      - name: Cache das ferramentas de build
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/arqex-tools
+          key: arqex-tools-baksmali252-smali252-apktool303
+
+      - name: Calcular proxima versao (tags + releases reais, paginado)
+        id: version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IS_DEFAULT_BRANCH: ${{ github.ref_name == github.event.repository.default_branch }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          REF_NAME: ${{ github.ref_name }}
+          RUN_NUMBER: ${{ github.run_number }}
+          BASE_VERSION_CODE: "26090412"
+        run: python3 tools/next_version.py
+
+      - name: Injetar versionName/versionCode no apktool.yml
+        run: |
+          python3 - "${{ steps.version.outputs.version_name }}" "${{ steps.version.outputs.version_code }}" <<'PY'
+          import re, sys
+          name, code = sys.argv[1], sys.argv[2]
+          p = "build/apktool.yml"
+          s = open(p).read()
+          s = re.sub(r"(?m)^\s*versionCode:.*$", "  versionCode: %s" % code, s, count=1)
+          s = re.sub(r"(?m)^\s*versionName:.*$", "  versionName: %s" % name, s, count=1)
+          open(p, "w").write(s)
+          print(re.search(r"versionInfo:\n(?:.*\n){0,3}", s).group(0))
+          PY
+
+      - name: Compilar DEX + APK
+        run: bash tools/build.sh
+
+      - name: Testes estaticos do smali final
+        run: |
+          CACHE="${HOME}/.cache/arqex-tools"
+          DEPS="$CACHE/baksmali.jar:$CACHE/dexlib2.jar:$CACHE/util.jar:$CACHE/jcommander.jar:$CACHE/antlr.jar:$CACHE/guava.jar"
+          java -cp "$DEPS" org.jf.baksmali.Main d out/classes.dex -o "$RUNNER_TEMP/final_smali"
+          unzip -q Arqex_Explorer_v6.71.15_v1.38.zip -d "$RUNNER_TEMP/base"
+          python3 tests/test_smali_invariants.py "$RUNNER_TEMP/final_smali" \
+            "$RUNNER_TEMP/base/Arqex_Explorer_v6.71.15_base_src/res"
+
+      - name: Conferir metadados do APK (manifesto, versao, recursos, libs)
+        run: |
+          aapt2 dump badging out/Arqex-unsigned.apk > "$RUNNER_TEMP/badging.txt" || aapt dump badging out/Arqex-unsigned.apk > "$RUNNER_TEMP/badging.txt"
+          grep -E "^package:" "$RUNNER_TEMP/badging.txt"
+          echo "--- versao esperada: ${{ steps.version.outputs.version_name }} (code ${{ steps.version.outputs.version_code }})"
+          grep -q "versionName='${{ steps.version.outputs.version_name }}'" "$RUNNER_TEMP/badging.txt" \
+            || { echo "::error::versionName no APK nao confere com a calculada"; exit 1; }
+          grep -q "versionCode='${{ steps.version.outputs.version_code }}'" "$RUNNER_TEMP/badging.txt" \
+            || { echo "::error::versionCode no APK nao confere com o calculado"; exit 1; }
+          echo "locales no APK: $(grep -c '^locales:' "$RUNNER_TEMP/badging.txt" || true)"
+          grep -c "^native-code:" "$RUNNER_TEMP/badging.txt" || true
+          grep "^native-code:" "$RUNNER_TEMP/badging.txt" || echo "::warning::sem bibliotecas nativas declaradas"
+
+      - name: Assinar (falha segura quando a configuracao esta incompleta)
+        id: sign
+        env:
+          ARQEX_KEYSTORE_B64: ${{ secrets.ARQEX_KEYSTORE_B64 }}
+          ARQEX_KEY_ALIAS: ${{ secrets.ARQEX_KEY_ALIAS }}
+          ARQEX_STORE_PASSWORD: ${{ secrets.ARQEX_STORE_PASSWORD }}
+          ARQEX_KEY_PASSWORD: ${{ secrets.ARQEX_KEY_PASSWORD }}
+          ARQEX_SIGNER_SHA256: ${{ vars.ARQEX_SIGNER_SHA256 }}
+        run: |
+          set -uo pipefail
+          present=0
+          for n in ARQEX_KEYSTORE_B64 ARQEX_KEY_ALIAS ARQEX_STORE_PASSWORD ARQEX_KEY_PASSWORD; do
+            [ -n "${!n:-}" ] && present=$((present+1))
+          done
+          echo "secrets de assinatura presentes: $present/4"
+
+          if [ "$present" -eq 0 ]; then
+            echo "has_apk=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Nenhuma chave configurada. O release publicara apenas fontes/DEX. NAO havera APK."
+            exit 0
+          fi
+          if [ "$present" -lt 4 ]; then
+            echo "::error::Configuracao de assinatura PARCIAL ($present/4 secrets). Nada sera publicado."
+            exit 1
+          fi
+          if [ -z "${ARQEX_SIGNER_SHA256:-}" ]; then
+            echo "::error::Variable ARQEX_SIGNER_SHA256 ausente: impossivel verificar o certificado. Nada sera publicado."
+            exit 1
+          fi
+
+          KS="$RUNNER_TEMP/arqex-keystore.jks"
+          trap 'rm -f "$KS"' EXIT
+          printf '%s' "$ARQEX_KEYSTORE_B64" | base64 -d > "$KS" || { echo "::error::ARQEX_KEYSTORE_B64 invalido"; exit 1; }
+
+          zipalign -f -p 4 out/Arqex-unsigned.apk out/Arqex-aligned.apk
+          apksigner sign \
+            --ks "$KS" --ks-key-alias "$ARQEX_KEY_ALIAS" \
+            --ks-pass "env:ARQEX_STORE_PASSWORD" --key-pass "env:ARQEX_KEY_PASSWORD" \
+            --v1-signing-enabled true --v2-signing-enabled true --v3-signing-enabled true \
+            --out out/Arqex-signed.apk out/Arqex-aligned.apk || { echo "::error::apksigner falhou"; exit 1; }
+
+          apksigner verify --verbose --print-certs out/Arqex-signed.apk | tee out/signature-report.txt
+          actual=$(grep -oE "SHA-256 digest: [0-9a-f]+" out/signature-report.txt | head -1 | awk '{print $3}')
+          expected=$(printf '%s' "$ARQEX_SIGNER_SHA256" | tr -d ':' | tr 'A-F' 'a-f')
+          echo "certificado do APK: $actual"
+          echo "certificado esperado: $expected"
+          if [ "$actual" != "$expected" ]; then
+            echo "::error::O SHA-256 do certificado nao confere com ARQEX_SIGNER_SHA256. APK NAO sera publicado."
+            exit 1
+          fi
+          echo "has_apk=true" >> "$GITHUB_OUTPUT"
+
+      - name: Empacotar fontes/DEX e checksums
+        run: |
+          set -euo pipefail
+          V="${{ steps.version.outputs.version }}"
+          mkdir -p dist
+          cp out/classes.dex dist/
+          cp -r patches build tools tests dist/ 2>/dev/null || true
+          (cd dist && zip -qr "../Arqex-$V-sources-dex.zip" .)
+          rm -rf dist
+          if [ -f out/Arqex-signed.apk ]; then
+            mkdir -p apkdist
+            cp out/Arqex-signed.apk apkdist/
+            (cd apkdist && zip -q "../Arqex-$V-apk.zip" .)
+            rm -rf apkdist
+            cp out/signature-report.txt . || true
+            cp out/Arqex-signed.apk .
+          fi
+          sha256sum Arqex-*.zip *.apk *.dex signature-report.txt 2>/dev/null > SHA256SUMS || \
+            sha256sum Arqex-*.zip *.dex > SHA256SUMS
+          cat SHA256SUMS
+
+      - name: Guardar artefatos
+        uses: actions/upload-artifact@v4
+        with:
+          name: arqex-${{ steps.version.outputs.version }}
+          path: |
+            Arqex-*.zip
+            Arqex-*.apk
+            SHA256SUMS
+            signature-report.txt
+          if-no-files-found: error
+          retention-days: 30
+
+  release:
+    name: Publicar release (somente push, nunca em PR)
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Baixar artefatos
+        uses: actions/download-artifact@v4
+        with:
+          name: arqex-${{ needs.build.outputs.version }}
+
+      - name: Criar tag e release sem sobrescrever nada
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ needs.build.outputs.version }}
+          PRERELEASE: ${{ needs.build.outputs.prerelease }}
+          HAS_APK: ${{ needs.build.outputs.has_apk }}
+          SHA: ${{ github.sha }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          REF: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "::warning::A release $TAG ja existe. Nada sera sobrescrito."
+            exit 0
+          fi
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
+            echo "::warning::A tag $TAG ja existe. Nada sera sobrescrito."
+            exit 0
+          fi
+
+          {
+            echo "Versao: $TAG"
+            echo "Commit: $SHA (branch $REF)"
+            echo
+            echo "Correcoes incluidas:"
+            echo "- seletor de cor: VerifyError em CustomThemeV128\$RgbSeekListener.applyColorInternal"
+            echo "- seletor de cor: matiz preservado ao partir de preto/cinza (SpectrumView.setColor)"
+            echo "- janela Skins: centralizacao apos medicao, com insets e area visivel"
+            echo "- botao 'Criar Tema Personalizado' em uma linha (auto-size)"
+            echo "- exportacao de paleta em JSON removida (backup/restauracao preservados)"
+            echo
+            if [ "$HAS_APK" = "true" ]; then
+              echo "APK assinado anexado, com ZIP, SHA256SUMS e relatorio de assinatura."
+              echo "Assinatura verificada contra ARQEX_SIGNER_SHA256."
+            else
+              echo "ATENCAO: nenhuma chave de assinatura configurada."
+              echo "Este release contem APENAS fontes e classes.dex - NAO ha APK instalavel."
+            fi
+            echo
+            echo "Nao houve validacao em aparelho Android."
+          } > notes.md
+
+          args=(--title "Arqex Explorer $TAG" --notes-file notes.md --target "$SHA")
+          if [ "$PRERELEASE" = "true" ]; then
+            args+=(--prerelease --latest=false)
+          else
+            git fetch --quiet origin "$DEFAULT_BRANCH" || true
+            MAIN_SHA=$(git rev-parse "origin/$DEFAULT_BRANCH" 2>/dev/null || echo "")
+            if [ "$SHA" = "$MAIN_SHA" ]; then
+              args+=(--latest)
+            else
+              args+=(--latest=false)
+              echo "::notice::Commit nao e o HEAD atual de $DEFAULT_BRANCH: nao sera marcado como Latest."
+            fi
+          fi
+
+          mapfile -t assets < <(ls Arqex-*.zip Arqex-*.apk SHA256SUMS signature-report.txt 2>/dev/null || true)
+          gh release create "$TAG" "${args[@]}" "${assets[@]}"
+          echo "release publicada: $TAG"
