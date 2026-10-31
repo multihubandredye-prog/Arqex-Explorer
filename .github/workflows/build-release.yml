@@ -186,8 +186,11 @@ jobs:
             cp out/signature-report.txt . || true
             cp out/Arqex-signed.apk .
           fi
-          sha256sum Arqex-*.zip *.apk *.dex signature-report.txt 2>/dev/null > SHA256SUMS || \
-            sha256sum Arqex-*.zip *.dex > SHA256SUMS
+          : > SHA256SUMS
+          for f in Arqex-*.zip Arqex-*.apk signature-report.txt; do
+            if [ -f "$f" ]; then sha256sum "$f" >> SHA256SUMS; fi
+          done
+          test -s SHA256SUMS || { echo "::error::nenhum arquivo para publicar"; exit 1; }
           cat SHA256SUMS
 
       - name: Guardar artefatos
