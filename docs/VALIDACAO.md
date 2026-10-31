@@ -56,3 +56,45 @@
 - **Assinatura**: nenhuma chave configurada, logo nenhum APK foi publicado como release.
 - O APK de teste anterior usava chave temporária e só tem `arm64-v8a`: não serve como
   release definitiva nem garante atualização sobre a instalação antiga.
+
+---
+
+# Execução real no GitHub Actions (não simulada)
+
+Branch `fix/studio-color-and-layout`, PR #1.
+
+| Execução | Evento | Commit | Resultado |
+|---|---|---|---|
+| [41254364494](https://github.com/multihubandredye-prog/Arqex-Explorer/actions/runs/41254364494) | push | `09763bf` | sucesso (build + release) |
+| [41254368041](https://github.com/multihubandredye-prog/Arqex-Explorer/actions/runs/41254368041) | pull_request | `09763bf` | sucesso (somente testes/build, **sem** release) |
+
+Passos verificados como `success` no job "Compilar DEX/APK, testar e assinar":
+build-tools, cálculo de versão, injeção de versão, compilação DEX+APK,
+testes estáticos, metadados do APK, assinatura (caminho sem chave),
+empacotamento e artefatos.
+
+Números reais extraídos do log:
+
+- versão calculada: `v1.39.0-beta.5`, `versionCode` 26090417 (base 26090412 + execução 5)
+- APK: 6,43 MB, 576 entradas, `arm64-v8a` com 3 bibliotecas
+- 424 de 576 entradas desalinhadas antes do zipalign (esperado sem assinatura)
+- testes: **41 passaram, 0 falharam**
+- `secrets de assinatura presentes: 0/4` → sem APK, como projetado
+
+Release publicada: [v1.39.0-beta.5](https://github.com/multihubandredye-prog/Arqex-Explorer/releases/tag/v1.39.0-beta.5)
+(pré-release), com `Arqex-v1.39.0-beta.5-sources-dex.zip` (3,89 MB) e `SHA256SUMS`.
+**Não há APK anexado** porque nenhuma chave está configurada.
+
+## Falhas reais encontradas durante a automação (e corrigidas)
+
+1. `android-actions/setup-android@v3` falhava com `Failed to find package 'tools'`
+   antes de qualquer passo do projeto. Passou a usar o build-tools já presente no runner.
+2. O passo de checksums quebrava quando não havia APK: `sha256sum *.dex` recebia um
+   glob sem correspondência e o `pipefail` derrubava o job. Corrigido.
+
+## O que continua não verificado
+
+Teste em aparelho Android. O workflow compila e verifica a estrutura, mas não executa o
+aplicativo: seletor abrindo, matiz a partir de preto, confirmar/cancelar, persistência
+após reabrir o app, centralização em retrato/paisagem/tela dividida/teclado e o botão em
+tela estreita seguem **pendentes**.
