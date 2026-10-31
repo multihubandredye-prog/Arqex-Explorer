@@ -44,13 +44,23 @@ jobs:
           java-version: "17"
 
       - name: Android build-tools (zipalign/apksigner/aapt2)
-        uses: android-actions/setup-android@v3
-
-      - name: Instalar build-tools 34.0.0
         run: |
-          yes | sdkmanager --licenses >/dev/null 2>&1 || true
-          sdkmanager "build-tools;34.0.0" >/dev/null
-          echo "$ANDROID_HOME/build-tools/34.0.0" >> "$GITHUB_PATH"
+          set -euo pipefail
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          echo "SDK: $SDK"
+          BT=$(ls -d "$SDK"/build-tools/* 2>/dev/null | sort -V | tail -1 || true)
+          if [ -z "${BT:-}" ]; then
+            SDKMANAGER=$(command -v sdkmanager || ls "$SDK"/cmdline-tools/*/bin/sdkmanager 2>/dev/null | head -1)
+            [ -n "${SDKMANAGER:-}" ] || { echo "::error::sdkmanager nao encontrado"; exit 1; }
+            yes | "$SDKMANAGER" --licenses >/dev/null 2>&1 || true
+            "$SDKMANAGER" --install "build-tools;34.0.0" >/dev/null || { echo "::error::falha ao instalar build-tools"; exit 1; }
+            BT=$(ls -d "$SDK"/build-tools/* 2>/dev/null | sort -V | tail -1)
+          fi
+          [ -x "$BT/zipalign" ] || { echo "::error::zipalign ausente em $BT"; exit 1; }
+          [ -x "$BT/apksigner" ] || { echo "::error::apksigner ausente em $BT"; exit 1; }
+          echo "build-tools: $BT"
+          "$BT/zipalign" 2>&1 | head -1 || true
+          echo "$BT" >> "$GITHUB_PATH"
 
       - name: Cache das ferramentas de build
         uses: actions/cache@v4
