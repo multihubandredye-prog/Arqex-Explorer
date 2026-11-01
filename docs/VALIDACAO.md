@@ -186,6 +186,25 @@ Total: 5.453 -> 5.448 classes.
    `values-pt-rBR` — a renomeacao nao apareceria. Corrigido nos tres locales (e o teste
    agora le `app/res`, nao o `res/` do ZIP).
 2. Dois testes falhavam por exigirem `public static` em metodos que sao `private static`.
+3. **v1.40.0 nao abria**: `java.lang.VerifyError` em
+   `CustomThemeV128.showHubDialog` — "[0x60] register v4 has type BooleanConstant but
+   expected Reference: android.content.Context". Ao apagar o card `0xa` do hub, a linha
+   `move-object v4, p0` (que preparava o `invoke-static/range {v4 .. v10}` de
+   `buildActionCard`) foi junto, e v4 ficou com o `const/4 v4, 0x1` do
+   `setOrientation`. O `smali` monta, o DEX sai, mas o verificador da ART recusa a classe
+   em tempo de carga e o app fecha antes de desenhar a tela.
+   Correcao: `showHubDialog` foi **reconstruido a partir do original**, apagando apenas os
+   cards `0xa` e `0xc` e mantendo o `move-object v4, p0`. O `onClick` tambem foi reescrito
+   para nao reaproveitar o registrador do parametro (`p1` era `View` e virava `int`).
+4. O texto de ajuda (`arqex_help_topic_13_body`) continuava ensinando o estudio, e sobraram
+   `arqex_theme_create_button` / `arqex_theme_create_edit_title` sem uso. Corrigido nos 4
+   locales.
+
+Testes novos para essa classe de defeito (bloco 2 do `tests/test_smali_invariants.py`):
+`2a`/`2b` exigem que v4 carregue o Context e continue intacto ate cada
+`invoke-static/range`; `2c`/`2d` barram campo apontando para classe apagada e
+reaproveitamento do registrador do parametro. Conferido que o teste falha quando a linha
+`move-object v4, p0` e removida de novo.
 
 ## Nao verificado
 
@@ -193,3 +212,8 @@ Nenhum teste em aparelho. Continua pendente abrir o app e confirmar: a linha
 BACKUP E RESTAURACAO abre o hub com 2 opcoes, exportar/importar funcionam, o dialogo de
 Skins nao mostra mais "+ Criar Tema Personalizado", e a canetinha continua editando as
 cores e salvando.
+
+O `VerifyError` da v1.40.0 nao foi pego por nenhum passo do CI: o `smali` monta o DEX sem
+validar tipos. Por isso a defesa agora e estrutural — os metodos que ficaram sao
+byte-identicos ao original (conferido metodo a metodo) e so `showHubDialog`,
+`attachSkinsDialogHeader` e o `onClick` mudaram.

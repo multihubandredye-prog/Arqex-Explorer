@@ -38,6 +38,25 @@ al = open(L("libs/CustomThemeV128$ActionListener.smali"), errors="replace").read
 for acao in ("0xa", "0xc", "0x14", "0x1e", "0x28", "0x29"):
     check("1c. acao removida do listener: %s" % acao, ("const/16 v0, %s" % acao) not in al and ("const/16 v1, %s" % acao) not in al)
 
+# 2. Integridade de bytecode depois da poda (o app quebrou duas vezes por isso)
+hub = method_body(L("libs/CustomThemeV128.smali"),
+                  ".method public static showHubDialog(")
+ranges = re.findall(r"invoke-static/range \{v4 \.\. v10\}", hub or "")
+check("2a. hub ainda monta os cards com invoke-static/range", len(ranges) == 2,
+      "encontrados=%d" % len(ranges))
+linhas_hub = (hub or "").split("\n")
+WRITE_V4 = re.compile(r"^\s*(?:const\S*|move\S*|iget\S*|sget\S*|new-instance|add-int|xor-int)\b[^\n]*\bv4\b")
+pos_carga = [n for n, l in enumerate(linhas_hub) if l.strip() == "move-object v4, p0"]
+check("2a2. hub carrega o Context em v4 antes dos cards", bool(pos_carga))
+carga = pos_carga[0] if pos_carga else -1
+ranges_idx = [n for n, l in enumerate(linhas_hub) if "invoke-static/range {v4 .. v10}" in l]
+for i, n in enumerate(ranges_idx):
+    entre = linhas_hub[carga + 1:n] if carga >= 0 else []
+    escritas = [x.strip() for x in entre if WRITE_V4.match(x)]
+    check("2b%d. v4 continua sendo o Context no range %d" % (i + 1, i + 1),
+          carga >= 0 and carga < n and not escritas,
+          "escritas em v4 antes do range: %s" % (escritas or "-"))
+
 # 3. Backup e restauracao preservados
 check("3a. exportBackup preservado", ".method public static exportBackup(" in ct)
 check("3b. importBackupPath preservado", ".method public static importBackupPath(" in ct)

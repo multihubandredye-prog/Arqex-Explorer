@@ -1624,7 +1624,7 @@
 
     const-string v1, "arqex_theme_hub_title"
 
-    const-string v2, "Custom Themes & Backup"
+    const-string v2, "Backup and Restore"
 
     invoke-static {p0, v1, v2}, Llibs/ArqexStrings;->get(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1685,6 +1685,8 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
+    move-object v4, p0
+
     new-instance v10, Llibs/CustomThemeV128$ActionListener;
 
     const/16 v2, 0xb
@@ -1712,6 +1714,7 @@
     move-result-object v2
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
 
     new-instance v10, Llibs/CustomThemeV128$ActionListener;
 

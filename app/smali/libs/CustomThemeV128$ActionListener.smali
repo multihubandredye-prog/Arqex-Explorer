@@ -19,8 +19,6 @@
 
 .field public settingsRow:Landroid/widget/TextView;
 
-.field public state:Llibs/CustomThemeV128$StudioState;
-
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
@@ -60,125 +58,125 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .registers 6
 
-    iget p1, p0, Llibs/CustomThemeV128$ActionListener;->action:I
+    iget v0, p0, Llibs/CustomThemeV128$ActionListener;->action:I
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    if-ne p1, v0, :cond_c1
+    if-ne v0, v1, :cond_1
 
-    iget-object p1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
+    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
-    iget-object v0, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
+    iget-object v2, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
 
-    invoke-static {p1, v0}, Llibs/CustomThemeV128;->showHubDialog(Landroid/content/Context;Landroid/widget/TextView;)V
+    invoke-static {v1, v2}, Llibs/CustomThemeV128;->showHubDialog(Landroid/content/Context;Landroid/widget/TextView;)V
 
     return-void
 
-    :cond_c1
-    const/4 v0, 0x3
+    :cond_1
+    const/4 v1, 0x3
 
-    if-ne p1, v0, :cond_c3
+    if-ne v0, v1, :cond_3
 
     invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
-    iget-object p1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
+    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
-    iget-object v0, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
+    iget-object v2, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
 
-    invoke-static {p1, v0}, Llibs/CustomThemeV128;->showHubDialog(Landroid/content/Context;Landroid/widget/TextView;)V
-
-    return-void
-
-    :cond_c3
-    const/16 v0, 0xb
-
-    if-ne p1, v0, :cond_cb
-
-    iget-object p1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
-
-    const/4 v0, 0x1
-
-    invoke-static {p1, v0}, Llibs/CustomThemeV128;->exportBackup(Landroid/content/Context;Z)V
+    invoke-static {v1, v2}, Llibs/CustomThemeV128;->showHubDialog(Landroid/content/Context;Landroid/widget/TextView;)V
 
     return-void
 
-    :cond_cb
-    const/16 v0, 0xd
+    :cond_3
+    const/16 v1, 0xb
 
-    if-ne p1, v0, :cond_cd
+    if-ne v0, v1, :cond_b
+
+    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
+
+    const/4 v2, 0x1
+
+    invoke-static {v1, v2}, Llibs/CustomThemeV128;->exportBackup(Landroid/content/Context;Z)V
+
+    return-void
+
+    :cond_b
+    const/16 v1, 0xd
+
+    if-ne v0, v1, :cond_d
 
     invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
-    iget-object p1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
+    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
-    iget-object v0, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
+    iget-object v2, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
 
-    invoke-static {p1, v0}, Llibs/CustomThemeV128;->showImportDialog(Landroid/content/Context;Landroid/widget/TextView;)V
+    invoke-static {v1, v2}, Llibs/CustomThemeV128;->showImportDialog(Landroid/content/Context;Landroid/widget/TextView;)V
 
     return-void
 
-    :cond_cd
-    const/16 v0, 0x32
+    :cond_d
+    const/16 v1, 0x32
 
-    if-ne p1, v0, :cond_d2
+    if-ne v0, v1, :cond_32
 
     invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
-    iget-object p1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
+    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
-    iget-object v0, p0, Llibs/CustomThemeV128$ActionListener;->extraStr:Ljava/lang/String;
+    iget-object v2, p0, Llibs/CustomThemeV128$ActionListener;->extraStr:Ljava/lang/String;
 
-    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
+    iget-object v3, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
 
-    invoke-static {p1, v0, v1}, Llibs/CustomThemeV128;->importBackupPath(Landroid/content/Context;Ljava/lang/String;Landroid/widget/TextView;)V
+    invoke-static {v1, v2, v3}, Llibs/CustomThemeV128;->importBackupPath(Landroid/content/Context;Ljava/lang/String;Landroid/widget/TextView;)V
 
     return-void
 
-    :cond_d2
-    const/16 v0, 0x33
+    :cond_32
+    const/16 v1, 0x33
 
-    if-ne p1, v0, :cond_d3
+    if-ne v0, v1, :cond_33
 
-    iget-object p1, p0, Llibs/CustomThemeV128$ActionListener;->pathInput:Landroid/widget/EditText;
+    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->pathInput:Landroid/widget/EditText;
 
-    if-eqz p1, :cond_d3
+    if-eqz v1, :cond_fim
 
-    invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object p1
+    move-result-object v1
 
-    if-eqz p1, :cond_d3
+    if-eqz v1, :cond_fim
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v1
 
-    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v1
 
     invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
-    iget-object v0, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
+    iget-object v2, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
-    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
+    iget-object v3, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
 
-    invoke-static {v0, p1, v1}, Llibs/CustomThemeV128;->importBackupPath(Landroid/content/Context;Ljava/lang/String;Landroid/widget/TextView;)V
+    invoke-static {v2, v1, v3}, Llibs/CustomThemeV128;->importBackupPath(Landroid/content/Context;Ljava/lang/String;Landroid/widget/TextView;)V
 
     return-void
 
-    :cond_d3
-    const/16 v0, 0x3c
+    :cond_33
+    const/16 v1, 0x3c
 
-    if-ne p1, v0, :cond_fim
+    if-ne v0, v1, :cond_fim
 
-    iget-object p1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
+    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
-    iget-object v0, p0, Llibs/CustomThemeV128$ActionListener;->extraStr:Ljava/lang/String;
+    iget-object v2, p0, Llibs/CustomThemeV128$ActionListener;->extraStr:Ljava/lang/String;
 
-    invoke-static {p1, v0}, Llibs/CustomThemeV128;->shareExportedFile(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Llibs/CustomThemeV128;->shareExportedFile(Landroid/content/Context;Ljava/lang/String;)V
 
     :cond_fim
     return-void
