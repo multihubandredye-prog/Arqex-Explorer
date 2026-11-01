@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">ตัวจัดการไฟล์</string>
+    <string name="archive_to">บีบอัดไปที่…</string>
+    <string name="clipboard">คลิปบอร์ด</string>
+    <string name="copy_to">คัดลอกไปที่…</string>
+    <string name="create_shortcut">สร้างทางลัด</string>
+    <string name="download">ดาวน์โหลด</string>
+    <string name="ebook_reader">ตัวอ่าน eBook</string>
+    <string name="editor_code">ตัวเเก้ไขโค้ด</string>
+    <string name="editor_text">ตัวเเก้ไขข้อความ</string>
+    <string name="explore">สำรวจ</string>
+    <string name="extract_to">ขยายไปที่…</string>
+    <string name="font_viewer">ตัวดูอักษร</string>
+    <string name="ftp_server">เซิร์ฟเวอร์ FTP</string>
+    <string name="hex_viewer">ตัวอ่าน Hex</string>
+    <string name="html_viewer">ตัวเปิด HTML</string>
+    <string name="http_server">เซิร์ฟเวอร์ HTTP</string>
+    <string name="image_viewer">ตัวเปิดภาพ</string>
+    <string name="import1">นำเข้า</string>
+    <string name="media_player">เครื่องเล่นเพลง</string>
+    <string name="obex_bluetooth">บลูทูธ OBEX</string>
+    <string name="search">ค้นหา</string>
+    <string name="select">เลือก</string>
+    <string name="send_to">ส่งไปที่</string>
+    <string name="sqlite_editor">ตัวเเก้ไข SQLite</string>
+</resources>

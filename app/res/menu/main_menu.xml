@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/menu_undo_recycle"
+        android:title="@string/undo" />
+    <item
+        android:id="@id/menu_log_out"
+        android:title="@string/log_out" />
+    <item
+        android:id="@id/menu_lock"
+        android:title="@string/lock" />
+    <item
+        android:id="@id/menu_tools"
+        android:title="@string/tools" />
+    <item
+        android:id="@id/menu_extract_main"
+        android:title="@string/extract" />
+    <item
+        android:id="@id/menu_filter"
+        android:title="@string/filter" />
+    <item
+        android:id="@id/menu_search"
+        android:title="@string/search" />
+    <item
+        android:id="@id/menu_view_mode"
+        android:title="@string/view" />
+    <item
+        android:id="@id/menu_add"
+        android:title="@string/add" />
+    <item
+        android:id="@id/menu_select_all"
+        android:title="@string/select_all" />
+    <item
+        android:id="@id/menu_sort"
+        android:title="@string/sort" />
+    <item
+        android:id="@id/menu_servers"
+        android:title="@string/servers" />
+    <item
+        android:id="@id/menu_charset"
+        android:title="@string/charset" />
+    <item
+        android:id="@id/menu_execute"
+        android:title="@string/execute" />
+    <item
+        android:id="@id/menu_rewrite"
+        android:title="@string/rewrite" />
+    <item
+        android:id="@id/menu_auto_tasks"
+        android:title="@string/auto_tasks" />
+    <item
+        android:id="@id/menu_magic_packet"
+        android:title="@string/magic_packet" />
+    <item
+        android:id="@id/menu_send_log"
+        android:title="@string/send_log" />
+    <item
+        android:id="@id/menu_busybox"
+        android:title="BusyBox" />
+    <item
+        android:id="@id/menu_show_hidden_globally"
+        android:title="@string/show_hidden_globally" />
+    <item
+        android:id="@id/menu_remount_as"
+        android:title="@string/remount_as" />
+    <item
+        android:id="@id/menu_open_in_terminal"
+        android:title="@string/open_in_terminal" />
+    <item
+        android:id="@id/menu_sync"
+        android:title="@string/sync" />
+    <item
+        android:id="@id/menu_settings"
+        android:title="@string/settings" />
+    <item
+        android:id="@id/menu_exit"
+        android:title="@string/exit" />
+</menu>

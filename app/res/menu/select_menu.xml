@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/select_between"
+        android:title="@string/between" />
+    <item
+        android:id="@id/select_alternate"
+        android:title="@string/alternate" />
+    <item
+        android:id="@id/select_inverse"
+        android:title="@string/inverse" />
+    <item
+        android:id="@id/select_prev"
+        android:title="@string/previous" />
+    <item
+        android:id="@id/select_next"
+        android:title="@string/next" />
+    <item
+        android:id="@id/select_only_files"
+        android:title="@string/only_files" />
+    <item
+        android:id="@id/select_same_type"
+        android:title="@string/same_ext" />
+    <item
+        android:id="@id/select_same_cat"
+        android:title="@string/same_cat" />
+    <item
+        android:id="@id/select_none"
+        android:title="@string/none" />
+    <item
+        android:id="@id/select_all"
+        android:title="@string/all" />
+</menu>

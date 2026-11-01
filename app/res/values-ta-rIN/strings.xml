@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">கோப்பு மேலாளர்</string>
+    <string name="archive_to">காக்கப்பட்டதாக்கு…</string>
+    <string name="clipboard">இருத்தியட்டை</string>
+    <string name="copy_to">இதற்கு நகலெடு…</string>
+    <string name="create_shortcut">சுருக்குவழி உருவாக்கு</string>
+    <string name="download">பதிவிறக்கு</string>
+    <string name="ebook_reader">மின்புத்தக வாசிப்பான்</string>
+    <string name="editor_code">குறியீடு மாற்றமி</string>
+    <string name="editor_text">உரை மாற்றமி</string>
+    <string name="explore">ஆராய்க</string>
+    <string name="extract_to">இங்கு பிரித்து வை…</string>
+    <string name="font_viewer">எழுத்துரு காட்டி</string>
+    <string name="ftp_server">கோஅநெ சேவையர்</string>
+    <string name="hex_viewer">Hex காட்டி</string>
+    <string name="html_viewer">HTML காட்டி</string>
+    <string name="http_server">மேஉநெ சேவையர்</string>
+    <string name="image_viewer">படம் காட்டி</string>
+    <string name="import1">இறக்கு</string>
+    <string name="media_player">இயக்கி</string>
+    <string name="obex_bluetooth">OBEX நீலபல்</string>
+    <string name="search">தேடு</string>
+    <string name="select">தேர்ந்தெடு</string>
+    <string name="send_to">இதற்கு அனுப்பு</string>
+    <string name="sqlite_editor">எஸ் க்கியு லைட் மாற்றி</string>
+</resources>

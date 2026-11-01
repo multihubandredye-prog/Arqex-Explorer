@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">מנהל קבצים</string>
+    <string name="archive_to">כווץ ל…</string>
+    <string name="clipboard">לוח הדבקה</string>
+    <string name="copy_to">העתק ל…</string>
+    <string name="create_shortcut">צור קיצור דרך</string>
+    <string name="download">הורד</string>
+    <string name="ebook_reader">קורא ספרים אלקטרונים</string>
+    <string name="editor_code">עורך קוד</string>
+    <string name="editor_text">עורך טקסט</string>
+    <string name="explore">סייר</string>
+    <string name="font_viewer">מציג גופנים</string>
+    <string name="ftp_server">שרת FTP</string>
+    <string name="hex_viewer">מציג הקסדצימלי</string>
+    <string name="html_viewer">מציג HTML</string>
+    <string name="http_server">שרת HTTP</string>
+    <string name="image_viewer">מציג תמונות</string>
+    <string name="import1">ייבא</string>
+    <string name="media_player">נגן</string>
+    <string name="obex_bluetooth">מעבר פריטים בשן-כחולה</string>
+    <string name="search">חיפוש</string>
+    <string name="select">בחר</string>
+    <string name="send_to">שלח ל:</string>
+    <string name="sqlite_editor">עורך SQLite</string>
+</resources>

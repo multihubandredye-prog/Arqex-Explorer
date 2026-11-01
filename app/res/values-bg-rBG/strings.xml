@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">Файлов Мениджър</string>
+    <string name="clipboard">Клипборд</string>
+    <string name="copy_to">Копиране в…</string>
+    <string name="create_shortcut">Създаване на пряк път</string>
+    <string name="ebook_reader">Четец на електронни книги</string>
+    <string name="editor_code">Редактор на кодове</string>
+    <string name="editor_text">Редактор на текст</string>
+    <string name="explore">Разглеждане</string>
+    <string name="font_viewer">Преглед на шрифтове</string>
+    <string name="ftp_server">FTP сървър</string>
+    <string name="hex_viewer">Преглед на Hex кодове</string>
+    <string name="html_viewer">Разглеждане на HTML</string>
+    <string name="http_server">HTTP сървър</string>
+    <string name="image_viewer">Преглед на изображения</string>
+    <string name="import1">Възстановяване</string>
+    <string name="media_player">Плейър</string>
+    <string name="obex_bluetooth">Bluetooth</string>
+    <string name="search">Търсене</string>
+    <string name="select">Избиране</string>
+    <string name="send_to">Изпращане до</string>
+    <string name="sqlite_editor">Редактор на SQLite</string>
+</resources>

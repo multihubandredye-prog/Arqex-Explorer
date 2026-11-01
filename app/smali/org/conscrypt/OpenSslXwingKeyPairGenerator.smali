@@ -1,0 +1,165 @@
+.class public final Lorg/conscrypt/OpenSslXwingKeyPairGenerator;
+.super Ljava/security/KeyPairGenerator;
+.source "r8-map-id-571cd523a93ea3b399eec642b4a39ac0f06a12541c18854bb6120fd78e44e1a4"
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    .line 1
+    const-string v0, "XWING"
+
+    .line 2
+    .line 3
+    invoke-direct {p0, v0}, Ljava/security/KeyPairGenerator;-><init>(Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+.end method
+
+
+# virtual methods
+.method public generateKeyPair()Ljava/security/KeyPair;
+    .registers 5
+
+    .line 1
+    const/16 v0, 0x20
+
+    .line 2
+    .line 3
+    new-array v0, v0, [B
+
+    .line 4
+    .line 5
+    invoke-static {v0}, Lorg/conscrypt/NativeCrypto;->RAND_bytes([B)V
+
+    .line 6
+    .line 7
+    .line 8
+    invoke-static {v0}, Lorg/conscrypt/NativeCrypto;->XWING_public_key_from_seed([B)[B
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v1
+
+    .line 12
+    new-instance v2, Ljava/security/KeyPair;
+
+    .line 13
+    .line 14
+    new-instance v3, Lorg/conscrypt/OpenSslXwingPublicKey;
+
+    .line 15
+    .line 16
+    invoke-direct {v3, v1}, Lorg/conscrypt/OpenSslXwingPublicKey;-><init>([B)V
+
+    .line 17
+    .line 18
+    .line 19
+    new-instance v1, Lorg/conscrypt/OpenSslXwingPrivateKey;
+
+    .line 20
+    .line 21
+    invoke-direct {v1, v0}, Lorg/conscrypt/OpenSslXwingPrivateKey;-><init>([B)V
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-direct {v2, v3, v1}, Ljava/security/KeyPair;-><init>(Ljava/security/PublicKey;Ljava/security/PrivateKey;)V
+
+    .line 25
+    .line 26
+    .line 27
+    return-object v2
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+.end method
+
+.method public initialize(I)V
+    .registers 3
+
+    .line 1
+    const/4 v0, -0x1
+
+    .line 2
+    if-ne p1, v0, :cond_4
+
+    .line 3
+    .line 4
+    return-void
+
+    .line 5
+    :cond_4
+    const-string p1, "XWING only supports -1 for bits"
+
+    .line 6
+    .line 7
+    invoke-static {p1}, Llibs/bf0;->m(Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+.end method

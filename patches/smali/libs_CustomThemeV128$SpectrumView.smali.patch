@@ -1,0 +1,55 @@
+--- a/libs/CustomThemeV128$SpectrumView.smali	2026-11-01 00:58:09.983689015 +0000
++++ b/libs/CustomThemeV128$SpectrumView.smali	2026-11-01 00:47:52.965645122 +0000
+@@ -684,12 +684,50 @@
+ .end method
+ 
+ .method public setColor(I)V
+-    .registers 3
++    .registers 8
+ 
+-    iget-object v0, p0, Llibs/CustomThemeV128$SpectrumView;->hsv:[F
++    const/4 v0, 0x3
++
++    new-array v0, v0, [F
+ 
+     invoke-static {p1, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
+ 
++    iget-object v5, p0, Llibs/CustomThemeV128$SpectrumView;->hsv:[F
++
++    if-eqz v5, :cond_inv
++
++    const/4 v1, 0x0
++
++    aget v2, v0, v1
++
++    const/4 v1, 0x1
++
++    aget v3, v0, v1
++
++    const/4 v1, 0x2
++
++    aget v4, v0, v1
++
++    const/4 v1, 0x0
++
++    cmpl-float v1, v3, v1
++
++    if-nez v1, :cond_hue
++
++    const/4 v1, 0x0
++
++    aput v2, v5, v1
++
++    :cond_hue
++    const/4 v1, 0x1
++
++    aput v3, v5, v1
++
++    const/4 v1, 0x2
++
++    aput v4, v5, v1
++
++    :cond_inv
+     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+ 
+     return-void

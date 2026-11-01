@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="2"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableRow>
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_location"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_location"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_uri"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_uri"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_link_to_row">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_link_to"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_link_to"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_size_row">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_size"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_size"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_total_size_row">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_total_size"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_total_size"
+            android:minLines="2"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_used_row"
+        android:layout_width="fill_parent">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_used"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_used"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_total_used_row">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_total_used"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_total_used"
+            android:minLines="1"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_modified"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_modified"
+            android:focusable="true"
+            android:minLines="2"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/table_changed_time"
+        android:visibility="gone">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_changed"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_changed"
+            android:focusable="true"
+            android:minLines="2"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/table_accessed_time"
+        android:visibility="gone">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_accessed"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_accessed"
+            android:focusable="true"
+            android:minLines="2"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_mimetype"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_mimetype"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_ishidden_row">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_hidden"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_ishidden"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_owner_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_owner"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textStyle="bold"
+            android:gravity="start"
+            android:id="@id/info_owner"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_group_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_group"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textStyle="bold"
+            android:gravity="start"
+            android:id="@id/info_group"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_context_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_context"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textStyle="bold"
+            android:gravity="start"
+            android:id="@id/info_context"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_perm_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_permission"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textStyle="bold"
+            android:gravity="start"
+            android:id="@id/info_permission"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_extra_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_extra"
+            android:layout_column="1"
+            style="@style/DialogLeft" />
+        <TextView
+            android:gravity="start"
+            android:id="@id/info_extra"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_tags_row"
+        android:layout_marginTop="@dimen/size_3">
+        <com.mixplorer.widgets.MiEditText
+            android:gravity="start"
+            android:id="@id/file_comment"
+            android:layout_column="1"
+            android:layout_span="2"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_hash_types_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:textSize="@dimen/primary_text_size"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:id="@id/info_hash_types"
+            android:layout_column="1"
+            android:layout_span="2"
+            style="@style/DialogRight" />
+    </TableRow>
+</TableLayout>

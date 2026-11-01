@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">Fájlkezelő</string>
+    <string name="archive_to">Archiválás ide…</string>
+    <string name="clipboard">Vágólap</string>
+    <string name="copy_to">Másolás ide…</string>
+    <string name="create_shortcut">Parancsikon létrehozása</string>
+    <string name="download">Letöltés</string>
+    <string name="ebook_reader">eBook olvasó</string>
+    <string name="editor_code">Kódszerkesztő</string>
+    <string name="editor_text">Szövegszerkesztő</string>
+    <string name="explore">Felfedezés</string>
+    <string name="extract_to">Kicsomagolás ide…</string>
+    <string name="font_viewer">Betűnéző</string>
+    <string name="ftp_server">FTP Szerver</string>
+    <string name="hex_viewer">Hex nézegető</string>
+    <string name="html_viewer">HTML nézegető</string>
+    <string name="http_server">HTTP Szerver</string>
+    <string name="image_viewer">Képnézegető</string>
+    <string name="import1">Importálás</string>
+    <string name="media_player">Lejátszó</string>
+    <string name="obex_bluetooth">OBEX Bluetooth</string>
+    <string name="search">Keresés</string>
+    <string name="select">Választás</string>
+    <string name="send_to">Küldés ide:</string>
+    <string name="sqlite_editor">SQLite szerkesztő</string>
+</resources>

@@ -1,0 +1,67 @@
+--- a/com/mixplorer/activities/PreferenceActivity.smali	2026-11-01 00:58:09.667689015 +0000
++++ b/com/mixplorer/activities/PreferenceActivity.smali	2026-11-01 00:47:52.957645122 +0000
+@@ -29646,53 +29646,26 @@
+     .line 302
+     invoke-virtual {v1}, Llibs/od;->show()V
+ 
+-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
++    invoke-virtual {v1}, Landroid/app/Dialog;->isShowing()Z
+ 
+-    move-result-object v2
++    move-result v2
+ 
+-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
++    if-eqz v2, :cond_not_shown
+ 
+-    move-result-object v2
++    invoke-static {v1}, Llibs/ArqexDialogCenter;->attach(Landroid/app/Dialog;)V
+ 
+-    iget v2, v2, Landroid/util/DisplayMetrics;->widthPixels:I
++    const/4 v2, 0x1
+ 
+-    mul-int/lit8 v2, v2, 0x9
++    iput-boolean v2, v0, Lcom/mixplorer/activities/PreferenceActivity;->Xray:Z
+ 
+-    div-int/lit8 v2, v2, 0xa
++    goto :goto_xray_done
+ 
+-    const/4 v3, -0x2
++    :cond_not_shown
++    const/4 v2, 0x0
+ 
+-    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
++    iput-boolean v2, v0, Lcom/mixplorer/activities/PreferenceActivity;->Xray:Z
+ 
+-    move-result-object v4
+-
+-    if-eqz v4, :cond_15c
+-
+-    invoke-virtual {v4}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+-
+-    move-result-object v5
+-
+-    const/16 v6, 0x11
+-
+-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+-
+-    const/4 v6, 0x0
+-
+-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+-
+-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->y:I
+-
+-    iput v2, v5, Landroid/view/WindowManager$LayoutParams;->width:I
+-
+-    iput v3, v5, Landroid/view/WindowManager$LayoutParams;->height:I
+-
+-    invoke-virtual {v4, v5}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+-
+-    .line 303
+-    .line 304
+-    .line 305
+-    :cond_15c
+-    iput-boolean v12, v0, Lcom/mixplorer/activities/PreferenceActivity;->Xray:Z
++    :goto_xray_done
+ 
+     .line 306
+     .line 307

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">Gestionare fişiere</string>
+    <string name="archive_to">Arhivare în…</string>
+    <string name="clipboard">Clipboard</string>
+    <string name="copy_to">Copiaţi în…</string>
+    <string name="create_shortcut">Creare scurtătură</string>
+    <string name="download">Descărcare</string>
+    <string name="ebook_reader">eBook Reader</string>
+    <string name="editor_code">Editor de cod</string>
+    <string name="editor_text">Editor de text</string>
+    <string name="explore">Explorare</string>
+    <string name="extract_to">Extragere în…</string>
+    <string name="font_viewer">Vizual. de fonturi</string>
+    <string name="ftp_server">Server FTP/Share</string>
+    <string name="hex_viewer">Vizualizator Hex</string>
+    <string name="html_viewer">Vizualizator HTML</string>
+    <string name="http_server">Server HTTP/WebDav</string>
+    <string name="image_viewer">Vizualizare imagini</string>
+    <string name="import1">Import</string>
+    <string name="media_player">Player</string>
+    <string name="obex_bluetooth">OBEX Bluetooth</string>
+    <string name="search">Căutare</string>
+    <string name="select">Selectaţi</string>
+    <string name="send_to">Trimitere la</string>
+    <string name="sqlite_editor">Editor SQLite</string>
+</resources>

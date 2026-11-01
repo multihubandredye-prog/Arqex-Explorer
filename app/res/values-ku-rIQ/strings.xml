@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">بەڕێوەبەری فایلەکانی ئەندرۆید</string>
+    <string name="clipboard">شوێنی کاتی</string>
+    <string name="editor_text">دەستکاریکەر</string>
+    <string name="explore">بەڕێوەبەری فایل</string>
+    <string name="ftp_server">ڕاژەکارەکانی FTP</string>
+    <string name="http_server">ڕاژەکارەکانی HTTP</string>
+    <string name="image_viewer">پیشاندەری وێنە</string>
+    <string name="import1">هێنان</string>
+    <string name="media_player">لێدەر</string>
+    <string name="obex_bluetooth">بلوتووس OBEX</string>
+    <string name="search">گەڕان</string>
+    <string name="select">دیاریکردن</string>
+    <string name="send_to">ناردن بۆ</string>
+</resources>
