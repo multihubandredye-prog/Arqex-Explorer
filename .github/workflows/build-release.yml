@@ -102,6 +102,9 @@ jobs:
           javac -source 8 -target 8 -nowarn -d "$TMP_UPD/c" \
             $(find tools/updater/stubs -name '*.java') $(find tools/updater/src -name '*.java') tests/updater/VTest.java
           java -cp "$TMP_UPD/c" libs.VTest
+          # teste de comportamento: a notificacao tem que ser realmente postada
+          javac -source 8 -target 8 -nowarn -cp "$TMP_UPD/c" -d "$TMP_UPD/c" tests/updater/UpdateNotifyTest.java
+          java -cp "$TMP_UPD/c" libs.UpdateNotifyTest
 
       - name: Conferir metadados do APK (manifesto, versao, recursos, libs)
         run: |

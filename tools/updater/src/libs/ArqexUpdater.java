@@ -326,8 +326,10 @@ public final class ArqexUpdater {
             SharedPreferences prefs = ctx.getSharedPreferences(PREFS, 0);
             if (apk != null) {
                 prefs.edit().putString(K_APK_URL, apk).apply();
-                prefs.edit().putString(K_NOTIFIED, tag).apply();
             }
+            // A marca de "ja avisei" e gravada DENTRO do notifyUpdate, so depois de a
+            // notificacao realmente sair. Gravar aqui antes fazia o proprio notifyUpdate
+            // abortar no guarda de duplicidade e a notificacao nunca aparecia.
             notifyUpdate(ctx, tag, prefs);
             boolean mostra = manual;
             if (mode == Check.START) {

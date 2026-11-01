@@ -105,6 +105,16 @@ check("8m. dialogo de atualizacao aparece so uma vez por versao",
       "dialog_tag" in up)
 check("8n. notifyUpdate nao virou metodo vazio (checagem real de notificacao)",
       "areNotificationsEnabled" in up and "notify(" in up)
+_txt = open(L("libs/ArqexUpdater.smali"), errors="replace").read()
+_i = _txt.index(".method private static notifyUpdate")
+_corpo = _txt[_i:_txt.index(".end method", _i)]
+_p_notify = _corpo.find("NotificationManager;->notify(")
+_p_marca = _corpo.find("SharedPreferences$Editor;->putString(")
+check("8n2. marca de 'ja avisei' e gravada DEPOIS do notify()",
+      _p_notify > 0 and _p_marca > _p_notify,
+      "notify=%d marca=%d" % (_p_notify, _p_marca))
+check("8n3. onResult nao grava notified_tag antes de notificar",
+      "notified_tag" not in open(L("libs/ArqexUpdater$Check$1.smali"), errors="replace").read())
 check("8o. askNotificationsOnce nao virou metodo vazio", "requestPermissions" in up)
 vazios = [m.group(1) for m in re.finditer(
     r"\.method[^\n]*?([\w$<>]+)\([^\n]*\n\s*\.registers \d+\n\s*\n?\s*return-void\n\.end method", up)]
