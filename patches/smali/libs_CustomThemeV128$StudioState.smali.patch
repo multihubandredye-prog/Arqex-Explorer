@@ -1,0 +1,11 @@
+--- a/libs/CustomThemeV128$StudioState.smali	2026-11-01 00:58:09.983689015 +0000
++++ b/libs/CustomThemeV128$StudioState.smali	2026-11-01 00:55:16.987689015 +0000
+@@ -22,6 +22,8 @@
+ 
+ .field public nameInput:Landroid/widget/EditText;
+ 
++.field public pickerDialog:Landroid/app/Dialog;
++
+ .field public pickerPanel:Landroid/widget/LinearLayout;
+ 
+ .field public previewAccentBadge:Landroid/widget/TextView;

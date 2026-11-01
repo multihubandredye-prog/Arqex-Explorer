@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="2"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableRow
+        android:id="@id/info_crc32_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_crc32"
+            android:layout_column="1"
+            android:text="CRC32:"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textSize="@dimen/medium2_text_size"
+            android:gravity="start"
+            android:id="@id/info_crc32"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_md5_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_md5"
+            android:layout_column="1"
+            android:text="MD5:"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textSize="@dimen/medium2_text_size"
+            android:gravity="start"
+            android:id="@id/info_md5"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_sha1_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_sha1"
+            android:layout_column="1"
+            android:text="SHA1:"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textSize="@dimen/medium2_text_size"
+            android:gravity="start"
+            android:id="@id/info_sha1"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_sha256_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_sha256"
+            android:layout_column="1"
+            android:text="SHA256:"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textSize="@dimen/medium2_text_size"
+            android:gravity="start"
+            android:id="@id/info_sha256"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_sha384_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_sha384"
+            android:layout_column="1"
+            android:text="SHA384:"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textSize="@dimen/medium2_text_size"
+            android:gravity="start"
+            android:id="@id/info_sha384"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_sha512_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_sha512"
+            android:layout_column="1"
+            android:text="SHA512:"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textSize="@dimen/medium2_text_size"
+            android:gravity="start"
+            android:id="@id/info_sha512"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_qx_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_qx"
+            android:layout_column="1"
+            android:text="Q-XOR:"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textSize="@dimen/medium2_text_size"
+            android:gravity="start"
+            android:id="@id/info_qx"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:id="@id/info_dbc_row"
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:gravity="end"
+            android:id="@id/file_info_dbc"
+            android:layout_column="1"
+            android:text="DB-Hash:"
+            style="@style/DialogLeft" />
+        <TextView
+            android:textSize="@dimen/medium2_text_size"
+            android:gravity="start"
+            android:id="@id/info_dbc"
+            style="@style/DialogRight" />
+    </TableRow>
+    <TableRow
+        android:layout_marginTop="@dimen/size_3">
+        <TextView
+            android:textSize="@dimen/primary_text_size"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:id="@id/copy_link"
+            android:layout_column="2"
+            android:layout_span="2"
+            style="@style/DialogRight" />
+    </TableRow>
+</TableLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">ファイルマネージャー</string>
+    <string name="archive_to">…に圧縮する</string>
+    <string name="clipboard">クリップボード</string>
+    <string name="copy_to">…にコピーする</string>
+    <string name="create_shortcut">ショートカット作成</string>
+    <string name="download">ダウンロード</string>
+    <string name="ebook_reader">eBookリーダー</string>
+    <string name="editor_code">コードエディター</string>
+    <string name="editor_text">テキストエディター</string>
+    <string name="explore">閲覧</string>
+    <string name="extract_to">解凍先…</string>
+    <string name="font_viewer">フォントビューワー</string>
+    <string name="ftp_server">FTPサーバー</string>
+    <string name="hex_viewer">Hexビューアー</string>
+    <string name="html_viewer">HTMLビューアー</string>
+    <string name="http_server">HTTPサーバー</string>
+    <string name="image_viewer">画像ビューアー</string>
+    <string name="import1">インポート</string>
+    <string name="media_player">プレイヤー</string>
+    <string name="obex_bluetooth">OBEX Bluetooth</string>
+    <string name="search">検索</string>
+    <string name="select">選択</string>
+    <string name="send_to">…に送信する</string>
+    <string name="sqlite_editor">SQLite 編集</string>
+</resources>

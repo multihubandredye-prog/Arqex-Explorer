@@ -63,6 +63,17 @@ check("3e. tipos do backup cobrem B/I/L/F/S",
 check("3f. backup nao afirma copiar StringSet (nao suportado nesta base)",
       "getStringSet" not in ct and "putStringSet" not in ct)
 
+# 3g. seletor de cor abre como DIALOGO (nao como painel inline transparente)
+ct2 = open(L("libs/CustomThemeV128.smali"), errors="replace").read()
+check("3g. seletor usa openPickerDialog (dialogo modal)", "openPickerDialog" in ct2)
+check("3h. painel NAO e mais inserido no editorRoot como overlay",
+      "pickerPanel:Landroid/widget/LinearLayout;\n\n    const/4 v5, 0x0\n\n    invoke-virtual {v4, v9, v5}" not in ct2)
+check("3i. painel recebe fundo proprio (makeRoundedRect + sw1->z)",
+      "makeRoundedRect" in ct2 and "Llibs/sw1;->z" in ct2)
+check("3j. dialogo tem botao Cancelar", "PickerCancelListener" in ct2)
+check("3k. Confirmar fecha o dialogo",
+      "pickerDialog:Landroid/app/Dialog;" in open(L("libs/CustomThemeV128$RgbSeekListener.smali"), errors="replace").read())
+
 # 4. Centralizacao da janela Skins
 dc = open(L("libs/ArqexDialogCenter.smali"), errors="replace").read()
 check("4a. ArqexDialogCenter existe", True)

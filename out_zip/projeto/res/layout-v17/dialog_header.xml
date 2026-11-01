@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:id="@id/dialog_header"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/dialog_title_bar_height"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mixplorer.widgets.MiCircleImageView
+        android:id="@id/dialog_icon"
+        android:visibility="gone"
+        android:layout_width="@dimen/dialog_thumb"
+        android:layout_height="@dimen/dialog_thumb"
+        android:layout_marginTop="@dimen/size_3"
+        android:layout_marginRight="@dimen/size_10"
+        android:layout_marginBottom="@dimen/size_3"
+        android:layout_marginEnd="@dimen/size_10" />
+    <TextView
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        android:id="@id/dialog_title"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:layout_weight="1.0" />
+    <ImageView
+        android:id="@id/arrow_prev"
+        android:focusable="true"
+        android:visibility="gone"
+        android:layout_width="@dimen/dialog_thumb"
+        android:layout_height="fill_parent" />
+    <ImageView
+        android:id="@id/arrow_next"
+        android:focusable="true"
+        android:visibility="gone"
+        android:layout_width="@dimen/dialog_thumb"
+        android:layout_height="fill_parent" />
+    <ImageView
+        android:id="@id/close"
+        android:focusable="true"
+        android:visibility="gone"
+        android:layout_width="@dimen/bar_button_width"
+        android:layout_height="fill_parent" />
+</LinearLayout>

@@ -100,3 +100,42 @@ Teste em aparelho Android. O workflow compila e verifica a estrutura, mas não e
 aplicativo: seletor abrindo, matiz a partir de preto, confirmar/cancelar, persistência
 após reabrir o app, centralização em retrato/paisagem/tela dividida/teclado e o botão em
 tela estreita seguem **pendentes**.
+
+
+---
+
+# Seletor de cor: painel inline -> dialogo modal
+
+## O que a captura de tela mostrou
+
+O painel do seletor era criado com `new LinearLayout(context)` (sem fundo) e inserido
+com `editorRoot.addView(painel, 0)` — dentro do `ScrollView` da propria tela de tema.
+Resultado visivel: o texto da tela de configuracoes atravessava o painel (SKINS,
+IDIOMAS, EFEITOS VISUAIS, "Versao 6.71.15"), o rotulo "Paleta rapida" ficava sob a
+barra de matiz e os sliders apareciam soltos sobre as linhas de papel do tema.
+
+## Correcao
+
+* `showColorPickerDialog` nao insere mais o painel no `editorRoot`.
+* Novo metodo `CustomThemeV128.openPickerDialog`:
+  - aplica fundo opaco com cantos arredondados no painel (`makeRoundedRect` + `sw1->z`);
+  - coloca o painel dentro de um `ScrollView`;
+  - exibe em um `android.app.Dialog` proprio, cancelavel;
+  - define largura de 90% da tela limitada a 360dp e altura de 80% da tela.
+* Botao **Cancelar** ao lado de **Confirmar Cor** (classe nova
+  `CustomThemeV128$PickerCancelListener`), fechando o dialogo sem aplicar.
+* **Confirmar Cor** aplica ao papel e fecha o dialogo (antes so removia o painel).
+* Novo campo `StudioState.pickerDialog`.
+
+## Verificado
+
+* DEX remontado e APK gerado novamente pelo `apktool` (576 entradas, 3 libs arm64-v8a).
+* `MODE=zip` (patches) e o modo `app/` produzem o mesmo codigo: decodificando os dois
+  DEX e comparando as arvores, a diferenca e vazia (muda apenas a ordem de montagem).
+* 46 testes estaticos passando, incluindo 5 novos sobre o dialogo.
+
+## Nao verificado
+
+Nenhum teste em aparelho. Continua pendente confirmar na pratica: o dialogo abrir ao
+tocar num papel, o matiz funcionar partindo de preto/cinza, Confirmar aplicar e
+Cancelar descartar, e a persistencia ao salvar e reabrir o aplicativo.

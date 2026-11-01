@@ -1,5 +1,5 @@
---- a/com/mixplorer/activities/PreferenceActivity.smali	2026-11-01 00:41:08.258294318 +0000
-+++ b/com/mixplorer/activities/PreferenceActivity.smali	2026-11-01 00:41:12.166294318 +0000
+--- a/com/mixplorer/activities/PreferenceActivity.smali	2026-11-01 00:58:09.667689015 +0000
++++ b/com/mixplorer/activities/PreferenceActivity.smali	2026-11-01 00:47:52.957645122 +0000
 @@ -29646,53 +29646,26 @@
      .line 302
      invoke-virtual {v1}, Llibs/od;->show()V

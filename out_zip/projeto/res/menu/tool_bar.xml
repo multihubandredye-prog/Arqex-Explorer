@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/button_search"
+        android:id="@id/button_search"
+        android:title="@string/search" />
+    <item
+        android:icon="@drawable/button_view_list"
+        android:id="@id/button_view"
+        android:title="@string/view" />
+    <item
+        android:icon="@drawable/button_add"
+        android:id="@id/button_add"
+        android:title="@string/add" />
+    <item
+        android:icon="@drawable/button_refresh"
+        android:id="@id/button_refresh"
+        android:title="@string/refresh" />
+    <item
+        android:icon="@drawable/button_sort_name_az"
+        android:id="@id/button_sort"
+        android:title="@string/sort" />
+    <item
+        android:icon="@drawable/button_select_all"
+        android:id="@id/button_select_all"
+        android:title="@string/select_all" />
+    <item
+        android:icon="@drawable/button_servers"
+        android:id="@id/button_servers"
+        android:title="@string/servers" />
+</menu>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="app_logo">@drawable/banner_tv</item>
+    <item type="drawable" name="company_logo">@mipmap/icon_mix</item>
+</resources>

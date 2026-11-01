@@ -22,6 +22,8 @@
 
 .field public nameInput:Landroid/widget/EditText;
 
+.field public pickerDialog:Landroid/app/Dialog;
+
 .field public pickerPanel:Landroid/widget/LinearLayout;
 
 .field public previewAccentBadge:Landroid/widget/TextView;

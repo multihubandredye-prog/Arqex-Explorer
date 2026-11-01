@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/menu_send_to"
+        android:title="@string/send_to" />
+    <item
+        android:id="@id/menu_open"
+        android:title="@string/open" />
+    <item
+        android:id="@id/menu_open_with"
+        android:title="@string/open_with" />
+    <item
+        android:id="@id/menu_archive"
+        android:title="@string/archive" />
+    <item
+        android:id="@id/menu_extract"
+        android:title="@string/extract" />
+    <item
+        android:id="@id/menu_convert"
+        android:title="@string/convert" />
+    <item
+        android:id="@id/menu_encrypt"
+        android:title="@string/encrypt" />
+    <item
+        android:id="@id/menu_decrypt"
+        android:title="@string/decrypt" />
+    <item
+        android:id="@id/menu_install"
+        android:title="@string/install" />
+    <item
+        android:id="@id/menu_uninstall"
+        android:title="@string/uninstall" />
+    <item
+        android:id="@id/menu_backup"
+        android:title="@string/backup" />
+    <item
+        android:id="@id/menu_restore"
+        android:title="@string/restore" />
+    <item
+        android:id="@id/menu_add_to"
+        android:title="@string/add_to" />
+    <item
+        android:id="@id/menu_toggle_pin"
+        android:title="@string/pin" />
+    <item
+        android:id="@id/menu_toggle_hidden"
+        android:title="@string/hide" />
+    <item
+        android:id="@id/menu_set_as"
+        android:title="@string/set_as" />
+    <item
+        android:id="@id/menu_open_in_new_tab"
+        android:title="@string/open_in_new_tab" />
+    <item
+        android:id="@id/menu_metadata"
+        android:title="@string/metadata" />
+    <item
+        android:id="@id/menu_edit"
+        android:title="@string/edit" />
+    <item
+        android:id="@id/menu_sign"
+        android:title="@string/sign" />
+    <item
+        android:id="@id/menu_go_to_location"
+        android:title="@string/go_to_location" />
+    <item
+        android:id="@id/menu_execute_script"
+        android:title="@string/execute" />
+    <item
+        android:id="@id/menu_copy_to"
+        android:title="@string/copy_to" />
+    <item
+        android:id="@id/menu_move_to"
+        android:title="@string/move_to" />
+    <item
+        android:id="@id/menu_unshare"
+        android:title="@string/unshare" />
+    <item
+        android:id="@id/menu_auto_tag"
+        android:title="@string/auto_tag" />
+    <item
+        android:id="@id/menu_edit_tag"
+        android:title="@string/edit_tag" />
+    <item
+        android:id="@id/menu_share_local_link"
+        android:title="@string/share_local_link" />
+    <item
+        android:id="@id/menu_move_up_del"
+        android:title="@string/move_up_del" />
+    <item
+        android:id="@id/menu_open_terminal"
+        android:title="@string/open_in_terminal" />
+    <item
+        android:id="@id/menu_set_app_icon"
+        android:title="@string/set_app_icon" />
+    <item
+        android:id="@id/menu_mail_to"
+        android:title="@string/mail_to" />
+    <item
+        android:id="@id/menu_copy_paths"
+        android:title="@string/copy_path" />
+    <item
+        android:id="@id/menu_merge"
+        android:visible="false"
+        android:title="@string/merge" />
+    <item
+        android:id="@id/menu_cast"
+        android:title="@string/cast" />
+</menu>

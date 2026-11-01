@@ -354,9 +354,26 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     :cond_59
+    iget-object v0, p1, Llibs/CustomThemeV128$StudioState;->pickerDialog:Landroid/app/Dialog;
+
+    if-eqz v0, :cond_pd
+
+    :try_start_pd
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    :try_end_pd
+    .catchall {:try_start_pd .. :try_end_pd} :catchall_pd
+
+    goto :cond_pd
+
+    :catchall_pd
+    move-exception v0
+
+    :cond_pd
     const/4 v2, 0x0
 
     iput-object v2, p1, Llibs/CustomThemeV128$StudioState;->pickerPanel:Landroid/widget/LinearLayout;
+
+    iput-object v2, p1, Llibs/CustomThemeV128$StudioState;->pickerDialog:Landroid/app/Dialog;
 
     iget-object v0, p1, Llibs/CustomThemeV128$StudioState;->editorScroll:Landroid/widget/ScrollView;
 

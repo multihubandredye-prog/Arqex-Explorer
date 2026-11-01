@@ -1,5 +1,5 @@
---- a/libs/CustomThemeV128$SpectrumView.smali	2026-11-01 00:41:08.470294318 +0000
-+++ b/libs/CustomThemeV128$SpectrumView.smali	2026-11-01 00:41:12.170294318 +0000
+--- a/libs/CustomThemeV128$SpectrumView.smali	2026-11-01 00:58:09.983689015 +0000
++++ b/libs/CustomThemeV128$SpectrumView.smali	2026-11-01 00:47:52.965645122 +0000
 @@ -684,12 +684,50 @@
  .end method
  

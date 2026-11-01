@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">Διαχειριστής Αρχείων</string>
+    <string name="archive_to">Αρχειοθέτηση σε…</string>
+    <string name="clipboard">Πρόχειρο</string>
+    <string name="copy_to">Αντιγραφή σε…</string>
+    <string name="create_shortcut">Δημιουργία συντόμευσης</string>
+    <string name="download">Λήψη</string>
+    <string name="ebook_reader">eBook Reader</string>
+    <string name="editor_code">Επεξεργαστής Κώδικα</string>
+    <string name="editor_text">Επεξεργαστής Κειμένου</string>
+    <string name="explore">Εξερεύνηση</string>
+    <string name="extract_to">Εξαγωγή σε…</string>
+    <string name="font_viewer">Προβολή Γραμματοσειρών</string>
+    <string name="ftp_server">FTP(S,ES)/Διακομιστής Κοινής χρήσης</string>
+    <string name="hex_viewer">Προβολή Hex</string>
+    <string name="html_viewer">"Προβολή Html "</string>
+    <string name="http_server">Διακομιστής HTTP/WebDav</string>
+    <string name="image_viewer">Προβολή εικόνων</string>
+    <string name="import1">Εισαγωγή</string>
+    <string name="media_player">Συσκευή Πολυμέσων</string>
+    <string name="obex_bluetooth">OBEX Bluetooth</string>
+    <string name="search">Αναζήτηση</string>
+    <string name="select">Επιλογή</string>
+    <string name="send_to">Αποστολή σε</string>
+    <string name="sqlite_editor">SQLite Επεξεργαστής</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">Файл. менеджер</string>
+    <string name="archive_to">Архівувати в…</string>
+    <string name="clipboard">Буфер обміну</string>
+    <string name="copy_to">Копіювати в…</string>
+    <string name="create_shortcut">Створити ярлик</string>
+    <string name="download">Завантаження</string>
+    <string name="ebook_reader">Засіб читання книг</string>
+    <string name="editor_code">Редактор коду</string>
+    <string name="editor_text">Текстовий редактор</string>
+    <string name="explore">Огляд</string>
+    <string name="extract_to">Розархівувати в…</string>
+    <string name="font_viewer">Перегляд шрифтів</string>
+    <string name="ftp_server">FTP-сервер</string>
+    <string name="hex_viewer">Hex Переглядач</string>
+    <string name="html_viewer">Переглядач HTML</string>
+    <string name="http_server">HTTP-сервер</string>
+    <string name="image_viewer">Перегляд зображень</string>
+    <string name="import1">Імпорт</string>
+    <string name="media_player">Медіаплеєр</string>
+    <string name="obex_bluetooth">OBEX Bluetooth</string>
+    <string name="search">Пошук</string>
+    <string name="select">Вибрати</string>
+    <string name="send_to">Відправити</string>
+    <string name="sqlite_editor">SQLite Редактор</string>
+</resources>

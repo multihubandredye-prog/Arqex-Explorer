@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/server_ftp"
+        android:title="@string/ftp_server" />
+    <item
+        android:id="@id/server_http"
+        android:title="@string/http_server" />
+    <item
+        android:id="@id/server_sftp"
+        android:title="@string/sftp_server" />
+    <item
+        android:id="@id/server_smb"
+        android:title="@string/smb_server" />
+    <item
+        android:id="@id/server_dlna"
+        android:title="@string/dlna_server" />
+</menu>
