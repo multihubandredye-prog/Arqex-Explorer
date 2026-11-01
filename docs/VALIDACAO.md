@@ -44,8 +44,10 @@
   só restaura esses tipos. Não existe em `getStringSet` de preferências do app um uso
   confirmado fora do wrapper obsoleto de prefs, então não foi adicionado formato novo
   especulativo. A documentação do backup não deve afirmar que cobre todos os dados do app.
-- **Exportação de paleta em JSON**: não há botão com a ação `0x29` no DEX atual — o
-  caminho era código morto. Foi removido (método + ramo do listener), sem tocar no backup.
+- **Exportação de paleta em JSON**: **não foi removida**. A pedido do dono do projeto,
+  tudo que existia continua existindo: `exportStudioPalette` e a ação `0x29` seguem no
+  DEX, junto com todo o backup. Observação factual: nessa base não há botão que dispare a
+  ação `0x29` na interface, então o caminho está inacessível pela UI, mas o código ficou.
 
 ## Pendente — não foi validado
 

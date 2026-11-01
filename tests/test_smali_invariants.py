@@ -2,6 +2,8 @@
 """Testes estaticos sobre o smali final (host, sem aparelho).
 
 Uso: python3 tests/test_smali_invariants.py <dir_smali> [<dir_recursos>]
+
+Garante as correcoes E que nada mais foi removido do aplicativo.
 Retorna != 0 se qualquer invariante falhar.
 """
 import os, re, sys, glob
@@ -45,14 +47,12 @@ if m:
     check("2d. setColor nao usa colorToHSV direto no array do campo sem condicional",
           m.count("colorToHSV") == 1)
 
-# 3. Exportacao de paleta JSON removida; backup preservado
-check("3a. exportStudioPalette removido da classe",
-      "exportStudioPalette" not in open(L("libs/CustomThemeV128.smali"), errors="replace").read())
-check("3b. nenhum smali referencia exportStudioPalette",
-      not any("exportStudioPalette" in open(f, errors="replace").read()
-              for f in glob.glob(os.path.join(SMALI, "**", "*.smali"), recursive=True)))
+# 3. NADA removido: exportacao de paleta e backup devem coexistir
+check("3a. exportStudioPalette preservado (nao removido)",
+      ".method public static exportStudioPalette(" in open(L("libs/CustomThemeV128.smali"), errors="replace").read())
 al = open(L("libs/CustomThemeV128$ActionListener.smali"), errors="replace").read()
-check("3c. acao 0x29 (paleta JSON) nao existe mais", "0x29" not in al)
+check("3b. acao 0x29 (exportar paleta) preservada", "0x29" in al)
+check("3c. ActionListener ainda chama exportStudioPalette", "exportStudioPalette" in al)
 ct = open(L("libs/CustomThemeV128.smali"), errors="replace").read()
 for keep in ("exportBackup", "importBackupPath", "collectBackupFiles", "restorePreference"):
     check("3d. backup preservado: %s" % keep, ("%s(" % keep) in ct)

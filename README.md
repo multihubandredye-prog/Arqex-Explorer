@@ -53,3 +53,21 @@ base, não efeito das correções. Por isso cada release passa a trazer:
 | `SHA256SUMS`, `signature-report.txt` | checksums e relatório do certificado |
 
 Para compilar: `cd projeto && apktool b . -o app.apk`
+
+## Política: nada é removido
+
+Por decisão do dono do projeto, **nenhum recurso do aplicativo é removido**. A exportação
+de paleta em JSON (`exportStudioPalette` e a ação `0x29`) foi **mantida**, assim como todo o
+backup (`exportBackup`, `importBackupPath`, `collectBackupFiles`, `restorePreference`).
+
+O que existe são **5 correções** de defeito, mais 3 classes auxiliares novas. Nada mais.
+
+| Área | Original | Após as correções |
+|---|---|---|
+| `res/` | 589 arquivos | 589 |
+| `assets/` | 41 | 41 |
+| `lib/` | 3 | 3 |
+| `unknown/` | 4 | 4 |
+| `AndroidManifest.xml` | — | byte-idêntico |
+| `apktool.json` | — | byte-idêntico |
+| métodos de `CustomThemeV128` | 39 | 39 (+ 0 removidos) |
