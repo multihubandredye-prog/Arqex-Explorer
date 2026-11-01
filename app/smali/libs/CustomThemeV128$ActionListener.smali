@@ -64,22 +64,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_1
-
-    iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
-
-    iget-object v2, p0, Llibs/CustomThemeV128$ActionListener;->settingsRow:Landroid/widget/TextView;
-
-    invoke-static {v1, v2}, Llibs/CustomThemeV128;->showHubDialog(Landroid/content/Context;Landroid/widget/TextView;)V
-
-    return-void
-
-    :cond_1
-    const/4 v1, 0x3
-
     if-ne v0, v1, :cond_3
-
-    invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 

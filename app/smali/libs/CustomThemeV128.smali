@@ -13,9 +13,6 @@
 .end method
 
 
-
-
-
 .method public static appendSettingsRow(Lcom/mixplorer/activities/PreferenceActivity;Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)V
     .registers 9
 
@@ -159,123 +156,6 @@
 .end method
 
 
-.method public static attachSkinsDialogHeader(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;)V
-    .registers 11
-
-    if-eqz p0, :cond_a4
-
-    if-eqz p1, :cond_a4
-
-    :try_start_4
-    iget-object v0, p1, Llibs/ml1;->Six:Landroid/widget/LinearLayout;
-
-    if-eqz v0, :cond_a4
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    new-instance v2, Landroid/widget/LinearLayout;
-
-    invoke-direct {v2, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
-
-    const/16 v3, 0x10
-
-    invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setGravity(I)V
-
-    new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
-
-    const/4 v4, -0x1
-
-    const/4 v5, -0x2
-
-    invoke-direct {v3, v4, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-
-    const/high16 v4, 0x41400000    # 12.0f
-
-    invoke-static {v4}, Llibs/ModernUiTheme;->dp(F)I
-
-    move-result v4
-
-    const/high16 v5, 0x40800000    # 4.0f
-
-    invoke-static {v5}, Llibs/ModernUiTheme;->dp(F)I
-
-    move-result v5
-
-    invoke-virtual {v3, v4, v5, v4, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-static {}, Llibs/CustomThemeV128;->resolveAccent()I
-
-    move-result v3
-
-    const-string v4, "arqex_theme_backup_themes_button"
-
-    const-string v7, "Backup / Themes"
-
-    invoke-static {p0, v4, v7}, Llibs/ArqexStrings;->get(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {p0, v4, v3, v1}, Llibs/CustomThemeV128;->createPillButton(Landroid/content/Context;Ljava/lang/String;IZ)Landroid/widget/TextView;
-
-    move-result-object v4
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setSingleLine(Z)V
-
-    invoke-static {v4}, Llibs/ArqexButtonFit;->fit(Landroid/widget/TextView;)V
-
-    new-instance v5, Landroid/widget/LinearLayout$LayoutParams;
-
-    const/4 v6, 0x0
-
-    const/4 v8, -0x2
-
-    const/high16 v7, 0x3f800000    # 1.0f
-
-    invoke-direct {v5, v6, v8, v7}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
-
-    const/high16 v6, 0x40800000    # 4.0f
-
-    invoke-static {v6}, Llibs/ModernUiTheme;->dp(F)I
-
-    move-result v6
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v5, v6, v8, v6, v8}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
-
-    invoke-virtual {v4, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    new-instance v5, Llibs/CustomThemeV128$ActionListener;
-
-    const/4 v6, 0x3
-
-    invoke-direct {v5, p0, v6}, Llibs/CustomThemeV128$ActionListener;-><init>(Landroid/content/Context;I)V
-
-    iput-object p1, v5, Llibs/CustomThemeV128$ActionListener;->dialog:Llibs/ml1;
-
-    invoke-virtual {v4, v5}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    invoke-virtual {v0, v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
-    :try_end_a3
-    .catchall {:try_start_4 .. :try_end_a3} :catchall_a4
-
-    nop
-
-    :catchall_a4
-    :cond_a4
-    return-void
-.end method
-
 .method private static buildActionCard(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIILandroid/view/View$OnClickListener;)Landroid/view/View;
     .registers 14
 
@@ -387,9 +267,6 @@
 
     return-object v0
 .end method
-
-
-
 
 
 .method private static collectBackupFiles(Landroid/content/Context;)Ljava/util/ArrayList;
@@ -1156,8 +1033,6 @@
 .end method
 
 
-
-
 .method private static readUtf8File(Ljava/lang/String;)Ljava/lang/String;
     .registers 6
 
@@ -1555,7 +1430,6 @@
     :cond_2d
     return-object p0
 .end method
-
 
 
 .method public static shareExportedFile(Landroid/content/Context;Ljava/lang/String;)V
@@ -1998,6 +1872,5 @@
     :cond_fc
     return-void
 .end method
-
 
 

@@ -29623,8 +29623,6 @@
     .line 290
     .line 291
     :goto_122
-    invoke-static {v0, v1}, Llibs/CustomThemeV128;->attachSkinsDialogHeader(Lcom/mixplorer/activities/PreferenceActivity;Llibs/ml1;)V
-
     new-instance v2, Llibs/le2;
 
     .line 292

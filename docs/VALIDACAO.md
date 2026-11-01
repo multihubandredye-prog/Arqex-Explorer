@@ -245,3 +245,18 @@ sendo barrado.
 
 Efeito colateral esperado: APK com chave diferente NAO instala por cima de um app ja
 instalado. Para trocar de build, desinstalar antes.
+
+## Botao "Backup / Temas" do Skins removido (v1.44.0)
+
+A pedido do dono do projeto, o pilulas "Backup / Temas" que ficava no topo do dialogo de
+Skins saiu. Backup e restauracao existem so na linha BACKUP E RESTAURACAO das Configuracoes.
+
+Removido:
+* metodo `attachSkinsDialogHeader` (115 linhas) e a chamada dele em `PreferenceActivity`;
+* acao `0x3` do `ActionListener` (que fechava o Skins e abria o hub);
+* string `arqex_theme_backup_themes_button` nos 4 locales.
+
+Mantido: a canetinha de cada tema (editor de cores), os botoes Export e Add do rodape do
+Skins, e todo o backup/restauracao pela linha das Configuracoes.
+
+`createPillButton` continua em uso pelo `showImportDialog`, entao nao foi tocado.

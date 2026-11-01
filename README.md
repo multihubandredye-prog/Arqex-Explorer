@@ -86,9 +86,12 @@ pedido do dono do projeto, porque a edição já existe na canetinha de cada tem
 aplicativo agora tem:
 
 * **BACKUP E RESTAURAÇÃO** nas Configurações: exportar backup completo e importar;
-* o botão **Backup / Temas** dentro do diálogo de Skins;
-* a **canetinha** de cada tema, que continua abrindo o editor de cores por chave
-  (`BG_PAGE`, `BG_BAR_MAIN`, ...).
+* a **canetinha** de cada tema no diálogo de Skins, com o editor de cores por chave
+  (`BG_PAGE`, `BG_BAR_MAIN`, ...);
+* os botões **Export** e **Add** do rodapé do Skins, que são da galeria de temas.
+
+O botão "Backup / Temas" que ficava no topo do diálogo de Skins foi **removido**: backup e
+restauração agora existem só na linha das Configurações.
 
 Não existe mais "+ Criar Tema Personalizado".
 

@@ -68,6 +68,10 @@ check("3f. tipos do backup cobrem B/I/L/F/S",
 check("3g. hub so exporta backup completo e importa",
       "exportBackup" in ct and "showImportDialog" in ct)
 check("3h. botao de criar tema removido do Skins", "arqex_theme_create_button" not in ct)
+check("3i. cabecalho do Skins removido (botao Backup / Temas)",
+      "attachSkinsDialogHeader" not in ct and
+      "arqex_theme_backup_themes_button" not in ct)
+check("3j. acao 0x3 do listener removida junto", "const/4 v1, 0x3" not in al)
 
 # 4. Centralizacao da janela Skins
 dc = open(L("libs/ArqexDialogCenter.smali"), errors="replace").read()
@@ -91,8 +95,7 @@ if RES:
     vals = glob.glob(os.path.join(RES, "values*"))
     check("7a. >=50 diretorios de idioma", len(vals) >= 50, "encontrados=%d" % len(vals))
     base = open(os.path.join(RES, "values", "strings.xml"), errors="replace").read()
-    for k in ("arqex_theme_row_title", "arqex_theme_hub_title",
-              "arqex_theme_backup_themes_button"):
+    for k in ("arqex_theme_row_title", "arqex_theme_hub_title"):
         check("7b. chave presente: %s" % k, ('name="%s"' % k) in base)
     ptbr = os.path.join(RES, "values-pt-rBR", "strings.xml")
     if os.path.exists(ptbr):

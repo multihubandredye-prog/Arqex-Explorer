@@ -50,7 +50,6 @@
     <string name="arqex_theme_row_title" formatted="false">BACKUP E RESTAURAÇÃO</string>
     <string name="arqex_theme_active_prefix" formatted="false">\nTema ativo: </string>
     <string name="arqex_theme_row_summary" formatted="false">  •  Exportar e importar configurações</string>
-    <string name="arqex_theme_backup_themes_button" formatted="false">Cópia de segurança / Temas</string>
     <string name="arqex_theme_hub_title" formatted="false">Backup e Restauração</string>
     <string name="arqex_theme_create_edit_desc" formatted="false">Escolha as cores da página, barras, menus, destaques, pastas e texto; ajuste com RGB ou HEX e veja a pré-visualização.</string>
     <string name="arqex_theme_export_full_title" formatted="false">Exportar cópia de segurança completa</string>
