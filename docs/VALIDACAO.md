@@ -231,3 +231,17 @@ existe agora uma auditoria separada, que roda no CI e falha se:
 Testado ao contrario: retirando o `invoke-direct` do `ArqexDialogCenter$LayoutWatcher` e
 renomeando `refreshSettingsRowText`, a auditoria acusa as duas falhas. Estado atual da
 arvore: 10/10.
+
+## APK assinado no release (a partir da v1.43.0)
+
+Ate a v1.42.0 o release saia sem APK, porque nao havia chave configurada. Isso obrigava a
+compilar no celular e deixava duvida sobre qual build estava instalada. Agora
+`signing/arqex-release.jks` fica no repositorio e o CI assina o APK quando os secrets de
+assinatura nao existem; `Arqex-<versao>.apk` e anexado ao release.
+
+O certificado e conferido contra `signing/signer-sha256.txt` (ou contra a variavel
+`ARQEX_SIGNER_SHA256`, quando ha secrets), entao um APK com certificado diferente continua
+sendo barrado.
+
+Efeito colateral esperado: APK com chave diferente NAO instala por cima de um app ja
+instalado. Para trocar de build, desinstalar antes.

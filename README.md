@@ -62,9 +62,22 @@ O ZIP que fica na raiz deste repositório **não compila sozinho** (falta `apkto
 `resources.arsc`); é a base original, guardada como referência. O `projeto/` do release já
 tem tudo.
 
-Quando a assinatura estiver configurada, o `.apk` assinado é anexado junto, e o SHA-256 do
-ZIP vai no texto da release. Não há mais `fontes-smali.zip` (a árvore smali já está em
-`projeto/smali/`) nem `SHA256SUMS` separado.
+Junto vem **`Arqex-<versao>.apk`**, já assinado, para instalar direto sem compilar nada.
+O SHA-256 do ZIP vai no texto da release. Não há mais `fontes-smali.zip` (a árvore smali já
+está em `projeto/smali/`) nem `SHA256SUMS` separado.
+
+### Assinatura
+
+`signing/arqex-release.jks` (alias `arqex`, senha `arqex-release`, validade até 2056) está
+versionada no repositório e é usada quando os secrets `ARQEX_KEYSTORE_B64`,
+`ARQEX_KEY_ALIAS`, `ARQEX_STORE_PASSWORD` e `ARQEX_KEY_PASSWORD` não estão configurados.
+Se os 4 secrets existirem, eles têm prioridade e a chave do repositório é ignorada; nesse
+caso a variável `ARQEX_SIGNER_SHA256` continua obrigatória para conferir o certificado.
+
+O SHA-256 do certificado da chave do repositório está em `signing/signer-sha256.txt`.
+
+Consequência prática: **APK assinado com chave diferente não instala por cima** de um já
+instalado. Ao trocar de chave (ou vindo de um build antigo), desinstale o aplicativo antes.
 
 ## Escopo atual do aplicativo
 

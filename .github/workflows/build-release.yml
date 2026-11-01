@@ -111,7 +111,7 @@ jobs:
           grep -c "^native-code:" "$RUNNER_TEMP/badging.txt" || true
           grep "^native-code:" "$RUNNER_TEMP/badging.txt" || echo "::warning::sem bibliotecas nativas declaradas"
 
-      - name: Assinar (falha segura quando a configuracao esta incompleta)
+      - name: Assinar o APK
         id: sign
         env:
           ARQEX_KEYSTORE_B64: ${{ secrets.ARQEX_KEYSTORE_B64 }}
@@ -127,38 +127,52 @@ jobs:
           done
           echo "secrets de assinatura presentes: $present/4"
 
-          if [ "$present" -eq 0 ]; then
-            echo "has_apk=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Nenhuma chave configurada. O release publicara apenas fontes/DEX. NAO havera APK."
-            exit 0
-          fi
-          if [ "$present" -lt 4 ]; then
+          if [ "$present" -eq 4 ]; then
+            if [ -z "${ARQEX_SIGNER_SHA256:-}" ]; then
+              echo "::error::Variable ARQEX_SIGNER_SHA256 ausente: impossivel verificar o certificado. Nada sera publicado."
+              exit 1
+            fi
+            KS="$RUNNER_TEMP/arqex-keystore.jks"
+            ALIAS="$ARQEX_KEY_ALIAS"
+            STORE_PASS="$ARQEX_STORE_PASSWORD"
+            KEY_PASS="$ARQEX_KEY_PASSWORD"
+            EXPECTED="$ARQEX_SIGNER_SHA256"
+            printf '%s' "$ARQEX_KEYSTORE_B64" | base64 -d > "$KS" || { echo "::error::ARQEX_KEYSTORE_B64 invalido"; exit 1; }
+          elif [ "$present" -eq 0 ]; then
+            # Sem secrets: usa a chave que esta no proprio repositorio. Nao serve para
+            # publicar na Play Store, mas resolve instalacao por cima em uso proprio.
+            KS="signing/arqex-release.jks"
+            if [ ! -f "$KS" ]; then
+              echo "has_apk=false" >> "$GITHUB_OUTPUT"
+              echo "::notice::Sem chave de assinatura. O release sai sem APK."
+              exit 0
+            fi
+            ALIAS="arqex"
+            STORE_PASS="arqex-release"
+            KEY_PASS="arqex-release"
+            EXPECTED="$(cat signing/signer-sha256.txt)"
+            echo "::notice::Assinando com a chave do repositorio (signing/arqex-release.jks)."
+          else
             echo "::error::Configuracao de assinatura PARCIAL ($present/4 secrets). Nada sera publicado."
             exit 1
           fi
-          if [ -z "${ARQEX_SIGNER_SHA256:-}" ]; then
-            echo "::error::Variable ARQEX_SIGNER_SHA256 ausente: impossivel verificar o certificado. Nada sera publicado."
-            exit 1
-          fi
 
-          KS="$RUNNER_TEMP/arqex-keystore.jks"
-          trap 'rm -f "$KS"' EXIT
-          printf '%s' "$ARQEX_KEYSTORE_B64" | base64 -d > "$KS" || { echo "::error::ARQEX_KEYSTORE_B64 invalido"; exit 1; }
-
+          export ARQEX_STORE_PASSWORD="$STORE_PASS"
+          export ARQEX_KEY_PASSWORD="$KEY_PASS"
           zipalign -f -p 4 out/Arqex-unsigned.apk out/Arqex-aligned.apk
           apksigner sign \
-            --ks "$KS" --ks-key-alias "$ARQEX_KEY_ALIAS" \
+            --ks "$KS" --ks-key-alias "$ALIAS" \
             --ks-pass "env:ARQEX_STORE_PASSWORD" --key-pass "env:ARQEX_KEY_PASSWORD" \
             --v1-signing-enabled true --v2-signing-enabled true --v3-signing-enabled true \
             --out out/Arqex-signed.apk out/Arqex-aligned.apk || { echo "::error::apksigner falhou"; exit 1; }
 
           apksigner verify --verbose --print-certs out/Arqex-signed.apk | tee out/signature-report.txt
           actual=$(grep -oE "SHA-256 digest: [0-9a-f]+" out/signature-report.txt | head -1 | awk '{print $3}')
-          expected=$(printf '%s' "$ARQEX_SIGNER_SHA256" | tr -d ':' | tr 'A-F' 'a-f')
+          expected=$(printf '%s' "$EXPECTED" | tr -d ':' | tr 'A-F' 'a-f')
           echo "certificado do APK: $actual"
           echo "certificado esperado: $expected"
-          if [ "$actual" != "$expected" ]; then
-            echo "::error::O SHA-256 do certificado nao confere com ARQEX_SIGNER_SHA256. APK NAO sera publicado."
+          if [ "${actual:-}" != "$expected" ]; then
+            echo "::error::O SHA-256 do certificado nao confere. APK NAO sera publicado."
             exit 1
           fi
           echo "has_apk=true" >> "$GITHUB_OUTPUT"
@@ -192,7 +206,7 @@ jobs:
           rm -rf pkg
           if [ -f out/Arqex-signed.apk ]; then
             cp out/signature-report.txt . || true
-            cp out/Arqex-signed.apk .
+            cp out/Arqex-signed.apk "Arqex-$V.apk"
           fi
           test -s "Arqex-$V.zip" || { echo "::error::ZIP do projeto nao foi gerado"; exit 1; }
           sha256sum "Arqex-$V.zip"
@@ -264,7 +278,9 @@ jobs:
             echo "SHA-256 do ZIP: $(sha256sum Arqex-*.zip | awk '{print $1}')"
             echo
             if [ "$HAS_APK" = "true" ]; then
-              echo "APK assinado anexado (assinatura conferida contra ARQEX_SIGNER_SHA256)."
+              echo "APK assinado anexado: Arqex-$TAG.apk"
+              echo "Se o aplicativo ja estava instalado, desinstale antes: a assinatura do APK"
+              echo "anterior e diferente e o Android recusa a atualizacao por cima."
             else
               echo "Sem APK: nenhuma chave de assinatura esta configurada no repositorio."
             fi
