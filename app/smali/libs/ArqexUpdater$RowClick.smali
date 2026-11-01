@@ -25,10 +25,10 @@
 .method public constructor <init>(Landroid/app/Activity;)V
     .registers 2
 
-    .line 126
+    .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 127
+    .line 129
     iput-object p1, p0, Llibs/ArqexUpdater$RowClick;->activity:Landroid/app/Activity;
 
     return-void
@@ -39,7 +39,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 3
 
-    .line 131
+    .line 133
     iget-object p1, p0, Llibs/ArqexUpdater$RowClick;->activity:Landroid/app/Activity;
 
     const/4 v0, 0x1

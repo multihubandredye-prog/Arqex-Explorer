@@ -27,13 +27,13 @@
 .method constructor <init>(Landroid/content/Context;Z)V
     .registers 3
 
-    .line 164
+    .line 166
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 165
+    .line 167
     iput-object p1, p0, Llibs/ArqexUpdater$Check;->ctx:Landroid/content/Context;
 
-    .line 166
+    .line 168
     iput-boolean p2, p0, Llibs/ArqexUpdater$Check;->manual:Z
 
     return-void
@@ -42,7 +42,7 @@
 .method static synthetic access$000(Llibs/ArqexUpdater$Check;)Landroid/content/Context;
     .registers 1
 
-    .line 160
+    .line 162
     iget-object p0, p0, Llibs/ArqexUpdater$Check;->ctx:Landroid/content/Context;
 
     return-object p0
@@ -51,7 +51,7 @@
 .method static synthetic access$100(Llibs/ArqexUpdater$Check;)Z
     .registers 1
 
-    .line 160
+    .line 162
     iget-boolean p0, p0, Llibs/ArqexUpdater$Check;->manual:Z
 
     return p0
@@ -64,12 +64,12 @@
 
     const-string v0, "HTTP "
 
-    .line 171
+    .line 173
     const-string v1, ""
 
     const/4 v2, 0x0
 
-    .line 176
+    .line 178
     :try_start_5
     new-instance v3, Ljava/net/URL;
 
@@ -87,30 +87,30 @@
 
     const/16 v4, 0x2710
 
-    .line 177
+    .line 179
     :try_start_14
     invoke-virtual {v3, v4}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
     const/16 v4, 0x3a98
 
-    .line 178
+    .line 180
     invoke-virtual {v3, v4}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
 
-    .line 179
+    .line 181
     const-string v4, "User-Agent"
 
     const-string v5, "Arqex-Explorer-Updater"
 
     invoke-virtual {v3, v4, v5}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 180
+    .line 182
     const-string v4, "Accept"
 
     const-string v5, "application/vnd.github+json"
 
     invoke-virtual {v3, v4, v5}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 181
+    .line 183
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v4
@@ -119,7 +119,7 @@
 
     if-eq v4, v5, :cond_43
 
-    .line 183
+    .line 185
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -138,13 +138,13 @@
 
     goto/16 :goto_bf
 
-    .line 185
+    .line 187
     :cond_43
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v0
 
-    .line 186
+    .line 188
     new-instance v4, Ljava/io/BufferedReader;
 
     new-instance v5, Ljava/io/InputStreamReader;
@@ -155,12 +155,12 @@
 
     invoke-direct {v4, v5}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 187
+    .line 189
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 189
+    .line 191
     :goto_58
     invoke-virtual {v4}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
@@ -168,7 +168,7 @@
 
     if-eqz v5, :cond_68
 
-    .line 190
+    .line 192
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -179,11 +179,11 @@
 
     goto :goto_58
 
-    .line 192
+    .line 194
     :cond_68
     invoke-virtual {v4}, Ljava/io/BufferedReader;->close()V
 
-    .line 193
+    .line 195
     new-instance v4, Lorg/json/JSONObject;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -192,7 +192,7 @@
 
     invoke-direct {v4, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 194
+    .line 196
     const-string v0, "tag_name"
 
     invoke-virtual {v4, v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -203,7 +203,7 @@
 
     if-eqz v0, :cond_83
 
-    .line 195
+    .line 197
     :try_start_7c
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -213,7 +213,7 @@
 
     move-object v0, v2
 
-    .line 198
+    .line 200
     :cond_83
     const-string v5, "body"
 
@@ -223,7 +223,7 @@
     :try_end_89
     .catchall {:try_start_7c .. :try_end_89} :catchall_ce
 
-    .line 199
+    .line 201
     :try_start_89
     const-string v6, "assets"
 
@@ -235,7 +235,7 @@
 
     const/4 v6, 0x0
 
-    .line 201
+    .line 203
     :goto_92
     invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
 
@@ -243,7 +243,7 @@
 
     if-ge v6, v7, :cond_bb
 
-    .line 202
+    .line 204
     invoke-virtual {v4, v6}, Lorg/json/JSONArray;->optJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v7
@@ -252,7 +252,7 @@
 
     goto :goto_b8
 
-    .line 206
+    .line 208
     :cond_9f
     const-string v8, "name"
 
@@ -260,7 +260,7 @@
 
     move-result-object v8
 
-    .line 207
+    .line 209
     const-string v9, ".apk"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -269,7 +269,7 @@
 
     if-eqz v8, :cond_b8
 
-    .line 208
+    .line 210
     const-string v1, "browser_download_url"
 
     invoke-virtual {v7, v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -306,7 +306,7 @@
     :goto_bf
     if-eqz v3, :cond_c4
 
-    .line 219
+    .line 221
     :try_start_c1
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_c4
@@ -364,7 +364,7 @@
 
     move-object v3, v1
 
-    .line 215
+    .line 217
     :goto_db
     :try_start_db
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -379,7 +379,7 @@
 
     if-eqz v3, :cond_e8
 
-    .line 219
+    .line 221
     :try_start_e5
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_e8
@@ -395,7 +395,7 @@
 
     move-object v9, v5
 
-    .line 229
+    .line 231
     :goto_ec
     :try_start_ec
     new-instance v0, Landroid/os/Handler;
@@ -426,13 +426,13 @@
 
     if-eqz v3, :cond_106
 
-    .line 219
+    .line 221
     :try_start_103
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_106
     .catchall {:try_start_103 .. :try_end_106} :catchall_106
 
-    .line 223
+    .line 225
     :catchall_106
     :cond_106
     throw v0

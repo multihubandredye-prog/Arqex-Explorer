@@ -92,10 +92,12 @@ public final class ArqexUpdater {
             row.setGravity(16);
             row.setTextColor(va3.e("TEXT_GRID_PRIMARY", "#FFEFF3F8"));
             row.setTextSize(2, 14.5f);
+            String instalada = currentVersion(act);
             row.setText(ArqexStrings.get(act, "arqex_update_row_title", "CHECK FOR UPDATES")
                     + "\n"
                     + ArqexStrings.get(act, "arqex_update_row_summary",
-                    "Tap to see if there is a new version"));
+                    "Tap to check for a new version")
+                    + "  v" + instalada);
             row.setOnClickListener(new RowClick(act));
 
             View spacer = new View(act);
