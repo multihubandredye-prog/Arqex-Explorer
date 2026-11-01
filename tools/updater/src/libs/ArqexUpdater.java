@@ -60,6 +60,10 @@ public final class ArqexUpdater {
     private static final String K_NOTIFIED = "notified_tag";
     private static final String K_DL_ID = "download_id";
     private static final String K_DL_TAG = "download_tag";
+    private static final String K_DIALOG_TAG = "dialog_tag";
+    private static final String K_ASKED_NOTIF = "asked_notifications";
+
+    private static final int REQ_NOTIF = 0x4152;
 
     private static final String CHANNEL = "arqex_updates";
     private static final int NOTIF_ID = 0x415251;
@@ -144,7 +148,7 @@ public final class ArqexUpdater {
             return;
         }
         prefs.edit().putLong(K_LAST_CHECK, now).apply();
-        new Thread(new Check(ctx.getApplicationContext(), false)).start();
+        new Thread(new Check(ctx.getApplicationContext(), Check.BACKGROUND)).start();
     }
 
     /** manual=true mostra dialogo; manual=false so notifica. */
@@ -154,18 +158,73 @@ public final class ArqexUpdater {
         }
         Context worker = manual ? ctx : ctx.getApplicationContext();
         try {
-            new Thread(new Check(worker, manual)).start();
+            new Thread(new Check(worker, manual ? Check.MANUAL : Check.BACKGROUND)).start();
+        } catch (Throwable ignored) {
+        }
+    }
+
+    /**
+     * Chamado ao abrir o aplicativo. Verifica respeitando o intervalo, pede a permissao de
+     * notificacao uma vez (Android 13+) e, se houver versao nova, mostra o dialogo com o
+     * changelog, independente de a notificacao estar liberada ou nao.
+     */
+    public static void checkOnStart(Activity act) {
+        if (act == null) {
+            return;
+        }
+        try {
+            askNotificationsOnce(act);
+        } catch (Throwable ignored) {
+        }
+        try {
+            SharedPreferences prefs = act.getSharedPreferences(PREFS, 0);
+            long last = prefs.getLong(K_LAST_CHECK, 0L);
+            long now = System.currentTimeMillis();
+            if (last > 0L && now - last < CHECK_INTERVAL_MS) {
+                return;
+            }
+            prefs.edit().putLong(K_LAST_CHECK, now).apply();
+            new Thread(new Check(act.getApplicationContext(), Check.START)).start();
+        } catch (Throwable ignored) {
+        }
+    }
+
+    /** Pede POST_NOTIFICATIONS uma unica vez (Android 13+). */
+    private static void askNotificationsOnce(Activity act) {
+        try {
+            if (Build.VERSION.SDK_INT < 23) {
+                return;
+            }
+            SharedPreferences prefs = act.getSharedPreferences(PREFS, 0);
+            if (prefs.getBoolean(K_ASKED_NOTIF, false)) {
+                return;
+            }
+            prefs.edit().putBoolean(K_ASKED_NOTIF, true).apply();
+            if (act.checkSelfPermission("android.permission.POST_NOTIFICATIONS")
+                    == PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            act.requestPermissions(new String[] { "android.permission.POST_NOTIFICATIONS" },
+                    REQ_NOTIF);
         } catch (Throwable ignored) {
         }
     }
 
     private static final class Check implements Runnable {
-        private final Context ctx;
-        private final boolean manual;
+        static final int BACKGROUND = 0;
+        static final int MANUAL = 1;
+        static final int START = 2;
 
-        Check(Context c, boolean m) {
+        private final Context ctx;
+        private final int mode;
+
+        Check(Context c, int m) {
             this.ctx = c;
-            this.manual = m;
+            this.mode = m;
+        }
+
+        private boolean manual() {
+            return mode == MANUAL;
         }
 
         public void run() {
@@ -230,7 +289,7 @@ public final class ArqexUpdater {
             try {
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     public void run() {
-                        onResult(ctx, manual, fTag, fBody, fApk, fError);
+                        onResult(ctx, mode, fTag, fBody, fApk, fError);
                     }
                 });
             } catch (Throwable ignored) {
@@ -238,8 +297,9 @@ public final class ArqexUpdater {
         }
     }
 
-    private static void onResult(Context ctx, boolean manual, String tag, String body,
+    private static void onResult(Context ctx, int mode, String tag, String body,
                                  String apk, String error) {
+        boolean manual = mode == Check.MANUAL;
         try {
             String current = currentVersion(ctx);
             if (error != null) {
@@ -266,10 +326,17 @@ public final class ArqexUpdater {
             SharedPreferences prefs = ctx.getSharedPreferences(PREFS, 0);
             if (apk != null) {
                 prefs.edit().putString(K_APK_URL, apk).apply();
+                prefs.edit().putString(K_NOTIFIED, tag).apply();
             }
             notifyUpdate(ctx, tag, prefs);
-            if (manual) {
+            boolean mostra = manual;
+            if (mode == Check.START) {
+                // ao abrir o app: uma vez por versao, mesmo que a notificacao esteja bloqueada
+                mostra = !tag.equals(prefs.getString(K_DIALOG_TAG, ""));
+            }
+            if (mostra) {
                 dialog(ctx, "Atualizacao disponivel: " + tag, changelogText(tag, current, body));
+                prefs.edit().putString(K_DIALOG_TAG, tag).apply();
             }
         } catch (Throwable ignored) {
         }
@@ -336,12 +403,18 @@ public final class ArqexUpdater {
             if (Build.VERSION.SDK_INT < 26) {
                 return;
             }
-            if (tag.equals(prefs.getString(K_NOTIFIED, ""))) {
-                return;
-            }
             NotificationManager nm = (NotificationManager)
                     ctx.getSystemService(Context.NOTIFICATION_SERVICE);
             if (nm == null) {
+                return;
+            }
+            // No Android 13+ a permissao POST_NOTIFICATIONS e de tempo de execucao: sem ela,
+            // notify() nao faz nada. Aqui a gente checa e nao marca como "ja avisado", para
+            // poder avisar depois que o usuario liberar.
+            if (!nm.areNotificationsEnabled()) {
+                return;
+            }
+            if (tag.equals(prefs.getString(K_NOTIFIED, ""))) {
                 return;
             }
             NotificationChannel channel = new NotificationChannel(CHANNEL,

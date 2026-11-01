@@ -94,6 +94,23 @@ check("8h. linha injetada nas Configuracoes",
           L("com/mixplorer/activities/PreferenceActivity.smali"), errors="replace").read())
 check("8i0. intervalo de checagem automatica = 1 minuto (fase de testes)",
       "0xea60" in up and "0x5265c00" not in up)
+check("8j. checagem no start do app (activity inicial)",
+      "Llibs/ArqexUpdater;->checkOnStart(Landroid/app/Activity;)V" in open(
+          L("com/mixplorer/activities/BrowseActivity.smali"), errors="replace").read())
+check("8k. checa se notificacao esta liberada antes de notificar",
+      "areNotificationsEnabled" in up)
+check("8l. pede POST_NOTIFICATIONS em tempo de execucao (Android 13+)",
+      "android.permission.POST_NOTIFICATIONS" in up and "requestPermissions" in up)
+check("8m. dialogo de atualizacao aparece so uma vez por versao",
+      "dialog_tag" in up)
+check("8n. notifyUpdate nao virou metodo vazio (checagem real de notificacao)",
+      "areNotificationsEnabled" in up and "notify(" in up)
+check("8o. askNotificationsOnce nao virou metodo vazio", "requestPermissions" in up)
+vazios = [m.group(1) for m in re.finditer(
+    r"\.method[^\n]*?([\w$<>]+)\([^\n]*\n\s*\.registers \d+\n\s*\n?\s*return-void\n\.end method", up)]
+check("8p. nenhum metodo do updater ficou vazio", not vazios, "vazios=%s" % vazios)
+check("8q. stub do SDK_INT nao e constante de compilacao (evita codigo morto)",
+      "sdkInt()" in open("tools/updater/stubs/android/os/Build.java", encoding="utf-8").read())
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 

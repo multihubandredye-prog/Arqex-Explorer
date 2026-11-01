@@ -1,5 +1,6 @@
 package android.app;
 public class NotificationManager {
+    public boolean areNotificationsEnabled() { return true; }
     public static final int IMPORTANCE_DEFAULT = 3;
     public static final int IMPORTANCE_LOW = 2;
     public void createNotificationChannel(NotificationChannel c) {}

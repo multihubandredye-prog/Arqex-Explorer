@@ -1,6 +1,8 @@
 package android.app;
 import android.content.Context;
 public class Activity extends Context {
+    public int checkSelfPermission(String p) { return 0; }
+    public void requestPermissions(String[] p, int code) {}
     public boolean isFinishing() { return false; }
     @Override public android.content.pm.PackageManager getPackageManager() { return null; }
     @Override public String getPackageName() { return ""; }

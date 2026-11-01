@@ -296,3 +296,40 @@ nao defeito do app.
 
 Nao verificado em aparelho: notificacao, download e instalacao de fato. O primeiro teste
 real acontece quando a versao instalada for menor que a publicada.
+
+## Notificacao de atualizacao nao aparecia (corrigido na v1.49.0)
+
+Sintoma: a verificacao manual (linha das Configuracoes) mostrava o dialogo com a versao
+nova, mas nenhuma notificacao aparecia.
+
+Causa raiz: no Java de `tools/updater`, o stub `android.os.Build` declarava
+`public static final int SDK_INT = 0;`. Isso e uma **constante de compilacao**: o javac
+inlina o valor, entao todo `if (Build.VERSION.SDK_INT < 26) return;` virou
+`if (0 < 26) return;` e o resto do metodo foi considerado codigo morto. Resultado:
+`notifyUpdate` foi compilado como
+
+```smali
+.method private static notifyUpdate(...)V
+    .registers 3
+    return-void
+.end method
+```
+
+ou seja, um metodo vazio. A logica toda estava no fonte e nao existia no APK, desde a
+v1.46.0. O mesmo aconteceu com `askNotificationsOnce`.
+
+Correcao: `SDK_INT` agora vem de um metodo (`sdkInt()`), que nao e constante de compilacao,
+entao as verificacoes de API ficam no bytecode. `notifyUpdate` passou de 0 para 29
+instrucoes de chamada e `askNotificationsOnce` para 7.
+
+Testes novos (bloco 8):
+* 8n/8o - notifyUpdate e askNotificationsOnce precisam conter as chamadas reais;
+* 8p - nenhum metodo do updater pode ser um `return-void` solitario;
+* 8q - o stub do SDK_INT nao pode voltar a ser constante de compilacao.
+
+Tambem nesta versao:
+* a checagem roda ao **abrir o app** (`BrowseActivity.onCreate`), nao so nas Configuracoes;
+* o dialogo com o changelog aparece uma vez por versao **mesmo com notificacao bloqueada**
+  (no Android 13+ POST_NOTIFICATIONS e permissao de tempo de execucao e o app pode estar sem
+  ela). O app pede a permissao uma vez;
+* o app so marca "ja avisei" depois de checar `areNotificationsEnabled()`.

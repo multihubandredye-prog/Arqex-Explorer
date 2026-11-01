@@ -21495,6 +21495,8 @@
     .line 1
     invoke-super {p0, p1}, Llibs/ia2;->onCreate(Landroid/os/Bundle;)V
 
+    invoke-static {p0}, Llibs/ArqexUpdater;->checkOnStart(Landroid/app/Activity;)V
+
     .line 2
     .line 3
     .line 4
