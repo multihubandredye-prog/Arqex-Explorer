@@ -231,7 +231,7 @@ public final class ArqexUpdater {
             final String apk = apkUrlFor(prefs, tag);
             String corpo = prefs.getString(K_RELEASE_BODY, "");
             String titulo = tag.length() > 0
-                    ? "Atualizacao disponivel: " + tag
+                    ? "Atualização disponível: " + tag
                     : "Atualizacao disponivel";
             AlertDialog.Builder b = new AlertDialog.Builder(act);
             b.setTitle(titulo);
@@ -377,15 +377,15 @@ public final class ArqexUpdater {
             String current = currentVersion(ctx);
             if (error != null) {
                 if (manual) {
-                    infoDialog(ctx, "Nao foi possivel verificar",
-                            "A verificacao falhou (" + error + ").\n\nConfira a conexao com a internet e tente de novo.");
+                    infoDialog(ctx, "Não foi possível verificar",
+                            "A verificação falhou (" + error + ").\n\nConfira a conexao com a internet e tente de novo.");
                 }
                 return;
             }
             if (tag == null) {
                 if (manual) {
-                    infoDialog(ctx, "Nao foi possivel verificar",
-                            "O GitHub nao devolveu a versao mais recente.");
+                    infoDialog(ctx, "Não foi possível verificar",
+                            "O GitHub não devolveu a versão mais recente.");
                 }
                 return;
             }
@@ -396,8 +396,8 @@ public final class ArqexUpdater {
                 limpar.edit().remove(K_APK_URL).apply();
                 limpar.edit().remove(K_APK_TAG).apply();
                 if (manual) {
-                    infoDialog(ctx, "Sem atualizacoes",
-                            "Voce ja esta na versao mais recente (" + current + ").");
+                    infoDialog(ctx, "Sem atualizações",
+                            "Você já está na versão mais recente (" + current + ").");
                 }
                 return;
             }
@@ -420,7 +420,7 @@ public final class ArqexUpdater {
                 mostra = !tag.equals(prefs.getString(K_DIALOG_TAG, ""));
             }
             if (mostra) {
-                dialog(ctx, tag, "Atualizacao disponivel: " + tag, changelogText(ctx, tag, current, body));
+                dialog(ctx, tag, "Atualização disponível: " + tag, changelogText(ctx, tag, current, body));
                 prefs.edit().putString(K_DIALOG_TAG, tag).apply();
             }
         } catch (Throwable ignored) {
@@ -443,13 +443,13 @@ public final class ArqexUpdater {
     private static String changelogText(Context ctx, String tag, String current, String body) {
         StringBuilder sb = new StringBuilder();
         if (!notificationsAllowed(ctx)) {
-            sb.append("Aviso: as notificacoes do Arqex estao bloqueadas neste aparelho, por");
-            sb.append(" isso voce nao recebe aviso automatico de versao nova. Para liberar:");
-            sb.append(" Configuracoes do Android > Apps > Arqex Explorer > Notificacoes.");
+            sb.append("Aviso: as notificações do Arqex estão bloqueadas neste aparelho, por");
+            sb.append(" isso você não recebe aviso automático de versão nova. Para liberar:");
+            sb.append(" Configurações do Android > Apps > Arqex Explorer > Notificações.");
             sb.append("\n\n");
         }
-        sb.append("Sua versao: ").append(current).append('\n');
-        sb.append("Nova versao: ").append(tag).append('\n');
+        sb.append("Sua versão: ").append(current).append('\n');
+        sb.append("Nova versão: ").append(tag).append('\n');
         if (body != null && body.length() > 0) {
             sb.append('\n');
             String limpo = body;
@@ -565,8 +565,8 @@ public final class ArqexUpdater {
                 return;
             }
             NotificationChannel channel = new NotificationChannel(CHANNEL,
-                    "Atualizacoes do Arqex", NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription("Avisa quando existe uma versao nova do Arqex Explorer");
+                    "Atualizações do Arqex", NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription("Avisa quando existe uma versão nova do Arqex Explorer");
             nm.createNotificationChannel(channel);
 
             Intent launch = ctx.getPackageManager().getLaunchIntentForPackage(ctx.getPackageName());
@@ -581,8 +581,8 @@ public final class ArqexUpdater {
                     PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
             Notification n = new Notification.Builder(ctx, CHANNEL)
-                    .setContentTitle("Atualizacao disponivel: " + tag)
-                    .setContentText("Toque para instalar a nova versao do Arqex Explorer")
+                    .setContentTitle("Atualização disponível: " + tag)
+                    .setContentText("Toque para instalar a nova versão do Arqex Explorer")
                     .setSmallIcon(ctx.getApplicationInfo().icon)
                     .setAutoCancel(true)
                     .setContentIntent(pi)
@@ -614,7 +614,7 @@ public final class ArqexUpdater {
             String name = "Arqex-" + (tag == null ? "update" : tag) + ".apk";
             DownloadManager.Request req = new DownloadManager.Request(Uri.parse(apkUrl));
             req.setTitle("Arqex Explorer " + (tag == null ? "" : tag));
-            req.setDescription("Baixando a atualizacao");
+            req.setDescription("Baixando a atualização");
             req.setMimeType("application/vnd.android.package-archive");
             req.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
             req.setDestinationInExternalFilesDir(app, Environment.DIRECTORY_DOWNLOADS, name);

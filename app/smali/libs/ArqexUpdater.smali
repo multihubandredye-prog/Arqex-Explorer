@@ -496,13 +496,13 @@
     if-nez p0, :cond_10
 
     .line 446
-    const-string p0, "Aviso: as notificacoes do Arqex estao bloqueadas neste aparelho, por isso voce nao recebe aviso automatico de versao nova. Para liberar: Configuracoes do Android > Apps > Arqex Explorer > Notificacoes.\n\n"
+    const-string p0, "Aviso: as notifica\u00e7\u00f5es do Arqex est\u00e3o bloqueadas neste aparelho, por isso voc\u00ea n\u00e3o recebe aviso autom\u00e1tico de vers\u00e3o nova. Para liberar: Configura\u00e7\u00f5es do Android > Apps > Arqex Explorer > Notifica\u00e7\u00f5es.\n\n"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 451
     :cond_10
-    const-string p0, "Sua versao: "
+    const-string p0, "Sua vers\u00e3o: "
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -512,7 +512,7 @@
 
     move-result-object p0
 
-    const-string p2, "\nNova versao: "
+    const-string p2, "\nNova vers\u00e3o: "
 
     invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1079,7 +1079,7 @@
     invoke-virtual {v5, p2}, Landroid/app/DownloadManager$Request;->setTitle(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;
 
     .line 617
-    const-string p2, "Baixando a atualizacao"
+    const-string p2, "Baixando a atualiza\u00e7\u00e3o"
 
     invoke-virtual {v5, p2}, Landroid/app/DownloadManager$Request;->setDescription(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;
 
@@ -1386,7 +1386,7 @@
     const-string v2, "last_notify"
 
     .line 0
-    const-string v3, "Atualizacao disponivel: "
+    const-string v3, "Atualiza\u00e7\u00e3o dispon\u00edvel: "
 
     .line 547
     :try_start_8
@@ -1467,14 +1467,14 @@
     :cond_44
     new-instance v5, Landroid/app/NotificationChannel;
 
-    const-string v6, "Atualizacoes do Arqex"
+    const-string v6, "Atualiza\u00e7\u00f5es do Arqex"
 
     const/4 v7, 0x3
 
     invoke-direct {v5, v0, v6, v7}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
     .line 569
-    const-string v6, "Avisa quando existe uma versao nova do Arqex Explorer"
+    const-string v6, "Avisa quando existe uma vers\u00e3o nova do Arqex Explorer"
 
     invoke-virtual {v5, v6}, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
 
@@ -1559,7 +1559,7 @@
 
     move-result-object v0
 
-    const-string v3, "Toque para instalar a nova versao do Arqex Explorer"
+    const-string v3, "Toque para instalar a nova vers\u00e3o do Arqex Explorer"
 
     .line 585
     invoke-virtual {v0, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
@@ -1683,11 +1683,11 @@
 .method private static onResult(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .registers 15
 
-    const-string v0, "Atualizacao disponivel: "
+    const-string v0, "Atualiza\u00e7\u00e3o dispon\u00edvel: "
 
-    const-string v1, "Voce ja esta na versao mais recente ("
+    const-string v1, "Voc\u00ea j\u00e1 est\u00e1 na vers\u00e3o mais recente ("
 
-    const-string v2, "A verificacao falhou ("
+    const-string v2, "A verifica\u00e7\u00e3o falhou ("
 
     const/4 v3, 0x0
 
@@ -1712,7 +1712,7 @@
     .catchall {:try_start_d .. :try_end_11} :catchall_f3
 
     .line 378
-    const-string v7, "Nao foi possivel verificar"
+    const-string v7, "N\u00e3o foi poss\u00edvel verificar"
 
     if-eqz p5, :cond_2e
 
@@ -1749,7 +1749,7 @@
     if-eqz v5, :cond_37
 
     .line 387
-    const-string p1, "O GitHub nao devolveu a versao mais recente."
+    const-string p1, "O GitHub n\u00e3o devolveu a vers\u00e3o mais recente."
 
     invoke-static {p0, v7, p1}, Llibs/ArqexUpdater;->infoDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1803,7 +1803,7 @@
     if-eqz v5, :cond_78
 
     .line 399
-    const-string p1, "Sem atualizacoes"
+    const-string p1, "Sem atualiza\u00e7\u00f5es"
 
     new-instance p2, Ljava/lang/StringBuilder;
 
@@ -2150,7 +2150,7 @@
     const-string v0, ""
 
     .line 0
-    const-string v1, "Atualizacao disponivel: "
+    const-string v1, "Atualiza\u00e7\u00e3o dispon\u00edvel: "
 
     .line 230
     :try_start_4

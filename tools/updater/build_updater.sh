@@ -15,7 +15,7 @@ CACHE="${CACHE:-$HOME/.cache/arqex-tools}"
 [ -f "$CACHE/r8.jar" ] || curl -sL https://dl.google.com/dl/android/maven2/com/android/tools/r8/8.3.37/r8-8.3.37.jar -o "$CACHE/r8.jar"
 
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
-javac -source 8 -target 8 -nowarn -d "$TMP/classes" \
+javac -source 8 -target 8 -nowarn -encoding UTF-8 -d "$TMP/classes" \
   $(find tools/updater/stubs -name '*.java') $(find tools/updater/src -name '*.java')
 java -cp "$CACHE/r8.jar" com.android.tools.r8.D8 --min-api 21 --release \
   --lib tools/updater/stubs --classpath tools/updater/stubs --output "$TMP" \
