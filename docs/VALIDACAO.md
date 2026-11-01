@@ -435,3 +435,12 @@ gravada nesse caminho.
 
 Testes: 16 (manual nao posta notificacao), 16b (mostra o modal), 16c (nao grava notified_tag),
 16d (a automatica continua notificando). Total: 38 de comportamento.
+
+## Versao de verificacao (v1.62.0)
+
+Release sem mudanca de comportamento: o objetivo e ter um alvo novo para conferir em aparelho se
+notificacao, modal, download e instalacao continuam corretos de ponta a ponta.
+
+Unica alteracao: as notas da release ganharam a secao "### Atualização dentro do app", depois de
+"### Como instalar" (o marcador de corte continua sendo "### Como instalar", entao o modal segue
+mostrando apenas as novidades). README atualizado para 1.62.0.

@@ -5,7 +5,7 @@ Este repositório guarda o **APK já compilado e desmontado** (smali, recursos e
 ferramentas de build, os testes e a automação que publica cada versão.
 
 - **Pacote:** `com.arqex.explorer`
-- **Versão deste README:** 1.60.0
+- **Versão deste README:** 1.62.0
 - **Download:** https://github.com/multihubandredye-prog/Arqex-Explorer/releases
 - **Base:** MiXplorer (código smali derivado do DEX, sem projeto Gradle)
 

@@ -290,6 +290,11 @@ jobs:
             echo "2. Toque no arquivo baixado para instalar. Atualiza por cima da versão"
             echo "   anterior: a assinatura é a mesma, não precisa desinstalar."
             echo
+            echo "### Atualização dentro do app"
+            echo
+            echo "Com o Arqex aberto, o app consulta esta página uma vez por dia e avisa por"
+            echo "notificação. No aviso você pode baixar e instalar sem sair do aplicativo."
+            echo
             echo "### Código-fonte"
             echo
             echo "\`Arqex-$TAG.zip\` traz a pasta \`projeto/\` pronta para compilar:"
