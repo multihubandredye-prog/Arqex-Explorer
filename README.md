@@ -85,6 +85,25 @@ O código fica em `tools/updater/src/libs/ArqexUpdater.java` e é compilado para
 `bash tools/updater/build_updater.sh` (javac → d8 → baksmali). Escrever isso em smali na mão
 já custou dois `VerifyError`, então o caminho é sempre esse.
 
+### Quando o aviso aparece
+
+* Ao abrir o app (`BrowseActivity.onCreate`) e ao abrir as Configurações: no máximo uma vez
+  por minuto (`CHECK_INTERVAL_MS`).
+* Havendo versão nova: notificação no Android (canal "Atualizações do Arqex") e, uma vez por
+  versão, um diálogo com o changelog.
+* O diálogo aparece mesmo com notificação bloqueada; nesse caso ele avisa que a notificação
+  está bloqueada e mostra o caminho para liberar.
+* "Baixar e instalar" baixa pelo `DownloadManager` e abre o instalador do sistema.
+
+### Armadilhas já encontradas (não repetir)
+
+1. Método compilado vazio: `SDK_INT` como constante de compilação no stub fez o `javac`
+   descartar o corpo inteiro do `notifyUpdate`. O stub agora usa método, e o teste 8p
+   reprova qualquer método do updater que vire `return-void` solitário.
+2. Marca de "já avisei" antes de notificar: o guarda de duplicidade abortava a notificação.
+   A marca é gravada só depois do `notify()` (teste 8n2) e o
+   `tests/updater/UpdateNotifyTest.java` cobre o caminho completo com objetos falsos.
+
 ## Escopo atual do aplicativo
 
 O estúdio de tema personalizado e os presets (OLED/Verde/Rosa/Claro) foram **removidos** a
