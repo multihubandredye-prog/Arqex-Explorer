@@ -356,3 +356,34 @@ Agora:
 
 Testes: 8aa (receiver no manifesto), 8ab (abrirInstalador + pending_install_uri), 8ac
 (installPending); comportamento 11/11b (abre e limpa o pendente), 12 (sem pendente nao abre).
+
+## Site nao abre sozinho ao iniciar (v1.59.0)
+
+Sintoma relatado: ao abrir o app com versao nova no ar, as vezes o navegador abria direto na
+pagina de releases.
+
+Causa: a checagem automatica (`onAppResume`) criava o `Check` com `getApplicationContext()` e o
+`onResult` do modo START chamava `dialog(...)` com esse contexto. `AlertDialog` precisa de uma
+janela de Activity: `show()` estourava `BadTokenException`, o `catch` chamava `notifyFallback`
+que, por sua vez, fazia `openBrowser(RELEASES)`. Ou seja, o site abria exatamente quando a
+checagem automatica encontrava versao nova.
+
+Correcoes:
+
+* `onAppResume` passa a **Activity** para o `Check` (o modal tem janela para aparecer);
+* `dialog()` e `infoDialog()` exigem Activity viva (`podeMostrarJanela`); sem janela, so a
+  notificacao avisa e nada mais acontece;
+* `notifyFallback` removido: nenhum caminho abre o navegador sem o usuario tocar em "Abrir no
+  navegador";
+* `install()` e o `catch` do `download()` deixaram de cair no navegador;
+* o `PendingIntent` da notificacao nao cai mais num `ACTION_VIEW` para as releases quando o
+  intent de abertura do app nao e encontrado.
+
+Os unicos `openBrowser` que sobraram sao os dois botoes "Abrir no navegador".
+
+Testes: stub de `AlertDialog` agora imita o Android e estoura quando o contexto nao e Activity
+(antes nao estourava e escondia o bug). Comportamento 13/13b/13c (contexto sem janela nao abre
+navegador, notificacao continua saindo, nenhum dialogo tentado) e 13d/13e (com Activity o modal
+abre e o navegador fica quieto). Invariantes 8ad (dialog sem openBrowser), 8ae (notifyFallback
+removido), 8af (onAppResume entrega a Activity), 8ag (podeMostrarJanela), 8ah (toque da
+notificacao sem URL de releases). Total: 92 invariantes, 10 de consistencia, 24 de comportamento.

@@ -33,7 +33,7 @@
 .method constructor <init>(Llibs/ArqexUpdater$Check;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 372
+    .line 378
     iput-object p1, p0, Llibs/ArqexUpdater$Check$1;->this$0:Llibs/ArqexUpdater$Check;
 
     iput-object p2, p0, Llibs/ArqexUpdater$Check$1;->val$fTag:Ljava/lang/String;
@@ -54,7 +54,7 @@
 .method public run()V
     .registers 8
 
-    .line 374
+    .line 380
     iget-object v0, p0, Llibs/ArqexUpdater$Check$1;->this$0:Llibs/ArqexUpdater$Check;
 
     # getter for: Llibs/ArqexUpdater$Check;->ctx:Landroid/content/Context;

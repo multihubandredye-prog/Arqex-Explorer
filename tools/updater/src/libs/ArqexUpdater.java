@@ -188,7 +188,10 @@ public final class ArqexUpdater {
                 return;
             }
             prefs.edit().putLong(K_LAST_CHECK, now).apply();
-            new Thread(new Check(act.getApplicationContext(), Check.START)).start();
+            // A Activity vai junto: o modal precisa de uma janela de verdade. Antes ia o
+            // applicationContext, o AlertDialog estourava BadTokenException e o catch abria
+            // o navegador -- por isso o site do GitHub abria sozinho ao abrir o app.
+            new Thread(new Check(act, Check.START)).start();
         } catch (Throwable ignored) {
         }
     }
@@ -225,7 +228,10 @@ public final class ArqexUpdater {
                 return;
             }
             prefs.edit().putLong(K_LAST_CHECK, now).apply();
-            new Thread(new Check(act.getApplicationContext(), Check.START)).start();
+            // A Activity vai junto: o modal precisa de uma janela de verdade. Antes ia o
+            // applicationContext, o AlertDialog estourava BadTokenException e o catch abria
+            // o navegador -- por isso o site do GitHub abria sozinho ao abrir o app.
+            new Thread(new Check(act, Check.START)).start();
         } catch (Throwable ignored) {
         }
     }
@@ -266,8 +272,8 @@ public final class ArqexUpdater {
                 }
             });
             b.show();
-        } catch (Throwable t) {
-            openBrowser(act.getApplicationContext(), RELEASES);
+        } catch (Throwable ignored) {
+            // idem: nunca abrir o site sozinho
         }
     }
 
@@ -438,6 +444,19 @@ public final class ArqexUpdater {
 
     // ------------------------------------------------------------------ textos
 
+    /** True quando da para mostrar um AlertDialog agora (precisa ser Activity viva). */
+    static boolean podeMostrarJanela(Context ctx) {
+        if (!(ctx instanceof Activity)) {
+            return false;
+        }
+        Activity act = (Activity) ctx;
+        try {
+            return !act.isFinishing();
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
     /** True quando o sistema vai entregar as notificacoes do app. */
     static boolean notificationsAllowed(Context ctx) {
         try {
@@ -488,6 +507,9 @@ public final class ArqexUpdater {
 
     /** Modal informativo: so um botao. Usado quando NAO ha atualizacao. */
     private static void infoDialog(Context ctx, String title, String message) {
+        if (!podeMostrarJanela(ctx)) {
+            return;
+        }
         try {
             AlertDialog.Builder b = new AlertDialog.Builder(ctx);
             b.setTitle(title);
@@ -522,6 +544,11 @@ public final class ArqexUpdater {
 
     /** Modal de atualizacao: baixar (se houver APK daquela versao), navegador ou depois. */
     private static void dialog(final Context ctx, final String tag, String title, String message) {
+        if (!podeMostrarJanela(ctx)) {
+            // Sem Activity nao existe janela para o modal. A notificacao ja foi postada em
+            // notifyUpdate; abrir o navegador aqui seria abrir o site sem o usuario pedir.
+            return;
+        }
         try {
             AlertDialog.Builder b = new AlertDialog.Builder(ctx);
             b.setTitle(title);
@@ -555,8 +582,8 @@ public final class ArqexUpdater {
                 }
             });
             b.show();
-        } catch (Throwable t) {
-            notifyFallback(ctx);
+        } catch (Throwable ignored) {
+            // nao cai para o navegador: quem avisa e a notificacao
         }
     }
 
@@ -591,8 +618,11 @@ public final class ArqexUpdater {
 
             Intent launch = ctx.getPackageManager().getLaunchIntentForPackage(ctx.getPackageName());
             if (launch == null) {
-                launch = new Intent(Intent.ACTION_VIEW);
-                launch.setData(Uri.parse(RELEASES));
+                // Antes caia num ACTION_VIEW com a URL das releases: tocar na notificacao
+                // abria o site. Agora cai numa abertura normal do app.
+                launch = new Intent(Intent.ACTION_MAIN);
+                launch.addCategory(Intent.CATEGORY_LAUNCHER);
+                launch.setPackage(ctx.getPackageName());
             }
             // O toque abre o app; a marca abaixo faz o modal de atualizacao aparecer assim
             // que ele volta para a frente (serve tanto para app fechado quanto aberto).
@@ -614,13 +644,6 @@ public final class ArqexUpdater {
         }
     }
 
-    private static void notifyFallback(Context ctx) {
-        try {
-            openBrowser(ctx, RELEASES);
-        } catch (Throwable ignored) {
-        }
-    }
-
     // ------------------------------------------------------------------ download + instalacao
 
     private static void download(Context ctx, String tag, String apkUrl) {
@@ -628,7 +651,9 @@ public final class ArqexUpdater {
             Context app = ctx.getApplicationContext();
             DownloadManager dm = (DownloadManager) app.getSystemService(Context.DOWNLOAD_SERVICE);
             if (dm == null || apkUrl == null) {
-                openBrowser(app, RELEASES);
+                infoDialog(ctx, "Não foi possível baixar",
+                        "O download não pôde ser iniciado. Use \"Abrir no navegador\" na próxima "
+                                + "vez que o aviso aparecer.");
                 return;
             }
             String name = "Arqex-" + (tag == null ? "update" : tag) + ".apk";
@@ -650,10 +675,10 @@ public final class ArqexUpdater {
             // chegava, e a partir do Android 14 o registro sem flag de exportacao pode falhar
             // (a excecao caia no catch e ninguem instalava nada).
         } catch (Throwable t) {
-            try {
-                openBrowser(ctx.getApplicationContext(), RELEASES);
-            } catch (Throwable ignored) {
-            }
+            // falha no download: avisa na tela, sem jogar o usuario no navegador
+            infoDialog(ctx, "Não foi possível baixar",
+                    "O download não pôde ser iniciado. Use \"Abrir no navegador\" na próxima "
+                            + "vez que o aviso aparecer.");
         }
     }
 
@@ -732,7 +757,8 @@ public final class ArqexUpdater {
         try {
             Uri uri = uriOf(ctx, id);
             if (uri == null) {
-                openBrowser(ctx.getApplicationContext(), RELEASES);
+                // sem URI nao da para instalar; a notificacao do DownloadManager continua la.
+                // Nao abrir o navegador sozinho.
                 return;
             }
             if (!abrirInstalador(ctx.getApplicationContext(), uri)) {
@@ -740,11 +766,8 @@ public final class ArqexUpdater {
                 ctx.getSharedPreferences(PREFS, 0)
                         .edit().putString(K_PENDING_URI, uri.toString()).apply();
             }
-        } catch (Throwable t) {
-            try {
-                openBrowser(ctx.getApplicationContext(), RELEASES);
-            } catch (Throwable ignored) {
-            }
+        } catch (Throwable ignored) {
+            // nao abre o navegador sozinho aqui
         }
     }
 

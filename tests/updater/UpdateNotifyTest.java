@@ -221,11 +221,20 @@ public class UpdateNotifyTest {
         public Context getApplicationContext() {
             return ctx;
         }
+
+        @Override
+        public android.content.pm.PackageManager getPackageManager() {
+            return ctx.pm;
+        }
+
+        FakeContext dono() {
+            return ctx;
+        }
     }
 
     // ---------------------------------------------------------------- chamada do metodo privado
 
-    static void onResult(FakeContext ctx, int modo, String tag, String apk, String erro)
+    static void onResult(Context ctx, int modo, String tag, String apk, String erro)
             throws Exception {
         Method m = ArqexUpdater.class.getDeclaredMethod("onResult", Context.class, int.class,
                 String.class, String.class, String.class, String.class);
@@ -322,6 +331,25 @@ public class UpdateNotifyTest {
         check("10. sem atualizacao o link antigo e removido",
                 ArqexUpdater.apkUrlFor(ctx6.prefs, "v9.9.9") == null,
                 "apk_url=" + ctx6.prefs.getString("apk_url", null));
+
+        // 13. o site NAO abre sozinho quando o app e aberto com versao nova (bug do
+        //     BadTokenException: o modal ia com applicationContext, estourava e o catch
+        //     abria o navegador)
+        FakeContext ctx9 = new FakeContext();
+        int janelasAntes = android.app.AlertDialog.mostrados;
+        onResult(ctx9, START, "v9.9.9", "https://exemplo/apk", null);
+        check("13. contexto sem janela nao abre o navegador",
+                ctx9.activitiesAbertas == 0, "startActivity=" + ctx9.activitiesAbertas);
+        check("13b. e a notificacao continua saindo",
+                ctx9.pm.nm.postadas.size() == 1, "postadas=" + ctx9.pm.nm.postadas.size());
+        check("13c. sem Activity nenhum dialogo e tentado",
+                android.app.AlertDialog.mostrados == janelasAntes);
+
+        // 13d. com Activity o modal abre (e o navegador continua quieto)
+        FakeActivity act10 = new FakeActivity(new FakeContext());
+        onResult(act10, START, "v9.9.9", "https://exemplo/apk", null);
+        check("13d. com Activity o modal abre", android.app.AlertDialog.mostrados == janelasAntes + 1);
+        check("13e. e o navegador nao abre", act10.dono().activitiesAbertas == 0);
 
         // 11. instalacao pendente: abre o instalador quando o app volta para a frente
         FakeContext ctx7 = new FakeContext();

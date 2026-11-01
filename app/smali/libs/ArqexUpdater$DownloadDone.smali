@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 661
+    .line 686
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .registers 12
 
-    .line 664
+    .line 689
     const-string v0, "arqex_updater"
 
     :try_start_2
@@ -43,7 +43,7 @@
 
     const/4 p2, 0x0
 
-    .line 665
+    .line 690
     invoke-virtual {p1, v0, p2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -78,13 +78,13 @@
     :cond_27
     move-wide v4, v1
 
-    .line 670
+    .line 695
     :goto_28
     invoke-virtual {p1, v0, p2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object p2
 
-    .line 671
+    .line 696
     # invokes: Llibs/ArqexUpdater;->uriOf(Landroid/content/Context;J)Landroid/net/Uri;
     invoke-static {p1, v4, v5}, Llibs/ArqexUpdater;->access$500(Landroid/content/Context;J)Landroid/net/Uri;
 
@@ -94,7 +94,7 @@
 
     return-void
 
-    .line 677
+    .line 702
     :cond_33
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -112,7 +112,7 @@
 
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 678
+    .line 703
     invoke-static {p1, v0}, Llibs/ArqexUpdater;->abrirInstalador(Landroid/content/Context;Landroid/net/Uri;)Z
     :try_end_47
     .catchall {:try_start_2 .. :try_end_47} :catchall_47

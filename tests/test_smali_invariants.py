@@ -164,6 +164,25 @@ check("8ab. instalador abre sozinho ao terminar o download",
       "abrirInstalador" in up and "pending_install_uri" in up)
 check("8ac. instalacao pendente e retomada quando o app volta",
       "installPending" in up)
+def _metodo(txt, nome):
+    """Corpo do metodo smali, do .method ate o .end method."""
+    m = re.search(r"\.method[^\n]*" + re.escape(nome) + r"\(", txt)
+    if not m:
+        return ""
+    fim = txt.find(".end method", m.end())
+    return txt[m.start():fim if fim > 0 else len(txt)]
+
+
+_dialog = _metodo(up, "dialog")
+check("8ad. modal nunca abre o navegador sozinho", _dialog != "" and "openBrowser" not in _dialog)
+check("8ae. fallback que abria o site foi removido", "notifyFallback" not in up)
+_onres = _metodo(up, "onAppResume")
+check("8af. onAppResume entrega a Activity ao Check (nao o application context)",
+      _onres != "" and "getApplicationContext" not in _onres)
+check("8ag. so mostra janela quando ha Activity viva", "podeMostrarJanela" in up)
+_notif = _metodo(up, "notifyUpdate")
+check("8ah. toque na notificacao nunca cai numa URL das releases",
+      _notif != "" and "Arqex-Explorer/releases" not in _notif)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 
