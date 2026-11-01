@@ -96,6 +96,7 @@ jobs:
       - name: Testes estaticos do smali final
         run: |
           python3 tests/test_smali_invariants.py out/fontes_smali app/res
+          python3 tests/test_dex_consistency.py out/fontes_smali
 
       - name: Conferir metadados do APK (manifesto, versao, recursos, libs)
         run: |

@@ -217,3 +217,17 @@ O `VerifyError` da v1.40.0 nao foi pego por nenhum passo do CI: o `smali` monta 
 validar tipos. Por isso a defesa agora e estrutural — os metodos que ficaram sao
 byte-identicos ao original (conferido metodo a metodo) e so `showHubDialog`,
 `attachSkinsDialogHeader` e o `onClick` mudaram.
+
+## Auditoria de consistencia (tests/test_dex_consistency.py)
+
+Os dois VerifyError que apareceram (registrador com tipo errado e construtor sem chamada ao
+super) passam pelo build sem erro, porque montar o DEX nao valida nada disso. Por isso
+existe agora uma auditoria separada, que roda no CI e falha se:
+
+1. algum construtor nao chamar o construtor da superclasse;
+2. alguma classe do projeto referenciar uma classe `libs/` que nao existe;
+3. algum metodo/campo nosso referenciado nao existir mais (caso tipico de poda).
+
+Testado ao contrario: retirando o `invoke-direct` do `ArqexDialogCenter$LayoutWatcher` e
+renomeando `refreshSettingsRowText`, a auditoria acusa as duas falhas. Estado atual da
+arvore: 10/10.
