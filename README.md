@@ -103,3 +103,14 @@ cp out/classes.dex app/classes.dex  # opcional: manter o DEX versionado em sincr
 `tools/build.sh` recompila **sempre** a partir de `app/smali`, então o release nunca
 depende do `classes.dex` commitado. `MODE=zip bash tools/build.sh` força o caminho antigo
 (base ZIP + patches).
+
+## Escopo atual (revisado)
+
+O estudio de tema personalizado e os presets (OLED/Verde/Rosa/Claro) foram **removidos**
+a pedido do dono do projeto. O aplicativo agora tem:
+
+* **BACKUP E RESTAURACAO** nas Configuracoes: exportar backup completo e importar;
+* **Skins**: a canetinha de cada tema continua abrindo o editor de cores por chave
+  (`BG_PAGE`, `BG_BAR_MAIN`, ...), e o botao "Backup / Temas" segue no dialogo.
+
+Nao existe mais "+ Criar Tema Personalizado".

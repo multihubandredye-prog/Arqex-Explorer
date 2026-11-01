@@ -852,12 +852,12 @@
     <string name="arqex_view_size_column_many" formatted="false"> columns</string>
     <string name="arqex_view_size_default_button" formatted="false">Default</string>
     <string name="arqex_view_size_default_suffix" formatted="false"> (Default)</string>
-    <string name="arqex_theme_row_title" formatted="false">CUSTOM THEME &amp; BACKUP</string>
+    <string name="arqex_theme_row_title" formatted="false">BACKUP AND RESTORE</string>
     <string name="arqex_theme_active_prefix" formatted="false">\nActive theme: </string>
-    <string name="arqex_theme_row_summary" formatted="false">  •  Create themes, export and import settings</string>
+    <string name="arqex_theme_row_summary" formatted="false">  •  Export and import settings</string>
     <string name="arqex_theme_create_button" formatted="false">+ Create Custom Theme</string>
     <string name="arqex_theme_backup_themes_button" formatted="false">Backup / Themes</string>
-    <string name="arqex_theme_hub_title" formatted="false">Custom Themes &amp; Backup</string>
+    <string name="arqex_theme_hub_title" formatted="false">Backup and Restore</string>
     <string name="arqex_theme_create_edit_title" formatted="false">Create / Edit My Theme</string>
     <string name="arqex_theme_create_edit_desc" formatted="false">Choose colors for the page, bars, menus, highlights, folders, and text; use RGB or HEX controls and preview as you go.</string>
     <string name="arqex_theme_export_full_title" formatted="false">Export Full Backup</string>
@@ -976,9 +976,6 @@
     <string name="arqex_help_topic_13_body" formatted="false">§ Zoom Strength on Open\nIn Settings or View → Options → Visual Effects, enable Zoom on open and drag Zoom strength to choose from +2% to +40%. Tap Test to preview the effect; Default resets it to +13%.\n\n§ Make the Theme Your Own\nIn Settings, open CUSTOM THEME &amp; BACKUP and choose Create / Edit My Theme. Enter a name, choose a preset, and tap any row or square to open the palette. Pick a swatch or adjust RGB/HEX values. The preview updates as you edit. Save and Apply adds the custom theme to the THEMES selector.\n\n§ Export, Share, and Restore\nExport Full Backup saves themes and preferences in an .arqex.json file. Export Themes Only creates a smaller package. To restore, choose Import Themes / Settings and select a listed file or enter its path. The file is saved in Download/ArqexExplorer when Android allows access; otherwise, use the app’s external files folder.</string>
     <string name="arqex_theme_preview_folder" formatted="false">Projects and Documents</string>
     <string name="arqex_theme_preview_live" formatted="false">LIVE</string>
-    <string name="arqex_theme_preset_green" formatted="false">Green</string>
-    <string name="arqex_theme_preset_pink" formatted="false">Pink</string>
-    <string name="arqex_theme_preset_light" formatted="false">Light</string>
     <string name="arqex_theme_rgb_preview_prefix" formatted="false">Color preview: </string>
     <string name="arqex_smart_copy_path" formatted="false">Copy full path</string>
     <string name="arqex_smart_copy_paths_count_suffix" formatted="false"> paths copied</string>

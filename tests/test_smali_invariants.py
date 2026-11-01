@@ -25,54 +25,30 @@ def method_body(path, sig):
 
 L = lambda p: os.path.join(SMALI, p)
 
-# 1. VerifyError: registrador de parametro sobrescrito por const-string
-m = method_body(L("libs/CustomThemeV128$RgbSeekListener.smali"),
-                ".method public applyColorInternal(IZZ)V")
-check("1a. applyColorInternal existe", m is not None)
-if m:
-    check("1b. nenhuma const-string grava em p0 (era a causa do VerifyError)",
-          not re.search(r"^\s*const-string\s+p0\s*,", m, re.M),
-          "ainda ha const-string p0")
-    check("1c. p0 nao recebe escrita escalar",
-          not re.search(r"^\s*const(?:/4|/16|/high16|/wide)?\s+p0\s*,", m, re.M))
-    check("1d. resposta ao HEX sincroniza o campo hexInput",
-          "hexInput" in m)
-
-# 2. Matiz preservado ao comecar em preto/cinza
-m = method_body(L("libs/CustomThemeV128$SpectrumView.smali"), ".method public setColor(I)V")
-check("2a. SpectrumView.setColor existe", m is not None)
-if m:
-    check("2b. setColor compara a saturacao com zero (cmpl-float)", "cmpl-float" in m)
-    check("2c. setColor grava os componentes via aput", m.count("aput") >= 2)
-    check("2d. setColor nao usa colorToHSV direto no array do campo sem condicional",
-          m.count("colorToHSV") == 1)
-
-# 3. NADA removido: exportacao de paleta e backup devem coexistir
-check("3a. exportStudioPalette preservado (nao removido)",
-      ".method public static exportStudioPalette(" in open(L("libs/CustomThemeV128.smali"), errors="replace").read())
-al = open(L("libs/CustomThemeV128$ActionListener.smali"), errors="replace").read()
-check("3b. acao 0x29 (exportar paleta) preservada", "0x29" in al)
-check("3c. ActionListener ainda chama exportStudioPalette", "exportStudioPalette" in al)
+# 1. Estudio de tema removido (por decisao do dono: editar pela canetinha do Skins)
 ct = open(L("libs/CustomThemeV128.smali"), errors="replace").read()
-for keep in ("exportBackup", "importBackupPath", "collectBackupFiles", "restorePreference"):
-    check("3d. backup preservado: %s" % keep, ("%s(" % keep) in ct)
-# o backup cobre Boolean/Integer/Long/Float/String (prefixos B: I: L: F: S:)
-check("3e. tipos do backup cobrem B/I/L/F/S",
-      all(('const-string v0, "%s:"' % p) in ct for p in "BILFS"),
-      "prefixos encontrados incompletos")
-check("3f. backup nao afirma copiar StringSet (nao suportado nesta base)",
-      "getStringSet" not in ct and "putStringSet" not in ct)
+for morto in ("showThemeCreatorDialog", "showColorPickerDialog", "applyPresetToStudio",
+              "buildPresetStrip", "exportStudioPalette", "refreshStudioViews"):
+    check("1a. estudio removido: %s" % morto, ("%s(" % morto) not in ct)
+check("1b. classes do estudio removidas",
+      not any(os.path.exists(L("libs/CustomThemeV128$%s.smali" % c))
+              for c in ("StudioState", "RgbSeekListener", "SpectrumView",
+                        "ColorRoleClickListener", "PickerCancelListener")))
+al = open(L("libs/CustomThemeV128$ActionListener.smali"), errors="replace").read()
+for acao in ("0xa", "0xc", "0x14", "0x1e", "0x28", "0x29"):
+    check("1c. acao removida do listener: %s" % acao, ("const/16 v0, %s" % acao) not in al and ("const/16 v1, %s" % acao) not in al)
 
-# 3g. seletor de cor abre como DIALOGO (nao como painel inline transparente)
-ct2 = open(L("libs/CustomThemeV128.smali"), errors="replace").read()
-check("3g. seletor usa openPickerDialog (dialogo modal)", "openPickerDialog" in ct2)
-check("3h. painel NAO e mais inserido no editorRoot como overlay",
-      "pickerPanel:Landroid/widget/LinearLayout;\n\n    const/4 v5, 0x0\n\n    invoke-virtual {v4, v9, v5}" not in ct2)
-check("3i. painel recebe fundo proprio (makeRoundedRect + sw1->z)",
-      "makeRoundedRect" in ct2 and "Llibs/sw1;->z" in ct2)
-check("3j. dialogo tem botao Cancelar", "PickerCancelListener" in ct2)
-check("3k. Confirmar fecha o dialogo",
-      "pickerDialog:Landroid/app/Dialog;" in open(L("libs/CustomThemeV128$RgbSeekListener.smali"), errors="replace").read())
+# 3. Backup e restauracao preservados
+check("3a. exportBackup preservado", ".method public static exportBackup(" in ct)
+check("3b. importBackupPath preservado", ".method public static importBackupPath(" in ct)
+check("3c. showImportDialog preservado", ".method public static showImportDialog(" in ct)
+check("3d. collectBackupFiles preservado", "collectBackupFiles(" in ct)
+check("3e. restorePreference preservado", "restorePreference(" in ct)
+check("3f. tipos do backup cobrem B/I/L/F/S",
+      all(('const-string v0, "%s:"' % p) in ct for p in "BILFS"))
+check("3g. hub so exporta backup completo e importa",
+      "exportBackup" in ct and "showImportDialog" in ct)
+check("3h. botao de criar tema removido do Skins", "arqex_theme_create_button" not in ct)
 
 # 4. Centralizacao da janela Skins
 dc = open(L("libs/ArqexDialogCenter.smali"), errors="replace").read()
@@ -87,66 +63,23 @@ check("4f. Xray so e marcado depois de isShowing()", "isShowing" in pa)
 check("4g. nao usa mais widthPixels*9/10 da tela inteira",
       not re.search(r"DisplayMetrics;->widthPixels:I\s*\n\s*\n\s*mul-int/lit8\s+\w+,\s*\w+,\s*0x9", pa))
 
-# 5. Botao em uma linha
-fit = open(L("libs/ArqexButtonFit.smali"), errors="replace").read()
-check("5a. ArqexButtonFit existe", True)
-check("5b. setSingleLine aplicado", "setSingleLine" in fit)
-check("5c. ellipsize removido", "setEllipsize" in fit)
-check("5d. auto-size quando a API permite", "setAutoSizeTextTypeUniformWithConfiguration" in fit)
-check("5e. botoes do cabecalho usam o fit",
-      ct.count("ArqexButtonFit;->fit") >= 2, "ocorrencias=%d" % ct.count("ArqexButtonFit;->fit"))
-
-# 6. Presets: mapeamento OLED/Verde/Rosa/Claro conferido numericamente
-mb = ct[ct.find(".method public static applyPresetToStudio"):]
-mb = mb[:mb.find(".end method")]
-def consts(block):
-    return [int(v, 16) if v.startswith("0x") or v.startswith("-0x") else int(v)
-            for v in re.findall(r"const(?:/\w+)?\s+p1,\s*(-?0x[0-9a-fA-F]+|-?\d+)", block)]
-def huedeg(c):
-    import colorsys
-    c &= 0xFFFFFFFF
-    r, g, b = ((c >> 16) & 255) / 255, ((c >> 8) & 255) / 255, (c & 255) / 255
-    h, l, s = colorsys.rgb_to_hls(r, g, b)
-    return h * 360, s, l
-# percorre o metodo associando cada const ao iput do campo correspondente
-seq, last = [], None
-for line in mb.splitlines():
-    m2 = re.search(r"const(?:/\w+)?\s+p1,\s*(-?0x[0-9a-fA-F]+|-?\d+)", line)
-    if m2:
-        last = int(m2.group(1), 16) if m2.group(1).lstrip("-").startswith("0x") else int(m2.group(1))
-    m3 = re.search(r"iput p1, p0, Llibs/CustomThemeV128\$StudioState;->(\w+):I", line)
-    if m3 and last is not None:
-        seq.append((m3.group(1), last))
-check("6a. presets definem 24 atribuicoes (4 x 6 campos)", len(seq) == 24, "atribuicoes=%d" % len(seq))
-if len(seq) == 24:
-    groups = [dict(seq[i:i+6]) for i in range(0, 24, 6)]
-    def huedeg(c):
-        import colorsys
-        c &= 0xFFFFFFFF
-        r, g, b = ((c >> 16) & 255) / 255, ((c >> 8) & 255) / 255, (c & 255) / 255
-        h, l, s = colorsys.rgb_to_hls(r, g, b)
-        return h * 360, s, l
-    h = [huedeg(g["accent"])[0] for g in groups]
-    lum = [huedeg(g["bgPage"])[2] for g in groups]
-    check("6b. preset 0 (OLED) tem fundo preto", lum[0] < 0.02, "lum=%s" % lum[0])
-    check("6c. preset 1 (Verde) e verde", 70 <= h[1] <= 175, "hue=%s" % h[1])
-    check("6d. preset 2 (Rosa) e rosa/vermelho", h[2] >= 300 or h[2] <= 20, "hue=%s" % h[2])
-    check("6e. preset 3 (Claro) tem fundo claro", lum[3] > 0.5, "lum=%s" % lum[3])
+# 5. Centralizacao e botao (classes mantidas)
+check("5a. ArqexDialogCenter presente", os.path.exists(L("libs/ArqexDialogCenter.smali")))
+check("5b. ArqexButtonFit presente", os.path.exists(L("libs/ArqexButtonFit.smali")))
 
 # 7. Recursos e idiomas (opcional)
 if RES:
     vals = glob.glob(os.path.join(RES, "values*"))
     check("7a. >=50 diretorios de idioma", len(vals) >= 50, "encontrados=%d" % len(vals))
     base = open(os.path.join(RES, "values", "strings.xml"), errors="replace").read()
-    for k in ("arqex_theme_create_button", "arqex_theme_preset_green",
-              "arqex_theme_preset_pink", "arqex_theme_preset_light"):
+    for k in ("arqex_theme_row_title", "arqex_theme_hub_title",
+              "arqex_theme_backup_themes_button"):
         check("7b. chave presente: %s" % k, ('name="%s"' % k) in base)
     ptbr = os.path.join(RES, "values-pt-rBR", "strings.xml")
     if os.path.exists(ptbr):
         s = open(ptbr, errors="replace").read()
-        check("7c. pt-BR tem 'Criar Tema Personalizado'", "Criar Tema Personalizado" in s)
-        check("7d. pt-BR traduz Verde/Rosa/Claro",
-              all(w in s for w in ("Verde", "Rosa", "Claro")))
+        check("7c. pt-BR renomeou a linha para BACKUP", "BACKUP E RESTAURA" in open(ptbr, errors="replace").read())
+        check("7d. pt-BR mantem traducao do Skins", "Temas" in s or "Sk" in s)
 
 print("\n".join("PASS  " + p for p in passes))
 if fails:

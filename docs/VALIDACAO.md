@@ -139,3 +139,57 @@ barra de matiz e os sliders apareciam soltos sobre as linhas de papel do tema.
 Nenhum teste em aparelho. Continua pendente confirmar na pratica: o dialogo abrir ao
 tocar num papel, o matiz funcionar partindo de preto/cinza, Confirmar aplicar e
 Cancelar descartar, e a persistencia ao salvar e reabrir o aplicativo.
+
+
+---
+
+# Estudio de tema removido; edicao passa a ser pela canetinha do Skins
+
+Decisao do dono do projeto: a criacao de tema personalizado e os presets (OLED, Verde,
+Rosa, Claro) saíram do aplicativo. Editar cores passa a ser só pela canetinha de cada
+tema no dialogo de Skins, que ja fazia isso.
+
+## Removido do DEX
+
+* 22 metodos de `CustomThemeV128` (de 43 para 22): `showThemeCreatorDialog`,
+  `showColorPickerDialog`, `openPickerDialog`, `applyPresetToStudio`,
+  `buildPresetStrip`, `buildCustomSkinList`, `setSkinValue`, `buildPreviewCard`,
+  `buildPaletteRow`, `addPaletteSection`, `addRgbSliderRow`, `addSpectrumPicker`,
+  `addColorRoleRow`, `loadInitialStudioColors`, `refreshStudioViews`,
+  `saveAndApplyStudioTheme`, `exportStudioPalette`, `parseHexSafe`, `toHexRgb`,
+  `toHexArgb`, `colorWithAlpha`, e o construtor privado.
+* 5 classes internas: `StudioState`, `RgbSeekListener`, `SpectrumView`,
+  `ColorRoleClickListener`, `PickerCancelListener`.
+* Acoes do `ActionListener`: `0xa` (criar/editar), `0xc` (exportar só temas),
+  `0x14-0x17` (presets), `0x1e-0x23` (papeis do estudio), `0x28` (salvar tema),
+  `0x29` (exportar paleta). O `onClick` foi reescrito: só hub, backup completo,
+  importar e compartilhar.
+* Botao "+ Criar Tema Personalizado" do cabecalho do Skins.
+* Strings dos presets (`arqex_theme_preset_green/pink/light`) nos 4 arquivos de locale
+  que as tinham.
+
+Total: 5.453 -> 5.448 classes.
+
+## Mantido
+
+* Linha das Configuracoes renomeada para **BACKUP E RESTAURACAO** (pt-BR, pt-PT e en).
+* Hub com 2 itens: **Exportar Backup Completo** (`0xb`) e **Importar** (`0xd`).
+* `exportBackup`, `importBackupPath`, `showImportDialog`, `collectBackupFiles`,
+  `restorePreference`, `encodePrefValue`, `shareExportedFile`: intactos.
+* Botao "Backup / Temas" dentro do dialogo de Skins.
+* A canetinha de cada tema (editor de cores por chave de skin) — nao foi tocada.
+* `ArqexDialogCenter` (centralizacao) e `ArqexButtonFit` (botao em uma linha).
+
+## Erros encontrados durante a mudanca
+
+1. Eu havia editado `values-pt`, mas o aparelho em portugues do Brasil usa
+   `values-pt-rBR` — a renomeacao nao apareceria. Corrigido nos tres locales (e o teste
+   agora le `app/res`, nao o `res/` do ZIP).
+2. Dois testes falhavam por exigirem `public static` em metodos que sao `private static`.
+
+## Nao verificado
+
+Nenhum teste em aparelho. Continua pendente abrir o app e confirmar: a linha
+BACKUP E RESTAURACAO abre o hub com 2 opcoes, exportar/importar funcionam, o dialogo de
+Skins nao mostra mais "+ Criar Tema Personalizado", e a canetinha continua editando as
+cores e salvando.

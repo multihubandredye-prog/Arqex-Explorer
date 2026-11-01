@@ -47,12 +47,12 @@
     <string name="arqex_view_size_column_many" formatted="false"> colunas</string>
     <string name="arqex_view_size_default_button" formatted="false">Predefinição</string>
     <string name="arqex_view_size_default_suffix" formatted="false"> (Predefinição)</string>
-    <string name="arqex_theme_row_title" formatted="false">TEMA PERSONALIZADO E CÓPIA DE SEGURANÇA</string>
+    <string name="arqex_theme_row_title" formatted="false">BACKUP E RESTAURAÇÃO</string>
     <string name="arqex_theme_active_prefix" formatted="false">\nTema ativo: </string>
-    <string name="arqex_theme_row_summary" formatted="false">  •  Criar temas, exportar e importar definições</string>
+    <string name="arqex_theme_row_summary" formatted="false">  •  Exportar e importar configurações</string>
     <string name="arqex_theme_create_button" formatted="false">+ Criar tema personalizado</string>
     <string name="arqex_theme_backup_themes_button" formatted="false">Cópia de segurança / Temas</string>
-    <string name="arqex_theme_hub_title" formatted="false">Temas personalizados e cópia de segurança</string>
+    <string name="arqex_theme_hub_title" formatted="false">Backup e Restauração</string>
     <string name="arqex_theme_create_edit_title" formatted="false">Criar / Editar o meu tema</string>
     <string name="arqex_theme_create_edit_desc" formatted="false">Escolha as cores da página, barras, menus, destaques, pastas e texto; ajuste com RGB ou HEX e veja a pré-visualização.</string>
     <string name="arqex_theme_export_full_title" formatted="false">Exportar cópia de segurança completa</string>
@@ -171,9 +171,6 @@
     <string name="arqex_help_topic_13_body" formatted="false">§ Intensidade do Zoom ao Abrir\nEm Definições ou em Visualizar → Opções → Efeitos Visuais, ative Zoom ao abrir e arraste Tamanho do Zoom para selecionar de +2% a +40%. A prévia Testar demonstra o efeito; Predefinição volta a +13%.\n\n§ Tema do Seu Jeito\nEm Definições, toque em TEMA PERSONALIZADO &amp; BACKUP e depois Criar / Editar meu tema. Dê um nome, escolha um preset e toque em qualquer linha ou quadrado para abrir a paleta; escolha uma amostra ou ajuste RGB/HEX. A prévia acompanha as alterações. Salvar e Aplicar adiciona o tema personalizado ao seletor TEMAS.\n\n§ Exportar, Compartilhar e Restaurar\nExportar cópia de segurança completa guarda temas e preferências num ficheiro .arqex.json. Exportar apenas temas cria um pacote mais leve. Para restaurar, toque em Importar Temas / Definições e selecione um ficheiro listado ou informe seu caminho. O ficheiro fica em Download/ArqexExplorer quando o sistema permite o acesso; caso contrário, use a pasta de ficheiros externos do aplicação.</string>
     <string name="arqex_theme_preview_folder" formatted="false">Projetos e documentos</string>
     <string name="arqex_theme_preview_live" formatted="false">EM DIRETO</string>
-    <string name="arqex_theme_preset_green" formatted="false">Verde</string>
-    <string name="arqex_theme_preset_pink" formatted="false">Rosa</string>
-    <string name="arqex_theme_preset_light" formatted="false">Claro</string>
     <string name="arqex_theme_rgb_preview_prefix" formatted="false">Pré-visualização da cor: </string>
     <string name="arqex_smart_copy_path" formatted="false">Copiar caminho completo</string>
     <string name="arqex_smart_copy_paths_count_suffix" formatted="false"> caminhos copiados</string>
