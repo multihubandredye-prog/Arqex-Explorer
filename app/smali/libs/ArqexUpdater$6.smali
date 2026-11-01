@@ -25,7 +25,7 @@
 .method constructor <init>(Landroid/content/Context;)V
     .registers 2
 
-    .line 518
+    .line 542
     iput-object p1, p0, Llibs/ArqexUpdater$6;->val$ctx:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 4
 
-    .line 520
+    .line 544
     iget-object p2, p0, Llibs/ArqexUpdater$6;->val$ctx:Landroid/content/Context;
 
     invoke-virtual {p2}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -50,7 +50,7 @@
     # invokes: Llibs/ArqexUpdater;->openBrowser(Landroid/content/Context;Ljava/lang/String;)V
     invoke-static {p2, v0}, Llibs/ArqexUpdater;->access$100(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 521
+    .line 545
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void

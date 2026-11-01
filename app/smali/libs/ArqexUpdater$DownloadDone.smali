@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 642
+    .line 666
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .registers 10
 
-    .line 645
+    .line 669
     :try_start_0
     const-string v0, "extra_download_id"
 
@@ -39,7 +39,7 @@
 
     move-result-wide v3
 
-    .line 646
+    .line 670
     const-string p2, "arqex_updater"
 
     const/4 v0, 0x0
@@ -78,7 +78,7 @@
     :cond_27
     move-wide v3, v0
 
-    .line 650
+    .line 674
     :goto_28
     # invokes: Llibs/ArqexUpdater;->install(Landroid/content/Context;J)V
     invoke-static {p1, v3, v4}, Llibs/ArqexUpdater;->access$500(Landroid/content/Context;J)V

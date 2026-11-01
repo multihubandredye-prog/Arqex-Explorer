@@ -212,11 +212,24 @@ public final class ArqexUpdater {
         }
         try {
             SharedPreferences prefs = act.getSharedPreferences(PREFS, 0);
-            if (!prefs.getBoolean(K_FORCE_PROMPT, false)) {
+            if (prefs.getBoolean(K_FORCE_PROMPT, false)) {
+                // veio do toque na notificacao: mostra o modal na tela em que o usuario estiver
+                prefs.edit().putBoolean(K_FORCE_PROMPT, false).apply();
+                showUpdatePrompt(act, prefs);
                 return;
             }
-            prefs.edit().putBoolean(K_FORCE_PROMPT, false).apply();
-            showUpdatePrompt(act, prefs);
+        } catch (Throwable ignored) {
+        }
+        // checagem automatica: vale em qualquer tela do app (navegador, configuracoes, ...)
+        try {
+            SharedPreferences prefs = act.getSharedPreferences(PREFS, 0);
+            long last = prefs.getLong(K_LAST_CHECK, 0L);
+            long now = System.currentTimeMillis();
+            if (last > 0L && now - last < CHECK_INTERVAL_MS) {
+                return;
+            }
+            prefs.edit().putLong(K_LAST_CHECK, now).apply();
+            new Thread(new Check(act.getApplicationContext(), Check.START)).start();
         } catch (Throwable ignored) {
         }
     }
@@ -453,6 +466,17 @@ public final class ArqexUpdater {
         if (body != null && body.length() > 0) {
             sb.append('\n');
             String limpo = body;
+            // corta a parte de instrucoes/checksums: no modal interessa o que mudou
+            int corte = limpo.indexOf("### Como instalar");
+            if (corte < 0) {
+                corte = limpo.indexOf("### Codigo-fonte");
+            }
+            if (corte < 0) {
+                corte = limpo.indexOf("### Código-fonte");
+            }
+            if (corte > 0) {
+                limpo = limpo.substring(0, corte);
+            }
             limpo = limpo.replace("**", "");
             limpo = limpo.replace("###", "");
             limpo = limpo.replace("`", "");

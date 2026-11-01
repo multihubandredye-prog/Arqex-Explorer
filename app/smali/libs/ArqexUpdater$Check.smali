@@ -35,13 +35,13 @@
 .method constructor <init>(Landroid/content/Context;I)V
     .registers 3
 
-    .line 294
+    .line 307
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 295
+    .line 308
     iput-object p1, p0, Llibs/ArqexUpdater$Check;->ctx:Landroid/content/Context;
 
-    .line 296
+    .line 309
     iput p2, p0, Llibs/ArqexUpdater$Check;->mode:I
 
     return-void
@@ -50,7 +50,7 @@
 .method static synthetic access$200(Llibs/ArqexUpdater$Check;)Landroid/content/Context;
     .registers 1
 
-    .line 286
+    .line 299
     iget-object p0, p0, Llibs/ArqexUpdater$Check;->ctx:Landroid/content/Context;
 
     return-object p0
@@ -59,7 +59,7 @@
 .method static synthetic access$300(Llibs/ArqexUpdater$Check;)I
     .registers 1
 
-    .line 286
+    .line 299
     iget p0, p0, Llibs/ArqexUpdater$Check;->mode:I
 
     return p0
@@ -68,7 +68,7 @@
 .method private manual()Z
     .registers 3
 
-    .line 300
+    .line 313
     iget v0, p0, Llibs/ArqexUpdater$Check;->mode:I
 
     const/4 v1, 0x1
@@ -91,12 +91,12 @@
 
     const-string v0, "HTTP "
 
-    .line 305
+    .line 318
     const-string v1, ""
 
     const/4 v2, 0x0
 
-    .line 310
+    .line 323
     :try_start_5
     new-instance v3, Ljava/net/URL;
 
@@ -114,30 +114,30 @@
 
     const/16 v4, 0x2710
 
-    .line 311
+    .line 324
     :try_start_14
     invoke-virtual {v3, v4}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
     const/16 v4, 0x3a98
 
-    .line 312
+    .line 325
     invoke-virtual {v3, v4}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
 
-    .line 313
+    .line 326
     const-string v4, "User-Agent"
 
     const-string v5, "Arqex-Explorer-Updater"
 
     invoke-virtual {v3, v4, v5}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 314
+    .line 327
     const-string v4, "Accept"
 
     const-string v5, "application/vnd.github+json"
 
     invoke-virtual {v3, v4, v5}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 315
+    .line 328
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v4
@@ -146,7 +146,7 @@
 
     if-eq v4, v5, :cond_43
 
-    .line 317
+    .line 330
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -165,13 +165,13 @@
 
     goto/16 :goto_bf
 
-    .line 319
+    .line 332
     :cond_43
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v0
 
-    .line 320
+    .line 333
     new-instance v4, Ljava/io/BufferedReader;
 
     new-instance v5, Ljava/io/InputStreamReader;
@@ -182,12 +182,12 @@
 
     invoke-direct {v4, v5}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 321
+    .line 334
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 323
+    .line 336
     :goto_58
     invoke-virtual {v4}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
@@ -195,7 +195,7 @@
 
     if-eqz v5, :cond_68
 
-    .line 324
+    .line 337
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -206,11 +206,11 @@
 
     goto :goto_58
 
-    .line 326
+    .line 339
     :cond_68
     invoke-virtual {v4}, Ljava/io/BufferedReader;->close()V
 
-    .line 327
+    .line 340
     new-instance v4, Lorg/json/JSONObject;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -219,7 +219,7 @@
 
     invoke-direct {v4, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 328
+    .line 341
     const-string v0, "tag_name"
 
     invoke-virtual {v4, v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -230,7 +230,7 @@
 
     if-eqz v0, :cond_83
 
-    .line 329
+    .line 342
     :try_start_7c
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -240,7 +240,7 @@
 
     move-object v0, v2
 
-    .line 332
+    .line 345
     :cond_83
     const-string v5, "body"
 
@@ -250,7 +250,7 @@
     :try_end_89
     .catchall {:try_start_7c .. :try_end_89} :catchall_ce
 
-    .line 333
+    .line 346
     :try_start_89
     const-string v6, "assets"
 
@@ -262,7 +262,7 @@
 
     const/4 v6, 0x0
 
-    .line 335
+    .line 348
     :goto_92
     invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
 
@@ -270,7 +270,7 @@
 
     if-ge v6, v7, :cond_bb
 
-    .line 336
+    .line 349
     invoke-virtual {v4, v6}, Lorg/json/JSONArray;->optJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v7
@@ -279,7 +279,7 @@
 
     goto :goto_b8
 
-    .line 340
+    .line 353
     :cond_9f
     const-string v8, "name"
 
@@ -287,7 +287,7 @@
 
     move-result-object v8
 
-    .line 341
+    .line 354
     const-string v9, ".apk"
 
     invoke-virtual {v8, v9}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -296,7 +296,7 @@
 
     if-eqz v8, :cond_b8
 
-    .line 342
+    .line 355
     const-string v1, "browser_download_url"
 
     invoke-virtual {v7, v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -333,7 +333,7 @@
     :goto_bf
     if-eqz v3, :cond_c4
 
-    .line 353
+    .line 366
     :try_start_c1
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_c4
@@ -391,7 +391,7 @@
 
     move-object v3, v1
 
-    .line 349
+    .line 362
     :goto_db
     :try_start_db
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -406,7 +406,7 @@
 
     if-eqz v3, :cond_e8
 
-    .line 353
+    .line 366
     :try_start_e5
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_e8
@@ -422,7 +422,7 @@
 
     move-object v9, v5
 
-    .line 363
+    .line 376
     :goto_ec
     :try_start_ec
     new-instance v0, Landroid/os/Handler;
@@ -453,13 +453,13 @@
 
     if-eqz v3, :cond_106
 
-    .line 353
+    .line 366
     :try_start_103
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_106
     .catchall {:try_start_103 .. :try_end_106} :catchall_106
 
-    .line 357
+    .line 370
     :catchall_106
     :cond_106
     throw v0

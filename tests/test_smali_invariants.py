@@ -132,6 +132,23 @@ check("8u. sem atualizacao o modal e informativo (so OK, sem baixar)",
       "infoDialog" in up and 'Sem atualiza' in up)
 check("8v. link do APK guardado junto com a versao (apk_tag)",
       "apk_tag" in up and "apkUrlFor" in up)
+check("8w. checagem em qualquer tela: onResume das Configuracoes chama onAppResume",
+      "ArqexUpdater;->onAppResume" in open(
+          L("com/mixplorer/activities/PreferenceActivity.smali"), errors="replace").read())
+# nenhuma instrucao pode aparecer antes de .registers (ja quebrou um build aqui)
+_ruins = []
+for _f in ("com/mixplorer/activities/PreferenceActivity.smali",
+           "com/mixplorer/activities/BrowseActivity.smali"):
+    _src = open(L(_f), errors="replace").read()
+    for _m in re.finditer(r"\.method[^\n]*\n((?:(?!\.end method).)*?)\.end method", _src, re.S):
+        for _l in _m.group(1).split("\n"):
+            if _l.strip():
+                if not _l.strip().startswith("."):
+                    _ruins.append(_m.group(0).split("\n")[0][:50])
+                break
+check("8x. nenhuma instrucao antes das diretivas do metodo", not _ruins, str(_ruins[:3]))
+check("8y. modal mostra so as novidades (corta 'Como instalar')",
+      "### Como instalar" in up)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 
