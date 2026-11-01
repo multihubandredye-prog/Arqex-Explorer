@@ -63,7 +63,14 @@ public final class ArqexUpdater {
 
     private static final String CHANNEL = "arqex_updates";
     private static final int NOTIF_ID = 0x415251;
-    private static final long DAY_MS = 86400000L;
+    /**
+     * Intervalo minimo entre duas verificacoes automaticas.
+     *
+     * Enquanto o app esta em construcao, 1 minuto, para a atualizacao aparecer rapido.
+     * Para a versao final, trocar por 86400000L (uma vez por dia) e rodar
+     * tools/updater/build_updater.sh de novo.
+     */
+    static final long CHECK_INTERVAL_MS = 60000L;
 
     private ArqexUpdater() {
     }
@@ -131,7 +138,7 @@ public final class ArqexUpdater {
         SharedPreferences prefs = ctx.getSharedPreferences(PREFS, 0);
         long last = prefs.getLong(K_LAST_CHECK, 0L);
         long now = System.currentTimeMillis();
-        if (last > 0L && now - last < DAY_MS) {
+        if (last > 0L && now - last < CHECK_INTERVAL_MS) {
             return;
         }
         prefs.edit().putLong(K_LAST_CHECK, now).apply();

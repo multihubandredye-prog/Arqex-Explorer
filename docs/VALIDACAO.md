@@ -289,5 +289,10 @@ Testes:
   (`v1.46.0` > `1.45.0`, `v1.45.10` > `v1.45.9`, `v1.46` == `1.46.0`, texto invalido);
 * auditoria de consistencia do DEX continua valendo para as classes novas.
 
+Atencao ao intervalo de 1 minuto: a API do GitHub sem autenticacao aceita 60 requisicoes por
+hora por IP. Como a checagem automatica so roda quando as Configuracoes sao abertas, na
+pratica isso nao estoura; se aparecer "HTTP 403" no dialogo manual, e limite de requisicoes,
+nao defeito do app.
+
 Nao verificado em aparelho: notificacao, download e instalacao de fato. O primeiro teste
 real acontece quando a versao instalada for menor que a publicada.

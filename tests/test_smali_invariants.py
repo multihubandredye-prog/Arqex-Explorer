@@ -92,6 +92,8 @@ check("8g. receiver de download concluido existe",
 check("8h. linha injetada nas Configuracoes",
       "Llibs/ArqexUpdater;->appendUpdateRow(" in open(
           L("com/mixplorer/activities/PreferenceActivity.smali"), errors="replace").read())
+check("8i0. intervalo de checagem automatica = 1 minuto (fase de testes)",
+      "0xea60" in up and "0x5265c00" not in up)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 
