@@ -335,7 +335,7 @@ public final class ArqexUpdater {
                 mostra = !tag.equals(prefs.getString(K_DIALOG_TAG, ""));
             }
             if (mostra) {
-                dialog(ctx, "Atualizacao disponivel: " + tag, changelogText(tag, current, body));
+                dialog(ctx, "Atualizacao disponivel: " + tag, changelogText(ctx, tag, current, body));
                 prefs.edit().putString(K_DIALOG_TAG, tag).apply();
             }
         } catch (Throwable ignored) {
@@ -344,8 +344,25 @@ public final class ArqexUpdater {
 
     // ------------------------------------------------------------------ textos
 
-    private static String changelogText(String tag, String current, String body) {
+    /** True quando o sistema vai entregar as notificacoes do app. */
+    static boolean notificationsAllowed(Context ctx) {
+        try {
+            NotificationManager nm = (NotificationManager)
+                    ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+            return nm != null && nm.areNotificationsEnabled();
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
+    private static String changelogText(Context ctx, String tag, String current, String body) {
         StringBuilder sb = new StringBuilder();
+        if (!notificationsAllowed(ctx)) {
+            sb.append("Aviso: as notificacoes do Arqex estao bloqueadas neste aparelho, por");
+            sb.append(" isso voce nao recebe aviso automatico de versao nova. Para liberar:");
+            sb.append(" Configuracoes do Android > Apps > Arqex Explorer > Notificacoes.");
+            sb.append("\n\n");
+        }
         sb.append("Sua versao: ").append(current).append('\n');
         sb.append("Nova versao: ").append(tag).append('\n');
         if (body != null && body.length() > 0) {
