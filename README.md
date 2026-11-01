@@ -38,3 +38,18 @@ bash tools/build.sh          # gera out/classes.dex e out/Arqex-unsigned.apk
 
 Requer `java`, `python3`, `curl`, `unzip`, `patch`. As ferramentas
 (baksmali/smali 2.5.2 e apktool 3.0.3) são baixadas em `~/.cache/arqex-tools`.
+
+## O que vem em cada release
+
+O ZIP original do repositório **não tem `apktool.yml` nem `resources.arsc`**, então
+`apktool b` falha nele com `NoSuchFileException: apktool.yml`. Isso é característica da
+base, não efeito das correções. Por isso cada release passa a trazer:
+
+| Arquivo | Para quê |
+|---|---|
+| `Arqex-<versao>-projeto-completo.zip` | projeto pronto para compilar (`projeto/` já com `apktool.yml`, `resources.arsc` gerado, `res/`, `assets/`, `lib/`, manifesto e `classes.dex` corrigido) |
+| `Arqex-<versao>-fontes-smali.zip` | árvore smali completa, para editar |
+| `Arqex-<versao>.apk` | **somente** quando a assinatura estiver configurada |
+| `SHA256SUMS`, `signature-report.txt` | checksums e relatório do certificado |
+
+Para compilar: `cd projeto && apktool b . -o app.apk`

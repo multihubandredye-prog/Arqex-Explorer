@@ -173,11 +173,21 @@ jobs:
         run: |
           set -euo pipefail
           V="${{ steps.version.outputs.version }}"
-          mkdir -p dist
-          cp out/classes.dex dist/
-          cp -r patches build tools tests dist/ 2>/dev/null || true
-          (cd dist && zip -qr "../Arqex-$V-sources-dex.zip" .)
-          rm -rf dist
+          rm -rf pkg && mkdir -p pkg
+          cp -a out/projeto pkg/projeto
+          cp -a patches tools tests docs pkg/ 2>/dev/null || true
+          cp README.md pkg/ 2>/dev/null || true
+          cat > pkg/COMO_COMPILAR.txt <<'TXT'
+          PROJETO COMPLETO - pronto para compilar
+            cd projeto && apktool b . -o app-sem-assinatura.apk
+          O ZIP original do repositorio NAO tem apktool.yml nem resources.arsc,
+          por isso falhava ao compilar. Aqui os dois ja estao presentes.
+          TXT
+          (cd pkg && zip -qr "../Arqex-$V-projeto-completo.zip" .)
+          rm -rf pkg
+          if [ -d out/fontes_smali ]; then
+            (cd out && zip -qr "../Arqex-$V-fontes-smali.zip" fontes_smali)
+          fi
           if [ -f out/Arqex-signed.apk ]; then
             mkdir -p apkdist
             cp out/Arqex-signed.apk apkdist/
