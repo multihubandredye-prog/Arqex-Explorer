@@ -2,3 +2,5 @@ out/
 out_zip/
 *.apk
 *.zip.tmp
+__pycache__/
+*.pyc

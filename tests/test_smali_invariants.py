@@ -80,6 +80,19 @@ if RES:
         s = open(ptbr, errors="replace").read()
         check("7c. pt-BR renomeou a linha para BACKUP", "BACKUP E RESTAURA" in open(ptbr, errors="replace").read())
         check("7d. pt-BR mantem traducao do Skins", "Temas" in s or "Sk" in s)
+        # 7e: o texto de ajuda nao pode ensinar um estudio que nao existe mais
+        for loc in ("values", "values-pt", "values-pt-rBR", "values-pt-rPT"):
+            fp = os.path.join(RES, loc, "strings.xml")
+            if not os.path.exists(fp):
+                continue
+            t = open(fp, errors="replace").read()
+            check("7e. %s: ajuda sem estudios de tema" % loc,
+                  "arqex_help_topic_13_body" in t and
+                  "Criar / Editar meu tema" not in t and
+                  "Create / Edit My Theme" not in t)
+            check("7f. %s: strings orfas do estudio removidas" % loc,
+                  "arqex_theme_create_button" not in t and
+                  "arqex_theme_create_edit_title" not in t)
 
 print("\n".join("PASS  " + p for p in passes))
 if fails:
