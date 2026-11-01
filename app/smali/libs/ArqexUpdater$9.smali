@@ -29,7 +29,7 @@
 .method constructor <init>(Landroid/content/Context;JLjava/lang/ref/WeakReference;)V
     .registers 5
 
-    .line 746
+    .line 751
     iput-object p1, p0, Llibs/ArqexUpdater$9;->val$app:Landroid/content/Context;
 
     iput-wide p2, p0, Llibs/ArqexUpdater$9;->val$id:J
@@ -53,7 +53,7 @@
 
     if-ge v0, v1, :cond_51
 
-    .line 749
+    .line 754
     iget-object v1, p0, Llibs/ArqexUpdater$9;->val$app:Landroid/content/Context;
 
     iget-wide v2, p0, Llibs/ArqexUpdater$9;->val$id:J
@@ -66,7 +66,7 @@
 
     if-ne v1, v2, :cond_2b
 
-    .line 751
+    .line 756
     iget-object v0, p0, Llibs/ArqexUpdater$9;->val$tela:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -75,7 +75,7 @@
 
     check-cast v0, Landroid/content/Context;
 
-    .line 752
+    .line 757
     new-instance v1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -97,7 +97,7 @@
 
     if-ne v1, v2, :cond_49
 
-    .line 760
+    .line 765
     iget-object v0, p0, Llibs/ArqexUpdater$9;->val$tela:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -106,7 +106,7 @@
 
     check-cast v0, Landroid/content/Context;
 
-    .line 761
+    .line 766
     new-instance v1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -126,7 +126,7 @@
     :cond_49
     const-wide/16 v1, 0x5dc
 
-    .line 773
+    .line 778
     :try_start_4b
     invoke-static {v1, v2}, Ljava/lang/Thread;->sleep(J)V
     :try_end_4e

@@ -420,3 +420,18 @@ devolver um Uri real. Stubs novos: `DownloadManager.Query`, `android.database.Cu
 `STATUS_*` configurable. Comportamento ganhou 14, 14b, 14c, 14d, 14e, 14f, 15, 15b, 15c, 15d.
 Invariantes ganharam 7g, 7h, 7i, 8ai, 8aj, 8ak, 8al. Total: 99 invariantes, 10 de consistencia,
 34 de comportamento, 9 de versao.
+
+## Notificacao apenas na checagem automatica (v1.61.0)
+
+Sintoma: tocar em "Verificar atualizacoes" (manual) tambem postava a notificacao na barra do
+Android, aviso duplicado — o usuario ja estava vendo o modal.
+
+Causa: `onResult` chamava `notifyUpdate(...)` para qualquer modo (manual, START e BACKGROUND),
+sem distincao.
+
+Correcao: `notifyUpdate` so roda quando `!manual`. O modal continua aparecendo na manual (o
+usuario pediu a verificacao e precisa da resposta na tela), e a marca `notified_tag` deixa de ser
+gravada nesse caminho.
+
+Testes: 16 (manual nao posta notificacao), 16b (mostra o modal), 16c (nao grava notified_tag),
+16d (a automatica continua notificando). Total: 38 de comportamento.

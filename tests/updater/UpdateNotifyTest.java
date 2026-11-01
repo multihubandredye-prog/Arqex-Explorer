@@ -375,6 +375,27 @@ public class UpdateNotifyTest {
         ArqexUpdater.installPending(new FakeActivity(ctx8));
         check("12. sem pendente nao abre instalador", ctx8.activitiesAbertas == 0);
 
+        // 16. verificacao manual NAO posta notificacao (o modal ja responde na tela)
+        android.app.AlertDialog.mostrados = 0;
+        FakeContext ctx15 = new FakeContext();
+        // na vida real a verificacao manual roda com a Activity (o botao fica nas Configuracoes)
+        onResult(new FakeActivity(ctx15), MANUAL, "v9.9.9", "https://exemplo/apk", null);
+        check("16. verificacao manual nao posta notificacao",
+                ctx15.pm.nm.postadas.isEmpty(), "postadas=" + ctx15.pm.nm.postadas.size());
+        check("16b. mas mostra o modal com a versao nova",
+                android.app.AlertDialog.mostrados == 1);
+
+        // 16c. e nao deixa marca de \"ja avisei\" pendurada
+        check("16c. nao marca notified_tag na manual",
+                ctx15.prefs.getString("notified_tag", null) == null);
+
+        // 16d. a automatica continua notificando
+        android.app.AlertDialog.mostrados = 0;
+        FakeContext ctx16 = new FakeContext();
+        onResult(ctx16, START, "v9.9.9", "https://exemplo/apk", null);
+        check("16d. verificacao automatica continua notificando",
+                ctx16.pm.nm.postadas.size() == 1, "postadas=" + ctx16.pm.nm.postadas.size());
+
         // 14. download concluido abre o instalador sozinho (nao depende do broadcast)
         android.app.DownloadManager.statusFalso = android.app.DownloadManager.STATUS_SUCCESSFUL;
         android.app.DownloadManager.uriFalsa =

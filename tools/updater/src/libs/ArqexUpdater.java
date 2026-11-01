@@ -444,7 +444,12 @@ public final class ArqexUpdater {
             // A marca de "ja avisei" e gravada DENTRO do notifyUpdate, so depois de a
             // notificacao realmente sair. Gravar aqui antes fazia o proprio notifyUpdate
             // abortar no guarda de duplicidade e a notificacao nunca aparecia.
-            notifyUpdate(ctx, tag, prefs);
+            // A notificacao e so para a verificacao automatica. Quando o usuario toca em
+            // "Verificar atualizacoes" ele ja esta vendo a resposta no modal: notificar ali
+            // era aviso duplicado na barra do Android.
+            if (!manual) {
+                notifyUpdate(ctx, tag, prefs);
+            }
             boolean mostra = manual;
             if (mode == Check.START) {
                 // ao abrir o app: uma vez por versao, mesmo que a notificacao esteja bloqueada

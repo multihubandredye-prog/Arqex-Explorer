@@ -53,6 +53,8 @@ Tudo acontece no app, sem precisar visitar o GitHub:
 
 Regras importantes:
 
+- A verificação **manual** (botão *Verificar atualizações*) mostra só o modal na tela, sem
+  notificação: a notificação é exclusiva da verificação automática.
 - Quando **não** há atualização, o app mostra apenas *"Você já está na versão mais recente"*
   com um botão OK — nunca oferece download.
 - O site do GitHub **nunca** abre sozinho: só pelo botão *Abrir no navegador*.

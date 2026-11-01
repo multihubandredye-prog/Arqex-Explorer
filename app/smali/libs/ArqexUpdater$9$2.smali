@@ -27,7 +27,7 @@
 .method constructor <init>(Llibs/ArqexUpdater$9;Landroid/content/Context;)V
     .registers 3
 
-    .line 761
+    .line 766
     iput-object p1, p0, Llibs/ArqexUpdater$9$2;->this$0:Llibs/ArqexUpdater$9;
 
     iput-object p2, p0, Llibs/ArqexUpdater$9$2;->val$ui:Landroid/content/Context;
@@ -42,12 +42,12 @@
 .method public run()V
     .registers 4
 
-    .line 763
+    .line 768
     iget-object v0, p0, Llibs/ArqexUpdater$9$2;->val$ui:Landroid/content/Context;
 
     if-eqz v0, :cond_b
 
-    .line 764
+    .line 769
     const-string v1, "Download n\u00e3o conclu\u00eddo"
 
     const-string v2, "O download falhou. Tente de novo pelo aviso de atualiza\u00e7\u00e3o ou use \"Abrir no navegador\"."
