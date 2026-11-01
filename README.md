@@ -87,13 +87,15 @@ já custou dois `VerifyError`, então o caminho é sempre esse.
 
 ### Quando o aviso aparece
 
-* Ao abrir o app (`BrowseActivity.onCreate`) e ao abrir as Configurações: no máximo uma vez
-  por minuto (`CHECK_INTERVAL_MS`).
+* Ao abrir o app e ao voltar para ele em qualquer tela (`onResume` da tela inicial e das
+  Configurações): no máximo **uma vez por dia** (`CHECK_INTERVAL_MS`).
 * Havendo versão nova: notificação no Android (canal "Atualizações do Arqex") e, uma vez por
   versão, um diálogo com o changelog.
 * O diálogo aparece mesmo com notificação bloqueada; nesse caso ele avisa que a notificação
   está bloqueada e mostra o caminho para liberar.
-* "Baixar e instalar" baixa pelo `DownloadManager` e abre o instalador do sistema.
+* "Baixar e instalar" baixa pelo `DownloadManager` e **abre o instalador do sistema sozinho**
+  quando o download termina. Se o Android bloquear (app em segundo plano), a instalação fica
+  pendente e abre assim que o app volta para a frente.
 
 ### Armadilhas já encontradas (não repetir)
 

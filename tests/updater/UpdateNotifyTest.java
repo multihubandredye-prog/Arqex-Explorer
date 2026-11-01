@@ -145,6 +145,7 @@ public class UpdateNotifyTest {
     static final class FakeContext extends Context {
         final FakePrefs prefs = new FakePrefs();
         final FakePm pm = new FakePm();
+        int activitiesAbertas = 0;
 
         @Override
         public PackageManager getPackageManager() {
@@ -171,6 +172,7 @@ public class UpdateNotifyTest {
 
         @Override
         public void startActivity(android.content.Intent i) {
+            activitiesAbertas++;
         }
 
         @Override
@@ -194,6 +196,30 @@ public class UpdateNotifyTest {
         public android.content.Intent registerReceiver(android.content.BroadcastReceiver r,
                                                       android.content.IntentFilter f) {
             return null;
+        }
+    }
+
+    /** Activity falsa que delega ao FakeContext (precisa ser Activity para o installPending). */
+    static final class FakeActivity extends android.app.Activity {
+        private final FakeContext ctx;
+
+        FakeActivity(FakeContext c) {
+            this.ctx = c;
+        }
+
+        @Override
+        public android.content.SharedPreferences getSharedPreferences(String n, int m) {
+            return ctx.prefs;
+        }
+
+        @Override
+        public void startActivity(android.content.Intent i) {
+            ctx.activitiesAbertas++;
+        }
+
+        @Override
+        public Context getApplicationContext() {
+            return ctx;
         }
     }
 
@@ -228,10 +254,16 @@ public class UpdateNotifyTest {
                 "postadas=" + ctx.pm.nm.postadas);
 
         // 2b. passado o intervalo, a mesma versao avisa de novo (fase de testes)
-        ctx.prefs.mapa.put("last_notify", Long.valueOf(System.currentTimeMillis() - 120000L));
+        ctx.prefs.mapa.put("last_notify", Long.valueOf(System.currentTimeMillis() - 2L * 86400000L));
         onResult(ctx, START, "v9.9.9", "https://exemplo/apk", null);
-        check("2b. repete a mesma versao depois do intervalo",
+        check("2b. repete a mesma versao depois de 1 dia",
                 ctx.pm.nm.postadas.size() == 2, "postadas=" + ctx.pm.nm.postadas);
+
+        // 2b2. passadas 2 horas (mesmo dia) nao repete
+        ctx.prefs.mapa.put("last_notify", Long.valueOf(System.currentTimeMillis() - 7200000L));
+        onResult(ctx, START, "v9.9.9", "https://exemplo/apk", null);
+        check("2b2. nao repete no mesmo dia", ctx.pm.nm.postadas.size() == 2,
+                "postadas=" + ctx.pm.nm.postadas.size());
 
         // 2c. o toque na notificacao pede o modal ao voltar para o app
         check("2c. toque na notificacao marca force_prompt",
@@ -240,7 +272,7 @@ public class UpdateNotifyTest {
         // 3. versao nova de novo -> posta outra
         onResult(ctx, START, "v9.9.10", "https://exemplo/apk", null);
         check("3. versao mais nova posta de novo", ctx.pm.nm.postadas.size() == 3,
-                "postadas=" + ctx.pm.nm.postadas);
+                "postadas=" + ctx.pm.nm.postadas.size());
 
         // 4. sem versao nova -> nao posta
         FakeContext ctx2 = new FakeContext();
@@ -290,6 +322,20 @@ public class UpdateNotifyTest {
         check("10. sem atualizacao o link antigo e removido",
                 ArqexUpdater.apkUrlFor(ctx6.prefs, "v9.9.9") == null,
                 "apk_url=" + ctx6.prefs.getString("apk_url", null));
+
+        // 11. instalacao pendente: abre o instalador quando o app volta para a frente
+        FakeContext ctx7 = new FakeContext();
+        ctx7.prefs.mapa.put("pending_install_uri", "content://downloads/all_downloads/42");
+        ArqexUpdater.installPending(new FakeActivity(ctx7));
+        check("11. instalacao pendente abre o instalador ao voltar ao app",
+                ctx7.activitiesAbertas == 1, "startActivity=" + ctx7.activitiesAbertas);
+        check("11b. e limpa o pendente depois de abrir",
+                ctx7.prefs.getString("pending_install_uri", null) == null);
+
+        // 12. sem pendente nao abre nada
+        FakeContext ctx8 = new FakeContext();
+        ArqexUpdater.installPending(new FakeActivity(ctx8));
+        check("12. sem pendente nao abre instalador", ctx8.activitiesAbertas == 0);
 
         System.out.println("\n" + ok + " ok, " + falhas + " falhas");
         if (falhas > 0) {

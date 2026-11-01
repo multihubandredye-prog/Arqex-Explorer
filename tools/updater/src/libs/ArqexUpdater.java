@@ -65,27 +65,18 @@ public final class ArqexUpdater {
     private static final String K_FORCE_PROMPT = "force_prompt";
     private static final String K_RELEASE_BODY = "release_body";
     private static final String K_APK_TAG = "apk_tag";
+    private static final String K_PENDING_URI = "pending_install_uri";
     private static final String K_LAST_NOTIFY = "last_notify";
 
-    /**
-     * De quanto em quanto tempo a notificacao da MESMA versao pode ser repetida.
-     * Fase de testes: 1 minuto, igual ao CHECK_INTERVAL_MS. Para producao, usar
-     * 86400000L (uma vez por dia) ou um valor alto para avisar uma vez so.
-     */
-    static final long NOTIFY_REPEAT_MS = 60000L;
+    /** De quanto em quanto tempo a notificacao da MESMA versao pode ser repetida: 1x por dia. */
+    static final long NOTIFY_REPEAT_MS = 86400000L;
 
     private static final int REQ_NOTIF = 0x4152;
 
     private static final String CHANNEL = "arqex_updates";
     private static final int NOTIF_ID = 0x415251;
-    /**
-     * Intervalo minimo entre duas verificacoes automaticas.
-     *
-     * Enquanto o app esta em construcao, 1 minuto, para a atualizacao aparecer rapido.
-     * Para a versao final, trocar por 86400000L (uma vez por dia) e rodar
-     * tools/updater/build_updater.sh de novo.
-     */
-    static final long CHECK_INTERVAL_MS = 60000L;
+    /** Intervalo entre verificacoes automaticas: uma vez por dia. */
+    static final long CHECK_INTERVAL_MS = 86400000L;
 
     private ArqexUpdater() {
     }
@@ -218,6 +209,11 @@ public final class ArqexUpdater {
                 showUpdatePrompt(act, prefs);
                 return;
             }
+        } catch (Throwable ignored) {
+        }
+        // se um APK foi baixado e nao pode ser instalado na hora, instala agora
+        try {
+            installPending(act);
         } catch (Throwable ignored) {
         }
         // checagem automatica: vale em qualquer tela do app (navegador, configuracoes, ...)
@@ -649,11 +645,10 @@ public final class ArqexUpdater {
             if (tag != null) {
                 prefs.edit().putString(K_DL_TAG, tag).apply();
             }
-            try {
-                app.registerReceiver(new DownloadDone(), new IntentFilter(
-                        DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-            } catch (Throwable ignored) {
-            }
+            // O receiver de download concluido esta declarado no AndroidManifest.xml. Antes ele
+            // era registrado so em tempo de execucao: se o app fosse fechado, o aviso nao
+            // chegava, e a partir do Android 14 o registro sem flag de exportacao pode falhar
+            // (a excecao caia no catch e ninguem instalava nada).
         } catch (Throwable t) {
             try {
                 openBrowser(ctx.getApplicationContext(), RELEASES);
@@ -671,30 +666,80 @@ public final class ArqexUpdater {
                 if (id > 0L && expected > 0L && id != expected) {
                     return;
                 }
-                install(ctx, id > 0L ? id : expected);
+                long alvo = id > 0L ? id : expected;
+                SharedPreferences prefs = ctx.getSharedPreferences(PREFS, 0);
+                Uri uri = uriOf(ctx, alvo);
+                if (uri == null) {
+                    return;
+                }
+                // guarda o pendente: se o Android bloquear a abertura agora (app em segundo
+                // plano), o instalador abre assim que o app voltar para a frente
+                prefs.edit().putString(K_PENDING_URI, uri.toString()).apply();
+                abrirInstalador(ctx, uri);
             } catch (Throwable ignored) {
             }
         }
     }
 
-    private static void install(Context ctx, long id) {
+    /**
+     * Abre o instalador do Android para o APK baixado. Devolve true se conseguiu.
+     * Em segundo plano o Android 10+ bloqueia a abertura; nesse caso devolve false e o
+     * instalador abre no proximo onAppResume.
+     */
+    static boolean abrirInstalador(Context ctx, Uri uri) {
         try {
-            Context app = ctx.getApplicationContext();
-            DownloadManager dm = (DownloadManager) app.getSystemService(Context.DOWNLOAD_SERVICE);
-            if (dm == null || id <= 0L) {
-                openBrowser(app, RELEASES);
-                return;
-            }
-            Uri uri = dm.getUriForDownloadedFile(id);
-            if (uri == null) {
-                openBrowser(app, RELEASES);
-                return;
-            }
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setDataAndType(uri, "application/vnd.android.package-archive");
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            app.startActivity(i);
+            ctx.startActivity(i);
+            ctx.getSharedPreferences(PREFS, 0).edit().remove(K_PENDING_URI).apply();
+            return true;
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
+    private static Uri uriOf(Context ctx, long id) {
+        try {
+            DownloadManager dm = (DownloadManager)
+                    ctx.getApplicationContext().getSystemService(Context.DOWNLOAD_SERVICE);
+            if (dm == null || id <= 0L) {
+                return null;
+            }
+            return dm.getUriForDownloadedFile(id);
+        } catch (Throwable t) {
+            return null;
+        }
+    }
+
+    /** Se existe APK baixado esperando instalacao, abre o instalador agora (app na frente). */
+    static void installPending(Activity act) {
+        try {
+            SharedPreferences prefs = act.getSharedPreferences(PREFS, 0);
+            String guardado = prefs.getString(K_PENDING_URI, null);
+            if (guardado == null || guardado.length() == 0) {
+                return;
+            }
+            if (!abrirInstalador(act, Uri.parse(guardado))) {
+                abrirInstalador(act.getApplicationContext(), Uri.parse(guardado));
+            }
+        } catch (Throwable ignored) {
+        }
+    }
+
+    private static void install(Context ctx, long id) {
+        try {
+            Uri uri = uriOf(ctx, id);
+            if (uri == null) {
+                openBrowser(ctx.getApplicationContext(), RELEASES);
+                return;
+            }
+            if (!abrirInstalador(ctx.getApplicationContext(), uri)) {
+                // ficou pendente: abre quando o app voltar para a frente
+                ctx.getSharedPreferences(PREFS, 0)
+                        .edit().putString(K_PENDING_URI, uri.toString()).apply();
+            }
         } catch (Throwable t) {
             try {
                 openBrowser(ctx.getApplicationContext(), RELEASES);

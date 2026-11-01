@@ -92,8 +92,8 @@ check("8g. receiver de download concluido existe",
 check("8h. linha injetada nas Configuracoes",
       "Llibs/ArqexUpdater;->appendUpdateRow(" in open(
           L("com/mixplorer/activities/PreferenceActivity.smali"), errors="replace").read())
-check("8i0. intervalo de checagem automatica = 1 minuto (fase de testes)",
-      "0xea60" in up and "0x5265c00" not in up)
+check("8i0. intervalo de checagem automatica = 1 dia (0x5265c00 = 86400000 ms)",
+      "0x5265c00" in up and "0xea60" not in up)
 check("8j. checagem no start do app (activity inicial)",
       "Llibs/ArqexUpdater;->checkOnStart(Landroid/app/Activity;)V" in open(
           L("com/mixplorer/activities/BrowseActivity.smali"), errors="replace").read())
@@ -152,6 +152,18 @@ check("8y. modal mostra so as novidades (corta 'Como instalar')",
 _wf = open(".github/workflows/build-release.yml", encoding="utf-8").read()
 check("8z. notas da release acentuadas e marcador do corte intacto",
       "Novidades desta versão:" in _wf and "### Como instalar" in _wf)
+_mf = open(os.path.join(SMALI, "..", "..", "app", "AndroidManifest.xml"),
+           encoding="utf-8", errors="replace").read() if os.path.exists(
+    os.path.join(SMALI, "..", "..", "app", "AndroidManifest.xml")) else ""
+if not _mf:
+    _mf = open("app/AndroidManifest.xml", encoding="utf-8", errors="replace").read()
+check("8aa. receiver de download concluido declarado no manifesto",
+      'libs.ArqexUpdater$DownloadDone' in _mf
+      and "android.intent.action.DOWNLOAD_COMPLETE" in _mf)
+check("8ab. instalador abre sozinho ao terminar o download",
+      "abrirInstalador" in up and "pending_install_uri" in up)
+check("8ac. instalacao pendente e retomada quando o app volta",
+      "installPending" in up)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 

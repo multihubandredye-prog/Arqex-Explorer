@@ -333,3 +333,26 @@ Tambem nesta versao:
   (no Android 13+ POST_NOTIFICATIONS e permissao de tempo de execucao e o app pode estar sem
   ela). O app pede a permissao uma vez;
 * o app so marca "ja avisei" depois de checar `areNotificationsEnabled()`.
+
+## Intervalo diario e instalador automatico (v1.58.0)
+
+Intervalo: `CHECK_INTERVAL_MS` e `NOTIFY_REPEAT_MS` passaram de 60000 para 86400000 (1 dia).
+O teste 8i0 exige 0x5265c00 no smali e reprova o valor antigo.
+
+Instalador apos o download: antes o receiver de `DOWNLOAD_COMPLETE` era registrado apenas em
+tempo de execucao, dentro do metodo `download`. Se o app fosse fechado depois de baixar, o
+aviso nunca chegava; e a partir do Android 14 o registro de receiver sem flag de exportacao
+pode lancar excecao, que caia no catch. Resultado: o download terminava e nada acontecia — o
+usuario tinha que tocar na notificacao do sistema.
+
+Agora:
+
+* o receiver `libs.ArqexUpdater$DownloadDone` esta **declarado no AndroidManifest.xml**
+  (`exported=false`, acao `android.intent.action.DOWNLOAD_COMPLETE`);
+* ao receber, guarda `pending_install_uri` e tenta abrir o instalador na hora;
+* se o Android bloquear a abertura (app em segundo plano, regra do Android 10+), a URI fica
+  pendente e `installPending()` abre o instalador no proximo `onResume` do app;
+* a notificacao do `DownloadManager` continua como caminho alternativo.
+
+Testes: 8aa (receiver no manifesto), 8ab (abrirInstalador + pending_install_uri), 8ac
+(installPending); comportamento 11/11b (abre e limpa o pendente), 12 (sem pendente nao abre).

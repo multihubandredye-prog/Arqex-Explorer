@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 666
+    .line 661
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -27,64 +27,96 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 10
+    .registers 12
 
-    .line 669
-    :try_start_0
-    const-string v0, "extra_download_id"
+    .line 664
+    const-string v0, "arqex_updater"
 
-    const-wide/16 v1, -0x1
+    :try_start_2
+    const-string v1, "extra_download_id"
 
-    invoke-virtual {p2, v0, v1, v2}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    const-wide/16 v2, -0x1
 
-    move-result-wide v3
+    invoke-virtual {p2, v1, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    .line 670
-    const-string p2, "arqex_updater"
+    move-result-wide v4
 
-    const/4 v0, 0x0
+    const/4 p2, 0x0
 
-    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    .line 665
+    invoke-virtual {p1, v0, p2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    move-result-object p2
+    move-result-object v1
 
-    const-string v0, "download_id"
+    const-string v6, "download_id"
 
-    invoke-interface {p2, v0, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {v1, v6, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long p2, v3, v5
+    cmp-long v3, v4, v6
 
-    if-lez p2, :cond_24
+    if-lez v3, :cond_24
 
-    cmp-long v2, v0, v5
+    cmp-long v8, v1, v6
 
-    if-lez v2, :cond_24
+    if-lez v8, :cond_24
 
-    cmp-long v2, v3, v0
+    cmp-long v6, v4, v1
 
-    if-eqz v2, :cond_24
+    if-eqz v6, :cond_24
 
     return-void
 
     :cond_24
-    if-lez p2, :cond_27
+    if-lez v3, :cond_27
 
     goto :goto_28
 
     :cond_27
-    move-wide v3, v0
+    move-wide v4, v1
 
-    .line 674
+    .line 670
     :goto_28
-    # invokes: Llibs/ArqexUpdater;->install(Landroid/content/Context;J)V
-    invoke-static {p1, v3, v4}, Llibs/ArqexUpdater;->access$500(Landroid/content/Context;J)V
-    :try_end_2b
-    .catchall {:try_start_0 .. :try_end_2b} :catchall_2b
+    invoke-virtual {p1, v0, p2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    :catchall_2b
+    move-result-object p2
+
+    .line 671
+    # invokes: Llibs/ArqexUpdater;->uriOf(Landroid/content/Context;J)Landroid/net/Uri;
+    invoke-static {p1, v4, v5}, Llibs/ArqexUpdater;->access$500(Landroid/content/Context;J)Landroid/net/Uri;
+
+    move-result-object v0
+
+    if-nez v0, :cond_33
+
+    return-void
+
+    .line 677
+    :cond_33
+    invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    const-string v1, "pending_install_uri"
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {p2, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 678
+    invoke-static {p1, v0}, Llibs/ArqexUpdater;->abrirInstalador(Landroid/content/Context;Landroid/net/Uri;)Z
+    :try_end_47
+    .catchall {:try_start_2 .. :try_end_47} :catchall_47
+
+    :catchall_47
     return-void
 .end method
