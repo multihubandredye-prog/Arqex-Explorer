@@ -993,4 +993,6 @@
     <string name="arqex_view_mode_compact" formatted="false">Compact</string>
     <string name="arqex_theme_spectrum_title" formatted="false">Full color spectrum</string>
     <string name="arqex_theme_spectrum_hint" formatted="false">Drag inside the color square to choose saturation and brightness; drag the hue strip to change hue.</string>
+    <string name="arqex_update_row_title" formatted="false">CHECK FOR UPDATES</string>
+    <string name="arqex_update_row_summary" formatted="false">Tap to see if there is a new version</string>
 </resources>

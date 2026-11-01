@@ -79,6 +79,12 @@ O SHA-256 do certificado da chave do repositório está em `signing/signer-sha25
 Consequência prática: **APK assinado com chave diferente não instala por cima** de um já
 instalado. Ao trocar de chave (ou vindo de um build antigo), desinstale o aplicativo antes.
 
+## Verificador de atualização
+
+O código fica em `tools/updater/src/libs/ArqexUpdater.java` e é compilado para smali por
+`bash tools/updater/build_updater.sh` (javac → d8 → baksmali). Escrever isso em smali na mão
+já custou dois `VerifyError`, então o caminho é sempre esse.
+
 ## Escopo atual do aplicativo
 
 O estúdio de tema personalizado e os presets (OLED/Verde/Rosa/Claro) foram **removidos** a
@@ -88,7 +94,9 @@ aplicativo agora tem:
 * **BACKUP E RESTAURAÇÃO** nas Configurações: exportar backup completo e importar;
 * a **canetinha** de cada tema no diálogo de Skins, com o editor de cores por chave
   (`BG_PAGE`, `BG_BAR_MAIN`, ...);
-* os botões **Export** e **Add** do rodapé do Skins, que são da galeria de temas.
+* os botões **Export** e **Add** do rodapé do Skins, que são da galeria de temas;
+* o verificador de atualização (linha **VERIFICAR ATUALIZAÇÕES** no fim das Configurações):
+  checa a release mais recente, mostra o changelog, baixa o APK e abre o instalador.
 
 O botão "Backup / Temas" que ficava no topo do diálogo de Skins foi **removido**: backup e
 restauração agora existem só na linha das Configurações.

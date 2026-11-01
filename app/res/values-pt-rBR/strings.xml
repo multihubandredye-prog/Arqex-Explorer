@@ -242,4 +242,6 @@
     <string name="arqex_view_mode_compact" formatted="false">Compacto</string>
     <string name="arqex_theme_spectrum_title" formatted="false">Espectro completo de cores</string>
     <string name="arqex_theme_spectrum_hint" formatted="false">Arraste no quadrado para escolher a saturação e o brilho; arraste a faixa inferior para mudar o tom.</string>
+    <string name="arqex_update_row_title" formatted="false">VERIFICAR ATUALIZAÇÕES</string>
+    <string name="arqex_update_row_summary" formatted="false">Toque para ver se há versão nova</string>
 </resources>

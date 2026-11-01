@@ -1,0 +1,17 @@
+package android.view;
+import android.content.Context;
+public class ViewGroup extends View {
+    public ViewGroup(Context c) { super(c); }
+    public void addView(View v) {}
+    public void addView(View v, int index) {}
+    public int getChildCount() { return 0; }
+    public static class LayoutParams {
+        public static final int MATCH_PARENT = -1;
+        public static final int WRAP_CONTENT = -2;
+        public LayoutParams(int w, int h) {}
+    }
+    public static class MarginLayoutParams extends LayoutParams {
+        public MarginLayoutParams(int w, int h) { super(w, h); }
+        public void setMargins(int a, int b, int c, int d) {}
+    }
+}

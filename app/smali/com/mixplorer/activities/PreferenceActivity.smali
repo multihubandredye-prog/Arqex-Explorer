@@ -31912,6 +31912,8 @@
 
     invoke-static {v0, v5, v3}, Llibs/HelpGuideV127;->appendSettingsHelpRow(Lcom/mixplorer/activities/PreferenceActivity;Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)V
 
+    invoke-static {v0, v5, v3}, Llibs/ArqexUpdater;->appendUpdateRow(Lcom/mixplorer/activities/PreferenceActivity;Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)V
+
     .line 1007
     .line 1008
     .line 1009

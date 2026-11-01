@@ -260,3 +260,34 @@ Mantido: a canetinha de cada tema (editor de cores), os botoes Export e Add do r
 Skins, e todo o backup/restauracao pela linha das Configuracoes.
 
 `createPillButton` continua em uso pelo `showImportDialog`, entao nao foi tocado.
+
+## Verificador de atualizacao no proprio app (v1.46.0)
+
+O aplicativo passa a checar sozinho se existe versao nova:
+
+* fonte: `https://api.github.com/repos/multihubandredye-prog/Arqex-Explorer/releases/latest`
+  (o repositorio virou publico, entao nao precisa de token dentro do app);
+* linha **VERIFICAR ATUALIZACOES** no fim das Configuracoes, mais uma verificacao silenciosa
+  no maximo uma vez por dia;
+* se houver versao nova: notificacao e dialogo com o changelog, com o botao
+  "Baixar e instalar";
+* download pelo `DownloadManager` (sem permissao nova; `REQUEST_INSTALL_PACKAGES` e
+  `POST_NOTIFICATIONS` ja estavam no manifesto) e instalacao pela URI que o proprio
+  DownloadManager entrega, sem depender de FileProvider proprio;
+* qualquer falha (rede, JSON, aparelho sem DownloadManager, permissao negada) cai no
+  navegador ou apenas nao faz nada: tudo dentro de try/catch.
+
+Por que em Java e nao em smali direto: os dois VerifyError que quebraram o app nasceram de
+smali escrito a mao. O codigo fica em `tools/updater/src`, os stubs de assinatura em
+`tools/updater/stubs`, e `tools/updater/build_updater.sh` regenera
+`app/smali/libs/ArqexUpdater*.smali` passando por javac (valida tipos) e d8/baksmali.
+
+Testes:
+
+* 8a-8i nos invariantes (classe, metodos, URL, receiver, linha injetada nas Configuracoes);
+* `tests/updater/VTest.java` roda no CI e confere a comparacao de versoes
+  (`v1.46.0` > `1.45.0`, `v1.45.10` > `v1.45.9`, `v1.46` == `1.46.0`, texto invalido);
+* auditoria de consistencia do DEX continua valendo para as classes novas.
+
+Nao verificado em aparelho: notificacao, download e instalacao de fato. O primeiro teste
+real acontece quando a versao instalada for menor que a publicada.

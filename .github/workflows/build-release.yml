@@ -97,6 +97,11 @@ jobs:
         run: |
           python3 tests/test_smali_invariants.py out/fontes_smali app/res
           python3 tests/test_dex_consistency.py out/fontes_smali
+          # teste puro de logica do verificador de atualizacao (roda na JVM, sem aparelho)
+          TMP_UPD="$(mktemp -d)"
+          javac -source 8 -target 8 -nowarn -d "$TMP_UPD/c" \
+            $(find tools/updater/stubs -name '*.java') $(find tools/updater/src -name '*.java') tests/updater/VTest.java
+          java -cp "$TMP_UPD/c" libs.VTest
 
       - name: Conferir metadados do APK (manifesto, versao, recursos, libs)
         run: |

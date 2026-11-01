@@ -73,6 +73,28 @@ check("3i. cabecalho do Skins removido (botao Backup / Temas)",
       "arqex_theme_backup_themes_button" not in ct)
 check("3j. acao 0x3 do listener removida junto", "const/4 v1, 0x3" not in al)
 
+# 8. Verificador de atualizacao (ArqexUpdater)
+up = open(L("libs/ArqexUpdater.smali"), errors="replace").read()
+check("8a. ArqexUpdater existe", ".class public final Llibs/ArqexUpdater;" in up)
+for m in ("appendUpdateRow", "check(", "compareVersions", "download(", "install(", "notifyUpdate"):
+    check("8b. metodo presente: %s" % m, m in up)
+check("8c. le a API de releases do GitHub",
+      "api.github.com/repos/multihubandredye-prog/Arqex-Explorer/releases/latest" in up)
+check("8d. procura o asset .apk", ".apk" in up)
+check("8e. usa DownloadManager", "Landroid/app/DownloadManager;" in up)
+checkd = open(L("libs/ArqexUpdater$Check.smali"), errors="replace").read()
+check("8f. rede com timeout (nao trava sem internet)",
+      "setConnectTimeout" in checkd and "setReadTimeout" in checkd)
+check("8f2. tudo em try/catch (falha nao derruba o app)",
+      ".catchall" in checkd and ".catchall" in up)
+check("8g. receiver de download concluido existe",
+      os.path.exists(L("libs/ArqexUpdater$DownloadDone.smali")))
+check("8h. linha injetada nas Configuracoes",
+      "Llibs/ArqexUpdater;->appendUpdateRow(" in open(
+          L("com/mixplorer/activities/PreferenceActivity.smali"), errors="replace").read())
+check("8i. comparacao de versao pura (testavel na JVM)",
+      "compareVersions" in up and "parseVersion" in up)
+
 # 4. Centralizacao da janela Skins
 dc = open(L("libs/ArqexDialogCenter.smali"), errors="replace").read()
 check("4a. ArqexDialogCenter existe", True)
