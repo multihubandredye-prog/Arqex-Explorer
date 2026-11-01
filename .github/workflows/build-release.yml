@@ -261,31 +261,43 @@ jobs:
             exit 0
           fi
 
+          PREV="$(git describe --tags --abbrev=0 "$SHA^" 2>/dev/null || true)"
+          if [ -n "$PREV" ]; then
+            echo "changelog desde $PREV"
+            git log --pretty='- %s' "$PREV..$SHA" | head -40 > changelog.txt
+          else
+            git log --pretty='- %s' -15 "$SHA" > changelog.txt
+          fi
+
           {
-            echo "Versao: $TAG"
-            echo "Commit: $SHA (branch $REF)"
+            echo "**Arqex Explorer $TAG**"
             echo
-            echo "Ultimo commit: $(git log -1 --pretty=%s "$SHA")"
+            echo "Novidades desta versao:"
             echo
-            echo "O ZIP traz so o necessario para compilar:"
-            echo "- projeto/ (AndroidManifest.xml, apktool.yml, classes.dex, res/, smali/)"
-            echo "- tools/, tests/, docs/, patches/, README.md e COMO_COMPILAR.txt"
+            cat changelog.txt
+            echo
+            echo "### Como instalar"
+            echo
+            echo "1. Baixe \`Arqex-$TAG.apk\` (aceite o aviso de fonte desconhecida)."
+            echo "2. Toque no arquivo baixado para instalar. Atualiza por cima da versao"
+            echo "   anterior: a assinatura e a mesma, nao precisa desinstalar."
+            echo
+            echo "### Codigo-fonte"
+            echo
+            echo "\`Arqex-$TAG.zip\` traz a pasta \`projeto/\` pronta para compilar:"
             echo
             echo "\`\`\`"
             echo "apktool b projeto -o app-sem-assinatura.apk"
             echo "\`\`\`"
             echo
             echo "SHA-256 do ZIP: $(sha256sum Arqex-*.zip | awk '{print $1}')"
-            echo
             if [ "$HAS_APK" = "true" ]; then
-              echo "APK assinado anexado: Arqex-$TAG.apk"
-              echo "Se o aplicativo ja estava instalado, desinstale antes: a assinatura do APK"
-              echo "anterior e diferente e o Android recusa a atualizacao por cima."
+              echo
+              echo "SHA-256 do APK: $(sha256sum Arqex-*.apk | awk '{print $1}')"
             else
-              echo "Sem APK: nenhuma chave de assinatura esta configurada no repositorio."
+              echo
+              echo "Sem APK nesta release: nenhuma chave de assinatura configurada."
             fi
-            echo
-            echo "Este codigo NAO foi testado em aparelho Android."
           } > notes.md
 
           args=(--title "Arqex Explorer $TAG" --notes-file notes.md --target "$SHA")
