@@ -183,6 +183,9 @@ jobs:
           O ZIP original do repositorio NAO tem apktool.yml nem resources.arsc,
           por isso falhava ao compilar. Aqui os dois ja estao presentes.
           TXT
+          for need in projeto/apktool.yml projeto/AndroidManifest.xml projeto/classes.dex projeto/res; do
+            [ -e "pkg/$need" ] || { echo "::error::pacote sem $need"; exit 1; }
+          done
           (cd pkg && zip -qr "../Arqex-$V-projeto-completo.zip" .)
           rm -rf pkg
           if [ -d out/fontes_smali ]; then

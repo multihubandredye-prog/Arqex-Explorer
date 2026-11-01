@@ -64,17 +64,22 @@ fi
 log "6/8 Montando classes.dex"
 java -cp "$DEPS" org.jf.smali.Main a "$WORK/smali" -o "$OUT/classes.dex"
 
-log "7/9 Exportando projeto completo e fontes smali"
-rm -rf "$OUT/projeto" "$OUT/fontes_smali"
-mkdir -p "$OUT/projeto"
-cp -a "$SRC"/. "$OUT/projeto"/
-cp -a "$WORK/smali" "$OUT/fontes_smali"
-
 log "8/9 Montando APK"
 cp build/apktool.yml "$SRC/apktool.yml"
 cp "$OUT/classes.dex" "$SRC/classes.dex"
 java -jar "$CACHE/apktool.jar" b "$SRC" -o "$OUT/Arqex-unsigned.apk"
 
-log "9/9 Verificando o APK"
+log "9/10 Exportando projeto completo e fontes smali"
+rm -rf "$OUT/projeto" "$OUT/fontes_smali"
+mkdir -p "$OUT/projeto"
+cp -a "$SRC"/. "$OUT/projeto"/
+rm -rf "$OUT/projeto/build"   # restos internos do apktool (resources.zip, apk/)
+cp -a "$WORK/smali" "$OUT/fontes_smali"
+for need in apktool.yml AndroidManifest.xml classes.dex res; do
+  [ -e "$OUT/projeto/$need" ] || { echo "ERRO: out/projeto sem $need"; exit 1; }
+done
+echo "OK: out/projeto completo (apktool.yml, manifesto, classes.dex, res)"
+
+log "10/10 Verificando o APK"
 python3 tools/verify_apk.py "$OUT/Arqex-unsigned.apk"
 echo "APK sem assinatura gerado em $OUT/Arqex-unsigned.apk"
