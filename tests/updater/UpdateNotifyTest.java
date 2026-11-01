@@ -70,6 +70,11 @@ public class UpdateNotifyTest {
             return this;
         }
 
+        public SharedPreferences.Editor remove(String k) {
+            mapa.remove(k);
+            return this;
+        }
+
         public void apply() {
         }
 
@@ -267,6 +272,24 @@ public class UpdateNotifyTest {
         // 8. guarda o link do APK para o botao "Baixar e instalar"
         check("8. link do APK guardado para o download",
                 "https://exemplo/apk".equals(ctx.prefs.getString("apk_url", "")));
+
+        // 9. link do APK so vale para a versao a que pertence (bug do "Sem atualizacoes"
+        //    com botao "Baixar e instalar")
+        FakeContext ctx5 = new FakeContext();
+        onResult(ctx5, START, "v9.9.9", "https://exemplo/apk", null);
+        check("9. link vale para a versao oferecida",
+                "https://exemplo/apk".equals(ArqexUpdater.apkUrlFor(ctx5.prefs, "v9.9.9")));
+        check("9b. versao antiga nao reaproveita o link",
+                ArqexUpdater.apkUrlFor(ctx5.prefs, "v9.9.8") == null);
+        check("9c. tag nula nao devolve link", ArqexUpdater.apkUrlFor(ctx5.prefs, null) == null);
+
+        // 10. sem atualizacao o link antigo e descartado
+        FakeContext ctx6 = new FakeContext();
+        onResult(ctx6, START, "v9.9.9", "https://exemplo/apk", null);
+        onResult(ctx6, MANUAL, "v0.1.0", null, null);   // resposta: ja esta atualizado
+        check("10. sem atualizacao o link antigo e removido",
+                ArqexUpdater.apkUrlFor(ctx6.prefs, "v9.9.9") == null,
+                "apk_url=" + ctx6.prefs.getString("apk_url", null));
 
         System.out.println("\n" + ok + " ok, " + falhas + " falhas");
         if (falhas > 0) {

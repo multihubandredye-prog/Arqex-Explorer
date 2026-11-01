@@ -128,6 +128,10 @@ check("8s. modal tem baixar, abrir no navegador e depois",
       "Baixar e instalar" in up and "Abrir no navegador" in up and "Depois" in up)
 check("8t. notificacao da mesma versao pode repetir por intervalo",
       "last_notify" in up and "NOTIFY_REPEAT_MS" in up)
+check("8u. sem atualizacao o modal e informativo (so OK, sem baixar)",
+      "infoDialog" in up and 'Sem atualizacoes' in up)
+check("8v. link do APK guardado junto com a versao (apk_tag)",
+      "apk_tag" in up and "apkUrlFor" in up)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 

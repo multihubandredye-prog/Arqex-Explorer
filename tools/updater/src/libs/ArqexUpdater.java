@@ -64,6 +64,7 @@ public final class ArqexUpdater {
     private static final String K_ASKED_NOTIF = "asked_notifications";
     private static final String K_FORCE_PROMPT = "force_prompt";
     private static final String K_RELEASE_BODY = "release_body";
+    private static final String K_APK_TAG = "apk_tag";
     private static final String K_LAST_NOTIFY = "last_notify";
 
     /**
@@ -119,14 +120,9 @@ public final class ArqexUpdater {
             if (bg != null) {
                 sw1.z(spacer, bg);
             }
-            int count = parent.getChildCount();
-            if (count >= 4) {
-                parent.addView(row, 4);
-                parent.addView(spacer, 5);
-            } else {
-                parent.addView(spacer);
-                parent.addView(row);
-            }
+            // sempre no fim da lista de Configuracoes
+            parent.addView(spacer);
+            parent.addView(row);
         } catch (Throwable ignored) {
         }
         try {
@@ -232,7 +228,7 @@ public final class ArqexUpdater {
     private static void showUpdatePrompt(final Activity act, final SharedPreferences prefs) {
         try {
             final String tag = prefs.getString(K_NOTIFIED, "");
-            final String apk = prefs.getString(K_APK_URL, null);
+            final String apk = apkUrlFor(prefs, tag);
             String corpo = prefs.getString(K_RELEASE_BODY, "");
             String titulo = tag.length() > 0
                     ? "Atualizacao disponivel: " + tag
@@ -381,21 +377,26 @@ public final class ArqexUpdater {
             String current = currentVersion(ctx);
             if (error != null) {
                 if (manual) {
-                    dialog(ctx, "Nao foi possivel verificar",
+                    infoDialog(ctx, "Nao foi possivel verificar",
                             "A verificacao falhou (" + error + ").\n\nConfira a conexao com a internet e tente de novo.");
                 }
                 return;
             }
             if (tag == null) {
                 if (manual) {
-                    dialog(ctx, "Nao foi possivel verificar",
+                    infoDialog(ctx, "Nao foi possivel verificar",
                             "O GitHub nao devolveu a versao mais recente.");
                 }
                 return;
             }
             if (compareVersions(tag, current) <= 0) {
+                // nao ha atualizacao: descarta qualquer link guardado de consulta anterior,
+                // para nenhum modal oferecer "Baixar e instalar" sem motivo
+                SharedPreferences limpar = ctx.getSharedPreferences(PREFS, 0);
+                limpar.edit().remove(K_APK_URL).apply();
+                limpar.edit().remove(K_APK_TAG).apply();
                 if (manual) {
-                    dialog(ctx, "Sem atualizacoes",
+                    infoDialog(ctx, "Sem atualizacoes",
                             "Voce ja esta na versao mais recente (" + current + ").");
                 }
                 return;
@@ -403,6 +404,10 @@ public final class ArqexUpdater {
             SharedPreferences prefs = ctx.getSharedPreferences(PREFS, 0);
             if (apk != null) {
                 prefs.edit().putString(K_APK_URL, apk).apply();
+                prefs.edit().putString(K_APK_TAG, tag).apply();
+            } else {
+                prefs.edit().remove(K_APK_URL).apply();
+                prefs.edit().remove(K_APK_TAG).apply();
             }
             prefs.edit().putString(K_RELEASE_BODY, body == null ? "" : body).apply();
             // A marca de "ja avisei" e gravada DENTRO do notifyUpdate, so depois de a
@@ -415,7 +420,7 @@ public final class ArqexUpdater {
                 mostra = !tag.equals(prefs.getString(K_DIALOG_TAG, ""));
             }
             if (mostra) {
-                dialog(ctx, "Atualizacao disponivel: " + tag, changelogText(ctx, tag, current, body));
+                dialog(ctx, tag, "Atualizacao disponivel: " + tag, changelogText(ctx, tag, current, body));
                 prefs.edit().putString(K_DIALOG_TAG, tag).apply();
             }
         } catch (Throwable ignored) {
@@ -461,24 +466,66 @@ public final class ArqexUpdater {
 
     // ------------------------------------------------------------------ dialogo
 
-    private static void dialog(final Context ctx, String title, String message) {
+    /** Modal informativo: so um botao. Usado quando NAO ha atualizacao. */
+    private static void infoDialog(Context ctx, String title, String message) {
         try {
             AlertDialog.Builder b = new AlertDialog.Builder(ctx);
             b.setTitle(title);
             b.setMessage(message);
             b.setCancelable(true);
-            final String apk = ctx.getSharedPreferences(PREFS, 0).getString(K_APK_URL, null);
-            final String tag = ctx.getSharedPreferences(PREFS, 0).getString(K_NOTIFIED, null);
+            b.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface d, int which) {
+                    d.dismiss();
+                }
+            });
+            b.show();
+        } catch (Throwable ignored) {
+        }
+    }
+
+    /**
+     * Link do APK guardado, mas so se ele pertencer a versao que esta sendo oferecida.
+     * Sem isso, um link antigo fazia o modal oferecer "Baixar e instalar" mesmo quando a
+     * resposta era "voce ja esta na versao mais recente".
+     */
+    static String apkUrlFor(SharedPreferences prefs, String tag) {
+        if (prefs == null || tag == null || tag.length() == 0) {
+            return null;
+        }
+        String url = prefs.getString(K_APK_URL, null);
+        String dono = prefs.getString(K_APK_TAG, "");
+        if (url == null || url.length() == 0 || !tag.equals(dono)) {
+            return null;
+        }
+        return url;
+    }
+
+    /** Modal de atualizacao: baixar (se houver APK daquela versao), navegador ou depois. */
+    private static void dialog(final Context ctx, final String tag, String title, String message) {
+        try {
+            AlertDialog.Builder b = new AlertDialog.Builder(ctx);
+            b.setTitle(title);
+            b.setMessage(message);
+            b.setCancelable(true);
+            final String apk = apkUrlFor(ctx.getSharedPreferences(PREFS, 0), tag);
             if (apk != null) {
                 b.setPositiveButton("Baixar e instalar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface d, int which) {
                         download(ctx, tag, apk);
+                        d.dismiss();
+                    }
+                });
+                b.setNeutralButton("Abrir no navegador", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface d, int which) {
+                        openBrowser(ctx.getApplicationContext(), RELEASES);
+                        d.dismiss();
                     }
                 });
             } else {
                 b.setPositiveButton("Abrir no navegador", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface d, int which) {
-                        openBrowser(ctx, RELEASES);
+                        openBrowser(ctx.getApplicationContext(), RELEASES);
+                        d.dismiss();
                     }
                 });
             }

@@ -10,6 +10,7 @@ public interface SharedPreferences {
         Editor putLong(String k, long v);
         Editor putInt(String k, int v);
         Editor putBoolean(String k, boolean v);
+        Editor remove(String k);
         void apply();
         boolean commit();
     }
