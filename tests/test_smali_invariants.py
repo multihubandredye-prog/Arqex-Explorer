@@ -121,6 +121,13 @@ vazios = [m.group(1) for m in re.finditer(
 check("8p. nenhum metodo do updater ficou vazio", not vazios, "vazios=%s" % vazios)
 check("8q. stub do SDK_INT nao e constante de compilacao (evita codigo morto)",
       "sdkInt()" in open("tools/updater/stubs/android/os/Build.java", encoding="utf-8").read())
+check("8r. toque na notificacao mostra o modal ao voltar ao app",
+      "onAppResume" in open(L("com/mixplorer/activities/BrowseActivity.smali"),
+                           errors="replace").read())
+check("8s. modal tem baixar, abrir no navegador e depois",
+      "Baixar e instalar" in up and "Abrir no navegador" in up and "Depois" in up)
+check("8t. notificacao da mesma versao pode repetir por intervalo",
+      "last_notify" in up and "NOTIFY_REPEAT_MS" in up)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 

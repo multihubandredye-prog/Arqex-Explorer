@@ -62,6 +62,16 @@ public final class ArqexUpdater {
     private static final String K_DL_TAG = "download_tag";
     private static final String K_DIALOG_TAG = "dialog_tag";
     private static final String K_ASKED_NOTIF = "asked_notifications";
+    private static final String K_FORCE_PROMPT = "force_prompt";
+    private static final String K_RELEASE_BODY = "release_body";
+    private static final String K_LAST_NOTIFY = "last_notify";
+
+    /**
+     * De quanto em quanto tempo a notificacao da MESMA versao pode ser repetida.
+     * Fase de testes: 1 minuto, igual ao CHECK_INTERVAL_MS. Para producao, usar
+     * 86400000L (uma vez por dia) ou um valor alto para avisar uma vez so.
+     */
+    static final long NOTIFY_REPEAT_MS = 60000L;
 
     private static final int REQ_NOTIF = 0x4152;
 
@@ -177,6 +187,13 @@ public final class ArqexUpdater {
         } catch (Throwable ignored) {
         }
         try {
+            if (act.getSharedPreferences(PREFS, 0).getBoolean(K_FORCE_PROMPT, false)) {
+                onAppResume(act);
+                return;
+            }
+        } catch (Throwable ignored) {
+        }
+        try {
             SharedPreferences prefs = act.getSharedPreferences(PREFS, 0);
             long last = prefs.getLong(K_LAST_CHECK, 0L);
             long now = System.currentTimeMillis();
@@ -186,6 +203,66 @@ public final class ArqexUpdater {
             prefs.edit().putLong(K_LAST_CHECK, now).apply();
             new Thread(new Check(act.getApplicationContext(), Check.START)).start();
         } catch (Throwable ignored) {
+        }
+    }
+
+    /**
+     * Chamado no onResume da tela inicial. Se o usuario tocou na notificacao, mostra o modal
+     * com as opcoes de baixar, abrir o site ou deixar para depois.
+     */
+    public static void onAppResume(Activity act) {
+        if (act == null) {
+            return;
+        }
+        try {
+            SharedPreferences prefs = act.getSharedPreferences(PREFS, 0);
+            if (!prefs.getBoolean(K_FORCE_PROMPT, false)) {
+                return;
+            }
+            prefs.edit().putBoolean(K_FORCE_PROMPT, false).apply();
+            showUpdatePrompt(act, prefs);
+        } catch (Throwable ignored) {
+        }
+    }
+
+    /**
+     * Modal de atualizacao com tres saidas: baixar e instalar, abrir a pagina da release no
+     * navegador, ou deixar para depois.
+     */
+    private static void showUpdatePrompt(final Activity act, final SharedPreferences prefs) {
+        try {
+            final String tag = prefs.getString(K_NOTIFIED, "");
+            final String apk = prefs.getString(K_APK_URL, null);
+            String corpo = prefs.getString(K_RELEASE_BODY, "");
+            String titulo = tag.length() > 0
+                    ? "Atualizacao disponivel: " + tag
+                    : "Atualizacao disponivel";
+            AlertDialog.Builder b = new AlertDialog.Builder(act);
+            b.setTitle(titulo);
+            b.setMessage(changelogText(act, tag, currentVersion(act), corpo));
+            b.setCancelable(true);
+            if (apk != null && apk.length() > 0) {
+                b.setPositiveButton("Baixar e instalar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface d, int which) {
+                        download(act, tag, apk);
+                        d.dismiss();
+                    }
+                });
+            }
+            b.setNeutralButton("Abrir no navegador", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface d, int which) {
+                    openBrowser(act.getApplicationContext(), RELEASES);
+                    d.dismiss();
+                }
+            });
+            b.setNegativeButton("Depois", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface d, int which) {
+                    d.dismiss();
+                }
+            });
+            b.show();
+        } catch (Throwable t) {
+            openBrowser(act.getApplicationContext(), RELEASES);
         }
     }
 
@@ -327,6 +404,7 @@ public final class ArqexUpdater {
             if (apk != null) {
                 prefs.edit().putString(K_APK_URL, apk).apply();
             }
+            prefs.edit().putString(K_RELEASE_BODY, body == null ? "" : body).apply();
             // A marca de "ja avisei" e gravada DENTRO do notifyUpdate, so depois de a
             // notificacao realmente sair. Gravar aqui antes fazia o proprio notifyUpdate
             // abortar no guarda de duplicidade e a notificacao nunca aparecia.
@@ -433,7 +511,10 @@ public final class ArqexUpdater {
             if (!nm.areNotificationsEnabled()) {
                 return;
             }
-            if (tag.equals(prefs.getString(K_NOTIFIED, ""))) {
+            long lastNotify = prefs.getLong(K_LAST_NOTIFY, 0L);
+            long agora = System.currentTimeMillis();
+            if (tag.equals(prefs.getString(K_NOTIFIED, ""))
+                    && lastNotify > 0L && agora - lastNotify < NOTIFY_REPEAT_MS) {
                 return;
             }
             NotificationChannel channel = new NotificationChannel(CHANNEL,
@@ -446,6 +527,9 @@ public final class ArqexUpdater {
                 launch = new Intent(Intent.ACTION_VIEW);
                 launch.setData(Uri.parse(RELEASES));
             }
+            // O toque abre o app; a marca abaixo faz o modal de atualizacao aparecer assim
+            // que ele volta para a frente (serve tanto para app fechado quanto aberto).
+            prefs.edit().putBoolean(K_FORCE_PROMPT, true).apply();
             PendingIntent pi = PendingIntent.getActivity(ctx, 0, launch,
                     PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
@@ -458,6 +542,7 @@ public final class ArqexUpdater {
                     .build();
             nm.notify(NOTIF_ID, n);
             prefs.edit().putString(K_NOTIFIED, tag).apply();
+            prefs.edit().putLong(K_LAST_NOTIFY, System.currentTimeMillis()).apply();
         } catch (Throwable ignored) {
         }
     }

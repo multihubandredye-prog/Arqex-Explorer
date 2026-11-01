@@ -23791,6 +23791,8 @@
 .method public final onResume()V
     .registers 6
 
+    invoke-static {p0}, Llibs/ArqexUpdater;->onAppResume(Landroid/app/Activity;)V
+
     .line 1
     invoke-super {p0}, Llibs/ia2;->onResume()V
 

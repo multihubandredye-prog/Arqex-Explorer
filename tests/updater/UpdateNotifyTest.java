@@ -217,14 +217,24 @@ public class UpdateNotifyTest {
         check("1. versao nova posta a notificacao", ctx.pm.nm.postadas.size() == 1,
                 "postadas=" + ctx.pm.nm.postadas);
 
-        // 2. nao duplica: mesma versao de novo nao posta outra
+        // 2. nao duplica dentro do intervalo: mesma versao logo em seguida nao posta outra
         onResult(ctx, START, "v9.9.9", "https://exemplo/apk", null);
-        check("2. nao posta a mesma versao duas vezes", ctx.pm.nm.postadas.size() == 1,
+        check("2. nao repete a mesma versao dentro do intervalo", ctx.pm.nm.postadas.size() == 1,
                 "postadas=" + ctx.pm.nm.postadas);
+
+        // 2b. passado o intervalo, a mesma versao avisa de novo (fase de testes)
+        ctx.prefs.mapa.put("last_notify", Long.valueOf(System.currentTimeMillis() - 120000L));
+        onResult(ctx, START, "v9.9.9", "https://exemplo/apk", null);
+        check("2b. repete a mesma versao depois do intervalo",
+                ctx.pm.nm.postadas.size() == 2, "postadas=" + ctx.pm.nm.postadas);
+
+        // 2c. o toque na notificacao pede o modal ao voltar para o app
+        check("2c. toque na notificacao marca force_prompt",
+                Boolean.TRUE.equals(ctx.prefs.mapa.get("force_prompt")));
 
         // 3. versao nova de novo -> posta outra
         onResult(ctx, START, "v9.9.10", "https://exemplo/apk", null);
-        check("3. versao mais nova posta de novo", ctx.pm.nm.postadas.size() == 2,
+        check("3. versao mais nova posta de novo", ctx.pm.nm.postadas.size() == 3,
                 "postadas=" + ctx.pm.nm.postadas);
 
         // 4. sem versao nova -> nao posta

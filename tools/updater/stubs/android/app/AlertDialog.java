@@ -12,6 +12,7 @@ public class AlertDialog implements DialogInterface {
         public Builder setCancelable(boolean b) { return this; }
         public Builder setPositiveButton(CharSequence t, DialogInterface.OnClickListener l) { return this; }
         public Builder setNegativeButton(CharSequence t, DialogInterface.OnClickListener l) { return this; }
+        public Builder setNeutralButton(CharSequence t, DialogInterface.OnClickListener l) { return this; }
         public AlertDialog create() { return null; }
         public AlertDialog show() { return null; }
     }

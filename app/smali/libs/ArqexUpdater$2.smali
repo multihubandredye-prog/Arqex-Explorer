@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Llibs/ArqexUpdater;->dialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    value = Llibs/ArqexUpdater;->showUpdatePrompt(Landroid/app/Activity;Landroid/content/SharedPreferences;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,15 +18,15 @@
 
 
 # instance fields
-.field final synthetic val$ctx:Landroid/content/Context;
+.field final synthetic val$act:Landroid/app/Activity;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
+.method constructor <init>(Landroid/app/Activity;)V
     .registers 2
 
-    .line 401
-    iput-object p1, p0, Llibs/ArqexUpdater$2;->val$ctx:Landroid/content/Context;
+    .line 252
+    iput-object p1, p0, Llibs/ArqexUpdater$2;->val$act:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,15 +36,22 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 3
+    .registers 4
 
-    .line 403
-    iget-object p1, p0, Llibs/ArqexUpdater$2;->val$ctx:Landroid/content/Context;
+    .line 254
+    iget-object p2, p0, Llibs/ArqexUpdater$2;->val$act:Landroid/app/Activity;
 
-    const-string p2, "https://github.com/multihubandredye-prog/Arqex-Explorer/releases/latest"
+    invoke-virtual {p2}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    const-string v0, "https://github.com/multihubandredye-prog/Arqex-Explorer/releases/latest"
 
     # invokes: Llibs/ArqexUpdater;->openBrowser(Landroid/content/Context;Ljava/lang/String;)V
-    invoke-static {p1, p2}, Llibs/ArqexUpdater;->access$400(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Llibs/ArqexUpdater;->access$100(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 255
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method

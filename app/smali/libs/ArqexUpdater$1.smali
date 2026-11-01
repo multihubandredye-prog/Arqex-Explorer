@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Llibs/ArqexUpdater;->dialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    value = Llibs/ArqexUpdater;->showUpdatePrompt(Landroid/app/Activity;Landroid/content/SharedPreferences;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,19 +18,19 @@
 
 
 # instance fields
-.field final synthetic val$apk:Ljava/lang/String;
+.field final synthetic val$act:Landroid/app/Activity;
 
-.field final synthetic val$ctx:Landroid/content/Context;
+.field final synthetic val$apk:Ljava/lang/String;
 
 .field final synthetic val$tag:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+.method constructor <init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 395
-    iput-object p1, p0, Llibs/ArqexUpdater$1;->val$ctx:Landroid/content/Context;
+    .line 245
+    iput-object p1, p0, Llibs/ArqexUpdater$1;->val$act:Landroid/app/Activity;
 
     iput-object p2, p0, Llibs/ArqexUpdater$1;->val$tag:Ljava/lang/String;
 
@@ -44,17 +44,20 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 4
+    .registers 5
 
-    .line 397
-    iget-object p1, p0, Llibs/ArqexUpdater$1;->val$ctx:Landroid/content/Context;
+    .line 247
+    iget-object p2, p0, Llibs/ArqexUpdater$1;->val$act:Landroid/app/Activity;
 
-    iget-object p2, p0, Llibs/ArqexUpdater$1;->val$tag:Ljava/lang/String;
+    iget-object v0, p0, Llibs/ArqexUpdater$1;->val$tag:Ljava/lang/String;
 
-    iget-object v0, p0, Llibs/ArqexUpdater$1;->val$apk:Ljava/lang/String;
+    iget-object v1, p0, Llibs/ArqexUpdater$1;->val$apk:Ljava/lang/String;
 
     # invokes: Llibs/ArqexUpdater;->download(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static {p1, p2, v0}, Llibs/ArqexUpdater;->access$300(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p2, v0, v1}, Llibs/ArqexUpdater;->access$000(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 248
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method
