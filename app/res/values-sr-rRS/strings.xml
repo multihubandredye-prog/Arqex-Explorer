@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">Менаџер фајлова</string>
+    <string name="archive_to">архивирај у…</string>
+    <string name="clipboard">Клипборд</string>
+    <string name="copy_to">Копирај у …</string>
+    <string name="create_shortcut">Направи пречицу</string>
+    <string name="download">Преузми</string>
+    <string name="ebook_reader">читач е-књига</string>
+    <string name="editor_code">Уређивач кода</string>
+    <string name="editor_text">Уређивач текста</string>
+    <string name="explore">Истражи</string>
+    <string name="extract_to">распакуј у…</string>
+    <string name="font_viewer">Приказ фонтова</string>
+    <string name="ftp_server">ФТП сервер</string>
+    <string name="hex_viewer">Хекса прегледач</string>
+    <string name="html_viewer">ХТМЛ прегледач</string>
+    <string name="http_server">ХТТП сервер</string>
+    <string name="image_viewer">Приказ слика</string>
+    <string name="import1">Увези</string>
+    <string name="media_player">Плејер</string>
+    <string name="obex_bluetooth">ОБЕКС блутут</string>
+    <string name="search">Тражи</string>
+    <string name="select">Изабери</string>
+    <string name="send_to">Пошаљи</string>
+    <string name="sqlite_editor">СКуЛајт уређивач</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">Menadżer plików</string>
+    <string name="archive_to">Archiwizuj do…</string>
+    <string name="clipboard">Schowek</string>
+    <string name="copy_to">Kopiuj do…</string>
+    <string name="create_shortcut">Utwórz skrót</string>
+    <string name="download">Pobierz</string>
+    <string name="ebook_reader">Czytnik eBooków</string>
+    <string name="editor_code">Edytor kodu</string>
+    <string name="editor_text">Edytor tekstu</string>
+    <string name="explore">Przeglądaj</string>
+    <string name="extract_to">Wypakuj do…</string>
+    <string name="font_viewer">Przeglądarka czcionek</string>
+    <string name="ftp_server">Serwer FTP(S,ES)/Share</string>
+    <string name="hex_viewer">Przeglądarka HEX</string>
+    <string name="html_viewer">Przeglądarka HTML</string>
+    <string name="http_server">Serwer HTTP/WebDav</string>
+    <string name="image_viewer">Przeglądarka obrazów</string>
+    <string name="import1">Importuj</string>
+    <string name="media_player">Odtwarzacz</string>
+    <string name="obex_bluetooth">OBEX Bluetooth</string>
+    <string name="search">Szukaj</string>
+    <string name="select">Zaznacz</string>
+    <string name="send_to">Wyślij do</string>
+    <string name="sqlite_editor">Edytor SQLite</string>
+</resources>

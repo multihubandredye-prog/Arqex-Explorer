@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mixplorer.widgets.MiImageView
+        android:id="@id/find_cancel"
+        android:tag="@string/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" />
+    <com.mixplorer.widgets.MiImageView
+        android:id="@id/find_match"
+        android:tag="@string/options"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" />
+    <FrameLayout
+        android:gravity="center_vertical"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0">
+        <com.mixplorer.widgets.MiEditText
+            android:layout_gravity="center_vertical"
+            android:id="@id/find_box"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/find_bar_min_width"
+            android:inputType="textFilter"
+            style="@style/EditText.WidgetEditText" />
+        <ImageView
+            android:layout_gravity="center|right"
+            android:id="@id/find_clear"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/size_5" />
+    </FrameLayout>
+    <com.mixplorer.widgets.MiImageView
+        android:id="@id/search_recursively"
+        android:tag="@string/search_recursively"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" />
+</LinearLayout>

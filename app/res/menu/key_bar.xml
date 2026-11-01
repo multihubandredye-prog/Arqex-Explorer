@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/ch_shift"
+        android:title="⬆" />
+    <item
+        android:id="@id/ch_ctrl"
+        android:title="ctrl" />
+    <item
+        android:id="@id/ch_alt"
+        android:title="alt" />
+    <item
+        android:id="@id/ch_tab"
+        android:title="↠" />
+    <item
+        android:id="@id/ch_prev"
+        android:title="◁" />
+    <item
+        android:id="@id/ch_next"
+        android:title="▷" />
+    <item
+        android:id="@id/ch_up"
+        android:title="△" />
+    <item
+        android:id="@id/ch_down"
+        android:title="▽" />
+    <item
+        android:id="@id/ch_home"
+        android:title="⇤" />
+    <item
+        android:id="@id/ch_end"
+        android:title="⇥" />
+    <item
+        android:id="@id/ch_pgup"
+        android:title="pgup" />
+    <item
+        android:id="@id/ch_pgdn"
+        android:title="pgdn" />
+    <item
+        android:id="@id/ch1"
+        android:title="{}" />
+    <item
+        android:id="@id/ch3"
+        android:title="()" />
+    <item
+        android:id="@id/ch5"
+        android:title="[]" />
+    <item
+        android:id="@id/ch7"
+        android:title="&lt;>" />
+    <item
+        android:id="@id/ch13"
+        android:title="&quot;&quot;" />
+    <item
+        android:id="@id/ch14"
+        android:title="''" />
+    <item
+        android:id="@id/ch_del"
+        android:title="⌫" />
+    <item
+        android:id="@id/ch_del_forward"
+        android:title="⌦" />
+    <item
+        android:id="@id/ch_enter"
+        android:title="↲" />
+    <item
+        android:id="@id/ch_space"
+        android:title="⎵" />
+    <item
+        android:id="@id/ch10"
+        android:title=";" />
+    <item
+        android:id="@id/ch11"
+        android:title="=" />
+    <item
+        android:id="@id/ch12"
+        android:title=":" />
+    <item
+        android:id="@id/ch15"
+        android:title="\\" />
+    <item
+        android:id="@id/ch16"
+        android:title="/" />
+    <item
+        android:id="@id/ch17"
+        android:title="|" />
+    <item
+        android:id="@id/ch18"
+        android:title="," />
+    <item
+        android:id="@id/ch19"
+        android:title="." />
+    <item
+        android:id="@id/ch20"
+        android:title="\?" />
+    <item
+        android:id="@id/ch21"
+        android:title="+" />
+    <item
+        android:id="@id/ch22"
+        android:title="-" />
+    <item
+        android:id="@id/ch23"
+        android:title="_" />
+    <item
+        android:id="@id/ch24"
+        android:title="~" />
+    <item
+        android:id="@id/ch25"
+        android:title="!" />
+    <item
+        android:id="@id/ch27"
+        android:title="\#" />
+    <item
+        android:id="@id/ch28"
+        android:title="$" />
+    <item
+        android:id="@id/ch29"
+        android:title="%" />
+    <item
+        android:id="@id/ch30"
+        android:title="^" />
+    <item
+        android:id="@id/ch31"
+        android:title="&amp;" />
+    <item
+        android:id="@id/ch32"
+        android:title="*" />
+    <item
+        android:id="@id/ch33"
+        android:title="\\@" />
+    <item
+        android:id="@id/ch_tab_back"
+        android:title="↞" />
+</menu>

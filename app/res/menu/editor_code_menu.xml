@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/menu_save_as"
+        android:title="@string/save_as" />
+    <item
+        android:id="@id/menu_find"
+        android:title="@string/find" />
+    <item
+        android:id="@id/menu_replace"
+        android:title="@string/replace" />
+    <item
+        android:id="@id/highlight_as"
+        android:title="@string/highlight_as" />
+    <item
+        android:id="@id/font_size"
+        android:title="@string/font_size" />
+    <item
+        android:id="@id/menu_share"
+        android:title="@string/share" />
+    <item
+        android:id="@id/menu_print"
+        android:title="@string/print" />
+    <item
+        android:id="@id/execute"
+        android:title="@string/execute" />
+    <item
+        android:id="@id/menu_add_to"
+        android:title="@string/add_to" />
+    <item
+        android:id="@id/menu_insert_color"
+        android:title="@string/insert_color" />
+    <item
+        android:id="@id/menu_open_with"
+        android:title="@string/open_with" />
+    <item
+        android:id="@id/menu_reload"
+        android:title="@string/reload" />
+</menu>

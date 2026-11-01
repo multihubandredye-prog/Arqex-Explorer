@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:id="@id/dialog_footer"
+    android:paddingLeft="16.0dip"
+    android:paddingTop="12.0dip"
+    android:paddingRight="16.0dip"
+    android:paddingBottom="14.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mixplorer.widgets.MiCircleView
+        android:gravity="fill_vertical"
+        android:id="@id/circleView"
+        android:focusable="false"
+        android:visibility="gone"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" />
+    <com.mixplorer.widgets.MiButton
+        android:id="@id/cancel"
+        android:focusable="true"
+        android:clickable="true"
+        android:nextFocusForward="@id/ok"
+        style="@style/DialogButton" />
+    <ImageView
+        android:gravity="fill_vertical"
+        android:id="@id/button_separator"
+        android:layout_width="10.0dip"
+        android:layout_height="fill_parent"
+        android:scaleType="fitXY" />
+    <com.mixplorer.widgets.MiButton
+        android:id="@id/ok"
+        android:focusable="true"
+        android:clickable="true"
+        android:nextFocusForward="@id/cancel"
+        style="@style/DialogButton" />
+</LinearLayout>

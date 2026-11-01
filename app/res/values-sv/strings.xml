@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="clipboard">Urklipp</string>
+    <string name="editor_text">Textredigerare</string>
+    <string name="explore">Utforska</string>
+    <string name="ftp_server">FTP Server</string>
+    <string name="http_server">HTTP Server</string>
+    <string name="image_viewer">Bildvisare</string>
+    <string name="import1">Importera</string>
+    <string name="media_player">Mediaspelare</string>
+    <string name="search">Sök</string>
+    <string name="select">Välj</string>
+    <string name="send_to">Skicka till</string>
+</resources>

@@ -1,4 +1,3 @@
 out/
 *.apk
-*.dex
-!patches/**
+*.zip.tmp

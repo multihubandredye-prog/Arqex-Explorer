@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_desc">Файловый менеджер</string>
+    <string name="archive_to">Архивировать в…</string>
+    <string name="clipboard">Буфер обмена</string>
+    <string name="copy_to">Копировать в…</string>
+    <string name="create_shortcut">Создать ярлык</string>
+    <string name="download">Загрузка</string>
+    <string name="ebook_reader">Просмотр эл. книг</string>
+    <string name="editor_code">Редактор кода</string>
+    <string name="editor_text">Текстовый редактор</string>
+    <string name="explore">Открыть</string>
+    <string name="extract_to">Извлечь в…</string>
+    <string name="font_viewer">Просмотр шрифтов</string>
+    <string name="ftp_server">FTP(S,ES)/Общий сервер</string>
+    <string name="hex_viewer">Просмотр HEX</string>
+    <string name="html_viewer">Просмотр HTML</string>
+    <string name="http_server">HTTP/WebDav-сервер</string>
+    <string name="image_viewer">Просмотр изображений</string>
+    <string name="import1">Импорт</string>
+    <string name="media_player">Медиапроигрыватель</string>
+    <string name="obex_bluetooth">OBEX Bluetooth</string>
+    <string name="search">Поиск</string>
+    <string name="select">Выбрать</string>
+    <string name="send_to">Отправить</string>
+    <string name="sqlite_editor">Редактор SQLite</string>
+</resources>

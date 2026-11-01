@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@id/content1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@id/top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <com.mixplorer.widgets.MiToggleView
+            android:id="@id/toggle"
+            android:tag="@string/exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:id="@id/title"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:maxLines="2"
+            android:layout_weight="1.0" />
+        <com.mixplorer.widgets.MiImageView
+            android:id="@id/overflow"
+            android:tag="@string/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:id="@id/main_page"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+        <FrameLayout
+            android:layout_gravity="center"
+            android:padding="@dimen/size_5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="@dimen/title_text_size"
+                android:gravity="center|top"
+                android:id="@id/dialog_empty_view"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <com.mixplorer.widgets.MiListView
+                android:scrollbarStyle="outsideOverlay"
+                android:id="@id/list"
+                android:padding="@dimen/size_10"
+                android:scrollbars="horizontal|vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:listSelector="@android:color/transparent"
+                android:divider="@null"
+                android:dividerHeight="0.0dip" />
+            <com.mixplorer.widgets.MiCircleView
+                android:id="@id/loading_view"
+                android:visibility="gone"
+                style="@style/ProgressBar" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

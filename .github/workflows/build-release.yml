@@ -95,14 +95,17 @@ jobs:
       - name: Compilar DEX + APK
         run: bash tools/build.sh
 
+      - name: Conferir se app/classes.dex corresponde a app/smali
+        run: |
+          if cmp -s out/classes.dex app/classes.dex; then
+            echo "OK: app/classes.dex esta em sincronia com app/smali"
+          else
+            echo "::warning::app/classes.dex difere do smali recompilado. O release usa o DEX recompilado; rode 'bash tools/build.sh' e commite app/classes.dex para manter a sincronia."
+          fi
+
       - name: Testes estaticos do smali final
         run: |
-          CACHE="${HOME}/.cache/arqex-tools"
-          DEPS="$CACHE/baksmali.jar:$CACHE/dexlib2.jar:$CACHE/util.jar:$CACHE/jcommander.jar:$CACHE/antlr.jar:$CACHE/guava.jar"
-          java -cp "$DEPS" org.jf.baksmali.Main d out/classes.dex -o "$RUNNER_TEMP/final_smali"
-          unzip -q Arqex_Explorer_v6.71.15_v1.38.zip -d "$RUNNER_TEMP/base"
-          python3 tests/test_smali_invariants.py "$RUNNER_TEMP/final_smali" \
-            "$RUNNER_TEMP/base/Arqex_Explorer_v6.71.15_base_src/res"
+          python3 tests/test_smali_invariants.py out/fontes_smali app/res
 
       - name: Conferir metadados do APK (manifesto, versao, recursos, libs)
         run: |

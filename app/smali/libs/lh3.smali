@@ -1,0 +1,447 @@
+.class public abstract Llibs/lh3;
+.super Ljava/lang/Object;
+.source "r8-map-id-571cd523a93ea3b399eec642b4a39ac0f06a12541c18854bb6120fd78e44e1a4"
+
+
+# static fields
+.field public static final a:J
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    .line 1
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Ljava/lang/Runtime;->maxMemory()J
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-wide v0
+
+    .line 9
+    sput-wide v0, Llibs/lh3;->a:J
+
+    .line 10
+    .line 11
+    return-void
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+.end method
+
+.method public static a(I)I
+    .registers 3
+
+    .line 1
+    const/16 v0, 0x7f
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    if-le p0, v0, :cond_17
+
+    .line 5
+    .line 6
+    const/4 v0, 0x1
+
+    .line 7
+    :goto_6
+    ushr-int/lit8 p0, p0, 0x8
+
+    .line 8
+    .line 9
+    if-eqz p0, :cond_d
+
+    .line 10
+    .line 11
+    add-int/lit8 v0, v0, 0x1
+
+    .line 12
+    .line 13
+    goto :goto_6
+
+    .line 14
+    :cond_d
+    sub-int/2addr v0, v1
+
+    .line 15
+    mul-int/lit8 v0, v0, 0x8
+
+    .line 16
+    .line 17
+    :goto_10
+    if-ltz v0, :cond_17
+
+    .line 18
+    .line 19
+    add-int/lit8 v1, v1, 0x1
+
+    .line 20
+    .line 21
+    add-int/lit8 v0, v0, -0x8
+
+    .line 22
+    .line 23
+    goto :goto_10
+
+    .line 24
+    :cond_17
+    return v1
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+.end method
+
+.method public static b(I)I
+    .registers 5
+
+    .line 1
+    const/16 v0, 0x1f
+
+    .line 2
+    .line 3
+    if-lt p0, v0, :cond_24
+
+    .line 4
+    .line 5
+    const/16 v0, 0x80
+
+    .line 6
+    .line 7
+    if-ge p0, v0, :cond_a
+
+    .line 8
+    .line 9
+    const/4 p0, 0x2
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_a
+    const/4 v1, 0x5
+
+    .line 12
+    new-array v1, v1, [B
+
+    .line 13
+    .line 14
+    and-int/lit8 v2, p0, 0x7f
+
+    .line 15
+    .line 16
+    int-to-byte v2, v2
+
+    .line 17
+    const/4 v3, 0x4
+
+    .line 18
+    aput-byte v2, v1, v3
+
+    .line 19
+    .line 20
+    :cond_13
+    shr-int/lit8 p0, p0, 0x7
+
+    .line 21
+    .line 22
+    add-int/lit8 v3, v3, -0x1
+
+    .line 23
+    .line 24
+    and-int/lit8 v2, p0, 0x7f
+
+    .line 25
+    .line 26
+    or-int/2addr v2, v0
+
+    .line 27
+    int-to-byte v2, v2
+
+    .line 28
+    aput-byte v2, v1, v3
+
+    .line 29
+    .line 30
+    const/16 v2, 0x7f
+
+    .line 31
+    .line 32
+    if-gt p0, v2, :cond_13
+
+    .line 33
+    .line 34
+    rsub-int/lit8 p0, v3, 0x6
+
+    .line 35
+    .line 36
+    return p0
+
+    .line 37
+    :cond_24
+    const/4 p0, 0x1
+
+    .line 38
+    return p0
+    .line 39
+    .line 40
+    .line 41
+.end method
+
+.method public static c(Ljava/io/InputStream;)I
+    .registers 6
+
+    .line 1
+    instance-of v0, p0, Llibs/uk1;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_b
+
+    .line 4
+    .line 5
+    check-cast p0, Llibs/uk1;
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Llibs/uk1;->c()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+
+    .line 12
+    :cond_b
+    instance-of v0, p0, Llibs/Uri;
+
+    .line 13
+    .line 14
+    if-eqz v0, :cond_14
+
+    .line 15
+    .line 16
+    check-cast p0, Llibs/Uri;
+
+    .line 17
+    .line 18
+    iget p0, p0, Llibs/Uri;->X:I
+
+    .line 19
+    .line 20
+    return p0
+
+    .line 21
+    :cond_14
+    instance-of v0, p0, Llibs/dl;
+
+    .line 22
+    .line 23
+    if-eqz v0, :cond_1f
+
+    .line 24
+    .line 25
+    check-cast p0, Llibs/dl;
+
+    .line 26
+    .line 27
+    invoke-virtual {p0}, Llibs/dl;->available()I
+
+    .line 28
+    .line 29
+    .line 30
+    move-result p0
+
+    .line 31
+    return p0
+
+    .line 32
+    :cond_1f
+    instance-of v0, p0, Ljava/io/FileInputStream;
+
+    .line 33
+    .line 34
+    const-wide/32 v1, 0x7fffffff
+
+    .line 35
+    .line 36
+    .line 37
+    if-eqz v0, :cond_3c
+
+    .line 38
+    .line 39
+    :try_start_26
+    check-cast p0, Ljava/io/FileInputStream;
+
+    .line 40
+    .line 41
+    invoke-virtual {p0}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p0
+
+    .line 45
+    if-eqz p0, :cond_35
+
+    .line 46
+    .line 47
+    invoke-virtual {p0}, Ljava/nio/channels/FileChannel;->size()J
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-wide v3
+    :try_end_32
+    .catch Ljava/io/IOException; {:try_start_26 .. :try_end_32} :catch_33
+
+    .line 51
+    goto :goto_36
+
+    .line 52
+    :catch_33
+    nop
+
+    .line 53
+    goto :goto_3c
+
+    .line 54
+    :cond_35
+    move-wide v3, v1
+
+    .line 55
+    :goto_36
+    cmp-long p0, v3, v1
+
+    .line 56
+    .line 57
+    if-gez p0, :cond_3c
+
+    .line 58
+    .line 59
+    long-to-int p0, v3
+
+    .line 60
+    return p0
+
+    .line 61
+    :cond_3c
+    :goto_3c
+    sget-wide v3, Llibs/lh3;->a:J
+
+    .line 62
+    .line 63
+    cmp-long p0, v3, v1
+
+    .line 64
+    .line 65
+    if-lez p0, :cond_46
+
+    .line 66
+    .line 67
+    const p0, 0x7fffffff
+
+    .line 68
+    .line 69
+    .line 70
+    return p0
+
+    .line 71
+    :cond_46
+    long-to-int p0, v3
+
+    .line 72
+    return p0
+    .line 73
+    .line 74
+    .line 75
+    .line 76
+    .line 77
+    .line 78
+    .line 79
+    .line 80
+    .line 81
+    .line 82
+    .line 83
+    .line 84
+    .line 85
+    .line 86
+    .line 87
+    .line 88
+    .line 89
+    .line 90
+    .line 91
+    .line 92
+    .line 93
+    .line 94
+    .line 95
+    .line 96
+    .line 97
+    .line 98
+    .line 99
+    .line 100
+    .line 101
+    .line 102
+    .line 103
+    .line 104
+    .line 105
+    .line 106
+    .line 107
+    .line 108
+    .line 109
+    .line 110
+    .line 111
+    .line 112
+    .line 113
+    .line 114
+    .line 115
+    .line 116
+    .line 117
+    .line 118
+.end method

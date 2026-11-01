@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/file_icon_drawer_smb"
+        android:id="@id/menu_net_smb"
+        android:title="LAN (Samba)" />
+    <item
+        android:icon="@drawable/file_icon_drawer_ftp"
+        android:id="@id/menu_net_ftp"
+        android:title="FTP(S,ES)" />
+    <item
+        android:icon="@drawable/file_icon_drawer_sftp"
+        android:id="@id/menu_net_sftp"
+        android:title="SFTP" />
+    <item
+        android:icon="@drawable/file_icon_drawer_webdav"
+        android:id="@id/menu_net_webdav"
+        android:title="WebDav" />
+    <item
+        android:icon="@drawable/file_icon_drawer_bt"
+        android:id="@id/menu_net_bt"
+        android:title="Bluetooth" />
+    <item
+        android:icon="@drawable/net_mega"
+        android:id="@id/menu_net_mega"
+        android:title="Mega" />
+    <item
+        android:icon="@drawable/net_gdrive"
+        android:id="@id/menu_net_gdrive"
+        android:title="GDrive" />
+    <item
+        android:icon="@drawable/net_dropbox"
+        android:id="@id/menu_net_dropbox"
+        android:title="Dropbox" />
+    <item
+        android:icon="@drawable/net_mailru"
+        android:id="@id/menu_net_mailru"
+        android:title="Mail.ru" />
+    <item
+        android:icon="@drawable/net_box"
+        android:id="@id/menu_net_box"
+        android:title="Box" />
+    <item
+        android:icon="@drawable/net_onedrive"
+        android:id="@id/menu_net_onedrive_all"
+        android:title="OneDrive" />
+    <item
+        android:icon="@drawable/net_mediafire"
+        android:id="@id/menu_net_mediafire"
+        android:title="Mediafire" />
+    <item
+        android:icon="@drawable/net_yandex"
+        android:id="@id/menu_net_yandex"
+        android:title="Yandex" />
+    <item
+        android:icon="@drawable/net_forshared"
+        android:id="@id/menu_net_forshared"
+        android:title="4Shared" />
+    <item
+        android:icon="@drawable/net_meo"
+        android:id="@id/menu_net_meo"
+        android:title="Meo" />
+    <item
+        android:icon="@drawable/net_pcloud"
+        android:id="@id/menu_net_pcloud"
+        android:title="pCloud" />
+    <item
+        android:icon="@drawable/net_sugarsync"
+        android:id="@id/menu_net_sugarsync"
+        android:title="Sugarsync" />
+    <item
+        android:icon="@drawable/net_backblaze"
+        android:id="@id/menu_net_backblaze"
+        android:title="Backblaze" />
+    <item
+        android:icon="@drawable/net_hidrive"
+        android:id="@id/menu_net_hidrive"
+        android:title="HiDrive" />
+    <item
+        android:icon="@drawable/net_forsync"
+        android:id="@id/menu_net_forsync"
+        android:title="4Sync" />
+    <item
+        android:icon="@drawable/net_baidu"
+        android:id="@id/menu_net_baidu"
+        android:title="Baidu" />
+    <item
+        android:icon="@drawable/net_dlna"
+        android:id="@id/menu_net_dlna"
+        android:title="DLNA" />
+    <item
+        android:icon="@drawable/net_terabox"
+        android:id="@id/menu_net_terabox"
+        android:title="TeraBox" />
+</menu>

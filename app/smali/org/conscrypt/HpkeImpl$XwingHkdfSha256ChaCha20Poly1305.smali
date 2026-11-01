@@ -1,0 +1,54 @@
+.class public Lorg/conscrypt/HpkeImpl$XwingHkdfSha256ChaCha20Poly1305;
+.super Lorg/conscrypt/HpkeImpl$HpkeXwingImpl;
+.source "r8-map-id-571cd523a93ea3b399eec642b4a39ac0f06a12541c18854bb6120fd78e44e1a4"
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 5
+
+    .line 1
+    new-instance v0, Lorg/conscrypt/HpkeSuite;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    const/4 v2, 0x3
+
+    .line 5
+    const/16 v3, 0x647a
+
+    .line 6
+    .line 7
+    invoke-direct {v0, v3, v1, v2}, Lorg/conscrypt/HpkeSuite;-><init>(III)V
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-direct {p0, v0}, Lorg/conscrypt/HpkeImpl$HpkeXwingImpl;-><init>(Lorg/conscrypt/HpkeSuite;)V
+
+    .line 11
+    .line 12
+    .line 13
+    return-void
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+.end method
