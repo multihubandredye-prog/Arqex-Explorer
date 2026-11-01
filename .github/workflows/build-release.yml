@@ -79,20 +79,10 @@ jobs:
           BASE_VERSION_CODE: "26090412"
         run: python3 tools/next_version.py
 
-      - name: Injetar versionName/versionCode no apktool.yml
-        run: |
-          python3 - "${{ steps.version.outputs.version_name }}" "${{ steps.version.outputs.version_code }}" <<'PY'
-          import re, sys
-          name, code = sys.argv[1], sys.argv[2]
-          p = "build/apktool.yml"
-          s = open(p).read()
-          s = re.sub(r"(?m)^\s*versionCode:.*$", "  versionCode: %s" % code, s, count=1)
-          s = re.sub(r"(?m)^\s*versionName:.*$", "  versionName: %s" % name, s, count=1)
-          open(p, "w").write(s)
-          print(re.search(r"versionInfo:\n(?:.*\n){0,3}", s).group(0))
-          PY
-
       - name: Compilar DEX + APK
+        env:
+          VERSION_NAME: ${{ steps.version.outputs.version_name }}
+          VERSION_CODE: ${{ steps.version.outputs.version_code }}
         run: bash tools/build.sh
 
       - name: Conferir se app/classes.dex corresponde a app/smali

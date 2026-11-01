@@ -71,3 +71,35 @@ O que existe são **5 correções** de defeito, mais 3 classes auxiliares novas.
 | `AndroidManifest.xml` | — | byte-idêntico |
 | `apktool.json` | — | byte-idêntico |
 | métodos de `CustomThemeV128` | 39 | 39 (+ 0 removidos) |
+
+## Estrutura do repositório
+
+```
+Arqex_Explorer_v6.71.15_v1.38.zip   base original intacta (referência)
+app/                                APLICATIVO EXTRAÍDO
+  AndroidManifest.xml
+  apktool.yml                       necessário para o apktool remontar o APK
+  apktool.json
+  res/        589 arquivos, 54 idiomas
+  assets/     41 arquivos
+  lib/        bibliotecas nativas arm64-v8a
+  unknown/    metadados META-INF originais
+  original/   metadados preservados pelo apktool
+  smali/      5.452 arquivos — é aqui que se edita o código
+  classes.dex compilado a partir de app/smali
+patches/smali/                      diffs aplicados, para conferência
+build/apktool.yml                   metadados usados no modo MODE=zip
+tools/ tests/ docs/ .github/
+```
+
+### Editar e compilar
+
+```bash
+# edite app/smali/**, app/res/** etc.
+bash tools/build.sh                 # recompila smali -> out/classes.dex -> APK
+cp out/classes.dex app/classes.dex  # opcional: manter o DEX versionado em sincronia
+```
+
+`tools/build.sh` recompila **sempre** a partir de `app/smali`, então o release nunca
+depende do `classes.dex` commitado. `MODE=zip bash tools/build.sh` força o caminho antigo
+(base ZIP + patches).

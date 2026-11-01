@@ -64,6 +64,21 @@ log "5/7 Montando classes.dex a partir do smali"
 java -cp "$SMALI_DEPS" org.jf.smali.Main a "$SMALI_DIR" -o "$OUT/classes.dex"
 cp "$OUT/classes.dex" "$SRC/classes.dex"
 
+log "5b/7 Aplicando versao do build (se fornecida)"
+if [ -n "${VERSION_NAME:-}" ] && [ -n "${VERSION_CODE:-}" ]; then
+  python3 - "$SRC/apktool.yml" "$VERSION_NAME" "$VERSION_CODE" <<'PYEOF'
+import re, sys
+path, name, code = sys.argv[1], sys.argv[2], sys.argv[3]
+s = open(path).read()
+s = re.sub(r"(?m)^\s*versionCode:.*$", "  versionCode: %s" % code, s, count=1)
+s = re.sub(r"(?m)^\s*versionName:.*$", "  versionName: %s" % name, s, count=1)
+open(path, "w").write(s)
+print("versionName=%s versionCode=%s aplicados em apktool.yml" % (name, code))
+PYEOF
+else
+  echo "sem VERSION_NAME/VERSION_CODE: mantendo a versao de app/apktool.yml"
+fi
+
 log "6/7 Montando APK"
 [ -f "$SRC/apktool.yml" ] || { echo "ERRO: app/apktool.yml ausente"; exit 1; }
 java -jar "$CACHE/apktool.jar" b "$SRC" -o "$OUT/Arqex-unsigned.apk"
