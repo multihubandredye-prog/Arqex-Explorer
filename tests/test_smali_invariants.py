@@ -149,6 +149,9 @@ for _f in ("com/mixplorer/activities/PreferenceActivity.smali",
 check("8x. nenhuma instrucao antes das diretivas do metodo", not _ruins, str(_ruins[:3]))
 check("8y. modal mostra so as novidades (corta 'Como instalar')",
       "### Como instalar" in up)
+_wf = open(".github/workflows/build-release.yml", encoding="utf-8").read()
+check("8z. notas da release acentuadas e marcador do corte intacto",
+      "Novidades desta versão:" in _wf and "### Como instalar" in _wf)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 
