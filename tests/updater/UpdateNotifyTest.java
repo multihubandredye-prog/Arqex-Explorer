@@ -167,6 +167,9 @@ public class UpdateNotifyTest {
             if (Context.NOTIFICATION_SERVICE.equals(n)) {
                 return pm.nm;
             }
+            if (Context.DOWNLOAD_SERVICE.equals(n)) {
+                return new android.app.DownloadManager();
+            }
             return null;
         }
 
@@ -244,6 +247,13 @@ public class UpdateNotifyTest {
         } catch (InvocationTargetException e) {
             throw new AssertionError("onResult lancou excecao: " + e.getCause(), e);
         }
+    }
+
+    static void showUpdatePrompt(android.app.Activity act) throws Exception {
+        Method m = ArqexUpdater.class.getDeclaredMethod("showUpdatePrompt",
+                android.app.Activity.class, android.content.SharedPreferences.class);
+        m.setAccessible(true);
+        m.invoke(null, act, act.getSharedPreferences("arqex_updater", 0));
     }
 
     /** Constantes de modo vem do Check interno (BACKGROUND=0, MANUAL=1, START=2). */
@@ -364,6 +374,58 @@ public class UpdateNotifyTest {
         FakeContext ctx8 = new FakeContext();
         ArqexUpdater.installPending(new FakeActivity(ctx8));
         check("12. sem pendente nao abre instalador", ctx8.activitiesAbertas == 0);
+
+        // 14. download concluido abre o instalador sozinho (nao depende do broadcast)
+        android.app.DownloadManager.statusFalso = android.app.DownloadManager.STATUS_SUCCESSFUL;
+        android.app.DownloadManager.uriFalsa =
+                android.net.Uri.parse("content://downloads/all_downloads/7");
+        FakeContext ctx11 = new FakeContext();
+        FakeActivity act11 = new FakeActivity(ctx11);
+        ArqexUpdater.concluirDownload(ctx11, act11, 7L);
+        check("14. download concluido abre o instalador",
+                ctx11.activitiesAbertas == 1, "startActivity=" + ctx11.activitiesAbertas);
+        check("14b. e nao fica pendencia para depois",
+                ctx11.prefs.getString("pending_install_uri", null) == null);
+
+        // 14c. a mesma conclusao nao abre duas vezes (receiver + vigia)
+        ArqexUpdater.concluirDownload(ctx11, act11, 7L);
+        check("14c. nao abre duas vezes", ctx11.activitiesAbertas == 1,
+                "startActivity=" + ctx11.activitiesAbertas);
+
+        // 14d. status ainda rodando nao abre nada
+        android.app.DownloadManager.statusFalso = android.app.DownloadManager.STATUS_RUNNING;
+        FakeContext ctx12 = new FakeContext();
+        ArqexUpdater.concluirDownload(ctx12, new FakeActivity(ctx12), 8L);
+        check("14d. download em andamento nao abre o instalador", ctx12.activitiesAbertas == 0);
+
+        // 14e. statusOf le o status do DownloadManager
+        check("14e. statusOf devolve o status consultado",
+                ArqexUpdater.statusOf(ctx12, 8L) == android.app.DownloadManager.STATUS_RUNNING);
+        android.app.DownloadManager.statusFalso = -1;
+        check("14f. sem download conhecido statusOf devolve -1",
+                ArqexUpdater.statusOf(ctx12, 8L) == -1);
+
+        // 15. modal nao volta depois de instalar a versao oferecida
+        android.app.AlertDialog.mostrados = 0;
+        FakeContext ctx13 = new FakeContext();
+        ctx13.prefs.mapa.put("notified_tag", "v1.0.0");   // igual a instalada
+        ctx13.prefs.mapa.put("force_prompt", Boolean.TRUE);
+        ctx13.prefs.mapa.put("apk_url", "https://exemplo/apk");
+        ctx13.prefs.mapa.put("apk_tag", "v1.0.0");
+        showUpdatePrompt(new FakeActivity(ctx13));
+        check("15. versao ja instalada nao mostra modal", android.app.AlertDialog.mostrados == 0);
+        check("15b. e limpa o force_prompt", !Boolean.TRUE.equals(ctx13.prefs.mapa.get("force_prompt")));
+        check("15c. e descarta o link do APK",
+                ctx13.prefs.getString("apk_url", null) == null);
+
+        // 15d. com versao realmente nova o modal aparece
+        android.app.AlertDialog.mostrados = 0;
+        FakeContext ctx14 = new FakeContext();
+        ctx14.prefs.mapa.put("notified_tag", "v99.0.0");
+        ctx14.prefs.mapa.put("apk_url", "https://exemplo/apk");
+        ctx14.prefs.mapa.put("apk_tag", "v99.0.0");
+        showUpdatePrompt(new FakeActivity(ctx14));
+        check("15d. versao nova mostra o modal", android.app.AlertDialog.mostrados == 1);
 
         System.out.println("\n" + ok + " ok, " + falhas + " falhas");
         if (falhas > 0) {

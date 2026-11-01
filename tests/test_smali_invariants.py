@@ -174,6 +174,16 @@ def _metodo(txt, nome):
 
 
 _dialog = _metodo(up, "dialog")
+# STATUS_SUCCESSFUL e int estatico final: o smali recebe "const/16 0x8"
+check("8ai. download e acompanhado ate o fim e abre o instalador",
+      "statusOf" in up and "vigiarDownload" in up and "const/16 v3, 0x8" in up)
+check("8aj. conclusao do download nao depende do broadcast",
+      "concluirDownload" in up)
+_prompt = _metodo(up, "showUpdatePrompt")
+check("8ak. modal nao aparece quando a versao oferecida ja esta instalada",
+      _prompt != "" and "compareVersions" in _prompt)
+check("8al. receiver de download pode receber o aviso do sistema",
+      'libs.ArqexUpdater$DownloadDone' in _mf and 'android:exported="true"' in _mf)
 check("8ad. modal nunca abre o navegador sozinho", _dialog != "" and "openBrowser" not in _dialog)
 check("8ae. fallback que abria o site foi removido", "notifyFallback" not in up)
 _onres = _metodo(up, "onAppResume")
@@ -183,6 +193,24 @@ check("8ag. so mostra janela quando ha Activity viva", "podeMostrarJanela" in up
 _notif = _metodo(up, "notifyUpdate")
 check("8ah. toque na notificacao nunca cai numa URL das releases",
       _notif != "" and "Arqex-Explorer/releases" not in _notif)
+def _ajuda(locale):
+    caminho = "app/res/values" + locale + "/strings.xml"
+    if not os.path.exists(caminho):
+        return ""
+    txt = open(caminho, encoding="utf-8", errors="replace").read()
+    partes = re.findall(r'<string name="arqex_help_topic_\d+_(?:title|subtitle|body)"[^>]*>(.*?)</string>',
+                        txt, re.S)
+    return "\n".join(partes)
+
+
+_aj = _ajuda("-pt")
+check("7g. ajuda nao anuncia temas removidos (galeria/editor/.mic)",
+      _aj != "" and ".mic" not in _aj and "seletor TEMAS" not in _aj
+      and "painel TEMAS" not in _aj)
+check("7h. ajuda trata de aparencia/efeitos no lugar de temas",
+      "Aparência do Aplicativo" in _aj or "Aparencia do Aplicativo" in _aj)
+check("7i. ajuda mantem backup e restauracao",
+      "BACKUP E RESTAURAÇÃO" in _aj or "BACKUP E RESTAURACAO" in _aj)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 

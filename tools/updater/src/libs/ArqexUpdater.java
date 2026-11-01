@@ -35,6 +35,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.lang.ref.WeakReference;
 import java.net.URL;
 
 /**
@@ -66,6 +67,7 @@ public final class ArqexUpdater {
     private static final String K_RELEASE_BODY = "release_body";
     private static final String K_APK_TAG = "apk_tag";
     private static final String K_PENDING_URI = "pending_install_uri";
+    private static final String K_INSTALL_OPENED = "install_opened";
     private static final String K_LAST_NOTIFY = "last_notify";
 
     /** De quanto em quanto tempo a notificacao da MESMA versao pode ser repetida: 1x por dia. */
@@ -243,6 +245,16 @@ public final class ArqexUpdater {
     private static void showUpdatePrompt(final Activity act, final SharedPreferences prefs) {
         try {
             final String tag = prefs.getString(K_NOTIFIED, "");
+            final String instalada = currentVersion(act);
+            if (tag.length() == 0 || compareVersions(tag, instalada) <= 0) {
+                // A versao oferecida ja foi instalada (ou nao existe tag). Limpa o estado,
+                // senao o modal voltava a cada abertura logo depois de atualizar o APK.
+                prefs.edit().putBoolean(K_FORCE_PROMPT, false).apply();
+                prefs.edit().remove(K_APK_URL).apply();
+                prefs.edit().remove(K_APK_TAG).apply();
+                prefs.edit().putString(K_DIALOG_TAG, instalada).apply();
+                return;
+            }
             final String apk = apkUrlFor(prefs, tag);
             String corpo = prefs.getString(K_RELEASE_BODY, "");
             String titulo = tag.length() > 0
@@ -272,6 +284,7 @@ public final class ArqexUpdater {
                 }
             });
             b.show();
+            prefs.edit().putString(K_DIALOG_TAG, tag).apply();
         } catch (Throwable ignored) {
             // idem: nunca abrir o site sozinho
         }
@@ -410,6 +423,9 @@ public final class ArqexUpdater {
                 SharedPreferences limpar = ctx.getSharedPreferences(PREFS, 0);
                 limpar.edit().remove(K_APK_URL).apply();
                 limpar.edit().remove(K_APK_TAG).apply();
+                limpar.edit().remove(K_NOTIFIED).apply();
+                limpar.edit().putBoolean(K_FORCE_PROMPT, false).apply();
+                limpar.edit().putString(K_DIALOG_TAG, current).apply();
                 if (manual) {
                     infoDialog(ctx, "Sem atualizações",
                             "Você já está na versão mais recente (" + current + ").");
@@ -667,18 +683,130 @@ public final class ArqexUpdater {
             long id = dm.enqueue(req);
             SharedPreferences prefs = app.getSharedPreferences(PREFS, 0);
             prefs.edit().putLong(K_DL_ID, id).apply();
+            // pendencia de um download anterior nao vale mais
+            prefs.edit().remove(K_PENDING_URI).apply();
+            prefs.edit().remove(K_INSTALL_OPENED).apply();
             if (tag != null) {
                 prefs.edit().putString(K_DL_TAG, tag).apply();
             }
-            // O receiver de download concluido esta declarado no AndroidManifest.xml. Antes ele
-            // era registrado so em tempo de execucao: se o app fosse fechado, o aviso nao
-            // chegava, e a partir do Android 14 o registro sem flag de exportacao pode falhar
-            // (a excecao caia no catch e ninguem instalava nada).
+            // O receiver de download concluido esta declarado no AndroidManifest.xml, mas o
+            // sistema pode nao entregar esse broadcast ao app (quem envia e o provedor de
+            // downloads, outro processo). Por isso quem manda e a vigia abaixo: ela consulta
+            // o DownloadManager e abre o instalador assim que o arquivo termina. O receiver
+            // continua como reforco para quando o app estiver fechado.
+            vigiarDownload(ctx, id);
         } catch (Throwable t) {
             // falha no download: avisa na tela, sem jogar o usuario no navegador
             infoDialog(ctx, "Não foi possível baixar",
                     "O download não pôde ser iniciado. Use \"Abrir no navegador\" na próxima "
                             + "vez que o aviso aparecer.");
+        }
+    }
+
+    /**
+     * Consulta o status do download. Devolve -1 quando nao da para saber.
+     */
+    static int statusOf(Context ctx, long id) {
+        android.database.Cursor c = null;
+        try {
+            DownloadManager dm = (DownloadManager)
+                    ctx.getApplicationContext().getSystemService(Context.DOWNLOAD_SERVICE);
+            if (dm == null || id <= 0L) {
+                return -1;
+            }
+            DownloadManager.Query q = new DownloadManager.Query();
+            q.setFilterById(id);
+            c = dm.query(q);
+            if (c == null || !c.moveToFirst()) {
+                return -1;
+            }
+            int col = c.getColumnIndex(DownloadManager.COLUMN_STATUS);
+            return col < 0 ? -1 : c.getInt(col);
+        } catch (Throwable t) {
+            return -1;
+        } finally {
+            if (c != null) {
+                try {
+                    c.close();
+                } catch (Throwable ignored) {
+                }
+            }
+        }
+    }
+
+    /**
+     * Acompanha o download ate o fim e abre o instalador. Nao depende do broadcast
+     * DOWNLOAD_COMPLETE: o provedor de downloads e outro processo e o sistema pode nao
+     * entregar o aviso, e era por isso que o APK baixava e nada acontecia.
+     */
+    private static void vigiarDownload(Context ctx, final long id) {
+        final Context app = ctx.getApplicationContext();
+        final WeakReference<Context> tela = new WeakReference<Context>(ctx);
+        try {
+            Thread t = new Thread(new Runnable() {
+                public void run() {
+                    for (int i = 0; i < 600; i++) {
+                        int st = statusOf(app, id);
+                        if (st == DownloadManager.STATUS_SUCCESSFUL) {
+                            final Context ui = tela.get();
+                            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                                public void run() {
+                                    concluirDownload(app, ui, id);
+                                }
+                            });
+                            return;
+                        }
+                        if (st == DownloadManager.STATUS_FAILED) {
+                            final Context ui = tela.get();
+                            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                                public void run() {
+                                    if (ui != null) {
+                                        infoDialog(ui, "Download não concluído",
+                                                "O download falhou. Tente de novo pelo aviso de "
+                                                        + "atualização ou use \"Abrir no navegador\".");
+                                    }
+                                }
+                            });
+                            return;
+                        }
+                        try {
+                            Thread.sleep(1500L);
+                        } catch (Throwable fim) {
+                            return;
+                        }
+                    }
+                }
+            });
+            t.setDaemon(true);
+            t.start();
+        } catch (Throwable ignored) {
+        }
+    }
+
+    /**
+     * Download terminado: abre o instalador (na tela, se houver) e, se nao der, deixa a
+     * instalacao pendente para o proximo onResume. Roda sempre na thread principal.
+     */
+    static void concluirDownload(Context app, Context ui, long id) {
+        try {
+            SharedPreferences prefs = app.getSharedPreferences(PREFS, 0);
+            if (String.valueOf(id).equals(prefs.getString(K_INSTALL_OPENED, ""))) {
+                return; // ja tratado (receiver + vigia podem coincidir)
+            }
+            if (statusOf(app, id) != DownloadManager.STATUS_SUCCESSFUL) {
+                return;
+            }
+            Uri uri = uriOf(app, id);
+            if (uri == null) {
+                return;
+            }
+            prefs.edit().putString(K_INSTALL_OPENED, String.valueOf(id)).apply();
+            prefs.edit().putString(K_PENDING_URI, uri.toString()).apply();
+            if (ui != null && podeMostrarJanela(ui) && abrirInstalador(ui, uri)) {
+                return;
+            }
+            abrirInstalador(app, uri); // se o sistema bloquear, fica pendente
+        } catch (Throwable ignored) {
         }
     }
 
@@ -692,15 +820,7 @@ public final class ArqexUpdater {
                     return;
                 }
                 long alvo = id > 0L ? id : expected;
-                SharedPreferences prefs = ctx.getSharedPreferences(PREFS, 0);
-                Uri uri = uriOf(ctx, alvo);
-                if (uri == null) {
-                    return;
-                }
-                // guarda o pendente: se o Android bloquear a abertura agora (app em segundo
-                // plano), o instalador abre assim que o app voltar para a frente
-                prefs.edit().putString(K_PENDING_URI, uri.toString()).apply();
-                abrirInstalador(ctx, uri);
+                concluirDownload(ctx.getApplicationContext(), null, alvo);
             } catch (Throwable ignored) {
             }
         }

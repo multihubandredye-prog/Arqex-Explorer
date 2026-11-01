@@ -387,3 +387,36 @@ navegador, notificacao continua saindo, nenhum dialogo tentado) e 13d/13e (com A
 abre e o navegador fica quieto). Invariantes 8ad (dialog sem openBrowser), 8ae (notifyFallback
 removido), 8af (onAppResume entrega a Activity), 8ag (podeMostrarJanela), 8ah (toque da
 notificacao sem URL de releases). Total: 92 invariantes, 10 de consistencia, 24 de comportamento.
+
+## Instalador automatico, modal fantasma e ajuda sem temas (v1.60.0)
+
+1. **Instalador nao abria depois do download.** O broadcast `DOWNLOAD_COMPLETE` e enviado pelo
+   provedor de downloads (outro processo). Com `exported="false"` o app podia nao receber o
+   aviso, e o APK baixava sem nada acontecer — o usuario tinha que tocar na notificacao do
+   sistema. Correcoes: receiver com `exported="true"` (o handler valida o id do download antes
+   de agir) **e** uma vigia propria (`vigiarDownload` + `statusOf`) que consulta o
+   `DownloadManager` a cada 1,5 s, por ate 15 min, e chama `concluirDownload` quando o status e
+   `STATUS_SUCCESSFUL`. `concluirDownload` e idempotente (`install_opened`), abre o instalador
+   na tela se ela estiver viva e, se nao, deixa a instalacao pendente para o proximo `onResume`.
+
+2. **Modal voltava depois de atualizar o APK na mao.** O print mostrava "Sua versao: 1.59.0 /
+   Nova versao: v1.59.0". O caminho `force_prompt` (toque na notificacao) mostrava o modal sem
+   comparar versoes, e `notified_tag` / `force_prompt` ficavam gravados. Agora
+   `showUpdatePrompt` compara a tag oferecida com a versao instalada; se nao for mais nova,
+   limpa `force_prompt`, `apk_url`, `apk_tag` e nao abre nada. O `onResult` tambem limpa
+   `notified_tag` e `force_prompt` quando a resposta e "sem atualizacao".
+
+3. **Ajuda falava de temas que nao existem mais.** Topico 1 reescrito ("Aparencia do Aplicativo
+   e Efeitos Visuais"), topico 13 ("Personalizar o Zoom e Backup dos Ajustes"), subtitulo do
+   topico 12 sem `.mic`, e as frases soltas sobre tema ativo/painel TEMAS ajustadas em
+   `values`, `values-pt`, `values-pt-rBR` e `values-pt-rPT`. Backup e Restauracao seguem
+   documentados (nao foram removidos).
+
+4. **README reescrito** explicando o projeto, instalacao, o mecanismo de atualizacao, estrutura
+   do repositorio, build, testes, CI, seguranca e problemas comuns.
+
+Testes: stub de `Uri.parse` devolvia `null` (escondia a logica de instalacao) — corrigido para
+devolver um Uri real. Stubs novos: `DownloadManager.Query`, `android.database.Cursor`,
+`STATUS_*` configurable. Comportamento ganhou 14, 14b, 14c, 14d, 14e, 14f, 15, 15b, 15c, 15d.
+Invariantes ganharam 7g, 7h, 7i, 8ai, 8aj, 8ak, 8al. Total: 99 invariantes, 10 de consistencia,
+34 de comportamento, 9 de versao.

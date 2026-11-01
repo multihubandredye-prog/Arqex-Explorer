@@ -34,6 +34,8 @@
 
 .field private static final K_FORCE_PROMPT:Ljava/lang/String; = "force_prompt"
 
+.field private static final K_INSTALL_OPENED:Ljava/lang/String; = "install_opened"
+
 .field private static final K_LAST_CHECK:Ljava/lang/String; = "last_check"
 
 .field private static final K_LAST_NOTIFY:Ljava/lang/String; = "last_notify"
@@ -59,7 +61,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 81
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -70,7 +72,7 @@
 
     const/4 v0, 0x0
 
-    .line 716
+    .line 836
     :try_start_1
     new-instance v1, Landroid/content/Intent;
 
@@ -78,25 +80,25 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 717
+    .line 837
     const-string v2, "application/vnd.android.package-archive"
 
     invoke-virtual {v1, p1, v2}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
     const/high16 p1, 0x10000000
 
-    .line 718
+    .line 838
     invoke-virtual {v1, p1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     const/4 p1, 0x1
 
-    .line 719
+    .line 839
     invoke-virtual {v1, p1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 720
+    .line 840
     invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 721
+    .line 841
     const-string v1, "arqex_updater"
 
     invoke-virtual {p0, v1, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
@@ -126,7 +128,7 @@
 .method static synthetic access$000(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    .line 50
+    .line 51
     invoke-static {p0, p1, p2}, Llibs/ArqexUpdater;->download(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -135,7 +137,7 @@
 .method static synthetic access$100(Landroid/content/Context;Ljava/lang/String;)V
     .registers 2
 
-    .line 50
+    .line 51
     invoke-static {p0, p1}, Llibs/ArqexUpdater;->openBrowser(Landroid/content/Context;Ljava/lang/String;)V
 
     return-void
@@ -144,21 +146,19 @@
 .method static synthetic access$400(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 50
+    .line 51
     invoke-static/range {p0 .. p5}, Llibs/ArqexUpdater;->onResult(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method static synthetic access$500(Landroid/content/Context;J)Landroid/net/Uri;
+.method static synthetic access$500(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    .line 50
-    invoke-static {p0, p1, p2}, Llibs/ArqexUpdater;->uriOf(Landroid/content/Context;J)Landroid/net/Uri;
+    .line 51
+    invoke-static {p0, p1, p2}, Llibs/ArqexUpdater;->infoDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method
 
 .method static apkUrlFor(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/String;
@@ -170,7 +170,7 @@
 
     if-eqz p1, :cond_2a
 
-    .line 534
+    .line 550
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -179,7 +179,7 @@
 
     goto :goto_2a
 
-    .line 537
+    .line 553
     :cond_c
     const-string v1, "apk_url"
 
@@ -187,7 +187,7 @@
 
     move-result-object v1
 
-    .line 538
+    .line 554
     const-string v2, "apk_tag"
 
     const-string v3, ""
@@ -198,7 +198,7 @@
 
     if-eqz v1, :cond_2a
 
-    .line 539
+    .line 555
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -230,14 +230,14 @@
 
     goto/16 :goto_99
 
-    .line 92
+    .line 94
     :cond_6
     :try_start_6
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 93
+    .line 95
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v2, -0x2
@@ -248,32 +248,32 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 94
+    .line 96
     invoke-static {}, Llibs/va3;->Bundle()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 95
+    .line 97
     sget v1, Llibs/sa3;->f:I
 
-    .line 96
+    .line 98
     sget v2, Llibs/sa3;->a:I
 
     mul-int/lit8 v4, v1, 0x2
 
     add-int/2addr v1, v2
 
-    .line 97
+    .line 99
     invoke-virtual {v0, v4, v1, v4, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
     const/16 v1, 0x10
 
-    .line 98
+    .line 100
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 99
+    .line 101
     const-string v1, "TEXT_GRID_PRIMARY"
 
     const-string v2, "#FFEFF3F8"
@@ -288,15 +288,15 @@
 
     const/4 v2, 0x2
 
-    .line 100
+    .line 102
     invoke-virtual {v0, v2, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 101
+    .line 103
     invoke-static {p0}, Llibs/ArqexUpdater;->currentVersion(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 102
+    .line 104
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -323,7 +323,7 @@
 
     const-string v5, "Tap to check for a new version"
 
-    .line 104
+    .line 106
     invoke-static {p0, v4, v5}, Llibs/ArqexStrings;->get(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -346,22 +346,22 @@
 
     move-result-object v1
 
-    .line 102
+    .line 104
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 107
+    .line 109
     new-instance v1, Llibs/ArqexUpdater$RowClick;
 
     invoke-direct {v1, p0}, Llibs/ArqexUpdater$RowClick;-><init>(Landroid/app/Activity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 109
+    .line 111
     new-instance v1, Landroid/view/View;
 
     invoke-direct {v1, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 110
+    .line 112
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
 
     sget v4, Llibs/sa3;->a:I
@@ -372,19 +372,19 @@
 
     if-eqz p2, :cond_90
 
-    .line 112
+    .line 114
     invoke-static {v1, p2}, Llibs/sw1;->z(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
-    .line 115
+    .line 117
     :cond_90
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 116
+    .line 118
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
     :try_end_96
     .catchall {:try_start_6 .. :try_end_96} :catchall_96
 
-    .line 120
+    .line 122
     :catchall_96
     :try_start_96
     invoke-static {p0}, Llibs/ArqexUpdater;->autoCheck(Landroid/content/Context;)V
@@ -400,7 +400,7 @@
 .method private static askNotificationsOnce(Landroid/app/Activity;)V
     .registers 6
 
-    .line 283
+    .line 296
     const-string v0, "android.permission.POST_NOTIFICATIONS"
 
     const-string v1, "asked_notifications"
@@ -414,7 +414,7 @@
 
     return-void
 
-    .line 286
+    .line 299
     :cond_b
     const-string v2, "arqex_updater"
 
@@ -424,7 +424,7 @@
 
     move-result-object v2
 
-    .line 287
+    .line 300
     invoke-interface {v2, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v4
@@ -433,7 +433,7 @@
 
     return-void
 
-    .line 290
+    .line 303
     :cond_19
     invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -447,7 +447,7 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 291
+    .line 304
     invoke-virtual {p0, v0}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v1
@@ -456,7 +456,7 @@
 
     return-void
 
-    .line 295
+    .line 308
     :cond_2c
     new-array v1, v4, [Ljava/lang/String;
 
@@ -475,7 +475,7 @@
 .method private static autoCheck(Landroid/content/Context;)V
     .registers 11
 
-    .line 141
+    .line 143
     const-string v0, "arqex_updater"
 
     const/4 v1, 0x0
@@ -484,7 +484,7 @@
 
     move-result-object v0
 
-    .line 142
+    .line 144
     const-string v2, "last_check"
 
     const-wide/16 v3, 0x0
@@ -493,7 +493,7 @@
 
     move-result-wide v5
 
-    .line 143
+    .line 145
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v7
@@ -512,7 +512,7 @@
 
     return-void
 
-    .line 147
+    .line 149
     :cond_21
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -524,7 +524,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 148
+    .line 150
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v2, Llibs/ArqexUpdater$Check;
@@ -545,24 +545,24 @@
 .method private static changelogText(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 5
 
-    .line 472
+    .line 488
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 473
+    .line 489
     invoke-static {p0}, Llibs/ArqexUpdater;->notificationsAllowed(Landroid/content/Context;)Z
 
     move-result p0
 
     if-nez p0, :cond_10
 
-    .line 474
+    .line 490
     const-string p0, "Aviso: as notifica\u00e7\u00f5es do Arqex est\u00e3o bloqueadas neste aparelho, por isso voc\u00ea n\u00e3o recebe aviso autom\u00e1tico de vers\u00e3o nova. Para liberar: Configura\u00e7\u00f5es do Android > Apps > Arqex Explorer > Notifica\u00e7\u00f5es.\n\n"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 479
+    .line 495
     :cond_10
     const-string p0, "Sua vers\u00e3o: "
 
@@ -578,7 +578,7 @@
 
     invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 480
+    .line 496
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
@@ -589,17 +589,17 @@
 
     if-eqz p3, :cond_86
 
-    .line 481
+    .line 497
     invoke-virtual {p3}, Ljava/lang/String;->length()I
 
     move-result p0
 
     if-lez p0, :cond_86
 
-    .line 482
+    .line 498
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 485
+    .line 501
     const-string p0, "### Como instalar"
 
     invoke-virtual {p3, p0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -608,7 +608,7 @@
 
     if-gez p0, :cond_41
 
-    .line 487
+    .line 503
     const-string p0, "### Codigo-fonte"
 
     invoke-virtual {p3, p0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -618,7 +618,7 @@
     :cond_41
     if-gez p0, :cond_49
 
-    .line 490
+    .line 506
     const-string p0, "### C\u00f3digo-fonte"
 
     invoke-virtual {p3, p0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -630,12 +630,12 @@
 
     if-lez p0, :cond_50
 
-    .line 493
+    .line 509
     invoke-virtual {p3, p1, p0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p3
 
-    .line 495
+    .line 511
     :cond_50
     const-string p0, "**"
 
@@ -645,21 +645,21 @@
 
     move-result-object p0
 
-    .line 496
+    .line 512
     const-string p3, "###"
 
     invoke-virtual {p0, p3, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 497
+    .line 513
     const-string p3, "`"
 
     invoke-virtual {p0, p3, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 498
+    .line 514
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p2
@@ -668,7 +668,7 @@
 
     if-le p2, p3, :cond_83
 
-    .line 499
+    .line 515
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -691,11 +691,11 @@
 
     move-result-object p0
 
-    .line 501
+    .line 517
     :cond_83
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 503
+    .line 519
     :cond_86
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -716,13 +716,13 @@
 
     goto :goto_a
 
-    .line 156
+    .line 158
     :cond_6
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p0
 
-    .line 158
+    .line 160
     :goto_a
     :try_start_a
     new-instance v0, Ljava/lang/Thread;
@@ -744,7 +744,7 @@
 .method public static checkOnStart(Landroid/app/Activity;)V
     .registers 10
 
-    .line 169
+    .line 171
     const-string v0, "last_check"
 
     const-string v1, "arqex_updater"
@@ -753,7 +753,7 @@
 
     return-void
 
-    .line 173
+    .line 175
     :cond_7
     :try_start_7
     invoke-static {p0}, Llibs/ArqexUpdater;->askNotificationsOnce(Landroid/app/Activity;)V
@@ -763,7 +763,7 @@
     :catchall_a
     const/4 v2, 0x0
 
-    .line 177
+    .line 179
     :try_start_b
     invoke-virtual {p0, v1, v2}, Landroid/app/Activity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
@@ -777,14 +777,14 @@
 
     if-eqz v3, :cond_1b
 
-    .line 178
+    .line 180
     invoke-static {p0}, Llibs/ArqexUpdater;->onAppResume(Landroid/app/Activity;)V
     :try_end_1a
     .catchall {:try_start_b .. :try_end_1a} :catchall_1b
 
     return-void
 
-    .line 184
+    .line 186
     :catchall_1b
     :cond_1b
     :try_start_1b
@@ -794,12 +794,12 @@
 
     const-wide/16 v2, 0x0
 
-    .line 185
+    .line 187
     invoke-interface {v1, v0, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v4
 
-    .line 186
+    .line 188
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -818,7 +818,7 @@
 
     return-void
 
-    .line 190
+    .line 192
     :cond_37
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -830,7 +830,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 194
+    .line 196
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Llibs/ArqexUpdater$Check;
@@ -852,17 +852,17 @@
 .method static compareVersions(Ljava/lang/String;Ljava/lang/String;)I
     .registers 7
 
-    .line 800
+    .line 920
     invoke-static {p0}, Llibs/ArqexUpdater;->parseVersion(Ljava/lang/String;)[I
 
     move-result-object p0
 
-    .line 801
+    .line 921
     invoke-static {p1}, Llibs/ArqexUpdater;->parseVersion(Ljava/lang/String;)[I
 
     move-result-object p1
 
-    .line 802
+    .line 922
     array-length v0, p0
 
     array-length v1, p1
@@ -884,7 +884,7 @@
     :goto_11
     if-ge v2, v0, :cond_2c
 
-    .line 804
+    .line 924
     array-length v3, p0
 
     if-ge v2, v3, :cond_19
@@ -896,7 +896,7 @@
     :cond_19
     const/4 v3, 0x0
 
-    .line 805
+    .line 925
     :goto_1a
     array-length v4, p1
 
@@ -933,16 +933,132 @@
     return v1
 .end method
 
+.method static concluirDownload(Landroid/content/Context;Landroid/content/Context;J)V
+    .registers 8
+
+    .line 792
+    const-string v0, "install_opened"
+
+    :try_start_2
+    const-string v1, "arqex_updater"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    .line 793
+    invoke-static {p2, p3}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, ""
+
+    invoke-interface {v1, v0, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1a
+
+    return-void
+
+    .line 796
+    :cond_1a
+    invoke-static {p0, p2, p3}, Llibs/ArqexUpdater;->statusOf(Landroid/content/Context;J)I
+
+    move-result v2
+
+    const/16 v3, 0x8
+
+    if-eq v2, v3, :cond_23
+
+    return-void
+
+    .line 799
+    :cond_23
+    invoke-static {p0, p2, p3}, Llibs/ArqexUpdater;->uriOf(Landroid/content/Context;J)Landroid/net/Uri;
+
+    move-result-object v2
+
+    if-nez v2, :cond_2a
+
+    return-void
+
+    .line 803
+    :cond_2a
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    invoke-static {p2, p3}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-interface {v3, v0, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 804
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    const-string p3, "pending_install_uri"
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p2, p3, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    if-eqz p1, :cond_59
+
+    .line 805
+    invoke-static {p1}, Llibs/ArqexUpdater;->podeMostrarJanela(Landroid/content/Context;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_59
+
+    invoke-static {p1, v2}, Llibs/ArqexUpdater;->abrirInstalador(Landroid/content/Context;Landroid/net/Uri;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_59
+
+    return-void
+
+    .line 808
+    :cond_59
+    invoke-static {p0, v2}, Llibs/ArqexUpdater;->abrirInstalador(Landroid/content/Context;Landroid/net/Uri;)Z
+    :try_end_5c
+    .catchall {:try_start_2 .. :try_end_5c} :catchall_5c
+
+    :catchall_5c
+    return-void
+.end method
+
 .method private static currentVersion(Landroid/content/Context;)Ljava/lang/String;
     .registers 3
 
-    .line 788
+    .line 908
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 789
+    .line 909
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object p0
@@ -955,7 +1071,7 @@
 
     if-eqz p0, :cond_1e
 
-    .line 790
+    .line 910
     iget-object v0, p0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
 
     if-eqz v0, :cond_1e
@@ -968,14 +1084,14 @@
 
     if-lez v0, :cond_1e
 
-    .line 791
+    .line 911
     iget-object p0, p0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
     :try_end_1d
     .catchall {:try_start_0 .. :try_end_1d} :catchall_1e
 
     return-object p0
 
-    .line 795
+    .line 915
     :catchall_1e
     :cond_1e
     const-string p0, "0"
@@ -986,7 +1102,7 @@
 .method private static dialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
 
-    .line 547
+    .line 563
     invoke-static {p0}, Llibs/ArqexUpdater;->podeMostrarJanela(Landroid/content/Context;)Z
 
     move-result v0
@@ -995,25 +1111,25 @@
 
     return-void
 
-    .line 553
+    .line 569
     :cond_7
     :try_start_7
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 554
+    .line 570
     invoke-virtual {v0, p2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 555
+    .line 571
     invoke-virtual {v0, p3}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     const/4 p2, 0x1
 
-    .line 556
+    .line 572
     invoke-virtual {v0, p2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 557
+    .line 573
     const-string p2, "arqex_updater"
 
     const/4 p3, 0x0
@@ -1028,12 +1144,12 @@
     :try_end_21
     .catchall {:try_start_7 .. :try_end_21} :catchall_4d
 
-    .line 558
+    .line 574
     const-string p3, "Abrir no navegador"
 
     if-eqz p2, :cond_38
 
-    .line 559
+    .line 575
     :try_start_25
     const-string v1, "Baixar e instalar"
 
@@ -1043,7 +1159,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 565
+    .line 581
     new-instance p1, Llibs/ArqexUpdater$6;
 
     invoke-direct {p1, p0}, Llibs/ArqexUpdater$6;-><init>(Landroid/content/Context;)V
@@ -1052,7 +1168,7 @@
 
     goto :goto_40
 
-    .line 572
+    .line 588
     :cond_38
     new-instance p1, Llibs/ArqexUpdater$7;
 
@@ -1060,7 +1176,7 @@
 
     invoke-virtual {v0, p3, p1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 579
+    .line 595
     :goto_40
     const-string p0, "Depois"
 
@@ -1070,7 +1186,7 @@
 
     invoke-virtual {v0, p0, p1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 584
+    .line 600
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
     :try_end_4d
     .catchall {:try_start_25 .. :try_end_4d} :catchall_4d
@@ -1082,7 +1198,7 @@
 .method private static download(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .registers 10
 
-    .line 651
+    .line 667
     const-string v0, "O download n\u00e3o p\u00f4de ser iniciado. Use \"Abrir no navegador\" na pr\u00f3xima vez que o aviso aparecer."
 
     const-string v1, "N\u00e3o foi poss\u00edvel baixar"
@@ -1092,13 +1208,13 @@
 
     const-string v3, "Arqex-"
 
-    .line 651
+    .line 667
     :try_start_8
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v4
 
-    .line 652
+    .line 668
     const-string v5, "download"
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1107,13 +1223,13 @@
 
     check-cast v5, Landroid/app/DownloadManager;
 
-    if-eqz v5, :cond_91
+    if-eqz v5, :cond_ae
 
     if-nez p2, :cond_1a
 
-    goto/16 :goto_91
+    goto/16 :goto_ae
 
-    .line 659
+    .line 675
     :cond_1a
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -1143,7 +1259,7 @@
 
     move-result-object v3
 
-    .line 660
+    .line 676
     new-instance v6, Landroid/app/DownloadManager$Request;
 
     invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -1152,7 +1268,7 @@
 
     invoke-direct {v6, p2}, Landroid/app/DownloadManager$Request;-><init>(Landroid/net/Uri;)V
 
-    .line 661
+    .line 677
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -1177,37 +1293,37 @@
 
     invoke-virtual {v6, p2}, Landroid/app/DownloadManager$Request;->setTitle(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;
 
-    .line 662
+    .line 678
     const-string p2, "Baixando a atualiza\u00e7\u00e3o"
 
     invoke-virtual {v6, p2}, Landroid/app/DownloadManager$Request;->setDescription(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;
 
-    .line 663
+    .line 679
     const-string p2, "application/vnd.android.package-archive"
 
     invoke-virtual {v6, p2}, Landroid/app/DownloadManager$Request;->setMimeType(Ljava/lang/String;)Landroid/app/DownloadManager$Request;
 
     const/4 p2, 0x3
 
-    .line 664
+    .line 680
     invoke-virtual {v6, p2}, Landroid/app/DownloadManager$Request;->setNotificationVisibility(I)Landroid/app/DownloadManager$Request;
 
-    .line 665
+    .line 681
     const-string p2, "Download"
 
     invoke-virtual {v6, v4, p2, v3}, Landroid/app/DownloadManager$Request;->setDestinationInExternalFilesDir(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;
 
     const/4 p2, 0x1
 
-    .line 666
+    .line 682
     invoke-virtual {v6, p2}, Landroid/app/DownloadManager$Request;->setAllowedOverRoaming(Z)Landroid/app/DownloadManager$Request;
 
-    .line 667
+    .line 683
     invoke-virtual {v5, v6}, Landroid/app/DownloadManager;->enqueue(Landroid/app/DownloadManager$Request;)J
 
     move-result-wide v2
 
-    .line 668
+    .line 684
     const-string p2, "arqex_updater"
 
     const/4 v5, 0x0
@@ -1216,7 +1332,7 @@
 
     move-result-object p2
 
-    .line 669
+    .line 685
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v4
@@ -1225,49 +1341,78 @@
 
     invoke-interface {v4, v5, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    if-eqz p1, :cond_98
+    .line 687
+    invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    .line 671
+    move-result-object v4
+
+    const-string v5, "pending_install_uri"
+
+    invoke-interface {v4, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 688
+    invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v4
+
+    const-string v5, "install_opened"
+
+    invoke-interface {v4, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    if-eqz p1, :cond_aa
+
+    .line 690
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
 
-    const-string v2, "download_tag"
+    const-string v4, "download_tag"
 
-    invoke-interface {p2, v2, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p2, v4, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    goto :goto_98
+    .line 697
+    :cond_aa
+    invoke-static {p0, v2, v3}, Llibs/ArqexUpdater;->vigiarDownload(Landroid/content/Context;J)V
 
-    .line 654
-    :cond_91
-    :goto_91
+    goto :goto_b5
+
+    .line 670
+    :cond_ae
+    :goto_ae
     invoke-static {p0, v1, v0}, Llibs/ArqexUpdater;->infoDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_94
-    .catchall {:try_start_8 .. :try_end_94} :catchall_95
+    :try_end_b1
+    .catchall {:try_start_8 .. :try_end_b1} :catchall_b2
 
     return-void
 
-    .line 679
-    :catchall_95
+    .line 700
+    :catchall_b2
     invoke-static {p0, v1, v0}, Llibs/ArqexUpdater;->infoDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_98
-    :goto_98
+    :goto_b5
     return-void
 .end method
 
 .method private static infoDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 510
+    .line 526
     invoke-static {p0}, Llibs/ArqexUpdater;->podeMostrarJanela(Landroid/content/Context;)Z
 
     move-result v0
@@ -1276,25 +1421,25 @@
 
     return-void
 
-    .line 514
+    .line 530
     :cond_7
     :try_start_7
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 515
+    .line 531
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 516
+    .line 532
     invoke-virtual {v0, p2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     const/4 p0, 0x1
 
-    .line 517
+    .line 533
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 518
+    .line 534
     const-string p0, "OK"
 
     new-instance p1, Llibs/ArqexUpdater$4;
@@ -1303,7 +1448,7 @@
 
     invoke-virtual {v0, p0, p1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 523
+    .line 539
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
     :try_end_23
     .catchall {:try_start_7 .. :try_end_23} :catchall_23
@@ -1315,7 +1460,7 @@
 .method private static install(Landroid/content/Context;J)V
     .registers 4
 
-    .line 758
+    .line 878
     :try_start_0
     invoke-static {p0, p1, p2}, Llibs/ArqexUpdater;->uriOf(Landroid/content/Context;J)Landroid/net/Uri;
 
@@ -1325,7 +1470,7 @@
 
     return-void
 
-    .line 764
+    .line 884
     :cond_7
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -1337,7 +1482,7 @@
 
     if-nez p2, :cond_29
 
-    .line 766
+    .line 886
     const-string p2, "arqex_updater"
 
     const/4 v0, 0x0
@@ -1346,7 +1491,7 @@
 
     move-result-object p0
 
-    .line 767
+    .line 887
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
@@ -1373,7 +1518,7 @@
 .method static installPending(Landroid/app/Activity;)V
     .registers 4
 
-    .line 744
+    .line 864
     :try_start_0
     const-string v0, "arqex_updater"
 
@@ -1383,7 +1528,7 @@
 
     move-result-object v0
 
-    .line 745
+    .line 865
     const-string v1, "pending_install_uri"
 
     const/4 v2, 0x0
@@ -1394,7 +1539,7 @@
 
     if-eqz v0, :cond_2d
 
-    .line 746
+    .line 866
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -1403,7 +1548,7 @@
 
     goto :goto_2d
 
-    .line 749
+    .line 869
     :cond_17
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -1415,7 +1560,7 @@
 
     if-nez v1, :cond_2d
 
-    .line 750
+    .line 870
     invoke-virtual {p0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p0
@@ -1441,11 +1586,11 @@
 
     const/4 v0, 0x0
 
-    .line 463
+    .line 479
     :try_start_1
     const-string v1, "notification"
 
-    .line 464
+    .line 480
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
@@ -1454,7 +1599,7 @@
 
     if-eqz p0, :cond_12
 
-    .line 465
+    .line 481
     invoke-virtual {p0}, Landroid/app/NotificationManager;->areNotificationsEnabled()Z
 
     move-result p0
@@ -1473,7 +1618,7 @@
 .method private static notifyUpdate(Landroid/content/Context;Ljava/lang/String;Landroid/content/SharedPreferences;)V
     .registers 15
 
-    .line 594
+    .line 610
     const-string v0, "arqex_updates"
 
     const-string v1, "notified_tag"
@@ -1483,7 +1628,7 @@
     .line 0
     const-string v3, "Atualiza\u00e7\u00e3o dispon\u00edvel: "
 
-    .line 594
+    .line 610
     :try_start_8
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1493,11 +1638,11 @@
 
     return-void
 
-    .line 597
+    .line 613
     :cond_f
     const-string v4, "notification"
 
-    .line 598
+    .line 614
     invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v4
@@ -1508,7 +1653,7 @@
 
     return-void
 
-    .line 605
+    .line 621
     :cond_1a
     invoke-virtual {v4}, Landroid/app/NotificationManager;->areNotificationsEnabled()Z
 
@@ -1521,17 +1666,17 @@
     :cond_21
     const-wide/16 v5, 0x0
 
-    .line 608
+    .line 624
     invoke-interface {p2, v2, v5, v6}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v7
 
-    .line 609
+    .line 625
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v9
 
-    .line 610
+    .line 626
     const-string v11, ""
 
     invoke-interface {p2, v1, v11}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1558,7 +1703,7 @@
 
     return-void
 
-    .line 614
+    .line 630
     :cond_44
     new-instance v5, Landroid/app/NotificationChannel;
 
@@ -1568,15 +1713,15 @@
 
     invoke-direct {v5, v0, v6, v7}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
-    .line 616
+    .line 632
     const-string v6, "Avisa quando existe uma vers\u00e3o nova do Arqex Explorer"
 
     invoke-virtual {v5, v6}, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
 
-    .line 617
+    .line 633
     invoke-virtual {v4, v5}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
-    .line 619
+    .line 635
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v5
@@ -1591,26 +1736,26 @@
 
     if-nez v5, :cond_75
 
-    .line 623
+    .line 639
     new-instance v5, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.MAIN"
 
     invoke-direct {v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 624
+    .line 640
     const-string v6, "android.intent.category.LAUNCHER"
 
     invoke-virtual {v5, v6}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 625
+    .line 641
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v5, v6}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 629
+    .line 645
     :cond_75
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -1630,12 +1775,12 @@
 
     const/high16 v7, 0xc000000
 
-    .line 630
+    .line 646
     invoke-static {p0, v6, v5, v7}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v5
 
-    .line 633
+    .line 649
     new-instance v6, Landroid/app/Notification$Builder;
 
     invoke-direct {v6, p0, v0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
@@ -1652,19 +1797,19 @@
 
     move-result-object v0
 
-    .line 634
+    .line 650
     invoke-virtual {v6, v0}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v0
 
     const-string v3, "Toque para instalar a nova vers\u00e3o do Arqex Explorer"
 
-    .line 635
+    .line 651
     invoke-virtual {v0, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v0
 
-    .line 636
+    .line 652
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object p0
@@ -1675,27 +1820,27 @@
 
     move-result-object p0
 
-    .line 637
+    .line 653
     invoke-virtual {p0, v8}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
 
     move-result-object p0
 
-    .line 638
+    .line 654
     invoke-virtual {p0, v5}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
     move-result-object p0
 
-    .line 639
+    .line 655
     invoke-virtual {p0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
     move-result-object p0
 
     const v0, 0x415251
 
-    .line 640
+    .line 656
     invoke-virtual {v4, v0, p0}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
-    .line 641
+    .line 657
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
@@ -1706,7 +1851,7 @@
 
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 642
+    .line 658
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
@@ -1730,7 +1875,7 @@
 .method public static onAppResume(Landroid/app/Activity;)V
     .registers 10
 
-    .line 204
+    .line 206
     const-string v0, "last_check"
 
     const-string v1, "force_prompt"
@@ -1744,20 +1889,20 @@
     :cond_9
     const/4 v3, 0x0
 
-    .line 208
+    .line 210
     :try_start_a
     invoke-virtual {p0, v2, v3}, Landroid/app/Activity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v4
 
-    .line 209
+    .line 211
     invoke-interface {v4, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v5
 
     if-eqz v5, :cond_23
 
-    .line 211
+    .line 213
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v5
@@ -1768,14 +1913,14 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 212
+    .line 214
     invoke-static {p0, v4}, Llibs/ArqexUpdater;->showUpdatePrompt(Landroid/app/Activity;Landroid/content/SharedPreferences;)V
     :try_end_22
     .catchall {:try_start_a .. :try_end_22} :catchall_23
 
     return-void
 
-    .line 219
+    .line 221
     :catchall_23
     :cond_23
     :try_start_23
@@ -1783,7 +1928,7 @@
     :try_end_26
     .catchall {:try_start_23 .. :try_end_26} :catchall_26
 
-    .line 224
+    .line 226
     :catchall_26
     :try_start_26
     invoke-virtual {p0, v2, v3}, Landroid/app/Activity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
@@ -1792,12 +1937,12 @@
 
     const-wide/16 v2, 0x0
 
-    .line 225
+    .line 227
     invoke-interface {v1, v0, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v4
 
-    .line 226
+    .line 228
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -1816,7 +1961,7 @@
 
     return-void
 
-    .line 230
+    .line 232
     :cond_42
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -1828,7 +1973,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 234
+    .line 236
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Llibs/ArqexUpdater$Check;
@@ -1848,11 +1993,11 @@
 .end method
 
 .method private static onResult(Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 15
+    .registers 16
 
-    const-string v0, "Atualiza\u00e7\u00e3o dispon\u00edvel: "
+    const-string v0, "Voc\u00ea j\u00e1 est\u00e1 na vers\u00e3o mais recente ("
 
-    const-string v1, "Voc\u00ea j\u00e1 est\u00e1 na vers\u00e3o mais recente ("
+    const-string v1, "Atualiza\u00e7\u00e3o dispon\u00edvel: "
 
     const-string v2, "A verifica\u00e7\u00e3o falhou ("
 
@@ -1869,23 +2014,23 @@
     :cond_c
     const/4 v5, 0x0
 
-    .line 392
+    .line 405
     :goto_d
     :try_start_d
     invoke-static {p0}, Llibs/ArqexUpdater;->currentVersion(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v6
     :try_end_11
-    .catchall {:try_start_d .. :try_end_11} :catchall_f3
+    .catchall {:try_start_d .. :try_end_11} :catchall_118
 
-    .line 393
+    .line 406
     const-string v7, "N\u00e3o foi poss\u00edvel verificar"
 
     if-eqz p5, :cond_2e
 
     if-eqz v5, :cond_2d
 
-    .line 395
+    .line 408
     :try_start_17
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1915,7 +2060,7 @@
 
     if-eqz v5, :cond_37
 
-    .line 402
+    .line 415
     const-string p1, "O GitHub n\u00e3o devolveu a vers\u00e3o mais recente."
 
     invoke-static {p0, v7, p1}, Llibs/ArqexUpdater;->infoDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
@@ -1923,29 +2068,42 @@
     :cond_37
     return-void
 
-    .line 407
+    .line 420
     :cond_38
     invoke-static {p2, v6}, Llibs/ArqexUpdater;->compareVersions(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p5
     :try_end_3c
-    .catchall {:try_start_17 .. :try_end_3c} :catchall_f3
+    .catchall {:try_start_17 .. :try_end_3c} :catchall_118
 
     const-string v2, "arqex_updater"
 
-    const-string v7, "apk_tag"
+    const-string v7, "dialog_tag"
 
-    const-string v8, "apk_url"
+    const-string v8, "apk_tag"
 
-    if-gtz p5, :cond_79
+    const-string v9, "apk_url"
 
-    .line 410
-    :try_start_44
+    if-gtz p5, :cond_a0
+
+    .line 423
+    :try_start_46
     invoke-virtual {p0, v2, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    .line 411
+    .line 424
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    invoke-interface {p2, v9}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 425
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
@@ -1956,25 +2114,51 @@
 
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 412
+    .line 426
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    const-string p3, "notified_tag"
+
+    invoke-interface {p2, p3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 427
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    const-string p3, "force_prompt"
+
+    invoke-interface {p2, p3, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 428
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
-    invoke-interface {p1, v7}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p1, v7, v6}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    if-eqz v5, :cond_78
+    if-eqz v5, :cond_9f
 
-    .line 414
+    .line 430
     const-string p1, "Sem atualiza\u00e7\u00f5es"
 
     new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1992,43 +2176,54 @@
 
     invoke-static {p0, p1, p2}, Llibs/ArqexUpdater;->infoDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_78
+    :cond_9f
     return-void
 
-    .line 419
-    :cond_79
+    .line 435
+    :cond_a0
     invoke-virtual {p0, v2, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object p5
 
-    if-eqz p4, :cond_96
+    if-eqz p4, :cond_bd
 
-    .line 421
+    .line 437
     invoke-interface {p5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1, v8, p4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v9, p4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p4
 
     invoke-interface {p4}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 422
+    .line 438
     invoke-interface {p5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p4
 
-    invoke-interface {p4, v7, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p4, v8, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p4
 
     invoke-interface {p4}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    goto :goto_ac
+    goto :goto_d3
 
-    .line 424
-    :cond_96
+    .line 440
+    :cond_bd
+    invoke-interface {p5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p4
+
+    invoke-interface {p4, v9}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p4
+
+    invoke-interface {p4}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 441
     invoke-interface {p5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p4
@@ -2039,61 +2234,44 @@
 
     invoke-interface {p4}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 425
+    .line 443
+    :goto_d3
     invoke-interface {p5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p4
 
-    invoke-interface {p4, v7}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object p4
-
-    invoke-interface {p4}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    .line 427
-    :goto_ac
-    invoke-interface {p5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object p4
-
-    const-string v1, "release_body"
-    :try_end_b2
-    .catchall {:try_start_44 .. :try_end_b2} :catchall_f3
+    const-string v0, "release_body"
+    :try_end_d9
+    .catchall {:try_start_46 .. :try_end_d9} :catchall_118
 
     const-string v2, ""
 
-    if-nez p3, :cond_b8
+    if-nez p3, :cond_df
 
     move-object v3, v2
 
-    goto :goto_b9
+    goto :goto_e0
 
-    :cond_b8
+    :cond_df
     move-object v3, p3
 
-    :goto_b9
-    :try_start_b9
-    invoke-interface {p4, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    :goto_e0
+    :try_start_e0
+    invoke-interface {p4, v0, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p4
 
     invoke-interface {p4}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 431
+    .line 447
     invoke-static {p0, p2, p5}, Llibs/ArqexUpdater;->notifyUpdate(Landroid/content/Context;Ljava/lang/String;Landroid/content/SharedPreferences;)V
-    :try_end_c3
-    .catchall {:try_start_b9 .. :try_end_c3} :catchall_f3
 
     const/4 p4, 0x2
 
-    .line 433
-    const-string v1, "dialog_tag"
+    if-ne p1, p4, :cond_f7
 
-    if-ne p1, p4, :cond_d2
-
-    .line 435
-    :try_start_c8
-    invoke-interface {p5, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 451
+    invoke-interface {p5, v7, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2103,13 +2281,13 @@
 
     xor-int/lit8 v5, p1, 0x1
 
-    :cond_d2
-    if-eqz v5, :cond_f3
+    :cond_f7
+    if-eqz v5, :cond_118
 
-    .line 438
+    .line 454
     new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2125,28 +2303,28 @@
 
     invoke-static {p0, p2, p1, p3}, Llibs/ArqexUpdater;->dialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 439
+    .line 455
     invoke-interface {p5}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
 
-    invoke-interface {p0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p0, v7, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
 
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
-    :try_end_f3
-    .catchall {:try_start_c8 .. :try_end_f3} :catchall_f3
+    :try_end_118
+    .catchall {:try_start_e0 .. :try_end_118} :catchall_118
 
-    :catchall_f3
-    :cond_f3
+    :catchall_118
+    :cond_118
     return-void
 .end method
 
 .method private static openBrowser(Landroid/content/Context;Ljava/lang/String;)V
     .registers 4
 
-    .line 776
+    .line 896
     :try_start_0
     new-instance v0, Landroid/content/Intent;
 
@@ -2154,7 +2332,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 777
+    .line 897
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
@@ -2163,10 +2341,10 @@
 
     const/high16 p1, 0x10000000
 
-    .line 778
+    .line 898
     invoke-virtual {v0, p1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 779
+    .line 899
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_16
     .catchall {:try_start_0 .. :try_end_16} :catchall_16
@@ -2180,7 +2358,7 @@
 
     const/4 v0, 0x0
 
-    .line 814
+    .line 934
     filled-new-array {v0}, [I
 
     move-result-object v1
@@ -2189,13 +2367,13 @@
 
     return-object v1
 
-    .line 818
+    .line 938
     :cond_8
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 819
+    .line 939
     const-string v2, "v"
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -2215,7 +2393,7 @@
     :cond_1c
     const/4 v2, 0x1
 
-    .line 820
+    .line 940
     invoke-virtual {p0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p0
@@ -2223,14 +2401,14 @@
     :cond_21
     const/16 v2, 0x2d
 
-    .line 822
+    .line 942
     invoke-virtual {p0, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
 
     if-lez v2, :cond_2d
 
-    .line 824
+    .line 944
     invoke-virtual {p0, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
@@ -2238,19 +2416,19 @@
     :cond_2d
     const/16 v2, 0x2b
 
-    .line 826
+    .line 946
     invoke-virtual {p0, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
 
     if-lez v2, :cond_39
 
-    .line 828
+    .line 948
     invoke-virtual {p0, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 830
+    .line 950
     :cond_39
     const-string v2, "\\."
 
@@ -2258,14 +2436,14 @@
 
     move-result-object p0
 
-    .line 831
+    .line 951
     array-length v2, p0
 
     if-nez v2, :cond_43
 
     return-object v1
 
-    .line 834
+    .line 954
     :cond_43
     array-length v1, p0
 
@@ -2273,13 +2451,13 @@
 
     const/4 v2, 0x0
 
-    .line 835
+    .line 955
     :goto_47
     array-length v3, p0
 
     if-ge v2, v3, :cond_5c
 
-    .line 837
+    .line 957
     :try_start_4a
     aget-object v3, p0, v2
 
@@ -2297,7 +2475,7 @@
 
     goto :goto_59
 
-    .line 839
+    .line 959
     :catchall_57
     aput v0, v1, v2
 
@@ -2313,7 +2491,7 @@
 .method static podeMostrarJanela(Landroid/content/Context;)Z
     .registers 3
 
-    .line 449
+    .line 465
     instance-of v0, p0, Landroid/app/Activity;
 
     const/4 v1, 0x0
@@ -2322,11 +2500,11 @@
 
     return v1
 
-    .line 452
+    .line 468
     :cond_6
     check-cast p0, Landroid/app/Activity;
 
-    .line 454
+    .line 470
     :try_start_8
     invoke-virtual {p0}, Landroid/app/Activity;->isFinishing()Z
 
@@ -2343,15 +2521,15 @@
 .end method
 
 .method private static showUpdatePrompt(Landroid/app/Activity;Landroid/content/SharedPreferences;)V
-    .registers 7
+    .registers 8
 
-    .line 245
+    .line 247
     const-string v0, ""
 
     .line 0
     const-string v1, "Atualiza\u00e7\u00e3o dispon\u00edvel: "
 
-    .line 245
+    .line 247
     :try_start_4
     const-string v2, "notified_tag"
 
@@ -2359,113 +2537,333 @@
 
     move-result-object v2
 
-    .line 246
+    .line 248
+    invoke-static {p0}, Llibs/ArqexUpdater;->currentVersion(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 249
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v4
+    :try_end_12
+    .catchall {:try_start_4 .. :try_end_12} :catchall_bc
+
+    const-string v5, "dialog_tag"
+
+    if-eqz v4, :cond_89
+
+    :try_start_16
+    invoke-static {v2, v3}, Llibs/ArqexUpdater;->compareVersions(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v4
+
+    if-gtz v4, :cond_1d
+
+    goto :goto_89
+
+    .line 258
+    :cond_1d
     invoke-static {p1, v2}, Llibs/ArqexUpdater;->apkUrlFor(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 247
+    .line 259
     const-string v4, "release_body"
 
     invoke-interface {p1, v4, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    .line 248
+    .line 260
     invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    if-lez v4, :cond_3b
+
+    .line 261
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_3d
+
+    .line 262
+    :cond_3b
+    const-string v1, "Atualizacao disponivel"
+
+    .line 263
+    :goto_3d
+    new-instance v4, Landroid/app/AlertDialog$Builder;
+
+    invoke-direct {v4, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    .line 264
+    invoke-virtual {v4, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    .line 265
+    invoke-static {p0}, Llibs/ArqexUpdater;->currentVersion(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p0, v2, v1, v0}, Llibs/ArqexUpdater;->changelogText(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v0}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const/4 v0, 0x1
+
+    .line 266
+    invoke-virtual {v4, v0}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    if-eqz v3, :cond_66
+
+    .line 267
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-lez v0, :cond_28
+    if-lez v0, :cond_66
 
-    .line 249
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 268
+    const-string v0, "Baixar e instalar"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    new-instance v1, Llibs/ArqexUpdater$1;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, p0, v2, v3}, Llibs/ArqexUpdater$1;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v0
+    invoke-virtual {v4, v0, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 275
+    :cond_66
+    const-string v0, "Abrir no navegador"
 
-    move-result-object v0
+    new-instance v1, Llibs/ArqexUpdater$2;
 
-    goto :goto_2a
+    invoke-direct {v1, p0}, Llibs/ArqexUpdater$2;-><init>(Landroid/app/Activity;)V
 
-    .line 250
-    :cond_28
-    const-string v0, "Atualizacao disponivel"
+    invoke-virtual {v4, v0, v1}, Landroid/app/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 251
-    :goto_2a
-    new-instance v1, Landroid/app/AlertDialog$Builder;
-
-    invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 252
-    invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    .line 253
-    invoke-static {p0}, Llibs/ArqexUpdater;->currentVersion(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v2, v0, p1}, Llibs/ArqexUpdater;->changelogText(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    const/4 p1, 0x1
-
-    .line 254
-    invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
-
-    if-eqz v3, :cond_53
-
-    .line 255
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    if-lez p1, :cond_53
-
-    .line 256
-    const-string p1, "Baixar e instalar"
-
-    new-instance v0, Llibs/ArqexUpdater$1;
-
-    invoke-direct {v0, p0, v2, v3}, Llibs/ArqexUpdater$1;-><init>(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1, v0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    .line 263
-    :cond_53
-    const-string p1, "Abrir no navegador"
-
-    new-instance v0, Llibs/ArqexUpdater$2;
-
-    invoke-direct {v0, p0}, Llibs/ArqexUpdater$2;-><init>(Landroid/app/Activity;)V
-
-    invoke-virtual {v1, p1, v0}, Landroid/app/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    .line 269
+    .line 281
     const-string p0, "Depois"
 
-    new-instance p1, Llibs/ArqexUpdater$3;
+    new-instance v0, Llibs/ArqexUpdater$3;
 
-    invoke-direct {p1}, Llibs/ArqexUpdater$3;-><init>()V
+    invoke-direct {v0}, Llibs/ArqexUpdater$3;-><init>()V
 
-    invoke-virtual {v1, p0, p1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v4, p0, v0}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 274
-    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
-    :try_end_6a
-    .catchall {:try_start_4 .. :try_end_6a} :catchall_6a
+    .line 286
+    invoke-virtual {v4}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    :catchall_6a
+    .line 287
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0, v5, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    goto :goto_bc
+
+    .line 252
+    :cond_89
+    :goto_89
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    const-string v0, "force_prompt"
+
+    const/4 v1, 0x0
+
+    invoke-interface {p0, v0, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 253
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    const-string v0, "apk_url"
+
+    invoke-interface {p0, v0}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 254
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    const-string v0, "apk_tag"
+
+    invoke-interface {p0, v0}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    .line 255
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0, v5, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    :try_end_bc
+    .catchall {:try_start_16 .. :try_end_bc} :catchall_bc
+
+    :catchall_bc
+    :goto_bc
     return-void
+.end method
+
+.method static statusOf(Landroid/content/Context;J)I
+    .registers 8
+
+    const/4 v0, -0x1
+
+    const/4 v1, 0x0
+
+    .line 713
+    :try_start_2
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    const-string v2, "download"
+
+    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/app/DownloadManager;
+
+    if-eqz p0, :cond_4a
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, p1, v2
+
+    if-gtz v4, :cond_17
+
+    goto :goto_4a
+
+    .line 717
+    :cond_17
+    new-instance v2, Landroid/app/DownloadManager$Query;
+
+    invoke-direct {v2}, Landroid/app/DownloadManager$Query;-><init>()V
+
+    const/4 v3, 0x1
+
+    .line 718
+    new-array v3, v3, [J
+
+    const/4 v4, 0x0
+
+    aput-wide p1, v3, v4
+
+    invoke-virtual {v2, v3}, Landroid/app/DownloadManager$Query;->setFilterById([J)Landroid/app/DownloadManager$Query;
+
+    .line 719
+    invoke-virtual {p0, v2}, Landroid/app/DownloadManager;->query(Landroid/app/DownloadManager$Query;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_45
+
+    .line 720
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result p0
+
+    if-nez p0, :cond_32
+
+    goto :goto_45
+
+    .line 723
+    :cond_32
+    const-string p0, "status"
+
+    invoke-interface {v1, p0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result p0
+
+    if-gez p0, :cond_3b
+
+    goto :goto_3f
+
+    .line 724
+    :cond_3b
+    invoke-interface {v1, p0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v0
+    :try_end_3f
+    .catchall {:try_start_2 .. :try_end_3f} :catchall_4b
+
+    :goto_3f
+    if-eqz v1, :cond_44
+
+    .line 730
+    :try_start_41
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    :try_end_44
+    .catchall {:try_start_41 .. :try_end_44} :catchall_44
+
+    :catchall_44
+    :cond_44
+    return v0
+
+    :cond_45
+    :goto_45
+    if-eqz v1, :cond_4a
+
+    :try_start_47
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    :try_end_4a
+    .catchall {:try_start_47 .. :try_end_4a} :catchall_4a
+
+    :catchall_4a
+    :cond_4a
+    :goto_4a
+    return v0
+
+    :catchall_4b
+    nop
+
+    if-eqz v1, :cond_51
+
+    :try_start_4e
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    :try_end_51
+    .catchall {:try_start_4e .. :try_end_51} :catchall_51
+
+    :catchall_51
+    :cond_51
+    return v0
 .end method
 
 .method private static uriOf(Landroid/content/Context;J)Landroid/net/Uri;
@@ -2473,7 +2871,7 @@
 
     const/4 v0, 0x0
 
-    .line 731
+    .line 851
     :try_start_1
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -2497,7 +2895,7 @@
 
     goto :goto_1b
 
-    .line 735
+    .line 855
     :cond_16
     invoke-virtual {p0, p1, p2}, Landroid/app/DownloadManager;->getUriForDownloadedFile(J)Landroid/net/Uri;
 
@@ -2511,4 +2909,41 @@
     :cond_1b
     :goto_1b
     return-object v0
+.end method
+
+.method private static vigiarDownload(Landroid/content/Context;J)V
+    .registers 6
+
+    .line 743
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 744
+    new-instance v1, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v1, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    .line 746
+    :try_start_9
+    new-instance p0, Ljava/lang/Thread;
+
+    new-instance v2, Llibs/ArqexUpdater$9;
+
+    invoke-direct {v2, v0, p1, p2, v1}, Llibs/ArqexUpdater$9;-><init>(Landroid/content/Context;JLjava/lang/ref/WeakReference;)V
+
+    invoke-direct {p0, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    const/4 p1, 0x1
+
+    .line 780
+    invoke-virtual {p0, p1}, Ljava/lang/Thread;->setDaemon(Z)V
+
+    .line 781
+    invoke-virtual {p0}, Ljava/lang/Thread;->start()V
+    :try_end_1a
+    .catchall {:try_start_9 .. :try_end_1a} :catchall_1a
+
+    :catchall_1a
+    return-void
 .end method

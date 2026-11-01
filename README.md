@@ -1,168 +1,182 @@
-# Arqex Explorer — correções do seletor de cores, janela Skins e automatização
+# Arqex Explorer
 
-Repositório privado. Nada aqui deve ser redistribuído antes da confirmação dos direitos.
+Gerenciador de arquivos para Android com atualização automática dentro do próprio app.
+Este repositório guarda o **APK já compilado e desmontado** (smali, recursos e assets), as
+ferramentas de build, os testes e a automação que publica cada versão.
 
-## Estado real deste repositório (verificado, não suposto)
+- **Pacote:** `com.arqex.explorer`
+- **Versão deste README:** 1.60.0
+- **Download:** https://github.com/multihubandredye-prog/Arqex-Explorer/releases
+- **Base:** MiXplorer (código smali derivado do DEX, sem projeto Gradle)
 
-Na `main` existia **um único commit** (`8703a58`) contendo **um único arquivo**:
-`Arqex_Explorer_v6.71.15_v1.38.zip` (SHA-256 `eb226ed743dcbe47a6d271da0dee3187dfd82ec1524585880a148dd91a336a13`).
+---
 
-Não existiam (e este trabalho não encontrou): `README.md`, `VALIDACAO.md`, `.github/`,
-tags, releases ou branches adicionais. O `bundle` e os commits `6077641` / `6da754f`
-citados no pedido **não estão no GitHub** — nunca foram enviados.
+## 1. O que é
 
-O ZIP é uma base **decodificada por apktool**: `AndroidManifest.xml`, `res/`, `assets/`,
-`lib/`, `unknown/` e `classes.dex` (sem diretório `smali`, sem projeto Gradle).
-Por isso o código é tratado como **smali derivado do DEX**, não como fonte Java.
+O Arqex Explorer é um gerenciador de arquivos completo para Android: navegação por pastas e
+abas, gerenciamento de aplicativos (.apk/.apks), compactação (ZIP, 7Z, RAR, TAR), servidores
+HTTP/FTP/SMB, editores embutidos (código, mídia, SQLite, hex), criptografia, busca recursiva e
+tarefas automáticas em segundo plano.
 
-## O que este branch adiciona
+Além do gerenciador, este projeto mantém:
 
-| Caminho | Conteúdo |
+- **atualização dentro do app** — verifica a release no GitHub, avisa por notificação, mostra o
+  que mudou e baixa/instala o APK novo;
+- **aparência própria** — visual fixo, escuro, com destaques em turquesa e efeitos animados;
+- **ajuda interna** — guia com 13 tópicos, aberto pelo ícone **?** em qualquer pasta.
+
+## 2. Como instalar
+
+1. Abra a [página de releases](https://github.com/multihubandredye-prog/Arqex-Explorer/releases).
+2. Baixe o `Arqex-vX.Y.Z.apk` da versão mais recente.
+3. Toque no arquivo e confirme a instalação.
+
+A assinatura digital é a **mesma desde a 1.43.0**, então dá para instalar por cima sem
+desinstalar nada. O Android vai pedir para permitir a instalação de apps desconhecidos na
+primeira vez.
+
+> O ZIP `Arqex-vX.Y.Z.zip` da release é o projeto pronto para recompilar, não serve para
+> instalar.
+
+## 3. Atualização dentro do app
+
+Tudo acontece no app, sem precisar visitar o GitHub:
+
+| Etapa | O que acontece |
 |---|---|
-| `patches/smali/*.patch` | diffs unificados dos 5 arquivos smali alterados |
-| `patches/smali/new/` | 3 classes smali novas |
-| `build/apktool.yml` | metadados que faltavam para o apktool remontar o APK |
-| `tools/build.sh` | build reproduzível: ZIP → baksmali → patches → smali → APK |
-| `tools/verify_apk.py` | checagens estruturais do APK |
-| `tools/next_version.py` | próxima versão a partir de tags/releases reais (paginado) |
-| `tests/test_smali_invariants.py` | 41 testes estáticos sobre o smali final |
-| `.github/workflows/build-release.yml` | testes, build, assinatura e release |
+| Verificação | consulta `releases/latest` pela API pública, **uma vez por dia** e também manualmente em Configurações → Verificar atualizações |
+| Comparação | compara a versão do aparelho com a `tag_name` da release |
+| Aviso | notificação "Atualização disponível" (canal `arqex_updates`) |
+| Modal | mostra **só as novidades**, com os botões *Baixar e instalar*, *Abrir no navegador* e *Depois* |
+| Download | `DownloadManager`, com a notificação do sistema |
+| Instalação | o **instalador do Android abre sozinho** quando o download termina; se o sistema bloquear (app em segundo plano), abre na primeira vez que o app volta para a frente |
 
-O ZIP base **não foi alterado**; ele continua sendo a fonte de recursos, assets e libs.
+Regras importantes:
 
-## Build
+- Quando **não** há atualização, o app mostra apenas *"Você já está na versão mais recente"*
+  com um botão OK — nunca oferece download.
+- O site do GitHub **nunca** abre sozinho: só pelo botão *Abrir no navegador*.
+- Depois de instalar a versão nova, o aviso não reaparece para a mesma versão.
+- Nenhum token ou senha vai dentro do APK: a API de releases do GitHub é pública.
 
-```bash
-bash tools/build.sh          # gera out/classes.dex e out/Arqex-unsigned.apk
-```
+## 4. Aparência
 
-Requer `java`, `python3`, `curl`, `unzip`, `patch`. As ferramentas
-(baksmali/smali 2.5.2 e apktool 3.0.3) são baixadas em `~/.cache/arqex-tools`.
+O aplicativo usa **aparência fixa**: fundo escuro, destaques em turquesa e leitura confortável.
+A galeria de temas, os presets e o editor de cores foram removidos — a Ajuda interna foi
+atualizada para isso. O que continua ajustável:
 
-## O que vem em cada release
+- **Efeitos visuais** — bordas/divisórias animadas e zoom ao abrir (de +2% a +40%);
+- **Visualizações** — sete modos (Grade, Galeria, Detalhado, Compacto, Em colunas, Envolvido,
+  Minimalista) com barra de tamanho universal;
+- **Backup e Restauração** — exporta e importa as preferências em `.arqex.json`.
 
-Um único arquivo: **`Arqex-<versao>.zip`**, com o projeto pronto para compilar.
-
-```
-Arqex-v1.41.0.zip
-  projeto/            AndroidManifest.xml, apktool.yml, classes.dex, res/, assets/, lib/, smali/
-  tools/ tests/ docs/ patches/
-  README.md
-  COMO_COMPILAR.txt
-```
-
-Compilar:
-
-```bash
-unzip Arqex-v1.41.0.zip -d arqex
-apktool b arqex/projeto -o app-sem-assinatura.apk
-```
-
-O ZIP que fica na raiz deste repositório **não compila sozinho** (falta `apktool.yml` e
-`resources.arsc`); é a base original, guardada como referência. O `projeto/` do release já
-tem tudo.
-
-Junto vem **`Arqex-<versao>.apk`**, já assinado, para instalar direto sem compilar nada.
-O SHA-256 do ZIP vai no texto da release. Não há mais `fontes-smali.zip` (a árvore smali já
-está em `projeto/smali/`) nem `SHA256SUMS` separado.
-
-### Assinatura
-
-`signing/arqex-release.jks` (alias `arqex`, senha `arqex-release`, validade até 2056) está
-versionada no repositório e é usada quando os secrets `ARQEX_KEYSTORE_B64`,
-`ARQEX_KEY_ALIAS`, `ARQEX_STORE_PASSWORD` e `ARQEX_KEY_PASSWORD` não estão configurados.
-Se os 4 secrets existirem, eles têm prioridade e a chave do repositório é ignorada; nesse
-caso a variável `ARQEX_SIGNER_SHA256` continua obrigatória para conferir o certificado.
-
-O SHA-256 do certificado da chave do repositório está em `signing/signer-sha256.txt`.
-
-Consequência prática: **APK assinado com chave diferente não instala por cima** de um já
-instalado. Ao trocar de chave (ou vindo de um build antigo), desinstale o aplicativo antes.
-
-## Verificador de atualização
-
-O código fica em `tools/updater/src/libs/ArqexUpdater.java` e é compilado para smali por
-`bash tools/updater/build_updater.sh` (javac → d8 → baksmali). Escrever isso em smali na mão
-já custou dois `VerifyError`, então o caminho é sempre esse.
-
-### Quando o aviso aparece
-
-* Ao abrir o app e ao voltar para ele em qualquer tela (`onResume` da tela inicial e das
-  Configurações): no máximo **uma vez por dia** (`CHECK_INTERVAL_MS`).
-* Havendo versão nova: notificação no Android (canal "Atualizações do Arqex") e, uma vez por
-  versão, um diálogo com o changelog.
-* O diálogo aparece mesmo com notificação bloqueada; nesse caso ele avisa que a notificação
-  está bloqueada e mostra o caminho para liberar.
-* "Baixar e instalar" baixa pelo `DownloadManager` e **abre o instalador do sistema sozinho**
-  quando o download termina. Se o Android bloquear (app em segundo plano), a instalação fica
-  pendente e abre assim que o app volta para a frente.
-
-### Armadilhas já encontradas (não repetir)
-
-1. Método compilado vazio: `SDK_INT` como constante de compilação no stub fez o `javac`
-   descartar o corpo inteiro do `notifyUpdate`. O stub agora usa método, e o teste 8p
-   reprova qualquer método do updater que vire `return-void` solitário.
-2. Marca de "já avisei" antes de notificar: o guarda de duplicidade abortava a notificação.
-   A marca é gravada só depois do `notify()` (teste 8n2) e o
-   `tests/updater/UpdateNotifyTest.java` cobre o caminho completo com objetos falsos.
-
-## Escopo atual do aplicativo
-
-O estúdio de tema personalizado e os presets (OLED/Verde/Rosa/Claro) foram **removidos** a
-pedido do dono do projeto, porque a edição já existe na canetinha de cada tema. O
-aplicativo agora tem:
-
-* **BACKUP E RESTAURAÇÃO** nas Configurações: exportar backup completo e importar;
-* a **canetinha** de cada tema no diálogo de Skins, com o editor de cores por chave
-  (`BG_PAGE`, `BG_BAR_MAIN`, ...);
-* os botões **Export** e **Add** do rodapé do Skins, que são da galeria de temas;
-* o verificador de atualização (linha **VERIFICAR ATUALIZAÇÕES** no fim das Configurações):
-  checa a release mais recente, mostra o changelog, baixa o APK e abre o instalador.
-
-O botão "Backup / Temas" que ficava no topo do diálogo de Skins foi **removido**: backup e
-restauração agora existem só na linha das Configurações.
-
-Não existe mais "+ Criar Tema Personalizado".
-
-## Estrutura do repositório
+## 5. Estrutura do repositório
 
 ```
-Arqex_Explorer_v6.71.15_v1.38.zip   base original intacta (referência)
-app/                                APLICATIVO EXTRAÍDO
+app/                    # o aplicativo em si (é daqui que o APK é montado)
   AndroidManifest.xml
-  apktool.yml                       necessário para o apktool remontar o APK
-  apktool.json
-  res/        589 arquivos, 54 idiomas
-  assets/     41 arquivos
-  lib/        bibliotecas nativas arm64-v8a
-  unknown/    metadados META-INF originais
-  original/   metadados preservados pelo apktool
-  smali/      5.448 classes — é aqui que se edita o código
-  classes.dex compilado a partir de app/smali
-patches/smali/                      diffs aplicados, para conferência
-build/apktool.yml                   metadados usados no modo MODE=zip
-tools/ tests/ docs/ .github/
+  smali/                # código desmontado; é aqui que as correções são feitas
+  res/                  # textos, ícones, layouts
+  assets/               # recursos embutidos
+  lib/                  # bibliotecas nativas
+  classes.dex           # DEX compilado (precisa bater com app/smali)
+  apktool.yml
+tools/
+  build.sh              # compila smali -> classes.dex -> APK
+  updater/              # o verificador de atualizações (Java + stubs do Android)
+    src/libs/ArqexUpdater.java
+    stubs/              # classes do Android mínimas para compilar na JVM
+    build_updater.sh    # compila o Java e regera o smali do verificador
+  verify_apk.py         # checagens estruturais do APK gerado
+  next_version.py       # calcula a próxima versão a partir de tags/releases
+tests/
+  test_smali_invariants.py   # invariantes do smali final (99 testes)
+  test_dex_consistency.py    # conferem que classes.dex corresponde ao smali
+  updater/UpdateNotifyTest.java  # comportamento do verificador (34 testes)
+  updater/VTest.java             # comparação de versões (9 testes)
+.github/workflows/build-release.yml  # testa, compila, assina e publica
+docs/VALIDACAO.md       # histórico técnico das correções e testes
 ```
 
-### Editar e compilar
+## 6. Como compilar
+
+Requisitos: `java` (JDK 11+), `python3`, `curl`, `unzip`.
 
 ```bash
-# edite app/smali/**, app/res/** etc.
-bash tools/build.sh                 # recompila smali -> out/classes.dex -> APK
-cp out/classes.dex app/classes.dex  # opcional: manter o DEX versionado em sincronia
+# 1) se mexeu no verificador de atualizações (tools/updater/src), regere o smali:
+CACHE=/var/tmp/arq/t bash tools/updater/build_updater.sh
+
+# 2) compila o aplicativo inteiro:
+CACHE=/var/tmp/arq/t bash tools/build.sh
+#    gera out/classes.dex e out/Arqex-unsigned.apk
 ```
 
-`tools/build.sh` recompila **sempre** a partir de `app/smali`, então o release nunca
-depende do `classes.dex` commitado. `MODE=zip bash tools/build.sh` força o caminho antigo
-(base ZIP + patches).
+O `CACHE` é onde ficam `apktool`, `baksmali`/`smali` e `r8` (baixados uma vez). Use um caminho
+em `/var/tmp` ou no disco, não em `/tmp` (costuma ser memória RAM).
 
-## Escopo atual (revisado)
+Depois de compilar, copie o DEX para o lugar de onde ele é versionado:
 
-O estudio de tema personalizado e os presets (OLED/Verde/Rosa/Claro) foram **removidos**
-a pedido do dono do projeto. O aplicativo agora tem:
+```bash
+cp out/classes.dex app/classes.dex
+```
 
-* **BACKUP E RESTAURACAO** nas Configuracoes: exportar backup completo e importar;
-* **Skins**: a canetinha de cada tema continua abrindo o editor de cores por chave
-  (`BG_PAGE`, `BG_BAR_MAIN`, ...), e o botao "Backup / Temas" segue no dialogo.
+## 7. Testes
 
-Nao existe mais "+ Criar Tema Personalizado".
+```bash
+python3 tests/test_smali_invariants.py out/fontes_smali app/res   # 99 invariantes
+python3 tests/test_dex_consistency.py out/fontes_smali            # 10 checagens de DEX
+```
+
+Comportamento do verificador (roda na JVM, sem aparelho):
+
+```bash
+javac -source 8 -target 8 -encoding UTF-8 -d /tmp/c \
+  $(find tools/updater/stubs -name '*.java') \
+  $(find tools/updater/src -name '*.java') \
+  tests/updater/UpdateNotifyTest.java tests/updater/VTest.java
+java -cp /tmp/c libs.UpdateNotifyTest   # 34 testes
+java -cp /tmp/c libs.VTest              # 9 testes
+```
+
+O que os testes cobrem, em resumo: o notificador só marca "já avisei" **depois** de a
+notificação sair; o modal nunca oferece download sem versão nova; nenhum caminho abre o
+navegador sem o usuário pedir; o download é acompanhado até o fim e abre o instalador; o
+`classes.dex` versionado corresponde ao smali; e cada método smali começa com as diretivas
+certas.
+
+## 8. CI e releases
+
+O workflow roda em todo push:
+
+1. calcula a próxima versão a partir das tags e releases existentes;
+2. compila o DEX e o APK;
+3. confere que `app/classes.dex` corresponde a `app/smali`;
+4. roda os 99 invariantes, as 10 checagens de DEX e os testes de comportamento;
+5. assina o APK com a chave do projeto (guardada nos secrets do repositório);
+6. publica a release com `Arqex-vX.Y.Z.apk` e `Arqex-vX.Y.Z.zip`.
+
+Nada é sobrescrito: cada versão gera uma tag e uma release novas. Pull requests rodam testes e
+build, mas **nunca** publicam release.
+
+## 9. Segurança
+
+- O repositório é **público** e o APK não carrega credencial nenhuma; a consulta de atualização
+  usa a API pública do GitHub.
+- A chave de assinatura fica apenas nos secrets do GitHub Actions.
+- Limite da API pública: 60 consultas por hora por IP — se a verificação manual falhar com
+  HTTP 403 por esse motivo, basta esperar; a checagem automática do dia seguinte funciona.
+
+## 10. Problemas comuns
+
+| Sintoma | Causa provável |
+|---|---|
+| "Não foi possível verificar" | sem internet, ou limite de consultas da API do GitHub |
+| Notificação não aparece | notificações do Arqex bloqueadas no Android (Configurações → Apps → Arqex Explorer → Notificações) |
+| Instalador não abre após o download | app estava em segundo plano; ele abre quando o app volta para a frente |
+| Precisou desinstalar para atualizar | assinatura diferente — só acontece com APK gerado fora deste repositório |
+
+## 11. Créditos
+
+Base de código: **MiXplorer** (Hootan Parsa), distribuída para uso pessoal e estudo. Este
+repositório contém modificações, correções e a automação descritas acima e **não é afiliado ao
+autor original**.
