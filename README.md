@@ -41,36 +41,43 @@ Requer `java`, `python3`, `curl`, `unzip`, `patch`. As ferramentas
 
 ## O que vem em cada release
 
-O ZIP original do repositório **não tem `apktool.yml` nem `resources.arsc`**, então
-`apktool b` falha nele com `NoSuchFileException: apktool.yml`. Isso é característica da
-base, não efeito das correções. Por isso cada release passa a trazer:
+Um único arquivo: **`Arqex-<versao>.zip`**, com o projeto pronto para compilar.
 
-| Arquivo | Para quê |
-|---|---|
-| `Arqex-<versao>-projeto-completo.zip` | projeto pronto para compilar (`projeto/` já com `apktool.yml`, `resources.arsc` gerado, `res/`, `assets/`, `lib/`, manifesto e `classes.dex` corrigido) |
-| `Arqex-<versao>-fontes-smali.zip` | árvore smali completa, para editar |
-| `Arqex-<versao>.apk` | **somente** quando a assinatura estiver configurada |
-| `SHA256SUMS`, `signature-report.txt` | checksums e relatório do certificado |
+```
+Arqex-v1.41.0.zip
+  projeto/            AndroidManifest.xml, apktool.yml, classes.dex, res/, assets/, lib/, smali/
+  tools/ tests/ docs/ patches/
+  README.md
+  COMO_COMPILAR.txt
+```
 
-Para compilar: `cd projeto && apktool b . -o app.apk`
+Compilar:
 
-## Política: nada é removido
+```bash
+unzip Arqex-v1.41.0.zip -d arqex
+apktool b arqex/projeto -o app-sem-assinatura.apk
+```
 
-Por decisão do dono do projeto, **nenhum recurso do aplicativo é removido**. A exportação
-de paleta em JSON (`exportStudioPalette` e a ação `0x29`) foi **mantida**, assim como todo o
-backup (`exportBackup`, `importBackupPath`, `collectBackupFiles`, `restorePreference`).
+O ZIP que fica na raiz deste repositório **não compila sozinho** (falta `apktool.yml` e
+`resources.arsc`); é a base original, guardada como referência. O `projeto/` do release já
+tem tudo.
 
-O que existe são **5 correções** de defeito, mais 3 classes auxiliares novas. Nada mais.
+Quando a assinatura estiver configurada, o `.apk` assinado é anexado junto, e o SHA-256 do
+ZIP vai no texto da release. Não há mais `fontes-smali.zip` (a árvore smali já está em
+`projeto/smali/`) nem `SHA256SUMS` separado.
 
-| Área | Original | Após as correções |
-|---|---|---|
-| `res/` | 589 arquivos | 589 |
-| `assets/` | 41 | 41 |
-| `lib/` | 3 | 3 |
-| `unknown/` | 4 | 4 |
-| `AndroidManifest.xml` | — | byte-idêntico |
-| `apktool.json` | — | byte-idêntico |
-| métodos de `CustomThemeV128` | 39 | 39 (+ 0 removidos) |
+## Escopo atual do aplicativo
+
+O estúdio de tema personalizado e os presets (OLED/Verde/Rosa/Claro) foram **removidos** a
+pedido do dono do projeto, porque a edição já existe na canetinha de cada tema. O
+aplicativo agora tem:
+
+* **BACKUP E RESTAURAÇÃO** nas Configurações: exportar backup completo e importar;
+* o botão **Backup / Temas** dentro do diálogo de Skins;
+* a **canetinha** de cada tema, que continua abrindo o editor de cores por chave
+  (`BG_PAGE`, `BG_BAR_MAIN`, ...).
+
+Não existe mais "+ Criar Tema Personalizado".
 
 ## Estrutura do repositório
 
@@ -85,7 +92,7 @@ app/                                APLICATIVO EXTRAÍDO
   lib/        bibliotecas nativas arm64-v8a
   unknown/    metadados META-INF originais
   original/   metadados preservados pelo apktool
-  smali/      5.452 arquivos — é aqui que se edita o código
+  smali/      5.448 classes — é aqui que se edita o código
   classes.dex compilado a partir de app/smali
 patches/smali/                      diffs aplicados, para conferência
 build/apktool.yml                   metadados usados no modo MODE=zip

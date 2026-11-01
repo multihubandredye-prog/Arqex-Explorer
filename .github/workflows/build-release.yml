@@ -162,7 +162,7 @@ jobs:
           fi
           echo "has_apk=true" >> "$GITHUB_OUTPUT"
 
-      - name: Empacotar fontes/DEX e checksums
+      - name: Empacotar o projeto pronto para compilar
         run: |
           set -euo pipefail
           V="${{ steps.version.outputs.version }}"
@@ -171,33 +171,30 @@ jobs:
           cp -a patches tools tests docs pkg/ 2>/dev/null || true
           cp README.md pkg/ 2>/dev/null || true
           cat > pkg/COMO_COMPILAR.txt <<'TXT'
-          PROJETO COMPLETO - pronto para compilar
-            cd projeto && apktool b . -o app-sem-assinatura.apk
-          O ZIP original do repositorio NAO tem apktool.yml nem resources.arsc,
-          por isso falhava ao compilar. Aqui os dois ja estao presentes.
+          ARQEX EXPLORER - codigo-fonte pronto para compilar
+
+            1) apktool b projeto -o app-sem-assinatura.apk
+            2) (opcional) apksigner sign --ks sua-chave.jks app-sem-assinatura.apk
+
+          A pasta projeto/ ja tem AndroidManifest.xml, apktool.yml, classes.dex e res/,
+          entao compila direto. O ZIP que fica na raiz do repositorio NAO compila
+          sozinho porque nao tem apktool.yml nem resources.arsc.
+
+          tests/  - testes estaticos: python3 tests/test_smali_invariants.py <smali> <res>
+          tools/  - build.sh remonta o DEX/APK a partir de projeto/smali
+          docs/   - VALIDACAO.md, com o que foi conferido e o que segue pendente
           TXT
           for need in projeto/apktool.yml projeto/AndroidManifest.xml projeto/classes.dex projeto/res; do
             [ -e "pkg/$need" ] || { echo "::error::pacote sem $need"; exit 1; }
           done
-          (cd pkg && zip -qr "../Arqex-$V-projeto-completo.zip" .)
+          (cd pkg && zip -qr "../Arqex-$V.zip" .)
           rm -rf pkg
-          if [ -d out/fontes_smali ]; then
-            (cd out && zip -qr "../Arqex-$V-fontes-smali.zip" fontes_smali)
-          fi
           if [ -f out/Arqex-signed.apk ]; then
-            mkdir -p apkdist
-            cp out/Arqex-signed.apk apkdist/
-            (cd apkdist && zip -q "../Arqex-$V-apk.zip" .)
-            rm -rf apkdist
             cp out/signature-report.txt . || true
             cp out/Arqex-signed.apk .
           fi
-          : > SHA256SUMS
-          for f in Arqex-*.zip Arqex-*.apk signature-report.txt; do
-            if [ -f "$f" ]; then sha256sum "$f" >> SHA256SUMS; fi
-          done
-          test -s SHA256SUMS || { echo "::error::nenhum arquivo para publicar"; exit 1; }
-          cat SHA256SUMS
+          test -s "Arqex-$V.zip" || { echo "::error::ZIP do projeto nao foi gerado"; exit 1; }
+          sha256sum "Arqex-$V.zip"
 
       - name: Guardar artefatos
         uses: actions/upload-artifact@v4
@@ -206,7 +203,6 @@ jobs:
           path: |
             Arqex-*.zip
             Arqex-*.apk
-            SHA256SUMS
             signature-report.txt
           if-no-files-found: error
           retention-days: 30
@@ -254,22 +250,25 @@ jobs:
             echo "Versao: $TAG"
             echo "Commit: $SHA (branch $REF)"
             echo
-            echo "Correcoes incluidas:"
-            echo "- seletor de cor: VerifyError em CustomThemeV128\$RgbSeekListener.applyColorInternal"
-            echo "- seletor de cor: matiz preservado ao partir de preto/cinza (SpectrumView.setColor)"
-            echo "- janela Skins: centralizacao apos medicao, com insets e area visivel"
-            echo "- botao 'Criar Tema Personalizado' em uma linha (auto-size)"
-            echo "- exportacao de paleta em JSON removida (backup/restauracao preservados)"
+            echo "Ultimo commit: $(git log -1 --pretty=%s "$SHA")"
+            echo
+            echo "O ZIP traz so o necessario para compilar:"
+            echo "- projeto/ (AndroidManifest.xml, apktool.yml, classes.dex, res/, smali/)"
+            echo "- tools/, tests/, docs/, patches/, README.md e COMO_COMPILAR.txt"
+            echo
+            echo "\`\`\`"
+            echo "apktool b projeto -o app-sem-assinatura.apk"
+            echo "\`\`\`"
+            echo
+            echo "SHA-256 do ZIP: $(sha256sum Arqex-*.zip | awk '{print $1}')"
             echo
             if [ "$HAS_APK" = "true" ]; then
-              echo "APK assinado anexado, com ZIP, SHA256SUMS e relatorio de assinatura."
-              echo "Assinatura verificada contra ARQEX_SIGNER_SHA256."
+              echo "APK assinado anexado (assinatura conferida contra ARQEX_SIGNER_SHA256)."
             else
-              echo "ATENCAO: nenhuma chave de assinatura configurada."
-              echo "Este release contem APENAS fontes e classes.dex - NAO ha APK instalavel."
+              echo "Sem APK: nenhuma chave de assinatura esta configurada no repositorio."
             fi
             echo
-            echo "Nao houve validacao em aparelho Android."
+            echo "Este codigo NAO foi testado em aparelho Android."
           } > notes.md
 
           args=(--title "Arqex Explorer $TAG" --notes-file notes.md --target "$SHA")
@@ -286,6 +285,9 @@ jobs:
             fi
           fi
 
-          mapfile -t assets < <(ls Arqex-*.zip Arqex-*.apk SHA256SUMS signature-report.txt 2>/dev/null || true)
+          mapfile -t assets < <(ls Arqex-*.zip Arqex-*.apk 2>/dev/null || true)
+          if [ "${#assets[@]}" -eq 0 ]; then
+            echo "::error::nenhum arquivo para anexar"; exit 1
+          fi
           gh release create "$TAG" "${args[@]}" "${assets[@]}"
           echo "release publicada: $TAG"
