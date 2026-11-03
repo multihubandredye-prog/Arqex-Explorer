@@ -42,3 +42,10 @@ log "linhas de diagnostico do descompactar (aparecem quando o dialogo e usado)"
 grep "ArqexUnzip" logcat.txt | tail -10 || echo "(nenhuma ainda - esperado sem interacao)"
 
 echo "OK: app instalou, abriu e continuou rodando sem crash"
+
+log "mapa da tela (para automatizar o fluxo depois)"
+adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1 || true
+adb pull /sdcard/ui.xml ui.xml >/dev/null 2>&1 || true
+if [ -f ui.xml ]; then
+  grep -o 'text="[^"]*"\|content-desc="[^"]*"\|bounds="[^"]*"' ui.xml | paste - - - 2>/dev/null | grep -v 'text=""' | head -60 || true
+fi
