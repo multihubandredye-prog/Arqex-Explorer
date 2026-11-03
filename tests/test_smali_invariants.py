@@ -480,6 +480,13 @@ _ob = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
 check("14a. marca de descompactar e guardada pela REGRA da tarefa, nao so pelo id", (
       '"unzip_"' in _iu and "getTaskRuleKey" in _iu and '"unzip_id_"' in _iu
       and '"unzip_"' in _su and "getTaskRuleKey" in _su and "putBoolean" in _su))
+_ots = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method public static declared-synchronized onTaskSaved") or ""
+check("14d. marca do descompactar grava nas duas pontas e tem reserva da caixinha", (
+      _ots.count("saveUnzipFlag") >= 2
+      and "unzipBox:Landroid/widget/CheckBox" in _atw
+      and "unzipBox:Landroid/widget/CheckBox" in _su
+      and '"unzip_"' in _su and '"unzip_id_"' in _su))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
       "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
 check("14c. extracao le o zip do item e escreve na pasta de destino", (

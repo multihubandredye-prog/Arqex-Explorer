@@ -741,6 +741,11 @@
     return-void
 .end method
 
+# Arqex: ultimo checkbox "Descompactar ZIP no destino" criado. Serve de reserva
+# na hora de salvar, caso a busca pelo dialogo (findDialogCheckBox) nao ache -
+# o estado salvo tem que vir SEMPRE da caixinha que o usuario viu.
+.field public static unzipBox:Landroid/widget/CheckBox;
+
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
     .registers 6
 
@@ -774,6 +779,8 @@
     sget-object v1, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sput-object v0, Llibs/AutoTaskWatcher;->unzipBox:Landroid/widget/CheckBox;
     :try_end_1a
     .catchall {:try_start_3 .. :try_end_1a} :catchall_1a
 
@@ -4575,15 +4582,16 @@
 .end method
 
 .method public static isUnzipEnabled(Llibs/d9;)Z
-    .registers 6
+    .registers 7
 
-    # Arqex: a marca "Descompactar arquivos ZIP no destino" e guardada pela
-    # IDENTIDADE DA REGRA (unzip_ + getTaskRuleKey), igual ao filtro por
-    # extensao (ext_ + getTaskRuleKey). Guardar so pelo id da tarefa (Y) perdia
-    # a marca em tarefa NOVA: no momento de salvar o id da tarefa ainda nao e o
-    # id final (ele vem da linha gravada, campo 12), entao a marca ficava em
-    # "unzip_id_0" e a tarefa, ao rodar, nao encontrava nada - era o motivo de
-    # o arquivo chegar compactado no destino.
+    # Arqex: a marca "Descompactar arquivos ZIP no destino" e lida em DUAS
+    # chaves e vale se QUALQUER UMA estiver marcada:
+    #   unzip_<getTaskRuleKey>  -> identidade da regra (funciona em tarefa nova,
+    #                              em que o id ainda nao existe no momento de salvar)
+    #   unzip_id_<id>           -> chave antiga, por tarefa
+    # Regra de OU (e nao "a primeira que existir"): se uma das chaves ficou com
+    # false de uma gravacao anterior, ela nao pode mascarar a outra. E ao
+    # desmarcar, as duas sao gravadas como false, entao continua desmarcando.
     const/4 v0, 0x0
 
     if-nez p0, :arqex_unzip_fim
@@ -4595,6 +4603,7 @@
 
     if-eqz v1, :arqex_unzip_fim
 
+    # ---- chave 1: pela regra
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "unzip_"
@@ -4611,21 +4620,18 @@
 
     move-result-object v2
 
-    # 1) chave pela regra (a que funciona)
-    invoke-interface {v1, v2}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :arqex_unzip_id
-
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v0
+    move-result v4
+
+    if-eqz v4, :arqex_unzip_id
+
+    const/4 v0, 0x1
 
     goto :arqex_unzip_fim
 
     :arqex_unzip_id
-    # 2) compativel com a chave antiga, por id (tarefas ja salvas)
+    # ---- chave 2: pelo id da tarefa (compatibilidade)
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, "unzip_id_"
@@ -5388,6 +5394,11 @@
 
 .method public static declared-synchronized onTaskSaved(Llibs/d9;Llibs/d9;Llibs/od;)V
     .registers 12
+
+    # Arqex: grava a marca do "Descompactar no destino" para a tarefa NOVA (p1)
+    # e para a ANTIGA (p0, a que esta persistida) - a leitura pode acontecer com
+    # qualquer uma das duas, entao as duas chaves de regra precisam existir.
+    invoke-static {p2, p0}, Llibs/AutoTaskWatcher;->saveUnzipFlag(Llibs/od;Llibs/d9;)V
 
     invoke-static {p2, p1}, Llibs/AutoTaskWatcher;->saveUnzipFlag(Llibs/od;Llibs/d9;)V
 
@@ -6831,9 +6842,9 @@
 .method public static saveUnzipFlag(Llibs/od;Llibs/d9;)V
     .registers 8
 
-    # Grava a marca "Descompactar arquivos ZIP no destino". Grava pela REGRA
-    # (unzip_ + getTaskRuleKey) e tambem pela chave antiga por id, para nao
-    # perder o que ja estava salvo.
+    # Grava a marca "Descompactar arquivos ZIP no destino" nas DUAS chaves:
+    # unzip_<regra> e unzip_id_<id>. Sempre grava as duas (mesmo com id 0),
+    # para o estado marcado/desmarcado acompanhar o checkbox.
     if-eqz p0, :arqex_save_fim
 
     if-nez p1, :arqex_save_fim
@@ -6847,7 +6858,20 @@
 
     move-result-object v0
 
+    if-nez v0, :arqex_save_reserva
+
+    goto :arqex_save_tem
+
+    :arqex_save_reserva
+    # reserva: a ultima caixinha criada nesta sessao
+    sget-object v0, Llibs/AutoTaskWatcher;->unzipBox:Landroid/widget/CheckBox;
+
+    :arqex_save_tem
     if-eqz v0, :arqex_save_fim
+
+    invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    move-result v2
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
@@ -6855,17 +6879,13 @@
 
     if-eqz v1, :arqex_save_fim
 
-    invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
-
-    move-result v2
-
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v4
 
     if-eqz v4, :arqex_save_fim
 
-    # chave pela regra
+    # ---- chave 1: pela regra
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v5, "unzip_"
@@ -6886,18 +6906,14 @@
 
     move-result-object v4
 
-    # chave antiga por id (so quando a tarefa ja tem id)
-    iget v5, p1, Llibs/d9;->Y:I
-
-    if-eqz v5, :arqex_save_aplica
-
+    # ---- chave 2: pelo id
     new-instance v3, Ljava/lang/StringBuilder;
 
-    # v1 (prefs) nao e mais usado aqui; evita escrever em registrador de
-    # parametro (v6 = p0 com .registers 8)
-    const-string v1, "unzip_id_"
+    const-string v5, "unzip_id_"
 
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v5, p1, Llibs/d9;->Y:I
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -6908,7 +6924,7 @@
     invoke-interface {v4, v3, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v4
-    :arqex_save_aplica
+
     invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
     :try_end_s
     .catchall {:try_start_s .. :try_end_s} :catchall_s
