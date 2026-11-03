@@ -75,6 +75,8 @@ jobs:
             --out Arqex-teste.apk out/Arqex-aligned.apk
           apksigner verify --verbose Arqex-teste.apk | head -5
           ls -l Arqex-teste.apk
+          # deixa d8/apksigner/zipalign disponiveis no passo do emulador
+          echo "$BT" >> "$GITHUB_PATH"
 
       - name: Liberar /dev/kvm para o usuario do runner
         run: |
