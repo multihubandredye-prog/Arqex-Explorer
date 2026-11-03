@@ -2885,8 +2885,56 @@
     return-object v0
 .end method
 
+.method private static getNameFilterById(Llibs/d9;)Ljava/lang/String;
+    .registers 4
+
+    const-string v0, ""
+
+    if-nez p0, :fim
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "name_id_"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v2, p0, Llibs/d9;->Y:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    if-eqz v2, :fim
+
+    invoke-interface {v2, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-nez v3, :fim
+
+    invoke-interface {v2, v1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :nulo
+
+    return-object v0
+
+    :nulo
+    const-string v0, ""
+
+    :fim
+    return-object v0
+.end method
+
 .method public static declared-synchronized getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
-    .registers 6
+    .registers 8
 
     const-string v0, ""
 
@@ -2896,6 +2944,21 @@
 
     :cond_5
     :try_start_5
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->getNameFilterById(Llibs/d9;)Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v4, :sem_id
+
+    invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v5
+
+    if-nez v5, :sem_id
+
+    return-object v4
+
+    :sem_id
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "name_"
@@ -5441,6 +5504,23 @@
     if-eqz v3, :cond_174_n
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    # grava tambem pela id da tarefa: a chave da regra muda se a tarefa for editada
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v7, "name_id_"
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v7, p1, Llibs/d9;->Y:I
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-interface {v3, v6, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_174_n
     const/4 v2, 0x0

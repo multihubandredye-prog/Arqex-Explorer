@@ -36487,6 +36487,9 @@
     .line 42
     invoke-direct {v13, v3, v0, v4, v8}, Llibs/$d;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V
 
+    # o dialogo de criar pasta precisa fechar no Voltar do Android e no toque fora
+    invoke-static {v13}, Llibs/SmartFeaturesV116;->makeDialogDismissible(Landroid/app/Dialog;)V
+
     .line 43
     .line 44
     .line 45

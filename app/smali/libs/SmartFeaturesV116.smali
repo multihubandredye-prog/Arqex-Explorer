@@ -100,6 +100,39 @@
     return-void
 .end method
 
+.method public static makeDialogDismissible(Landroid/app/Dialog;)V
+    .registers 3
+
+    if-nez p0, :fim
+
+    :try_start_0
+    const/4 v0, 0x1
+
+    # Voltar do Android fecha
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCancelable(Z)V
+
+    # toque fora tambem fecha
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+
+    # e o teclado nao engole o primeiro Voltar quando o nome esta em foco
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    if-eqz v1, :fim_try
+
+    const/16 v2, 0x10
+
+    invoke-virtual {v1, v2}, Landroid/view/Window;->setSoftInputMode(I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    :fim_try
+    :fim
+    return-void
+.end method
+
 .method public static addAutoOpenFolderCheckBox(Llibs/od;)V
     .registers 5
 

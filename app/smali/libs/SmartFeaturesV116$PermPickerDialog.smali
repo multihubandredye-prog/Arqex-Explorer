@@ -531,56 +531,128 @@
     return-object p0
 .end method
 
-.method private static rotuloPermissao(I)Ljava/lang/String;
-    .registers 3
+.method private static rotuloPorId(I)Ljava/lang/String;
+    .registers 2
 
-    # indices 0 e 1 = setuid/setgid -> "s"; indice 2 = sticky -> "t"
-    # indices 3..11 = (indice - 3) % 3 -> r, w, x
-    const/4 v0, 0x2
+    # a letra vem do id do proprio widget (perm_user_r -> r, perm_sp_t -> t, ...)
+    sget v0, Llibs/wh2;->perm_sp_t:I
 
-    if-le p0, v0, :especiais
+    if-ne p0, v0, :nao_t
 
-    add-int/lit8 v1, p0, -0x3
-
-    rem-int/lit8 v1, v1, 0x3
-
-    if-nez v1, :leitura
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :escrita
-
-    const-string v0, "x"
+    const-string v0, "t"
 
     return-object v0
 
-    :leitura
-    const-string v0, "r"
+    :nao_t
+    sget v0, Llibs/wh2;->perm_sp_su:I
 
-    return-object v0
-
-    :escrita
-    const-string v0, "w"
-
-    return-object v0
-
-    :especiais
-    const/4 v0, 0x2
-
-    if-ne p0, v0, :sticky
+    if-ne p0, v0, :nao_su
 
     const-string v0, "s"
 
     return-object v0
 
-    :sticky
-    const-string v0, "t"
+    :nao_su
+    sget v0, Llibs/wh2;->perm_sp_sg:I
+
+    if-ne p0, v0, :nao_sg
+
+    const-string v0, "s"
+
+    return-object v0
+
+    :nao_sg
+    sget v0, Llibs/wh2;->perm_user_r:I
+
+    if-ne p0, v0, :r2
+
+    const-string v0, "r"
+
+    return-object v0
+
+    :r2
+    sget v0, Llibs/wh2;->perm_group_r:I
+
+    if-ne p0, v0, :r3
+
+    const-string v0, "r"
+
+    return-object v0
+
+    :r3
+    sget v0, Llibs/wh2;->perm_all_r:I
+
+    if-ne p0, v0, :w1
+
+    const-string v0, "r"
+
+    return-object v0
+
+    :w1
+    sget v0, Llibs/wh2;->perm_user_w:I
+
+    if-ne p0, v0, :w2
+
+    const-string v0, "w"
+
+    return-object v0
+
+    :w2
+    sget v0, Llibs/wh2;->perm_group_w:I
+
+    if-ne p0, v0, :w3
+
+    const-string v0, "w"
+
+    return-object v0
+
+    :w3
+    sget v0, Llibs/wh2;->perm_all_w:I
+
+    if-ne p0, v0, :x1
+
+    const-string v0, "w"
+
+    return-object v0
+
+    :x1
+    sget v0, Llibs/wh2;->perm_user_x:I
+
+    if-ne p0, v0, :x2
+
+    const-string v0, "x"
+
+    return-object v0
+
+    :x2
+    sget v0, Llibs/wh2;->perm_group_x:I
+
+    if-ne p0, v0, :x3
+
+    const-string v0, "x"
+
+    return-object v0
+
+    :x3
+    sget v0, Llibs/wh2;->perm_all_x:I
+
+    if-ne p0, v0, :nenhuma
+
+    const-string v0, "x"
+
+    return-object v0
+
+    :nenhuma
+    const-string v0, ""
 
     return-object v0
 .end method
 
 .method private initBox(II)V
-    .registers 4
+    .registers 5
+
+    # guarda o id antes de p2 virar a View (o rotulo depende do id)
+    move v1, p2
 
     invoke-virtual {p0, p2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -597,7 +669,7 @@
     invoke-virtual {p2, v0}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
 
     # rotulo r/w/x ao lado da caixinha (s/t nos bits especiais)
-    invoke-static {p1}, Llibs/SmartFeaturesV116$PermPickerDialog;->rotuloPermissao(I)Ljava/lang/String;
+    invoke-static {v1}, Llibs/SmartFeaturesV116$PermPickerDialog;->rotuloPorId(I)Ljava/lang/String;
 
     move-result-object v0
 
