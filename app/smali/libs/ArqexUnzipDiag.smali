@@ -18,16 +18,18 @@
 .end method
 
 .method public static run()V
-    .registers 24
+    .registers 26
 
     .line 29
+    const-string v0, "unzip_last_state"
+
     const-string v1, "ArqexUnzipDiag"
 
-    :try_start_2
-    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
+    :try_start_4
+    sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
 
     .line 30
-    if-nez v0, :cond_c
+    if-nez v2, :cond_e
 
     .line 31
     const-string v0, "prefs=null contexto_ausente diag_ok=false"
@@ -38,17 +40,17 @@
     return-void
 
     .line 34
-    :cond_c
-    const-string v2, "auto_watch_config"
+    :cond_e
+    const-string v3, "auto_watch_config"
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    move-result-object v0
+    move-result-object v2
 
     .line 35
-    if-nez v0, :cond_1b
+    if-nez v2, :cond_1d
 
     .line 36
     const-string v0, "prefs=null arquivo_indisponivel diag_ok=false"
@@ -59,116 +61,129 @@
     return-void
 
     .line 40
-    :cond_1b
-    const-string v2, "unzip_last_state"
+    :cond_1d
+    invoke-interface {v2, v0, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
+    move-result v3
 
     .line 42
-    new-instance v13, Ljava/util/ArrayList;
+    new-instance v14, Ljava/util/ArrayList;
 
-    invoke-direct {v13}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
 
     .line 43
-    new-instance v2, Llibs/d9;
+    new-instance v25, Llibs/d9;
 
-    const-string v11, "Diag"
+    const-string v12, "Diag"
 
-    const-string v12, "/origem"
+    const-string v13, "/origem"
 
-    const-string v14, "/destino"
+    const-string v15, "/destino"
 
-    const-string v15, "COPY"
-
-    const-string v20, ""
+    const-string v16, "COPY"
 
     const-string v21, ""
 
-    const-string v22, "Diag"
+    const-string v22, ""
 
-    const/16 v23, 0x0
+    const-string v23, "Diag"
 
-    const-wide/32 v5, 0x36ee80
+    const/16 v24, 0x0
 
-    const-wide/32 v7, 0x5265c00
+    const-wide/32 v6, 0x36ee80
 
-    const-wide/32 v9, 0xea60
+    const-wide/32 v8, 0x5265c00
 
-    const/16 v16, 0x1
+    const-wide/32 v10, 0xea60
 
-    const/16 v17, 0x0
+    const/16 v17, 0x1
 
     const/16 v18, 0x0
 
     const/16 v19, 0x0
 
-    move-object v4, v2
+    const/16 v20, 0x0
 
-    invoke-direct/range {v4 .. v23}, Llibs/d9;-><init>(JJJLjava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v5, v25
+
+    invoke-direct/range {v5 .. v24}, Llibs/d9;-><init>(JJJLjava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 46
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    invoke-static {v4}, Llibs/AutoTaskWatcher;->setUnzipLastState(Z)V
+    invoke-static {v5}, Llibs/AutoTaskWatcher;->setUnzipLastState(Z)V
 
     .line 47
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
+    invoke-interface {v2, v0, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v5
+    move-result v0
 
-    .line 49
-    invoke-static {v3}, Llibs/AutoTaskWatcher;->setUnzipLastState(Z)V
-
-    .line 50
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
+    .line 48
+    invoke-static/range {v25 .. v25}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
 
     move-result v2
 
-    .line 52
-    invoke-static {v0}, Llibs/AutoTaskWatcher;->setUnzipLastState(Z)V
+    .line 50
+    invoke-static {v4}, Llibs/AutoTaskWatcher;->setUnzipLastState(Z)V
 
-    .line 54
-    if-eqz v5, :cond_64
+    .line 51
+    invoke-static/range {v25 .. v25}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
 
-    if-nez v2, :cond_64
+    move-result v6
 
-    const/4 v3, 0x1
+    .line 53
+    invoke-static {v3}, Llibs/AutoTaskWatcher;->setUnzipLastState(Z)V
 
     .line 55
-    :cond_64
-    new-instance v4, Ljava/lang/StringBuilder;
+    if-eqz v2, :cond_69
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    if-nez v6, :cond_69
 
-    const-string v6, "prefs=ok antes="
+    const/4 v4, 0x1
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 56
+    :cond_69
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const-string v7, "prefs=ok antes="
+
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v5, " gravado="
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v4, " apos_marcar="
+    const-string v3, " lido_pelo_app="
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v4, " apos_desmarcar="
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, " apos_desmarcar="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -178,7 +193,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -187,17 +202,17 @@
     move-result-object v0
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_98
-    .catchall {:try_start_2 .. :try_end_98} :catchall_99
+    :try_end_a7
+    .catchall {:try_start_4 .. :try_end_a7} :catchall_a8
+
+    .line 63
+    goto :goto_c5
 
     .line 61
-    goto :goto_b6
-
-    .line 59
-    :catchall_99
+    :catchall_a8
     move-exception v0
 
-    .line 60
+    .line 62
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -224,7 +239,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 62
-    :goto_b6
+    .line 64
+    :goto_c5
     return-void
 .end method

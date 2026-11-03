@@ -44,6 +44,7 @@ public final class ArqexUnzipDiag {
                     "COPY", true, false, false, null, "", "", "Diag", 0);
 
             AutoTaskWatcher.setUnzipLastState(true);
+            boolean gravado = p.getBoolean("unzip_last_state", false);
             boolean marcada = AutoTaskWatcher.isUnzipEnabled(t);
 
             AutoTaskWatcher.setUnzipLastState(false);
@@ -53,7 +54,8 @@ public final class ArqexUnzipDiag {
 
             boolean ok = marcada && !desmarcada;
             Log.i(TAG, "prefs=ok antes=" + antes
-                    + " apos_marcar=" + marcada
+                    + " gravado=" + gravado
+                    + " lido_pelo_app=" + marcada
                     + " apos_desmarcar=" + desmarcada
                     + " diag_ok=" + ok);
         } catch (Throwable e) {
