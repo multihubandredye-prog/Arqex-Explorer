@@ -375,13 +375,22 @@ check("12g. ler o filtro por nome espelha o filtro por extensao",
       '"name_"' in _atw_get and 'nameFilterCache' in _atw_get
       and 'getTaskRuleKey' in _atw_get and 'name_id_' not in _atw_get
       and _atw_get.count(":try_start") == _atw_getext.count(":try_start"))
-check("12h. toque fora da janela fecha o dialogo Pasta", (
+check("12h. toque fora da janela fecha o dialogo ($d e od)", (
       'applyFolderDialogTouchClose' in _d and 'applyFolderDialogTouchClose' in _mut
-      and 'dispatchTouchEvent' in _d
-      and '0x40000' in _mut and 'getActionMasked' in _d and 'cancel()V' in _d))
+      and 'dispatchTouchEvent' in _d and 'closeDialogNow' in _d
+      and '0x40000' in _mut and '0x40000' in _od and 'getActionMasked' in _d))
 check("12i. toque DENTRO nao pode fechar (sem o onTouchEvent do Dialog)", (
       'superDispatchTouchEvent' in _d and 'getGlobalVisibleRect' in _d
       and 'dialog_view' in _d))
+_mot = method_body(os.path.join(SMALI, "libs", "od.smali"),
+                  ".method public onTouchEvent") or ""
+check("12m. todo dialogo od fecha com ACTION_OUTSIDE mesmo sem ser cancelable",
+      "getActionMasked" in _mot and "const/4 v1, 0x4" in _mot
+      and "closeDialogNow" in _mot
+      and "Dialog;->onTouchEvent(Landroid/view/MotionEvent;)Z" in _mot)
+check("12n. nenhuma chamada a Window.addFlags com assinatura errada (II)V",
+      all("addFlags(II)V" not in open(os.path.join(SMALI, "libs", f), encoding="utf-8").read()
+          for f in os.listdir(os.path.join(SMALI, "libs")) if f.endswith(".smali")))
 
 _e9 = ""
 _c9 = os.path.join(SMALI, "libs", "e9.smali")
@@ -390,9 +399,15 @@ if os.path.exists(_c9):
 _afd = method_body(os.path.join(SMALI, "libs", "od.smali"), ".method public arqexForceDismiss") or ""
 check("12k. fechar o dialogo limpa o estado do MiXplorer (senao nao abre outro)",
       "->Gms(Z)V" in _afd and "Dialog;->dismiss()V" in _afd)
-check("12l. janela do dialogo ocupa a tela (toque fora do cartao cai na janela)", (
-      'setLayout(II)V' in _mut and "FrameLayout$LayoutParams;->gravity:I" in _mut
-      and 'const/16 v5, 0x11' in _mut))
+_af = method_body(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"),
+                 ".method public static applyFolderDialogTouchClose") or ""
+check("12l. janela do dialogo ocupa a tela e tem scrim clicavel atras do cartao",
+      "Window;->setLayout(II)V" in _af and "gravity:I" in _af
+      and "ArqexDialogScrim" in _af and "setClickable(Z)V" in _af
+      and "ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V" in _af
+      and "ArqexDialogScrim.smali" in " ".join(sorted(__import__("os").listdir(os.path.join(SMALI, "libs")))))
+check("12k. fechar o dialogo limpa o estado do MiXplorer (senao nao abre outro)",
+      "->Gms(Z)V" in _afd and "Dialog;->dismiss()V" in _afd)
 check("12j. filtro por nome desligado (fora da tela e fora da filtragem)", (
       "addNameFilterControls" not in _e9
       and "filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V\n\n    return-void" not in _atw

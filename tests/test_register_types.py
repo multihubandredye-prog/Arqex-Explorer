@@ -22,7 +22,7 @@ import re
 import sys
 
 ALVOS = {
-    ("libs", "SmartFeaturesV116.smali"): ["makeDialogDismissible"],
+    ("libs", "SmartFeaturesV116.smali"): ["makeDialogDismissible", "applyFolderDialogTouchClose", "closeDialogNow"],
     ("libs", "SmartFeaturesV116$PermPickerDialog.smali"): ["rotuloPorId", "initBox"],
     ("libs", "AutoTaskWatcher.smali"): [
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
@@ -32,8 +32,9 @@ ALVOS = {
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
-    ("libs", "od.smali"): ["arqexForceDismiss"],
-    ("libs", "$d.smali"): ["show", "dispatchKeyEvent"],
+    ("libs", "od.smali"): ["arqexForceDismiss", "onTouchEvent", "show"],
+    ("libs", "$d.smali"): ["show", "dispatchKeyEvent", "dispatchTouchEvent"],
+    ("libs", "ArqexDialogScrim.smali"): ["<init>", "onClick"],
 }
 
 INST = re.compile(r"^\s{4}([a-z][\w/$-]*)\s*(.*)$")

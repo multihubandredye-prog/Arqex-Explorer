@@ -488,25 +488,8 @@
     goto :sem_p1
 
     :fecha
-    const-string v1, "Toque fora: fechando pasta"
-
-    :try_start_k
-
-    invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
-    :try_end_k
-    .catchall {:try_start_k .. :try_end_k} :catchall_k
-    :catchall_k
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :fim_dt
-
-    invoke-virtual {p0}, Llibs/od;->arqexForceDismiss()V
-    :fim_dt
+    # um caminho unico para fechar: cancel + arqexForceDismiss (limpa o Rho)
+    invoke-static {p0}, Llibs/SmartFeaturesV116;->closeDialogNow(Landroid/app/Dialog;)V
 
     const/4 v0, 0x1
 
