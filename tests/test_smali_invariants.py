@@ -491,7 +491,7 @@ check("14a. marca do descompactar viaja DENTRO do conteudo da tarefa", (
       "takeUnzipToken" in _d9c and "StringBuilder;->append(Ljava/lang/String;)" in _d9c
       and "zt0;->e" in _iu and '"|uz1"' in _iu and "endsWith" in _iu
       and "unzip_id_" not in _iu and "unzip_pending" not in _iu
-      and "getBoolean" not in _iu))
+      and '"unzip_last_state"' in _iu))
 check("14d. marca volta ao carregar e sobrevive a reconstrucao da tarefa", (
       "0x11" in _sut and '"uz1"' in _sut
       and "setUnzipFromTokens" in _e9 and _e9.count("setUnzipFromTask") >= 2

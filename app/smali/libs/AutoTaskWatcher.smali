@@ -4588,27 +4588,42 @@
 .end method
 
 .method public static isUnzipEnabled(Llibs/d9;)Z
-    .registers 5
-    # Arqex: a marca "Descompactar arquivos ZIP no destino" mora DENTRO da tarefa.
-    # d9.X e o conteudo codificado da tarefa (o mesmo que e salvo em
-    # custom_key_AUTO_TASKS). O construtor do d9 acrescenta no fim do conteudo o
-    # token "|uz1" (marcado) ou "|uz0" (desmarcado), entao aqui basta decodificar
-    # e olhar o sufixo. Nao depende de id, hash nem de chave em prefs - antes era
-    # isso que fazia a caixinha voltar desmarcada depois de salvar.
+    .registers 7
+    # Arqex: marca "Descompactar arquivos ZIP no destino".
+    # 1) se a tarefa ja carrega o token "|uz1"/"|uz0" no fim do conteudo (d9.X),
+    #    esse valor manda (por tarefa, como o campo Sigma do regex);
+    # 2) se a tarefa nao tem token (tarefa criada antes desta versao, ou que nao
+    #    passou pelo dialogo), usa a ultima escolha feita pelo usuario.
     const/4 v0, 0x0
     if-nez p0, :arqex_unzip_fim
     :try_start_u
     iget-object v1, p0, Llibs/d9;->X:Ljava/lang/String;
-    if-nez v1, :arqex_unzip_fim
+    if-nez v1, :arqex_unzip_pref
     invoke-static {v1}, Llibs/zt0;->e(Ljava/lang/String;)Ljava/lang/String;
     move-result-object v1
-    if-nez v1, :arqex_unzip_fim
+    if-nez v1, :arqex_unzip_pref
     const-string v2, "|uz1"
     invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v0
-    :try_end_u
-    .catchall {:try_start_u .. :try_end_u} :catchall_u
+    move-result v2
+    if-eqz v2, :arqex_unzip_zero
+    const/4 v0, 0x1
+    goto :arqex_unzip_fim
+    :arqex_unzip_zero
+    const-string v2, "|uz0"
+    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    move-result v2
+    if-eqz v2, :arqex_unzip_pref
     :catchall_u
+    .catchall {:try_start_u .. :catchall_u}
+    :catchall_u
+    :arqex_unzip_pref
+    # sem token: memoria da ultima escolha
+    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
+    move-result-object v3
+    if-eqz v3, :arqex_unzip_fim
+    const-string v4, "unzip_last_state"
+    invoke-interface {v3, v4, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    move-result v0
     :arqex_unzip_fim
     return v0
 .end method
@@ -5421,6 +5436,36 @@
     :arqex_tok0
     const-string v0, "|uz0"
     return-object v0
+.end method
+
+# Arqex: guarda a ultima escolha do usuario e registra no logcat (tag ArqexUnzip).
+# Serve de memoria para tarefas que ainda nao carregam o token e de diagnostico
+# caso a marcacao nao apareca na proxima abertura do dialogo.
+.method public static setUnzipLastState(Z)V
+    .registers 5
+    :try_start_1
+    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
+    move-result-object v0
+    if-eqz v0, :arqex_uls_log
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    move-result-object v0
+    if-eqz v0, :arqex_uls_log
+    const-string v1, "unzip_last_state"
+    invoke-interface {v0, v1, p0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    :arqex_uls_log
+    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v1, "salvar marca descompactar="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
+    const-string v1, "ArqexUnzip"
+    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :catchall_1
+    return-void
 .end method
 
 .method public static declared-synchronized onTaskSaved(Llibs/d9;Llibs/d9;Llibs/od;)V
