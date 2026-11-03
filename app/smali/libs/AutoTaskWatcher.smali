@@ -4782,7 +4782,10 @@
     if-eqz v3, :arqex_iu_fim
     invoke-interface {v3, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     move-result v0
-    if-eqz v0, :arqex_iu_fim
+    # ATENCAO: if-NEZ = se TRUE, termina com 1. if-eqz aqui invertia a logica e
+    # matava a camada 3 (era o bug: com a chave por conteudo em false o metodo
+    # retornava false na hora e nunca chegava na ultima escolha do usuario).
+    if-nez v0, :arqex_iu_fim
     const-string v2, "unzip_last_state"
     invoke-interface {v3, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     move-result v0

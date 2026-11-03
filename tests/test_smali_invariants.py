@@ -501,6 +501,12 @@ check("14d. marca volta ao carregar e sobrevive a reconstrucao da tarefa", (
       and "setUnzipFromDialog" in _n8
       and "unzipBox:Landroid/widget/CheckBox" in _sud
       and "isUnzipEnabled" in _suf and "saveUnzipFlag" not in _atw))
+check("14f. cascata do descompactar nao tem condicao invertida", (
+      # depois de ler a chave por conteudo, o pulo para o fim tem que acontecer
+      # quando o valor for TRUE (if-nez) - if-eqz matava a ultima camada
+      "if-nez v0, :arqex_iu_fim" in _iu
+      and "unzip_last_state" in _iu
+      and "getBoolean(Ljava/lang/String;Z)Z" in _iu))
 check("14e. a escolha e gravada no toque na caixinha (nao so no Salvar)", (
       "ArqexUnzipCheck" in _atw
       and "setOnCheckedChangeListener" in
