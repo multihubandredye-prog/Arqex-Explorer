@@ -344,7 +344,7 @@
 
     const/4 v4, 0x1
 
-    const/4 v6, 0x0
+    move-object v6, v5
 
     const/4 v7, 0x0
 
@@ -2885,6 +2885,56 @@
     return-object v0
 .end method
 
+.method private static getNameFilterByTitle(Llibs/d9;)Ljava/lang/String;
+    .registers 4
+
+    const-string v0, ""
+
+    if-nez p0, :fim
+
+    iget-object v1, p0, Llibs/d9;->Nu:Ljava/lang/String;
+
+    if-nez v1, :fim
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "name_t_"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    if-eqz v2, :fim
+
+    invoke-interface {v2, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-nez v3, :fim
+
+    invoke-interface {v2, v1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :nulo
+
+    return-object v0
+
+    :nulo
+    const-string v0, ""
+
+    :fim
+    return-object v0
+.end method
+
 .method private static getNameFilterById(Llibs/d9;)Ljava/lang/String;
     .registers 4
 
@@ -2959,6 +3009,21 @@
     return-object v4
 
     :sem_id
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->getNameFilterByTitle(Llibs/d9;)Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v4, :sem_titulo
+
+    invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v5
+
+    if-nez v5, :sem_titulo
+
+    return-object v4
+
+    :sem_titulo
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "name_"
@@ -5505,6 +5570,26 @@
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
+    # grava tambem pelo titulo da tarefa, que nao muda quando a tarefa e editada
+    iget-object v6, p1, Llibs/d9;->Nu:Ljava/lang/String;
+
+    if-eqz v6, :sem_titulo_grav
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    const-string v8, "name_t_"
+
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-interface {v3, v7, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    :sem_titulo_grav
     # grava tambem pela id da tarefa: a chave da regra muda se a tarefa for editada
     new-instance v6, Ljava/lang/StringBuilder;
 

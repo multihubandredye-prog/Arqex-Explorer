@@ -101,29 +101,41 @@
 .end method
 
 .method public static makeDialogDismissible(Landroid/app/Dialog;)V
-    .registers 3
+    .registers 4
 
     if-nez p0, :fim
 
     :try_start_0
     const/4 v0, 0x1
 
-    # Voltar do Android fecha
     invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    # toque fora tambem fecha
     invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    # e o teclado nao engole o primeiro Voltar quando o nome esta em foco
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     if-eqz v1, :fim_try
 
+    # Voltar deve fechar mesmo com o campo de nome em foco
     const/16 v2, 0x10
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v2
+
+    if-eqz v2, :fim_try
+
+    invoke-virtual {v2, v0}, Landroid/view/View;->setFocusableInTouchMode(Z)V
+
+    new-instance v3, Llibs/ArqexBackCloser;
+
+    invoke-direct {v3, p0}, Llibs/ArqexBackCloser;-><init>(Landroid/app/Dialog;)V
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
