@@ -277,7 +277,8 @@ check("10g. salvamento do filtro por nome pega o campo no dialogo vivo (igual ex
 check("10e. nome do filtro e salvo ao salvar a tarefa", '"name_"' in _atw and "dialogNameCheckBoxes" in _atw)
 _e9_path = os.path.join(SMALI, "libs", "e9.smali")
 _e9 = open(_e9_path, encoding="utf-8", errors="replace").read() if os.path.exists(_e9_path) else ""
-check("10f. tela da tarefa chama o controle do filtro por nome", "addNameFilterControls" in _e9)
+check("10f. filtro por nome fora da tela da tarefa (desligado a pedido)",
+      "addNameFilterControls" not in _e9 and "addExtFilterControls" in _e9)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 
@@ -380,7 +381,16 @@ check("12h. toque fora da janela fecha o dialogo Pasta", (
       and '0x40000' in _mut and 'getActionMasked' in _d and 'cancel()V' in _d))
 check("12i. toque DENTRO nao pode fechar (sem o onTouchEvent do Dialog)", (
       'superDispatchTouchEvent' in _d and 'getGlobalVisibleRect' in _d
-      and '0x1020002' in _d))
+      and 'dialog_view' in _d))
+
+_e9 = ""
+_c9 = os.path.join(SMALI, "libs", "e9.smali")
+if os.path.exists(_c9):
+    _e9 = open(_c9, encoding="utf-8", errors="replace").read()
+check("12j. filtro por nome desligado (fora da tela e fora da filtragem)", (
+      "addNameFilterControls" not in _e9
+      and "filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V\n\n    return-void" not in _atw
+      and "->filterByExtFilter(Llibs/d9;Ljava/util/Collection;)V" in _atw))
 
 # 11. nenhuma rotina escrita a mao pode usar registrador de parametro como
 # destino de new-instance. Foi exatamente isso que gerou o VerifyError da

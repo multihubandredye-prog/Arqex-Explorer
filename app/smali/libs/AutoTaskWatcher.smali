@@ -3155,8 +3155,7 @@
 
     invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterByExtFilter(Llibs/d9;Ljava/util/Collection;)V
 
-    invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V
-
+    # filtro por nome desligado a pedido: fica so o filtro por extensao
     return-void
 .end method
 

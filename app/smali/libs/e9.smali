@@ -1546,8 +1546,6 @@
 
     invoke-static {v12, v11}, Llibs/AutoTaskWatcher;->addExtFilterControls(Llibs/od;Llibs/d9;)V
 
-    invoke-static {v12, v11}, Llibs/AutoTaskWatcher;->addNameFilterControls(Llibs/od;Llibs/d9;)V
-
     .line 680
     .line 681
     new-instance v17, Llibs/k8;

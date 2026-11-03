@@ -107,12 +107,16 @@
 
     if-eqz p0, :fim
 
-    # So a flag da janela: assim o toque FORA da janela chega ao dialogo como
-    # ACTION_OUTSIDE, que o $d.dispatchTouchEvent trata. Nao mexemos em
-    # setCancelable/setCanceledOnTouchOutside: foi isso que fez o dialogo
-    # fechar em QUALQUER toque dentro (o Dialog.onTouchEvent cancela quando
-    # calcula que o toque saiu da janela, e nesse dialogo ele erra a conta).
+    # setCanceledOnTouchOutside(true) e' o que faz o Android entregar o toque
+    # fora da janela como ACTION_OUTSIDE (sem ele o evento nunca chega); a flag
+    # 0x40000 vai junto por garantia. Quem trata o evento e' o
+    # $d.dispatchTouchEvent, que NAO passa pelo Dialog.onTouchEvent - foi ele
+    # que fechava o dialogo em qualquer toque dentro.
     :try_start_1
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -120,7 +124,6 @@
 
     if-eqz v0, :fim
 
-    # FLAG_WATCH_OUTSIDE_TOUCH (0x40000)
     const v1, 0x40000
 
     invoke-virtual {v0, v1, v1}, Landroid/view/Window;->addFlags(II)V

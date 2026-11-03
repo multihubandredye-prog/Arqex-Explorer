@@ -443,8 +443,8 @@
 
     if-eqz v0, :sem_p1
 
-    # android.R.id.content (0x1020002): a area do conteudo do dialogo
-    const v1, 0x1020002
+    # @id/dialog_view: o cartao do dialogo (wrap_content), nao a janela toda
+    sget v1, Llibs/wh2;->dialog_view:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
