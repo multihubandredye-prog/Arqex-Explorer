@@ -239,9 +239,14 @@ _bc = ""
 _cbc = os.path.join(SMALI, "libs", "ArqexBackCloser.smali")
 if os.path.exists(_cbc):
     _bc = open(_cbc, encoding="utf-8", errors="replace").read()
+_dkc_path = os.path.join(SMALI, "libs", "ArqexDialogKeyCloser.smali")
+_dkc = open(_dkc_path, encoding="utf-8", errors="replace").read() if os.path.exists(_dkc_path) else ""
 check("9h. Voltar fecha o dialogo (listener de tecla instalado)",
       "ArqexBackCloser" in _bc and "ArqexBackCloser" in _mut
       and "setOnKeyListener" in _mut)
+check("9i. Voltar no proprio Dialog (chega antes do tratamento interno)",
+      "ArqexDialogKeyCloser" in _mut and "ArqexDialogKeyCloser" in _dkc
+      and "DialogInterface$OnKeyListener" in _dkc and "hide()V" in _dkc)
 check("9e. icones da barra superior com respiro (11dp)",
       "0x41300000    # 11.0f" in _mut)
 _mt = ""
@@ -265,8 +270,9 @@ check("10h. filtro por nome tem chaves estaveis (id e titulo da tarefa)",
       and "name_t_" in _atw and "getNameFilterByTitle" in _atw)
 check("10i. campo do filtro por nome abre preenchido (string no registrador String)",
       "move-object v7, v5" in _atw)
-check("10g. salvamento do filtro por nome usa os objetos da tela (sem id)",
-      "nameUiCheck" in _atw and "nameUiEdit" in _atw)
+check("10g. salvamento do filtro por nome pega o campo no dialogo vivo (igual extensao)",
+      "findNameCheck" in _atw and "findNameEdit" in _atw
+      and 'const/16 v2, 0x56' in _atw and 'const/16 v2, 0x55' in _atw)
 check("10e. nome do filtro e salvo ao salvar a tarefa", '"name_"' in _atw and "dialogNameCheckBoxes" in _atw)
 _e9_path = os.path.join(SMALI, "libs", "e9.smali")
 _e9 = open(_e9_path, encoding="utf-8", errors="replace").read() if os.path.exists(_e9_path) else ""
@@ -329,9 +335,11 @@ _AUTORAIS = {
     ("libs", "AutoTaskWatcher.smali"): [
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
         "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
-        "addNameFilterControls", "filterByNameFilter",
+        "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
+        "findNameCheck", "findNameEdit",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
+    ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
 }
 
 

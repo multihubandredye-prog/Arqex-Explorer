@@ -39,13 +39,22 @@
     return v1
 
     :cond_8
+    :try_start_8
     iget-object v0, p0, Llibs/ArqexBackCloser;->dialog:Landroid/app/Dialog;
 
-    if-eqz v0, :cond_c
+    if-nez v0, :try_end_18
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    :cond_c
+    iget-object v0, p0, Llibs/ArqexBackCloser;->dialog:Landroid/app/Dialog;
+
+    if-nez v0, :try_end_18
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->hide()V
+    :try_end_18
+    .catchall {:try_start_8 .. :try_end_18} :catchall_18
+
+    :catchall_18
     const/4 v0, 0x1
 
     return v0

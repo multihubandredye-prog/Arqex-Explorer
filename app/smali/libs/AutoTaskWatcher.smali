@@ -2885,6 +2885,101 @@
     return-object v0
 .end method
 
+# Pega o checkbox do filtro por nome no dialogo vivo (mesma ideia do filtro
+# por extensao: procura pelo id na tela). Se nao achar, usa o que foi guardado
+# quando a tela foi montada.
+.method private static findNameCheck(Llibs/od;)Landroid/widget/CheckBox;
+    .registers 4
+
+    if-nez p0, :estatico
+
+    iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
+
+    if-eqz v1, :domapa
+
+    const/16 v2, 0x55
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :domapa
+
+    instance-of v2, v1, Landroid/widget/CheckBox;
+
+    if-eqz v2, :domapa
+
+    check-cast v1, Landroid/widget/CheckBox;
+
+    return-object v1
+
+    :domapa
+    sget-object v1, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
+
+    if-eqz v1, :estatico
+
+    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/CheckBox;
+
+    if-eqz v1, :estatico
+
+    return-object v1
+
+    :estatico
+    sget-object v1, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
+
+    return-object v1
+.end method
+
+.method private static findNameEdit(Llibs/od;)Lcom/mixplorer/widgets/MiEditText;
+    .registers 4
+
+    if-nez p0, :estatico
+
+    iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
+
+    if-eqz v1, :domapa
+
+    const/16 v2, 0x56
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :domapa
+
+    instance-of v2, v1, Lcom/mixplorer/widgets/MiEditText;
+
+    if-eqz v2, :domapa
+
+    check-cast v1, Lcom/mixplorer/widgets/MiEditText;
+
+    return-object v1
+
+    :domapa
+    sget-object v1, Llibs/AutoTaskWatcher;->dialogNameEdits:Ljava/util/WeakHashMap;
+
+    if-eqz v1, :estatico
+
+    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/mixplorer/widgets/MiEditText;
+
+    if-eqz v1, :estatico
+
+    return-object v1
+
+    :estatico
+    sget-object v1, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
+
+    return-object v1
+.end method
+
 .method private static getNameFilterByTitle(Llibs/d9;)Ljava/lang/String;
     .registers 4
 
@@ -5500,27 +5595,37 @@
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_174
-     sget-object v2, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
+     # mesma logica do filtro por extensao: pega o checkbox e o campo no
+    # dialogo vivo, pelo id da tela (o objeto estatico pode ter sido trocado
+    # quando a tela foi remontada, e ai o texto digitado se perdia)
+    invoke-static {p2}, Llibs/AutoTaskWatcher;->findNameCheck(Llibs/od;)Landroid/widget/CheckBox;
 
-    sget-object v4, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
+    move-result-object v2
 
-    if-eqz v2, :cond_174_n
+    invoke-static {p2}, Llibs/AutoTaskWatcher;->findNameEdit(Llibs/od;)Lcom/mixplorer/widgets/MiEditText;
 
-    const-string v5, ""
+    move-result-object v4
+
+    const/4 v6, 0x1
+
+    if-nez v2, :check_lido_n
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
-    move-result v2
+    move-result v6
 
-    if-eqz v2, :cond_146_n
+    :check_lido_n
+    const-string v5, ""
 
-    if-eqz v4, :cond_146_n
+    if-nez v6, :cond_146_n
+
+    if-nez v4, :cond_146_n
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    if-eqz v2, :cond_146_n
+    if-nez v2, :cond_146_n
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

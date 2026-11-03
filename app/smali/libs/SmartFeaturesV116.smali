@@ -101,46 +101,58 @@
 .end method
 
 .method public static makeDialogDismissible(Landroid/app/Dialog;)V
-    .registers 5
+    .registers 6
 
     if-nez p0, :fim
 
-    :try_start_0
+    # 1) Voltar: listener no proprio Dialog (consultado em dispatchKeyEvent,
+    #    antes de qualquer view e antes do tratamento interno do dialogo)
+    :try_start_1
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+    new-instance v0, Llibs/ArqexDialogKeyCloser;
 
+    invoke-direct {v0, p0}, Llibs/ArqexDialogKeyCloser;-><init>(Landroid/app/Dialog;)V
+
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :catchall_1
+    # 2) toque fora da janela (so da para configurar depois que a janela existe)
+    :try_start_2
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :fim_try
+    if-nez v0, :fim
 
-    # Voltar deve fechar mesmo com o campo de nome em foco
-    const/16 v2, 0x10
+    const/4 v1, 0x1
 
-    invoke-virtual {v1, v2}, Landroid/view/Window;->setSoftInputMode(I)V
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    const/16 v1, 0x10
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    if-eqz v2, :fim_try
+    # 3) reforco: tecla Voltar tambem nas views do dialogo
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
-    invoke-virtual {v2, v0}, Landroid/view/View;->setFocusableInTouchMode(Z)V
+    move-result-object v0
 
-    new-instance v3, Llibs/ArqexBackCloser;
+    if-nez v0, :fim
 
-    invoke-direct {v3, p0}, Llibs/ArqexBackCloser;-><init>(Landroid/app/Dialog;)V
+    new-instance v1, Llibs/ArqexBackCloser;
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v1, p0}, Llibs/ArqexBackCloser;-><init>(Landroid/app/Dialog;)V
 
-    :catchall_0
-    :fim_try
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    :catchall_2
     :fim
     return-void
 .end method

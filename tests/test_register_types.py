@@ -27,9 +27,11 @@ ALVOS = {
     ("libs", "AutoTaskWatcher.smali"): [
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
         "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
-        "addNameFilterControls", "filterByNameFilter",
+        "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
+        "findNameCheck", "findNameEdit",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
+    ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
 }
 
 INST = re.compile(r"^\s{4}([a-z][\w/$-]*)\s*(.*)$")
