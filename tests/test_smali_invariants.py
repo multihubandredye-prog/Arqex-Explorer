@@ -487,37 +487,35 @@ _sud = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static setUnzipFromDialog") or ""
 _suf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static setUnzipFromTask") or ""
-_sut_r = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
-                     ".method public static unzipContentKey") or ""
-check("14a. marca do descompactar vem de unzip_last_state (sem decodificar)", (
-      '"unzip_last_state"' in _iu and "getBoolean" in _iu
-      and "zt0;->e" not in _iu and "hashCode" not in _iu
-      and "takeUnzipToken" in _d9c))
-check("14d. marca volta ao carregar e sobrevive a reconstrucao da tarefa", (
-      "0x11" in _sut and '"uz1"' in _sut
-      and "setUnzipFromTokens" in _e9 and _e9.count("setUnzipFromTask") >= 2
-      and "setUnzipFromDialog" in _n8
-      and "unzipBox:Landroid/widget/CheckBox" in _sud
-      and "isUnzipEnabled" in _suf and "saveUnzipFlag" not in _atw))
-_tok = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
-                  ".method public static takeUnzipToken") or ""
-check("14g. token do descompactar nao pode sair invertido", (
-      # marcado tem que virar "|uz1": o salto para o retorno de "|uz0" acontece
-      # quando a marca e FALSA (if-eqz), nunca com if-nez
-      "if-eqz v0, :arqex_tok_ret0" in _tok
-      and "if-nez v0, :arqex_tok_ret0" not in _tok
-      and 'const-string v0, "|uz1"' in _tok and 'const-string v0, "|uz0"' in _tok))
-check("14f. nenhuma leitura da marca depende do conteudo codificado", (
-      "zt0;->e" not in _iu and "unzipContentKey" not in _atw
-      and "saveUnzipContent" not in _atw
-      and '"unzip_last_state"' in _iu))
-check("14e. a escolha e gravada no toque na caixinha (nao so no Salvar)", (
-      "ArqexUnzipCheck" in _atw
-      and "setOnCheckedChangeListener" in
-          (method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
-                       ".method public static addUnzipCheckBox") or "")
-      and os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzipCheck.smali"))
-      and "setUnzipLastState" in _atw and '"unzip_last_state"' in _iu))
+_getkey = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                      ".method public static getUnzipFlagKey") or ""
+_ifs = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method public static isUnzipFlagSet") or ""
+_sfk = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method public static setUnzipFlagKey") or ""
+_st = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static runUnzipSelfTest") or ""
+_ots = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method public static declared-synchronized onTaskSaved") or ""
+_auc = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method public static addUnzipCheckBox") or ""
+check("14a. marca do descompactar e POR TAREFA (chave unzip2_<assinatura>)", (
+      '"unzip2_"' in _getkey and "getTaskRuleKey" in _getkey
+      and "unzip_last_state" not in _atw and "unzipState" not in _atw))
+check("14d. leitura: memoria do processo primeiro, depois as prefs", (
+      "unzipFlagsCache" in _ifs and "getConfigPrefs" in _ifs
+      and "getBoolean" in _ifs))
+check("14e. gravacao usa commit() (apply era assincrono)", (
+      "commit()Z" in _sfk and "apply()V" not in _sfk
+      and "unzipFlagsCache" in _sfk))
+check("14f. Salvar grava a marca na tarefa salva (dialogo -> tarefa)", (
+      "setUnzipFlag" in _ots and "findDialogCheckBox" in _ots
+      and "0x5d" in _ots and "setUnzipFromDialog" in _n8))
+check("14g. a caixinha abre com o estado da tarefa", (
+      "isUnzipEnabled" in _auc and "0x5d" in _auc))
+check("14h. diagnostico cobre reinicio do app (fase 1 e fase 2)", (
+      "runUnzipSelfTest" in _atw and "arqex_diag_fase2" in _st
+      and "clearUnzipCache" in _st))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
       "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
 check("14c. extracao le o zip do item e escreve na pasta de destino", (

@@ -50,35 +50,27 @@ if [ -f ui.xml ]; then
   grep -o 'text="[^"]*"\|content-desc="[^"]*"\|bounds="[^"]*"' ui.xml | paste - - - 2>/dev/null | grep -v 'text=""' | head -60 || true
 fi
 
-log "diagnostico executado pelo proprio app (tag ArqexUnzipDiag)"
-DIAG="$(grep "ArqexUnzipDiag" logcat.txt | tail -3 || true)"
-echo "$DIAG"
-if echo "$DIAG" | grep -q "diag_ok=true"; then
-  echo "OK: marcacao do descompactar mantida e lida de volta (diag_ok=true)"
-elif echo "$DIAG" | grep -q "diag_ok=false"; then
-  echo "::error::o diagnostico do descompactar falhou (ver logcat)"
-  exit 1
-else
-  echo "::warning::o app nao registrou o diagnostico do descompactar"
-fi
+log "prova do descompactar: fase 1 (grava e le de volta)"
+adb logcat -c || true
+adb shell am force-stop com.arqex.explorer || true
+sleep 2
+adb shell monkey -p com.arqex.explorer -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
+sleep 25
+adb logcat -d > logcat_f1.txt || true
+F1="$(grep "ArqexUnzipDiag" logcat_f1.txt | tail -1 || true)"
+echo "fase 1: $F1"
 
-log "teste extra: codigo real em app_process (informativo)"
-# compila o harness (sem classpath do app: usa reflexao) e converte para dex
-if command -v d8 >/dev/null 2>&1 && [ -d tools/app_test ]; then
-  rm -rf /tmp/at && mkdir -p /tmp/at/c
-  javac -source 8 -target 8 -nowarn -d /tmp/at/c tools/app_test/TesteUnzip.java 2>/dev/null || true
-  ( cd /tmp/at/c && jar cf ../teste.jar . ) 2>/dev/null || true
-  d8 --min-api 21 --output /tmp/at /tmp/at/teste.jar >/dev/null 2>&1 || true
-  if [ -f /tmp/at/classes.dex ]; then
-    adb push /tmp/at/classes.dex /data/local/tmp/teste.dex >/dev/null 2>&1 || true
-    PKG_PATH="$(adb shell pm path com.arqex.explorer | head -1 | sed 's/package://' | tr -d '\r')"
-    echo "apk do app: $PKG_PATH"
-    SAIDA="$(adb shell "CLASSPATH=$PKG_PATH:/data/local/tmp/teste.dex app_process /system/bin TesteUnzip" 2>&1 || true)"
-    echo "$SAIDA"
-    echo "$SAIDA" | grep -q "RESULTADO: OK" && echo "OK: teste extra passou" || echo "::warning::teste extra nao passou (informativo)"
-  else
-    echo "::warning::nao foi possivel gerar o dex do teste (d8 ausente?)"
-  fi
-else
-  echo "::warning::d8 nao encontrado; teste do codigo real nao rodou"
-fi
+log "prova do descompactar: fase 2 (app fechado e aberto de novo)"
+adb shell am force-stop com.arqex.explorer || true
+sleep 3
+adb shell monkey -p com.arqex.explorer -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
+sleep 25
+adb logcat -d > logcat_f2.txt || true
+F2="$(grep "ArqexUnzipDiag" logcat_f2.txt | tail -1 || true)"
+echo "fase 2: $F2"
+
+FALHOU=0
+echo "$F1" | grep -q "fase=1 diag_ok=true" && echo "OK: fase 1 - marca gravada, lida de volta e desmarcada" || { echo "::error::fase 1 do descompactar falhou"; FALHOU=1; }
+echo "$F2" | grep -q "fase=2 diag_ok=true" && echo "OK: fase 2 - marca sobreviveu a fechar o app" || { echo "::error::fase 2 do descompactar falhou (marca nao sobreviveu ao reinicio)"; FALHOU=1; }
+[ "$FALHOU" = "0" ] || exit 1
+
