@@ -820,6 +820,10 @@
     invoke-virtual {v1, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sput-object v0, Llibs/AutoTaskWatcher;->unzipBox:Landroid/widget/CheckBox;
+    # Arqex: grava a escolha no instante do toque (nao depende do Salvar)
+    new-instance v1, Llibs/ArqexUnzipCheck;
+    invoke-direct {v1}, Llibs/ArqexUnzipCheck;-><init>()V
+    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
     :try_end_1a
     .catchall {:try_start_3 .. :try_end_1a} :catchall_1a
 
@@ -4776,6 +4780,10 @@
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
     move-result-object v3
     if-eqz v3, :arqex_iu_fim
+    invoke-interface {v3, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    move-result v0
+    if-eqz v0, :arqex_iu_fim
+    const-string v2, "unzip_last_state"
     invoke-interface {v3, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     move-result v0
     :try_end_i

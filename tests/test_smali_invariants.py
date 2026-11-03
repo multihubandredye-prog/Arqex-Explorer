@@ -501,6 +501,13 @@ check("14d. marca volta ao carregar e sobrevive a reconstrucao da tarefa", (
       and "setUnzipFromDialog" in _n8
       and "unzipBox:Landroid/widget/CheckBox" in _sud
       and "isUnzipEnabled" in _suf and "saveUnzipFlag" not in _atw))
+check("14e. a escolha e gravada no toque na caixinha (nao so no Salvar)", (
+      "ArqexUnzipCheck" in _atw
+      and "setOnCheckedChangeListener" in
+          (method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                       ".method public static addUnzipCheckBox") or "")
+      and os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzipCheck.smali"))
+      and "setUnzipLastState" in _atw and '"unzip_last_state"' in _iu))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
       "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
 check("14c. extracao le o zip do item e escreve na pasta de destino", (
