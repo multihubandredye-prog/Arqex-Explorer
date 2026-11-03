@@ -333,8 +333,8 @@ _ba_path = os.path.join(SMALI, "com", "mixplorer", "activities", "BrowseActivity
 _ba = open(_ba_path, encoding="utf-8", errors="replace").read() if os.path.exists(_ba_path) else ""
 _od_path = os.path.join(SMALI, "libs", "od.smali")
 _od = open(_od_path, encoding="utf-8", errors="replace").read() if os.path.exists(_od_path) else ""
-check("12a. $d intercepta o Voltar (dispatchKeyEvent -> closeFolderDialog)",
-      "dispatchKeyEvent" in _d and "closeFolderDialog" in _d)
+check("12a. $d intercepta o Voltar e fecha o proprio dialogo",
+      "dispatchKeyEvent" in _d and "arqexForceDismiss" in _d)
 check("12b. $d se registra ao aparecer (show)", "registerFolderDialog" in _d)
 check("12c. BrowseActivity fecha o dialogo antes de sair da tela",
       "closeFolderDialog" in _ba)
@@ -346,10 +346,11 @@ _n8_path = os.path.join(SMALI, "libs", "n8.smali")
 _n8 = open(_n8_path, encoding="utf-8", errors="replace").read() if os.path.exists(_n8_path) else ""
 check("13a. salvar uma tarefa existente nao renomeia (teste -> teste2)",
       "sameTask" in _n8 and "sameTask" in _atw and ":renomeia_n" in _n8)
-check("13b. rotulo do filtro mostra a identidade usada na leitura e o build",
-      '|n=' in _atw and '|p=' in _atw and '|y=' in _atw and '|b57]' in _atw)
-check("13c. Voltar mostra por onde a tecla chegou (diagnostico)",
-      "postToastUi" in _d and "postToastUi" in _ba)
+check("13b. rotulo do filtro mostra identidade, chaves e o build",
+      '|n=' in _atw and '|p=' in _atw and '|y=' in _atw and '|b58]' in _atw
+      and "nameKeys" in _atw and "|i=" in _atw and "|t=" in _atw and "|r=" in _atw)
+check("13c. Voltar fecha direto no dialogo, sem depender de registro",
+      "arqexForceDismiss" in _d and "postToastUi" in _d and "postToastUi" in _ba)
 
 check("12f. filtro por nome usa o texto capturado pelo watcher (plano B)",
       "ArqexNameWatcher" in _atw and "getNameLive" in _atw and "setNameLive" in _atw)

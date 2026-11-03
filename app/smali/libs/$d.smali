@@ -424,17 +424,35 @@
 
     if-eqz v0, :super_dk
 
-    # diagnostico: mostra por onde a tecla Voltar chegou
     const-string v1, "Voltar: chegou no dialogo"
 
     invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
 
-    invoke-static {}, Llibs/SmartFeaturesV116;->closeFolderDialog()Z
+    # Fecha direto, sem depender de registro: chama o dismiss() do Dialog.
+    :try_start_k
+    invoke-virtual {p0}, Llibs/od;->arqexForceDismiss()V
+    :try_end_k
+    .catchall {:try_start_k .. :try_end_k} :catch_k
+
+    :catch_k
+    # confere se saiu mesmo; se nao saiu, esconde a janela
+    invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v0
 
-    if-nez v0, :super_dk
+    if-nez v0, :fechou_dk
 
+    const-string v1, "Voltar: AINDA aberto"
+
+    invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
+
+    :try_start_h
+    invoke-virtual {p0}, Landroid/app/Dialog;->hide()V
+    :try_end_h
+    .catchall {:try_start_h .. :try_end_h} :catch_h
+
+    :catch_h
+    :fechou_dk
     const/4 v0, 0x1
 
     return v0
