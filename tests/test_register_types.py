@@ -29,6 +29,7 @@ ALVOS = {
         "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
         "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
         "findNameCheck", "findNameEdit", "setNameLive", "getNameLive", "debugLine",
+        "sameTask",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],

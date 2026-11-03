@@ -424,6 +424,11 @@
 
     if-eqz v0, :super_dk
 
+    # diagnostico: mostra por onde a tecla Voltar chegou
+    const-string v1, "Voltar: chegou no dialogo"
+
+    invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
+
     invoke-static {}, Llibs/SmartFeaturesV116;->closeFolderDialog()Z
 
     move-result v0

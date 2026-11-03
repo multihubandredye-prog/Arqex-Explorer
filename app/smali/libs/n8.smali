@@ -293,6 +293,26 @@
     move-result-object v23
 
     .line 93
+    # Se a tarefa encontrada com esse nome for a propria tarefa que esta sendo
+    # editada, nao renomeia: antes o titulo ganhava um numero a cada Salvar
+    # (teste -> teste2 -> teste22) e isso trocava a chave do filtro por nome.
+    if-eqz v23, :renomeia_n
+
+    iget-object v6, v1, Llibs/n8;->Sigma:Llibs/d9;
+
+    if-eqz v6, :renomeia_n
+
+    move-object/from16 v24, v6
+
+    move-object/from16 v25, v23
+
+    invoke-static/range {v24 .. v25}, Llibs/AutoTaskWatcher;->sameTask(Llibs/d9;Llibs/d9;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_80
+
+    :renomeia_n
     if-eqz v23, :cond_80
 
     .line 94

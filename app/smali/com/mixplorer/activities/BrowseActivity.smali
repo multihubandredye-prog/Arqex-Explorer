@@ -21293,6 +21293,11 @@
 .method public final onBackPressed()V
     .registers 3
 
+    # diagnostico: mostra por onde a tecla Voltar chegou
+    const-string v1, "Voltar: chegou na tela"
+
+    invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
+
     # se o dialogo de criar pasta estiver aberto, o Voltar fecha ele
     invoke-static {}, Llibs/SmartFeaturesV116;->closeFolderDialog()Z
 

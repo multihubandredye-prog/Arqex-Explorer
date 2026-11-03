@@ -342,6 +342,15 @@ check("12d. fecha direto pelo Dialog (nao depende do dismiss() do MiXplorer)",
       "arqexForceDismiss" in _od and "arqexForceDismiss" in _mut)
 check("12e. build nao aceita DEX velho quando o smali recusa um arquivo",
       "smali recusou" in open(os.path.join("tools", "build.sh"), encoding="utf-8", errors="replace").read())
+_n8_path = os.path.join(SMALI, "libs", "n8.smali")
+_n8 = open(_n8_path, encoding="utf-8", errors="replace").read() if os.path.exists(_n8_path) else ""
+check("13a. salvar uma tarefa existente nao renomeia (teste -> teste2)",
+      "sameTask" in _n8 and "sameTask" in _atw and ":renomeia_n" in _n8)
+check("13b. rotulo do filtro mostra a identidade usada na leitura e o build",
+      '|n=' in _atw and '|p=' in _atw and '|y=' in _atw and '|b57]' in _atw)
+check("13c. Voltar mostra por onde a tecla chegou (diagnostico)",
+      "postToastUi" in _d and "postToastUi" in _ba)
+
 check("12f. filtro por nome usa o texto capturado pelo watcher (plano B)",
       "ArqexNameWatcher" in _atw and "getNameLive" in _atw and "setNameLive" in _atw)
 
@@ -358,6 +367,7 @@ _AUTORAIS = {
         "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
         "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
         "findNameCheck", "findNameEdit", "setNameLive", "getNameLive", "debugLine",
+        "sameTask",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],

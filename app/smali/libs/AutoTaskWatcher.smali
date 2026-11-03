@@ -2911,6 +2911,31 @@
     return-object v0
 .end method
 
+# Mesma tarefa? (mesma instancia ou mesmo id)
+.method public static sameTask(Llibs/d9;Llibs/d9;)Z
+    .registers 5
+
+    const/4 v0, 0x0
+
+    if-nez p0, :fim
+
+    if-nez p1, :fim
+
+    if-ne p0, p1, :igual
+
+    iget v1, p0, Llibs/d9;->Y:I
+
+    iget v2, p1, Llibs/d9;->Y:I
+
+    if-eq v1, v2, :fim
+
+    :igual
+    const/4 v0, 0x1
+
+    :fim
+    return v0
+.end method
+
 # Guarda o texto que o usuario digitou no campo do filtro por nome. Serve de
 # plano B no salvamento, caso a view do dialogo nao seja encontrada.
 .method public static setNameLive(Llibs/od;Ljava/lang/String;)V
@@ -3001,7 +3026,31 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "]"
+    const-string v1, "|n="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Llibs/d9;->Nu:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "|p="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Llibs/d9;->Phi:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "|y="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p0, Llibs/d9;->Y:I
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, "|b57]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
