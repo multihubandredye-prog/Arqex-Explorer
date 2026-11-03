@@ -212,6 +212,18 @@ def main():
             problemas.extend(confere(txt, nome))
         conferidos += 1
         problemas.extend(confere_clinit(caminho))
+    # confere TODOS os metodos do smali (nao so a lista ALVOS): registrador fora
+    # da faixa de .registers faz o Android recusar a classe inteira (VerifyError)
+    import subprocess
+    raiz_todos = os.path.dirname(smali.rstrip("/")) if smali.rstrip("/").endswith("smali") else smali
+    verificador = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tools", "check_registers.py")
+    try:
+        r = subprocess.run([sys.executable, verificador, smali], capture_output=True, text=True)
+        if r.returncode != 0:
+            problemas.append("registradores fora da faixa:\n" + (r.stdout or r.stderr).strip()[:2000])
+    except Exception as e:
+        problemas.append("nao foi possivel rodar tools/check_registers.py: %s" % e)
+
     for p in problemas:
         print("FAIL  " + p)
     print("\n%d metodos conferidos, %d problemas" % (conferidos, len(problemas)))

@@ -5591,20 +5591,30 @@
 # Arqex: entrega o token a gravar no conteudo da tarefa e zera (uso unico).
 # "|uz1" = descompactar marcado, "|uz0" = desmarcado.
 .method public static takeUnzipToken()Ljava/lang/String;
-    .registers 2
+    .registers 4
     sget-boolean v0, Llibs/AutoTaskWatcher;->unzipPending:Z
     const/4 v1, 0x0
     sput-boolean v1, Llibs/AutoTaskWatcher;->unzipPending:Z
-    if-eqz v0, :arqex_tok0
+    # 1 = marcado ("|uz1"), 0 = desmarcado ("|uz0")
+    move v2, v0
+    if-nez v0, :arqex_tok_zero
+    const/4 v2, 0x1
+    goto :arqex_tok_log
+    :arqex_tok_zero
+    const/4 v2, 0x0
+    :arqex_tok_log
+    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v3, "d9 gravou token=uz"
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    const-string v3, "ArqexUnzip"
+    invoke-static {v3, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    if-nez v0, :arqex_tok_ret0
     const-string v0, "|uz1"
     return-object v0
-    :arqex_tok0
-    const-string v1, "ArqexUnzip"
-
-    const-string v2, "d9 gravou token=uz0"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
+    :arqex_tok_ret0
     const-string v0, "|uz0"
     return-object v0
 .end method
