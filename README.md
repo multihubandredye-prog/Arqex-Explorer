@@ -67,6 +67,7 @@ O aplicativo usa **aparência fixa**: fundo escuro, destaques em turquesa e leit
 A galeria de temas, os presets e o editor de cores foram removidos — a Ajuda interna foi
 atualizada para isso. O que continua ajustável:
 
+- **Tarefas automáticas** — filtro por **extensão** e por **nome** (com `*` como coringa);
 - **Efeitos visuais** — bordas/divisórias animadas e zoom ao abrir (de +2% a +40%);
 - **Visualizações** — sete modos (Grade, Galeria, Detalhado, Compacto, Em colunas, Envolvido,
   Minimalista) com barra de tamanho universal;

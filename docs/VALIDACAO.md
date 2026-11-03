@@ -444,3 +444,33 @@ notificacao, modal, download e instalacao continuam corretos de ponta a ponta.
 Unica alteracao: as notas da release ganharam a secao "### Atualização dentro do app", depois de
 "### Como instalar" (o marcador de corte continua sendo "### Como instalar", entao o modal segue
 mostrando apenas as novidades). README atualizado para 1.62.0.
+
+## Filtro por nome nas tarefas e rotulos de permissao (branch ajustes-tarefas)
+
+### Rotulos r/w/x no seletor de permissao
+`SmartFeaturesV116$PermPickerDialog.initBox` passou a chamar `setText` com o rotulo da
+permissao. Novo metodo estatico `rotuloPermissao(I)`: 0/1 -> "s", 2 -> "t", e para os indices
+3..11 `(indice - 3) % 3` -> r/w/x. Invariantes 9a/9b/9c.
+
+### Filtro por nome nas tarefas automaticas
+Clonado do filtro por extensao (que ja era testado no fluxo), com as mesmas garantias:
+
+* `getTaskNameFilter` le a preferencia `name_<regra>` (cache `nameFilterCache`);
+* `addNameFilterControls` cria caixinha (id 0x55) e campo (id 0x56), com rotulos em
+  pt/es/en via `getNameFilterCheckLabel` / `getNameFilterHintLabel`;
+* `onTaskSaved` salva o filtro junto com os outros (bloco inserido depois de `:cond_174`,
+  com labels proprios para nao colidir);
+* `matchesNameFilter` compara sem diferenciar maiusculas, aceita varios termos separados por
+  virgula e `*` como coringa, na ordem em que aparecem no nome;
+* `sanitizeNameFilter` apara espacos e limita a 120 caracteres;
+* `filterTaskItems` chama o filtro de extensao e o de nome; as 6 chamadas do fluxo passaram a
+  usar `filterTaskItems`, entao o nome e aplicado em todos os pontos que a extensao ja era;
+* `e9.smali` (tela da tarefa) chama `addNameFilterControls` logo depois do filtro de extensao.
+
+Invariantes 10a a 10f. Total: 108 invariantes, 10 de consistencia.
+
+### Pendente de investigacao
+"Extrair o ZIP na pasta de destino" e "criar subpasta no destino" mexem na execucao real de
+arquivos. O gancho correto e `onBeforeAutoTaskExecute(IILjava/util/Set;)/onTaskFinished(I)`, mas
+a extracao do app passa por classes ofuscadas e por `MixBox`; erra-la pode corromper arquivos do
+usuario. Fica para uma rodada dedicada, com teste em pasta descartavel.

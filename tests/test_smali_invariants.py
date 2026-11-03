@@ -222,6 +222,19 @@ check("9b. bits especiais mostram s/t",
       'const-string v0, "s"' in _perm and 'const-string v0, "t"' in _perm)
 check("9c. rotulo da permissao cobre leitura, escrita e execucao",
       all(x in _perm for x in ['const-string v0, "r"', 'const-string v0, "w"', 'const-string v0, "x"']))
+_atw_path = os.path.join(SMALI, "libs", "AutoTaskWatcher.smali")
+_atw = open(_atw_path, encoding="utf-8", errors="replace").read() if os.path.exists(_atw_path) else ""
+check("10a. filtro por nome existe (chave name_<regra>)", '"name_"' in _atw)
+check("10b. controle de filtro por nome na tela da tarefa",
+      "addNameFilterControls" in _atw and "getNameFilterCheckLabel" in _atw)
+check("10c. filtro por nome aceita coringa *",
+      "matchesNameFilter" in _atw and 'const-string v6, "\\\\*"' in _atw)
+check("10d. filtro por nome e aplicado no fluxo (junto do de extensao)",
+      "filterTaskItems" in _atw and _atw.count("->filterTaskItems(") >= 6)
+check("10e. nome do filtro e salvo ao salvar a tarefa", '"name_"' in _atw and "dialogNameCheckBoxes" in _atw)
+_e9_path = os.path.join(SMALI, "libs", "e9.smali")
+_e9 = open(_e9_path, encoding="utf-8", errors="replace").read() if os.path.exists(_e9_path) else ""
+check("10f. tela da tarefa chama o controle do filtro por nome", "addNameFilterControls" in _e9)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 
