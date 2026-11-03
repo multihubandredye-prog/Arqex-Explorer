@@ -5614,7 +5614,9 @@
     move-result-object v1
     const-string v3, "ArqexUnzip"
     invoke-static {v3, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    if-nez v0, :arqex_tok_ret0
+    # if-EQZ = se a marca e FALSA, devolve |uz0. Estava if-nez (invertido):
+    # tarefa marcada gravava |uz0 e reabria desmarcada.
+    if-eqz v0, :arqex_tok_ret0
     const-string v0, "|uz1"
     return-object v0
     :arqex_tok_ret0

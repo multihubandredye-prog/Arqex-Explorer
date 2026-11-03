@@ -501,6 +501,14 @@ check("14d. marca volta ao carregar e sobrevive a reconstrucao da tarefa", (
       and "setUnzipFromDialog" in _n8
       and "unzipBox:Landroid/widget/CheckBox" in _sud
       and "isUnzipEnabled" in _suf and "saveUnzipFlag" not in _atw))
+_tok = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static takeUnzipToken") or ""
+check("14g. token do descompactar nao pode sair invertido", (
+      # marcado tem que virar "|uz1": o salto para o retorno de "|uz0" acontece
+      # quando a marca e FALSA (if-eqz), nunca com if-nez
+      "if-eqz v0, :arqex_tok_ret0" in _tok
+      and "if-nez v0, :arqex_tok_ret0" not in _tok
+      and 'const-string v0, "|uz1"' in _tok and 'const-string v0, "|uz0"' in _tok))
 check("14f. cascata do descompactar nao tem condicao invertida", (
       # depois de ler a chave por conteudo, o pulo para o fim tem que acontecer
       # quando o valor for TRUE (if-nez) - if-eqz matava a ultima camada
