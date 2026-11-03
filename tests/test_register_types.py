@@ -26,14 +26,12 @@ ALVOS = {
     ("libs", "SmartFeaturesV116$PermPickerDialog.smali"): ["rotuloPorId", "initBox"],
     ("libs", "AutoTaskWatcher.smali"): [
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
-        "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
+        "getTaskNameFilter", "getTaskExtFilter",
         "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
-        "findNameCheck", "findNameEdit", "setNameLive", "getNameLive", "debugLine",
         "sameTask",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
-    ("libs", "ArqexNameWatcher.smali"): ["<init>", "afterTextChanged", "beforeTextChanged", "onTextChanged"],
     ("libs", "od.smali"): ["arqexForceDismiss"],
     ("libs", "$d.smali"): ["show", "dispatchKeyEvent"],
 }

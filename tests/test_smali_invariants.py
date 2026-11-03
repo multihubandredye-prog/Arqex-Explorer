@@ -265,14 +265,15 @@ check("10c. filtro por nome aceita coringa *",
       "matchesNameFilter" in _atw and 'const-string v6, "\\\\*"' in _atw)
 check("10d. filtro por nome e aplicado no fluxo (junto do de extensao)",
       "filterTaskItems" in _atw and _atw.count("->filterTaskItems(") >= 6)
-check("10h. filtro por nome tem chaves estaveis (id e titulo da tarefa)",
-      "name_id_" in _atw and "getNameFilterById" in _atw
-      and "name_t_" in _atw and "getNameFilterByTitle" in _atw)
+check("10h. filtro por nome usa a MESMA chave do filtro por extensao (name_<regra>)",
+      '"name_"' in _atw and "name_id_" not in _atw and "name_t_" not in _atw
+      and "getTaskRuleKey" in _atw)
 check("10i. campo do filtro por nome abre preenchido (string no registrador String)",
       "move-object v7, v5" in _atw)
 check("10g. salvamento do filtro por nome pega o campo no dialogo vivo (igual extensao)",
-      "findNameCheck" in _atw and "findNameEdit" in _atw
-      and 'const/16 v2, 0x56' in _atw and 'const/16 v2, 0x55' in _atw)
+      "dialogNameCheckBoxes" in _atw and "dialogNameEdits" in _atw
+      and "findDialogCheckBox" in _atw and "findDialogEditText" in _atw
+      and "const/16 v4, 0x55" in _atw and "const/16 v5, 0x56" in _atw)
 check("10e. nome do filtro e salvo ao salvar a tarefa", '"name_"' in _atw and "dialogNameCheckBoxes" in _atw)
 _e9_path = os.path.join(SMALI, "libs", "e9.smali")
 _e9 = open(_e9_path, encoding="utf-8", errors="replace").read() if os.path.exists(_e9_path) else ""
@@ -346,14 +347,38 @@ _n8_path = os.path.join(SMALI, "libs", "n8.smali")
 _n8 = open(_n8_path, encoding="utf-8", errors="replace").read() if os.path.exists(_n8_path) else ""
 check("13a. salvar uma tarefa existente nao renomeia (teste -> teste2)",
       "sameTask" in _n8 and "sameTask" in _atw and ":renomeia_n" in _n8)
-check("13b. rotulo do filtro mostra identidade, chaves e o build",
-      '|n=' in _atw and '|p=' in _atw and '|y=' in _atw and '|b58]' in _atw
-      and "nameKeys" in _atw and "|i=" in _atw and "|t=" in _atw and "|r=" in _atw)
+check("13b. diagnostico fora do rotulo (so fica a linha de debug da tarefa)",
+      '|b58]' not in _atw and "nameKeys" not in _atw)
 check("13c. Voltar fecha direto no dialogo, sem depender de registro",
       "arqexForceDismiss" in _d and "postToastUi" in _d and "postToastUi" in _ba)
 
-check("12f. filtro por nome usa o texto capturado pelo watcher (plano B)",
-      "ArqexNameWatcher" in _atw and "getNameLive" in _atw and "setNameLive" in _atw)
+# 12f/12g/12h: o filtro por nome tem de ser o espelho do filtro por extensao
+def _corpo(txt, nome):
+    i = txt.find(".method")
+    while i >= 0:
+        j = txt.find(".end method", i)
+        if "->" not in txt[i:i+200] or True:
+            if (nome + "(") in txt[i:txt.find("\n", i)]:
+                return txt[i:j]
+        i = txt.find(".method", j)
+    return ""
+
+_atw_save = _corpo(_atw, "onTaskSaved")
+_atw_get = _corpo(_atw, "getTaskNameFilter")
+_atw_getext = _corpo(_atw, "getTaskExtFilter")
+check("12f. salvar o filtro por nome grava name_<regra> igual ao filtro por extensao",
+      'sanitizeNameFilter' in _atw_save and 'nameFilterCache' in _atw_save
+      and '"name_"' in _atw_save and 'dialogNameCheckBoxes' in _atw_save
+      and 'getNameLive' not in _atw_save and 'name_id_' not in _atw_save)
+check("12g. ler o filtro por nome espelha o filtro por extensao",
+      '"name_"' in _atw_get and 'nameFilterCache' in _atw_get
+      and 'getTaskRuleKey' in _atw_get and 'name_id_' not in _atw_get
+      and _atw_get.count(":try_start") == _atw_getext.count(":try_start"))
+check("12h. toque fora da janela fecha o dialogo Pasta", (
+      'applyFolderDialogTouchClose' in _d and 'applyFolderDialogTouchClose' in _mut
+      and 'dispatchTouchEvent' in _d
+      and '0x40000' in _mut and 'setCanceledOnTouchOutside' in _mut
+      and 'getActionMasked' in _d and 'cancel()V' in _d))
 
 # 11. nenhuma rotina escrita a mao pode usar registrador de parametro como
 # destino de new-instance. Foi exatamente isso que gerou o VerifyError da
@@ -361,20 +386,17 @@ check("12f. filtro por nome usa o texto capturado pelo watcher (plano B)",
 # destruia o parametro e o verificador do Android recusava a classe.
 # ---------------------------------------------------------------------------
 _AUTORAIS = {
-    ("libs", "SmartFeaturesV116.smali"): ["makeDialogDismissible"],
+    ("libs", "SmartFeaturesV116.smali"): ["makeDialogDismissible", "applyFolderDialogTouchClose"],
     ("libs", "SmartFeaturesV116$PermPickerDialog.smali"): ["rotuloPorId", "initBox"],
     ("libs", "AutoTaskWatcher.smali"): [
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
-        "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
-        "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
-        "findNameCheck", "findNameEdit", "setNameLive", "getNameLive", "debugLine",
-        "sameTask",
+        "getTaskNameFilter", "getTaskExtFilter", "addNameFilterControls",
+        "addExtFilterControls", "filterByNameFilter", "onTaskSaved", "sameTask",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
-    ("libs", "ArqexNameWatcher.smali"): ["<init>", "afterTextChanged", "beforeTextChanged", "onTextChanged"],
     ("libs", "od.smali"): ["arqexForceDismiss"],
-    ("libs", "$d.smali"): ["show", "dispatchKeyEvent"],
+    ("libs", "$d.smali"): ["show", "dispatchKeyEvent", "dispatchTouchEvent"],
 }
 
 

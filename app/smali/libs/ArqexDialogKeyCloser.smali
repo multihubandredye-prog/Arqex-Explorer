@@ -44,14 +44,14 @@
     :try_start_8
     iget-object v0, p0, Llibs/ArqexDialogKeyCloser;->dialog:Landroid/app/Dialog;
 
-    if-nez v0, :try_end_18
+    if-eqz v0, :try_end_18
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     # reforco: se o dismiss() do dialogo falhar no meio, esconde a janela
     iget-object v0, p0, Llibs/ArqexDialogKeyCloser;->dialog:Landroid/app/Dialog;
 
-    if-nez v0, :try_end_18
+    if-eqz v0, :try_end_18
 
     invoke-virtual {v0}, Landroid/app/Dialog;->hide()V
 

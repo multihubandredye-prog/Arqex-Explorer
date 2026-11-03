@@ -102,10 +102,42 @@
     return-void
 .end method
 
+.method public static applyFolderDialogTouchClose(Landroid/app/Dialog;)V
+    .registers 4
+
+    if-eqz p0, :fim
+
+    const/4 v0, 0x1
+
+    # o dialogo vem do MiXplorer com setCancelable(false); sem cancelable o
+    # Dialog.onTouchEvent ignora o toque fora da janela
+    :try_start_1
+
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCancelable(Z)V
+
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    if-eqz v1, :fim
+
+    # FLAG_WATCH_OUTSIDE_TOUCH (0x40000): sem essa flag o toque fora da
+    # janela nunca chega ao dialogo como ACTION_OUTSIDE
+    const v2, 0x40000
+
+    invoke-virtual {v1, v2, v2}, Landroid/view/Window;->addFlags(II)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :catchall_1
+    :fim
+    return-void
+.end method
 .method public static makeDialogDismissible(Landroid/app/Dialog;)V
     .registers 6
 
-    if-nez p0, :fim
+    if-eqz p0, :fim
 
     # 1) Voltar: listener no proprio Dialog (consultado em dispatchKeyEvent,
     #    antes de qualquer view e antes do tratamento interno do dialogo)
@@ -129,7 +161,7 @@
 
     move-result-object v0
 
-    if-nez v0, :fim
+    if-eqz v0, :fim
 
     const/4 v1, 0x1
 
@@ -144,7 +176,7 @@
 
     move-result-object v0
 
-    if-nez v0, :fim
+    if-eqz v0, :fim
 
     new-instance v1, Llibs/ArqexBackCloser;
 
@@ -174,13 +206,13 @@
 
     sget-object v0, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
 
-    if-nez v0, :falso
+    if-eqz v0, :falso
 
     invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v1
 
-    if-nez v1, :limpa
+    if-eqz v1, :limpa
 
     const/4 v1, 0x0
 

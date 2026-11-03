@@ -310,7 +310,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_80
+    if-nez v6, :cond_80
 
     :renomeia_n
     if-eqz v23, :cond_80

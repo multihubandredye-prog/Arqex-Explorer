@@ -34,19 +34,11 @@
 
 .field private static final dialogPrefixEdits:Ljava/util/WeakHashMap;
 
-.field private static nameUiCheck:Landroid/widget/CheckBox;
-
-.field private static nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
-
 .field private static final nameFilterCache:Ljava/util/HashMap;
 
 .field private static final dialogNameCheckBoxes:Ljava/util/WeakHashMap;
 
 .field private static final dialogNameEdits:Ljava/util/WeakHashMap;
-
-.field private static dbgLast:Ljava/lang/String;
-
-.field private static final nameLiveText:Ljava/util/WeakHashMap;
 
 .field private static final extFilterCache:Ljava/util/HashMap;
 
@@ -92,9 +84,6 @@
 
     sput-object v0, Llibs/AutoTaskWatcher;->nameFilterCache:Ljava/util/HashMap;
 
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     sput-object v0, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
 
@@ -108,7 +97,6 @@
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
-    sput-object v0, Llibs/AutoTaskWatcher;->nameLiveText:Ljava/util/WeakHashMap;
     .registers 2
 
     new-instance v0, Ljava/util/HashMap;
@@ -334,20 +322,6 @@
 
     move-result-object v2
 
-    invoke-static {v1}, Llibs/AutoTaskWatcher;->debugLine(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
     const/16 v3, 0x55
 
     const/4 v4, 0x0
@@ -380,9 +354,7 @@
 
     const/4 v11, -0x1
 
-    new-instance v12, Llibs/ArqexNameWatcher;
-
-    invoke-direct {v12, v0}, Llibs/ArqexNameWatcher;-><init>(Llibs/od;)V
+    const/4 v12, 0x0
 
     const/4 v13, 0x0
 
@@ -407,17 +379,12 @@
 
     invoke-virtual {v3, v0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    # guarda os objetos reais da tela: o salvamento usa eles, sem procurar por id
-    sput-object v2, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
-
     :cond_4b
     if-eqz v1, :cond_5c
 
     sget-object v3, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
 
     invoke-virtual {v3, v0, v1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sput-object v1, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
 
     if-eqz v2, :cond_5c
 
@@ -2912,142 +2879,16 @@
 .end method
 
 # Valor guardado em uma chave (vazio se nao existir)
-.method private static prefsGet(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
-
-    const-string v0, ""
-
-    :try_start_1
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    if-nez v1, :fim
-
-    invoke-interface {v1, p0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :fim
-
-    invoke-interface {v1, p0, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-nez v2, :fim
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_16
-
-    return-object v2
-
-    :catchall_16
-    :fim
-    return-object v0
-.end method
-
 # Mostra o que esta guardado nas tres chaves usadas pelo filtro por nome
-.method private static nameKeys(Llibs/d9;)Ljava/lang/String;
-    .registers 6
-
-    const-string v0, ""
-
-    if-nez p0, :fim
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "|i="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "name_id_"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v3, p0, Llibs/d9;->Y:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->prefsGet(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "|t="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "name_t_"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p0, Llibs/d9;->Nu:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->prefsGet(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "|r="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "name_"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->prefsGet(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :fim
-    return-object v0
-.end method
-
 # Mesma tarefa? (mesma instancia ou mesmo id)
 .method public static sameTask(Llibs/d9;Llibs/d9;)Z
     .registers 5
 
     const/4 v0, 0x0
 
-    if-nez p0, :fim
+    if-eqz p0, :fim
 
-    if-nez p1, :fim
+    if-eqz p1, :fim
 
     if-ne p0, p1, :igual
 
@@ -3055,7 +2896,7 @@
 
     iget v2, p1, Llibs/d9;->Y:I
 
-    if-eq v1, v2, :fim
+    if-ne v1, v2, :fim
 
     :igual
     const/4 v0, 0x1
@@ -3066,330 +2907,14 @@
 
 # Guarda o texto que o usuario digitou no campo do filtro por nome. Serve de
 # plano B no salvamento, caso a view do dialogo nao seja encontrada.
-.method public static setNameLive(Llibs/od;Ljava/lang/String;)V
-    .registers 3
-
-    if-nez p0, :fim
-
-    if-nez p1, :fim
-
-    sget-object v0, Llibs/AutoTaskWatcher;->nameLiveText:Ljava/util/WeakHashMap;
-
-    if-nez v0, :fim
-
-    :try_start_6
-    invoke-virtual {v0, p0, p1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_9
-    .catchall {:try_start_6 .. :try_end_9} :catchall_9
-
-    :catchall_9
-    :fim
-    return-void
-.end method
-
-.method private static getNameLive(Llibs/od;)Ljava/lang/String;
-    .registers 3
-
-    const-string v0, ""
-
-    if-nez p0, :fim
-
-    :try_start_3
-    sget-object v1, Llibs/AutoTaskWatcher;->nameLiveText:Ljava/util/WeakHashMap;
-
-    if-nez v1, :fim
-
-    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    if-nez v1, :fim
-    :try_end_11
-    .catchall {:try_start_3 .. :try_end_11} :catchall_11
-
-    return-object v1
-
-    :catchall_11
-    :fim
-    return-object v0
-.end method
-
 # Linha de diagnostico mostrada no rotulo do filtro por nome:
 # v = valor lido agora, e = valor guardado do filtro por extensao, s = o que o
 # ultimo salvamento calculou.
-.method public static debugLine(Llibs/d9;)Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "  [v="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "|e="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskExtFilter(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "|s="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v2, Llibs/AutoTaskWatcher;->dbgLast:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "|n="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Llibs/d9;->Nu:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "|p="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Llibs/d9;->Phi:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "|y="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Llibs/d9;->Y:I
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->nameKeys(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "|b58]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 # Pega o checkbox do filtro por nome no dialogo vivo (mesma ideia do filtro
 # por extensao: procura pelo id na tela). Se nao achar, usa o que foi guardado
 # quando a tela foi montada.
-.method private static findNameCheck(Llibs/od;)Landroid/widget/CheckBox;
-    .registers 4
-
-    if-nez p0, :estatico
-
-    iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
-
-    if-eqz v1, :domapa
-
-    const/16 v2, 0x55
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v1, :domapa
-
-    instance-of v2, v1, Landroid/widget/CheckBox;
-
-    if-eqz v2, :domapa
-
-    check-cast v1, Landroid/widget/CheckBox;
-
-    return-object v1
-
-    :domapa
-    sget-object v1, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
-
-    if-eqz v1, :estatico
-
-    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/CheckBox;
-
-    if-eqz v1, :estatico
-
-    return-object v1
-
-    :estatico
-    sget-object v1, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
-
-    return-object v1
-.end method
-
-.method private static findNameEdit(Llibs/od;)Lcom/mixplorer/widgets/MiEditText;
-    .registers 4
-
-    if-nez p0, :estatico
-
-    iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
-
-    if-eqz v1, :domapa
-
-    const/16 v2, 0x56
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v1, :domapa
-
-    instance-of v2, v1, Lcom/mixplorer/widgets/MiEditText;
-
-    if-eqz v2, :domapa
-
-    check-cast v1, Lcom/mixplorer/widgets/MiEditText;
-
-    return-object v1
-
-    :domapa
-    sget-object v1, Llibs/AutoTaskWatcher;->dialogNameEdits:Ljava/util/WeakHashMap;
-
-    if-eqz v1, :estatico
-
-    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/mixplorer/widgets/MiEditText;
-
-    if-eqz v1, :estatico
-
-    return-object v1
-
-    :estatico
-    sget-object v1, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
-
-    return-object v1
-.end method
-
-.method private static getNameFilterByTitle(Llibs/d9;)Ljava/lang/String;
-    .registers 4
-
-    const-string v0, ""
-
-    if-nez p0, :fim
-
-    iget-object v1, p0, Llibs/d9;->Nu:Ljava/lang/String;
-
-    if-nez v1, :fim
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "name_t_"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    if-eqz v2, :fim
-
-    invoke-interface {v2, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :fim
-
-    invoke-interface {v2, v1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :nulo
-
-    return-object v0
-
-    :nulo
-    const-string v0, ""
-
-    :fim
-    return-object v0
-.end method
-
-.method private static getNameFilterById(Llibs/d9;)Ljava/lang/String;
-    .registers 4
-
-    const-string v0, ""
-
-    if-nez p0, :fim
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "name_id_"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v2, p0, Llibs/d9;->Y:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    if-eqz v2, :fim
-
-    invoke-interface {v2, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :fim
-
-    invoke-interface {v2, v1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :nulo
-
-    return-object v0
-
-    :nulo
-    const-string v0, ""
-
-    :fim
-    return-object v0
-.end method
-
 .method public static declared-synchronized getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
-    .registers 8
+    .registers 6
 
     const-string v0, ""
 
@@ -3399,36 +2924,6 @@
 
     :cond_5
     :try_start_5
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getNameFilterById(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v4
-
-    if-eqz v4, :sem_id
-
-    invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v5
-
-    if-nez v5, :sem_id
-
-    return-object v4
-
-    :sem_id
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getNameFilterByTitle(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v4
-
-    if-eqz v4, :sem_titulo
-
-    invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v5
-
-    if-nez v5, :sem_titulo
-
-    return-object v4
-
-    :sem_titulo
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "name_"
@@ -3495,21 +2990,23 @@
 
     const/4 v0, 0x0
 
-    if-nez p1, :aceita
+    # sem filtro: aceita tudo
+    if-eqz p1, :aceita
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :aceita
+    if-nez v1, :aceita
 
-    if-nez p0, :fim
+    # nome vazio: nada a comparar
+    if-eqz p0, :fim
 
     invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :fim
+    if-nez v1, :fim
 
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -3528,7 +3025,6 @@
     const/4 v4, 0x0
 
     :loop
-
     if-ge v4, v3, :fim
 
     aget-object v5, v2, v4
@@ -3541,7 +3037,7 @@
 
     move-result v6
 
-    if-eqz v6, :next
+    if-nez v6, :next
 
     sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -3564,7 +3060,6 @@
     const/4 v10, 0x1
 
     :parts
-
     if-ge v8, v7, :parts_done
 
     aget-object v11, v6, v8
@@ -3588,35 +3083,29 @@
     add-int v9, v12, v13
 
     :part_next
-
     add-int/lit8 v8, v8, 0x1
 
     goto :parts
 
     :part_fail
-
     const/4 v10, 0x0
 
     :parts_done
-
-    if-nez v10, :next
+    if-eqz v10, :next
 
     const/4 v0, 0x1
 
     return v0
 
     :next
-
     add-int/lit8 v4, v4, 0x1
 
     goto :loop
 
     :aceita
-
     const/4 v0, 0x1
 
     :fim
-
     return v0
 .end method
 
@@ -3625,13 +3114,13 @@
 
     const-string v0, ""
 
-    if-nez p0, :fim
+    if-eqz p0, :fim
 
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :fim
+    if-eqz v1, :fim
 
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
@@ -5905,85 +5394,41 @@
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_174
-     # mesma logica do filtro por extensao: pega o checkbox e o campo no
-    # dialogo vivo, pelo id da tela (o objeto estatico pode ter sido trocado
-    # quando a tela foi remontada, e ai o texto digitado se perdia)
-    invoke-static {p2}, Llibs/AutoTaskWatcher;->findNameCheck(Llibs/od;)Landroid/widget/CheckBox;
+    # filtro por nome: MESMA logica do filtro por extensao (mesmas chaves,
+    # mesmo cache, mesmas ids do dialogo). Sem nenhum atalho proprio.
+    sget-object v2, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
+
+    const/16 v4, 0x55
+
+    invoke-static {p2, v2, v4}, Llibs/AutoTaskWatcher;->findDialogCheckBox(Llibs/od;Ljava/util/WeakHashMap;I)Landroid/widget/CheckBox;
 
     move-result-object v2
 
-    invoke-static {p2}, Llibs/AutoTaskWatcher;->findNameEdit(Llibs/od;)Lcom/mixplorer/widgets/MiEditText;
+    sget-object v4, Llibs/AutoTaskWatcher;->dialogNameEdits:Ljava/util/WeakHashMap;
+
+    const/16 v5, 0x56
+
+    invoke-static {p2, v4, v5}, Llibs/AutoTaskWatcher;->findDialogEditText(Llibs/od;Ljava/util/WeakHashMap;I)Lcom/mixplorer/widgets/MiEditText;
 
     move-result-object v4
 
-    const/4 v8, 0x1
+    if-eqz v2, :cond_174_n
 
-    if-nez v2, :check_lido_n
+    const-string v5, ""
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
-    move-result v8
-
-    :check_lido_n
-    const-string v5, ""
-
-    if-nez v8, :sem_valor_n
-
-    if-nez v4, :tenta_watcher_n
-
-    invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v2
-
-    if-nez v2, :tenta_watcher_n
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->sanitizeNameFilter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    :tenta_watcher_n
-    # plano B: texto que o watcher capturou enquanto o usuario digitava
-    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
-
     move-result v2
 
-    if-nez v2, :sem_valor_n
+    if-eqz v2, :cond_146_n
 
-    invoke-static {p2}, Llibs/AutoTaskWatcher;->getNameLive(Llibs/od;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->sanitizeNameFilter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    :sem_valor_n
-    # diagnostico: guarda o que este salvamento calculou
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "ran:"
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    sput-object v6, Llibs/AutoTaskWatcher;->dbgLast:Ljava/lang/String;
-
-    if-nez v4, :cond_146_n
+    if-eqz v4, :cond_146_n
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    if-nez v2, :cond_146_n
+    if-eqz v2, :cond_146_n
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -6033,49 +5478,10 @@
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    # grava tambem pelo titulo da tarefa, que nao muda quando a tarefa e editada
-    iget-object v6, p1, Llibs/d9;->Nu:Ljava/lang/String;
-
-    if-eqz v6, :sem_titulo_grav
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    const-string v8, "name_t_"
-
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-interface {v3, v7, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    :sem_titulo_grav
-    # grava tambem pela id da tarefa: a chave da regra muda se a tarefa for editada
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "name_id_"
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v7, p1, Llibs/d9;->Y:I
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-interface {v3, v6, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
     :cond_174_n
     const/4 v2, 0x0
 
-    sput-object v2, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
 
-    sput-object v2, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
 
 
 

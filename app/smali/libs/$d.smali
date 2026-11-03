@@ -407,6 +407,52 @@
     .line 262
 .end method
 
+.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .registers 4
+
+    if-eqz p1, :super_dt
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v0
+
+    const/4 v1, 0x4
+
+    if-eq v0, v1, :super_dt
+
+    # ACTION_OUTSIDE: toque fora da janela do dialogo
+    const-string v1, "Toque fora: fechando pasta"
+
+    :try_start_dt
+
+    invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
+    :try_end_dt
+    .catchall {:try_start_dt .. :try_end_dt} :catch_dt
+    :catch_dt
+
+    invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
+
+    move-result v0
+
+    if-eqz v0, :fim_dt
+
+    invoke-virtual {p0}, Llibs/od;->arqexForceDismiss()V
+    :fim_dt
+
+    const/4 v0, 0x1
+
+    return v0
+    :super_dt
+
+    invoke-super {p0, p1}, Llibs/od;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .registers 4
 
@@ -422,7 +468,7 @@
 
     move-result v0
 
-    if-eqz v0, :super_dk
+    if-nez v0, :super_dk
 
     const-string v1, "Voltar: chegou no dialogo"
 
@@ -440,7 +486,7 @@
 
     move-result v0
 
-    if-nez v0, :fechou_dk
+    if-eqz v0, :fechou_dk
 
     const-string v1, "Voltar: AINDA aberto"
 
@@ -471,6 +517,10 @@
     invoke-super {p0}, Llibs/od;->show()V
 
     invoke-static {p0}, Llibs/SmartFeaturesV116;->registerFolderDialog(Landroid/app/Dialog;)V
+
+    # depois de mostrar: força cancelable + toque fora (o MiXplorer desliga os
+    # dois ao montar este dialogo, depois do nosso primeiro hook)
+    invoke-static {p0}, Llibs/SmartFeaturesV116;->applyFolderDialogTouchClose(Landroid/app/Dialog;)V
 
     return-void
 .end method
