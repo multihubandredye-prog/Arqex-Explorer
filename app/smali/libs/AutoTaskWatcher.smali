@@ -4648,7 +4648,9 @@
     :try_start_k
     iget-object v1, p0, Llibs/d9;->X:Ljava/lang/String;
     if-nez v1, :arqex_uck_fim
-    invoke-static {v1}, Llibs/vl3;->v(Ljava/lang/String;)I
+    # String.hashCode() e da propria API Java: nao depende de nenhuma classe do
+    # app (vl3.v estourava dentro do try e a chave saia null).
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
     move-result v1
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
     move-result v1
