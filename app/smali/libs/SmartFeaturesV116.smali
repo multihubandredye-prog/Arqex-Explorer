@@ -18,6 +18,8 @@
 
 .field private static sActiveDirPath:Ljava/lang/String;
 
+.field private static sFolderDialog:Landroid/app/Dialog;
+
 .field private static final sAutoOpenCheckBoxes:Ljava/util/WeakHashMap;
 
 .field private static final sAutoRefreshRunnable:Ljava/lang/Runnable;
@@ -155,6 +157,62 @@
     :catchall_2
     :fim
     return-void
+.end method
+
+.method public static registerFolderDialog(Landroid/app/Dialog;)V
+    .registers 1
+
+    sput-object p0, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
+
+    return-void
+.end method
+
+# Fecha o dialogo de criar pasta, se ele estiver aberto. Devolve true quando
+# havia um dialogo na tela (o Voltar foi tratado aqui).
+.method public static closeFolderDialog()Z
+    .registers 3
+
+    sget-object v0, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
+
+    if-nez v0, :falso
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
+
+    move-result v1
+
+    if-nez v1, :limpa
+
+    const/4 v1, 0x0
+
+    sput-object v1, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
+
+    :try_start_10
+    check-cast v0, Llibs/od;
+
+    # mesma limpeza que o dismiss() do MiXplorer faz, mas sem a chamada que
+    # pode estourar antes de fechar a janela
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Llibs/od;->Gms(Z)V
+
+    invoke-virtual {v0}, Llibs/od;->arqexForceDismiss()V
+    :try_end_15
+    .catchall {:try_start_10 .. :try_end_15} :catchall_15
+
+    :catchall_15
+    const/4 v0, 0x1
+
+    return v0
+
+    :limpa
+    const/4 v1, 0x0
+
+    sput-object v1, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
+
+    :falso
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public static addAutoOpenFolderCheckBox(Llibs/od;)V

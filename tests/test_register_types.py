@@ -28,10 +28,13 @@ ALVOS = {
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
         "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
         "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
-        "findNameCheck", "findNameEdit",
+        "findNameCheck", "findNameEdit", "setNameLive", "getNameLive", "debugLine",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
+    ("libs", "ArqexNameWatcher.smali"): ["<init>", "afterTextChanged", "beforeTextChanged", "onTextChanged"],
+    ("libs", "od.smali"): ["arqexForceDismiss"],
+    ("libs", "$d.smali"): ["show", "dispatchKeyEvent"],
 }
 
 INST = re.compile(r"^\s{4}([a-z][\w/$-]*)\s*(.*)$")

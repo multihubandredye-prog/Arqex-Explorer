@@ -44,6 +44,10 @@
 
 .field private static final dialogNameEdits:Ljava/util/WeakHashMap;
 
+.field private static dbgLast:Ljava/lang/String;
+
+.field private static final nameLiveText:Ljava/util/WeakHashMap;
+
 .field private static final extFilterCache:Ljava/util/HashMap;
 
 .field private static handler:Landroid/os/Handler;
@@ -99,6 +103,12 @@
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     sput-object v0, Llibs/AutoTaskWatcher;->dialogNameEdits:Ljava/util/WeakHashMap;
+
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    sput-object v0, Llibs/AutoTaskWatcher;->nameLiveText:Ljava/util/WeakHashMap;
     .registers 2
 
     new-instance v0, Ljava/util/HashMap;
@@ -324,6 +334,20 @@
 
     move-result-object v2
 
+    invoke-static {v1}, Llibs/AutoTaskWatcher;->debugLine(Llibs/d9;)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
     const/16 v3, 0x55
 
     const/4 v4, 0x0
@@ -356,7 +380,9 @@
 
     const/4 v11, -0x1
 
-    const/4 v12, 0x0
+    new-instance v12, Llibs/ArqexNameWatcher;
+
+    invoke-direct {v12, v0}, Llibs/ArqexNameWatcher;-><init>(Llibs/od;)V
 
     const/4 v13, 0x0
 
@@ -2879,6 +2905,107 @@
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+# Guarda o texto que o usuario digitou no campo do filtro por nome. Serve de
+# plano B no salvamento, caso a view do dialogo nao seja encontrada.
+.method public static setNameLive(Llibs/od;Ljava/lang/String;)V
+    .registers 3
+
+    if-nez p0, :fim
+
+    if-nez p1, :fim
+
+    sget-object v0, Llibs/AutoTaskWatcher;->nameLiveText:Ljava/util/WeakHashMap;
+
+    if-nez v0, :fim
+
+    :try_start_6
+    invoke-virtual {v0, p0, p1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_9
+    .catchall {:try_start_6 .. :try_end_9} :catchall_9
+
+    :catchall_9
+    :fim
+    return-void
+.end method
+
+.method private static getNameLive(Llibs/od;)Ljava/lang/String;
+    .registers 3
+
+    const-string v0, ""
+
+    if-nez p0, :fim
+
+    :try_start_3
+    sget-object v1, Llibs/AutoTaskWatcher;->nameLiveText:Ljava/util/WeakHashMap;
+
+    if-nez v1, :fim
+
+    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    if-nez v1, :fim
+    :try_end_11
+    .catchall {:try_start_3 .. :try_end_11} :catchall_11
+
+    return-object v1
+
+    :catchall_11
+    :fim
+    return-object v0
+.end method
+
+# Linha de diagnostico mostrada no rotulo do filtro por nome:
+# v = valor lido agora, e = valor guardado do filtro por extensao, s = o que o
+# ultimo salvamento calculou.
+.method public static debugLine(Llibs/d9;)Ljava/lang/String;
+    .registers 4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "  [v="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "|e="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskExtFilter(Llibs/d9;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "|s="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v2, Llibs/AutoTaskWatcher;->dbgLast:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -5606,18 +5733,66 @@
 
     move-result-object v4
 
-    const/4 v6, 0x1
+    const/4 v8, 0x1
 
     if-nez v2, :check_lido_n
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
-    move-result v6
+    move-result v8
 
     :check_lido_n
     const-string v5, ""
 
-    if-nez v6, :cond_146_n
+    if-nez v8, :sem_valor_n
+
+    if-nez v4, :tenta_watcher_n
+
+    invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v2
+
+    if-nez v2, :tenta_watcher_n
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Llibs/AutoTaskWatcher;->sanitizeNameFilter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    :tenta_watcher_n
+    # plano B: texto que o watcher capturou enquanto o usuario digitava
+    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :sem_valor_n
+
+    invoke-static {p2}, Llibs/AutoTaskWatcher;->getNameLive(Llibs/od;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Llibs/AutoTaskWatcher;->sanitizeNameFilter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    :sem_valor_n
+    # diagnostico: guarda o que este salvamento calculou
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v7, "ran:"
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    sput-object v6, Llibs/AutoTaskWatcher;->dbgLast:Ljava/lang/String;
 
     if-nez v4, :cond_146_n
 

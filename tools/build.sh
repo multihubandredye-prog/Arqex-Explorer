@@ -61,7 +61,15 @@ else
 fi
 
 log "5/7 Montando classes.dex a partir do smali"
-java -cp "$SMALI_DEPS" org.jf.smali.Main a "$SMALI_DIR" -o "$OUT/classes.dex"
+# o smali 2.5.2 pode terminar com codigo 0 mesmo tendo recusado arquivos;
+# sem isso, o APK sairia com um classes.dex velho sem ninguem perceber.
+rm -f "$OUT/classes.dex"
+java -cp "$SMALI_DEPS" org.jf.smali.Main a "$SMALI_DIR" -o "$OUT/classes.dex" > "$WORK/smali.log" 2>&1 || {
+  cat "$WORK/smali.log"; echo "ERRO: falha ao montar o DEX"; exit 1; }
+if grep -qE "\[[0-9]+,[0-9]+\]" "$WORK/smali.log"; then
+  cat "$WORK/smali.log"; echo "ERRO: o smali recusou um ou mais arquivos"; exit 1
+fi
+[ -s "$OUT/classes.dex" ] || { echo "ERRO: classes.dex nao foi gerado"; exit 1; }
 cp "$OUT/classes.dex" "$SRC/classes.dex"
 
 log "5b/7 Aplicando versao do build (se fornecida)"

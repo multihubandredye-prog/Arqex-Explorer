@@ -324,6 +324,27 @@ if RES:
                   "arqex_theme_create_edit_title" not in t)
 
 # ---------------------------------------------------------------------------
+# 12. Voltar do Android precisa fechar o dialogo de criar pasta em qualquer
+#     caminho: no proprio dialogo ($d), no Dialog e, se a tecla for para a
+#     tela, no onBackPressed da BrowseActivity.
+_d_path = os.path.join(SMALI, "libs", "$d.smali")
+_d = open(_d_path, encoding="utf-8", errors="replace").read() if os.path.exists(_d_path) else ""
+_ba_path = os.path.join(SMALI, "com", "mixplorer", "activities", "BrowseActivity.smali")
+_ba = open(_ba_path, encoding="utf-8", errors="replace").read() if os.path.exists(_ba_path) else ""
+_od_path = os.path.join(SMALI, "libs", "od.smali")
+_od = open(_od_path, encoding="utf-8", errors="replace").read() if os.path.exists(_od_path) else ""
+check("12a. $d intercepta o Voltar (dispatchKeyEvent -> closeFolderDialog)",
+      "dispatchKeyEvent" in _d and "closeFolderDialog" in _d)
+check("12b. $d se registra ao aparecer (show)", "registerFolderDialog" in _d)
+check("12c. BrowseActivity fecha o dialogo antes de sair da tela",
+      "closeFolderDialog" in _ba)
+check("12d. fecha direto pelo Dialog (nao depende do dismiss() do MiXplorer)",
+      "arqexForceDismiss" in _od and "arqexForceDismiss" in _mut)
+check("12e. build nao aceita DEX velho quando o smali recusa um arquivo",
+      "smali recusou" in open(os.path.join("tools", "build.sh"), encoding="utf-8", errors="replace").read())
+check("12f. filtro por nome usa o texto capturado pelo watcher (plano B)",
+      "ArqexNameWatcher" in _atw and "getNameLive" in _atw and "setNameLive" in _atw)
+
 # 11. nenhuma rotina escrita a mao pode usar registrador de parametro como
 # destino de new-instance. Foi exatamente isso que gerou o VerifyError da
 # beta.52: com .registers 4 e um parametro, p0 == v3; o new-instance v3
@@ -336,10 +357,13 @@ _AUTORAIS = {
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
         "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
         "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
-        "findNameCheck", "findNameEdit",
+        "findNameCheck", "findNameEdit", "setNameLive", "getNameLive", "debugLine",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
+    ("libs", "ArqexNameWatcher.smali"): ["<init>", "afterTextChanged", "beforeTextChanged", "onTextChanged"],
+    ("libs", "od.smali"): ["arqexForceDismiss"],
+    ("libs", "$d.smali"): ["show", "dispatchKeyEvent"],
 }
 
 

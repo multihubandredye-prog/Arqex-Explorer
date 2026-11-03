@@ -21293,6 +21293,16 @@
 .method public final onBackPressed()V
     .registers 3
 
+    # se o dialogo de criar pasta estiver aberto, o Voltar fecha ele
+    invoke-static {}, Llibs/SmartFeaturesV116;->closeFolderDialog()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_arq
+
+    return-void
+
+    :cond_arq
     .line 1
     iget-object v0, p0, Lcom/mixplorer/activities/BrowseActivity;->Romeo:Llibs/r31;
 

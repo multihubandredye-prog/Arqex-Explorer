@@ -407,6 +407,51 @@
     .line 262
 .end method
 
+.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    .registers 4
+
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v0
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :super_dk
+
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
+
+    move-result v0
+
+    if-eqz v0, :super_dk
+
+    invoke-static {}, Llibs/SmartFeaturesV116;->closeFolderDialog()Z
+
+    move-result v0
+
+    if-nez v0, :super_dk
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :super_dk
+    invoke-super {p0, p1}, Llibs/od;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public show()V
+    .registers 2
+
+    invoke-super {p0}, Llibs/od;->show()V
+
+    invoke-static {p0}, Llibs/SmartFeaturesV116;->registerFolderDialog(Landroid/app/Dialog;)V
+
+    return-void
+.end method
+
 .method public static Api(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .registers 16
 

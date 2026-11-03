@@ -26346,6 +26346,16 @@
     .line 41
 .end method
 
+# Fecha a janela chamando direto o dismiss() do Dialog. Serve quando o
+# dismiss() do proprio dialogo falha no meio e a janela fica na tela.
+.method public arqexForceDismiss()V
+    .registers 1
+
+    invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
+
+    return-void
+.end method
+
 .method public show()V
     .registers 9
 
