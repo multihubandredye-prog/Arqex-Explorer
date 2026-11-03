@@ -408,9 +408,9 @@
 .end method
 
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .registers 8
 
-    if-eqz p1, :super_dt
+    if-eqz p1, :sem_p1
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -418,19 +418,86 @@
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :super_dt
+    if-ne v0, v1, :talvez_dentro
 
-    # ACTION_OUTSIDE: toque fora da janela do dialogo
+    # ACTION_OUTSIDE: o toque caiu fora da janela do dialogo
+    goto :fecha
+
+    :talvez_dentro
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :sem_p1
+
+    # ACTION_UP: fecha so se soltou fora do conteudo do dialogo
+    :try_start_r
+
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-eqz v0, :sem_p1
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :sem_p1
+
+    # android.R.id.content (0x1020002): a area do conteudo do dialogo
+    const v1, 0x1020002
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :sem_p1
+
+    new-instance v1, Landroid/graphics/Rect;
+
+    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+
+    move-result v0
+
+    if-eqz v0, :sem_p1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
+
+    move-result v2
+
+    float-to-int v2, v2
+
+    invoke-virtual {v1, v0, v2}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v0
+
+    if-eqz v0, :sem_p1
+    :try_end_r
+    .catchall {:try_start_r .. :try_end_r} :catchall_r
+
+    goto :fecha
+
+    :catchall_r
+    goto :sem_p1
+
+    :fecha
     const-string v1, "Toque fora: fechando pasta"
 
-    :try_start_dt
+    :try_start_k
 
     invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
-    :try_end_dt
-    .catchall {:try_start_dt .. :try_end_dt} :catch_dt
-    :catch_dt
+    :try_end_k
+    .catchall {:try_start_k .. :try_end_k} :catchall_k
+    :catchall_k
 
     invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
 
@@ -444,11 +511,30 @@
     const/4 v0, 0x1
 
     return v0
-    :super_dt
 
-    invoke-super {p0, p1}, Llibs/od;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    :sem_p1
+    # despacha para as views como o Dialog.dispatchTouchEvent faria, mas SEM o
+    # onTouchEvent do Dialog: era ele que cancelava o dialogo em qualquer toque
+    # dentro (o shouldCloseOnTouch erra a conta da area do dialogo)
+    :try_start_s
+
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-eqz v0, :fim_s
+
+    invoke-virtual {v0, p1}, Landroid/view/Window;->superDispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
+
+    return v0
+    :try_end_s
+    .catchall {:try_start_s .. :try_end_s} :catchall_s
+    :catchall_s
+    :fim_s
+
+    const/4 v0, 0x0
 
     return v0
 .end method

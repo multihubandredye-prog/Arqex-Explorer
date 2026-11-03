@@ -145,6 +145,57 @@ def confere(txt, nome):
     return problemas
 
 
+# ---------------------------------------------------------------------------
+# <clinit>: o tipo criado tem de ser o tipo do campo que recebe o valor.
+# Foi exatamente isso que derrubou a beta.59 no aparelho:
+#   new-instance v0, Ljava/util/HashMap;  ...  sput-object v0, ...->x:WeakHashMap
+# (VerifyError em libs.AutoTaskWatcher.<clinit>, o app nem abria).
+# ---------------------------------------------------------------------------
+# supertipos das classes concretas que usamos em <clinit>
+SUBTIPOS = {
+    "Ljava/util/WeakHashMap;": {"Ljava/util/HashMap;", "Ljava/util/AbstractMap;", "Ljava/util/Map;", "Ljava/lang/Object;"},
+    "Ljava/util/HashMap;": {"Ljava/util/AbstractMap;", "Ljava/util/Map;", "Ljava/lang/Object;"},
+    "Ljava/util/LinkedHashMap;": {"Ljava/util/HashMap;", "Ljava/util/AbstractMap;", "Ljava/util/Map;", "Ljava/lang/Object;"},
+    "Ljava/util/HashSet;": {"Ljava/util/AbstractSet;", "Ljava/util/AbstractCollection;",
+                            "Ljava/util/Collection;", "Ljava/lang/Object;"},
+}
+
+
+def confere_clinit(caminho):
+    problemas = []
+    linhas = open(caminho, encoding="utf-8", errors="replace").read().splitlines()
+    dentro = False
+    tipo = {}
+    for n, linha in enumerate(linhas, 1):
+        l = linha.strip()
+        if l.startswith(".method static constructor <clinit>"):
+            dentro, tipo = True, {}
+            continue
+        if dentro and l.startswith(".end method"):
+            dentro = False
+            continue
+        if not dentro:
+            continue
+        m = re.match(r"new-instance (v\d+), (L[^;]+;)$", l)
+        if m:
+            tipo[m.group(1)] = m.group(2)
+            continue
+        m = re.match(r"sput-object (v\d+), \S+->[^:]+:(L[^;]+;)$", l)
+        if m:
+            reg, campo = m.group(1), m.group(2)
+            criado = tipo.get(reg)
+            # so comparao entre classes concretas conhecidas (HashMap, WeakHashMap,
+            # HashSet, LinkedHashMap): campo de interface/superclasse fica de fora
+            if (criado and criado in SUBTIPOS and criado != campo
+                    and campo not in SUBTIPOS[criado]):
+                problemas.append("%s:%d <clinit> guarda %s em campo %s" % (os.path.basename(caminho), n, criado, campo))
+            continue
+        m = re.match(r"(?:move-object|sget-object) (v\d+), ", l)
+        if m:
+            tipo.pop(m.group(1), None)
+    return problemas
+
+
 def main():
     smali = sys.argv[1] if len(sys.argv) > 1 else "out/fontes_smali"
     problemas, conferidos = [], 0
@@ -157,6 +208,8 @@ def main():
         for nome in nomes:
             conferidos += 1
             problemas.extend(confere(txt, nome))
+        conferidos += 1
+        problemas.extend(confere_clinit(caminho))
     for p in problemas:
         print("FAIL  " + p)
     print("\n%d metodos conferidos, %d problemas" % (conferidos, len(problemas)))

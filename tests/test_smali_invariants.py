@@ -377,8 +377,10 @@ check("12g. ler o filtro por nome espelha o filtro por extensao",
 check("12h. toque fora da janela fecha o dialogo Pasta", (
       'applyFolderDialogTouchClose' in _d and 'applyFolderDialogTouchClose' in _mut
       and 'dispatchTouchEvent' in _d
-      and '0x40000' in _mut and 'setCanceledOnTouchOutside' in _mut
-      and 'getActionMasked' in _d and 'cancel()V' in _d))
+      and '0x40000' in _mut and 'getActionMasked' in _d and 'cancel()V' in _d))
+check("12i. toque DENTRO nao pode fechar (sem o onTouchEvent do Dialog)", (
+      'superDispatchTouchEvent' in _d and 'getGlobalVisibleRect' in _d
+      and '0x1020002' in _d))
 
 # 11. nenhuma rotina escrita a mao pode usar registrador de parametro como
 # destino de new-instance. Foi exatamente isso que gerou o VerifyError da

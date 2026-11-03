@@ -103,31 +103,27 @@
 .end method
 
 .method public static applyFolderDialogTouchClose(Landroid/app/Dialog;)V
-    .registers 4
+    .registers 3
 
     if-eqz p0, :fim
 
-    const/4 v0, 0x1
-
-    # o dialogo vem do MiXplorer com setCancelable(false); sem cancelable o
-    # Dialog.onTouchEvent ignora o toque fora da janela
+    # So a flag da janela: assim o toque FORA da janela chega ao dialogo como
+    # ACTION_OUTSIDE, que o $d.dispatchTouchEvent trata. Nao mexemos em
+    # setCancelable/setCanceledOnTouchOutside: foi isso que fez o dialogo
+    # fechar em QUALQUER toque dentro (o Dialog.onTouchEvent cancela quando
+    # calcula que o toque saiu da janela, e nesse dialogo ele erra a conta).
     :try_start_1
-
-    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCancelable(Z)V
-
-    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :fim
+    if-eqz v0, :fim
 
-    # FLAG_WATCH_OUTSIDE_TOUCH (0x40000): sem essa flag o toque fora da
-    # janela nunca chega ao dialogo como ACTION_OUTSIDE
-    const v2, 0x40000
+    # FLAG_WATCH_OUTSIDE_TOUCH (0x40000)
+    const v1, 0x40000
 
-    invoke-virtual {v1, v2, v2}, Landroid/view/Window;->addFlags(II)V
+    invoke-virtual {v0, v1, v1}, Landroid/view/Window;->addFlags(II)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     :catchall_1

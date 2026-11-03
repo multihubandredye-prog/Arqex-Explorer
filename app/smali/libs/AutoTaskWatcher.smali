@@ -84,6 +84,9 @@
 
     sput-object v0, Llibs/AutoTaskWatcher;->nameFilterCache:Ljava/util/HashMap;
 
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     sput-object v0, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
 
@@ -92,10 +95,6 @@
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     sput-object v0, Llibs/AutoTaskWatcher;->dialogNameEdits:Ljava/util/WeakHashMap;
-
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     .registers 2
 
