@@ -4666,6 +4666,27 @@
     return v0
     :arqex_iu_prefs
     const/4 v0, 0x0
+    # arquivo proprio do app (sem cache, leitura confiavel)
+    :try_start_f
+    sget-object v1, Llibs/zt0;->g:Landroid/content/Context;
+    invoke-static {v1}, Llibs/ArqexUnzipStore;->load(Landroid/content/Context;)I
+    move-result v1
+    if-gez v1, :arqex_iu_prefs2
+    if-eqz v1, :arqex_iu_arq_on
+    const/4 v0, 0x0
+    goto :arqex_iu_arq_fim
+    :arqex_iu_arq_on
+    const/4 v0, 0x1
+    :arqex_iu_arq_fim
+    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipState:Z
+    const/4 v1, 0x1
+    sput-boolean v1, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
+    return v0
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_f
+    :catchall_f
+    :arqex_iu_prefs2
+    const/4 v0, 0x0
     if-nez p0, :arqex_iu_fim
     :try_start_u
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
@@ -5526,6 +5547,12 @@
 
     sput-boolean v0, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
 
+    # arquivo proprio do app (persiste sem depender de cache de prefs)
+    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
+
+    invoke-static {v0, p0}, Llibs/ArqexUnzipStore;->save(Landroid/content/Context;Z)V
+
+    # e tambem as preferencias, por compatibilidade
     :try_start_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
     move-result-object v0

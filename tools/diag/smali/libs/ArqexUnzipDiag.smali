@@ -141,20 +141,30 @@
     invoke-static {v3}, Llibs/AutoTaskWatcher;->setUnzipLastState(Z)V
 
     .line 58
-    sput-boolean v5, Llibs/AutoTaskWatcher;->unzipState:Z
+    sput-boolean v4, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
 
     .line 59
-    sput-boolean v6, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
+    invoke-static/range {v27 .. v27}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
+
+    move-result v9
 
     .line 61
-    if-eqz v2, :cond_71
+    sput-boolean v5, Llibs/AutoTaskWatcher;->unzipState:Z
 
-    if-nez v8, :cond_71
+    .line 62
+    sput-boolean v6, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
+
+    .line 64
+    if-eqz v2, :cond_79
+
+    if-nez v8, :cond_79
+
+    if-eqz v9, :cond_79
 
     const/4 v4, 0x1
 
-    .line 62
-    :cond_71
+    .line 65
+    :cond_79
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -199,6 +209,16 @@
 
     move-result-object v0
 
+    const-string v2, " pelo_arquivo="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
     const-string v2, " diag_ok="
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -214,17 +234,17 @@
     move-result-object v0
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_af
-    .catchall {:try_start_4 .. :try_end_af} :catchall_b0
+    :try_end_c1
+    .catchall {:try_start_4 .. :try_end_c1} :catchall_c2
 
-    .line 69
-    goto :goto_cd
+    .line 73
+    goto :goto_df
 
-    .line 67
-    :catchall_b0
+    .line 71
+    :catchall_c2
     move-exception v0
 
-    .line 68
+    .line 72
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -251,7 +271,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
-    :goto_cd
+    .line 74
+    :goto_df
     return-void
 .end method

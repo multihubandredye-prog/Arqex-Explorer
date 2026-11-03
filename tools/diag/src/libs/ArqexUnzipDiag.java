@@ -54,15 +54,19 @@ public final class ArqexUnzipDiag {
 
             AutoTaskWatcher.setUnzipLastState(antes);
 
-            // restaura a memoria do processo para nao mexer no app de verdade
+            // 3o caminho: arquivo proprio (nao depende de cache de prefs)
+            AutoTaskWatcher.unzipStateKnown = false;
+            boolean peloArquivo = AutoTaskWatcher.isUnzipEnabled(t);
+
             AutoTaskWatcher.unzipState = memoriaAntes;
             AutoTaskWatcher.unzipStateKnown = conhecidaAntes;
 
-            boolean ok = marcada && !desmarcada;
+            boolean ok = marcada && !desmarcada && peloArquivo;
             Log.i(TAG, "prefs=ok antes=" + antes
                     + " gravado=" + gravado
                     + " lido_pelo_app=" + marcada
                     + " apos_desmarcar=" + desmarcada
+                    + " pelo_arquivo=" + peloArquivo
                     + " diag_ok=" + ok);
         } catch (Throwable e) {
             Log.i(TAG, "ERRO " + e + " diag_ok=false");
