@@ -487,11 +487,14 @@ _sud = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static setUnzipFromDialog") or ""
 _suf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static setUnzipFromTask") or ""
+_sut_r = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                     ".method public static readUnzipToken") or ""
 check("14a. marca do descompactar viaja DENTRO do conteudo da tarefa", (
       "takeUnzipToken" in _d9c and "StringBuilder;->append(Ljava/lang/String;)" in _d9c
-      and "zt0;->e" in _iu and '"|uz1"' in _iu and "endsWith" in _iu
+      and "zt0;->e" in _sut_r and '"|uz1"' in _sut_r and "endsWith" in _sut_r
       and "unzip_id_" not in _iu and "unzip_pending" not in _iu
-      and '"unzip_last_state"' in _iu))
+      and "readUnzipToken" in _iu and "unzipContentKey" in _iu
+      and "unzip_c_" in _atw))
 check("14d. marca volta ao carregar e sobrevive a reconstrucao da tarefa", (
       "0x11" in _sut and '"uz1"' in _sut
       and "setUnzipFromTokens" in _e9 and _e9.count("setUnzipFromTask") >= 2
