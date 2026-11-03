@@ -1,7 +1,8 @@
 # app/ — aplicativo extraído
 
-Extraído de `Arqex_Explorer_v6.71.15_v1.38.zip` (SHA-256 `eb226ed7…a336a13`), que continua
-no repositório como cópia original intacta.
+Esta é a **única fonte do APK**: o `tools/build.sh` monta o `classes.dex` a partir de
+`app/smali` e o APK a partir deste diretório. O `.zip` da base v1.38 que ficava na raiz do
+repositório foi removido (o projeto descompactado aqui já é o aplicativo completo).
 
 | Caminho | O que é |
 |---|---|

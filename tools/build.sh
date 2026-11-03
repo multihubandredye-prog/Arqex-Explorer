@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 # Monta classes.dex e o APK do Arqex Explorer.
 #
-# Fonte preferencial: app/smali  (o projeto ja extraido neste repositorio)
-# Fonte alternativa:  Arqex_Explorer_v6.71.15_v1.38.zip (base original, verificada por SHA-256)
+# Fonte unica: app/ (o projeto ja extraido neste repositorio: app/smali + app/res)
 #
 # Uso:
-#   bash tools/build.sh              # usa app/ quando existir
-#   MODE=zip bash tools/build.sh     # forca o caminho pela base ZIP original
+#   bash tools/build.sh
+#
+# O ZIP da base v1.38 que existia na raiz foi removido: o repositorio guarda o
+# aplicativo descompactado em app/, que e a unica fonte do APK.
 set -euo pipefail
 
 OUT="${OUT:-out}"
 CACHE="${CACHE:-${HOME}/.cache/arqex-tools}"
-BASE_ZIP="${BASE_ZIP:-Arqex_Explorer_v6.71.15_v1.38.zip}"
-EXPECTED_SHA="${EXPECTED_SHA:-eb226ed743dcbe47a6d271da0dee3187dfd82ec1524585880a148dd91a336a13}"
-BASE_DIR_NAME="Arqex_Explorer_v6.71.15_base_src"
 
 mkdir -p "$OUT" "$CACHE"
 log() { printf '\n=== %s ===\n' "$*"; }
@@ -36,29 +34,11 @@ WORK=$(mktemp -d)
 trap 'rm -rf "$WORK"' EXIT
 SRC="$WORK/src"
 
-if [ "${MODE:-auto}" != "zip" ] && [ -d app/smali ]; then
-  log "2/7 Fonte: app/ (projeto extraido no repositorio)"
-  cp -a app "$SRC"
-  rm -rf "$SRC/build"
-  SMALI_DIR="$SRC/smali"
-else
-  log "2/7 Fonte: $BASE_ZIP"
-  [ -f "$BASE_ZIP" ] || { echo "ERRO: $BASE_ZIP nao encontrado"; exit 1; }
-  ACTUAL_SHA=$(sha256sum "$BASE_ZIP" | awk '{print $1}')
-  [ "$ACTUAL_SHA" = "$EXPECTED_SHA" ] || { echo "ERRO: SHA-256 nao confere: $ACTUAL_SHA"; exit 1; }
-  unzip -q "$BASE_ZIP" -d "$WORK/zip"
-  cp -a "$WORK/zip/$BASE_DIR_NAME" "$SRC"
-  cp build/apktool.yml "$SRC/apktool.yml"
-  log "3/7 Descompilando classes.dex"
-  java -cp "$BAK_DEPS" org.jf.baksmali.Main d "$SRC/classes.dex" -o "$WORK/smali"
-  log "4/7 Aplicando patches"
-  for p in patches/smali/*.patch; do
-    [ -e "$p" ] || continue
-    patch -p1 -s -d "$WORK/smali" --no-backup-if-mismatch < "$p" || { echo "ERRO: patch $p"; exit 1; }
-  done
-  cp patches/smali/new/*.smali "$WORK/smali/libs/" 2>/dev/null || true
-  SMALI_DIR="$WORK/smali"
-fi
+[ -d app/smali ] || { echo "ERRO: app/smali ausente - o repositorio precisa do projeto descompactado em app/"; exit 1; }
+log "2/7 Fonte: app/ (projeto extraido no repositorio)"
+cp -a app "$SRC"
+rm -rf "$SRC/build"
+SMALI_DIR="$SRC/smali"
 
 log "5/7 Montando classes.dex a partir do smali"
 # o smali 2.5.2 pode terminar com codigo 0 mesmo tendo recusado arquivos;

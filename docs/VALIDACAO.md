@@ -445,7 +445,7 @@ Unica alteracao: as notas da release ganharam a secao "### Atualização dentro 
 "### Como instalar" (o marcador de corte continua sendo "### Como instalar", entao o modal segue
 mostrando apenas as novidades). README atualizado para 1.62.0.
 
-## Filtro por nome nas tarefas e rotulos de permissao (branch ajustes-tarefas)
+## Filtro por nome nas tarefas e rotulos de permissao (branch ajustes-arqex)
 
 ### Rotulos r/w/x no seletor de permissao
 `SmartFeaturesV116$PermPickerDialog.initBox` passou a chamar `setText` com o rotulo da
