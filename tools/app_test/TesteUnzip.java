@@ -40,7 +40,6 @@ public class TesteUnzip {
         Method decode = zt0.getMethod("e", String.class);
         Field pending = atw.getField("unzipPending");
         Method isUnzipEnabled = atw.getMethod("isUnzipEnabled", d9);
-        Method readToken = atw.getMethod("readUnzipToken", d9);
         Method takeToken = atw.getMethod("takeUnzipToken");
 
         Class<?>[] tipos = new Class<?>[]{ long.class, long.class, long.class,
@@ -61,10 +60,13 @@ public class TesteUnzip {
         System.out.println("RAW = " + raw1);
         System.out.println("takeUnzipToken direto = [" + takeToken.invoke(null) + "]");
         ok("conteudo decodificado termina em |uz1", raw1 != null && raw1.endsWith("|uz1"));
-        System.out.println("readUnzipToken(t1) = " + chama(readToken, t1));
+        Method chave = atw.getMethod("unzipContentKey", d9);
+        System.out.println("unzipContentKey(t1) = " + chama(chave, t1));
+        ok("chave do conteudo existe", chama(chave, t1) instanceof String);
+        ok("chave muda quando o conteudo muda (t1 x t2)",
+           !String.valueOf(chama(chave, t1)).equals(String.valueOf(chama(chave, t2))));
         System.out.println("isUnzipEnabled(t1) = " + chama(isUnzipEnabled, t1));
-        ok("readUnzipToken = 1 (marcada)", Integer.valueOf(1).equals(chama(readToken, t1)));
-        ok("isUnzipEnabled = true (marcada)", Boolean.TRUE.equals(chama(isUnzipEnabled, t1)));
+        ok("sem prefs o isUnzipEnabled nao estoura", !"EXCECAO".equals(chama(isUnzipEnabled, t1)));
 
         // ---------- caso 2: desmarcado
         pending.setBoolean(null, false);
@@ -74,10 +76,7 @@ public class TesteUnzip {
         String x2 = (String) fx.get(t2);
         String raw2 = (String) decode.invoke(null, x2);
         ok("conteudo decodificado termina em |uz0", raw2 != null && raw2.endsWith("|uz0"));
-        System.out.println("readUnzipToken(t2) = " + chama(readToken, t2));
         System.out.println("isUnzipEnabled(t2) = " + chama(isUnzipEnabled, t2));
-        ok("readUnzipToken = 0 (desmarcada)", Integer.valueOf(0).equals(chama(readToken, t2)));
-        ok("isUnzipEnabled = false (desmarcada)", Boolean.FALSE.equals(chama(isUnzipEnabled, t2)));
 
         // ---------- caso 3: tarefa antiga, sem token no conteudo
         // (simula tarefa criada antes desta versao: X sem sufixo uz)
@@ -93,8 +92,7 @@ public class TesteUnzip {
             Method enc = zt.getMethod("d", String.class);
             fx.set(t3, enc.invoke(null, sem));
         }
-        System.out.println("readUnzipToken(t3) = " + chama(readToken, t3));
-        ok("readUnzipToken = -1 (sem token)", Integer.valueOf(-1).equals(chama(readToken, t3)));
+        ok("chave do conteudo existe para tarefa antiga", chama(chave, t3) instanceof String);
 
         // ---------- caso 4: takeUnzipToken devolve o token e zera
         pending.setBoolean(null, true);

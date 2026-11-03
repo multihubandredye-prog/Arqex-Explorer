@@ -4635,46 +4635,25 @@
 # mesma que foi salva - o conteudo, porem, e igual.
 
 # Remove o token do fim do conteudo decodificado (para o hash ficar estavel).
-.method private static stripUnzipToken(Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
-    const-string v0, "|uz1"
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v0
-    if-nez v0, :arqex_sut_2
-    const-string v0, "|uz0"
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v0
-    if-nez v0, :arqex_sut_fim
-    :arqex_sut_2
-    const/4 v0, 0x0
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-    move-result v1
-    add-int/lit8 v1, v1, -0x4
-    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-    move-result-object p0
-    :arqex_sut_fim
-    return-object p0
-.end method
+
 
 # Chave estavel da tarefa pelo conteudo (sem o token). Retorna null se nao der.
 .method public static unzipContentKey(Llibs/d9;)Ljava/lang/String;
-    .registers 6
+    .registers 5
+    # Chave estavel da tarefa: hash do PROPRIO d9.X (conteudo ja codificado).
+    # Sem decodificar: zt0.e se mostrou instavel aqui e era o que fazia a leitura
+    # voltar "sem marca" - a caixinha nunca ficava marcada.
     const/4 v0, 0x0
     if-nez p0, :arqex_uck_fim
     :try_start_k
     iget-object v1, p0, Llibs/d9;->X:Ljava/lang/String;
     if-nez v1, :arqex_uck_fim
-    invoke-static {v1}, Llibs/zt0;->e(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v1
-    if-nez v1, :arqex_uck_fim
-    invoke-static {v1}, Llibs/AutoTaskWatcher;->stripUnzipToken(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v1
     invoke-static {v1}, Llibs/vl3;->v(Ljava/lang/String;)I
     move-result v1
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
     move-result v1
     new-instance v2, Ljava/lang/StringBuilder;
-    const-string v3, "unzip_c_"
+    const-string v3, "unzip_x_"
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -4687,56 +4666,26 @@
 .end method
 
 # 1 = tarefa marcada, 0 = tarefa desmarcada, -1 = tarefa sem token
-.method public static readUnzipToken(Llibs/d9;)I
-    .registers 6
-    const/4 v0, -0x1
-    if-nez p0, :arqex_rut_fim
-    :try_start_r
-    iget-object v1, p0, Llibs/d9;->X:Ljava/lang/String;
-    if-nez v1, :arqex_rut_fim
-    invoke-static {v1}, Llibs/zt0;->e(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v1
-    if-nez v1, :arqex_rut_fim
-    const-string v2, "|uz1"
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v2
-    if-eqz v2, :arqex_rut_zero
-    const/4 v0, 0x1
-    goto :arqex_rut_fim
-    :arqex_rut_zero
-    const-string v2, "|uz0"
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-    move-result v2
-    if-eqz v2, :arqex_rut_fim
-    const/4 v0, 0x0
-    :try_end_r
-    .catchall {:try_start_r .. :try_end_r} :catchall_r
-    :catchall_r
-    :arqex_rut_fim
-    return v0
-.end method
+
 
 # Grava a camada 2 (chave por conteudo) a partir da tarefa ja montada.
 .method public static saveUnzipContent(Llibs/d9;)V
-    .registers 7
+    .registers 6
+    # Amarra a tarefa recem-montada (d9.X, que ja contem o token) ao valor que o
+    # usuario escolheu na caixinha. Sem decodificar nada.
     if-nez p0, :arqex_suc_fim
     :try_start_s
     invoke-static {p0}, Llibs/AutoTaskWatcher;->unzipContentKey(Llibs/d9;)Ljava/lang/String;
     move-result-object v0
-    if-nez v0, :arqex_suc_fim
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->readUnzipToken(Llibs/d9;)I
-    move-result v1
-    if-gez v1, :arqex_suc_fim
-    if-eqz v1, :arqex_suc_on
-    const/4 v2, 0x0
-    goto :arqex_suc_val
-    :arqex_suc_on
-    const/4 v2, 0x1
-    :arqex_suc_val
+    if-eqz v0, :arqex_suc_fim
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
-    move-result-object v3
-    if-eqz v3, :arqex_suc_fim
-    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    move-result-object v1
+    if-eqz v1, :arqex_suc_fim
+    const-string v2, "unzip_last_state"
+    const/4 v3, 0x0
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    move-result v2
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
     move-result-object v3
     if-eqz v3, :arqex_suc_fim
     invoke-interface {v3, v0, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
@@ -4760,34 +4709,28 @@
 .end method
 
 .method public static isUnzipEnabled(Llibs/d9;)Z
-    .registers 7
-    # 1) token dentro da tarefa (manda)
-    # 2) chave por conteudo nas prefs (mesma tarefa em outra instancia)
+    .registers 6
+    # 1) chave do conteudo da tarefa (unzip_x_<hash de d9.X>) -> exato
+    # 2) ultima escolha do usuario (unzip_last_state)           -> reserva
     # 3) desmarcada
     const/4 v0, 0x0
     if-nez p0, :arqex_iu_fim
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->readUnzipToken(Llibs/d9;)I
-    move-result v1
-    if-ltz v1, :arqex_iu_c1
-    if-nez v1, :arqex_iu_fim
-    const/4 v0, 0x1
-    goto :arqex_iu_fim
-    :arqex_iu_c1
     :try_start_i
+    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
+    move-result-object v1
+    if-eqz v1, :arqex_iu_fim
     invoke-static {p0}, Llibs/AutoTaskWatcher;->unzipContentKey(Llibs/d9;)Ljava/lang/String;
     move-result-object v2
-    if-nez v2, :arqex_iu_fim
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
-    move-result-object v3
-    if-eqz v3, :arqex_iu_fim
-    invoke-interface {v3, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    if-eqz v2, :arqex_iu_pref
+    invoke-interface {v1, v2}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    move-result v3
+    if-eqz v3, :arqex_iu_pref
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     move-result v0
-    # ATENCAO: if-NEZ = se TRUE, termina com 1. if-eqz aqui invertia a logica e
-    # matava a camada 3 (era o bug: com a chave por conteudo em false o metodo
-    # retornava false na hora e nunca chegava na ultima escolha do usuario).
-    if-nez v0, :arqex_iu_fim
+    goto :arqex_iu_fim
+    :arqex_iu_pref
     const-string v2, "unzip_last_state"
-    invoke-interface {v3, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     move-result v0
     :try_end_i
     .catchall {:try_start_i .. :try_end_i} :catchall_i
