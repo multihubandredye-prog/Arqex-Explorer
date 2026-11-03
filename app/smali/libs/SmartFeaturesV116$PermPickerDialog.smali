@@ -531,6 +531,52 @@
     return-object p0
 .end method
 
+.method private static rotuloPermissao(I)Ljava/lang/String;
+    .registers 4
+
+    const/4 v0, 0x2
+
+    if-le p0, v0, :comuns
+
+    const-string v0, "s"
+
+    const/4 v1, 0x2
+
+    if-ne p0, v1, :sticky
+
+    return-object v0
+
+    :sticky
+    const-string v0, "t"
+
+    return-object v0
+
+    :comuns
+    add-int/lit8 v1, p0, -0x3
+
+    rem-int/lit8 v1, v1, 0x3
+
+    if-nez v1, :leitura
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :escrita
+
+    const-string v0, "x"
+
+    return-object v0
+
+    :leitura
+    const-string v0, "r"
+
+    return-object v0
+
+    :escrita
+    const-string v0, "w"
+
+    return-object v0
+.end method
+
 .method private initBox(II)V
     .registers 4
 
@@ -547,6 +593,13 @@
     move-result-object v0
 
     invoke-virtual {p2, v0}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    # rotulo r/w/x ao lado da caixinha (s/t nos bits especiais)
+    invoke-static {p1}, Llibs/SmartFeaturesV116$PermPickerDialog;->rotuloPermissao(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     invoke-virtual {p2, p0}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 

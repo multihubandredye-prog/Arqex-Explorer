@@ -211,6 +211,17 @@ check("7h. ajuda trata de aparencia/efeitos no lugar de temas",
       "Aparência do Aplicativo" in _aj or "Aparencia do Aplicativo" in _aj)
 check("7i. ajuda mantem backup e restauracao",
       "BACKUP E RESTAURAÇÃO" in _aj or "BACKUP E RESTAURACAO" in _aj)
+_perm = ""
+for _cand in [os.path.join(SMALI, "libs", "SmartFeaturesV116$PermPickerDialog.smali")]:
+    if os.path.exists(_cand):
+        _perm = open(_cand, encoding="utf-8", errors="replace").read()
+check("9a. caixinha de permissao mostra r/w/x",
+      "rotuloPermissao" in _perm
+      and "Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V" in _perm)
+check("9b. bits especiais mostram s/t",
+      'const-string v0, "s"' in _perm and 'const-string v0, "t"' in _perm)
+check("9c. rotulo da permissao cobre leitura, escrita e execucao",
+      all(x in _perm for x in ['const-string v0, "r"', 'const-string v0, "w"', 'const-string v0, "x"']))
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 
