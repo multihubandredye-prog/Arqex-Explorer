@@ -64,7 +64,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_3
+    if-ne v0, v1, :cond_d
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
@@ -74,10 +74,10 @@
 
     return-void
 
-    :cond_3
+    :cond_d
     const/16 v1, 0xb
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_18
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
@@ -87,10 +87,10 @@
 
     return-void
 
-    :cond_b
+    :cond_18
     const/16 v1, 0xd
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_27
 
     invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
@@ -102,10 +102,10 @@
 
     return-void
 
-    :cond_d
+    :cond_27
     const/16 v1, 0x32
 
-    if-ne v0, v1, :cond_32
+    if-ne v0, v1, :cond_38
 
     invoke-direct {p0}, Llibs/CustomThemeV128$ActionListener;->dismissSafe()V
 
@@ -119,20 +119,20 @@
 
     return-void
 
-    :cond_32
+    :cond_38
     const/16 v1, 0x33
 
-    if-ne v0, v1, :cond_33
+    if-ne v0, v1, :cond_59
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->pathInput:Landroid/widget/EditText;
 
-    if-eqz v1, :cond_fim
+    if-eqz v1, :cond_64
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
 
-    if-eqz v1, :cond_fim
+    if-eqz v1, :cond_64
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -152,10 +152,10 @@
 
     return-void
 
-    :cond_33
+    :cond_59
     const/16 v1, 0x3c
 
-    if-ne v0, v1, :cond_fim
+    if-ne v0, v1, :cond_64
 
     iget-object v1, p0, Llibs/CustomThemeV128$ActionListener;->context:Landroid/content/Context;
 
@@ -163,6 +163,6 @@
 
     invoke-static {v1, v2}, Llibs/CustomThemeV128;->shareExportedFile(Landroid/content/Context;Ljava/lang/String;)V
 
-    :cond_fim
+    :cond_64
     return-void
 .end method

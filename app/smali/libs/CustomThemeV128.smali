@@ -12,7 +12,6 @@
     return-void
 .end method
 
-
 .method public static appendSettingsRow(Lcom/mixplorer/activities/PreferenceActivity;Landroid/view/ViewGroup;Landroid/graphics/drawable/Drawable;)V
     .registers 9
 
@@ -155,7 +154,6 @@
     return-void
 .end method
 
-
 .method private static buildActionCard(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIILandroid/view/View$OnClickListener;)Landroid/view/View;
     .registers 14
 
@@ -268,7 +266,6 @@
     return-object v0
 .end method
 
-
 .method private static collectBackupFiles(Landroid/content/Context;)Ljava/util/ArrayList;
     .registers 6
 
@@ -335,7 +332,6 @@
     :cond_39
     return-object v0
 .end method
-
 
 .method public static createPillButton(Landroid/content/Context;Ljava/lang/String;IZ)Landroid/widget/TextView;
     .registers 8
@@ -800,7 +796,6 @@
     return-void
 .end method
 
-
 .method public static finalizeSingleBtnDialog(Llibs/ml1;)V
     .registers 3
 
@@ -1032,7 +1027,6 @@
     return-void
 .end method
 
-
 .method private static readUtf8File(Ljava/lang/String;)Ljava/lang/String;
     .registers 6
 
@@ -1209,7 +1203,6 @@
 
     return-void
 .end method
-
 
 .method public static resolveAccent()I
     .registers 2
@@ -1431,7 +1424,6 @@
     return-object p0
 .end method
 
-
 .method public static shareExportedFile(Landroid/content/Context;Ljava/lang/String;)V
     .registers 5
 
@@ -1484,7 +1476,6 @@
     return-void
 .end method
 
-
 .method public static showHubDialog(Landroid/content/Context;Landroid/widget/TextView;)V
     .registers 13
 
@@ -1510,7 +1501,7 @@
 
     iget-object v1, v0, Llibs/ml1;->Six:Landroid/widget/LinearLayout;
 
-    if-eqz v1, :cond_cd
+    if-eqz v1, :cond_8d
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
@@ -1589,7 +1580,6 @@
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-
     new-instance v10, Llibs/CustomThemeV128$ActionListener;
 
     const/16 v2, 0xd
@@ -1623,11 +1613,11 @@
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     invoke-static {v0}, Llibs/CustomThemeV128;->finalizeSingleBtnDialog(Llibs/ml1;)V
-    :try_end_cd
-    .catchall {:try_start_3 .. :try_end_cd} :catchall_cd
+    :try_end_8d
+    .catchall {:try_start_3 .. :try_end_8d} :catchall_8d
 
-    :catchall_cd
-    :cond_cd
+    :catchall_8d
+    :cond_8d
     return-void
 .end method
 
@@ -1872,5 +1862,3 @@
     :cond_fc
     return-void
 .end method
-
-

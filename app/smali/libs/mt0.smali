@@ -130,10 +130,6 @@
     .line 37
     :cond_24
     return-void
-    .line 38
-    .line 39
-    .line 40
-    .line 41
 .end method
 
 
@@ -196,6 +192,4 @@
     .line 28
     .line 29
     return-object v1
-    .line 30
-    .line 31
 .end method

@@ -531,127 +531,9 @@
     return-object p0
 .end method
 
-.method private static rotuloPorId(I)Ljava/lang/String;
-    .registers 2
-
-    # a letra vem do id do proprio widget (perm_user_r -> r, perm_sp_t -> t, ...)
-    sget v0, Llibs/wh2;->perm_sp_t:I
-
-    if-ne p0, v0, :nao_t
-
-    const-string v0, "t"
-
-    return-object v0
-
-    :nao_t
-    sget v0, Llibs/wh2;->perm_sp_su:I
-
-    if-ne p0, v0, :nao_su
-
-    const-string v0, "s"
-
-    return-object v0
-
-    :nao_su
-    sget v0, Llibs/wh2;->perm_sp_sg:I
-
-    if-ne p0, v0, :nao_sg
-
-    const-string v0, "s"
-
-    return-object v0
-
-    :nao_sg
-    sget v0, Llibs/wh2;->perm_user_r:I
-
-    if-ne p0, v0, :r2
-
-    const-string v0, "r"
-
-    return-object v0
-
-    :r2
-    sget v0, Llibs/wh2;->perm_group_r:I
-
-    if-ne p0, v0, :r3
-
-    const-string v0, "r"
-
-    return-object v0
-
-    :r3
-    sget v0, Llibs/wh2;->perm_all_r:I
-
-    if-ne p0, v0, :w1
-
-    const-string v0, "r"
-
-    return-object v0
-
-    :w1
-    sget v0, Llibs/wh2;->perm_user_w:I
-
-    if-ne p0, v0, :w2
-
-    const-string v0, "w"
-
-    return-object v0
-
-    :w2
-    sget v0, Llibs/wh2;->perm_group_w:I
-
-    if-ne p0, v0, :w3
-
-    const-string v0, "w"
-
-    return-object v0
-
-    :w3
-    sget v0, Llibs/wh2;->perm_all_w:I
-
-    if-ne p0, v0, :x1
-
-    const-string v0, "w"
-
-    return-object v0
-
-    :x1
-    sget v0, Llibs/wh2;->perm_user_x:I
-
-    if-ne p0, v0, :x2
-
-    const-string v0, "x"
-
-    return-object v0
-
-    :x2
-    sget v0, Llibs/wh2;->perm_group_x:I
-
-    if-ne p0, v0, :x3
-
-    const-string v0, "x"
-
-    return-object v0
-
-    :x3
-    sget v0, Llibs/wh2;->perm_all_x:I
-
-    if-ne p0, v0, :nenhuma
-
-    const-string v0, "x"
-
-    return-object v0
-
-    :nenhuma
-    const-string v0, ""
-
-    return-object v0
-.end method
-
 .method private initBox(II)V
     .registers 5
 
-    # guarda o id antes de p2 virar a View (o rotulo depende do id)
     move v1, p2
 
     invoke-virtual {p0, p2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
@@ -660,7 +542,7 @@
 
     check-cast p2, Landroid/widget/CheckBox;
 
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_1e
 
     invoke-static {}, Llibs/va3;->u()Landroid/graphics/drawable/Drawable;
 
@@ -668,7 +550,6 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    # rotulo r/w/x ao lado da caixinha (s/t nos bits especiais)
     invoke-static {v1}, Llibs/SmartFeaturesV116$PermPickerDialog;->rotuloPorId(I)Ljava/lang/String;
 
     move-result-object v0
@@ -681,8 +562,124 @@
 
     aput-object p2, v0, p1
 
-    :cond_16
+    :cond_1e
     return-void
+.end method
+
+.method private static rotuloPorId(I)Ljava/lang/String;
+    .registers 2
+
+    sget v0, Llibs/wh2;->perm_sp_t:I
+
+    if-ne p0, v0, :cond_7
+
+    const-string v0, "t"
+
+    return-object v0
+
+    :cond_7
+    sget v0, Llibs/wh2;->perm_sp_su:I
+
+    if-ne p0, v0, :cond_e
+
+    const-string v0, "s"
+
+    return-object v0
+
+    :cond_e
+    sget v0, Llibs/wh2;->perm_sp_sg:I
+
+    if-ne p0, v0, :cond_15
+
+    const-string v0, "s"
+
+    return-object v0
+
+    :cond_15
+    sget v0, Llibs/wh2;->perm_user_r:I
+
+    if-ne p0, v0, :cond_1c
+
+    const-string v0, "r"
+
+    return-object v0
+
+    :cond_1c
+    sget v0, Llibs/wh2;->perm_group_r:I
+
+    if-ne p0, v0, :cond_23
+
+    const-string v0, "r"
+
+    return-object v0
+
+    :cond_23
+    sget v0, Llibs/wh2;->perm_all_r:I
+
+    if-ne p0, v0, :cond_2a
+
+    const-string v0, "r"
+
+    return-object v0
+
+    :cond_2a
+    sget v0, Llibs/wh2;->perm_user_w:I
+
+    if-ne p0, v0, :cond_31
+
+    const-string v0, "w"
+
+    return-object v0
+
+    :cond_31
+    sget v0, Llibs/wh2;->perm_group_w:I
+
+    if-ne p0, v0, :cond_38
+
+    const-string v0, "w"
+
+    return-object v0
+
+    :cond_38
+    sget v0, Llibs/wh2;->perm_all_w:I
+
+    if-ne p0, v0, :cond_3f
+
+    const-string v0, "w"
+
+    return-object v0
+
+    :cond_3f
+    sget v0, Llibs/wh2;->perm_user_x:I
+
+    if-ne p0, v0, :cond_46
+
+    const-string v0, "x"
+
+    return-object v0
+
+    :cond_46
+    sget v0, Llibs/wh2;->perm_group_x:I
+
+    if-ne p0, v0, :cond_4d
+
+    const-string v0, "x"
+
+    return-object v0
+
+    :cond_4d
+    sget v0, Llibs/wh2;->perm_all_x:I
+
+    if-ne p0, v0, :cond_54
+
+    const-string v0, "x"
+
+    return-object v0
+
+    :cond_54
+    const-string v0, ""
+
+    return-object v0
 .end method
 
 .method private setBoxGroup(II)V

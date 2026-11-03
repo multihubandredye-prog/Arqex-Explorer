@@ -219,8 +219,4 @@
     .line 108
     .line 109
     return-void
-    .line 110
-    .line 111
-    .line 112
-    .line 113
 .end method

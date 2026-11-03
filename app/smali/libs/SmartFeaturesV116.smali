@@ -18,8 +18,6 @@
 
 .field private static sActiveDirPath:Ljava/lang/String;
 
-.field private static sFolderDialog:Landroid/app/Dialog;
-
 .field private static final sAutoOpenCheckBoxes:Ljava/util/WeakHashMap;
 
 .field private static final sAutoRefreshRunnable:Ljava/lang/Runnable;
@@ -27,6 +25,8 @@
 .field private static volatile sDeferredAutoRefresh:Z
 
 .field private static final sEmptyScanSeq:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field private static sFolderDialog:Landroid/app/Dialog;
 
 .field private static final sFolderSizeCache:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -100,125 +100,6 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static makeDialogDismissible(Landroid/app/Dialog;)V
-    .registers 6
-
-    if-eqz p0, :fim
-
-    # 1) Voltar: listener no proprio Dialog (consultado em dispatchKeyEvent,
-    #    antes de qualquer view e antes do tratamento interno do dialogo)
-    :try_start_1
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCancelable(Z)V
-
-    new-instance v0, Llibs/ArqexDialogKeyCloser;
-
-    invoke-direct {v0, p0}, Llibs/ArqexDialogKeyCloser;-><init>(Landroid/app/Dialog;)V
-
-    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :catchall_1
-    # 2) toque fora da janela (so da para configurar depois que a janela existe)
-    :try_start_2
-    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    if-eqz v0, :fim
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    const/16 v1, 0x10
-
-    invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
-
-    # 3) marca no decor: e o que autoriza o dispatchTouchEvent do $d a decidir
-    #    sobre toque fora. Sem a marca, o dialogo nao e tocado.
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    if-eqz v0, :fim
-
-    const-string v1, "arqex_dismissible"
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    # 4) reforco: tecla Voltar tambem nas views do dialogo
-    new-instance v1, Llibs/ArqexBackCloser;
-
-    invoke-direct {v1, p0}, Llibs/ArqexBackCloser;-><init>(Landroid/app/Dialog;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    :catchall_2
-    :fim
-    return-void
-.end method
-
-.method public static registerFolderDialog(Landroid/app/Dialog;)V
-    .registers 1
-
-    sput-object p0, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
-
-    return-void
-.end method
-
-# Fecha o dialogo de criar pasta, se ele estiver aberto. Devolve true quando
-# havia um dialogo na tela (o Voltar foi tratado aqui).
-.method public static closeFolderDialog()Z
-    .registers 3
-
-    sget-object v0, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
-
-    if-eqz v0, :falso
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v1
-
-    if-eqz v1, :limpa
-
-    const/4 v1, 0x0
-
-    sput-object v1, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
-
-    :try_start_10
-    check-cast v0, Llibs/od;
-
-    # mesma limpeza que o dismiss() do MiXplorer faz, mas sem a chamada que
-    # pode estourar antes de fechar a janela
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Llibs/od;->Gms(Z)V
-
-    invoke-virtual {v0}, Llibs/od;->arqexForceDismiss()V
-    :try_end_15
-    .catchall {:try_start_10 .. :try_end_15} :catchall_15
-
-    :catchall_15
-    const/4 v0, 0x1
-
-    return v0
-
-    :limpa
-    const/4 v1, 0x0
-
-    sput-object v1, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
-
-    :falso
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public static addAutoOpenFolderCheckBox(Llibs/od;)V
@@ -1973,6 +1854,50 @@
     return-object p0
 .end method
 
+.method public static closeFolderDialog()Z
+    .registers 3
+
+    sget-object v0, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
+
+    if-eqz v0, :cond_1b
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_18
+
+    const/4 v1, 0x0
+
+    sput-object v1, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
+
+    :try_start_d
+    check-cast v0, Llibs/od;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Llibs/od;->Gms(Z)V
+
+    invoke-virtual {v0}, Llibs/od;->arqexForceDismiss()V
+    :try_end_16
+    .catchall {:try_start_d .. :try_end_16} :catchall_16
+
+    :catchall_16
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_18
+    const/4 v1, 0x0
+
+    sput-object v1, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
+
+    :cond_1b
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public static collectSplitApkItems(Landroid/content/pm/ApplicationInfo;Ljava/util/ArrayList;)V
     .registers 9
 
@@ -3690,6 +3615,63 @@
     return-void
 .end method
 
+.method public static makeDialogDismissible(Landroid/app/Dialog;)V
+    .registers 6
+
+    if-eqz p0, :cond_30
+
+    :try_start_2
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCancelable(Z)V
+
+    new-instance v0, Llibs/ArqexDialogKeyCloser;
+
+    invoke-direct {v0, p0}, Llibs/ArqexDialogKeyCloser;-><init>(Landroid/app/Dialog;)V
+
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
+    :try_end_e
+    .catchall {:try_start_2 .. :try_end_e} :catchall_e
+
+    :catchall_e
+    :try_start_e
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_30
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
+
+    const/16 v1, 0x10
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_30
+
+    const-string v1, "arqex_dismissible"
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    new-instance v1, Llibs/ArqexBackCloser;
+
+    invoke-direct {v1, p0}, Llibs/ArqexBackCloser;-><init>(Landroid/app/Dialog;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+    :try_end_30
+    .catchall {:try_start_e .. :try_end_30} :catchall_30
+
+    :catchall_30
+    :cond_30
+    return-void
+.end method
+
 .method public static maybeOpenCreatedFolder(Landroid/app/Activity;Llibs/rp0;Llibs/od;Llibs/r31;Llibs/xt1;)V
     .registers 9
 
@@ -4272,6 +4254,14 @@
 
     :catchall_17
     :cond_17
+    return-void
+.end method
+
+.method public static registerFolderDialog(Landroid/app/Dialog;)V
+    .registers 1
+
+    sput-object p0, Llibs/SmartFeaturesV116;->sFolderDialog:Landroid/app/Dialog;
+
     return-void
 .end method
 

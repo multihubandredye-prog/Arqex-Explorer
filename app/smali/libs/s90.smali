@@ -82,13 +82,6 @@
     .line 34
     :cond_21
     return-void
-    .line 35
-    .line 36
-    .line 37
-    .line 38
-    .line 39
-    .line 40
-    .line 41
 .end method
 
 
@@ -232,13 +225,4 @@
 
     .line 67
     return p1
-    .line 68
-    .line 69
-    .line 70
-    .line 71
-    .line 72
-    .line 73
-    .line 74
-    .line 75
-    .line 76
 .end method

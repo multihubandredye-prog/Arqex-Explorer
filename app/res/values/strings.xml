@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="__"/>
+    <string name="__" />
     <string name="_null">Null</string>
     <string name="abort">Abort</string>
     <string name="access_denied">Access is denied.</string>
@@ -159,7 +159,7 @@
     <string name="device">Device</string>
     <string name="dictionary_size">Dictionary size</string>
     <string name="dimension">Dimension</string>
-    <string name="dir_sign">&lt;dir&gt;</string>
+    <string name="dir_sign">&lt;dir></string>
     <string name="direct_link">Direct link</string>
     <string name="directory">Directory</string>
     <string name="dlna_server">DLNA Server/Renderer</string>
@@ -290,7 +290,7 @@
     <string name="insert_color">Insert color</string>
     <string name="instagram">Instagram</string>
     <string name="install">Install</string>
-    <string name="install_update_addon">Please install or update the addon &gt;</string>
+    <string name="install_update_addon">Please install or update the addon ></string>
     <string name="installation_completed">Installation complete</string>
     <string name="installation_completed_desc" formatted="false">Installed %d/%d</string>
     <string name="installed_version">Installed</string>
@@ -831,178 +831,304 @@
     <string name="yes">Yes</string>
     <string name="yesterday">Yesterday</string>
     <string name="zip_align">Zip-Align</string>
-<string name="arqex_effects_title" formatted="false">VISUAL EFFECTS</string>
-    <string name="arqex_effects_quick_row" formatted="false">Visual Effects (200 ms zoom &amp; animated borders)  ▸</string>
-    <string name="arqex_effects_summary_zoom" formatted="false">\nZoom on open (200 ms): </string>
-    <string name="arqex_effects_summary_borders" formatted="false">  •  Animated borders: </string>
-    <string name="arqex_effect_status_enabled" formatted="false">Enabled</string>
-    <string name="arqex_effect_status_disabled" formatted="false">Disabled</string>
-    <string name="arqex_effect_zoom_title" formatted="false">Zoom when opening folders/items (200 ms)</string>
-    <string name="arqex_effect_zoom_desc" formatted="false">A smooth zoom-in effect when opening a folder or item.</string>
-    <string name="arqex_effect_borders_title" formatted="false">Animated item borders and dividers</string>
-    <string name="arqex_effect_borders_desc" formatted="false">Moving animation on item borders and dividers, adapted to the active theme.</string>
-    <string name="arqex_zoom_label_prefix" formatted="false">Zoom strength: +</string>
-    <string name="arqex_zoom_label_middle" formatted="false">% (1.</string>
-    <string name="arqex_zoom_label_suffix" formatted="false">x)</string>
-    <string name="arqex_zoom_test" formatted="false">Test</string>
-    <string name="arqex_zoom_default" formatted="false">Default</string>
-    <string name="arqex_zoom_preview" formatted="false">📁 Live zoom preview — drag the slider</string>
-    <string name="arqex_view_size_prefix" formatted="false">Size (</string>
-    <string name="arqex_view_size_column_one" formatted="false"> column</string>
-    <string name="arqex_view_size_column_many" formatted="false"> columns</string>
-    <string name="arqex_view_size_default_button" formatted="false">Default</string>
-    <string name="arqex_view_size_default_suffix" formatted="false"> (Default)</string>
-    <string name="arqex_theme_row_title" formatted="false">BACKUP AND RESTORE</string>
-    <string name="arqex_theme_active_prefix" formatted="false">\nActive theme: </string>
-    <string name="arqex_theme_row_summary" formatted="false">  •  Export and import settings</string>
-    <string name="arqex_theme_hub_title" formatted="false">Backup and Restore</string>
-    <string name="arqex_theme_create_edit_desc" formatted="false">Choose colors for the page, bars, menus, highlights, folders, and text; use RGB or HEX controls and preview as you go.</string>
-    <string name="arqex_theme_export_full_title" formatted="false">Export Full Backup</string>
-    <string name="arqex_theme_export_full_desc" formatted="false">Save app settings, themes, and preferences as a JSON file in Download/ArqexExplorer.</string>
-    <string name="arqex_theme_export_themes_title" formatted="false">Export Themes Only</string>
-    <string name="arqex_theme_export_themes_desc" formatted="false">Create a lightweight backup of your custom theme gallery to share.</string>
-    <string name="arqex_theme_import_title" formatted="false">Import Themes / Settings</string>
-    <string name="arqex_theme_import_desc" formatted="false">Restore a JSON file by entering its path or choosing a backup found in Download/ArqexExplorer.</string>
-    <string name="arqex_theme_default_name" formatted="false">My Arqex Theme</string>
-    <string name="arqex_theme_save_success" formatted="false">Theme saved and applied.</string>
-    <string name="arqex_theme_save_failed" formatted="false">Could not save or apply the theme.</string>
-    <string name="arqex_theme_preview_title" formatted="false">Arqex Explorer • Preview</string>
-    <string name="arqex_theme_preview_items" formatted="false">24 items • Animated borders</string>
-    <string name="arqex_theme_edit_hint" formatted="false"> — tap to edit color</string>
-    <string name="arqex_theme_creator_title" formatted="false">Create My Custom Theme</string>
-    <string name="arqex_theme_name_hint" formatted="false">Theme name, for example: My Arqex Theme</string>
-    <string name="arqex_theme_creator_help" formatted="false">Tap any color row or swatch to open the full spectrum. Drag to choose a color; quick swatches and RGB/HEX are also available.</string>
-    <string name="arqex_theme_role_0_title" formatted="false">Page background</string>
-    <string name="arqex_theme_role_0_desc" formatted="false">Main background for folders and files</string>
-    <string name="arqex_theme_role_1_title" formatted="false">Bars (Top, Tabs, and Tools)</string>
-    <string name="arqex_theme_role_1_desc" formatted="false">Main bar, tabs, and tools</string>
-    <string name="arqex_theme_role_2_title" formatted="false">Menus and Windows (Pop-ups)</string>
-    <string name="arqex_theme_role_2_desc" formatted="false">Menu and dialog surfaces</string>
-    <string name="arqex_theme_role_3_title" formatted="false">Accent and Animated Borders</string>
-    <string name="arqex_theme_role_3_desc" formatted="false">Selections, active buttons, and line highlights</string>
-    <string name="arqex_theme_role_4_title" formatted="false">Folder Icons</string>
-    <string name="arqex_theme_role_4_desc" formatted="false">Color of folder and directory icons</string>
-    <string name="arqex_theme_role_5_title" formatted="false">Primary Text</string>
-    <string name="arqex_theme_role_5_desc" formatted="false">File names, titles, and main text</string>
-    <string name="arqex_theme_save_apply_button" formatted="false">Save and Apply My Theme</string>
-    <string name="arqex_theme_palette_quick_title" formatted="false">Quick palette</string>
-    <string name="arqex_theme_palette_quick_help" formatted="false">Tap a swatch to preview it. Confirm the color to apply it.</string>
-    <string name="arqex_theme_palette_color_prefix" formatted="false">Color </string>
-    <string name="arqex_theme_color_picker_title" formatted="false">Custom Color • RGB / HEX</string>
-    <string name="arqex_theme_color_picker_test" formatted="false">Preview</string>
-    <string name="arqex_theme_color_picker_confirm" formatted="false">Confirm Color</string>
-    <string name="arqex_theme_palette_export_prefix" formatted="false">Palette exported to: </string>
-    <string name="arqex_theme_palette_export_failed" formatted="false">Could not export the palette.</string>
-    <string name="arqex_theme_import_prompt" formatted="false">Choose a found backup or enter the full path to a JSON file.</string>
-    <string name="arqex_theme_import_path_hint" formatted="false">/storage/emulated/0/Download/ArqexExplorer/backup.arqex.json</string>
-    <string name="arqex_theme_import_path_button" formatted="false">Import by Path</string>
-    <string name="arqex_theme_backup_export_prefix" formatted="false">Backup exported to: </string>
-    <string name="arqex_theme_backup_export_failed" formatted="false">Could not export the backup. Check file access and the Downloads folder.</string>
-    <string name="arqex_theme_import_success" formatted="false">Arqex backup imported successfully.</string>
-    <string name="arqex_theme_share_title" formatted="false">Share Arqex Backup</string>
-    <string name="arqex_help_heading" formatted="false">HELP &amp; COMPLETE GUIDE</string>
-    <string name="arqex_help_heading_subtitle" formatted="false">\nDetailed explanations of themes, visual effects, size controls, tasks, and all features</string>
-    <string name="arqex_help_menu" formatted="false">Help</string>
-    <string name="arqex_help_developer" formatted="false">DEVELOPER</string>
-    <string name="arqex_help_quick_effects" formatted="false">⚙  Configure Visual Effects now  ▸</string>
-    <string name="arqex_help_dialog_title" formatted="false">Help Center</string>
-    <string name="arqex_help_expand_all" formatted="false">Expand all</string>
-    <string name="arqex_help_collapse_all" formatted="false">Collapse all</string>
-    <string name="arqex_help_search_hint" formatted="false">🔍 Search: themes, zoom, gallery, tasks, hidden files, server…</string>
-    <string name="arqex_help_category_all" formatted="false">All (13)</string>
-    <string name="arqex_help_category_themes" formatted="false">Themes &amp; Colors</string>
-    <string name="arqex_help_category_effects" formatted="false">Effects &amp; Size</string>
-    <string name="arqex_help_category_shortcuts" formatted="false">Shortcuts &amp; Tabs</string>
-    <string name="arqex_help_category_tasks" formatted="false">Automatic Tasks</string>
-    <string name="arqex_help_category_files" formatted="false">Files &amp; Apps</string>
-    <string name="arqex_help_category_network" formatted="false">Network, Media &amp; Security</string>
-    <string name="arqex_help_empty_results" formatted="false">No topics match this search.\nTry another term or tap “All (13)”.</string>
-    <string name="arqex_help_count_showing" formatted="false">Showing </string>
-    <string name="arqex_help_count_of" formatted="false"> of </string>
-    <string name="arqex_help_count_topics" formatted="false"> detailed topics</string>
-    <string name="arqex_help_window_title" formatted="false">Arqex Explorer • Interactive Complete Guide</string>
-    <string name="arqex_help_open_failed" formatted="false">Could not open Help. Please try again.</string>
-    <string name="arqex_smart_auto_open_folder" formatted="false">Open folder automatically after creation</string>
-    <string name="arqex_smart_hide_hidden" formatted="false">Hide hidden files</string>
-    <string name="arqex_smart_show_hidden" formatted="false">Show hidden files</string>
-    <string name="arqex_smart_hidden_visible" formatted="false">Hidden files: visible</string>
-    <string name="arqex_smart_hidden_hidden" formatted="false">Hidden files: hidden</string>
-    <string name="arqex_smart_delete_empty" formatted="false">Delete empty folders</string>
-    <string name="arqex_smart_delete_empty_count_prefix" formatted="false">Delete empty folders (</string>
-    <string name="arqex_smart_empty_prompt_suffix" formatted="false"> empty folder(s) in this folder.\nUncheck folders you do not want to delete:</string>
-    <string name="arqex_smart_deleted_count_suffix" formatted="false"> empty folder(s) deleted</string>
-    <string name="arqex_smart_no_task_files" formatted="false">No matching files were found in the source for this task</string>
-    <string name="arqex_help_topic_1_title" formatted="false">App Appearance and Visual Effects</string>
-    <string name="arqex_help_topic_1_subtitle" formatted="false">How Arqex looks on screen and which effects you can adjust</string>
-    <string name="arqex_help_topic_1_body" formatted="false">§ Arqex Appearance
-Arqex Explorer uses its own fixed, optimized look: dark background, turquoise accents and comfortable reading on any screen. The theme gallery and color editor were removed from the app — there is nothing left to pick, import or edit under THEMES.
+    <string name="arqex_effect_borders_desc">Moving animation on item borders and dividers, adapted to the active theme.</string>
+    <string name="arqex_effect_borders_title">Animated item borders and dividers</string>
+    <string name="arqex_effect_status_disabled">Disabled</string>
+    <string name="arqex_effect_status_enabled">Enabled</string>
+    <string name="arqex_effect_zoom_desc">A smooth zoom-in effect when opening a folder or item.</string>
+    <string name="arqex_effect_zoom_title">Zoom when opening folders/items (200 ms)</string>
+    <string name="arqex_effects_quick_row">Visual Effects (200 ms zoom &amp; animated borders) ▸</string>
+    <string name="arqex_effects_summary_borders">• Animated borders:</string>
+    <string name="arqex_effects_summary_zoom">"
+Zoom on open (200 ms):"</string>
+    <string name="arqex_effects_title">VISUAL EFFECTS</string>
+    <string name="arqex_help_category_all">All (13)</string>
+    <string name="arqex_help_category_effects">Effects &amp; Size</string>
+    <string name="arqex_help_category_files">Files &amp; Apps</string>
+    <string name="arqex_help_category_network">Network, Media &amp; Security</string>
+    <string name="arqex_help_category_shortcuts">Shortcuts &amp; Tabs</string>
+    <string name="arqex_help_category_tasks">Automatic Tasks</string>
+    <string name="arqex_help_category_themes">Themes &amp; Colors</string>
+    <string name="arqex_help_collapse_all">Collapse all</string>
+    <string name="arqex_help_count_of">of</string>
+    <string name="arqex_help_count_showing">Showing</string>
+    <string name="arqex_help_count_topics">detailed topics</string>
+    <string name="arqex_help_developer">DEVELOPER</string>
+    <string name="arqex_help_dialog_title">Help Center</string>
+    <string name="arqex_help_empty_results">"No topics match this search.
+Try another term or tap “All (13)”."</string>
+    <string name="arqex_help_expand_all">Expand all</string>
+    <string name="arqex_help_heading">HELP &amp; COMPLETE GUIDE</string>
+    <string name="arqex_help_heading_subtitle">"
+Detailed explanations of themes, visual effects, size controls, tasks, and all features"</string>
+    <string name="arqex_help_menu">Help</string>
+    <string name="arqex_help_open_failed">Could not open Help. Please try again.</string>
+    <string name="arqex_help_quick_effects">⚙ Configure Visual Effects now ▸</string>
+    <string name="arqex_help_search_hint">🔍 Search: themes, zoom, gallery, tasks, hidden files, server…</string>
+    <string name="arqex_help_topic_10_body">"§ Transfer Files with a PC without a USB Cable
+1. Start a server: Open Menu (⋮) → Servers.
+2. Choose a protocol:
+▸ HTTP / WebDAV server: Shows a local link (e.g., http://192.168.1.10:8080). Enter it in a browser on your computer or another phone on the same Wi-Fi network to upload and download files!
+▸ FTP / FTPS / SFTP and SMB server: Lets you open phone folders directly in Windows Explorer, macOS Finder, or FTP clients.
+3. Customize: Set the port, password, and starting folder in Settings → More settings → Servers.
 
-§ What You Can Still Adjust
-▸ File View: seven modes (Grid, Gallery, Detailed, Compact, Columns, Wrapped and Minimal) from the universal size bar.
-▸ Visual Effects: in Settings → Visual Effects you can turn the animated borders and dividers on or off and pick the open-zoom (from +2% to +40%).
-▸ Thumbnails and Previews: thumbnail cache, automatic folder preview and icon size.
-▸ Top Bar and Tabs: show breadcrumb, show tab bar, show tab close button and split action bar.
+§ Connect to Local Networks (LAN) and Cloud Services
+▸ Add a connection: Open Favorites (☰) → top menu → Add storage.
+▸ Supported protocols: SMBv1/v2/v3 (Windows/NAS shared folders), SFTP/SSH, FTP/FTPS, WebDAV, and cloud services such as Google Drive, OneDrive, Dropbox, MEGA, Box, pCloud, and Nextcloud."</string>
+    <string name="arqex_help_topic_10_subtitle">Transfer files with a PC without a cable and connect cloud/NAS storage</string>
+    <string name="arqex_help_topic_10_title">Wi-Fi Servers (HTTP, FTP, SMB) and Cloud Storage</string>
+    <string name="arqex_help_topic_11_body">"§ Protect Folders and Files with a Password
+▸ EncFS vault: Tap (+) → EncFS Folder to create a password-encrypted directory. Enter the password to unlock it; when finished, use Menu (⋮) → Unmount/Lock.
+▸ AESCipher files (.enc): Encrypt individual files by selecting them and choosing Menu (⋮) → Encrypt.
+
+§ Quick Search, Recursive Search, and Duplicates
+▸ Instant filter: Tap Search to filter items in the open folder in real time.
+▸ Deep subfolder search: In the search bar, tap Recursive Search to search by regular expression, type, size, date, or even text inside file contents!
+▸ Find duplicates: Identify repeated files to safely free up space."</string>
+    <string name="arqex_help_topic_11_subtitle">Password-protected folders, deep content search, and cleanup</string>
+    <string name="arqex_help_topic_11_title">Encryption (EncFS / AES), Recursive Search, and Duplicates</string>
+    <string name="arqex_help_topic_12_body">"§ Mastering Tabs and Dual Pane
+▸ Swipe between tabs: Swipe left or right to switch between several folders open at once.
+▸ Tab menu: Tap the current tab title to open New tab, Clone tab, Close other tabs, Set as default tab, or Save current tabs.
+▸ Dual pane: Ideal in landscape or on larger screens for dragging files directly from one tab to another to copy or move them.
+
+§ Favorites Drawer (☰) and Full Customization
+▸ Smart shortcuts: Quickly access Internal Storage, SD, Root (/), Recent, Images, Videos, Audio, Documents, and Apps.
+▸ Customize buttons: In Settings → BUTTONS, enable, disable, or reorder icons in each app bar.
+▸ App-wide backup: Use Settings → BACKUP AND RESTORE → Export Full Backup to save your preferences in .arqex.json; then use Import to restore."</string>
+    <string name="arqex_help_topic_12_subtitle">Tab navigation gestures, favorites, dual panel and settings backup</string>
+    <string name="arqex_help_topic_12_title">Multiple Tabs, Dual Pane, Favorites, and Settings Backup</string>
+    <string name="arqex_help_topic_13_body" formatted="false">"§ Zoom Strength on Open
+In Settings or View → Options → Visual Effects, enable Zoom on open and drag Zoom strength to choose from +2% to +40%. Tap Test to preview the effect; Default resets it to +13%.
 
 § Settings and Backup
-Your preferences live in Settings → BACKUP AND RESTORE: Export Full Backup writes an .arqex.json file and Import restores everything as it was.</string>
-    <string name="arqex_help_topic_2_title" formatted="false">Animated Visual Effects and Zoom on Open (200 ms)</string>
-    <string name="arqex_help_topic_2_subtitle" formatted="false">Animated borders and dividers plus a smooth zoom when tapping</string>
-    <string name="arqex_help_topic_2_body" formatted="false">§ Moving Item Borders and Dividers (CSS Style)\n▸ Item and Folder Borders: In all view modes (Grid, Gallery, Detailed, Compact, Columns, Wrapped, and Minimal), each folder/thumbnail card shows a synchronized glowing animated outline.\n▸ Interface and List Dividers: The top bar, tab bar, bottom bar, and horizontal/vertical separators between files share the same soft light flow.\n▸ App Colors: the gradient uses the fixed Arqex palette and adapts brightness and contrast to the background it sits on.\n\n§ Zoom Effect (200 ms) When Opening Folders/Items\n▸ How It Works: Tap a folder or file to open it; the item gently zooms for 200 ms and lifts visually above neighboring items just before opening.\n▸ Smart Protection: Prevents accidental double taps during the animation and restores the original scale before opening the next folder.\n\n§ Adjust Zoom Strength\n1. Open VISUAL EFFECTS in Settings or through View → Options.\n2. With zoom enabled, drag the Zoom strength slider to choose an increase from +2% to +40%. The label shows the selected value.\n3. Tap Test or the preview to see the animation. Default restores the initial +13%; the setting is saved.\n\n§ Turn Effects On or Off\n1. In Settings: Menu (⋮) → Settings → VISUAL EFFECTS.\n2. In the View menu: Tap View → Options... → Visual Effects.\n3. Quick shortcut: Use the Configure Visual Effects button below to toggle either effect instantly!</string>
-    <string name="arqex_help_topic_3_title" formatted="false">Universal Size Slider and the 7 View Modes</string>
-    <string name="arqex_help_topic_3_subtitle" formatted="false">Resize Gallery, Grid, Detailed, and every other mode live</string>
-    <string name="arqex_help_topic_3_body" formatted="false">§ Size Slider in “View”\n1. Open the View panel: Tap View in the bottom (or top) bar.\n2. Adjust live: Use the slider at the top of the window or tap [ − ] to decrease and [ + ] to increase. The window has a subtle transparent background so you can watch items resize in real time!\n3. Default button: Tap Default to instantly restore that mode’s original 100% size.\n4. Automatic persistence in subfolders: The selected size is saved separately for each mode and remains active in subfolders and after restarting the app!\n\n§ All 7 View Modes Explained\n▸ Compact: Tight columns show many files at once.\n▸ Columns: Aligns names and details in horizontal columns.\n▸ Detailed: A full list with icon, complete name, size, date, and attributes (freely adjustable from 52% to 180% on the slider!).\n▸ Wrapped: Long names can use multiple lines instead of ellipses.\n▸ Minimal: An ultra-clean view focused on icon and name.\n▸ Grid: Square cards with large icons/thumbnails and labels below (adjustable from one large column to ten compact columns!).\n▸ Gallery: A photo mosaic ideal for photos and videos — slide left to reduce size significantly (5, 6, 8, or 10 columns) or right to enlarge.\n\n§ Sorting and Extra Options\n▸ Sort: By Name (A–Z / Z–A), Date, Size, or Type.\n▸ Options...: Control thumbnails, folders before files, grouped sections, fast scrolling, and automatic calculation of folder sizes.</string>
-    <string name="arqex_help_topic_4_title" formatted="false">Top-Bar Shortcuts, Selection, and Empty Folders</string>
-    <string name="arqex_help_topic_4_subtitle" formatted="false">Copy paths, show hidden files, calculate total size, and clean up selectively</string>
-    <string name="arqex_help_topic_4_body" formatted="false">§ Quick Buttons on the Main Screen’s Top Bar\n▸ Copy Path icon: Tap once to copy the full path of the open folder to the clipboard (long-press shows the feature name).\n▸ Eye icon (Hidden Files): Instantly show or hide folders and files whose names begin with a dot (.nomedia, .git, .config). When enabled, the eye glows in the app accent color!\n▸ ? icon (Help): Open this complete guide from any folder with one tap.\n▸ “Tasks” button: Jump directly to the Automatic Tasks panel.\n\n§ Smart “Delete Empty Folders” Button\n▸ Automatic detection: Appears discreetly over the page only when the current folder contains empty subfolders (without pushing the file list down).\n▸ Selective checkboxes: Tap it to see all detected empty folders checked. Uncheck any folder you want to keep before confirming deletion.\n\n§ Improved Multi-Selection (Long Press)\n▸ Stable layout: Long-pressing to select files never shifts the list beneath your finger.\n▸ Accurate total size (folders + files): Calculates the real combined size of selected files and subfolders in the background.\n▸ Copy selected paths: In the selection bar, tap Copy Path to copy the complete list of paths for selected items.</string>
-    <string name="arqex_help_topic_5_title" formatted="false">Automatic Tasks (File Detection and Scheduling)</string>
-    <string name="arqex_help_topic_5_subtitle" formatted="false">Real-time monitoring, extension filters, silent mode, and per-task Play button</string>
-    <string name="arqex_help_topic_5_body" formatted="false">§ Create a Background Automation\n1. Open the panel: Tap “Tasks” in the top bar (or Settings → More settings → Automatic Tasks).\n2. Add a task: Tap Add (+), enter a name, and choose a trigger:\n▸ WHEN FILE IS DETECTED (Real Time): Continuously watches the selected folder in the background and moves or copies new files as soon as they are downloaded or created!\n▸ Scheduled time / interval: Runs at fixed times or recurring intervals.\n\n§ Advanced Task Controls\n▸ Move or Copy: Choose whether detected files are moved or copied to the destination folder.\n▸ Files in this folder only: When checked, ignores subfolders and processes only files directly inside the watched folder.\n▸ Extension filter: Enter comma-separated extensions (e.g., jpg, png, pdf, apk) to process only the chosen file types.\n▸ Automatic prefix: Add a custom prefix to the names of processed files.\n▸ Show notification when finished: Turn this off to run silently without the “Operation completed” notification.\n▸ Per-task Play button (▶): Tap ▶ on any task in the list to run it manually right away!</string>
-    <string name="arqex_help_topic_6_title" formatted="false">File Operations, Folder Creation, and Permissions (chmod)</string>
-    <string name="arqex_help_topic_6_subtitle" formatted="false">Copy/move queue, direct deletion, open-on-create, and interactive rwx picker</string>
-    <string name="arqex_help_topic_6_body" formatted="false">§ Copy, Move, and the Arqex Explorer Task Queue\n1. Select items: Long-press one or more files or folders.\n2. Add to the queue: Tap Copy or Cut/Move.\n3. Run at the destination: Browse to the destination folder, tap the Task Queue icon (clipboard in the top bar), and confirm to start. The current folder refreshes automatically when the operation finishes.\n\n§ Fast and Safe Deletion\n▸ Permanent by default: Permanent deletion is preselected to speed up your workflow; Trash (Undo) and Shred remain available.\n\n§ Create Folders/Files (+) and Interactive Permissions\n▸ Open folder after creation: In New Folder (+ → Folder), keep the option checked to enter the newly created folder automatically.\n▸ Interactive permissions picker (Root / chmod): When creating a folder or file on a partition that supports Unix permissions, tap the Permissions field (e.g., 755 or 644) to open a grid of Read (R), Write (W), Execute (X), SetUID, SetGID, and Sticky checkboxes!\n\n§ Advanced Batch Rename\n▸ Select multiple files and tap Rename to use sequential numbering, date/time, Regex, and uppercase/lowercase conversion.</string>
-    <string name="arqex_help_topic_7_title" formatted="false">App Manager and Complete Backup (.apk / .apks)</string>
-    <string name="arqex_help_topic_7_subtitle" formatted="false">Full backup of regular apps and split app bundles</string>
-    <string name="arqex_help_topic_7_body" formatted="false">§ Where to Find Installed Apps\n1. Open Favorites: Tap the side-menu icon (☰) in the upper-left corner or swipe in from the left edge.\n2. Choose Apps: View all user and system apps with their version, size, and date.\n\n§ Create a Complete Backup\n▸ Regular apps (.apk): Select a standard app and copy it to any storage folder to save its installer intact.\n▸ Split APKs (.apks): Modern Play Store apps use multiple packages (base.apk plus language, screen-density, and arm64 architecture splits). Arqex Explorer automatically bundles base.apk and every split into one complete .apks file!\n▸ Restore / Install: Tap any saved .apk or .apks file to start installation directly in Arqex Explorer.</string>
-    <string name="arqex_help_topic_8_title" formatted="false">Compression, Extraction (ZIP, 7Z, RAR, TAR), and APK Signing</string>
-    <string name="arqex_help_topic_8_subtitle" formatted="false">Browse archives without extracting, protect them with a password, and sign APKs</string>
-    <string name="arqex_help_topic_8_body" formatted="false">§ Open Compressed Files Like Folders\n▸ Instant browsing: Tap any .zip, .7z, .rar, .tar, .gz, .xz, .iso, or .apk to open it like a normal folder, view images/text inside, or copy just one file!\n\n§ Create Compressed and Protected Archives\n1. Select the files or folders you want.\n2. Open the action menu (⋮) and choose Archive.\n3. Choose a format (ZIP, 7Z, TAR, GZIP, BZIP2, XZ), compression level (from Store to Ultra), and optionally set a strong AES-256 encrypted password.\n\n§ Extract and Sign Packages\n▸ Extract: Select an archive and choose Extract to unpack it into the current folder, a new subfolder, or the adjacent tab.\n▸ Sign APK/ZIP: Select an .apk file and choose Menu (⋮) → Sign, with Android v1, v2, and v3 scheme support.</string>
-    <string name="arqex_help_topic_9_title" formatted="false">Built-in Editors and Viewers (Code, Media, SQLite, Hex)</string>
-    <string name="arqex_help_topic_9_subtitle" formatted="false">Syntax-aware code editor, audio/video player, PDF, Hex, and hashes</string>
-    <string name="arqex_help_topic_9_body" formatted="false">§ Advanced Code and Text Editor\n▸ Features: Smoothly handles very large files, line numbering, syntax highlighting (XML, JSON, HTML, CSS, JavaScript, Java, Kotlin, Python, Shell, Smali), Regex search/replace, and encoding selection (UTF-8, ANSI, UTF-16).\n\n§ Gallery, Media Player, and Readers\n▸ Image viewer: Precise zoom, slideshows, animated GIF, WebP, SVG, and EXIF data.\n▸ Audio and video player: Play music and videos without leaving the file manager, including quick audio previews.\n▸ Document reader: Built-in viewers for PDF, ePub, HTML, Markdown, and fonts (.ttf / .otf).\n\n§ Technical Tools (SQLite, Hex, and Hashes)\n▸ SQLite editor: Open .db / .sqlite databases to browse tables, filter records, and run SQL commands.\n▸ Hex viewer: Inspect and edit raw bytes in binary files.\n▸ Hash checker: In Properties (i), calculate and compare MD5, SHA-1, SHA-256, SHA-512, and CRC32.</string>
-    <string name="arqex_help_topic_10_title" formatted="false">Wi-Fi Servers (HTTP, FTP, SMB) and Cloud Storage</string>
-    <string name="arqex_help_topic_10_subtitle" formatted="false">Transfer files with a PC without a cable and connect cloud/NAS storage</string>
-    <string name="arqex_help_topic_10_body" formatted="false">§ Transfer Files with a PC without a USB Cable\n1. Start a server: Open Menu (⋮) → Servers.\n2. Choose a protocol:\n▸ HTTP / WebDAV server: Shows a local link (e.g., http://192.168.1.10:8080). Enter it in a browser on your computer or another phone on the same Wi-Fi network to upload and download files!\n▸ FTP / FTPS / SFTP and SMB server: Lets you open phone folders directly in Windows Explorer, macOS Finder, or FTP clients.\n3. Customize: Set the port, password, and starting folder in Settings → More settings → Servers.\n\n§ Connect to Local Networks (LAN) and Cloud Services\n▸ Add a connection: Open Favorites (☰) → top menu → Add storage.\n▸ Supported protocols: SMBv1/v2/v3 (Windows/NAS shared folders), SFTP/SSH, FTP/FTPS, WebDAV, and cloud services such as Google Drive, OneDrive, Dropbox, MEGA, Box, pCloud, and Nextcloud.</string>
-    <string name="arqex_help_topic_11_title" formatted="false">Encryption (EncFS / AES), Recursive Search, and Duplicates</string>
-    <string name="arqex_help_topic_11_subtitle" formatted="false">Password-protected folders, deep content search, and cleanup</string>
-    <string name="arqex_help_topic_11_body" formatted="false">§ Protect Folders and Files with a Password\n▸ EncFS vault: Tap (+) → EncFS Folder to create a password-encrypted directory. Enter the password to unlock it; when finished, use Menu (⋮) → Unmount/Lock.\n▸ AESCipher files (.enc): Encrypt individual files by selecting them and choosing Menu (⋮) → Encrypt.\n\n§ Quick Search, Recursive Search, and Duplicates\n▸ Instant filter: Tap Search to filter items in the open folder in real time.\n▸ Deep subfolder search: In the search bar, tap Recursive Search to search by regular expression, type, size, date, or even text inside file contents!\n▸ Find duplicates: Identify repeated files to safely free up space.</string>
-    <string name="arqex_help_topic_12_title" formatted="false">Multiple Tabs, Dual Pane, Favorites, and Settings Backup</string>
-    <string name="arqex_help_topic_12_subtitle" formatted="false">Tab navigation gestures, favorites, dual panel and settings backup</string>
-    <string name="arqex_help_topic_12_body" formatted="false">§ Mastering Tabs and Dual Pane\n▸ Swipe between tabs: Swipe left or right to switch between several folders open at once.\n▸ Tab menu: Tap the current tab title to open New tab, Clone tab, Close other tabs, Set as default tab, or Save current tabs.\n▸ Dual pane: Ideal in landscape or on larger screens for dragging files directly from one tab to another to copy or move them.\n\n§ Favorites Drawer (☰) and Full Customization\n▸ Smart shortcuts: Quickly access Internal Storage, SD, Root (/), Recent, Images, Videos, Audio, Documents, and Apps.\n▸ Customize buttons: In Settings → BUTTONS, enable, disable, or reorder icons in each app bar.\n▸ App-wide backup: Use Settings → BACKUP AND RESTORE → Export Full Backup to save your preferences in .arqex.json; then use Import to restore.</string>
-    <string name="arqex_help_topic_13_title" formatted="false">Customize the Zoom and Back Up Your Settings</string>
-    <string name="arqex_help_topic_13_subtitle" formatted="false">Set zoom strength and take your look and settings to another device</string>
-    <string name="arqex_help_topic_13_body" formatted="false">§ Zoom Strength on Open\nIn Settings or View → Options → Visual Effects, enable Zoom on open and drag Zoom strength to choose from +2% to +40%. Tap Test to preview the effect; Default resets it to +13%.\n\n§ Settings and Backup\nIn Settings, tap BACKUP AND RESTORE to export or import your settings. The backup stores the app preferences; the theme editor has been removed.\n\n§ Export, Share, and Restore\nExport Full Backup saves your preferences in an .arqex.json file. To restore, tap Import and select a listed file or enter its path. The file is saved in Download/ArqexExplorer when Android allows access; otherwise, use the app’s external files folder.</string>
-    <string name="arqex_theme_preview_folder" formatted="false">Projects and Documents</string>
-    <string name="arqex_theme_preview_live" formatted="false">LIVE</string>
-    <string name="arqex_theme_rgb_preview_prefix" formatted="false">Color preview: </string>
-    <string name="arqex_smart_copy_path" formatted="false">Copy full path</string>
-    <string name="arqex_smart_copy_paths_count_suffix" formatted="false"> paths copied</string>
-    <string name="arqex_smart_copy_path_single_prefix" formatted="false">Copied path: </string>
-    <string name="arqex_smart_empty_found_prefix" formatted="false">Found </string>
-    <string name="arqex_smart_calculating_selection" formatted="false">Calculating…</string>
-    <string name="arqex_smart_play_task" formatted="false">Run task</string>
-    <string name="arqex_smart_running_prefix" formatted="false">▶ Running: </string>
-    <string name="arqex_smart_perm_fixed_770" formatted="false">Android fixes 770 on shared storage. Open a Root path (/data, /system, /) to customize permissions.</string>
-    <string name="arqex_smart_perm_fixed_660" formatted="false">Android fixes 660 on shared storage. Open a Root path (/data, /system, /) to customize permissions.</string>
-    <string name="arqex_view_mode_items" formatted="false">Items</string>
-    <string name="arqex_view_mode_minimal" formatted="false">Minimal</string>
-    <string name="arqex_view_mode_columns" formatted="false">Columns</string>
-    <string name="arqex_view_mode_gallery" formatted="false">Gallery</string>
-    <string name="arqex_view_mode_grid" formatted="false">Grid</string>
-    <string name="arqex_view_mode_wrapped" formatted="false">Wrapped</string>
-    <string name="arqex_view_mode_detailed" formatted="false">Detailed</string>
-    <string name="arqex_view_mode_compact" formatted="false">Compact</string>
-    <string name="arqex_theme_spectrum_title" formatted="false">Full color spectrum</string>
-    <string name="arqex_theme_spectrum_hint" formatted="false">Drag inside the color square to choose saturation and brightness; drag the hue strip to change hue.</string>
-    <string name="arqex_update_row_title" formatted="false">CHECK FOR UPDATES</string>
-    <string name="arqex_update_row_summary" formatted="false">Tap to see if there is a new version</string>
+In Settings, tap BACKUP AND RESTORE to export or import your settings. The backup stores the app preferences; the theme editor has been removed.
+
+§ Export, Share, and Restore
+Export Full Backup saves your preferences in an .arqex.json file. To restore, tap Import and select a listed file or enter its path. The file is saved in Download/ArqexExplorer when Android allows access; otherwise, use the app’s external files folder."</string>
+    <string name="arqex_help_topic_13_subtitle">Set zoom strength and take your look and settings to another device</string>
+    <string name="arqex_help_topic_13_title">Customize the Zoom and Back Up Your Settings</string>
+    <string name="arqex_help_topic_1_body" formatted="false">§ Arqex Appearance Arqex Explorer uses its own fixed, optimized look: dark background, turquoise accents and comfortable reading on any screen. The theme gallery and color editor were removed from the app — there is nothing left to pick, import or edit under THEMES. § What You Can Still Adjust ▸ File View: seven modes (Grid, Gallery, Detailed, Compact, Columns, Wrapped and Minimal) from the universal size bar. ▸ Visual Effects: in Settings → Visual Effects you can turn the animated borders and dividers on or off and pick the open-zoom (from +2% to +40%). ▸ Thumbnails and Previews: thumbnail cache, automatic folder preview and icon size. ▸ Top Bar and Tabs: show breadcrumb, show tab bar, show tab close button and split action bar. § Settings and Backup Your preferences live in Settings → BACKUP AND RESTORE: Export Full Backup writes an .arqex.json file and Import restores everything as it was.</string>
+    <string name="arqex_help_topic_1_subtitle">How Arqex looks on screen and which effects you can adjust</string>
+    <string name="arqex_help_topic_1_title">App Appearance and Visual Effects</string>
+    <string name="arqex_help_topic_2_body" formatted="false">"§ Moving Item Borders and Dividers (CSS Style)
+▸ Item and Folder Borders: In all view modes (Grid, Gallery, Detailed, Compact, Columns, Wrapped, and Minimal), each folder/thumbnail card shows a synchronized glowing animated outline.
+▸ Interface and List Dividers: The top bar, tab bar, bottom bar, and horizontal/vertical separators between files share the same soft light flow.
+▸ App Colors: the gradient uses the fixed Arqex palette and adapts brightness and contrast to the background it sits on.
+
+§ Zoom Effect (200 ms) When Opening Folders/Items
+▸ How It Works: Tap a folder or file to open it; the item gently zooms for 200 ms and lifts visually above neighboring items just before opening.
+▸ Smart Protection: Prevents accidental double taps during the animation and restores the original scale before opening the next folder.
+
+§ Adjust Zoom Strength
+1. Open VISUAL EFFECTS in Settings or through View → Options.
+2. With zoom enabled, drag the Zoom strength slider to choose an increase from +2% to +40%. The label shows the selected value.
+3. Tap Test or the preview to see the animation. Default restores the initial +13%; the setting is saved.
+
+§ Turn Effects On or Off
+1. In Settings: Menu (⋮) → Settings → VISUAL EFFECTS.
+2. In the View menu: Tap View → Options... → Visual Effects.
+3. Quick shortcut: Use the Configure Visual Effects button below to toggle either effect instantly!"</string>
+    <string name="arqex_help_topic_2_subtitle">Animated borders and dividers plus a smooth zoom when tapping</string>
+    <string name="arqex_help_topic_2_title">Animated Visual Effects and Zoom on Open (200 ms)</string>
+    <string name="arqex_help_topic_3_body" formatted="false">"§ Size Slider in “View”
+1. Open the View panel: Tap View in the bottom (or top) bar.
+2. Adjust live: Use the slider at the top of the window or tap [ − ] to decrease and [ + ] to increase. The window has a subtle transparent background so you can watch items resize in real time!
+3. Default button: Tap Default to instantly restore that mode’s original 100% size.
+4. Automatic persistence in subfolders: The selected size is saved separately for each mode and remains active in subfolders and after restarting the app!
+
+§ All 7 View Modes Explained
+▸ Compact: Tight columns show many files at once.
+▸ Columns: Aligns names and details in horizontal columns.
+▸ Detailed: A full list with icon, complete name, size, date, and attributes (freely adjustable from 52% to 180% on the slider!).
+▸ Wrapped: Long names can use multiple lines instead of ellipses.
+▸ Minimal: An ultra-clean view focused on icon and name.
+▸ Grid: Square cards with large icons/thumbnails and labels below (adjustable from one large column to ten compact columns!).
+▸ Gallery: A photo mosaic ideal for photos and videos — slide left to reduce size significantly (5, 6, 8, or 10 columns) or right to enlarge.
+
+§ Sorting and Extra Options
+▸ Sort: By Name (A–Z / Z–A), Date, Size, or Type.
+▸ Options...: Control thumbnails, folders before files, grouped sections, fast scrolling, and automatic calculation of folder sizes."</string>
+    <string name="arqex_help_topic_3_subtitle">Resize Gallery, Grid, Detailed, and every other mode live</string>
+    <string name="arqex_help_topic_3_title">Universal Size Slider and the 7 View Modes</string>
+    <string name="arqex_help_topic_4_body">"§ Quick Buttons on the Main Screen’s Top Bar
+▸ Copy Path icon: Tap once to copy the full path of the open folder to the clipboard (long-press shows the feature name).
+▸ Eye icon (Hidden Files): Instantly show or hide folders and files whose names begin with a dot (.nomedia, .git, .config). When enabled, the eye glows in the app accent color!
+▸ ? icon (Help): Open this complete guide from any folder with one tap.
+▸ “Tasks” button: Jump directly to the Automatic Tasks panel.
+
+§ Smart “Delete Empty Folders” Button
+▸ Automatic detection: Appears discreetly over the page only when the current folder contains empty subfolders (without pushing the file list down).
+▸ Selective checkboxes: Tap it to see all detected empty folders checked. Uncheck any folder you want to keep before confirming deletion.
+
+§ Improved Multi-Selection (Long Press)
+▸ Stable layout: Long-pressing to select files never shifts the list beneath your finger.
+▸ Accurate total size (folders + files): Calculates the real combined size of selected files and subfolders in the background.
+▸ Copy selected paths: In the selection bar, tap Copy Path to copy the complete list of paths for selected items."</string>
+    <string name="arqex_help_topic_4_subtitle">Copy paths, show hidden files, calculate total size, and clean up selectively</string>
+    <string name="arqex_help_topic_4_title">Top-Bar Shortcuts, Selection, and Empty Folders</string>
+    <string name="arqex_help_topic_5_body">"§ Create a Background Automation
+1. Open the panel: Tap “Tasks” in the top bar (or Settings → More settings → Automatic Tasks).
+2. Add a task: Tap Add (+), enter a name, and choose a trigger:
+▸ WHEN FILE IS DETECTED (Real Time): Continuously watches the selected folder in the background and moves or copies new files as soon as they are downloaded or created!
+▸ Scheduled time / interval: Runs at fixed times or recurring intervals.
+
+§ Advanced Task Controls
+▸ Move or Copy: Choose whether detected files are moved or copied to the destination folder.
+▸ Files in this folder only: When checked, ignores subfolders and processes only files directly inside the watched folder.
+▸ Extension filter: Enter comma-separated extensions (e.g., jpg, png, pdf, apk) to process only the chosen file types.
+▸ Automatic prefix: Add a custom prefix to the names of processed files.
+▸ Show notification when finished: Turn this off to run silently without the “Operation completed” notification.
+▸ Per-task Play button (▶): Tap ▶ on any task in the list to run it manually right away!"</string>
+    <string name="arqex_help_topic_5_subtitle">Real-time monitoring, extension filters, silent mode, and per-task Play button</string>
+    <string name="arqex_help_topic_5_title">Automatic Tasks (File Detection and Scheduling)</string>
+    <string name="arqex_help_topic_6_body">"§ Copy, Move, and the Arqex Explorer Task Queue
+1. Select items: Long-press one or more files or folders.
+2. Add to the queue: Tap Copy or Cut/Move.
+3. Run at the destination: Browse to the destination folder, tap the Task Queue icon (clipboard in the top bar), and confirm to start. The current folder refreshes automatically when the operation finishes.
+
+§ Fast and Safe Deletion
+▸ Permanent by default: Permanent deletion is preselected to speed up your workflow; Trash (Undo) and Shred remain available.
+
+§ Create Folders/Files (+) and Interactive Permissions
+▸ Open folder after creation: In New Folder (+ → Folder), keep the option checked to enter the newly created folder automatically.
+▸ Interactive permissions picker (Root / chmod): When creating a folder or file on a partition that supports Unix permissions, tap the Permissions field (e.g., 755 or 644) to open a grid of Read (R), Write (W), Execute (X), SetUID, SetGID, and Sticky checkboxes!
+
+§ Advanced Batch Rename
+▸ Select multiple files and tap Rename to use sequential numbering, date/time, Regex, and uppercase/lowercase conversion."</string>
+    <string name="arqex_help_topic_6_subtitle">Copy/move queue, direct deletion, open-on-create, and interactive rwx picker</string>
+    <string name="arqex_help_topic_6_title">File Operations, Folder Creation, and Permissions (chmod)</string>
+    <string name="arqex_help_topic_7_body">"§ Where to Find Installed Apps
+1. Open Favorites: Tap the side-menu icon (☰) in the upper-left corner or swipe in from the left edge.
+2. Choose Apps: View all user and system apps with their version, size, and date.
+
+§ Create a Complete Backup
+▸ Regular apps (.apk): Select a standard app and copy it to any storage folder to save its installer intact.
+▸ Split APKs (.apks): Modern Play Store apps use multiple packages (base.apk plus language, screen-density, and arm64 architecture splits). Arqex Explorer automatically bundles base.apk and every split into one complete .apks file!
+▸ Restore / Install: Tap any saved .apk or .apks file to start installation directly in Arqex Explorer."</string>
+    <string name="arqex_help_topic_7_subtitle">Full backup of regular apps and split app bundles</string>
+    <string name="arqex_help_topic_7_title">App Manager and Complete Backup (.apk / .apks)</string>
+    <string name="arqex_help_topic_8_body">"§ Open Compressed Files Like Folders
+▸ Instant browsing: Tap any .zip, .7z, .rar, .tar, .gz, .xz, .iso, or .apk to open it like a normal folder, view images/text inside, or copy just one file!
+
+§ Create Compressed and Protected Archives
+1. Select the files or folders you want.
+2. Open the action menu (⋮) and choose Archive.
+3. Choose a format (ZIP, 7Z, TAR, GZIP, BZIP2, XZ), compression level (from Store to Ultra), and optionally set a strong AES-256 encrypted password.
+
+§ Extract and Sign Packages
+▸ Extract: Select an archive and choose Extract to unpack it into the current folder, a new subfolder, or the adjacent tab.
+▸ Sign APK/ZIP: Select an .apk file and choose Menu (⋮) → Sign, with Android v1, v2, and v3 scheme support."</string>
+    <string name="arqex_help_topic_8_subtitle">Browse archives without extracting, protect them with a password, and sign APKs</string>
+    <string name="arqex_help_topic_8_title">Compression, Extraction (ZIP, 7Z, RAR, TAR), and APK Signing</string>
+    <string name="arqex_help_topic_9_body">"§ Advanced Code and Text Editor
+▸ Features: Smoothly handles very large files, line numbering, syntax highlighting (XML, JSON, HTML, CSS, JavaScript, Java, Kotlin, Python, Shell, Smali), Regex search/replace, and encoding selection (UTF-8, ANSI, UTF-16).
+
+§ Gallery, Media Player, and Readers
+▸ Image viewer: Precise zoom, slideshows, animated GIF, WebP, SVG, and EXIF data.
+▸ Audio and video player: Play music and videos without leaving the file manager, including quick audio previews.
+▸ Document reader: Built-in viewers for PDF, ePub, HTML, Markdown, and fonts (.ttf / .otf).
+
+§ Technical Tools (SQLite, Hex, and Hashes)
+▸ SQLite editor: Open .db / .sqlite databases to browse tables, filter records, and run SQL commands.
+▸ Hex viewer: Inspect and edit raw bytes in binary files.
+▸ Hash checker: In Properties (i), calculate and compare MD5, SHA-1, SHA-256, SHA-512, and CRC32."</string>
+    <string name="arqex_help_topic_9_subtitle">Syntax-aware code editor, audio/video player, PDF, Hex, and hashes</string>
+    <string name="arqex_help_topic_9_title">Built-in Editors and Viewers (Code, Media, SQLite, Hex)</string>
+    <string name="arqex_help_window_title">Arqex Explorer • Interactive Complete Guide</string>
+    <string name="arqex_smart_auto_open_folder">Open folder automatically after creation</string>
+    <string name="arqex_smart_calculating_selection">Calculating…</string>
+    <string name="arqex_smart_copy_path">Copy full path</string>
+    <string name="arqex_smart_copy_path_single_prefix">Copied path:</string>
+    <string name="arqex_smart_copy_paths_count_suffix">paths copied</string>
+    <string name="arqex_smart_delete_empty">Delete empty folders</string>
+    <string name="arqex_smart_delete_empty_count_prefix">Delete empty folders (</string>
+    <string name="arqex_smart_deleted_count_suffix">empty folder(s) deleted</string>
+    <string name="arqex_smart_empty_found_prefix">Found</string>
+    <string name="arqex_smart_empty_prompt_suffix">"empty folder(s) in this folder.
+Uncheck folders you do not want to delete:"</string>
+    <string name="arqex_smart_hidden_hidden">Hidden files: hidden</string>
+    <string name="arqex_smart_hidden_visible">Hidden files: visible</string>
+    <string name="arqex_smart_hide_hidden">Hide hidden files</string>
+    <string name="arqex_smart_no_task_files">No matching files were found in the source for this task</string>
+    <string name="arqex_smart_perm_fixed_660">Android fixes 660 on shared storage. Open a Root path (/data, /system, /) to customize permissions.</string>
+    <string name="arqex_smart_perm_fixed_770">Android fixes 770 on shared storage. Open a Root path (/data, /system, /) to customize permissions.</string>
+    <string name="arqex_smart_play_task">Run task</string>
+    <string name="arqex_smart_running_prefix">▶ Running:</string>
+    <string name="arqex_smart_show_hidden">Show hidden files</string>
+    <string name="arqex_theme_active_prefix">"
+Active theme:"</string>
+    <string name="arqex_theme_backup_export_failed">Could not export the backup. Check file access and the Downloads folder.</string>
+    <string name="arqex_theme_backup_export_prefix">Backup exported to:</string>
+    <string name="arqex_theme_color_picker_confirm">Confirm Color</string>
+    <string name="arqex_theme_color_picker_test">Preview</string>
+    <string name="arqex_theme_color_picker_title">Custom Color • RGB / HEX</string>
+    <string name="arqex_theme_create_edit_desc">Choose colors for the page, bars, menus, highlights, folders, and text; use RGB or HEX controls and preview as you go.</string>
+    <string name="arqex_theme_creator_help">Tap any color row or swatch to open the full spectrum. Drag to choose a color; quick swatches and RGB/HEX are also available.</string>
+    <string name="arqex_theme_creator_title">Create My Custom Theme</string>
+    <string name="arqex_theme_default_name">My Arqex Theme</string>
+    <string name="arqex_theme_edit_hint">— tap to edit color</string>
+    <string name="arqex_theme_export_full_desc">Save app settings, themes, and preferences as a JSON file in Download/ArqexExplorer.</string>
+    <string name="arqex_theme_export_full_title">Export Full Backup</string>
+    <string name="arqex_theme_export_themes_desc">Create a lightweight backup of your custom theme gallery to share.</string>
+    <string name="arqex_theme_export_themes_title">Export Themes Only</string>
+    <string name="arqex_theme_hub_title">Backup and Restore</string>
+    <string name="arqex_theme_import_desc">Restore a JSON file by entering its path or choosing a backup found in Download/ArqexExplorer.</string>
+    <string name="arqex_theme_import_path_button">Import by Path</string>
+    <string name="arqex_theme_import_path_hint">/storage/emulated/0/Download/ArqexExplorer/backup.arqex.json</string>
+    <string name="arqex_theme_import_prompt">Choose a found backup or enter the full path to a JSON file.</string>
+    <string name="arqex_theme_import_success">Arqex backup imported successfully.</string>
+    <string name="arqex_theme_import_title">Import Themes / Settings</string>
+    <string name="arqex_theme_name_hint">Theme name, for example: My Arqex Theme</string>
+    <string name="arqex_theme_palette_color_prefix">Color</string>
+    <string name="arqex_theme_palette_export_failed">Could not export the palette.</string>
+    <string name="arqex_theme_palette_export_prefix">Palette exported to:</string>
+    <string name="arqex_theme_palette_quick_help">Tap a swatch to preview it. Confirm the color to apply it.</string>
+    <string name="arqex_theme_palette_quick_title">Quick palette</string>
+    <string name="arqex_theme_preview_folder">Projects and Documents</string>
+    <string name="arqex_theme_preview_items">24 items • Animated borders</string>
+    <string name="arqex_theme_preview_live">LIVE</string>
+    <string name="arqex_theme_preview_title">Arqex Explorer • Preview</string>
+    <string name="arqex_theme_rgb_preview_prefix">Color preview:</string>
+    <string name="arqex_theme_role_0_desc">Main background for folders and files</string>
+    <string name="arqex_theme_role_0_title">Page background</string>
+    <string name="arqex_theme_role_1_desc">Main bar, tabs, and tools</string>
+    <string name="arqex_theme_role_1_title">Bars (Top, Tabs, and Tools)</string>
+    <string name="arqex_theme_role_2_desc">Menu and dialog surfaces</string>
+    <string name="arqex_theme_role_2_title">Menus and Windows (Pop-ups)</string>
+    <string name="arqex_theme_role_3_desc">Selections, active buttons, and line highlights</string>
+    <string name="arqex_theme_role_3_title">Accent and Animated Borders</string>
+    <string name="arqex_theme_role_4_desc">Color of folder and directory icons</string>
+    <string name="arqex_theme_role_4_title">Folder Icons</string>
+    <string name="arqex_theme_role_5_desc">File names, titles, and main text</string>
+    <string name="arqex_theme_role_5_title">Primary Text</string>
+    <string name="arqex_theme_row_summary">• Export and import settings</string>
+    <string name="arqex_theme_row_title">BACKUP AND RESTORE</string>
+    <string name="arqex_theme_save_apply_button">Save and Apply My Theme</string>
+    <string name="arqex_theme_save_failed">Could not save or apply the theme.</string>
+    <string name="arqex_theme_save_success">Theme saved and applied.</string>
+    <string name="arqex_theme_share_title">Share Arqex Backup</string>
+    <string name="arqex_theme_spectrum_hint">Drag inside the color square to choose saturation and brightness; drag the hue strip to change hue.</string>
+    <string name="arqex_theme_spectrum_title">Full color spectrum</string>
+    <string name="arqex_update_row_summary">Tap to see if there is a new version</string>
+    <string name="arqex_update_row_title">CHECK FOR UPDATES</string>
+    <string name="arqex_view_mode_columns">Columns</string>
+    <string name="arqex_view_mode_compact">Compact</string>
+    <string name="arqex_view_mode_detailed">Detailed</string>
+    <string name="arqex_view_mode_gallery">Gallery</string>
+    <string name="arqex_view_mode_grid">Grid</string>
+    <string name="arqex_view_mode_items">Items</string>
+    <string name="arqex_view_mode_minimal">Minimal</string>
+    <string name="arqex_view_mode_wrapped">Wrapped</string>
+    <string name="arqex_view_size_column_many">columns</string>
+    <string name="arqex_view_size_column_one">column</string>
+    <string name="arqex_view_size_default_button">Default</string>
+    <string name="arqex_view_size_default_suffix">(Default)</string>
+    <string name="arqex_view_size_prefix">Size (</string>
+    <string name="arqex_zoom_default">Default</string>
+    <string name="arqex_zoom_label_middle">% (1.</string>
+    <string name="arqex_zoom_label_prefix">Zoom strength: +</string>
+    <string name="arqex_zoom_label_suffix">x)</string>
+    <string name="arqex_zoom_preview">📁 Live zoom preview — drag the slider</string>
+    <string name="arqex_zoom_test">Test</string>
 </resources>

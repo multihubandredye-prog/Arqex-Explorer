@@ -82,5 +82,4 @@
     .line 30
     :catch_1d
     return-void
-    .line 31
 .end method

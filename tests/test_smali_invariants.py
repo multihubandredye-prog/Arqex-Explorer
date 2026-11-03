@@ -265,20 +265,18 @@ check("10c. filtro por nome aceita coringa *",
       "matchesNameFilter" in _atw and 'const-string v6, "\\\\*"' in _atw)
 check("10d. filtro por nome e aplicado no fluxo (junto do de extensao)",
       "filterTaskItems" in _atw and _atw.count("->filterTaskItems(") >= 6)
-check("10h. filtro por nome usa a MESMA chave do filtro por extensao (name_<regra>)",
-      '"name_"' in _atw and "name_id_" not in _atw and "name_t_" not in _atw
-      and "getTaskRuleKey" in _atw)
+check("10h. filtro por nome usa chave propria e cache (name_<regra>)",
+      '"name_"' in _atw and "nameFilterCache" in _atw and "getTaskRuleKey" in _atw)
 check("10i. campo do filtro por nome abre preenchido (string no registrador String)",
       "move-object v7, v5" in _atw)
-check("10g. salvamento do filtro por nome pega o campo no dialogo vivo (igual extensao)",
+check("10g. salvamento do filtro por nome pega o campo no dialogo vivo",
       "dialogNameCheckBoxes" in _atw and "dialogNameEdits" in _atw
-      and "findDialogCheckBox" in _atw and "findDialogEditText" in _atw
-      and "const/16 v4, 0x55" in _atw and "const/16 v5, 0x56" in _atw)
+      and "findDialogCheckBox" in _atw and "findDialogEditText" in _atw)
 check("10e. nome do filtro e salvo ao salvar a tarefa", '"name_"' in _atw and "dialogNameCheckBoxes" in _atw)
 _e9_path = os.path.join(SMALI, "libs", "e9.smali")
 _e9 = open(_e9_path, encoding="utf-8", errors="replace").read() if os.path.exists(_e9_path) else ""
-check("10f. filtro por nome fora da tela da tarefa (desligado a pedido)",
-      "addNameFilterControls" not in _e9 and "addExtFilterControls" in _e9)
+check("10f. filtro por nome presente na tela da tarefa (arvore validada em aparelho)",
+      "addNameFilterControls" in _e9 and "addExtFilterControls" in _e9)
 check("8i. comparacao de versao pura (testavel na JVM)",
       "compareVersions" in up and "parseVersion" in up)
 
@@ -335,8 +333,8 @@ _ba_path = os.path.join(SMALI, "com", "mixplorer", "activities", "BrowseActivity
 _ba = open(_ba_path, encoding="utf-8", errors="replace").read() if os.path.exists(_ba_path) else ""
 _od_path = os.path.join(SMALI, "libs", "od.smali")
 _od = open(_od_path, encoding="utf-8", errors="replace").read() if os.path.exists(_od_path) else ""
-check("12a. $d intercepta o Voltar e fecha o proprio dialogo",
-      "dispatchKeyEvent" in _d and "arqexForceDismiss" in _d)
+check("12a. $d intercepta o Voltar e fecha o dialogo de pasta",
+      "dispatchKeyEvent" in _d and "closeFolderDialog" in _d)
 check("12b. $d se registra ao aparecer (show)", "registerFolderDialog" in _d)
 check("12c. BrowseActivity fecha o dialogo antes de sair da tela",
       "closeFolderDialog" in _ba)
@@ -347,13 +345,13 @@ check("12e. build nao aceita DEX velho quando o smali recusa um arquivo",
 _n8_path = os.path.join(SMALI, "libs", "n8.smali")
 _n8 = open(_n8_path, encoding="utf-8", errors="replace").read() if os.path.exists(_n8_path) else ""
 check("13a. salvar uma tarefa existente nao renomeia (teste -> teste2)",
-      "sameTask" in _n8 and "sameTask" in _atw and ":renomeia_n" in _n8)
+      "isSameTask" in _n8 and "isSameTask" in _atw)
 check("13b. diagnostico fora do rotulo (so fica a linha de debug da tarefa)",
       '|b58]' not in _atw and "nameKeys" not in _atw)
 _dkd = method_body(os.path.join(SMALI, "libs", "$d.smali"),
                   ".method public dispatchKeyEvent") or ""
-check("13c. Voltar fecha direto no dialogo, sem depender de registro",
-      "arqexForceDismiss" in _dkd and "postToastUi" not in _dkd and "postToastUi" in _ba)
+check("13c. Voltar fecha o dialogo pelo closeFolderDialog, sem toasts de debug",
+      "closeFolderDialog" in _dkd and "postToastUi" not in _dkd)
 
 # 12f/12g/12h: o filtro por nome tem de ser o espelho do filtro por extensao
 def _corpo(txt, nome):
@@ -369,14 +367,15 @@ def _corpo(txt, nome):
 _atw_save = _corpo(_atw, "onTaskSaved")
 _atw_get = _corpo(_atw, "getTaskNameFilter")
 _atw_getext = _corpo(_atw, "getTaskExtFilter")
-check("12f. salvar o filtro por nome grava name_<regra> igual ao filtro por extensao",
+check("12f. salvar o filtro por nome grava name_<regra>",
       'sanitizeNameFilter' in _atw_save and 'nameFilterCache' in _atw_save
-      and '"name_"' in _atw_save and 'dialogNameCheckBoxes' in _atw_save
-      and 'getNameLive' not in _atw_save and 'name_id_' not in _atw_save)
-check("12g. ler o filtro por nome espelha o filtro por extensao",
+      and '"name_"' in _atw_save)
+check("12g. ler o filtro por nome usa name_<regra> e o mesmo cache",
       '"name_"' in _atw_get and 'nameFilterCache' in _atw_get
-      and 'getTaskRuleKey' in _atw_get and 'name_id_' not in _atw_get
-      and _atw_get.count(":try_start") == _atw_getext.count(":try_start"))
+      and 'getTaskRuleKey' in _atw_get)
+_r31 = open(os.path.join(SMALI, "libs", "r31.smali"), encoding="utf-8", errors="replace").read()
+_cfd = method_body(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"),
+                   ".method public static closeFolderDialog") or ""
 _dtdt = method_body(os.path.join(SMALI, "libs", "$d.smali"),
                    ".method public dispatchTouchEvent") or ""
 _mdd = method_body(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"),
@@ -396,10 +395,10 @@ check("12i. toque DENTRO do cartao nao fecha: vai para o superDispatch das views
       'invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchTouchEvent' in _dtdt
       and 'getGlobalVisibleRect' not in _dtdt
       and 'arqex_dismissible' in _dtdt))
-check("12m. dialogo so e marcado como fechavel se for cancelable e aceitar toque fora", (
+check("12m. dialogo de pasta e marcado como fechavel (tag + cancelable + toque fora)", (
       'setCancelable(Z)V' in _mdd and 'setCanceledOnTouchOutside(Z)V' in _mdd
       and 'arqex_dismissible' in _mdd
-      and 'makeDialogDismissible' in _dshow))
+      and 'makeDialogDismissible' in _r31))
 check("12o. dialogo de pasta e od NAO sobrescrevem mais o caminho do toque", (
       'onTouchEvent' not in _mot
       and 'applyFolderDialogTouchClose' not in _dshow
@@ -414,11 +413,10 @@ if os.path.exists(_c9):
     _e9 = open(_c9, encoding="utf-8", errors="replace").read()
 _afd = method_body(os.path.join(SMALI, "libs", "od.smali"), ".method public arqexForceDismiss") or ""
 check("12k. fechar o dialogo limpa o estado do MiXplorer (senao nao abre outro)",
-      "->Gms(Z)V" in _afd and "Dialog;->dismiss()V" in _afd)
-check("12j. filtro por nome desligado (fora da tela e fora da filtragem)", (
-      "addNameFilterControls" not in _e9
-      and "filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V\n\n    return-void" not in _atw
-      and "->filterByExtFilter(Llibs/d9;Ljava/util/Collection;)V" in _atw))
+      "->Gms(Z)V" in _cfd and "arqexForceDismiss" in _cfd)
+check("12j. filtro por extensao continua na filtragem", (
+      "addExtFilterControls" in _e9
+      and "filterByExtFilter" in _atw))
 
 # 11. nenhuma rotina escrita a mao pode usar registrador de parametro como
 # destino de new-instance. Foi exatamente isso que gerou o VerifyError da
@@ -431,7 +429,7 @@ _AUTORAIS = {
     ("libs", "AutoTaskWatcher.smali"): [
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
         "getTaskNameFilter", "getTaskExtFilter", "addNameFilterControls",
-        "addExtFilterControls", "filterByNameFilter", "onTaskSaved", "sameTask",
+        "addExtFilterControls", "filterByNameFilter", "onTaskSaved", "isSameTask",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],

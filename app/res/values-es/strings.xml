@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_desc">Explorador de Archivos</string>
     <string name="archive_to">Archivar a…</string>
@@ -24,33 +24,34 @@
     <string name="select">Seleccionar</string>
     <string name="send_to">Enviar a</string>
     <string name="sqlite_editor">Editor SQLite</string>
-<string name="arqex_smart_auto_open_folder" formatted="false">Abrir la carpeta automáticamente después de crearla</string>
-    <string name="arqex_smart_hide_hidden" formatted="false">Ocultar archivos ocultos</string>
-    <string name="arqex_smart_show_hidden" formatted="false">Mostrar archivos ocultos</string>
-    <string name="arqex_smart_hidden_visible" formatted="false">Archivos ocultos: visibles</string>
-    <string name="arqex_smart_hidden_hidden" formatted="false">Archivos ocultos: ocultos</string>
-    <string name="arqex_smart_delete_empty" formatted="false">Eliminar carpetas vacías</string>
-    <string name="arqex_smart_delete_empty_count_prefix" formatted="false">Eliminar carpetas vacías (</string>
-    <string name="arqex_smart_empty_found_prefix" formatted="false">Se encontraron </string>
-    <string name="arqex_smart_empty_prompt_suffix" formatted="false"> carpeta(s) vacía(s) en esta carpeta.\nDesmarca las carpetas que no quieras eliminar:</string>
-    <string name="arqex_smart_deleted_count_suffix" formatted="false"> carpeta(s) vacía(s) eliminada(s)</string>
-    <string name="arqex_smart_no_task_files" formatted="false">No se encontraron archivos en el origen para esta tarea</string>
-    <string name="arqex_smart_copy_path" formatted="false">Copiar ruta completa</string>
-    <string name="arqex_smart_copy_paths_count_suffix" formatted="false"> rutas copiadas</string>
-    <string name="arqex_smart_copy_path_single_prefix" formatted="false">Ruta copiada: </string>
-    <string name="arqex_smart_calculating_selection" formatted="false">Calculando…</string>
-    <string name="arqex_smart_play_task" formatted="false">Ejecutar tarea</string>
-    <string name="arqex_smart_running_prefix" formatted="false">▶ Ejecutando: </string>
-    <string name="arqex_smart_perm_fixed_770" formatted="false">Android fija el permiso 770 en el almacenamiento compartido. Abre una ruta Root (/data, /system, /) para personalizar los permisos.</string>
-    <string name="arqex_smart_perm_fixed_660" formatted="false">Android fija el permiso 660 en el almacenamiento compartido. Abre una ruta Root (/data, /system, /) para personalizar los permisos.</string>
-    <string name="arqex_view_mode_items" formatted="false">Elementos</string>
-    <string name="arqex_view_mode_minimal" formatted="false">Minimalista</string>
-    <string name="arqex_view_mode_columns" formatted="false">Columnas</string>
-    <string name="arqex_view_mode_gallery" formatted="false">Galería</string>
-    <string name="arqex_view_mode_grid" formatted="false">Cuadrícula</string>
-    <string name="arqex_view_mode_wrapped" formatted="false">Ajuste de línea</string>
-    <string name="arqex_view_mode_detailed" formatted="false">Detallado</string>
-    <string name="arqex_view_mode_compact" formatted="false">Compacto</string>
-    <string name="arqex_theme_spectrum_title" formatted="false">Espectro de color completo</string>
-    <string name="arqex_theme_spectrum_hint" formatted="false">Arrastra dentro del cuadrado para elegir saturación y brillo; usa la franja inferior para cambiar el tono.</string>
+    <string name="arqex_smart_auto_open_folder">Abrir la carpeta automáticamente después de crearla</string>
+    <string name="arqex_smart_calculating_selection">Calculando…</string>
+    <string name="arqex_smart_copy_path">Copiar ruta completa</string>
+    <string name="arqex_smart_copy_path_single_prefix">Ruta copiada:</string>
+    <string name="arqex_smart_copy_paths_count_suffix">rutas copiadas</string>
+    <string name="arqex_smart_delete_empty">Eliminar carpetas vacías</string>
+    <string name="arqex_smart_delete_empty_count_prefix">Eliminar carpetas vacías (</string>
+    <string name="arqex_smart_deleted_count_suffix">carpeta(s) vacía(s) eliminada(s)</string>
+    <string name="arqex_smart_empty_found_prefix">Se encontraron</string>
+    <string name="arqex_smart_empty_prompt_suffix">"carpeta(s) vacía(s) en esta carpeta.
+Desmarca las carpetas que no quieras eliminar:"</string>
+    <string name="arqex_smart_hidden_hidden">Archivos ocultos: ocultos</string>
+    <string name="arqex_smart_hidden_visible">Archivos ocultos: visibles</string>
+    <string name="arqex_smart_hide_hidden">Ocultar archivos ocultos</string>
+    <string name="arqex_smart_no_task_files">No se encontraron archivos en el origen para esta tarea</string>
+    <string name="arqex_smart_perm_fixed_660">Android fija el permiso 660 en el almacenamiento compartido. Abre una ruta Root (/data, /system, /) para personalizar los permisos.</string>
+    <string name="arqex_smart_perm_fixed_770">Android fija el permiso 770 en el almacenamiento compartido. Abre una ruta Root (/data, /system, /) para personalizar los permisos.</string>
+    <string name="arqex_smart_play_task">Ejecutar tarea</string>
+    <string name="arqex_smart_running_prefix">▶ Ejecutando:</string>
+    <string name="arqex_smart_show_hidden">Mostrar archivos ocultos</string>
+    <string name="arqex_theme_spectrum_hint">Arrastra dentro del cuadrado para elegir saturación y brillo; usa la franja inferior para cambiar el tono.</string>
+    <string name="arqex_theme_spectrum_title">Espectro de color completo</string>
+    <string name="arqex_view_mode_columns">Columnas</string>
+    <string name="arqex_view_mode_compact">Compacto</string>
+    <string name="arqex_view_mode_detailed">Detallado</string>
+    <string name="arqex_view_mode_gallery">Galería</string>
+    <string name="arqex_view_mode_grid">Cuadrícula</string>
+    <string name="arqex_view_mode_items">Elementos</string>
+    <string name="arqex_view_mode_minimal">Minimalista</string>
+    <string name="arqex_view_mode_wrapped">Ajuste de línea</string>
 </resources>

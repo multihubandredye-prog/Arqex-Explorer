@@ -2,11 +2,15 @@
 .super Ljava/lang/Object;
 .source "ArqexBackCloser.java"
 
-# Fecha o dialogo quando o Voltar do Android e pressionado com o teclado ja recolhido.
+# interfaces
 .implements Landroid/view/View$OnKeyListener;
 
+
+# instance fields
 .field private final dialog:Landroid/app/Dialog;
 
+
+# direct methods
 .method public constructor <init>(Landroid/app/Dialog;)V
     .registers 2
 
@@ -17,6 +21,8 @@
     return-void
 .end method
 
+
+# virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .registers 6
 
@@ -33,28 +39,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_c
 
-    # so trata o "pressionar", nao o "soltar"
     return v1
 
-    :cond_8
-    :try_start_8
+    :cond_c
+    :try_start_c
     iget-object v0, p0, Llibs/ArqexBackCloser;->dialog:Landroid/app/Dialog;
 
-    if-eqz v0, :try_end_18
+    if-eqz v0, :cond_1a
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     iget-object v0, p0, Llibs/ArqexBackCloser;->dialog:Landroid/app/Dialog;
 
-    if-eqz v0, :try_end_18
+    if-eqz v0, :cond_1a
 
     invoke-virtual {v0}, Landroid/app/Dialog;->hide()V
-    :try_end_18
-    .catchall {:try_start_8 .. :try_end_18} :catchall_18
+    :try_end_1a
+    .catchall {:try_start_c .. :try_end_1a} :catchall_1a
 
-    :catchall_18
+    :catchall_1a
+    :cond_1a
     const/4 v0, 0x1
 
     return v0

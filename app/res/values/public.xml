@@ -139,6 +139,7 @@
     <public type="drawable" name="icon_folder" id="0x7f0700a0" />
     <public type="drawable" name="icon_folder_opened" id="0x7f0700a1" />
     <public type="drawable" name="icon_invisible" id="0x7f0700a2" />
+    <public type="drawable" name="icon_mix_foreground" id="0x7f0700a5" />
     <public type="drawable" name="icon_storage" id="0x7f0700a7" />
     <public type="drawable" name="icon_swipe_delete" id="0x7f0700a8" />
     <public type="drawable" name="icon_swipe_edit" id="0x7f0700a9" />
@@ -211,7 +212,6 @@
     <public type="drawable" name="icon_mix" id="0x7f0700a3" />
     <public type="drawable" name="$icon_mix_foreground__0" id="0x7f070000" />
     <public type="drawable" name="icon_mix_background" id="0x7f0700a4" />
-    <public type="drawable" name="icon_mix_foreground" id="0x7f0700a5" />
     <public type="drawable" name="icon_mix_monochrome_foreground" id="0x7f0700a6" />
     <public type="drawable" name="bar_action" id="0x7f070003" />
     <public type="drawable" name="bar_bottom_actions" id="0x7f070005" />
@@ -1996,6 +1996,170 @@
     <public type="string" name="yes" id="0x7f0e033c" />
     <public type="string" name="yesterday" id="0x7f0e033d" />
     <public type="string" name="zip_align" id="0x7f0e033e" />
+    <public type="string" name="arqex_effect_borders_desc" id="0x7f0e033f" />
+    <public type="string" name="arqex_effect_borders_title" id="0x7f0e0340" />
+    <public type="string" name="arqex_effect_status_disabled" id="0x7f0e0341" />
+    <public type="string" name="arqex_effect_status_enabled" id="0x7f0e0342" />
+    <public type="string" name="arqex_effect_zoom_desc" id="0x7f0e0343" />
+    <public type="string" name="arqex_effect_zoom_title" id="0x7f0e0344" />
+    <public type="string" name="arqex_effects_quick_row" id="0x7f0e0345" />
+    <public type="string" name="arqex_effects_summary_borders" id="0x7f0e0346" />
+    <public type="string" name="arqex_effects_summary_zoom" id="0x7f0e0347" />
+    <public type="string" name="arqex_effects_title" id="0x7f0e0348" />
+    <public type="string" name="arqex_help_category_all" id="0x7f0e0349" />
+    <public type="string" name="arqex_help_category_effects" id="0x7f0e034a" />
+    <public type="string" name="arqex_help_category_files" id="0x7f0e034b" />
+    <public type="string" name="arqex_help_category_network" id="0x7f0e034c" />
+    <public type="string" name="arqex_help_category_shortcuts" id="0x7f0e034d" />
+    <public type="string" name="arqex_help_category_tasks" id="0x7f0e034e" />
+    <public type="string" name="arqex_help_category_themes" id="0x7f0e034f" />
+    <public type="string" name="arqex_help_collapse_all" id="0x7f0e0350" />
+    <public type="string" name="arqex_help_count_of" id="0x7f0e0351" />
+    <public type="string" name="arqex_help_count_showing" id="0x7f0e0352" />
+    <public type="string" name="arqex_help_count_topics" id="0x7f0e0353" />
+    <public type="string" name="arqex_help_developer" id="0x7f0e0354" />
+    <public type="string" name="arqex_help_dialog_title" id="0x7f0e0355" />
+    <public type="string" name="arqex_help_empty_results" id="0x7f0e0356" />
+    <public type="string" name="arqex_help_expand_all" id="0x7f0e0357" />
+    <public type="string" name="arqex_help_heading" id="0x7f0e0358" />
+    <public type="string" name="arqex_help_heading_subtitle" id="0x7f0e0359" />
+    <public type="string" name="arqex_help_menu" id="0x7f0e035a" />
+    <public type="string" name="arqex_help_open_failed" id="0x7f0e035b" />
+    <public type="string" name="arqex_help_quick_effects" id="0x7f0e035c" />
+    <public type="string" name="arqex_help_search_hint" id="0x7f0e035d" />
+    <public type="string" name="arqex_help_topic_10_body" id="0x7f0e035e" />
+    <public type="string" name="arqex_help_topic_10_subtitle" id="0x7f0e035f" />
+    <public type="string" name="arqex_help_topic_10_title" id="0x7f0e0360" />
+    <public type="string" name="arqex_help_topic_11_body" id="0x7f0e0361" />
+    <public type="string" name="arqex_help_topic_11_subtitle" id="0x7f0e0362" />
+    <public type="string" name="arqex_help_topic_11_title" id="0x7f0e0363" />
+    <public type="string" name="arqex_help_topic_12_body" id="0x7f0e0364" />
+    <public type="string" name="arqex_help_topic_12_subtitle" id="0x7f0e0365" />
+    <public type="string" name="arqex_help_topic_12_title" id="0x7f0e0366" />
+    <public type="string" name="arqex_help_topic_13_body" id="0x7f0e0367" />
+    <public type="string" name="arqex_help_topic_13_subtitle" id="0x7f0e0368" />
+    <public type="string" name="arqex_help_topic_13_title" id="0x7f0e0369" />
+    <public type="string" name="arqex_help_topic_1_body" id="0x7f0e036a" />
+    <public type="string" name="arqex_help_topic_1_subtitle" id="0x7f0e036b" />
+    <public type="string" name="arqex_help_topic_1_title" id="0x7f0e036c" />
+    <public type="string" name="arqex_help_topic_2_body" id="0x7f0e036d" />
+    <public type="string" name="arqex_help_topic_2_subtitle" id="0x7f0e036e" />
+    <public type="string" name="arqex_help_topic_2_title" id="0x7f0e036f" />
+    <public type="string" name="arqex_help_topic_3_body" id="0x7f0e0370" />
+    <public type="string" name="arqex_help_topic_3_subtitle" id="0x7f0e0371" />
+    <public type="string" name="arqex_help_topic_3_title" id="0x7f0e0372" />
+    <public type="string" name="arqex_help_topic_4_body" id="0x7f0e0373" />
+    <public type="string" name="arqex_help_topic_4_subtitle" id="0x7f0e0374" />
+    <public type="string" name="arqex_help_topic_4_title" id="0x7f0e0375" />
+    <public type="string" name="arqex_help_topic_5_body" id="0x7f0e0376" />
+    <public type="string" name="arqex_help_topic_5_subtitle" id="0x7f0e0377" />
+    <public type="string" name="arqex_help_topic_5_title" id="0x7f0e0378" />
+    <public type="string" name="arqex_help_topic_6_body" id="0x7f0e0379" />
+    <public type="string" name="arqex_help_topic_6_subtitle" id="0x7f0e037a" />
+    <public type="string" name="arqex_help_topic_6_title" id="0x7f0e037b" />
+    <public type="string" name="arqex_help_topic_7_body" id="0x7f0e037c" />
+    <public type="string" name="arqex_help_topic_7_subtitle" id="0x7f0e037d" />
+    <public type="string" name="arqex_help_topic_7_title" id="0x7f0e037e" />
+    <public type="string" name="arqex_help_topic_8_body" id="0x7f0e037f" />
+    <public type="string" name="arqex_help_topic_8_subtitle" id="0x7f0e0380" />
+    <public type="string" name="arqex_help_topic_8_title" id="0x7f0e0381" />
+    <public type="string" name="arqex_help_topic_9_body" id="0x7f0e0382" />
+    <public type="string" name="arqex_help_topic_9_subtitle" id="0x7f0e0383" />
+    <public type="string" name="arqex_help_topic_9_title" id="0x7f0e0384" />
+    <public type="string" name="arqex_help_window_title" id="0x7f0e0385" />
+    <public type="string" name="arqex_smart_auto_open_folder" id="0x7f0e0386" />
+    <public type="string" name="arqex_smart_calculating_selection" id="0x7f0e0387" />
+    <public type="string" name="arqex_smart_copy_path" id="0x7f0e0388" />
+    <public type="string" name="arqex_smart_copy_path_single_prefix" id="0x7f0e0389" />
+    <public type="string" name="arqex_smart_copy_paths_count_suffix" id="0x7f0e038a" />
+    <public type="string" name="arqex_smart_delete_empty" id="0x7f0e038b" />
+    <public type="string" name="arqex_smart_delete_empty_count_prefix" id="0x7f0e038c" />
+    <public type="string" name="arqex_smart_deleted_count_suffix" id="0x7f0e038d" />
+    <public type="string" name="arqex_smart_empty_found_prefix" id="0x7f0e038e" />
+    <public type="string" name="arqex_smart_empty_prompt_suffix" id="0x7f0e038f" />
+    <public type="string" name="arqex_smart_hidden_hidden" id="0x7f0e0390" />
+    <public type="string" name="arqex_smart_hidden_visible" id="0x7f0e0391" />
+    <public type="string" name="arqex_smart_hide_hidden" id="0x7f0e0392" />
+    <public type="string" name="arqex_smart_no_task_files" id="0x7f0e0393" />
+    <public type="string" name="arqex_smart_perm_fixed_660" id="0x7f0e0394" />
+    <public type="string" name="arqex_smart_perm_fixed_770" id="0x7f0e0395" />
+    <public type="string" name="arqex_smart_play_task" id="0x7f0e0396" />
+    <public type="string" name="arqex_smart_running_prefix" id="0x7f0e0397" />
+    <public type="string" name="arqex_smart_show_hidden" id="0x7f0e0398" />
+    <public type="string" name="arqex_theme_active_prefix" id="0x7f0e0399" />
+    <public type="string" name="arqex_theme_backup_export_failed" id="0x7f0e039a" />
+    <public type="string" name="arqex_theme_backup_export_prefix" id="0x7f0e039b" />
+    <public type="string" name="arqex_theme_color_picker_confirm" id="0x7f0e039c" />
+    <public type="string" name="arqex_theme_color_picker_test" id="0x7f0e039d" />
+    <public type="string" name="arqex_theme_color_picker_title" id="0x7f0e039e" />
+    <public type="string" name="arqex_theme_create_edit_desc" id="0x7f0e039f" />
+    <public type="string" name="arqex_theme_creator_help" id="0x7f0e03a0" />
+    <public type="string" name="arqex_theme_creator_title" id="0x7f0e03a1" />
+    <public type="string" name="arqex_theme_default_name" id="0x7f0e03a2" />
+    <public type="string" name="arqex_theme_edit_hint" id="0x7f0e03a3" />
+    <public type="string" name="arqex_theme_export_full_desc" id="0x7f0e03a4" />
+    <public type="string" name="arqex_theme_export_full_title" id="0x7f0e03a5" />
+    <public type="string" name="arqex_theme_export_themes_desc" id="0x7f0e03a6" />
+    <public type="string" name="arqex_theme_export_themes_title" id="0x7f0e03a7" />
+    <public type="string" name="arqex_theme_hub_title" id="0x7f0e03a8" />
+    <public type="string" name="arqex_theme_import_desc" id="0x7f0e03a9" />
+    <public type="string" name="arqex_theme_import_path_button" id="0x7f0e03aa" />
+    <public type="string" name="arqex_theme_import_path_hint" id="0x7f0e03ab" />
+    <public type="string" name="arqex_theme_import_prompt" id="0x7f0e03ac" />
+    <public type="string" name="arqex_theme_import_success" id="0x7f0e03ad" />
+    <public type="string" name="arqex_theme_import_title" id="0x7f0e03ae" />
+    <public type="string" name="arqex_theme_name_hint" id="0x7f0e03af" />
+    <public type="string" name="arqex_theme_palette_color_prefix" id="0x7f0e03b0" />
+    <public type="string" name="arqex_theme_palette_export_failed" id="0x7f0e03b1" />
+    <public type="string" name="arqex_theme_palette_export_prefix" id="0x7f0e03b2" />
+    <public type="string" name="arqex_theme_palette_quick_help" id="0x7f0e03b3" />
+    <public type="string" name="arqex_theme_palette_quick_title" id="0x7f0e03b4" />
+    <public type="string" name="arqex_theme_preview_folder" id="0x7f0e03b5" />
+    <public type="string" name="arqex_theme_preview_items" id="0x7f0e03b6" />
+    <public type="string" name="arqex_theme_preview_live" id="0x7f0e03b7" />
+    <public type="string" name="arqex_theme_preview_title" id="0x7f0e03b8" />
+    <public type="string" name="arqex_theme_rgb_preview_prefix" id="0x7f0e03b9" />
+    <public type="string" name="arqex_theme_role_0_desc" id="0x7f0e03ba" />
+    <public type="string" name="arqex_theme_role_0_title" id="0x7f0e03bb" />
+    <public type="string" name="arqex_theme_role_1_desc" id="0x7f0e03bc" />
+    <public type="string" name="arqex_theme_role_1_title" id="0x7f0e03bd" />
+    <public type="string" name="arqex_theme_role_2_desc" id="0x7f0e03be" />
+    <public type="string" name="arqex_theme_role_2_title" id="0x7f0e03bf" />
+    <public type="string" name="arqex_theme_role_3_desc" id="0x7f0e03c0" />
+    <public type="string" name="arqex_theme_role_3_title" id="0x7f0e03c1" />
+    <public type="string" name="arqex_theme_role_4_desc" id="0x7f0e03c2" />
+    <public type="string" name="arqex_theme_role_4_title" id="0x7f0e03c3" />
+    <public type="string" name="arqex_theme_role_5_desc" id="0x7f0e03c4" />
+    <public type="string" name="arqex_theme_role_5_title" id="0x7f0e03c5" />
+    <public type="string" name="arqex_theme_row_summary" id="0x7f0e03c6" />
+    <public type="string" name="arqex_theme_row_title" id="0x7f0e03c7" />
+    <public type="string" name="arqex_theme_save_apply_button" id="0x7f0e03c8" />
+    <public type="string" name="arqex_theme_save_failed" id="0x7f0e03c9" />
+    <public type="string" name="arqex_theme_save_success" id="0x7f0e03ca" />
+    <public type="string" name="arqex_theme_share_title" id="0x7f0e03cb" />
+    <public type="string" name="arqex_theme_spectrum_hint" id="0x7f0e03cc" />
+    <public type="string" name="arqex_theme_spectrum_title" id="0x7f0e03cd" />
+    <public type="string" name="arqex_update_row_summary" id="0x7f0e03ce" />
+    <public type="string" name="arqex_update_row_title" id="0x7f0e03cf" />
+    <public type="string" name="arqex_view_mode_columns" id="0x7f0e03d0" />
+    <public type="string" name="arqex_view_mode_compact" id="0x7f0e03d1" />
+    <public type="string" name="arqex_view_mode_detailed" id="0x7f0e03d2" />
+    <public type="string" name="arqex_view_mode_gallery" id="0x7f0e03d3" />
+    <public type="string" name="arqex_view_mode_grid" id="0x7f0e03d4" />
+    <public type="string" name="arqex_view_mode_items" id="0x7f0e03d5" />
+    <public type="string" name="arqex_view_mode_minimal" id="0x7f0e03d6" />
+    <public type="string" name="arqex_view_mode_wrapped" id="0x7f0e03d7" />
+    <public type="string" name="arqex_view_size_column_many" id="0x7f0e03d8" />
+    <public type="string" name="arqex_view_size_column_one" id="0x7f0e03d9" />
+    <public type="string" name="arqex_view_size_default_button" id="0x7f0e03da" />
+    <public type="string" name="arqex_view_size_default_suffix" id="0x7f0e03db" />
+    <public type="string" name="arqex_view_size_prefix" id="0x7f0e03dc" />
+    <public type="string" name="arqex_zoom_default" id="0x7f0e03dd" />
+    <public type="string" name="arqex_zoom_label_middle" id="0x7f0e03de" />
+    <public type="string" name="arqex_zoom_label_prefix" id="0x7f0e03df" />
+    <public type="string" name="arqex_zoom_label_suffix" id="0x7f0e03e0" />
+    <public type="string" name="arqex_zoom_preview" id="0x7f0e03e1" />
+    <public type="string" name="arqex_zoom_test" id="0x7f0e03e2" />
     <public type="style" name="BlackTheme" id="0x7f0f0000" />
     <public type="style" name="Button" id="0x7f0f0001" />
     <public type="style" name="DefaultTheme" id="0x7f0f0002" />

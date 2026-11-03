@@ -220,18 +220,6 @@
 
     .line 101
     throw v0
-    .line 102
-    .line 103
-    .line 104
-    .line 105
-    .line 106
-    .line 107
-    .line 108
-    .line 109
-    .line 110
-    .line 111
-    .line 112
-    .line 113
 .end method
 
 .method public static a()Llibs/eh0;
@@ -271,18 +259,4 @@
     .line 16
     .line 17
     return-object v0
-    .line 18
-    .line 19
-    .line 20
-    .line 21
-    .line 22
-    .line 23
-    .line 24
-    .line 25
-    .line 26
-    .line 27
-    .line 28
-    .line 29
-    .line 30
-    .line 31
 .end method

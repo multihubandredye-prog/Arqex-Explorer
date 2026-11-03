@@ -12,14 +12,12 @@
     return-void
 .end method
 
-
-# virtual methods
 .method public static fit(Landroid/widget/TextView;)V
     .registers 6
 
-    if-eqz p0, :cond_end
+    if-eqz p0, :cond_25
 
-    :try_start_0
+    :try_start_2
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setSingleLine(Z)V
@@ -34,7 +32,7 @@
 
     const/16 v2, 0x1a
 
-    if-lt v1, v2, :cond_legacy
+    if-lt v1, v2, :cond_1d
 
     const/16 v0, 0x9
 
@@ -46,22 +44,23 @@
 
     invoke-virtual {p0, v0, v1, v2, v3}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithConfiguration(IIII)V
 
-    goto :try_end_0
+    goto :goto_22
 
-    :cond_legacy
+    :cond_1d
     const/high16 v0, 0x41300000    # 11.0f
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextSize(F)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_22
+    .catchall {:try_start_2 .. :try_end_22} :catchall_23
 
+    :goto_22
     return-void
 
-    :catchall_0
+    :catchall_23
     move-exception v0
 
     return-void
 
-    :cond_end
+    :cond_25
     return-void
 .end method

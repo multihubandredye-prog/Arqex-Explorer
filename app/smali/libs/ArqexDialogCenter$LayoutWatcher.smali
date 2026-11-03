@@ -28,10 +28,10 @@
 
     iget-object v0, p0, Llibs/ArqexDialogCenter$LayoutWatcher;->dialog:Landroid/app/Dialog;
 
-    if-eqz v0, :cond_end
+    if-eqz v0, :cond_7
 
     invoke-static {v0}, Llibs/ArqexDialogCenter;->center(Landroid/app/Dialog;)V
 
-    :cond_end
+    :cond_7
     return-void
 .end method

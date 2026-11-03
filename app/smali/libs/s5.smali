@@ -285,12 +285,6 @@
     .line 121
     .line 122
     throw p2
-    .line 123
-    .line 124
-    .line 125
-    .line 126
-    .line 127
-    .line 128
 .end method
 
 
@@ -537,6 +531,4 @@
     .line 111
     :cond_6e
     return-object v0
-    .line 112
-    .line 113
 .end method

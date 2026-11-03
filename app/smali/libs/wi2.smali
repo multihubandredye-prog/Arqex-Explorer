@@ -122,7 +122,6 @@
     .line 39
     .line 40
     return-void
-    .line 41
 .end method
 
 .method public constructor <init>([B)V
@@ -197,11 +196,4 @@
     .line 23
     .line 24
     return-object v1
-    .line 25
-    .line 26
-    .line 27
-    .line 28
-    .line 29
-    .line 30
-    .line 31
 .end method

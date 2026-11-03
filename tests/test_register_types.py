@@ -28,7 +28,7 @@ ALVOS = {
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
         "getTaskNameFilter", "getTaskExtFilter",
         "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
-        "sameTask",
+        "isSameTask",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
