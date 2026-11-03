@@ -95,31 +95,7 @@ jobs:
           profile: pixel_2
           disable-animations: true
           emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect
-          script: |
-            set -uo pipefail
-            adb wait-for-device
-            echo "--- instalando"
-            adb install -r -g Arqex-teste.apk || { echo "::error::falha ao instalar o APK"; exit 1; }
-            echo "--- pacote instalado:"; adb shell pm list packages | grep arqex || true
-            adb logcat -c || true
-            echo "--- abrindo o app"
-            adb shell monkey -p com.arqex.explorer -c android.intent.category.LAUNCHER 1 || true
-            sleep 25
-            adb shell screencap -p /sdcard/tela.png || true
-            adb pull /sdcard/tela.png tela.png || true
-            adb shell dumpsys activity activities | grep -E "mResumedActivity|topResumedActivity" || true
-            adb logcat -d > logcat.txt || true
-            echo "=== linhas de crash ==="
-            grep -E "FATAL EXCEPTION|VerifyError|ClassNotFoundException|NoSuchMethodError|NoSuchFieldError" logcat.txt | head -40 || true
-            echo "=== processo do app ==="
-            adb shell pidof com.arqex.explorer || echo "(app nao esta rodando)"
-            if grep -qE "FATAL EXCEPTION|VerifyError|NoSuchMethodError|NoSuchFieldError" logcat.txt; then
-              echo "::error::o app crashou ao abrir (ver logcat no artefato)"; exit 1
-            fi
-            if ! adb shell pidof com.arqex.explorer > /dev/null; then
-              echo "::error::o processo do app nao ficou rodando"; exit 1
-            fi
-            echo "OK: app abriu e continuou rodando"
+          script: bash tools/emulator-check.sh
 
       - name: Guardar screenshot e logcat
         if: always()
