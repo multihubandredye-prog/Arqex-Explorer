@@ -63,8 +63,6 @@ public class TesteUnzip {
         Method chave = atw.getMethod("unzipContentKey", d9);
         System.out.println("unzipContentKey(t1) = " + chama(chave, t1));
         ok("chave do conteudo existe", chama(chave, t1) instanceof String);
-        ok("chave muda quando o conteudo muda (t1 x t2)",
-           !String.valueOf(chama(chave, t1)).equals(String.valueOf(chama(chave, t2))));
         System.out.println("isUnzipEnabled(t1) = " + chama(isUnzipEnabled, t1));
         ok("sem prefs o isUnzipEnabled nao estoura", !"EXCECAO".equals(chama(isUnzipEnabled, t1)));
 
@@ -76,6 +74,9 @@ public class TesteUnzip {
         String x2 = (String) fx.get(t2);
         String raw2 = (String) decode.invoke(null, x2);
         ok("conteudo decodificado termina em |uz0", raw2 != null && raw2.endsWith("|uz0"));
+        System.out.println("unzipContentKey(t2) = " + chama(chave, t2));
+        ok("chave muda quando o conteudo muda (t1 x t2)",
+           !String.valueOf(chama(chave, t1)).equals(String.valueOf(chama(chave, t2))));
         System.out.println("isUnzipEnabled(t2) = " + chama(isUnzipEnabled, t2));
 
         // ---------- caso 3: tarefa antiga, sem token no conteudo
