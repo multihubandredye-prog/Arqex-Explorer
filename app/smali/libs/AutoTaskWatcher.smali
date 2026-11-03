@@ -5568,18 +5568,14 @@
 .end method
 
 .method public static runUnzipSelfTest()I
-    .registers 6
+    .registers 7
 
-    # Prova automatica (usada so no emulador do CI).
-    # bit 1 = leu da memoria | 2 = leu das prefs | 4 = prefs confirmada em instancia nova
-    # bit 8 = sobreviveu ao reiniciar o app | 32 = desmarcar funciona | 16 = rodou a fase 2
+    # Prova automatica, so usada no emulador do CI.
+    # passo 0: grava a marca, le de volta (memoria, prefs e prefs em instancia nova) e desmarca.
+    # passo 1 em diante: arranque seguinte (processo novo) - a marca tem que continuar marcada.
+    # bit 1 = memoria | 2 = prefs | 4 = prefs em instancia nova | 32 = desmarcar funciona
+    # bit 8 = sobreviveu ao reinicio | 16 = passo de releitura
     const/4 v0, 0x0
-
-    const-string v3, "ArqexUnzipDiag"
-
-    const-string v4, "st_inicio"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
@@ -5587,61 +5583,34 @@
 
     if-eqz v1, :arqex_st_erro
 
-    const-string v4, "st_prefs_ok"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     const-string v2, "unzip2_DIAG_PROVA"
 
     :try_start_st
-    const-string v3, "arqex_diag_fase2"
+    const-string v3, "arqex_diag_n"
 
     const/4 v4, 0x0
 
-    invoke-interface {v1, v3, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v1, v3, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :arqex_st_fase1
-
-    # ---------- fase 2: app foi fechado e aberto de novo ----------
-    const/16 v3, 0x10
-
-    or-int/2addr v0, v3
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
-
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :arqex_st_f2_fim
-
-    const/16 v3, 0x8
-
-    or-int/2addr v0, v3
-
-    :arqex_st_f2_fim
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v3
 
-    const-string v4, "arqex_diag_fase2"
+    const-string v4, "arqex_diag_n"
 
-    const/4 v5, 0x0
+    add-int/lit8 v6, v5, 0x1
 
-    invoke-interface {v3, v4, v5}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v3, v4, v6}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v3
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
+    if-eqz v5, :arqex_st_releitura
 
-    return v0
-
-    # ---------- fase 1: grava, le de volta, desmarca ----------
-    :arqex_st_fase1
+    # ---------- passo 0: grava e le de volta ----------
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
     const/4 v3, 0x1
@@ -5676,17 +5645,17 @@
 
     if-eqz v3, :arqex_st_novo
 
+    const/4 v6, 0x0
+
     const-string v4, "auto_watch_config"
 
-    const/4 v5, 0x0
-
-    invoke-virtual {v3, v4, v5}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {v3, v4, v6}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v3
 
     if-eqz v3, :arqex_st_novo
 
-    invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v3, v2, v6}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -5718,35 +5687,33 @@
 
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    goto :arqex_st_fim
 
-    move-result-object v3
+    # ---------- passo 1+: releitura em processo novo ----------
+    :arqex_st_releitura
+    const/16 v3, 0x10
 
-    const-string v4, "arqex_diag_fase2"
+    or-int/2addr v0, v3
 
-    const/4 v5, 0x1
+    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
-    invoke-interface {v3, v4, v5}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
 
-    move-result-object v3
+    move-result v3
 
-    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    if-nez v3, :arqex_st_fim
+
+    const/16 v3, 0x8
+
+    or-int/2addr v0, v3
+
+    :arqex_st_fim
     :try_end_st
     .catchall {:try_start_st .. :try_end_st} :catchall_st
 
     return v0
 
     :catchall_st
-    move-exception v4
-
-    invoke-virtual {v4}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "ArqexUnzipDiag"
-
-    invoke-static {v5, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
     const/4 v0, -0x1
 
     return v0

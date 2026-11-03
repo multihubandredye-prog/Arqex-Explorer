@@ -69,8 +69,10 @@ adb logcat -d > logcat_f2.txt || true
 F2="$(grep "ArqexUnzipDiag" logcat_f2.txt | tail -1 || true)"
 echo "fase 2: $F2"
 
+cat logcat_f1.txt logcat_f2.txt > logcat_unzip.txt 2>/dev/null || true
+grep "ArqexUnzipDiag" logcat_unzip.txt | tail -10 || true
 FALHOU=0
-echo "$F1" | grep -q "fase=1 diag_ok=true" && echo "OK: fase 1 - marca gravada, lida de volta e desmarcada" || { echo "::error::fase 1 do descompactar falhou"; FALHOU=1; }
-echo "$F2" | grep -q "fase=2 diag_ok=true" && echo "OK: fase 2 - marca sobreviveu a fechar o app" || { echo "::error::fase 2 do descompactar falhou (marca nao sobreviveu ao reinicio)"; FALHOU=1; }
+grep -q "fase=1 diag_ok=true" logcat_unzip.txt && echo "OK: fase 1 - marca gravada, lida de volta e desmarcada" || { echo "::error::fase 1 do descompactar falhou"; FALHOU=1; }
+grep -q "fase=2 diag_ok=true" logcat_unzip.txt && echo "OK: fase 2 - marca sobreviveu a fechar o app" || { echo "::error::fase 2 do descompactar falhou (marca nao sobreviveu ao reinicio)"; FALHOU=1; }
 [ "$FALHOU" = "0" ] || exit 1
 
