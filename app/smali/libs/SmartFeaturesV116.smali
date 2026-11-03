@@ -1093,7 +1093,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const/high16 v3, 0x40c00000    # 6.0f
+    const/high16 v3, 0x41300000    # 11.0f
 
     invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
 

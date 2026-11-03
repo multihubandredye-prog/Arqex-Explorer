@@ -34,6 +34,10 @@
 
 .field private static final dialogPrefixEdits:Ljava/util/WeakHashMap;
 
+.field private static nameUiCheck:Landroid/widget/CheckBox;
+
+.field private static nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
+
 .field private static final nameFilterCache:Ljava/util/HashMap;
 
 .field private static final dialogNameCheckBoxes:Ljava/util/WeakHashMap;
@@ -377,12 +381,17 @@
 
     invoke-virtual {v3, v0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    # guarda os objetos reais da tela: o salvamento usa eles, sem procurar por id
+    sput-object v2, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
+
     :cond_4b
     if-eqz v1, :cond_5c
 
     sget-object v3, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
 
     invoke-virtual {v3, v0, v1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sput-object v1, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
 
     if-eqz v2, :cond_5c
 
@@ -5363,21 +5372,9 @@
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_174
-     sget-object v2, Llibs/AutoTaskWatcher;->dialogNameCheckBoxes:Ljava/util/WeakHashMap;
+     sget-object v2, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
 
-    const/16 v4, 0x55
-
-    invoke-static {p2, v2, v4}, Llibs/AutoTaskWatcher;->findDialogCheckBox(Llibs/od;Ljava/util/WeakHashMap;I)Landroid/widget/CheckBox;
-
-    move-result-object v2
-
-    sget-object v4, Llibs/AutoTaskWatcher;->dialogNameEdits:Ljava/util/WeakHashMap;
-
-    const/16 v5, 0x56
-
-    invoke-static {p2, v4, v5}, Llibs/AutoTaskWatcher;->findDialogEditText(Llibs/od;Ljava/util/WeakHashMap;I)Lcom/mixplorer/widgets/MiEditText;
-
-    move-result-object v4
+    sget-object v4, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
 
     if-eqz v2, :cond_174_n
 
@@ -5445,8 +5442,14 @@
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-
     :cond_174_n
+    const/4 v2, 0x0
+
+    sput-object v2, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
+
+    sput-object v2, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
+
+
 
    if-eqz v3, :cond_179
 

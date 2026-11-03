@@ -220,6 +220,19 @@ check("9a. caixinha de permissao mostra r/w/x",
       and "Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V" in _perm)
 check("9b. bits especiais mostram s/t",
       'const-string v0, "s"' in _perm and 'const-string v0, "t"' in _perm)
+check("9d. indices 0..2 nao caem no ramo r/w/x (bug do 't' em tudo)",
+      'if-gt p0, v0, :especiais' in _perm and 'if-le p0, v0, :especiais' not in _perm)
+_mut = ""
+for _c in [os.path.join(SMALI, "libs", "SmartFeaturesV116.smali")]:
+    if os.path.exists(_c):
+        _mut = open(_c, encoding="utf-8", errors="replace").read()
+check("9e. icones da barra superior com respiro (11dp)",
+      "0x41300000    # 11.0f" in _mut)
+_mt = ""
+for _c in [os.path.join(SMALI, "libs", "ModernUiTheme.smali")]:
+    if os.path.exists(_c):
+        _mt = open(_c, encoding="utf-8", errors="replace").read()
+check("9f. botao Tarefas com margem lateral de 8dp", "0x41000000    # 8.0f" in _mt)
 check("9c. rotulo da permissao cobre leitura, escrita e execucao",
       all(x in _perm for x in ['const-string v0, "r"', 'const-string v0, "w"', 'const-string v0, "x"']))
 _atw_path = os.path.join(SMALI, "libs", "AutoTaskWatcher.smali")
@@ -231,6 +244,8 @@ check("10c. filtro por nome aceita coringa *",
       "matchesNameFilter" in _atw and 'const-string v6, "\\\\*"' in _atw)
 check("10d. filtro por nome e aplicado no fluxo (junto do de extensao)",
       "filterTaskItems" in _atw and _atw.count("->filterTaskItems(") >= 6)
+check("10g. salvamento do filtro por nome usa os objetos da tela (sem id)",
+      "nameUiCheck" in _atw and "nameUiEdit" in _atw)
 check("10e. nome do filtro e salvo ao salvar a tarefa", '"name_"' in _atw and "dialogNameCheckBoxes" in _atw)
 _e9_path = os.path.join(SMALI, "libs", "e9.smali")
 _e9 = open(_e9_path, encoding="utf-8", errors="replace").read() if os.path.exists(_e9_path) else ""

@@ -532,26 +532,14 @@
 .end method
 
 .method private static rotuloPermissao(I)Ljava/lang/String;
-    .registers 4
+    .registers 3
 
+    # indices 0 e 1 = setuid/setgid -> "s"; indice 2 = sticky -> "t"
+    # indices 3..11 = (indice - 3) % 3 -> r, w, x
     const/4 v0, 0x2
 
-    if-le p0, v0, :comuns
+    if-gt p0, v0, :especiais
 
-    const-string v0, "s"
-
-    const/4 v1, 0x2
-
-    if-ne p0, v1, :sticky
-
-    return-object v0
-
-    :sticky
-    const-string v0, "t"
-
-    return-object v0
-
-    :comuns
     add-int/lit8 v1, p0, -0x3
 
     rem-int/lit8 v1, v1, 0x3
@@ -573,6 +561,20 @@
 
     :escrita
     const-string v0, "w"
+
+    return-object v0
+
+    :especiais
+    const/4 v0, 0x2
+
+    if-ne p0, v0, :sticky
+
+    const-string v0, "s"
+
+    return-object v0
+
+    :sticky
+    const-string v0, "t"
 
     return-object v0
 .end method

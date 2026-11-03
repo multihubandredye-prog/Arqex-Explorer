@@ -271,7 +271,7 @@
 
     iput v3, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    const/high16 v3, 0x40800000    # 4.0f
+    const/high16 v3, 0x41000000    # 8.0f
 
     invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
 
