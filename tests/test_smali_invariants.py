@@ -350,8 +350,10 @@ check("13a. salvar uma tarefa existente nao renomeia (teste -> teste2)",
       "sameTask" in _n8 and "sameTask" in _atw and ":renomeia_n" in _n8)
 check("13b. diagnostico fora do rotulo (so fica a linha de debug da tarefa)",
       '|b58]' not in _atw and "nameKeys" not in _atw)
+_dkd = method_body(os.path.join(SMALI, "libs", "$d.smali"),
+                  ".method public dispatchKeyEvent") or ""
 check("13c. Voltar fecha direto no dialogo, sem depender de registro",
-      "arqexForceDismiss" in _d and "postToastUi" in _d and "postToastUi" in _ba)
+      "arqexForceDismiss" in _dkd and "postToastUi" not in _dkd and "postToastUi" in _ba)
 
 # 12f/12g/12h: o filtro por nome tem de ser o espelho do filtro por extensao
 def _corpo(txt, nome):
@@ -375,24 +377,33 @@ check("12g. ler o filtro por nome espelha o filtro por extensao",
       '"name_"' in _atw_get and 'nameFilterCache' in _atw_get
       and 'getTaskRuleKey' in _atw_get and 'name_id_' not in _atw_get
       and _atw_get.count(":try_start") == _atw_getext.count(":try_start"))
-_af = method_body(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"),
-                 ".method public static applyFolderDialogTouchClose") or ""
+_dtdt = method_body(os.path.join(SMALI, "libs", "$d.smali"),
+                   ".method public dispatchTouchEvent") or ""
+_mdd = method_body(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"),
+                   ".method public static makeDialogDismissible") or ""
 _mot = method_body(os.path.join(SMALI, "libs", "od.smali"),
                   ".method public onTouchEvent") or ""
-_scr = open(os.path.join(SMALI, "libs", "ArqexDialogScrim.smali"), encoding="utf-8").read() \
-    if os.path.exists(os.path.join(SMALI, "libs", "ArqexDialogScrim.smali")) else ""
-check("12h. toque FORA fecha: ACTION_OUTSIDE no od + scrim atras do cartao", (
-      'getActionMasked' in _mot and 'const/4 v1, 0x4' in _mot and 'closeDialogNow' in _mot
-      and '0x40000' in _mut and '0x40000' in _od
-      and 'setOnTouchListener' in _af and 'ArqexDialogScrim' in _af))
-check("12i. toque DENTRO nao pode fechar: o dialogo nao decide antes das views", (
-      'dispatchTouchEvent' not in _d
-      and 'getGlobalVisibleRect' not in _d
-      and 'Dialog;->onTouchEvent(Landroid/view/MotionEvent;)Z' not in _mot
-      and 'getLeft' in _scr and 'getRight' in _scr and 'getX()F' in _scr))
-check("12m. scrim so fecha no ACTION_UP fora do retangulo do cartao", (
-      'getActionMasked' in _scr and 'const/4 v1, 0x1' in _scr
-      and 'getTop' in _scr and 'getBottom' in _scr and 'closeDialogNow' in _scr))
+_dshow = method_body(os.path.join(SMALI, "libs", "$d.smali"), ".method public show") or ""
+
+# O desenho que funciona em aparelho (arquivo do usuario): decide no ACTION_DOWN
+# comparando getLocationOnScreen do cartao com getRawX/getRawY (mesmo espaco de
+# coordenadas: a tela). Dentro -> super (views), fora -> fecha.
+check("12h. toque FORA do cartao fecha o dialogo, decidindo no ACTION_DOWN", (
+      'getActionMasked' in _dtdt and 'getLocationOnScreen([I)V' in _dtdt
+      and 'getRawX' in _dtdt and 'getRawY' in _dtdt
+      and 'closeFolderDialog' in _dtdt))
+check("12i. toque DENTRO do cartao nao fecha: vai para o superDispatch das views", (
+      'invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchTouchEvent' in _dtdt
+      and 'getGlobalVisibleRect' not in _dtdt
+      and 'arqex_dismissible' in _dtdt))
+check("12m. dialogo so e marcado como fechavel se for cancelable e aceitar toque fora", (
+      'setCancelable(Z)V' in _mdd and 'setCanceledOnTouchOutside(Z)V' in _mdd
+      and 'arqex_dismissible' in _mdd
+      and 'makeDialogDismissible' in _dshow))
+check("12o. dialogo de pasta e od NAO sobrescrevem mais o caminho do toque", (
+      'onTouchEvent' not in _mot
+      and 'applyFolderDialogTouchClose' not in _dshow
+      and 'setOnTouchListener' not in _dshow))
 check("12n. nenhuma chamada a Window.addFlags com assinatura errada (II)V",
       all("addFlags(II)V" not in open(os.path.join(SMALI, "libs", f), encoding="utf-8").read()
           for f in os.listdir(os.path.join(SMALI, "libs")) if f.endswith(".smali")))
@@ -404,12 +415,6 @@ if os.path.exists(_c9):
 _afd = method_body(os.path.join(SMALI, "libs", "od.smali"), ".method public arqexForceDismiss") or ""
 check("12k. fechar o dialogo limpa o estado do MiXplorer (senao nao abre outro)",
       "->Gms(Z)V" in _afd and "Dialog;->dismiss()V" in _afd)
-check("12l. janela do dialogo ocupa a tela e tem scrim clicavel atras do cartao",
-      "Window;->setLayout(II)V" in _af and "gravity:I" in _af
-      and "setOnTouchListener(Landroid/view/View$OnTouchListener;)V" in _af
-      and "ArqexDialogScrim" in _af and "setClickable(Z)V" in _af
-      and "ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V" in _af
-      and "ArqexDialogScrim.smali" in " ".join(sorted(__import__("os").listdir(os.path.join(SMALI, "libs")))))
 check("12j. filtro por nome desligado (fora da tela e fora da filtragem)", (
       "addNameFilterControls" not in _e9
       and "filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V\n\n    return-void" not in _atw
@@ -421,7 +426,7 @@ check("12j. filtro por nome desligado (fora da tela e fora da filtragem)", (
 # destruia o parametro e o verificador do Android recusava a classe.
 # ---------------------------------------------------------------------------
 _AUTORAIS = {
-    ("libs", "SmartFeaturesV116.smali"): ["makeDialogDismissible", "applyFolderDialogTouchClose"],
+    ("libs", "SmartFeaturesV116.smali"): ["makeDialogDismissible"],
     ("libs", "SmartFeaturesV116$PermPickerDialog.smali"): ["rotuloPorId", "initBox"],
     ("libs", "AutoTaskWatcher.smali"): [
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
@@ -431,7 +436,7 @@ _AUTORAIS = {
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
     ("libs", "od.smali"): ["arqexForceDismiss"],
-    ("libs", "$d.smali"): ["show", "dispatchKeyEvent"],
+    ("libs", "$d.smali"): ["show", "dispatchKeyEvent", "dispatchTouchEvent"],
 }
 
 

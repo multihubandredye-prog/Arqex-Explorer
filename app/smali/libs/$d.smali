@@ -407,9 +407,164 @@
     .line 262
 .end method
 
+.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .registers 11
+
+    # Portado do APK que o usuario confirmou funcionando em aparelho.
+    #
+    # Decisao SO no ACTION_DOWN, e a comparacao e feita num unico espaco de
+    # coordenadas: getLocationOnScreen do cartao (tela) contra getRawX/getRawY
+    # do evento (tela). E o par certo; as tentativas anteriores comparavam
+    # retangulo de janela com coordenada de tela, e por isso erravam.
+    #
+    # Dentro do cartao: cai no superDispatchTouchEvent, ou seja, o toque segue
+    # o caminho normal das views (botao recebe o clique e o dialogo NAO fecha).
+    # Fora do cartao: fecha o dialogo e consome o evento.
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v0
+
+    if-nez v0, :super_dt
+
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-eqz v0, :super_dt
+
+    # so age em dialogo marcado como "pode fechar no toque fora"
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :super_dt
+
+    invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    const-string v2, "arqex_dismissible"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :super_dt
+
+    # android.R.id.content -> cartao (primeiro filho)
+    const v1, 0x1020002
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    instance-of v1, v0, Landroid/view/ViewGroup;
+
+    if-eqz v1, :super_dt
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v1
+
+    if-lez v1, :super_dt
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :super_dt
+
+    const/4 v1, 0x2
+
+    new-array v2, v1, [I
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
+
+    move-result v3
+
+    float-to-int v3, v3
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
+
+    move-result v4
+
+    float-to-int v4, v4
+
+    const/4 v5, 0x0
+
+    aget v5, v2, v5
+
+    const/4 v6, 0x1
+
+    aget v6, v2, v6
+
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
+
+    move-result v7
+
+    add-int/2addr v7, v5
+
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
+
+    move-result v8
+
+    add-int/2addr v8, v6
+
+    # qualquer coordenada fora do cartao -> toque fora
+    if-lt v3, v5, :fecha_dt
+
+    if-ge v3, v7, :fecha_dt
+
+    if-lt v4, v6, :fecha_dt
+
+    if-ge v4, v8, :fecha_dt
+
+    goto :super_dt
+
+    :fecha_dt
+    # fecha o dialogo de pasta registrado (limpa o estado do MiXplorer)
+    invoke-static {}, Llibs/SmartFeaturesV116;->closeFolderDialog()Z
+
+    move-result v0
+
+    if-nez v0, :sem_registro
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :sem_registro
+    # nao era o dialogo registrado: fecha este mesmo
+    :try_start_dt
+
+    invoke-virtual {p0}, Llibs/od;->arqexForceDismiss()V
+    :try_end_dt
+    .catchall {:try_start_dt .. :try_end_dt} :catch_dt
+
+    :catch_dt
+    const/4 v0, 0x1
+
+    return v0
+
+    :super_dt
+    invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .registers 4
 
+    # Voltar fecha este dialogo (nao depende de registro nenhum): age no
+    # ACTION_UP da tecla BACK e consome o evento.
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -423,36 +578,13 @@
     move-result v0
 
     if-nez v0, :super_dk
-
-    const-string v1, "Voltar: chegou no dialogo"
-
-    invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
-
-    # Fecha direto, sem depender de registro: chama o dismiss() do Dialog.
     :try_start_k
+
     invoke-virtual {p0}, Llibs/od;->arqexForceDismiss()V
     :try_end_k
     .catchall {:try_start_k .. :try_end_k} :catch_k
 
     :catch_k
-    # confere se saiu mesmo; se nao saiu, esconde a janela
-    invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :fechou_dk
-
-    const-string v1, "Voltar: AINDA aberto"
-
-    invoke-static {v1}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
-
-    :try_start_h
-    invoke-virtual {p0}, Landroid/app/Dialog;->hide()V
-    :try_end_h
-    .catchall {:try_start_h .. :try_end_h} :catch_h
-
-    :catch_h
-    :fechou_dk
     const/4 v0, 0x1
 
     return v0
@@ -468,13 +600,14 @@
 .method public show()V
     .registers 2
 
+    # Ordem que funciona: mostrar primeiro, depois marcar. A marca
+    # (arqex_dismissible + cancelable + toque fora) e aplicada em TODO dialogo
+    # desta familia, nao so no de pasta.
     invoke-super {p0}, Llibs/od;->show()V
 
     invoke-static {p0}, Llibs/SmartFeaturesV116;->registerFolderDialog(Landroid/app/Dialog;)V
 
-    # depois de mostrar: força cancelable + toque fora (o MiXplorer desliga os
-    # dois ao montar este dialogo, depois do nosso primeiro hook)
-    invoke-static {p0}, Llibs/SmartFeaturesV116;->applyFolderDialogTouchClose(Landroid/app/Dialog;)V
+    invoke-static {p0}, Llibs/SmartFeaturesV116;->makeDialogDismissible(Landroid/app/Dialog;)V
 
     return-void
 .end method

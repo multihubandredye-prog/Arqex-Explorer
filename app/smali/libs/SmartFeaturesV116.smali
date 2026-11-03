@@ -102,179 +102,6 @@
     return-void
 .end method
 
-.method public static closeDialogNow(Landroid/app/Dialog;)V
-    .registers 3
-
-    if-eqz p0, :fim
-
-    :try_start_c
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
-    :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_c
-    :catchall_c
-
-    :try_start_s
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :fim
-
-    instance-of v0, p0, Llibs/od;
-
-    if-nez v0, :so_dismiss
-
-    check-cast p0, Llibs/od;
-
-    invoke-virtual {p0}, Llibs/od;->arqexForceDismiss()V
-
-    goto :fim
-    :so_dismiss
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
-    :try_end_s
-    .catchall {:try_start_s .. :try_end_s} :catchall_s
-    :catchall_s
-    :fim
-
-    return-void
-.end method
-
-.method public static applyFolderDialogTouchClose(Landroid/app/Dialog;)V
-    .registers 14
-
-    if-eqz p0, :fim
-
-    :try_start_1
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    if-eqz v0, :fim
-
-    const v1, 0x40000
-
-    # addFlags recebe UM int (setFlags e que recebe dois). Com (II)V o metodo
-    # nao existe e o ajuste inteiro caia no catchall -> o scrim nunca entrava.
-    invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
-
-    const/16 v1, 0x10
-
-    invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v1, :fim
-
-    # android.R.id.content: FrameLayout que guarda o cartao
-    const v2, 0x1020002
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v1, :fim
-
-    check-cast v1, Landroid/view/ViewGroup;
-
-    # show() pode rodar de novo no mesmo dialogo; sem esta marca o scrim (e o
-    # cartao clicavel) entrariam duas vezes
-    invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v5
-
-    if-nez v5, :arqex_scrim_novo
-
-    goto :fim
-
-    :arqex_scrim_novo
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v2
-
-    if-lez v2, :fim
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    if-eqz v3, :fim
-
-    invoke-virtual {v1, p0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    # janela do tamanho da tela
-    const/4 v4, -0x1
-
-    invoke-virtual {v0, v4, v4}, Landroid/view/Window;->setLayout(II)V
-
-    # cartao no centro, mantendo o tamanho que o layout definiu
-    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v5
-
-    if-eqz v5, :sem_centro
-
-    instance-of v6, v5, Landroid/widget/FrameLayout$LayoutParams;
-
-    if-eqz v6, :sem_centro
-
-    check-cast v5, Landroid/widget/FrameLayout$LayoutParams;
-
-    const/16 v6, 0x11
-
-    iput v6, v5, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    invoke-virtual {v3, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-    :sem_centro
-
-    # o cartao consome o toque na area vazia dele (senao cairia no scrim)
-    const/4 v6, 0x1
-
-    invoke-virtual {v3, v6}, Landroid/view/View;->setClickable(Z)V
-
-    # scrim: cobre a tela atras do cartao; clicar nele fecha o dialogo
-    new-instance v7, Landroid/view/View;
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
-
-    move-result-object v8
-
-    invoke-direct {v7, v8}, Landroid/view/View;-><init>(Landroid/content/Context;)V
-
-    new-instance v9, Llibs/ArqexDialogScrim;
-
-    # o scrim sabe qual e o cartao para conferir, no MESMO espaco de
-    # coordenadas, se o toque caiu fora dele
-    invoke-direct {v9, p0, v3}, Llibs/ArqexDialogScrim;-><init>(Landroid/app/Dialog;Landroid/view/View;)V
-
-    invoke-virtual {v7, v9}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    new-instance v10, Landroid/widget/FrameLayout$LayoutParams;
-
-    const/4 v11, -0x1
-
-    invoke-direct {v10, v11, v11}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
-
-    const/16 v11, 0x11
-
-    iput v11, v10, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    invoke-virtual {v1, v7, v2, v10}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    :catchall_1
-    :fim
-
-    return-void
-.end method
 .method public static makeDialogDismissible(Landroid/app/Dialog;)V
     .registers 6
 
@@ -312,13 +139,19 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    # 3) reforco: tecla Voltar tambem nas views do dialogo
+    # 3) marca no decor: e o que autoriza o dispatchTouchEvent do $d a decidir
+    #    sobre toque fora. Sem a marca, o dialogo nao e tocado.
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object v0
 
     if-eqz v0, :fim
 
+    const-string v1, "arqex_dismissible"
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    # 4) reforco: tecla Voltar tambem nas views do dialogo
     new-instance v1, Llibs/ArqexBackCloser;
 
     invoke-direct {v1, p0}, Llibs/ArqexBackCloser;-><init>(Landroid/app/Dialog;)V

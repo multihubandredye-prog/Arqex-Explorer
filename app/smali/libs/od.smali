@@ -26371,21 +26371,6 @@
 .method public show()V
     .registers 9
 
-    # 0x40000 = FLAG_WATCH_OUTSIDE_TOUCH: sem essa flag o toque fora da janela
-    # nunca vira ACTION_OUTSIDE e o dialogo nao tem como saber que foi tocado
-    # por fora. Fica aqui (na base od) para valer em TODO dialogo, inclusive
-    # quando o conteudo do cartao e montado depois.
-    const v0, 0x40000
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v1
-
-    if-eqz v1, :arqex_sem_flag
-
-    invoke-virtual {v1, v0}, Landroid/view/Window;->addFlags(I)V
-    :arqex_sem_flag
-
     .line 1
     invoke-virtual {p0}, Llibs/od;->Ok()Z
 
@@ -30030,36 +30015,4 @@
     .line 260
     .line 261
     .line 262
-.end method
-
-
-# Arqex: o Dialog.onTouchEvent do Android fecha no toque fora SÓ quando o
-# dialogo e "cancelable" (mCancelable) e quando a conta de limites dele
-# (Window.isOutOfBounds, que usa getX contra o tamanho do decor) da certo. O
-# MiXplorer chama setCancelable(false) e essa conta ja fechou dialogo no toque
-# de DENTRO nas betas .55-.59. Entao o od nao delega mais para o Dialog:
-#   - ACTION_OUTSIDE (toque fora da janela do dialogo) -> fecha
-#   - qualquer outra acao -> false, sem nenhuma chance de fechar por dentro
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 4
-
-    if-eqz p1, :arqex_touch_nao
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    if-ne v0, v1, :arqex_touch_nao
-
-    invoke-static {p0}, Llibs/SmartFeaturesV116;->closeDialogNow(Landroid/app/Dialog;)V
-
-    const/4 v0, 0x1
-
-    return v0
-    :arqex_touch_nao
-    const/4 v0, 0x0
-
-    return v0
 .end method
