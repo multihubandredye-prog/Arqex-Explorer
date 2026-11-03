@@ -4658,30 +4658,12 @@
 
 .method public static isUnzipEnabled(Llibs/d9;)Z
     .registers 5
-    # Ordem: (1) memoria do processo; (2) arquivo proprio; (3) prefs; (4) false.
+    # Ordem: (1) memoria do processo - o que o usuario escolheu nesta sessao;
+    # (2) preferencias - valor persistido; (3) desmarcada.
     sget-boolean v0, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
-    if-eqz v0, :arqex_iu_arquivo
+    if-eqz v0, :arqex_iu_prefs
     sget-boolean v0, Llibs/AutoTaskWatcher;->unzipState:Z
     return v0
-    :arqex_iu_arquivo
-    :try_start_f
-    sget-object v1, Llibs/zt0;->g:Landroid/content/Context;
-    invoke-static {v1}, Llibs/ArqexUnzipStore;->load(Landroid/content/Context;)I
-    move-result v1
-    :try_end_f
-    .catchall {:try_start_f .. :try_end_f} :catchall_f
-    if-gez v1, :arqex_iu_prefs
-    if-eqz v1, :arqex_iu_arq_off
-    const/4 v0, 0x1
-    goto :arqex_iu_arq_fim
-    :arqex_iu_arq_off
-    const/4 v0, 0x0
-    :arqex_iu_arq_fim
-    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipState:Z
-    const/4 v1, 0x1
-    sput-boolean v1, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
-    return v0
-    :catchall_f
     :arqex_iu_prefs
     const/4 v0, 0x0
     if-nez p0, :arqex_iu_fim
@@ -4692,6 +4674,9 @@
     const-string v2, "unzip_last_state"
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     move-result v0
+    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipState:Z
+    const/4 v1, 0x1
+    sput-boolean v1, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
     :try_end_u
     .catchall {:try_start_u .. :try_end_u} :catchall_u
     :arqex_iu_fim
@@ -5541,12 +5526,6 @@
 
     sput-boolean v0, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
 
-    # arquivo proprio do app (persiste sem depender de cache de prefs)
-    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
-
-    invoke-static {v0, p0}, Llibs/ArqexUnzipStore;->save(Landroid/content/Context;Z)V
-
-    # e tambem as preferencias, por compatibilidade
     :try_start_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
     move-result-object v0

@@ -49,28 +49,20 @@ public final class ArqexUnzipDiag {
             boolean gravado = p.getBoolean("unzip_last_state", false);
             boolean marcada = AutoTaskWatcher.isUnzipEnabled(t);
 
-            // mesmo esquecendo a memoria, o arquivo tem que devolver marcada
-            AutoTaskWatcher.unzipStateKnown = false;
-            boolean peloArquivo = AutoTaskWatcher.isUnzipEnabled(t);
-
-            // e o valor tem que estar mesmo no disco
-            int noDisco = ArqexUnzipStore.load(ctx);
-
             AutoTaskWatcher.setUnzipLastState(false);
             boolean desmarcada = AutoTaskWatcher.isUnzipEnabled(t);
 
             AutoTaskWatcher.setUnzipLastState(antes);
 
+            // restaura a memoria do processo para nao mexer no app de verdade
             AutoTaskWatcher.unzipState = memoriaAntes;
             AutoTaskWatcher.unzipStateKnown = conhecidaAntes;
 
-            boolean ok = marcada && !desmarcada && peloArquivo && noDisco == 1;
+            boolean ok = marcada && !desmarcada;
             Log.i(TAG, "prefs=ok antes=" + antes
                     + " gravado=" + gravado
                     + " lido_pelo_app=" + marcada
                     + " apos_desmarcar=" + desmarcada
-                    + " pelo_arquivo=" + peloArquivo
-                    + " no_disco=" + noDisco
                     + " diag_ok=" + ok);
         } catch (Throwable e) {
             Log.i(TAG, "ERRO " + e + " diag_ok=false");
