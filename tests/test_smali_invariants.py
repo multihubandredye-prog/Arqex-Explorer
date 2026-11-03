@@ -489,12 +489,10 @@ _suf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static setUnzipFromTask") or ""
 _sut_r = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                      ".method public static unzipContentKey") or ""
-check("14a. marca do descompactar viaja DENTRO do conteudo da tarefa", (
-      "takeUnzipToken" in _d9c and "StringBuilder;->append(Ljava/lang/String;)" in _d9c
-      and "unzip_x_" in _sut_r
-      and "unzip_id_" not in _iu and "unzip_pending" not in _iu
-      and "unzipContentKey" in _iu and "unzip_x_" in _atw
-      and "unzip_c_" in _atw))
+check("14a. marca do descompactar vem de unzip_last_state (sem decodificar)", (
+      '"unzip_last_state"' in _iu and "getBoolean" in _iu
+      and "zt0;->e" not in _iu and "hashCode" not in _iu
+      and "takeUnzipToken" in _d9c))
 check("14d. marca volta ao carregar e sobrevive a reconstrucao da tarefa", (
       "0x11" in _sut and '"uz1"' in _sut
       and "setUnzipFromTokens" in _e9 and _e9.count("setUnzipFromTask") >= 2
@@ -509,11 +507,10 @@ check("14g. token do descompactar nao pode sair invertido", (
       "if-eqz v0, :arqex_tok_ret0" in _tok
       and "if-nez v0, :arqex_tok_ret0" not in _tok
       and 'const-string v0, "|uz1"' in _tok and 'const-string v0, "|uz0"' in _tok))
-check("14f. cascata do descompactar sem decodificar e sem condicao invertida", (
-      "unzip_x_" in _iu and "contains" in _iu
-      and "if-eqz v3, :arqex_iu_pref" in _iu   # chave ausente -> vai para a reserva
-      and '"unzip_last_state"' in _iu
-      and "zt0;->e" not in _iu))               # nao decodifica o conteudo
+check("14f. nenhuma leitura da marca depende do conteudo codificado", (
+      "zt0;->e" not in _iu and "unzipContentKey" not in _atw
+      and "saveUnzipContent" not in _atw
+      and '"unzip_last_state"' in _iu))
 check("14e. a escolha e gravada no toque na caixinha (nao so no Salvar)", (
       "ArqexUnzipCheck" in _atw
       and "setOnCheckedChangeListener" in
