@@ -2620,7 +2620,7 @@
     .line 26
     monitor-enter v9
     :try_end_1a
-    .catchall {:try_start_e .. :try_end_1a} :catchall_260
+    .catchall {:try_start_e .. :try_end_1a} :catchall_266
 
     .line 27
     :try_start_1a
@@ -2639,7 +2639,7 @@
     .line 34
     move-result-object v10
     :try_end_22
-    .catchall {:try_start_1a .. :try_end_22} :catchall_27f
+    .catchall {:try_start_1a .. :try_end_22} :catchall_285
 
     .line 35
     if-eqz v10, :cond_26
@@ -2649,7 +2649,7 @@
     :try_start_24
     monitor-exit v9
     :try_end_25
-    .catchall {:try_start_24 .. :try_end_25} :catchall_260
+    .catchall {:try_start_24 .. :try_end_25} :catchall_266
 
     .line 38
     goto :goto_2c
@@ -2659,7 +2659,7 @@
     :try_start_26
     invoke-static {v0, v7}, Llibs/e9;->c(Landroid/content/Intent;I)V
     :try_end_29
-    .catchall {:try_start_26 .. :try_end_29} :catchall_27f
+    .catchall {:try_start_26 .. :try_end_29} :catchall_285
 
     .line 40
     .line 41
@@ -2668,7 +2668,7 @@
     monitor-exit v9
 
     .line 43
-    if-ne v7, v8, :cond_266
+    if-ne v7, v8, :cond_26c
 
     .line 44
     .line 45
@@ -2701,7 +2701,7 @@
     .line 59
     invoke-static {v4, v3}, Llibs/vw1;->r(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_3d
-    .catchall {:try_start_29 .. :try_end_3d} :catchall_260
+    .catchall {:try_start_29 .. :try_end_3d} :catchall_266
 
     .line 60
     .line 61
@@ -2788,7 +2788,7 @@
 
     if-nez v0, :cond_69
 
-    goto/16 :goto_25c
+    goto/16 :goto_262
 
     .line 102
     :cond_69
@@ -2809,7 +2809,7 @@
     move-result v1
 
     .line 110
-    if-eqz v1, :cond_25c
+    if-eqz v1, :cond_262
 
     .line 111
     .line 112
@@ -2849,7 +2849,7 @@
     move-exception v0
 
     .line 129
-    goto/16 :goto_262
+    goto/16 :goto_268
 
     .line 130
     .line 131
@@ -3669,10 +3669,16 @@
     if-eqz v4, :cond_207
 
     :cond_205
-    goto/16 :goto_25c
+    goto/16 :goto_262
 
     :cond_207
     invoke-static {v7, v3, v0}, Llibs/AutoTaskWatcher;->onBeforeAutoTaskExecute(IILjava/util/Set;)V
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_262
 
     .line 502
     const-string v4, "TASKER"
@@ -3739,7 +3745,7 @@
     const/4 v2, 0x3
 
     .line 536
-    if-ne v3, v2, :cond_231
+    if-ne v3, v2, :cond_237
 
     .line 537
     .line 538
@@ -3747,10 +3753,10 @@
 
     .line 539
     .line 540
-    goto :goto_245
+    goto :goto_24b
 
     .line 541
-    :cond_231
+    :cond_237
     new-instance v2, Ljava/lang/StringBuilder;
 
     .line 542
@@ -3787,7 +3793,7 @@
     move-result-object v1
 
     .line 561
-    :goto_245
+    :goto_24b
     invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 562
@@ -3831,31 +3837,31 @@
     .line 580
     .line 581
     invoke-static/range {v8 .. v17}, Llibs/a92;->j(ILjava/util/HashSet;Ljava/lang/String;JLjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Properties;)V
-    :try_end_25c
-    .catchall {:try_start_175 .. :try_end_25c} :catchall_83
+    :try_end_262
+    .catchall {:try_start_175 .. :try_end_262} :catchall_83
 
     .line 582
     .line 583
     .line 584
-    :cond_25c
-    :goto_25c
-    :try_start_25c
+    :cond_262
+    :goto_262
+    :try_start_262
     invoke-static {v7}, Llibs/e9;->r(I)V
 
     .line 585
     .line 586
     .line 587
-    goto :goto_277
+    goto :goto_27d
 
     .line 588
-    :catchall_260
+    :catchall_266
     move-exception v0
 
     .line 589
-    goto :goto_282
+    goto :goto_288
 
     .line 590
-    :goto_262
+    :goto_268
     invoke-static {v7}, Llibs/e9;->r(I)V
 
     .line 591
@@ -3864,7 +3870,7 @@
     throw v0
 
     .line 594
-    :cond_266
+    :cond_26c
     const-string v0, "TASKER"
 
     .line 595
@@ -3892,14 +3898,14 @@
 
     .line 608
     invoke-static {v0, v1}, Llibs/vw1;->r(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_277
-    .catchall {:try_start_25c .. :try_end_277} :catchall_260
+    :try_end_27d
+    .catchall {:try_start_262 .. :try_end_27d} :catchall_266
 
     .line 609
     .line 610
     .line 611
-    :cond_277
-    :goto_277
+    :cond_27d
+    :goto_27d
     const-string v0, "TASKER"
 
     .line 612
@@ -3916,24 +3922,24 @@
     return-void
 
     .line 619
-    :catchall_27f
+    :catchall_285
     move-exception v0
 
     .line 620
-    :try_start_280
+    :try_start_286
     monitor-exit v9
-    :try_end_281
-    .catchall {:try_start_280 .. :try_end_281} :catchall_27f
+    :try_end_287
+    .catchall {:try_start_286 .. :try_end_287} :catchall_285
 
     .line 621
-    :try_start_281
+    :try_start_287
     throw v0
-    :try_end_282
-    .catchall {:try_start_281 .. :try_end_282} :catchall_260
+    :try_end_288
+    .catchall {:try_start_287 .. :try_end_288} :catchall_266
 
     .line 622
-    :goto_282
-    :try_start_282
+    :goto_288
+    :try_start_288
     invoke-static {v0}, Llibs/vl3;->List(Ljava/lang/Throwable;)Ljava/lang/String;
 
     .line 623
@@ -3978,21 +3984,21 @@
     move-result v1
 
     .line 644
-    if-nez v1, :cond_277
+    if-nez v1, :cond_27d
 
     .line 645
     .line 646
     invoke-static {v0}, Llibs/gx1;->d(Ljava/lang/Object;)V
-    :try_end_29d
-    .catchall {:try_start_282 .. :try_end_29d} :catchall_29e
+    :try_end_2a3
+    .catchall {:try_start_288 .. :try_end_2a3} :catchall_2a4
 
     .line 647
     .line 648
     .line 649
-    goto :goto_277
+    goto :goto_27d
 
     .line 650
-    :catchall_29e
+    :catchall_2a4
     move-exception v0
 
     .line 651
@@ -4009,15 +4015,15 @@
     .line 656
     .line 657
     .line 658
-    goto :goto_2a8
+    goto :goto_2ae
 
     .line 659
-    :goto_2a7
+    :goto_2ad
     throw v0
 
     .line 660
-    :goto_2a8
-    goto :goto_2a7
+    :goto_2ae
+    goto :goto_2ad
 .end method
 
 .method public static Context(Landroid/app/Activity;IJLlibs/xl1;Llibs/v23;IZ)V

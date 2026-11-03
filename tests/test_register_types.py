@@ -28,11 +28,12 @@ ALVOS = {
         "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
         "getTaskNameFilter", "getTaskExtFilter",
         "addNameFilterControls", "filterByNameFilter", "onTaskSaved",
-        "isSameTask",
+        "isSameTask", "isUnzipEnabled", "saveUnzipFlag",
     ],
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
     ("libs", "od.smali"): ["arqexForceDismiss", "show"],
+    ("libs", "ArqexUnzip.smali"): ["process", "extract"],
     ("libs", "$d.smali"): ["show", "dispatchKeyEvent", "dispatchTouchEvent"],
 }
 

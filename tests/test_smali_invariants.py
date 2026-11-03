@@ -267,8 +267,9 @@ check("10d. filtro por nome e aplicado no fluxo (junto do de extensao)",
       "filterTaskItems" in _atw and _atw.count("->filterTaskItems(") >= 6)
 check("10h. filtro por nome usa chave propria e cache (name_<regra>)",
       '"name_"' in _atw and "nameFilterCache" in _atw and "getTaskRuleKey" in _atw)
-check("10i. campo do filtro por nome abre preenchido (string no registrador String)",
-      "move-object v7, v5" in _atw)
+check("10i. campo do filtro por nome abre preenchido com o valor salvo",
+      "getTaskNameFilter" in _atw
+      and "invoke-virtual/range {v0 .. v14}, Llibs/od;->Map(" in _atw)
 check("10g. salvamento do filtro por nome pega o campo no dialogo vivo",
       "dialogNameCheckBoxes" in _atw and "dialogNameEdits" in _atw
       and "findDialogCheckBox" in _atw and "findDialogEditText" in _atw)
@@ -468,6 +469,23 @@ def _metodos_autoriais():
 
 
 _problemas_verif = _metodos_autoriais()
+_azu = open(os.path.join(SMALI, "libs", "ArqexUnzip.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzip.smali")) else ""
+_iu = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static isUnzipEnabled") or ""
+_su = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static saveUnzipFlag") or ""
+_ob = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static declared-synchronized onBeforeAutoTaskExecute") or ""
+check("14a. marca de descompactar e guardada pela REGRA da tarefa, nao so pelo id", (
+      '"unzip_"' in _iu and "getTaskRuleKey" in _iu and '"unzip_id_"' in _iu
+      and '"unzip_"' in _su and "getTaskRuleKey" in _su and "putBoolean" in _su))
+check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
+      "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
+check("14c. extracao le o zip do item e escreve na pasta de destino", (
+      "ZipInputStream" in _azu and "getNextEntry" in _azu
+      and "getCanonicalPath" in _azu and "FileOutputStream" in _azu
+      and "Llibs/d9;->Pi:" in _azu))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 
