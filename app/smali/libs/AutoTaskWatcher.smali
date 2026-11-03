@@ -4066,6 +4066,10 @@
 .method public static initStartup()V
     .registers 3
 
+    # Arqex: diagnostico do descompactar - roda uma vez no inicio do app e
+    # registra no logcat (tag ArqexUnzipDiag) o resultado de cada etapa.
+    invoke-static {}, Llibs/ArqexUnzipDiag;->run()V
+
     :try_start_0
     const/4 v0, -0x1
 
