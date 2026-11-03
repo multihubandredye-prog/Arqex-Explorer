@@ -220,8 +220,10 @@ check("9a. caixinha de permissao mostra r/w/x",
       and "Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V" in _perm)
 check("9b. bits especiais mostram s/t",
       'const-string v0, "s"' in _perm and 'const-string v0, "t"' in _perm)
-check("9d. indices 0..2 nao caem no ramo r/w/x (bug do 't' em tudo)",
-      'if-gt p0, v0, :especiais' in _perm and 'if-le p0, v0, :especiais' not in _perm)
+check("9d. indices 0..2 vao para s/t e 3..11 para r/w/x (bug do 't' em tudo)",
+      'if-le p0, v0, :especiais' in _perm
+      and 'if-gt p0, v0, :especiais' not in _perm
+      and _perm.index('if-le p0, v0, :especiais') < _perm.index('const-string v0, "r"'))
 _mut = ""
 for _c in [os.path.join(SMALI, "libs", "SmartFeaturesV116.smali")]:
     if os.path.exists(_c):

@@ -538,7 +538,7 @@
     # indices 3..11 = (indice - 3) % 3 -> r, w, x
     const/4 v0, 0x2
 
-    if-gt p0, v0, :especiais
+    if-le p0, v0, :especiais
 
     add-int/lit8 v1, p0, -0x3
 
