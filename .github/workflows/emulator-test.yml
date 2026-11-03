@@ -1,0 +1,123 @@
+name: Arqex - teste em emulador Android (KVM)
+
+# Roda o APK de verdade num emulador dentro do runner do GitHub (VM Linux com KVM).
+# Serve para pegar o que os testes estaticos nao pegam: VerifyError, classe faltando,
+# crash na abertura e regressao no carregamento do DEX recompilado.
+#
+# Nao publica release nenhum. So testa e guarda screenshot + logcat como artefato.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["**"]
+    paths:
+      - ".github/workflows/emulator-test.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: arqex-emulador-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  emulador:
+    name: Instalar e abrir o app no emulador
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: KVM disponivel?
+        run: |
+          if [ -e /dev/kvm ]; then
+            echo "KVM: presente"
+            ls -l /dev/kvm
+            test -r /dev/kvm && test -w /dev/kvm && echo "KVM: legivel e gravavel" || echo "::warning::KVM sem permissao de leitura/escrita"
+          else
+            echo "::error::sem /dev/kvm neste runner - o emulador nao vai acelerar"
+          fi
+
+      - name: Cache das ferramentas de build
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/arqex-tools
+          key: arqex-tools-baksmali252-smali252-apktool303
+
+      - name: Compilar o APK
+        run: |
+          set -euo pipefail
+          bash tools/build.sh
+          ls -l out/Arqex-unsigned.apk
+
+      - name: Assinar com a chave do repositorio
+        run: |
+          set -euo pipefail
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          BT=$(ls -d "$SDK"/build-tools/* | sort -V | tail -1)
+          export PATH="$BT:$PATH"
+          zipalign -f -p 4 out/Arqex-unsigned.apk out/Arqex-aligned.apk
+          export ARQEX_STORE_PASSWORD=arqex-release
+          export ARQEX_KEY_PASSWORD=arqex-release
+          apksigner sign --ks signing/arqex-release.jks --ks-key-alias arqex \
+            --ks-pass env:ARQEX_STORE_PASSWORD --key-pass env:ARQEX_KEY_PASSWORD \
+            --v1-signing-enabled true --v2-signing-enabled true \
+            --out Arqex-teste.apk out/Arqex-aligned.apk
+          apksigner verify --verbose Arqex-teste.apk | head -5
+          ls -l Arqex-teste.apk
+
+      - name: Boot do emulador, instalar e abrir o app
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel_2
+          disable-animations: true
+          emulator-options: -no-window -no-audio -no-boot-anim -gpu swiftshader_indirect
+          script: |
+            set -uo pipefail
+            adb wait-for-device
+            echo "--- instalando"
+            adb install -r -g Arqex-teste.apk || { echo "::error::falha ao instalar o APK"; exit 1; }
+            echo "--- pacote instalado:"; adb shell pm list packages | grep arqex || true
+            adb logcat -c || true
+            echo "--- abrindo o app"
+            adb shell monkey -p com.arqex.explorer -c android.intent.category.LAUNCHER 1 || true
+            sleep 25
+            adb shell screencap -p /sdcard/tela.png || true
+            adb pull /sdcard/tela.png tela.png || true
+            adb shell dumpsys activity activities | grep -E "mResumedActivity|topResumedActivity" || true
+            adb logcat -d > logcat.txt || true
+            echo "=== linhas de crash ==="
+            grep -E "FATAL EXCEPTION|VerifyError|ClassNotFoundException|NoSuchMethodError|NoSuchFieldError" logcat.txt | head -40 || true
+            echo "=== processo do app ==="
+            adb shell pidof com.arqex.explorer || echo "(app nao esta rodando)"
+            if grep -qE "FATAL EXCEPTION|VerifyError|NoSuchMethodError|NoSuchFieldError" logcat.txt; then
+              echo "::error::o app crashou ao abrir (ver logcat no artefato)"; exit 1
+            fi
+            if ! adb shell pidof com.arqex.explorer > /dev/null; then
+              echo "::error::o processo do app nao ficou rodando"; exit 1
+            fi
+            echo "OK: app abriu e continuou rodando"
+
+      - name: Guardar screenshot e logcat
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: emulador-logcat
+          path: |
+            logcat.txt
+            tela.png
+          if-no-files-found: warn
+          retention-days: 7

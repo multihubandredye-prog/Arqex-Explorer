@@ -753,7 +753,7 @@
 .field public static unzipPending:Z
 
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
-    .registers 6
+    .registers 8
 
     if-nez p0, :cond_3
 
@@ -770,6 +770,39 @@
     move-result v0
 
     :cond_a
+    # Arqex: diagnostico - mostra no logcat o que o dialogo vai pintar
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "abrir titulo="
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    if-eqz p1, :arqex_auc_sem
+
+    iget-object v5, p1, Llibs/d9;->Phi:Ljava/lang/String;
+
+    goto :arqex_auc_tit
+
+    :arqex_auc_sem
+    const-string v5, "?"
+
+    :arqex_auc_tit
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, " marcada="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "ArqexUnzip"
+
+    invoke-static {v5, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     const-string v1, "Descompactar arquivos ZIP no destino (copiar/mover)"
 
     const/16 v2, 0x5d
