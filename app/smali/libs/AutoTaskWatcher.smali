@@ -344,9 +344,9 @@
 
     const/4 v4, 0x1
 
-    move-object v6, v5
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move-object v7, v5
 
     const/4 v8, -0x1
 

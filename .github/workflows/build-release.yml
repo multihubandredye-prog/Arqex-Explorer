@@ -106,6 +106,9 @@ jobs:
           javac -source 8 -target 8 -nowarn -cp "$TMP_UPD/c" -d "$TMP_UPD/c" tests/updater/UpdateNotifyTest.java
           java -cp "$TMP_UPD/c" libs.UpdateNotifyTest
 
+      - name: Conferir tipos dos registradores (evita VerifyError no aparelho)
+        run: python3 tests/test_register_types.py out/fontes_smali
+
       - name: Conferir metadados do APK (manifesto, versao, recursos, libs)
         run: |
           aapt2 dump badging out/Arqex-unsigned.apk > "$RUNNER_TEMP/badging.txt" || aapt dump badging out/Arqex-unsigned.apk > "$RUNNER_TEMP/badging.txt"

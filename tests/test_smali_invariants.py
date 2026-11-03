@@ -263,8 +263,8 @@ check("10d. filtro por nome e aplicado no fluxo (junto do de extensao)",
 check("10h. filtro por nome tem chaves estaveis (id e titulo da tarefa)",
       "name_id_" in _atw and "getNameFilterById" in _atw
       and "name_t_" in _atw and "getNameFilterByTitle" in _atw)
-check("10i. campo do filtro por nome abre preenchido com o valor salvo",
-      "move-object v6, v5" in _atw)
+check("10i. campo do filtro por nome abre preenchido (string no registrador String)",
+      "move-object v7, v5" in _atw)
 check("10g. salvamento do filtro por nome usa os objetos da tela (sem id)",
       "nameUiCheck" in _atw and "nameUiEdit" in _atw)
 check("10e. nome do filtro e salvo ao salvar a tarefa", '"name_"' in _atw and "dialogNameCheckBoxes" in _atw)
@@ -371,3 +371,6 @@ check("11. rotinas escritas a mao nao usam registrador de parametro no new-insta
 print("\n".join("PASS  " + p for p in passes))
 if fails:
     print("\n".join("FAIL  " + f for f in fails))
+
+print("\n%d passaram, %d falharam" % (len(passes), len(fails)))
+sys.exit(1 if fails else 0)
