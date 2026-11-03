@@ -107,15 +107,6 @@
 
     if-eqz p0, :fim
 
-    :try_start_t
-
-    const-string v0, "Arqex: toque fora, fechando"
-
-    invoke-static {v0}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
-    :try_end_t
-    .catchall {:try_start_t .. :try_end_t} :catchall_t
-    :catchall_t
-
     :try_start_c
 
     invoke-virtual {p0}, Landroid/app/Dialog;->cancel()V
@@ -191,6 +182,17 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
+    # show() pode rodar de novo no mesmo dialogo; sem esta marca o scrim (e o
+    # cartao clicavel) entrariam duas vezes
+    invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v5
+
+    if-nez v5, :arqex_scrim_novo
+
+    goto :fim
+
+    :arqex_scrim_novo
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
@@ -204,6 +206,8 @@
     move-result-object v3
 
     if-eqz v3, :fim
+
+    invoke-virtual {v1, p0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     # janela do tamanho da tela
     const/4 v4, -0x1
@@ -246,9 +250,11 @@
 
     new-instance v9, Llibs/ArqexDialogScrim;
 
-    invoke-direct {v9, p0}, Llibs/ArqexDialogScrim;-><init>(Landroid/app/Dialog;)V
+    # o scrim sabe qual e o cartao para conferir, no MESMO espaco de
+    # coordenadas, se o toque caiu fora dele
+    invoke-direct {v9, p0, v3}, Llibs/ArqexDialogScrim;-><init>(Landroid/app/Dialog;Landroid/view/View;)V
 
-    invoke-virtual {v7, v9}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v7, v9}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     new-instance v10, Landroid/widget/FrameLayout$LayoutParams;
 

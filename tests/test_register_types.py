@@ -33,8 +33,8 @@ ALVOS = {
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
     ("libs", "od.smali"): ["arqexForceDismiss", "onTouchEvent", "show"],
-    ("libs", "$d.smali"): ["show", "dispatchKeyEvent", "dispatchTouchEvent"],
-    ("libs", "ArqexDialogScrim.smali"): ["<init>", "onClick"],
+    ("libs", "$d.smali"): ["show", "dispatchKeyEvent"],
+    ("libs", "ArqexDialogScrim.smali"): ["<init>", "onTouch"],
 }
 
 INST = re.compile(r"^\s{4}([a-z][\w/$-]*)\s*(.*)$")

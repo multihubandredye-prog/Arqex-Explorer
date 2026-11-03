@@ -30033,14 +30033,17 @@
 .end method
 
 
-# Arqex: o Dialog.onTouchEvent do Android so fecha o dialogo quando ele e
-# "cancelable" (mCancelable). O MiXplorer chama setCancelable(false) em quase
-# todo dialogo, entao o toque fora era descartado. Aqui o ACTION_OUTSIDE fecha
-# de qualquer jeito, sem depender de mCancelable.
+# Arqex: o Dialog.onTouchEvent do Android fecha no toque fora SÓ quando o
+# dialogo e "cancelable" (mCancelable) e quando a conta de limites dele
+# (Window.isOutOfBounds, que usa getX contra o tamanho do decor) da certo. O
+# MiXplorer chama setCancelable(false) e essa conta ja fechou dialogo no toque
+# de DENTRO nas betas .55-.59. Entao o od nao delega mais para o Dialog:
+#   - ACTION_OUTSIDE (toque fora da janela do dialogo) -> fecha
+#   - qualquer outra acao -> false, sem nenhuma chance de fechar por dentro
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .registers 4
 
-    if-eqz p1, :arqex_touch_super
+    if-eqz p1, :arqex_touch_nao
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -30048,17 +30051,15 @@
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :arqex_touch_super
+    if-ne v0, v1, :arqex_touch_nao
 
     invoke-static {p0}, Llibs/SmartFeaturesV116;->closeDialogNow(Landroid/app/Dialog;)V
 
     const/4 v0, 0x1
 
     return v0
-    :arqex_touch_super
-    invoke-super {p0, p1}, Landroid/app/Dialog;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v0
+    :arqex_touch_nao
+    const/4 v0, 0x0
 
     return v0
 .end method

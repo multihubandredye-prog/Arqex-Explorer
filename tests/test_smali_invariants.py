@@ -375,19 +375,24 @@ check("12g. ler o filtro por nome espelha o filtro por extensao",
       '"name_"' in _atw_get and 'nameFilterCache' in _atw_get
       and 'getTaskRuleKey' in _atw_get and 'name_id_' not in _atw_get
       and _atw_get.count(":try_start") == _atw_getext.count(":try_start"))
-check("12h. toque fora da janela fecha o dialogo ($d e od)", (
-      'applyFolderDialogTouchClose' in _d and 'applyFolderDialogTouchClose' in _mut
-      and 'dispatchTouchEvent' in _d and 'closeDialogNow' in _d
-      and '0x40000' in _mut and '0x40000' in _od and 'getActionMasked' in _d))
-check("12i. toque DENTRO nao pode fechar (sem o onTouchEvent do Dialog)", (
-      'superDispatchTouchEvent' in _d and 'getGlobalVisibleRect' in _d
-      and 'dialog_view' in _d))
+_af = method_body(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"),
+                 ".method public static applyFolderDialogTouchClose") or ""
 _mot = method_body(os.path.join(SMALI, "libs", "od.smali"),
                   ".method public onTouchEvent") or ""
-check("12m. todo dialogo od fecha com ACTION_OUTSIDE mesmo sem ser cancelable",
-      "getActionMasked" in _mot and "const/4 v1, 0x4" in _mot
-      and "closeDialogNow" in _mot
-      and "Dialog;->onTouchEvent(Landroid/view/MotionEvent;)Z" in _mot)
+_scr = open(os.path.join(SMALI, "libs", "ArqexDialogScrim.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "ArqexDialogScrim.smali")) else ""
+check("12h. toque FORA fecha: ACTION_OUTSIDE no od + scrim atras do cartao", (
+      'getActionMasked' in _mot and 'const/4 v1, 0x4' in _mot and 'closeDialogNow' in _mot
+      and '0x40000' in _mut and '0x40000' in _od
+      and 'setOnTouchListener' in _af and 'ArqexDialogScrim' in _af))
+check("12i. toque DENTRO nao pode fechar: o dialogo nao decide antes das views", (
+      'dispatchTouchEvent' not in _d
+      and 'getGlobalVisibleRect' not in _d
+      and 'Dialog;->onTouchEvent(Landroid/view/MotionEvent;)Z' not in _mot
+      and 'getLeft' in _scr and 'getRight' in _scr and 'getX()F' in _scr))
+check("12m. scrim so fecha no ACTION_UP fora do retangulo do cartao", (
+      'getActionMasked' in _scr and 'const/4 v1, 0x1' in _scr
+      and 'getTop' in _scr and 'getBottom' in _scr and 'closeDialogNow' in _scr))
 check("12n. nenhuma chamada a Window.addFlags com assinatura errada (II)V",
       all("addFlags(II)V" not in open(os.path.join(SMALI, "libs", f), encoding="utf-8").read()
           for f in os.listdir(os.path.join(SMALI, "libs")) if f.endswith(".smali")))
@@ -399,15 +404,12 @@ if os.path.exists(_c9):
 _afd = method_body(os.path.join(SMALI, "libs", "od.smali"), ".method public arqexForceDismiss") or ""
 check("12k. fechar o dialogo limpa o estado do MiXplorer (senao nao abre outro)",
       "->Gms(Z)V" in _afd and "Dialog;->dismiss()V" in _afd)
-_af = method_body(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"),
-                 ".method public static applyFolderDialogTouchClose") or ""
 check("12l. janela do dialogo ocupa a tela e tem scrim clicavel atras do cartao",
       "Window;->setLayout(II)V" in _af and "gravity:I" in _af
+      and "setOnTouchListener(Landroid/view/View$OnTouchListener;)V" in _af
       and "ArqexDialogScrim" in _af and "setClickable(Z)V" in _af
       and "ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V" in _af
       and "ArqexDialogScrim.smali" in " ".join(sorted(__import__("os").listdir(os.path.join(SMALI, "libs")))))
-check("12k. fechar o dialogo limpa o estado do MiXplorer (senao nao abre outro)",
-      "->Gms(Z)V" in _afd and "Dialog;->dismiss()V" in _afd)
 check("12j. filtro por nome desligado (fora da tela e fora da filtragem)", (
       "addNameFilterControls" not in _e9
       and "filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V\n\n    return-void" not in _atw
@@ -429,7 +431,7 @@ _AUTORAIS = {
     ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
     ("libs", "ArqexDialogKeyCloser.smali"): ["<init>", "onKey"],
     ("libs", "od.smali"): ["arqexForceDismiss"],
-    ("libs", "$d.smali"): ["show", "dispatchKeyEvent", "dispatchTouchEvent"],
+    ("libs", "$d.smali"): ["show", "dispatchKeyEvent"],
 }
 
 
