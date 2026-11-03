@@ -38,6 +38,8 @@ public final class ArqexUnzipDiag {
             }
 
             boolean antes = p.getBoolean("unzip_last_state", false);
+            boolean memoriaAntes = AutoTaskWatcher.unzipState;
+            boolean conhecidaAntes = AutoTaskWatcher.unzipStateKnown;
 
             ArrayList om = new ArrayList();
             d9 t = new d9(3600000L, 86400000L, 60000L, "Diag", "/origem", om, "/destino",
@@ -51,6 +53,10 @@ public final class ArqexUnzipDiag {
             boolean desmarcada = AutoTaskWatcher.isUnzipEnabled(t);
 
             AutoTaskWatcher.setUnzipLastState(antes);
+
+            // restaura a memoria do processo para nao mexer no app de verdade
+            AutoTaskWatcher.unzipState = memoriaAntes;
+            AutoTaskWatcher.unzipStateKnown = conhecidaAntes;
 
             boolean ok = marcada && !desmarcada;
             Log.i(TAG, "prefs=ok antes=" + antes

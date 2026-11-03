@@ -752,6 +752,14 @@
 # o campo "somente arquivos".
 .field public static unzipPending:Z
 
+# Marca do descompactar na memoria do processo. A leitura por SharedPreferences
+# se mostrou instavel no aparelho (a instancia usada para ler nao enxerga o que
+# foi gravado em outra instancia do mesmo arquivo), por isso o valor tambem fica
+# aqui: enquanto o app estiver aberto, a caixinha segue exatamente o que o
+# usuario escolheu. As prefs continuam sendo gravadas para sobreviver ao fechar.
+.field public static unzipState:Z
+.field public static unzipStateKnown:Z
+
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
     .registers 8
 
@@ -4650,25 +4658,31 @@
 
 .method public static isUnzipEnabled(Llibs/d9;)Z
     .registers 5
-    # Marca "Descompactar arquivos ZIP no destino".
-    # Fonte unica: prefs "unzip_last_state", gravada no TOQUE da caixinha
-    # (libs/ArqexUnzipCheck) e tambem no salvamento (setUnzipFromDialog).
-    # Antes eu tentava ler do conteudo da tarefa; a decodificacao falhava dentro
-    # do app e a caixinha voltava sempre desmarcada. Sem decodificar, sem id e
-    # sem hash: e o mesmo padrao dos outros checkboxes que o app mantem.
+    # Ordem: (1) memoria do processo - o que o usuario escolheu nesta sessao;
+    # (2) preferencias - valor persistido; (3) desmarcada.
+    sget-boolean v0, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
+    if-eqz v0, :arqex_iu_prefs
+    sget-boolean v0, Llibs/AutoTaskWatcher;->unzipState:Z
+    return v0
+    :arqex_iu_prefs
     const/4 v0, 0x0
-    :try_start_u
     if-nez p0, :arqex_iu_fim
+    :try_start_u
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
     move-result-object v1
     if-eqz v1, :arqex_iu_fim
     const-string v2, "unzip_last_state"
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
     move-result v0
+    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipState:Z
+    const/4 v1, 0x1
+    sput-boolean v1, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
     :try_end_u
     .catchall {:try_start_u .. :try_end_u} :catchall_u
-    :catchall_u
     :arqex_iu_fim
+    return v0
+    :catchall_u
+    const/4 v0, 0x0
     return v0
 .end method
 
@@ -5505,6 +5519,13 @@
 # caso a marcacao nao apareca na proxima abertura do dialogo.
 .method public static setUnzipLastState(Z)V
     .registers 5
+    # memoria do processo: vale na hora, sem depender das preferencias
+    sput-boolean p0, Llibs/AutoTaskWatcher;->unzipState:Z
+
+    const/4 v0, 0x1
+
+    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipStateKnown:Z
+
     :try_start_1
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
     move-result-object v0
