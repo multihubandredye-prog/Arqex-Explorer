@@ -5575,11 +5575,21 @@
     # bit 8 = sobreviveu ao reiniciar o app | 32 = desmarcar funciona | 16 = rodou a fase 2
     const/4 v0, 0x0
 
+    const-string v3, "ArqexUnzipDiag"
+
+    const-string v4, "st_inicio"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    if-nez v1, :arqex_st_erro
+    if-eqz v1, :arqex_st_erro
+
+    const-string v4, "st_prefs_ok"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string v2, "unzip2_DIAG_PROVA"
 
@@ -5727,6 +5737,20 @@
     return v0
 
     :catchall_st
+    move-exception v4
+
+    invoke-virtual {v4}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "ArqexUnzipDiag"
+
+    invoke-static {v5, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, -0x1
+
+    return v0
+
     :arqex_st_erro
     const/4 v0, -0x1
 
