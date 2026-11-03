@@ -746,6 +746,12 @@
 # o estado salvo tem que vir SEMPRE da caixinha que o usuario viu.
 .field public static unzipBox:Landroid/widget/CheckBox;
 
+# Arqex: valor do "Descompactar no destino" que sera gravado DENTRO da tarefa
+# que esta sendo construida agora (d9.<init> consome e zera). O estado deixou de
+# ser guardado em chave de prefs: ele viaja no proprio conteudo da tarefa, como
+# o campo "somente arquivos".
+.field public static unzipPending:Z
+
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
     .registers 6
 
@@ -4582,76 +4588,26 @@
 .end method
 
 .method public static isUnzipEnabled(Llibs/d9;)Z
-    .registers 7
-
-    # Arqex: a marca "Descompactar arquivos ZIP no destino" e lida em DUAS
-    # chaves e vale se QUALQUER UMA estiver marcada:
-    #   unzip_<getTaskRuleKey>  -> identidade da regra (funciona em tarefa nova,
-    #                              em que o id ainda nao existe no momento de salvar)
-    #   unzip_id_<id>           -> chave antiga, por tarefa
-    # Regra de OU (e nao "a primeira que existir"): se uma das chaves ficou com
-    # false de uma gravacao anterior, ela nao pode mascarar a outra. E ao
-    # desmarcar, as duas sao gravadas como false, entao continua desmarcando.
+    .registers 5
+    # Arqex: a marca "Descompactar arquivos ZIP no destino" mora DENTRO da tarefa.
+    # d9.X e o conteudo codificado da tarefa (o mesmo que e salvo em
+    # custom_key_AUTO_TASKS). O construtor do d9 acrescenta no fim do conteudo o
+    # token "|uz1" (marcado) ou "|uz0" (desmarcado), entao aqui basta decodificar
+    # e olhar o sufixo. Nao depende de id, hash nem de chave em prefs - antes era
+    # isso que fazia a caixinha voltar desmarcada depois de salvar.
     const/4 v0, 0x0
-
     if-nez p0, :arqex_unzip_fim
-
     :try_start_u
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
-
+    iget-object v1, p0, Llibs/d9;->X:Ljava/lang/String;
+    if-nez v1, :arqex_unzip_fim
+    invoke-static {v1}, Llibs/zt0;->e(Ljava/lang/String;)Ljava/lang/String;
     move-result-object v1
-
-    if-eqz v1, :arqex_unzip_fim
-
-    # ---- chave 1: pela regra
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "unzip_"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v4
-
-    if-eqz v4, :arqex_unzip_id
-
-    const/4 v0, 0x1
-
-    goto :arqex_unzip_fim
-
-    :arqex_unzip_id
-    # ---- chave 2: pelo id da tarefa (compatibilidade)
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "unzip_id_"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v3, p0, Llibs/d9;->Y:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
+    if-nez v1, :arqex_unzip_fim
+    const-string v2, "|uz1"
+    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
     move-result v0
     :try_end_u
     .catchall {:try_start_u .. :try_end_u} :catchall_u
-
     :catchall_u
     :arqex_unzip_fim
     return v0
@@ -5392,15 +5348,87 @@
     return-void
 .end method
 
+# Arqex: guarda para a proxima tarefa a ser construida o valor que veio no
+# token 17 (indice 0x11) do conteudo lido do armazenamento. Assim, ao recarregar
+# as tarefas o marcador nao se perde.
+.method public static setUnzipFromTokens([Ljava/lang/String;)V
+    .registers 4
+    const/4 v0, 0x0
+    :try_start_t
+    if-eqz p0, :arqex_sut_set
+    array-length v1, p0
+    const/16 v2, 0x11
+    if-le v1, v2, :arqex_sut_set
+    aget-object v1, p0, v2
+    const-string v2, "uz1"
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v0
+    :try_end_t
+    .catchall {:try_start_t .. :try_end_t} :catchall_t
+    :catchall_t
+    :arqex_sut_set
+    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipPending:Z
+    return-void
+.end method
+
+# Arqex: copia a marca de uma tarefa existente (usado quando a tarefa e
+# reconstruida para reagendar - o conteudo novo tem que continuar igual).
+.method public static setUnzipFromTask(Llibs/d9;)V
+    .registers 2
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
+    move-result v0
+    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipPending:Z
+    return-void
+.end method
+
+# Arqex: le a caixinha do dialogo que esta sendo salvo (com reserva na ultima
+# caixinha criada) e deixa o valor pronto para o d9 que vai ser construido.
+.method public static setUnzipFromDialog(Llibs/od;)V
+    .registers 5
+    const/4 v0, 0x0
+    :try_start_d
+    # reserva: a ultima caixinha criada; NAO sobrescrever com null
+    sget-object v1, Llibs/AutoTaskWatcher;->unzipBox:Landroid/widget/CheckBox;
+    if-eqz p0, :arqex_sud_tem
+    const/16 v2, 0x5d
+    sget-object v3, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
+    invoke-static {p0, v3, v2}, Llibs/AutoTaskWatcher;->findDialogCheckBox(Llibs/od;Ljava/util/WeakHashMap;I)Landroid/widget/CheckBox;
+    move-result-object v2
+    if-eqz v2, :arqex_sud_tem
+    move-object v1, v2
+    :arqex_sud_tem
+    if-eqz v1, :arqex_sud_fim
+    invoke-virtual {v1}, Landroid/widget/CompoundButton;->isChecked()Z
+    move-result v0
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_d
+    :catchall_d
+    :arqex_sud_fim
+    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipPending:Z
+    return-void
+.end method
+
+# Arqex: entrega o token a gravar no conteudo da tarefa e zera (uso unico).
+# "|uz1" = descompactar marcado, "|uz0" = desmarcado.
+.method public static takeUnzipToken()Ljava/lang/String;
+    .registers 2
+    sget-boolean v0, Llibs/AutoTaskWatcher;->unzipPending:Z
+    const/4 v1, 0x0
+    sput-boolean v1, Llibs/AutoTaskWatcher;->unzipPending:Z
+    if-eqz v0, :arqex_tok0
+    const-string v0, "|uz1"
+    return-object v0
+    :arqex_tok0
+    const-string v0, "|uz0"
+    return-object v0
+.end method
+
 .method public static declared-synchronized onTaskSaved(Llibs/d9;Llibs/d9;Llibs/od;)V
     .registers 12
 
-    # Arqex: grava a marca do "Descompactar no destino" para a tarefa NOVA (p1)
-    # e para a ANTIGA (p0, a que esta persistida) - a leitura pode acontecer com
-    # qualquer uma das duas, entao as duas chaves de regra precisam existir.
-    invoke-static {p2, p0}, Llibs/AutoTaskWatcher;->saveUnzipFlag(Llibs/od;Llibs/d9;)V
-
-    invoke-static {p2, p1}, Llibs/AutoTaskWatcher;->saveUnzipFlag(Llibs/od;Llibs/d9;)V
+    # Arqex: a marca do "Descompactar no destino" nao passa mais por prefs -
+    # ela e gravada dentro do conteudo da propria tarefa (ver d9.<init> e
+    # setUnzipFromDialog), por isso aqui nao ha nada a salvar.
 
     if-nez p1, :cond_6
 
@@ -6837,101 +6865,6 @@
 
     :cond_2a
     return-object p0
-.end method
-
-.method public static saveUnzipFlag(Llibs/od;Llibs/d9;)V
-    .registers 8
-
-    # Grava a marca "Descompactar arquivos ZIP no destino" nas DUAS chaves:
-    # unzip_<regra> e unzip_id_<id>. Sempre grava as duas (mesmo com id 0),
-    # para o estado marcado/desmarcado acompanhar o checkbox.
-    if-eqz p0, :arqex_save_fim
-
-    if-nez p1, :arqex_save_fim
-
-    :try_start_s
-    const/16 v0, 0x5d
-
-    sget-object v1, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
-
-    invoke-static {p0, v1, v0}, Llibs/AutoTaskWatcher;->findDialogCheckBox(Llibs/od;Ljava/util/WeakHashMap;I)Landroid/widget/CheckBox;
-
-    move-result-object v0
-
-    if-nez v0, :arqex_save_reserva
-
-    goto :arqex_save_tem
-
-    :arqex_save_reserva
-    # reserva: a ultima caixinha criada nesta sessao
-    sget-object v0, Llibs/AutoTaskWatcher;->unzipBox:Landroid/widget/CheckBox;
-
-    :arqex_save_tem
-    if-eqz v0, :arqex_save_fim
-
-    invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
-
-    move-result v2
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    if-eqz v1, :arqex_save_fim
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v4
-
-    if-eqz v4, :arqex_save_fim
-
-    # ---- chave 1: pela regra
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v5, "unzip_"
-
-    invoke-direct {v3, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p1}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v4, v3, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v4
-
-    # ---- chave 2: pelo id
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v5, "unzip_id_"
-
-    invoke-direct {v3, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v5, p1, Llibs/d9;->Y:I
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v4, v3, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
-    :try_end_s
-    .catchall {:try_start_s .. :try_end_s} :catchall_s
-
-    :catchall_s
-    :arqex_save_fim
-    return-void
 .end method
 
 .method public static scanAllWatchTasksNow()V

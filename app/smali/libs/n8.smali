@@ -1038,6 +1038,10 @@
     move-result v36
 
     .line 430
+    # Arqex: valor da caixinha "Descompactar arquivos ZIP no destino" vai
+    # dentro da tarefa construida logo abaixo
+    invoke-static {v15}, Llibs/AutoTaskWatcher;->setUnzipFromDialog(Llibs/od;)V
+
     move-object/from16 v30, v5
 
     .line 431

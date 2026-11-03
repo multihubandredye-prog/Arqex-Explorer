@@ -474,19 +474,30 @@ _azu = open(os.path.join(SMALI, "libs", "ArqexUnzip.smali"), encoding="utf-8").r
 _iu = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static isUnzipEnabled") or ""
 _su = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
-                  ".method public static saveUnzipFlag") or ""
+                  ".method public static setUnzipFromTokens") or ""
 _ob = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static declared-synchronized onBeforeAutoTaskExecute") or ""
-check("14a. marca de descompactar e guardada pela REGRA da tarefa, nao so pelo id", (
-      '"unzip_"' in _iu and "getTaskRuleKey" in _iu and '"unzip_id_"' in _iu
-      and '"unzip_"' in _su and "getTaskRuleKey" in _su and "putBoolean" in _su))
-_ots = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
-                   ".method public static declared-synchronized onTaskSaved") or ""
-check("14d. marca do descompactar grava nas duas pontas e tem reserva da caixinha", (
-      _ots.count("saveUnzipFlag") >= 2
-      and "unzipBox:Landroid/widget/CheckBox" in _atw
-      and "unzipBox:Landroid/widget/CheckBox" in _su
-      and '"unzip_"' in _su and '"unzip_id_"' in _su))
+# A marca do "Descompactar no destino" mora DENTRO do conteudo da tarefa
+# (token "uz1" no fim do texto que vira d9.X). Nao existe mais chave em prefs.
+_d9c = method_body(os.path.join(SMALI, "libs", "d9.smali"),
+                   ".method public constructor <init>") or ""
+_sut = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method public static setUnzipFromTokens") or ""
+_sud = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method public static setUnzipFromDialog") or ""
+_suf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method public static setUnzipFromTask") or ""
+check("14a. marca do descompactar viaja DENTRO do conteudo da tarefa", (
+      "takeUnzipToken" in _d9c and "StringBuilder;->append(Ljava/lang/String;)" in _d9c
+      and "zt0;->e" in _iu and '"|uz1"' in _iu and "endsWith" in _iu
+      and "unzip_id_" not in _iu and "unzip_pending" not in _iu
+      and "getBoolean" not in _iu))
+check("14d. marca volta ao carregar e sobrevive a reconstrucao da tarefa", (
+      "0x11" in _sut and '"uz1"' in _sut
+      and "setUnzipFromTokens" in _e9 and _e9.count("setUnzipFromTask") >= 2
+      and "setUnzipFromDialog" in _n8
+      and "unzipBox:Landroid/widget/CheckBox" in _sud
+      and "isUnzipEnabled" in _suf and "saveUnzipFlag" not in _atw))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
       "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
 check("14c. extracao le o zip do item e escreve na pasta de destino", (

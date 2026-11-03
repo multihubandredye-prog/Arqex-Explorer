@@ -5565,6 +5565,9 @@
 
     .line 164
     .line 165
+    # Arqex: recupera a marca do "Descompactar no destino" do conteudo lido
+    invoke-static {v6}, Llibs/AutoTaskWatcher;->setUnzipFromTokens([Ljava/lang/String;)V
+
     new-instance v8, Llibs/d9;
 
     .line 166
@@ -6414,6 +6417,9 @@
     .line 97
     .line 98
     .line 99
+    # Arqex: tarefa reconstruida - leva a marca do descompactar
+    invoke-static {v8}, Llibs/AutoTaskWatcher;->setUnzipFromTask(Llibs/d9;)V
+
     new-instance v11, Llibs/d9;
 
     .line 100
@@ -6917,6 +6923,9 @@
     move-wide v15, v10
 
     .line 72
+    # Arqex: tarefa reconstruida - leva a marca do descompactar
+    invoke-static {v7}, Llibs/AutoTaskWatcher;->setUnzipFromTask(Llibs/d9;)V
+
     new-instance v10, Llibs/d9;
 
     .line 73

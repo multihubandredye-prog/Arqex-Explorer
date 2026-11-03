@@ -427,6 +427,15 @@
     .line 201
     invoke-virtual {v13, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
+    # Arqex: fecha o conteudo com o token do "Descompactar arquivos ZIP no
+    # destino". O valor vem de AutoTaskWatcher (consumido aqui, uso unico), entao
+    # a marca fica DENTRO da tarefa e volta junto quando ela e recarregada.
+    invoke-static {}, Llibs/AutoTaskWatcher;->takeUnzipToken()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v13, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 202
     .line 203
     .line 204
