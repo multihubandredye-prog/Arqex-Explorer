@@ -103,20 +103,11 @@
 .end method
 
 .method public static applyFolderDialogTouchClose(Landroid/app/Dialog;)V
-    .registers 3
+    .registers 8
 
     if-eqz p0, :fim
 
-    # setCanceledOnTouchOutside(true) e' o que faz o Android entregar o toque
-    # fora da janela como ACTION_OUTSIDE (sem ele o evento nunca chega); a flag
-    # 0x40000 vai junto por garantia. Quem trata o evento e' o
-    # $d.dispatchTouchEvent, que NAO passa pelo Dialog.onTouchEvent - foi ele
-    # que fechava o dialogo em qualquer toque dentro.
     :try_start_1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -124,9 +115,71 @@
 
     if-eqz v0, :fim
 
+    # reforco: se o toque cair fora da janela, chega como ACTION_OUTSIDE
     const v1, 0x40000
 
     invoke-virtual {v0, v1, v1}, Landroid/view/Window;->addFlags(II)V
+
+    # o teclado passa a encolher a janela em vez de empurrar o dialogo
+    const/16 v1, 0x10
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :fim
+
+    # android.R.id.content: FrameLayout que guarda o cartao do dialogo
+    const v2, 0x1020002
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    if-eqz v2, :fim
+
+    check-cast v2, Landroid/view/ViewGroup;
+
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v3
+
+    if-lez v3, :fim
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v3
+
+    if-eqz v3, :fim
+
+    # janela do tamanho da tela: assim o toque fora do cartao cai NA janela do
+    # dialogo (e nao na lista atras), e o $d.dispatchTouchEvent fecha
+    const/4 v4, -0x1
+
+    invoke-virtual {v0, v4, v4}, Landroid/view/Window;->setLayout(II)V
+
+    # mantem o tamanho que o layout do MiXplorer definiu e so centraliza
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v4
+
+    if-eqz v4, :fim
+
+    instance-of v5, v4, Landroid/widget/FrameLayout$LayoutParams;
+
+    if-eqz v5, :fim
+
+    check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/16 v5, 0x11
+
+    iput v5, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     :catchall_1

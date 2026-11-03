@@ -26349,7 +26349,19 @@
 # Fecha a janela chamando direto o dismiss() do Dialog. Serve quando o
 # dismiss() do proprio dialogo falha no meio e a janela fica na tela.
 .method public arqexForceDismiss()V
-    .registers 1
+    .registers 2
+
+    # fecha o dialogo E limpa o estado do MiXplorer (activity.Rho). Sem o Gms
+    # a atividade continua achando que ha um dialogo aberto e nao abre mais
+    # nenhum - foi o que aconteceu ao abrir a edicao de uma tarefa duas vezes.
+    :try_start_g
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Llibs/od;->Gms(Z)V
+    :try_end_g
+    .catchall {:try_start_g .. :try_end_g} :catchall_g
+    :catchall_g
 
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
 

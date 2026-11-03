@@ -387,6 +387,12 @@ _e9 = ""
 _c9 = os.path.join(SMALI, "libs", "e9.smali")
 if os.path.exists(_c9):
     _e9 = open(_c9, encoding="utf-8", errors="replace").read()
+_afd = method_body(os.path.join(SMALI, "libs", "od.smali"), ".method public arqexForceDismiss") or ""
+check("12k. fechar o dialogo limpa o estado do MiXplorer (senao nao abre outro)",
+      "->Gms(Z)V" in _afd and "Dialog;->dismiss()V" in _afd)
+check("12l. janela do dialogo ocupa a tela (toque fora do cartao cai na janela)", (
+      'setLayout(II)V' in _mut and "FrameLayout$LayoutParams;->gravity:I" in _mut
+      and 'const/16 v5, 0x11' in _mut))
 check("12j. filtro por nome desligado (fora da tela e fora da filtragem)", (
       "addNameFilterControls" not in _e9
       and "filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V\n\n    return-void" not in _atw
