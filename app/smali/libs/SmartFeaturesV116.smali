@@ -101,7 +101,7 @@
 .end method
 
 .method public static makeDialogDismissible(Landroid/app/Dialog;)V
-    .registers 4
+    .registers 5
 
     if-nez p0, :fim
 

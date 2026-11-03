@@ -317,8 +317,57 @@ if RES:
                   "arqex_theme_create_button" not in t and
                   "arqex_theme_create_edit_title" not in t)
 
+# ---------------------------------------------------------------------------
+# 11. nenhuma rotina escrita a mao pode usar registrador de parametro como
+# destino de new-instance. Foi exatamente isso que gerou o VerifyError da
+# beta.52: com .registers 4 e um parametro, p0 == v3; o new-instance v3
+# destruia o parametro e o verificador do Android recusava a classe.
+# ---------------------------------------------------------------------------
+_AUTORAIS = {
+    ("libs", "SmartFeaturesV116.smali"): ["makeDialogDismissible"],
+    ("libs", "SmartFeaturesV116$PermPickerDialog.smali"): ["rotuloPorId", "initBox"],
+    ("libs", "AutoTaskWatcher.smali"): [
+        "matchesNameFilter", "sanitizeNameFilter", "filterTaskItems",
+        "getNameFilterById", "getNameFilterByTitle", "getTaskNameFilter",
+        "addNameFilterControls", "filterByNameFilter",
+    ],
+    ("libs", "ArqexBackCloser.smali"): ["<init>", "onKey"],
+}
+
+
+def _metodos_autoriais():
+    problemas = []
+    for (pasta, arquivo), nomes in _AUTORAIS.items():
+        caminho = os.path.join(SMALI, pasta, arquivo)
+        if not os.path.exists(caminho):
+            problemas.append("%s: arquivo ausente" % arquivo)
+            continue
+        txt = open(caminho, encoding="utf-8", errors="replace").read()
+        for nome in nomes:
+            m = re.search(r"\.method[^\n]* " + re.escape(nome) + r"\(([^)]*)\)[^\n]*\n(.*?)\.end method",
+                          txt, re.S)
+            if not m:
+                problemas.append("%s: metodo %s nao encontrado" % (arquivo, nome))
+                continue
+            params = m.group(1).strip()
+            nparam = 0 if not params else params.count(",") + 1
+            corpo = m.group(2)
+            reg = re.search(r"\.registers (\d+)", corpo)
+            if not reg:
+                continue
+            limite = int(reg.group(1)) - nparam
+            for ni in re.finditer(r"new-instance [vp](\d+),", corpo):
+                if int(ni.group(1)) >= limite:
+                    problemas.append(
+                        "%s.%s: new-instance no registrador %s (parametros ocupam de %d em diante)"
+                        % (arquivo, nome, ni.group(1), limite))
+    return problemas
+
+
+_problemas_verif = _metodos_autoriais()
+check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
+      not _problemas_verif, "; ".join(_problemas_verif[:4]))
+
 print("\n".join("PASS  " + p for p in passes))
 if fails:
     print("\n".join("FAIL  " + f for f in fails))
-print("\n%d passaram, %d falharam" % (len(passes), len(fails)))
-sys.exit(1 if fails else 0)
