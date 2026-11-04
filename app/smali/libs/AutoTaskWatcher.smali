@@ -2289,6 +2289,82 @@
 
     invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V
 
+    invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterByRegexSource(Llibs/d9;Ljava/util/Collection;)V
+
+    return-void
+.end method
+
+.method public static filterByRegexSource(Llibs/d9;Ljava/util/Collection;)V
+    .registers 6
+
+    # Caixinha "Regex (...)" do dialogo da tarefa.
+    # So age quando ela esta marcada E o texto e um padrao com coringa (* ou .*),
+    # para nao mexer nas tarefas que usam apenas uma pasta normal.
+    # A pasta escrita na frente e ignorada, igual ao filtro por nome.
+    if-eqz p0, :arqex_frs_fim
+
+    iget-boolean v0, p0, Llibs/d9;->Sigma:Z
+
+    if-nez v0, :arqex_frs_fim
+
+    iget-object v0, p0, Llibs/d9;->Psi:Ljava/lang/String;
+
+    invoke-static {v0}, Llibs/ArqexUnzip;->strip(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :arqex_frs_fim
+
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :arqex_frs_fim
+
+    const-string v1, "\\*"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :arqex_frs_fim
+
+    if-eqz p1, :arqex_frs_fim
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :arqex_frs_loop
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :arqex_frs_fim
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Llibs/rp0;
+
+    if-eqz v2, :arqex_frs_loop
+
+    invoke-virtual {v2}, Llibs/rp0;->m()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3, v0}, Llibs/ArqexFilter;->combina(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :arqex_frs_loop
+
+    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+
+    goto :arqex_frs_loop
+
+    :arqex_frs_fim
     return-void
 .end method
 

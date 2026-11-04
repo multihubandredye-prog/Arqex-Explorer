@@ -1116,6 +1116,21 @@
     .line 490
     move-result-object v4
 
+    # Arqex: mostra na frente do rotulo o exemplo que o usuario pediu.
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, " - ex: /storage/emulated/0/Download/.*pdf"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
     .line 491
     if-eqz v11, :cond_1f7
 
