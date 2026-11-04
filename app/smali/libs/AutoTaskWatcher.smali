@@ -5449,11 +5449,11 @@
 .end method
 
 .method public static isUnzipFlagSet(Ljava/lang/String;)Z
-    .registers 4
+    .registers 5
 
-    # Desenho novo: memoria do processo -> arquivo proprio (files/arqex_unzip_flags.txt).
-    # SharedPreferences ficou de fora: dois processos do app reescrevem a mesma
-    # copia e apagam a gravacao um do outro.
+    # Desenho novo: memoria do processo -> arquivo proprio (sem Context, sem prefs).
+    # ATENCAO: com 1 parametro, p0 e o ultimo registrador (aqui v4). Os temporarios
+    # tem que ser v0..v3, senao sobrescrevem a propria chave.
     const/4 v0, 0x0
 
     if-nez p0, :arqex_ifs_fim
@@ -5484,14 +5484,14 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :arqex_ifs_grava
+    if-eqz v2, :arqex_ifs_marcada
 
     const/4 v3, 0x1
 
-    :arqex_ifs_grava
+    :arqex_ifs_marcada
     move v0, v3
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 

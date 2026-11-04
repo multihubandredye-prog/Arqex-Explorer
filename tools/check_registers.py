@@ -103,6 +103,54 @@ def analisa(caminho):
     return problemas
 
 
+# So nos arquivos escritos a mao neste projeto (o resto e codigo original do app).
+_NOSSOS = ("AutoTaskWatcher", "ArqexUnzip", "AppImpl")
+
+
+def _checa_faixa_parametros(caminho):
+    problemas = []
+    if not os.path.basename(caminho).startswith(_NOSSOS):
+        return problemas
+    try:
+        texto = open(caminho, encoding="utf-8").read()
+    except Exception:
+        return problemas
+    for bloco in re.finditer(r"\.method[^\n]*\(([^)]*)\)[^\n]*\n(.*?)\.end method", texto, re.S):
+        params = bloco.group(1)
+        # tira comentarios: "v4" dentro de comentario nao e uso de registrador
+        corpo = "\n".join(l.split("#")[0] for l in bloco.group(2).split("\n"))
+        reg = re.search(r"\.registers\s+(\d+)", corpo)
+        loc = re.search(r"\.locals\s+(\d+)", corpo)
+        if not reg and not loc:
+            continue
+        total = int(reg.group(1)) if reg else None
+        n_param = 0
+        i = 0
+        while i < len(params):
+            if params[i] == "[":
+                i += 1
+            if params[i] in "JD":
+                n_param += 2
+            elif params[i] == "L":
+                n_param += 1
+                i = params.index(";", i)
+            else:
+                n_param += 1
+            i += 1
+        if "static" not in bloco.group(0).split("(")[0]:
+            n_param += 1
+        if n_param == 0:
+            continue
+        limite = total - n_param if total is not None else int(loc.group(1))
+        for uso in re.finditer(r"\bv(\d+)\b", corpo):
+            if int(uso.group(1)) >= limite:
+                linha = corpo[:uso.start()].count("\n") + 1
+                problemas.append("%s linha ~%d: usa v%s, mas os parametros comecam em v%d"
+                                 % (os.path.basename(caminho), linha, uso.group(1), limite))
+                break
+    return problemas
+
+
 def main():
     base = sys.argv[1] if len(sys.argv) > 1 else "out/fontes_smali"
     if not os.path.isdir(base):
@@ -126,8 +174,78 @@ def main():
             print(f"  {os.path.basename(caminho)}:{linha} {metodo} -> {msg}")
         return 1
     print("nenhum registrador fora da faixa")
+
+    # 2) temporario invadindo a faixa dos parametros (foi o bug da marca do zip)
+    invasoes = []
+    for a in sorted(arquivos):
+        invasoes.extend(_checa_faixa_parametros(a))
+    if invasoes:
+        print(f"\n{len(invasoes)} TEMPORARIO(S) EM CIMA DE PARAMETRO:")
+        for msg in invasoes[:40]:
+            print("  " + msg)
+        return 1
+    print("nenhum temporario invadindo registrador de parametro")
     return 0
 
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+# ---------------------------------------------------------------------------
+# 2) Registrador de parametro usado como temporario.
+#    Com .registers N e P parametros, os parametros sao os ULTIMOS P registradores:
+#    p0 = v(N-P), p1 = v(N-P+1)... Se o corpo usar vX com X >= N-P, esta escrevendo
+#    em cima de um parametro (foi assim que a chave do descompactar se apagava).
+import re as _re
+
+
+def _checa_faixa_parametros(caminho):
+    problemas = []
+    try:
+        texto = open(caminho, encoding="utf-8").read()
+    except Exception:
+        return problemas
+    for bloco in _re.finditer(r"\.method[^\n]*\(([^)]*)\)[^\n]*\n(.*?)\.end method", texto, _re.S):
+        params = bloco.group(1)
+        corpo = bloco.group(2)
+        reg = _re.search(r"\.registers\s+(\d+)", corpo)
+        if not reg:
+            continue
+        total = int(reg.group(1))
+        n_param = 0
+        i = 0
+        while i < len(params):
+            if params[i] == '[':
+                i += 1
+            if params[i] == 'J' or params[i] == 'D':
+                n_param += 2
+            elif params[i] in "ZBCSI":
+                n_param += 1
+            elif params[i] == 'L':
+                n_param += 1
+                i = params.index(';', i)
+            i += 1
+        if "static" not in bloco.group(0).split("(")[0]:
+            n_param += 1
+        if n_param == 0:
+            continue
+        limite = total - n_param
+        for uso in _re.finditer(r"\bv(\d+)\b", corpo):
+            if int(uso.group(1)) >= limite:
+                linha = corpo[:uso.start()].count("\n") + 1
+                problemas.append("%s linha ~%d: usa v%s, mas os parametros comecam em v%d"
+                                 % (os.path.basename(caminho), linha, uso.group(1), limite))
+                break
+    return problemas
+
+
+_extra = 0
+for _raiz, _dirs, _arqs in os.walk(SMALI):
+    for _a in _arqs:
+        if _a.endswith(".smali"):
+            for _p in _checa_faixa_parametros(os.path.join(_raiz, _a)):
+                print("ATENCAO:", _p)
+                _extra += 1
+if _extra == 0:
+    print("nenhum temporario invadindo registrador de parametro")
