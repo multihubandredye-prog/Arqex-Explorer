@@ -2289,82 +2289,6 @@
 
     invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V
 
-    invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterByRegexSource(Llibs/d9;Ljava/util/Collection;)V
-
-    return-void
-.end method
-
-.method public static filterByRegexSource(Llibs/d9;Ljava/util/Collection;)V
-    .registers 6
-
-    # Caixinha "Regex (...)" do dialogo da tarefa.
-    # So age quando ela esta marcada E o texto e um padrao com coringa (* ou .*),
-    # para nao mexer nas tarefas que usam apenas uma pasta normal.
-    # A pasta escrita na frente e ignorada, igual ao filtro por nome.
-    if-eqz p0, :arqex_frs_fim
-
-    iget-boolean v0, p0, Llibs/d9;->Sigma:Z
-
-    if-nez v0, :arqex_frs_fim
-
-    iget-object v0, p0, Llibs/d9;->Psi:Ljava/lang/String;
-
-    invoke-static {v0}, Llibs/ArqexUnzip;->strip(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :arqex_frs_fim
-
-    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :arqex_frs_fim
-
-    const-string v1, "\\*"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :arqex_frs_fim
-
-    if-eqz p1, :arqex_frs_fim
-
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :arqex_frs_loop
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :arqex_frs_fim
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Llibs/rp0;
-
-    if-eqz v2, :arqex_frs_loop
-
-    invoke-virtual {v2}, Llibs/rp0;->m()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3, v0}, Llibs/ArqexFilter;->combina(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :arqex_frs_loop
-
-    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
-
-    goto :arqex_frs_loop
-
-    :arqex_frs_fim
     return-void
 .end method
 
@@ -2863,7 +2787,7 @@
 
     if-eqz v1, :cond_f
 
-    const-string v0, "Nome ou caminho (ex: /storage/emulated/0/Download/.*pdf = todos os PDFs; * \u00e9 coringa; v\u00edrgula separa)"
+    const-string v0, "Nome (ex: projetoteste_v1.7, use * como coringa, v\u00edrgula separa)"
 
     return-object v0
 
@@ -2876,12 +2800,12 @@
 
     if-eqz v0, :cond_1a
 
-    const-string v0, "Nombre o ruta (ej: /storage/emulated/0/Download/.*pdf = todos los PDF; * es comod\u00edn; coma separa)"
+    const-string v0, "Nombre (ej: proyectotest_v1.7, * es comod\u00edn, coma separa)"
 
     return-object v0
 
     :cond_1a
-    const-string v0, "Name or path (e.g. /storage/emulated/0/Download/.*pdf = all PDFs; * is a wildcard; comma separates)"
+    const-string v0, "Name (e.g. project_v1.7, * is a wildcard, comma separates)"
 
     return-object v0
 .end method
@@ -4929,15 +4853,131 @@
 .end method
 
 .method public static matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 2
+    .registers 16
 
-    # Filtro por nome: parte do nome, coringa (* ou .*) ou caminho completo.
-    # A regra mora em Llibs/ArqexFilter; aqui so repassamos.
-    invoke-static {p0, p1}, Llibs/ArqexFilter;->combina(Ljava/lang/String;Ljava/lang/String;)Z
+    const/4 v0, 0x1
 
-    move-result p0
+    if-nez p1, :cond_4
 
-    return p0
+    return v0
+
+    :cond_4
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_f
+
+    return v0
+
+    :cond_f
+    const/4 v0, 0x0
+
+    if-nez p0, :cond_13
+
+    return v0
+
+    :cond_13
+    sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, ","
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    array-length v3, v2
+
+    const/4 v4, 0x0
+
+    :goto_21
+    if-ge v4, v3, :cond_60
+
+    aget-object v5, v2, v4
+
+    invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v6
+
+    if-nez v6, :cond_5d
+
+    sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "\\*"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v6
+
+    array-length v7, v6
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x1
+
+    :goto_3f
+    if-ge v8, v7, :cond_59
+
+    aget-object v11, v6, v8
+
+    invoke-virtual {v11}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v12
+
+    if-nez v12, :cond_55
+
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
+
+    move-result v13
+
+    invoke-virtual {v1, v11, v9}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
+
+    move-result v12
+
+    if-ltz v12, :cond_58
+
+    add-int v9, v12, v13
+
+    :cond_55
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_3f
+
+    :cond_58
+    const/4 v10, 0x0
+
+    :cond_59
+    if-eqz v10, :cond_5d
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_5d
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_21
+
+    :cond_60
+    return v0
 .end method
 
 .method private static normalizeSourcePath(Ljava/lang/Object;)Ljava/lang/String;
@@ -5028,10 +5068,7 @@
 
     invoke-static {v1, p2}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
-    # Arqex: registra a execucao no historico da tarefa (data, quantidade, situacao).
-    invoke-static {v1, p2}, Llibs/AutoTaskWatcher;->registrarExecucao(Llibs/d9;Ljava/util/Collection;)V
-
-    invoke-static {v1, p1, p2}, Llibs/ArqexUnzip;->process(Llibs/d9;ILjava/util/Collection;)V
+    invoke-static {v1, p1, p2}, Llibs/ArqexLog;->run(Llibs/d9;ILjava/util/Collection;)V
 
     const/4 v0, 0x3
 
@@ -7807,308 +7844,5 @@
 
     :catchall_2d
     :cond_2d
-    return-void
-.end method
-
-.method public static addTaskExtras(Llibs/od;Llibs/d9;)V
-    .registers 14
-
-    # Duas linhas de acao no dialogo da tarefa (so em tarefa ja salva).
-    # od->Item: 11 parametros + objeto = 12 registradores na chamada.
-    # Largura -0x2 (wrap_content) e gravidade 0x10: com largura 0 a linha
-    # virava uma caixa alta e invisivel - era o buraco no meio do dialogo.
-    if-eqz p0, :arqex_ate_fim
-
-    if-eqz p1, :arqex_ate_fim
-
-    :try_start_ate
-    move-object v0, p0
-
-    new-instance v4, Llibs/ArqexTaskExtras$SimularClick;
-
-    invoke-direct {v4, p1}, Llibs/ArqexTaskExtras$SimularClick;-><init>(Llibs/d9;)V
-
-    const/16 v1, 0x91
-
-    const-string v2, "Simular: ver os arquivos que seriam afetados (n\\u00e3o altera nada)"
-
-    const/16 v3, 0x3e9
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/16 v10, 0x10
-
-    const/16 v11, -0x2
-
-    invoke-virtual/range {v0 .. v11}, Llibs/od;->Item(ILjava/lang/CharSequence;ILandroid/view/View$OnClickListener;Landroid/graphics/drawable/GradientDrawable;Ljava/lang/Integer;IIIII)Landroid/widget/TextView;
-
-    move-object v0, p0
-
-    new-instance v4, Llibs/ArqexTaskExtras$HistoricoClick;
-
-    invoke-direct {v4, p1}, Llibs/ArqexTaskExtras$HistoricoClick;-><init>(Llibs/d9;)V
-
-    const/16 v1, 0x92
-
-    const-string v2, "Ver hist\\u00f3rico de execu\\u00e7\\u00f5es desta tarefa"
-
-    const/16 v3, 0x3e9
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/16 v10, 0x10
-
-    const/16 v11, -0x2
-
-    invoke-virtual/range {v0 .. v11}, Llibs/od;->Item(ILjava/lang/CharSequence;ILandroid/view/View$OnClickListener;Landroid/graphics/drawable/GradientDrawable;Ljava/lang/Integer;IIIII)Landroid/widget/TextView;
-
-    :try_end_ate
-    .catchall {:try_start_ate .. :try_end_ate} :catchall_ate
-
-    :arqex_ate_fim
-    return-void
-
-    :catchall_ate
-    return-void
-.end method
-
-.method public static simular(Landroid/content/Context;Llibs/d9;)V
-    .registers 12
-
-    # Teste a seco: monta a mesma lista que a tarefa pegaria agora e so mostra.
-    # Nao copia, nao move, nao apaga nada.
-    :try_start_sim
-    if-eqz p0, :arqex_sim_fim
-
-    if-eqz p1, :arqex_sim_fim
-
-    iget-object v0, p1, Llibs/d9;->Omicron:Ljava/util/ArrayList;
-
-    iget-boolean v1, p1, Llibs/d9;->Sigma:Z
-
-    iget-wide v2, p1, Llibs/d9;->Lambda:J
-
-    const/4 v4, 0x1
-
-    invoke-static {v0, v1, v2, v3, v4}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
-
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->size()I
-
-    move-result v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "A tarefa pegaria agora: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, " arquivo(s).\n\nNada foi copiado, movido ou apagado.\n\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    :arqex_sim_loop
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :arqex_sim_lista
-
-    const/16 v5, 0x28
-
-    if-lt v4, v5, :arqex_sim_lista
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Llibs/rp0;
-
-    if-eqz v5, :arqex_sim_loop
-
-    invoke-virtual {v5}, Llibs/rp0;->m()Ljava/lang/String;
-
-    move-result-object v6
-
-    if-eqz v6, :arqex_sim_loop
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v6, "\n"
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :arqex_sim_loop
-
-    :arqex_sim_lista
-    const/16 v5, 0x28
-
-    if-ge v4, v5, :arqex_sim_mostrar
-
-    const-string v5, "... e mais arquivos."
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :arqex_sim_mostrar
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-    :try_end_sim
-    .catchall {:try_start_sim .. :try_end_sim} :catchall_sim
-
-    const-string v3, "Simular (sem alterar nada)"
-
-    invoke-static {p0, v3, v2}, Llibs/ArqexTaskExtras;->mostrar(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-
-    :arqex_sim_fim
-    return-void
-
-    :catchall_sim
-    return-void
-.end method
-
-.method public static mostrarHistorico(Landroid/content/Context;Llibs/d9;)V
-    .registers 6
-
-    # Historico da tarefa: linhas gravadas por registrarExecucao.
-    :try_start_his
-    if-eqz p0, :arqex_his_fim
-
-    if-eqz p1, :arqex_his_fim
-
-    iget-object v0, p1, Llibs/d9;->Phi:Ljava/lang/String;
-
-    invoke-static {v0}, Llibs/ArqexTaskExtras;->ler(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Tarefa: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-    :try_end_his
-    .catchall {:try_start_his .. :try_end_his} :catchall_his
-
-    const-string v2, "Hist\u00f3rico de execu\u00e7\u00f5es"
-
-    invoke-static {p0, v2, v1}, Llibs/ArqexTaskExtras;->mostrar(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-
-    :arqex_his_fim
-    return-void
-
-    :catchall_his
-    return-void
-.end method
-
-.method public static registrarExecucao(Llibs/d9;Ljava/util/Collection;)V
-    .registers 8
-
-    # Uma linha por execucao: data/hora | tarefa | quantidade | situacao.
-    :try_start_reg
-    if-eqz p0, :arqex_reg_fim
-
-    if-eqz p1, :arqex_reg_fim
-
-    iget-object v0, p0, Llibs/d9;->Phi:Ljava/lang/String;
-
-    invoke-interface {p1}, Ljava/util/Collection;->size()I
-
-    move-result v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Llibs/ArqexTaskExtras;->agora()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, " | "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz v0, :arqex_reg_sem_nome
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :arqex_reg_sem_nome
-    const-string v3, " | "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, " arquivo(s)"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-lez v1, :arqex_reg_vazio
-
-    const-string v3, " | sucesso"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :arqex_reg_envia
-
-    :arqex_reg_vazio
-    const-string v3, " | nada encontrado"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :arqex_reg_envia
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-    :try_end_reg
-    .catchall {:try_start_reg .. :try_end_reg} :catchall_reg
-
-    invoke-static {v2}, Llibs/ArqexTaskExtras;->anexar(Ljava/lang/String;)V
-
-    :arqex_reg_fim
-    return-void
-
-    :catchall_reg
     return-void
 .end method

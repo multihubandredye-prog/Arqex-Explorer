@@ -286,15 +286,15 @@
 .method public static process(Llibs/d9;ILjava/util/Collection;)V
     .registers 12
 
-    if-eqz p0, :cond_74
+    if-eqz p0, :cond_79
 
-    if-eqz p2, :cond_74
+    if-eqz p2, :cond_79
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_79
 
     const/4 v2, 0x2
 
@@ -304,7 +304,7 @@
 
     const/4 v1, 0x1
 
-    if-ne p1, v1, :cond_74
+    if-ne p1, v1, :cond_79
 
     goto :goto_13
 
@@ -314,7 +314,7 @@
     :goto_13
     iget-object v0, p0, Llibs/d9;->Pi:Ljava/lang/String;
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_79
 
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -326,7 +326,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_74
+    if-eqz v1, :cond_79
 
     new-instance v3, Ljava/io/File;
 
@@ -342,7 +342,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_74
+    if-eqz v5, :cond_79
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -382,13 +382,17 @@
 
     move-result v6
 
+    iget-object v7, v5, Llibs/rp0;->Three:Ljava/lang/String;
+
+    invoke-static {v7, v6, v0}, Llibs/ArqexLog;->zip(Ljava/lang/String;ZLjava/lang/String;)V
+
     if-eqz v6, :cond_2c
 
-    if-eqz v2, :cond_70
+    if-eqz v2, :cond_75
 
     iget-object v6, v5, Llibs/rp0;->Three:Ljava/lang/String;
 
-    if-eqz v6, :cond_70
+    if-eqz v6, :cond_75
 
     const-string v7, "/"
 
@@ -396,7 +400,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_70
+    if-eqz v7, :cond_75
 
     new-instance v7, Ljava/io/File;
 
@@ -404,12 +408,12 @@
 
     invoke-virtual {v7}, Ljava/io/File;->delete()Z
 
-    :cond_70
+    :cond_75
     invoke-interface {v4}, Ljava/util/Iterator;->remove()V
 
     goto :goto_2c
 
-    :cond_74
+    :cond_79
     return-void
 .end method
 

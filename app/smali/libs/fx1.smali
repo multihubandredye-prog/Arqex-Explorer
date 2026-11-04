@@ -1628,7 +1628,7 @@
     move-result-object v2
 
     .line 165
-    invoke-static {v5, v1}, Llibs/ModernUiTheme;->resolveShortcutIcon(Landroid/content/Intent;Landroid/graphics/Bitmap;)Ljava/lang/Object;
+    invoke-static {v1}, Llibs/ModernUiTheme;->resolvePlainAdaptiveIcon(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     .line 166
     .line 167
@@ -1885,7 +1885,7 @@
     move-result-object v6
 
     .line 79
-    invoke-static {v4}, Llibs/ModernUiTheme;->resolveAdaptiveBitmapIcon(Landroid/graphics/Bitmap;)Ljava/lang/Object;
+    invoke-static {v4}, Llibs/ModernUiTheme;->resolvePlainAdaptiveIcon(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     .line 80
     .line 81
@@ -2060,7 +2060,7 @@
     move-result-object v4
 
     .line 165
-    invoke-static {v3}, Llibs/ModernUiTheme;->resolveAdaptiveBitmapIcon(Landroid/graphics/Bitmap;)Ljava/lang/Object;
+    invoke-static {v3}, Llibs/ModernUiTheme;->resolvePlainAdaptiveIcon(Landroid/graphics/Bitmap;)Ljava/lang/Object;
 
     .line 166
     .line 167

@@ -147,13 +147,6 @@ for _f in ("com/mixplorer/activities/PreferenceActivity.smali",
                     _ruins.append(_m.group(0).split("\n")[0][:50])
                 break
 check("8x. nenhuma instrucao antes das diretivas do metodo", not _ruins, str(_ruins[:3]))
-_aun = open(os.path.join(SMALI, "libs", "ArqexUpdateNotes.smali"), encoding="utf-8").read() \
-    if os.path.exists(os.path.join(SMALI, "libs", "ArqexUpdateNotes.smali")) else ""
-check("8y. modal mostra so as novidades (corta 'Como instalar')",
-      "ArqexUpdateNotes;->formatar" in up and "### Como instalar" in _aun
-      and "Novidades:" in _aun)
-check("8ya. modal de atualizacao com texto curto e separado",
-      "MAX_ITENS" in _aun or "MAX_CARACTERES" in _aun)
 _wf = open(".github/workflows/build-release.yml", encoding="utf-8").read()
 check("8z. notas da release acentuadas e marcador do corte intacto",
       "Novidades desta versão:" in _wf and "### Como instalar" in _wf)
@@ -266,12 +259,11 @@ _atw = open(_atw_path, encoding="utf-8", errors="replace").read() if os.path.exi
 check("10a. filtro por nome existe (chave name_<regra>)", '"name_"' in _atw)
 check("10b. controle de filtro por nome na tela da tarefa",
       "addNameFilterControls" in _atw and "getNameFilterCheckLabel" in _atw)
-_afl = open(os.path.join(SMALI, "libs", "ArqexFilter.smali"), encoding="utf-8").read() \
-    if os.path.exists(os.path.join(SMALI, "libs", "ArqexFilter.smali")) else ""
-check("10c. filtro por nome aceita coringa * e caminho com .*",
-      "matchesNameFilter" in _atw and "ArqexFilter;->combina" in _atw
-      and ".method public static combina" in _afl
-      and ".*" in _afl and "lastIndexOf(I)I" in _afl)
+_mnf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static matchesNameFilter") or ""
+check("10c. filtro por nome aceita coringa * e varios termos separados por virgula",
+      ".method public static matchesNameFilter" in _atw
+      and "\\*" in _mnf and '","' in _mnf)
 check("10d. filtro por nome e aplicado no fluxo (junto do de extensao)",
       "filterTaskItems" in _atw and _atw.count("->filterTaskItems(") >= 6)
 check("10h. filtro por nome usa chave propria e cache (name_<regra>)",
@@ -354,8 +346,11 @@ check("12e. build nao aceita DEX velho quando o smali recusa um arquivo",
       "smali recusou" in open(os.path.join("tools", "build.sh"), encoding="utf-8", errors="replace").read())
 _n8_path = os.path.join(SMALI, "libs", "n8.smali")
 _n8 = open(_n8_path, encoding="utf-8", errors="replace").read() if os.path.exists(_n8_path) else ""
+_ist = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static isSameTask") or ""
 check("13a. salvar uma tarefa existente nao renomeia (teste -> teste2)",
-      "isSameTask" in _n8 and "isSameTask" in _atw)
+      "isSameTask" in _n8 and "d9;->Phi:Ljava/lang/String;" in _ist
+      and "arqex_same_sim" in _ist)
 check("13b. diagnostico fora do rotulo (so fica a linha de debug da tarefa)",
       '|b58]' not in _atw and "nameKeys" not in _atw)
 _dkd = method_body(os.path.join(SMALI, "libs", "$d.smali"),
@@ -539,38 +534,29 @@ _arh = open(os.path.join(SMALI, "libs", "ArqexRegexHint.smali"), encoding="utf-8
     if os.path.exists(os.path.join(SMALI, "libs", "ArqexRegexHint.smali")) else ""
 _e9s = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read() \
     if os.path.exists(os.path.join(SMALI, "libs", "e9.smali")) else ""
-check("14i. exemplo do regex aparece abaixo da caixinha quando marcada", (
-      "ArqexRegexHint;->instalarPendente" in _e9s
-      and "/storage/emulated/0/Download/.*pdf" in _arh
-      and "setText" in _arh and "isChecked" in _arh))
+check("14i. exemplo do regex so aparece quando a caixinha esta marcada", (
+      "ArqexRegexHint;->bind" in _e9s
+      and "/storage/emulated/0/Download/.*" in _arh
+      and "setHint" in _arh and "isChecked" in _arh))
 check("14j. rotulo da caixa Regex fica curto (exemplo fora do rotulo)", (
       " - ex: /storage" not in _e9s))
+_alog = open(os.path.join(SMALI, "libs", "ArqexLog.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "ArqexLog.smali")) else ""
 check("14h. ao usar o destino o prefixo e removido (strip) e o zip e extraido nele", (
       "ArqexUnzip;->strip" in _e9a
-      and "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
+      and "ArqexUnzip;->process" in _alog and "ArqexLog;->run" in _atw))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
-      "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
+      "ArqexUnzip;->process" in _alog and "ArqexLog;->run" in _atw
+      and "filterTaskItems" in _atw))
 check("14c. extracao le o zip do item e escreve na pasta de destino", (
       "ZipInputStream" in _azu and "getNextEntry" in _azu
       and "getCanonicalPath" in _azu and "FileOutputStream" in _azu
       and "Llibs/d9;->Pi:" in _azu))
-check("15a. historico grava data, tarefa e quantidade a cada execucao", (
-      "registrarExecucao" in _atw and "ArqexTaskExtras;->anexar" in _atw
-      and "arqex_historico.txt" in
-      (open(os.path.join(SMALI, "libs", "ArqexTaskExtras.smali"), encoding="utf-8").read()
-       if os.path.exists(os.path.join(SMALI, "libs", "ArqexTaskExtras.smali")) else "")))
-check("15b. simular monta a lista sem alterar arquivos", (
-      "ArqexTaskExtras;->mostrar" in _atw and "addTaskExtras" in _atw
-      and os.path.exists(os.path.join(SMALI, "libs", "ArqexTaskExtras$SimularClick.smali"))
-      and "Nada foi copiado" in _atw))
-check("15c. linha de acao do dialogo tem largura util (nao vira buraco invisivel)", (
-      "const/16 v11, -0x2" in _atw and "const/16 v10, 0x10" in _atw))
+
 _smart = open(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"), encoding="utf-8").read()
 check("16a. pastas vazias ocultas nao entram na lista quando os ocultos estao escondidos", (
       "isHiddenEntry" in _smart and "isShowingHidden" in _smart
       and "arqex_scan_visivel" in _smart))
-check("16b. salvar tarefa sem mudar o nome nao vira nome2 (isSameTask compara titulo)", (
-      "d9;->Phi:Ljava/lang/String;" in _atw and "arqex_same_sim" in _atw))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 
