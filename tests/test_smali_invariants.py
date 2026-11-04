@@ -556,6 +556,11 @@ _smart = open(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"), encoding="
 check("16a. pastas vazias ocultas nao entram na lista quando os ocultos estao escondidos", (
       "isHiddenEntry" in _smart and "isShowingHidden" in _smart
       and "arqex_scan_visivel" in _smart))
+_fnf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static filterByNameFilter") or ""
+check("16c. pasta nao e descartada pelo filtro por nome (pasta teste era ignorada)", (
+      "Pasta ou arquivo: decide pelo nome" in _fnf
+      and "rp0;->One:Z" not in _fnf))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 

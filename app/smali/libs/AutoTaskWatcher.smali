@@ -2157,11 +2157,9 @@
 
     if-eqz v2, :cond_39
 
-    iget-boolean v3, v2, Llibs/rp0;->One:Z
-
-    if-eqz v3, :cond_2f
-
-    goto :goto_39
+    # Pasta ou arquivo: decide pelo nome, igual para os dois. Antes a pasta era
+    # sempre descartada aqui, e era por isso que a pasta "teste" nunca era copiada.
+    goto :cond_2f
 
     :cond_2f
     invoke-virtual {v2}, Llibs/rp0;->m()Ljava/lang/String;
