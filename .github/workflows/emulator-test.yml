@@ -61,6 +61,13 @@ jobs:
           bash tools/build.sh
           ls -l out/Arqex-unsigned.apk
 
+      - name: Testes estaticos (invariantes, tipos e DEX)
+        run: |
+          set -euo pipefail
+          python3 tests/test_smali_invariants.py out/fontes_smali app/res
+          python3 tests/test_register_types.py out/fontes_smali
+          python3 tests/test_dex_consistency.py out/fontes_smali
+
       - name: Assinar com a chave do repositorio
         run: |
           set -euo pipefail

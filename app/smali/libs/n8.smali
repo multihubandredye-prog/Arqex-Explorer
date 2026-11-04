@@ -374,7 +374,7 @@
     move-exception v0
 
     .line 127
-    goto/16 :goto_21f
+    goto/16 :goto_223
 
     .line 128
     .line 129
@@ -525,7 +525,7 @@
 
     .line 194
     .line 195
-    packed-switch v18, :pswitch_data_234
+    packed-switch v18, :pswitch_data_238
 
     .line 196
     .line 197
@@ -631,7 +631,7 @@
     const/4 v4, 0x3
 
     .line 243
-    packed-switch v6, :pswitch_data_246
+    packed-switch v6, :pswitch_data_24a
 
     .line 244
     .line 245
@@ -921,10 +921,14 @@
     .line 375
     move-result-object v38
 
+    invoke-static/range {v38 .. v38}, Llibs/ArqexUnzip;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v38
+
     .line 376
     const-string v39, ""
-    :try_end_18e
-    .catchall {:try_start_b4 .. :try_end_18e} :catchall_8b
+    :try_end_192
+    .catchall {:try_start_b4 .. :try_end_192} :catchall_8b
 
     .line 377
     .line 378
@@ -936,14 +940,14 @@
 
     .line 381
     .line 382
-    if-eqz v3, :cond_19b
+    if-eqz v3, :cond_19f
 
     .line 383
     .line 384
     const/4 v6, 0x1
 
     .line 385
-    :try_start_195
+    :try_start_199
     invoke-static {v3, v6}, Llibs/e9;->s(Llibs/d9;Z)V
 
     .line 386
@@ -954,7 +958,7 @@
     .line 389
     .line 390
     .line 391
-    :cond_19b
+    :cond_19f
     invoke-virtual {v10}, Lcom/mixplorer/widgets/MiCombo;->getSelectedIndex()I
 
     .line 392
@@ -963,7 +967,7 @@
     move-result v3
 
     .line 395
-    if-lez v3, :cond_1b2
+    if-lez v3, :cond_1b6
 
     .line 396
     .line 397
@@ -1001,15 +1005,15 @@
 
     .line 412
     .line 413
-    goto :goto_1b4
+    goto :goto_1b8
 
     .line 414
-    :cond_1b2
+    :cond_1b6
     const/16 v41, 0x0
 
     .line 415
     .line 416
-    :goto_1b4
+    :goto_1b8
     new-instance v22, Llibs/d9;
 
     .line 417
@@ -1038,10 +1042,6 @@
     move-result v36
 
     .line 430
-    # Arqex: valor da caixinha "Descompactar arquivos ZIP no destino" vai
-    # dentro da tarefa construida logo abaixo
-    invoke-static {v15}, Llibs/AutoTaskWatcher;->setUnzipFromDialog(Llibs/od;)V
-
     move-object/from16 v30, v5
 
     .line 431
@@ -1083,7 +1083,7 @@
     move-result v4
 
     .line 449
-    if-eqz v4, :cond_211
+    if-eqz v4, :cond_215
 
     .line 450
     .line 451
@@ -1194,7 +1194,7 @@
     .line 502
     .line 503
     .line 504
-    :cond_211
+    :cond_215
     invoke-virtual {v15}, Llibs/od;->dismiss()V
 
     .line 505
@@ -1216,8 +1216,8 @@
     .line 513
     .line 514
     invoke-interface {v0, v4}, Llibs/xl1;->c([Ljava/lang/Object;)Z
-    :try_end_21e
-    .catchall {:try_start_195 .. :try_end_21e} :catchall_8b
+    :try_end_222
+    .catchall {:try_start_199 .. :try_end_222} :catchall_8b
 
     .line 515
     .line 516
@@ -1225,7 +1225,7 @@
     return-void
 
     .line 518
-    :goto_21f
+    :goto_223
     const-string v3, "TASKER"
 
     .line 519
@@ -1269,7 +1269,7 @@
     nop
 
     .line 539
-    :pswitch_data_234
+    :pswitch_data_238
     .packed-switch 0x2
         :pswitch_f9
         :pswitch_f5
@@ -1298,7 +1298,7 @@
     .line 555
     .line 556
     .line 557
-    :pswitch_data_246
+    :pswitch_data_24a
     .packed-switch 0x1
         :pswitch_129
         :pswitch_124

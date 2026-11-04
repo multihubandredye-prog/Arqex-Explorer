@@ -239,7 +239,6 @@
 
     sput-object v0, Llibs/AutoTaskWatcher;->pollRunnable:Llibs/AutoTaskWatcher$TickRunnable;
 
-
     return-void
 .end method
 
@@ -587,7 +586,7 @@
 
     :cond_3
     :try_start_3
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     if-eqz p1, :cond_a
 
@@ -742,23 +741,8 @@
     return-void
 .end method
 
-# Arqex: ultimo checkbox "Descompactar ZIP no destino" criado. Serve de reserva
-# na hora de salvar, caso a busca pelo dialogo (findDialogCheckBox) nao ache -
-# o estado salvo tem que vir SEMPRE da caixinha que o usuario viu.
-.field public static unzipBox:Landroid/widget/CheckBox;
-
-# Arqex: valor do "Descompactar no destino" que sera gravado DENTRO da tarefa
-# que esta sendo construida agora (d9.<init> consome e zera). O estado deixou de
-# ser guardado em chave de prefs: ele viaja no proprio conteudo da tarefa, como
-# o campo "somente arquivos".
-.field public static unzipPending:Z
-
-# Desenho novo: a marca do "Descompactar no destino" e um arquivo dentro da
-# pasta de destino (libs/ArqexUnzipMark). Nao usa prefs, cache nem Context.
-
-
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
-    .registers 8
+    .registers 6
 
     if-nez p0, :cond_3
 
@@ -766,71 +750,39 @@
 
     :cond_3
     :try_start_3
-    const/4 v0, 0x0
+    const/4 v2, 0x1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_c
 
-    invoke-static {p1}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
+    iget-object v0, p1, Llibs/d9;->Psi:Ljava/lang/String;
 
-    move-result v0
+    invoke-static {v0}, Llibs/ArqexUnzip;->hasMarker(Ljava/lang/String;)Z
 
-    :cond_a
-    # Arqex: diagnostico - mostra no logcat o que o dialogo vai pintar
-    new-instance v4, Ljava/lang/StringBuilder;
+    move-result v2
 
-    const-string v5, "abrir titulo="
+    :cond_c
+    const-string v0, "Descompactar arquivos ZIP no destino (copiar/mover)"
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    if-eqz p1, :arqex_auc_sem
-
-    iget-object v5, p1, Llibs/d9;->Phi:Ljava/lang/String;
-
-    goto :arqex_auc_tit
-
-    :arqex_auc_sem
-    const-string v5, "?"
-
-    :arqex_auc_tit
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v5, " marcada="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "ArqexUnzip"
-
-    invoke-static {v5, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "Descompactar arquivos ZIP no destino (copiar/mover)"
-
-    const/16 v2, 0x5d
+    const/16 v1, 0x5d
 
     const/4 v3, 0x0
 
-    invoke-virtual {p0, v2, v1, v0, v3}, Llibs/od;->h(ILjava/lang/String;ZLlibs/px2;)Landroid/widget/CheckBox;
+    invoke-virtual {p0, v1, v0, v2, v3}, Llibs/od;->h(ILjava/lang/String;ZLlibs/px2;)Landroid/widget/CheckBox;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1e
 
     sget-object v1, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sput-object v0, Llibs/AutoTaskWatcher;->unzipBox:Landroid/widget/CheckBox;
-    # desenho novo: quem grava a marca e o Salvar (setUnzipFromDialog -> setUnzipFromTask)
-    :try_end_1a
-    .catchall {:try_start_3 .. :try_end_1a} :catchall_1a
+    sput-object v0, Llibs/ArqexUnzip;->lastBox:Landroid/widget/CheckBox;
+    :try_end_1e
+    .catchall {:try_start_3 .. :try_end_1e} :catchall_1e
 
-    :catchall_1a
-    :cond_1a
+    :catchall_1e
+    :cond_1e
     return-void
 .end method
 
@@ -4068,9 +4020,6 @@
 .method public static initStartup()V
     .registers 3
 
-    # Arqex: prova do "Descompactar no destino" (roda no emulador do CI)
-    invoke-static {}, Llibs/ArqexUnzipDiag;->run()V
-
     :try_start_0
     const/4 v0, -0x1
 
@@ -4629,25 +4578,24 @@
     return v0
 .end method
 
-# ---------------------------------------------------------------- descompactar
-# Arqex: a marca "Descompactar arquivos ZIP no destino" tem TRES camadas:
-#  1) token dentro da tarefa   -> d9.X termina em "|uz1" (marcada) / "|uz0"
-#  2) chave por CONTEUDO       -> prefs "unzip_c_<hash do conteudo sem o token>"
-#                                 (igual para qualquer instancia da mesma tarefa)
-#  3) nada disso               -> desmarcada
-# A camada 2 existe porque o app recria a tarefa varias vezes (dialogo, e9.q(),
-# e9.r(I), lista em memoria) e a instancia que o dialogo reabre pode nao ser a
-# mesma que foi salva - o conteudo, porem, e igual.
+.method public static isUnzipEnabled(Llibs/d9;)Z
+    .registers 2
 
-# Remove o token do fim do conteudo decodificado (para o hash ficar estavel).
+    if-nez p0, :cond_4
 
+    const/4 v0, 0x0
 
+    return v0
 
+    :cond_4
+    iget-object v0, p0, Llibs/d9;->Psi:Ljava/lang/String;
 
-# 1 = tarefa marcada, 0 = tarefa desmarcada, -1 = tarefa sem token
+    invoke-static {v0}, Llibs/ArqexUnzip;->hasMarker(Ljava/lang/String;)Z
 
+    move-result v0
 
-
+    return v0
+.end method
 
 .method private static makeItemStamp(Llibs/rp0;)Ljava/lang/String;
     .registers 7
@@ -5384,330 +5332,22 @@
     return-void
 .end method
 
-# Arqex: guarda para a proxima tarefa a ser construida o valor que veio no
-# token 17 (indice 0x11) do conteudo lido do armazenamento. Assim, ao recarregar
-# as tarefas o marcador nao se perde.
-.method public static isUnzipEnabled(Llibs/d9;)Z
-    .registers 3
-
-    # Desenho novo: a marca e um arquivo na pasta de destino da tarefa.
-    const/4 v0, 0x0
-
-    if-nez p0, :arqex_iue_fim
-
-    :try_start_i
-    iget-object v1, p0, Llibs/d9;->Pi:Ljava/lang/String;
-
-    invoke-static {v1}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
-
-    move-result v0
-    :try_end_i
-    .catchall {:try_start_i .. :try_end_i} :catchall_i
-
-    :arqex_iue_fim
-    return v0
-
-    :catchall_i
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public static setUnzipFlag(Llibs/d9;Z)V
-    .registers 3
-
-    if-nez p0, :arqex_suf_fim
-
-    :try_start_s
-    iget-object v0, p0, Llibs/d9;->Pi:Ljava/lang/String;
-
-    if-eqz p1, :arqex_suf_ligar
-
-    invoke-static {v0}, Llibs/ArqexUnzipMark;->desligar(Ljava/lang/String;)Z
-    :try_end_s
-    .catchall {:try_start_s .. :try_end_s} :catchall_s
-
-    return-void
-
-    :arqex_suf_ligar
-    invoke-static {v0}, Llibs/ArqexUnzipMark;->ligar(Ljava/lang/String;)Z
-    :try_end_u
-    .catchall {:try_start_s .. :try_end_u} :catchall_s
-
-    :arqex_suf_fim
-    return-void
-
-    :catchall_s
-    return-void
-.end method
-
-.method public static runUnzipSelfTest()V
-    .registers 7
-
-    # Prova automatica (so no emulador do CI).
-    # v5 guarda a pasta base do app e NAO e reaproveitado para outra coisa.
-    const-string v0, "ArqexUnzipDiag"
-
-    const-string v5, "/data/user/0/com.arqex.explorer/files"
-
-    :try_start_st
-    # 1) a marca da pasta fixa sobrou de um arranque anterior? (prova do reinicio)
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "/reinicio"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
-
-    move-result v3
-
-    const-string v1, "check reinicio=FALHOU"
-
-    if-eqz v3, :arqex_st_reinicio_log
-
-    const-string v1, "check reinicio=ok"
-
-    :arqex_st_reinicio_log
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    # 2) pasta só deste processo (o app roda o teste em dois processos)
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "/proc"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Landroid/os/Process;->myPid()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    # 3) marcar e conferir que o marcador apareceu
-    invoke-static {v2}, Llibs/ArqexUnzipMark;->ligar(Ljava/lang/String;)Z
-
-    invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
-
-    move-result v4
-
-    const-string v1, "check marcar=FALHOU"
-
-    if-eqz v4, :arqex_st_marcar_log
-
-    const-string v1, "check marcar=ok"
-
-    :arqex_st_marcar_log
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    # 4) leitura independente
-    invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
-
-    move-result v4
-
-    const-string v1, "check leitura=FALHOU"
-
-    if-eqz v4, :arqex_st_leitura_log
-
-    const-string v1, "check leitura=ok"
-
-    :arqex_st_leitura_log
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    # 5) desmarcar e conferir que o marcador sumiu
-    invoke-static {v2}, Llibs/ArqexUnzipMark;->desligar(Ljava/lang/String;)Z
-
-    invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
-
-    move-result v4
-
-    const-string v1, "check desmarcar=ok"
-
-    if-eqz v4, :arqex_st_desm_log
-
-    const-string v1, "check desmarcar=FALHOU"
-
-    :arqex_st_desm_log
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    # 6) deixa marcada a pasta fixa: o proximo arranque da reinicio=ok
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, "/reinicio"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Llibs/ArqexUnzipMark;->ligar(Ljava/lang/String;)Z
-    :try_end_st
-    .catchall {:try_start_st .. :try_end_st} :catchall_st
-
-    return-void
-
-    :catchall_st
-    move-exception v4
-
-    const-string v5, "st: excecao"
-
-    invoke-static {v0, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-.end method
-
-.method public static setUnzipFromTokens([Ljava/lang/String;)V
-    .registers 4
-    const/4 v0, 0x0
-    :try_start_t
-    if-eqz p0, :arqex_sut_set
-    array-length v1, p0
-    const/16 v2, 0x11
-    if-le v1, v2, :arqex_sut_set
-    aget-object v1, p0, v2
-    const-string v2, "uz1"
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    move-result v0
-    :try_end_t
-    .catchall {:try_start_t .. :try_end_t} :catchall_t
-    :catchall_t
-    :arqex_sut_set
-    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipPending:Z
-    return-void
-.end method
-
-# Arqex: copia a marca de uma tarefa existente (usado quando a tarefa e
-# reconstruida para reagendar - o conteudo novo tem que continuar igual).
-.method public static setUnzipFromTask(Llibs/d9;)V
-    .registers 1
-
-    # Desenho novo: a marca e gravada em onTaskSaved (tarefa ja salva + dialogo).
-    # Este gancho antigo nao grava mais nada para nao sobrescrever com valor velho.
-    return-void
-.end method
-
-# Arqex: le a caixinha do dialogo que esta sendo salvo (com reserva na ultima
-# caixinha criada) e deixa o valor pronto para o d9 que vai ser construido.
-.method public static setUnzipFromDialog(Llibs/od;)V
-    .registers 5
-    const/4 v0, 0x0
-    :try_start_d
-    # reserva: a ultima caixinha criada; NAO sobrescrever com null
-    sget-object v1, Llibs/AutoTaskWatcher;->unzipBox:Landroid/widget/CheckBox;
-    if-eqz p0, :arqex_sud_tem
-    const/16 v2, 0x5d
-    sget-object v3, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
-    invoke-static {p0, v3, v2}, Llibs/AutoTaskWatcher;->findDialogCheckBox(Llibs/od;Ljava/util/WeakHashMap;I)Landroid/widget/CheckBox;
-    move-result-object v2
-    if-eqz v2, :arqex_sud_tem
-    move-object v1, v2
-    :arqex_sud_tem
-    if-eqz v1, :arqex_sud_fim
-    invoke-virtual {v1}, Landroid/widget/CompoundButton;->isChecked()Z
-    move-result v0
-    :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_d
-    :catchall_d
-    :arqex_sud_fim
-    sput-boolean v0, Llibs/AutoTaskWatcher;->unzipPending:Z
-    return-void
-.end method
-
-# Arqex: entrega o token a gravar no conteudo da tarefa e zera (uso unico).
-# "|uz1" = descompactar marcado, "|uz0" = desmarcado.
-.method public static takeUnzipToken()Ljava/lang/String;
-    .registers 4
-    sget-boolean v0, Llibs/AutoTaskWatcher;->unzipPending:Z
-    const/4 v1, 0x0
-    sput-boolean v1, Llibs/AutoTaskWatcher;->unzipPending:Z
-    # 1 = marcado ("|uz1"), 0 = desmarcado ("|uz0")
-    move v2, v0
-    if-nez v0, :arqex_tok_zero
-    const/4 v2, 0x1
-    goto :arqex_tok_log
-    :arqex_tok_zero
-    const/4 v2, 0x0
-    :arqex_tok_log
-    new-instance v1, Ljava/lang/StringBuilder;
-    const-string v3, "d9 gravou token=uz"
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v1
-    const-string v3, "ArqexUnzip"
-    invoke-static {v3, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    # if-EQZ = se a marca e FALSA, devolve |uz0. Estava if-nez (invertido):
-    # tarefa marcada gravava |uz0 e reabria desmarcada.
-    if-eqz v0, :arqex_tok_ret0
-    const-string v0, "|uz1"
-    return-object v0
-    :arqex_tok_ret0
-    const-string v0, "|uz0"
-    return-object v0
-.end method
-
-# Arqex: guarda a ultima escolha do usuario e registra no logcat (tag ArqexUnzip).
-# Serve de memoria para tarefas que ainda nao carregam o token e de diagnostico
-# caso a marcacao nao apareca na proxima abertura do dialogo.
 .method public static declared-synchronized onTaskSaved(Llibs/d9;Llibs/d9;Llibs/od;)V
     .registers 12
 
-    # Arqex: marca do "Descompactar arquivos ZIP no destino" POR TAREFA.
-    # Le a caixinha que o usuario viu e grava na chave da tarefa salva.
-    sget-object v0, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
-
-    const/16 v1, 0x5d
-
-    invoke-static {p2, v0, v1}, Llibs/AutoTaskWatcher;->findDialogCheckBox(Llibs/od;Ljava/util/WeakHashMap;I)Landroid/widget/CheckBox;
-
-    move-result-object v0
-
-    if-eqz v0, :arqex_ots_unzip
-
-    invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
-
-    move-result v0
-
-    invoke-static {p1, v0}, Llibs/AutoTaskWatcher;->setUnzipFlag(Llibs/d9;Z)V
-
-    :arqex_ots_unzip
-
-    # Arqex: a marca do "Descompactar no destino" e gravada acima, por tarefa.
-
-    if-nez p1, :cond_6
+    if-nez p1, :cond_3
 
     return-void
 
-    :cond_6
-    :try_start_6
+    :cond_3
+    :try_start_3
     invoke-static {p1}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    if-eqz p0, :cond_18
+    if-eqz p0, :cond_15
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
 
@@ -5717,24 +5357,24 @@
 
     move-result v2
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_15
 
     const/4 v1, 0x0
 
-    :cond_18
+    :cond_15
     invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_20
 
     invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v3
 
-    :cond_23
+    :cond_20
     sget-object v2, Llibs/AutoTaskWatcher;->dialogCheckBoxes:Ljava/util/WeakHashMap;
 
     const/16 v4, 0x4f
@@ -5743,7 +5383,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_46
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -5751,26 +5391,26 @@
 
     sget-object v4, Llibs/AutoTaskWatcher;->onlyFilesCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_3a
 
     invoke-virtual {v4, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_3d
+    if-eqz v3, :cond_3a
 
     invoke-interface {v3, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_3d
+    :cond_3a
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v5
 
     invoke-virtual {v4, v0, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_49
+    if-eqz v3, :cond_46
 
     invoke-interface {v3, v0, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    :cond_49
+    :cond_46
     sget-object v2, Llibs/AutoTaskWatcher;->dialogNotifyCheckBoxes:Ljava/util/WeakHashMap;
 
     const/16 v4, 0x50
@@ -5779,7 +5419,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_c7
+    if-eqz v2, :cond_c4
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -5799,7 +5439,7 @@
 
     sget-object v6, Llibs/AutoTaskWatcher;->notifyCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_7d
+    if-eqz v1, :cond_7a
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -5813,11 +5453,11 @@
 
     invoke-virtual {v6, v5}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_7d
+    if-eqz v3, :cond_7a
 
     invoke-interface {v3, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_7d
+    :cond_7a
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v5
@@ -5834,17 +5474,17 @@
 
     invoke-virtual {v6, v7, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_c7
+    if-eqz v3, :cond_c4
 
     invoke-interface {v3, v4, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    if-eqz p0, :cond_b4
+    if-eqz p0, :cond_b1
 
     iget v5, p0, Llibs/d9;->Y:I
 
     iget v7, p1, Llibs/d9;->Y:I
 
-    if-eq v5, v7, :cond_b4
+    if-eq v5, v7, :cond_b1
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5866,7 +5506,7 @@
 
     invoke-interface {v3, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_b4
+    :cond_b1
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v7, "notify_id_"
@@ -5883,7 +5523,7 @@
 
     invoke-interface {v3, v5, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    :cond_c7
+    :cond_c4
     sget-object v2, Llibs/AutoTaskWatcher;->dialogPrefixCheckBoxes:Ljava/util/WeakHashMap;
 
     const/16 v4, 0x51
@@ -5900,7 +5540,7 @@
 
     move-result-object v4
 
-    if-eqz v2, :cond_11f
+    if-eqz v2, :cond_11c
 
     const-string v5, ""
 
@@ -5908,15 +5548,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_f1
+    if-eqz v2, :cond_ee
 
-    if-eqz v4, :cond_f1
+    if-eqz v4, :cond_ee
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    if-eqz v2, :cond_f1
+    if-eqz v2, :cond_ee
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -5926,7 +5566,7 @@
 
     move-result-object v5
 
-    :cond_f1
+    :cond_ee
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v4, "prefix_"
@@ -5941,7 +5581,7 @@
 
     sget-object v6, Llibs/AutoTaskWatcher;->prefixCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_117
+    if-eqz v1, :cond_114
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -5955,18 +5595,18 @@
 
     invoke-virtual {v6, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_117
+    if-eqz v3, :cond_114
 
     invoke-interface {v3, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_117
+    :cond_114
     invoke-virtual {v6, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_11f
+    if-eqz v3, :cond_11c
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_11f
+    :cond_11c
     sget-object v2, Llibs/AutoTaskWatcher;->dialogExtCheckBoxes:Ljava/util/WeakHashMap;
 
     const/16 v4, 0x53
@@ -5983,7 +5623,7 @@
 
     move-result-object v4
 
-    if-eqz v2, :cond_177
+    if-eqz v2, :cond_174
 
     const-string v5, ""
 
@@ -5991,15 +5631,15 @@
 
     move-result v2
 
-    if-eqz v2, :cond_149
+    if-eqz v2, :cond_146
 
-    if-eqz v4, :cond_149
+    if-eqz v4, :cond_146
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    if-eqz v2, :cond_149
+    if-eqz v2, :cond_146
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -6009,7 +5649,7 @@
 
     move-result-object v5
 
-    :cond_149
+    :cond_146
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v4, "ext_"
@@ -6024,7 +5664,7 @@
 
     sget-object v6, Llibs/AutoTaskWatcher;->extFilterCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_16f
+    if-eqz v1, :cond_16c
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6038,18 +5678,18 @@
 
     invoke-virtual {v6, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_16f
+    if-eqz v3, :cond_16c
 
     invoke-interface {v3, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_16f
+    :cond_16c
     invoke-virtual {v6, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_177
+    if-eqz v3, :cond_174
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_177
+    :cond_174
     invoke-static {p2}, Llibs/AutoTaskWatcher;->findNameCheck(Llibs/od;)Landroid/widget/CheckBox;
 
     move-result-object v2
@@ -6060,24 +5700,24 @@
 
     const/4 v8, 0x1
 
-    if-eqz v2, :cond_186
+    if-eqz v2, :cond_183
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
     move-result v8
 
-    :cond_186
+    :cond_183
     const-string v5, ""
 
-    if-eqz v8, :cond_1a8
+    if-eqz v8, :cond_1a5
 
-    if-eqz v4, :cond_19a
+    if-eqz v4, :cond_197
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
 
-    if-eqz v2, :cond_19a
+    if-eqz v2, :cond_197
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -6087,12 +5727,12 @@
 
     move-result-object v5
 
-    :cond_19a
+    :cond_197
     invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1a8
+    if-eqz v2, :cond_1a5
 
     invoke-static {p2}, Llibs/AutoTaskWatcher;->getNameLive(Llibs/od;)Ljava/lang/String;
 
@@ -6102,7 +5742,7 @@
 
     move-result-object v5
 
-    :cond_1a8
+    :cond_1a5
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v4, "name_"
@@ -6117,7 +5757,7 @@
 
     sget-object v6, Llibs/AutoTaskWatcher;->nameFilterCache:Ljava/util/HashMap;
 
-    if-eqz v1, :cond_1ce
+    if-eqz v1, :cond_1cb
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6131,20 +5771,20 @@
 
     invoke-virtual {v6, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_1ce
+    if-eqz v3, :cond_1cb
 
     invoke-interface {v3, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_1ce
+    :cond_1cb
     invoke-virtual {v6, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v3, :cond_1fe
+    if-eqz v3, :cond_1fb
 
     invoke-interface {v3, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     iget-object v6, p1, Llibs/d9;->Nu:Ljava/lang/String;
 
-    if-eqz v6, :cond_1eb
+    if-eqz v6, :cond_1e8
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6160,7 +5800,7 @@
 
     invoke-interface {v3, v7, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_1eb
+    :cond_1e8
     new-instance v6, Ljava/lang/StringBuilder;
 
     const-string v7, "name_id_"
@@ -6177,32 +5817,32 @@
 
     invoke-interface {v3, v6, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    :cond_1fe
+    :cond_1fb
     const/4 v2, 0x0
 
     sput-object v2, Llibs/AutoTaskWatcher;->nameUiCheck:Landroid/widget/CheckBox;
 
     sput-object v2, Llibs/AutoTaskWatcher;->nameUiEdit:Lcom/mixplorer/widgets/MiEditText;
 
-    if-eqz v3, :cond_208
+    if-eqz v3, :cond_205
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    :cond_208
-    if-eqz p0, :cond_213
+    :cond_205
+    if-eqz p0, :cond_210
 
     iget v0, p0, Llibs/d9;->Y:I
 
     iget v1, p1, Llibs/d9;->Y:I
 
-    if-eq v0, v1, :cond_213
+    if-eq v0, v1, :cond_210
 
     invoke-static {v0}, Llibs/AutoTaskWatcher;->clearSeenPrefs(I)V
-    :try_end_213
-    .catchall {:try_start_6 .. :try_end_213} :catchall_213
+    :try_end_210
+    .catchall {:try_start_3 .. :try_end_210} :catchall_210
 
-    :catchall_213
-    :cond_213
+    :catchall_210
+    :cond_210
     return-void
 .end method
 

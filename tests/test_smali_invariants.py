@@ -499,24 +499,36 @@ _ots = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static declared-synchronized onTaskSaved") or ""
 _auc = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static addUnzipCheckBox") or ""
-check("14a. marca do descompactar e arquivo na pasta de destino", (
-      "ArqexUnzipMark;->existe" in _iu and "Pi" in _iu
-      and "unzip_last_state" not in _atw and "unzipState" not in _atw))
-check("14d. leitura nao depende de prefs nem de cache", (
+# --- descompactar no destino: logica do usuario (marcador no texto da pasta) ---
+# A marca NAO e arquivo nem prefs: o proprio texto da pasta de destino da tarefa
+# carrega o prefixo "ARQEXZIP1_" quando a caixinha esta marcada. Salvar aplica
+# encode(); usar o destino aplica strip(); ler a caixinha aplica hasMarker().
+_azu = open(os.path.join(SMALI, "libs", "ArqexUnzip.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzip.smali")) else ""
+_n8c = method_body(os.path.join(SMALI, "libs", "n8.smali"),
+                   ".method public final onClick(Landroid/view/View;)V") or ""
+_e9a = ""
+_e9p = os.path.join(SMALI, "libs", "e9.smali")
+if os.path.exists(_e9p):
+    _e9a = open(_e9p, encoding="utf-8").read()
+check("14a. leitura da marca vem do texto salvo da pasta (hasMarker em d9->Psi)", (
+      "ArqexUnzip;->hasMarker" in _iu and "Llibs/d9;->Psi:" in _iu))
+check("14d. a marca nao passa por prefs nem por cache de chave", (
       "ArqexUnzipStore" not in _atw and "unzipFlagsCache" not in _atw
-      and "getConfigPrefs" not in _iu))
-check("14e. gravacao cria/apaga o marcador na pasta de destino", (
-      ("ArqexUnzipMark;->ligar" in _sfk and "ArqexUnzipMark;->desligar" in _sfk)
-      and os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzipMark.smali"))))
-check("14f. Salvar grava a marca na tarefa salva (dialogo -> tarefa)", (
-      "setUnzipFlag" in _ots and "findDialogCheckBox" in _ots
-      and "0x5d" in _ots and "setUnzipFromDialog" in _n8))
-check("14g. a caixinha abre com o estado da tarefa", (
-      "isUnzipEnabled" in _auc and "0x5d" in _auc))
-check("14h. diagnostico cobre reinicio do app (passo 0 e passo 1+)", (
-      "runUnzipSelfTest" in _atw and "check reinicio=" in _st
-      and "check marcar=" in _st and "check leitura=" in _st
-      and "check desmarcar=" in _st))
+      and "Prefs" not in _iu and "Prefs" not in _auc
+      and "ArqexUnzipMark" not in _atw))
+check("14e. a marca e o prefixo ARQEXZIP1_ (encode/strip/hasMarker)", (
+      "ARQEXZIP1_" in _azu and "ArqexUnzip;->strip" in _azu
+      and "ArqexUnzip;->hasMarker" in _azu
+      and "substring" in _azu))
+check("14f. Salvar aplica encode() no texto da pasta da tarefa", (
+      "ArqexUnzip;->encode" in _n8c))
+check("14g. a caixinha abre com o estado da tarefa e vem marcada por padrao", (
+      "ArqexUnzip;->hasMarker" in _auc and "0x1" in _auc
+      and "ArqexUnzip;->lastBox" in _auc))
+check("14h. ao usar o destino o prefixo e removido (strip) e o zip e extraido nele", (
+      "ArqexUnzip;->strip" in _e9a
+      and "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
       "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
 check("14c. extracao le o zip do item e escreve na pasta de destino", (

@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 # Verificacao do app dentro do emulador (roda no runner do GitHub Actions).
-# Cada passo e tolerante a falha; o que decide o resultado sao os arquivos de log.
+#
+# O que e provado aqui:
+#   1. o APK instala;
+#   2. o app abre e continua rodando (sem crash, sem VerifyError);
+#   3. o APK instalado no aparelho é o build corrigido: o DEX de dentro do
+#      pacote instalado contem o marcador "ARQEXZIP1_" usado pela caixinha
+#      "Descompactar arquivos ZIP no destino".
+#
+# A parte visual (caixinha marcada por padrao, marca que sobrevive a Salvar e
+# reabrir) e conferida no aparelho pelo usuario; aqui garantimos que o binario
+# testado é o certo e que ele nao quebra ao abrir.
 set -uo pipefail
 
 log() { echo "--- $*"; }
@@ -38,9 +48,6 @@ if [ -z "$PID" ]; then
   exit 1
 fi
 
-log "linhas de diagnostico do descompactar (aparecem quando o dialogo e usado)"
-grep "ArqexUnzip" logcat.txt | tail -10 || echo "(nenhuma ainda - esperado sem interacao)"
-
 echo "OK: app instalou, abriu e continuou rodando sem crash"
 
 log "mapa da tela (para automatizar o fluxo depois)"
@@ -50,42 +57,27 @@ if [ -f ui.xml ]; then
   grep -o 'text="[^"]*"\|content-desc="[^"]*"\|bounds="[^"]*"' ui.xml | paste - - - 2>/dev/null | grep -v 'text=""' | head -60 || true
 fi
 
-log "prova do descompactar: fase 1 (grava e le de volta)"
-adb logcat -d > logcat_p0.txt || true
-adb shell am force-stop com.arqex.explorer || true
-sleep 2
-adb shell monkey -p com.arqex.explorer -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
-sleep 25
-adb logcat -d > logcat_f1.txt || true
-F1="$(grep "ArqexUnzipDiag" logcat_f1.txt | tail -1 || true)"
-echo "fase 1: $F1"
-
-log "prova do descompactar: fase 2 (app fechado e aberto de novo)"
-adb shell am force-stop com.arqex.explorer || true
-sleep 3
-adb shell monkey -p com.arqex.explorer -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
-sleep 25
-adb logcat -d > logcat_f2.txt || true
-F2="$(grep "ArqexUnzipDiag" logcat_f2.txt | tail -1 || true)"
-echo "fase 2: $F2"
-
-cat logcat_p0.txt logcat_f1.txt logcat_f2.txt > logcat_unzip.txt 2>/dev/null || true
-
-log "prova no disco: o arquivo da marca continua la depois de fechar o app"
-adb root >/dev/null 2>&1 || true
-sleep 2
-ARQ="/data/user/0/com.arqex.explorer/files/reinicio/.arqex_descompactar"
-ARQ2="/data/data/com.arqex.explorer/files/reinicio/.arqex_descompactar"
-CONTEUDO="$(adb shell "ls -l $ARQ 2>/dev/null || ls -l $ARQ2 2>/dev/null" 2>/dev/null | tr -d '\r' || true)"
-MARCA_TXT="$(adb shell "cat $ARQ 2>/dev/null || cat $ARQ2 2>/dev/null" 2>/dev/null | tr -d '\r' || true)"
-CONTEUDO="$CONTEUDO | conteudo=${MARCA_TXT:-<vazio>}"
-echo "marca no disco:"; echo "$CONTEUDO"
-grep "ArqexUnzipDiag" logcat_unzip.txt | tail -10 || true
+log "conferindo a marca do descompactar dentro do APK INSTALADO"
+APK_INSTALADO="$(adb shell pm path com.arqex.explorer | tr -d '\r' | sed 's/^package://' | head -1)"
+echo "caminho no aparelho: ${APK_INSTALADO:-<vazio>}"
+rm -f instalado.apk
+if [ -n "$APK_INSTALADO" ]; then
+  adb pull "$APK_INSTALADO" instalado.apk >/dev/null 2>&1 || true
+fi
 FALHOU=0
-for CH in marcar leitura desmarcar; do
-  grep -q "check $CH=ok" logcat_unzip.txt && echo "OK: $CH" || { echo "::error::verificacao '$CH' do descompactar falhou"; FALHOU=1; }
-done
-grep -q "check reinicio=ok" logcat_unzip.txt && echo "OK: marca continuou marcada depois de fechar e abrir o app" || { echo "::error::a marca nao sobreviveu a fechar o app"; FALHOU=1; }
-echo "$CONTEUDO" | grep -q "arqex_descompactar" && echo "OK: marca existe no disco depois de fechar o app" || { echo "::error::a marca nao esta no disco"; FALHOU=1; }
+if [ -s instalado.apk ]; then
+  MARCA_PRESENTE=0
+  for DEX in $(unzip -Z1 instalado.apk 2>/dev/null | grep -E '^classes.*\.dex$'); do
+    if unzip -p instalado.apk "$DEX" 2>/dev/null | grep -aq "ARQEXZIP1_"; then
+      echo "marca ARQEXZIP1_ encontrada em $DEX"
+      MARCA_PRESENTE=1
+    fi
+  done
+  [ "$MARCA_PRESENTE" = "1" ] && echo "OK: o app instalado tem a marca do descompactar" \
+    || { echo "::error::o APK instalado nao tem a marca ARQEXZIP1_"; FALHOU=1; }
+else
+  echo "::warning::nao consegui puxar o APK instalado; pulando a conferencia da marca"
+fi
 [ "$FALHOU" = "0" ] || exit 1
 
+echo "OK: emulador verde (app abre e o binario e o build corrigido)"

@@ -687,11 +687,15 @@
     move-result-object v14
 
     .line 287
-    if-eqz v11, :cond_125
+    if-eqz v11, :cond_129
 
     .line 288
     .line 289
     iget-object v3, v11, Llibs/d9;->Psi:Ljava/lang/String;
+
+    invoke-static {v3}, Llibs/ArqexUnzip;->strip(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
 
     .line 290
     .line 291
@@ -699,15 +703,15 @@
 
     .line 292
     .line 293
-    goto :goto_127
+    goto :goto_12b
 
     .line 294
-    :cond_125
+    :cond_129
     const/16 v17, 0x0
 
     .line 295
     .line 296
-    :goto_127
+    :goto_12b
     const/16 v25, 0x1
 
     .line 297
@@ -816,7 +820,7 @@
     move-result-object v2
 
     .line 346
-    if-eqz v11, :cond_169
+    if-eqz v11, :cond_16d
 
     .line 347
     .line 348
@@ -832,7 +836,7 @@
     move-result v6
 
     .line 354
-    if-nez v6, :cond_169
+    if-nez v6, :cond_16d
 
     .line 355
     .line 356
@@ -847,14 +851,14 @@
     move v14, v13
 
     .line 361
-    goto :goto_16a
+    goto :goto_16e
 
     .line 362
-    :cond_169
+    :cond_16d
     const/4 v14, 0x0
 
     .line 363
-    :goto_16a
+    :goto_16e
     new-array v5, v0, [Ljava/lang/String;
 
     .line 364
@@ -935,7 +939,7 @@
     move-result-object v14
 
     .line 403
-    if-eqz v11, :cond_199
+    if-eqz v11, :cond_19d
 
     .line 404
     .line 405
@@ -947,15 +951,15 @@
 
     .line 408
     .line 409
-    goto :goto_19b
+    goto :goto_19f
 
     .line 410
-    :cond_199
+    :cond_19d
     move-object/from16 v17, v27
 
     .line 411
     .line 412
-    :goto_19b
+    :goto_19f
     const/16 v25, 0x1
 
     .line 413
@@ -1113,7 +1117,7 @@
     move-result-object v4
 
     .line 491
-    if-eqz v11, :cond_1f3
+    if-eqz v11, :cond_1f7
 
     .line 492
     .line 493
@@ -1121,28 +1125,28 @@
 
     .line 494
     .line 495
-    if-eqz v5, :cond_1f3
+    if-eqz v5, :cond_1f7
 
     .line 496
     .line 497
     const/4 v13, 0x1
 
     .line 498
-    :goto_1f1
+    :goto_1f5
     const/4 v5, 0x0
 
     .line 499
-    goto :goto_1f5
+    goto :goto_1f9
 
     .line 500
-    :cond_1f3
+    :cond_1f7
     const/4 v13, 0x0
 
     .line 501
-    goto :goto_1f1
+    goto :goto_1f5
 
     .line 502
-    :goto_1f5
+    :goto_1f9
     invoke-virtual {v12, v3, v4, v13, v5}, Llibs/od;->h(ILjava/lang/String;ZLlibs/px2;)Landroid/widget/CheckBox;
 
     .line 503
@@ -1219,7 +1223,7 @@
 
     .line 535
     .line 536
-    if-eqz v11, :cond_222
+    if-eqz v11, :cond_226
 
     .line 537
     .line 538
@@ -1227,14 +1231,14 @@
 
     .line 539
     .line 540
-    goto :goto_223
+    goto :goto_227
 
     .line 541
-    :cond_222
+    :cond_226
     move-wide v5, v3
 
     .line 542
-    :goto_223
+    :goto_227
     invoke-direct {v2, v5, v6}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
     .line 543
@@ -1252,7 +1256,7 @@
 
     .line 550
     .line 551
-    if-gtz v7, :cond_236
+    if-gtz v7, :cond_23a
 
     .line 552
     .line 553
@@ -1268,14 +1272,14 @@
     move-result-object v3
 
     .line 559
-    :goto_234
+    :goto_238
     move-object v14, v3
 
     .line 560
-    goto :goto_23f
+    goto :goto_243
 
     .line 561
-    :cond_236
+    :cond_23a
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     .line 562
@@ -1292,10 +1296,10 @@
     move-result-object v3
 
     .line 569
-    goto :goto_234
+    goto :goto_238
 
     .line 570
-    :goto_23f
+    :goto_243
     sget v19, Llibs/sa3;->f:I
 
     .line 571
@@ -1389,7 +1393,7 @@
     move-result-object v14
 
     .line 617
-    if-eqz v11, :cond_275
+    if-eqz v11, :cond_279
 
     .line 618
     .line 619
@@ -1401,15 +1405,15 @@
 
     .line 622
     .line 623
-    goto :goto_277
+    goto :goto_27b
 
     .line 624
-    :cond_275
+    :cond_279
     move-object/from16 v17, v27
 
     .line 625
     .line 626
-    :goto_277
+    :goto_27b
     const/16 v25, 0x1
 
     .line 627
@@ -1708,8 +1712,8 @@
 
     .line 769
     .line 770
-    :goto_310
-    if-ge v5, v3, :cond_337
+    :goto_314
+    if-ge v5, v3, :cond_33b
 
     .line 771
     .line 772
@@ -1733,7 +1737,7 @@
 
     .line 781
     .line 782
-    if-eqz v11, :cond_324
+    if-eqz v11, :cond_328
 
     .line 783
     .line 784
@@ -1745,11 +1749,11 @@
 
     .line 787
     .line 788
-    if-eq v15, v13, :cond_32b
+    if-eq v15, v13, :cond_32f
 
     .line 789
     .line 790
-    :cond_324
+    :cond_328
     iget-object v13, v7, Llibs/d9;->Phi:Ljava/lang/String;
 
     .line 791
@@ -1763,8 +1767,8 @@
 
     .line 796
     .line 797
-    :cond_32b
-    if-eqz v11, :cond_335
+    :cond_32f
+    if-eqz v11, :cond_339
 
     .line 798
     .line 799
@@ -1776,7 +1780,7 @@
 
     .line 802
     .line 803
-    if-ne v13, v7, :cond_335
+    if-ne v13, v7, :cond_339
 
     .line 804
     .line 805
@@ -1784,14 +1788,14 @@
 
     .line 806
     .line 807
-    :cond_335
+    :cond_339
     const/4 v13, -0x2
 
     .line 808
-    goto :goto_310
+    goto :goto_314
 
     .line 809
-    :cond_337
+    :cond_33b
     move-object/from16 v6, p2
 
     .line 810
@@ -1921,7 +1925,7 @@
 
     .line 869
     .line 870
-    if-eqz v11, :cond_379
+    if-eqz v11, :cond_37d
 
     .line 871
     .line 872
@@ -1929,10 +1933,10 @@
 
     .line 873
     .line 874
-    goto :goto_381
+    goto :goto_385
 
     .line 875
-    :cond_379
+    :cond_37d
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     .line 876
@@ -1949,7 +1953,7 @@
     add-long/2addr v3, v5
 
     .line 883
-    :goto_381
+    :goto_385
     invoke-direct {v2, v3, v4}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
     .line 884
@@ -2165,7 +2169,7 @@
     move-result-object v7
 
     .line 988
-    if-eqz v11, :cond_3f5
+    if-eqz v11, :cond_3f9
 
     .line 989
     .line 990
@@ -2173,21 +2177,21 @@
 
     .line 991
     .line 992
-    if-eqz v14, :cond_3f5
+    if-eqz v14, :cond_3f9
 
     .line 993
     .line 994
     const/4 v14, 0x1
 
     .line 995
-    goto :goto_3f6
+    goto :goto_3fa
 
     .line 996
-    :cond_3f5
+    :cond_3f9
     const/4 v14, 0x0
 
     .line 997
-    :goto_3f6
+    :goto_3fa
     const/16 v15, 0x46
 
     .line 998
@@ -2212,7 +2216,7 @@
     move-result-object v7
 
     .line 1009
-    if-eqz v11, :cond_40a
+    if-eqz v11, :cond_40e
 
     .line 1010
     .line 1011
@@ -2220,21 +2224,21 @@
 
     .line 1012
     .line 1013
-    if-eqz v15, :cond_40a
+    if-eqz v15, :cond_40e
 
     .line 1014
     .line 1015
     const/4 v15, 0x1
 
     .line 1016
-    goto :goto_40b
+    goto :goto_40f
 
     .line 1017
-    :cond_40a
+    :cond_40e
     const/4 v15, 0x0
 
     .line 1018
-    :goto_40b
+    :goto_40f
     const/16 v10, 0x47
 
     .line 1019
@@ -2281,7 +2285,7 @@
     move-result v5
 
     .line 1040
-    if-eqz v5, :cond_459
+    if-eqz v5, :cond_45d
 
     .line 1041
     .line 1042
@@ -2293,7 +2297,7 @@
     move-result v5
 
     .line 1046
-    if-nez v5, :cond_459
+    if-nez v5, :cond_45d
 
     .line 1047
     .line 1048
@@ -2393,10 +2397,10 @@
     .line 1090
     .line 1091
     .line 1092
-    goto :goto_45f
+    goto :goto_463
 
     .line 1093
-    :cond_459
+    :cond_45d
     move-object v0, v12
 
     .line 1094
@@ -2415,7 +2419,7 @@
     move-object v1, v6
 
     .line 1099
-    :goto_45f
+    :goto_463
     new-instance v3, Llibs/m8;
 
     .line 1100
@@ -2433,7 +2437,7 @@
     .line 1106
     .line 1107
     .line 1108
-    if-eqz v11, :cond_475
+    if-eqz v11, :cond_479
 
     .line 1109
     .line 1110
@@ -2458,7 +2462,7 @@
     .line 1119
     .line 1120
     .line 1121
-    :cond_475
+    :cond_479
     new-instance v0, Llibs/n8;
 
     .line 1122
@@ -4701,6 +4705,10 @@
     .line 226
     move-object/from16 p1, p10
 
+    invoke-static/range {p1 .. p1}, Llibs/ArqexUnzip;->strip(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
     .line 227
     .line 228
     invoke-virtual {v0, p0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -5565,9 +5573,6 @@
 
     .line 164
     .line 165
-    # Arqex: recupera a marca do "Descompactar no destino" do conteudo lido
-    invoke-static {v6}, Llibs/AutoTaskWatcher;->setUnzipFromTokens([Ljava/lang/String;)V
-
     new-instance v8, Llibs/d9;
 
     .line 166
@@ -6417,9 +6422,6 @@
     .line 97
     .line 98
     .line 99
-    # Arqex: tarefa reconstruida - leva a marca do descompactar
-    invoke-static {v8}, Llibs/AutoTaskWatcher;->setUnzipFromTask(Llibs/d9;)V
-
     new-instance v11, Llibs/d9;
 
     .line 100
@@ -6923,9 +6925,6 @@
     move-wide v15, v10
 
     .line 72
-    # Arqex: tarefa reconstruida - leva a marca do descompactar
-    invoke-static {v7}, Llibs/AutoTaskWatcher;->setUnzipFromTask(Llibs/d9;)V
-
     new-instance v10, Llibs/d9;
 
     .line 73

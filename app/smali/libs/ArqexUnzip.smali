@@ -5,6 +5,8 @@
 # static fields
 .field public static final boxes:Ljava/util/WeakHashMap;
 
+.field public static lastBox:Landroid/widget/CheckBox;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -17,6 +19,46 @@
     sput-object v0, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
 
     return-void
+.end method
+
+.method public static encode(Ljava/lang/String;)Ljava/lang/String;
+    .registers 4
+
+    invoke-static {p0}, Llibs/ArqexUnzip;->strip(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :try_start_4
+    sget-object v1, Llibs/ArqexUnzip;->lastBox:Landroid/widget/CheckBox;
+
+    if-eqz v1, :cond_1e
+
+    invoke-virtual {v1}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1e
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "ARQEXZIP1_"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    if-eqz v0, :cond_1a
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1a
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_1e
+    .catchall {:try_start_4 .. :try_end_1e} :catchall_1e
+
+    :catchall_1e
+    :cond_1e
+    return-object v0
 .end method
 
 .method private static extract(Llibs/rp0;Ljava/io/File;)Z
@@ -63,11 +105,13 @@
     move-result-object v2
 
     :goto_25
-    if-eqz v2, :cond_86
+    if-eqz v2, :cond_87
 
-    new-instance v1, Ljava/util/zip/ZipInputStream;
+    new-instance v11, Ljava/util/zip/ZipInputStream;
 
-    invoke-direct {v1, v2}, Ljava/util/zip/ZipInputStream;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {v11, v2}, Ljava/util/zip/ZipInputStream;-><init>(Ljava/io/InputStream;)V
+
+    move-object v1, v11
 
     invoke-virtual {p1}, Ljava/io/File;->mkdirs()Z
 
@@ -91,13 +135,13 @@
 
     new-array v4, v3, [B
 
-    :cond_45
-    :goto_45
+    :cond_46
+    :goto_46
     invoke-virtual {v1}, Ljava/util/zip/ZipInputStream;->getNextEntry()Ljava/util/zip/ZipEntry;
 
     move-result-object v5
 
-    if-eqz v5, :cond_85
+    if-eqz v5, :cond_86
 
     invoke-virtual {v5}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
 
@@ -115,67 +159,128 @@
 
     move-result v9
 
-    if-eqz v9, :cond_45
+    if-eqz v9, :cond_46
 
     invoke-virtual {v5}, Ljava/util/zip/ZipEntry;->isDirectory()Z
 
     move-result v9
 
-    if-eqz v9, :cond_68
+    if-eqz v9, :cond_69
 
     invoke-virtual {v7}, Ljava/io/File;->mkdirs()Z
 
-    goto :goto_45
+    goto :goto_46
 
-    :cond_68
+    :cond_69
     invoke-virtual {v7}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     move-result-object v9
 
-    if-eqz v9, :cond_71
+    if-eqz v9, :cond_72
 
     invoke-virtual {v9}, Ljava/io/File;->mkdirs()Z
 
-    :cond_71
+    :cond_72
     new-instance v9, Ljava/io/FileOutputStream;
 
     invoke-direct {v9, v7}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    :goto_76
+    :goto_77
     invoke-virtual {v1, v4}, Ljava/util/zip/ZipInputStream;->read([B)I
 
     move-result v10
 
-    if-ltz v10, :cond_81
+    if-ltz v10, :cond_82
 
     const/4 v11, 0x0
 
     invoke-virtual {v9, v4, v11, v10}, Ljava/io/FileOutputStream;->write([BII)V
 
-    goto :goto_76
+    goto :goto_77
 
-    :cond_81
+    :cond_82
     invoke-virtual {v9}, Ljava/io/FileOutputStream;->close()V
 
-    goto :goto_45
+    goto :goto_46
 
-    :cond_85
-    const/4 v0, 0x1
-    :try_end_86
-    .catchall {:try_start_2 .. :try_end_86} :catchall_86
-
-    :catchall_86
     :cond_86
-    if-eqz v1, :cond_8b
+    const/4 v0, 0x1
+    :try_end_87
+    .catchall {:try_start_2 .. :try_end_87} :catchall_87
 
-    :try_start_88
+    :catchall_87
+    :cond_87
+    if-eqz v1, :cond_8c
+
+    :try_start_89
     invoke-virtual {v1}, Ljava/util/zip/ZipInputStream;->close()V
-    :try_end_8b
-    .catchall {:try_start_88 .. :try_end_8b} :catchall_8b
+    :try_end_8c
+    .catchall {:try_start_89 .. :try_end_8c} :catchall_8c
 
-    :catchall_8b
-    :cond_8b
+    :catchall_8c
+    :cond_8c
     return v0
+.end method
+
+.method public static hasMarker(Ljava/lang/String;)Z
+    .registers 3
+
+    const/4 v0, 0x0
+
+    if-nez p0, :cond_4
+
+    return v0
+
+    :cond_4
+    const-string v1, "ARQEXZIP1_"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static lookup(Llibs/od;)Landroid/widget/CheckBox;
+    .registers 4
+
+    const/4 v0, 0x0
+
+    sget-object v1, Llibs/ArqexUnzip;->boxes:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    instance-of v2, v1, Landroid/widget/CheckBox;
+
+    if-eqz v2, :cond_e
+
+    check-cast v1, Landroid/widget/CheckBox;
+
+    return-object v1
+
+    :cond_e
+    iget-object v1, p0, Llibs/od;->Omicron:Landroid/view/ViewGroup;
+
+    if-eqz v1, :cond_1f
+
+    const/16 v2, 0x5d
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    instance-of v2, v1, Landroid/widget/CheckBox;
+
+    if-eqz v2, :cond_1f
+
+    check-cast v1, Landroid/widget/CheckBox;
+
+    return-object v1
+
+    :cond_1f
+    return-object v0
 .end method
 
 .method public static process(Llibs/d9;ILjava/util/Collection;)V
@@ -279,25 +384,6 @@
 
     if-eqz v6, :cond_2c
 
-    # aviso curto (nao e diagnostico): o usuario ve que descompactou de verdade
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    const-string v8, "Descompactado no destino: "
-
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5}, Llibs/rp0;->m()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7}, Llibs/SmartFeaturesV116;->postToastUi(Ljava/lang/String;)V
-
     if-eqz v2, :cond_70
 
     iget-object v6, v5, Llibs/rp0;->Three:Ljava/lang/String;
@@ -325,4 +411,25 @@
 
     :cond_74
     return-void
+.end method
+
+.method public static strip(Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+
+    invoke-static {p0}, Llibs/ArqexUnzip;->hasMarker(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    return-object p0
+
+    :cond_7
+    const/16 v0, 0xa
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
