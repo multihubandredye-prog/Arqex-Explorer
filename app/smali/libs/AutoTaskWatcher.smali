@@ -5616,6 +5616,11 @@
     const-string v2, "unzip2_DIAG_PROVA"
 
     :try_start_st
+    const-string v3, "inicio"
+
+    const/4 v4, 0x1
+
+    invoke-static {v3, v4}, Llibs/AutoTaskWatcher;->diagLog(Ljava/lang/String;Z)V
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
     if-nez v0, :arqex_st_erro
@@ -5626,7 +5631,21 @@
 
     move-result v5
 
-    if-lez v5, :arqex_st_releitura
+    const/4 v4, 0x0
+
+    if-lez v5, :arqex_st_tres
+
+    const/4 v4, 0x1
+
+    :arqex_st_tres
+    const-string v3, "passo"
+    invoke-static {v3, v4}, Llibs/AutoTaskWatcher;->diagLog(Ljava/lang/String;Z)V
+
+    if-gtz v5, :arqex_st_fase_zero
+
+    goto :arqex_st_releitura
+
+    :arqex_st_fase_zero
 
     # ---------- passo 0 ----------
     const-string v3, "ArqexUnzipDiag"
@@ -5724,6 +5743,11 @@
     return-void
 
     :catchall_st
+    move-exception v4
+    invoke-virtual {v4}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+    move-result-object v4
+    const-string v3, "ArqexUnzipDiag"
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
     return-void
 
     :arqex_st_erro
