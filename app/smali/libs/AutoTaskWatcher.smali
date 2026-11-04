@@ -7788,7 +7788,9 @@
     .registers 14
 
     # Duas linhas de acao no dialogo da tarefa (so em tarefa ja salva).
-    # od->Item recebe 11 parametros + o objeto = 12 registradores na chamada.
+    # od->Item: 11 parametros + objeto = 12 registradores na chamada.
+    # Largura -0x2 (wrap_content) e gravidade 0x10: com largura 0 a linha
+    # virava uma caixa alta e invisivel - era o buraco no meio do dialogo.
     if-eqz p0, :arqex_ate_fim
 
     if-eqz p1, :arqex_ate_fim
@@ -7804,7 +7806,7 @@
 
     const-string v2, "Simular: ver os arquivos que seriam afetados (n\\u00e3o altera nada)"
 
-    const/4 v3, 0x0
+    const/16 v3, 0x3e9
 
     const/4 v5, 0x0
 
@@ -7816,9 +7818,9 @@
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    const/16 v10, 0x10
 
-    const/4 v11, 0x0
+    const/16 v11, -0x2
 
     invoke-virtual/range {v0 .. v11}, Llibs/od;->Item(ILjava/lang/CharSequence;ILandroid/view/View$OnClickListener;Landroid/graphics/drawable/GradientDrawable;Ljava/lang/Integer;IIIII)Landroid/widget/TextView;
 
@@ -7832,7 +7834,7 @@
 
     const-string v2, "Ver hist\\u00f3rico de execu\\u00e7\\u00f5es desta tarefa"
 
-    const/4 v3, 0x0
+    const/16 v3, 0x3e9
 
     const/4 v5, 0x0
 
@@ -7844,11 +7846,12 @@
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    const/16 v10, 0x10
 
-    const/4 v11, 0x0
+    const/16 v11, -0x2
 
     invoke-virtual/range {v0 .. v11}, Llibs/od;->Item(ILjava/lang/CharSequence;ILandroid/view/View$OnClickListener;Landroid/graphics/drawable/GradientDrawable;Ljava/lang/Integer;IIIII)Landroid/widget/TextView;
+
     :try_end_ate
     .catchall {:try_start_ate .. :try_end_ate} :catchall_ate
 
