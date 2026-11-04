@@ -515,9 +515,9 @@ check("14f. Salvar grava a marca na tarefa salva (dialogo -> tarefa)", (
 check("14g. a caixinha abre com o estado da tarefa", (
       "isUnzipEnabled" in _auc and "0x5d" in _auc))
 check("14h. diagnostico cobre reinicio do app (passo 0 e passo 1+)", (
-      "runUnzipSelfTest" in _atw and "diag_passo" in _st
+      "runUnzipSelfTest" in _atw and "primeiro_arranque" in _st
       and "clearUnzipCache" in _st and "check reinicio=" in _st
-      and "check arquivo=" in _st and "diag_passo" in _st))
+      and "check arquivo=" in _st))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
       "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
 check("14c. extracao le o zip do item e escreve na pasta de destino", (

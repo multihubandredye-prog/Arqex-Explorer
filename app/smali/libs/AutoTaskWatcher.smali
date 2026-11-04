@@ -5605,9 +5605,11 @@
 .end method
 
 .method public static runUnzipSelfTest()V
-    .registers 8
+    .registers 7
 
-    # Prova automatica, so roda no emulador do CI. Sem depender de Context.
+    # Prova automatica (so no emulador do CI), sem depender de Context.
+    # 1) se o arquivo ja tem a marca de um arranque anterior, isso e o "reinicio".
+    # 2) depois faz o ciclo completo: grava, le de volta, desmarca.
     const-string v0, "ArqexUnzipDiag"
 
     const-string v1, "st: inicio"
@@ -5617,44 +5619,13 @@
     const-string v2, "unzip2_DIAG_PROVA"
 
     :try_start_st
-    invoke-static {}, Llibs/ArqexUnzipStore;->caminho()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v1, "diag_passo"
-
-    invoke-static {v1}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
+    invoke-static {v2}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
 
     move-result v5
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    if-gez v5, :arqex_st_primeiro
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "st: passo="
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v0, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    if-gtz v5, :arqex_st_passo0
-
-    # ---------- passo 1+: app aberto de novo (processo novo) ----------
-    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
-
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :arqex_st_reinicio_ok
+    if-eqz v5, :arqex_st_reinicio_ok
 
     const-string v1, "check reinicio=FALHOU"
 
@@ -5666,12 +5637,15 @@
     :arqex_st_reinicio_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
+    goto :arqex_st_ciclo
 
-    return-void
+    :arqex_st_primeiro
+    const-string v1, "st: primeiro_arranque"
 
-    # ---------- passo 0: grava, le de volta, desmarca ----------
-    :arqex_st_passo0
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    # ---------- ciclo completo ----------
+    :arqex_st_ciclo
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
     const/4 v3, 0x1
@@ -5734,14 +5708,10 @@
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # deixa marcada e registra que o proximo arranque e o passo 1
+    # deixa marcada: o proximo arranque devolve "check reinicio=ok"
     const/4 v3, 0x1
 
     invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
-
-    const-string v6, "diag_passo"
-
-    invoke-static {v6, v3}, Llibs/ArqexUnzipStore;->save(Ljava/lang/String;Z)V
 
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
     :try_end_st
