@@ -5605,7 +5605,7 @@
 .end method
 
 .method public static runUnzipSelfTest()V
-    .registers 7
+    .registers 9
 
     # Prova automatica (so no emulador do CI), sem depender de Context.
     # 1) se o arquivo ja tem a marca de um arranque anterior, isso e o "reinicio".
@@ -5616,10 +5616,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v2, "unzip2_DIAG_PROVA"
+    const-string v6, "unzip2_DIAG_PROVA"
 
     :try_start_st
-    invoke-static {v2}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
+    invoke-static {v6}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
 
     move-result v5
 
@@ -5646,6 +5646,25 @@
 
     # ---------- ciclo completo ----------
     :arqex_st_ciclo
+    # chave unica deste processo: os dois processos do app nao se atrapalham
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "unzip2_DIAG_"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v3
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
     const/4 v3, 0x1
@@ -5708,10 +5727,10 @@
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # deixa marcada: o proximo arranque devolve "check reinicio=ok"
+    # deixa a chave fixa marcada: o proximo arranque devolve "check reinicio=ok"
     const/4 v3, 0x1
 
-    invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
+    invoke-static {v6, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
 
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
     :try_end_st
