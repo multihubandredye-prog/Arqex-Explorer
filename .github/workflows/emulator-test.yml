@@ -115,5 +115,6 @@ jobs:
           path: |
             logcat.txt
             tela.png
+            ui*.xml
           if-no-files-found: warn
           retention-days: 7

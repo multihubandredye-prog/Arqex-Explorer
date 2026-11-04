@@ -102,25 +102,35 @@ tocar() {
   return 0
 }
 
-tocar "Tarefas" || true
-tocar "Adicionar" || tocar "+" || true
+# a caixa de atualizacao pode abrir por cima: fecha antes de navegar
+adb shell input keyevent 4 >/dev/null 2>&1 || true
 sleep 2
-tocar "Meu Drive" || true
+tocar "Tarefas" || true
+sleep 2
+adb shell uiautomator dump /sdcard/ui_tarefas.xml >/dev/null 2>&1 || true
+adb pull /sdcard/ui_tarefas.xml ui_tarefas.xml >/dev/null 2>&1 || true
+[ -f ui_tarefas.xml ] && grep -o 'text="[^"]*"' ui_tarefas.xml | grep -v 'text=""' | head -20 || true
+tocar "Adicionar" || tocar "Nova tarefa" || tocar "+" || true
+sleep 2
 tocar "Regex" || true
 sleep 2
 adb shell uiautomator dump /sdcard/ui2.xml >/dev/null 2>&1 || true
 adb pull /sdcard/ui2.xml ui2.xml >/dev/null 2>&1 || true
 EXEMPLO_OK=0
 if [ -f ui2.xml ]; then
-  if grep -q "/storage/emulated/0/Download/\.\*pdf" ui2.xml; then
-    EXEMPLO_OK=1
-    echo "OK: o exemplo apareceu dentro da caixa depois de marcar Regex"
-    grep -o 'text="[^"]*\.\*pdf[^"]*"' ui2.xml | head -2 || true
-  fi
+  DENTRO="$(python3 tools/tocar.py ui2.xml "--caixa:/storage/emulated/0/Download/.*pdf" 2>/dev/null | head -1)"
+  case "$DENTRO" in
+    ""|"NAO_ACHOU"|ERRO*)
+      echo "  (o exemplo nao foi encontrado dentro de uma caixa de edicao)" ;;
+    *)
+      EXEMPLO_OK=1
+      echo "OK: o exemplo esta DENTRO da caixa de edicao (toque em $DENTRO)"
+      grep -o 'text="[^"]*pdf[^"]*"' ui2.xml | head -3 || true ;;
+  esac
 fi
 adb logcat -d | grep "ArqexRegexHint" | tail -5 || true
 if [ "$EXEMPLO_OK" = "0" ]; then
-  echo "::warning::nao consegui confirmar o exemplo na caixa pela automacao (ver ui2.xml no artefato)"
+  echo "::warning::nao consegui confirmar o exemplo dentro da caixa pela automacao (ver ui2.xml no artefato)"
 fi
 
 echo "OK: emulador verde (app abre e o binario e o build corrigido)"

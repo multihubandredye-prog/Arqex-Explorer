@@ -26,10 +26,17 @@ def centro(bounds):
     return ((x1 + x2) // 2, (y1 + y2) // 2)
 
 
+so_edicao = alvo.startswith("--caixa:")
+if so_edicao:
+    alvo = alvo.split(":", 1)[1]
+
 achados = []
 for no in raiz.iter("node"):
     texto = (no.get("text") or "")
     desc = (no.get("content-desc") or "")
+    classe = no.get("class") or ""
+    if so_edicao and "EditText" not in classe:
+        continue
     if alvo.lower() in texto.lower() or alvo.lower() in desc.lower():
         c = centro(no.get("bounds"))
         if c:
