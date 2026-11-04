@@ -1547,21 +1547,6 @@
     :catchall_ac
     :cond_ac
     :try_start_ac
-    # Arqex: guarda o contexto do app (o zt0.g pode ficar nulo no arranque)
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    if-eqz v0, :arqex_ctx_ok
-
-    move-object v0, p0
-
-    :arqex_ctx_ok
-    sput-object v0, Llibs/AutoTaskWatcher;->unzipCtx:Landroid/content/Context;
-
-    # Arqex: prova do "Descompactar no destino" (roda no emulador do CI)
-    invoke-static {v0}, Llibs/ArqexUnzipDiag;->runWith(Landroid/content/Context;)V
-
     invoke-static {}, Llibs/AutoTaskWatcher;->initStartup()V
     :try_end_af
     .catchall {:try_start_ac .. :try_end_af} :catchall_af

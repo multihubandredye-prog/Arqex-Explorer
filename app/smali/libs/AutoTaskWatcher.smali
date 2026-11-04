@@ -763,9 +763,6 @@
 # a copia em memoria, para a caixinha refletir na hora o que o usuario salvou.
 .field private static final unzipFlagsCache:Ljava/util/HashMap;
 
-# Contexto guardado pelo AppImpl.onCreate. Nao da para confiar so no zt0.g:
-# no arranque ele ainda esta nulo neste app.
-.field public static unzipCtx:Landroid/content/Context;
 
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
     .registers 8
@@ -4078,7 +4075,8 @@
 .method public static initStartup()V
     .registers 3
 
-    # Arqex: a prova do descompactar roda no tick do watcher (contexto ja pronto).
+    # Arqex: prova do "Descompactar no destino" (roda no emulador do CI)
+    invoke-static {}, Llibs/ArqexUnzipDiag;->run()V
 
     :try_start_0
     const/4 v0, -0x1
@@ -5450,19 +5448,6 @@
     return-void
 .end method
 
-.method private static getUnzipCtx()Landroid/content/Context;
-    .registers 2
-
-    sget-object v0, Llibs/AutoTaskWatcher;->unzipCtx:Landroid/content/Context;
-
-    if-eqz v0, :arqex_guc_fim
-
-    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
-
-    :arqex_guc_fim
-    return-object v0
-.end method
-
 .method public static isUnzipFlagSet(Ljava/lang/String;)Z
     .registers 4
 
@@ -5491,11 +5476,7 @@
     return v0
 
     :arqex_ifs_arquivo
-    invoke-static {}, Llibs/AutoTaskWatcher;->getUnzipCtx()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2, p0}, Llibs/ArqexUnzipStore;->load(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {p0}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
 
     move-result v2
 
@@ -5543,11 +5524,7 @@
 
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    invoke-static {}, Llibs/AutoTaskWatcher;->getUnzipCtx()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p0, p1}, Llibs/ArqexUnzipStore;->save(Landroid/content/Context;Ljava/lang/String;Z)V
+    invoke-static {p0, p1}, Llibs/ArqexUnzipStore;->save(Ljava/lang/String;Z)V
     :try_end_s
     .catchall {:try_start_s .. :try_end_s} :catchall_s
 
@@ -5627,11 +5604,10 @@
     return-void
 .end method
 
-.method public static runUnzipSelfTest(Landroid/content/Context;)V
-    .registers 9
+.method public static runUnzipSelfTest()V
+    .registers 8
 
-    # Prova automatica (so no emulador do CI), com logs de texto simples:
-    # passo 0 grava e le de volta; passo 1+ e o arranque seguinte (processo novo).
+    # Prova automatica, so roda no emulador do CI. Sem depender de Context.
     const-string v0, "ArqexUnzipDiag"
 
     const-string v1, "st: inicio"
@@ -5641,43 +5617,15 @@
     const-string v2, "unzip2_DIAG_PROVA"
 
     :try_start_st
-    move-object v3, p0
+    invoke-static {}, Llibs/ArqexUnzipStore;->caminho()Ljava/lang/String;
 
-    if-eqz v3, :arqex_st_tem_p0
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->getUnzipCtx()Landroid/content/Context;
-
-    move-result-object v3
-
-    :arqex_st_tem_p0
-    sget-object v7, Llibs/zt0;->g:Landroid/content/Context;
-
-    if-eqz v7, :arqex_st_zt0_tem
-
-    const-string v1, "st: zt0_g=null"
+    move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :arqex_st_zt0_fim
+    const-string v1, "diag_passo"
 
-    :arqex_st_zt0_tem
-    const-string v1, "st: zt0_g=ok"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    :arqex_st_zt0_fim
-    if-eqz v3, :arqex_st_tem_ctx
-
-    const-string v1, "st: ctx_null"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :arqex_st_tem_ctx
-    const-string v4, "diag_passo"
-
-    invoke-static {v3, v4}, Llibs/ArqexUnzipStore;->load(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v1}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
 
     move-result v5
 
@@ -5699,7 +5647,7 @@
 
     if-gtz v5, :arqex_st_passo0
 
-    # ---------- passo 1+: arranque seguinte ----------
+    # ---------- passo 1+: app aberto de novo (processo novo) ----------
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
     invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
@@ -5722,7 +5670,7 @@
 
     return-void
 
-    # ---------- passo 0: grava e le de volta ----------
+    # ---------- passo 0: grava, le de volta, desmarca ----------
     :arqex_st_passo0
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
@@ -5786,23 +5734,14 @@
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # deixa marcada e grava que o proximo arranque e o passo 1
+    # deixa marcada e registra que o proximo arranque e o passo 1
     const/4 v3, 0x1
 
     invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
 
-    move-object v4, p0
-
-    if-eqz v4, :arqex_st_salva_ctx
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->getUnzipCtx()Landroid/content/Context;
-
-    move-result-object v4
-
-    :arqex_st_salva_ctx
     const-string v6, "diag_passo"
 
-    invoke-static {v4, v6, v3}, Llibs/ArqexUnzipStore;->save(Landroid/content/Context;Ljava/lang/String;Z)V
+    invoke-static {v6, v3}, Llibs/ArqexUnzipStore;->save(Ljava/lang/String;Z)V
 
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
     :try_end_st
