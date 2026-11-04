@@ -12,11 +12,11 @@
 .end method
 
 # Chama a prova automatica do "Descompactar no destino" (roda no CI, no emulador).
-.method public static run()V
+.method public static runWith(Landroid/content/Context;)V
     .registers 3
 
     :try_start_0
-    invoke-static {}, Llibs/AutoTaskWatcher;->runUnzipSelfTest()V
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->runUnzipSelfTest(Landroid/content/Context;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

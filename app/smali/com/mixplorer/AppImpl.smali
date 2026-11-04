@@ -684,6 +684,9 @@
     .line 1
     sput-object p1, Llibs/zt0;->g:Landroid/content/Context;
 
+    # Arqex: prova do "Descompactar no destino" com o Context de verdade
+    invoke-static {p1}, Llibs/ArqexUnzipDiag;->runWith(Landroid/content/Context;)V
+
     .line 2
     .line 3
     invoke-super {p0, p1}, Landroid/app/Application;->attachBaseContext(Landroid/content/Context;)V

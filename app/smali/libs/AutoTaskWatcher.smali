@@ -4074,9 +4074,7 @@
 .method public static initStartup()V
     .registers 3
 
-    # Arqex: diagnostico do descompactar - roda uma vez no inicio do app e
-    # registra no logcat (tag ArqexUnzipDiag) o resultado de cada etapa.
-    invoke-static {}, Llibs/ArqexUnzipDiag;->run()V
+    # Arqex: a prova do descompactar roda no tick do watcher (contexto ja pronto).
 
     :try_start_0
     const/4 v0, -0x1
@@ -5606,8 +5604,8 @@
     return-void
 .end method
 
-.method public static runUnzipSelfTest()V
-    .registers 8
+.method public static runUnzipSelfTest(Landroid/content/Context;)V
+    .registers 9
 
     # Prova automatica (so no emulador do CI), com logs de texto simples:
     # passo 0 grava e le de volta; passo 1+ e o arranque seguinte (processo novo).
@@ -5620,8 +5618,24 @@
     const-string v2, "unzip2_DIAG_PROVA"
 
     :try_start_st
-    sget-object v3, Llibs/zt0;->g:Landroid/content/Context;
+    move-object v3, p0
 
+    sget-object v7, Llibs/zt0;->g:Landroid/content/Context;
+
+    if-eqz v7, :arqex_st_zt0_tem
+
+    const-string v1, "st: zt0_g=null"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :arqex_st_zt0_fim
+
+    :arqex_st_zt0_tem
+    const-string v1, "st: zt0_g=ok"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :arqex_st_zt0_fim
     if-eqz v3, :arqex_st_tem_ctx
 
     const-string v1, "st: ctx_null"
@@ -5747,7 +5761,7 @@
 
     invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
 
-    sget-object v4, Llibs/zt0;->g:Landroid/content/Context;
+    move-object v4, p0
 
     const-string v6, "diag_passo"
 
