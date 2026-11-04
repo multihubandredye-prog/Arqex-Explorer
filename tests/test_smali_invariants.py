@@ -539,10 +539,10 @@ _arh = open(os.path.join(SMALI, "libs", "ArqexRegexHint.smali"), encoding="utf-8
     if os.path.exists(os.path.join(SMALI, "libs", "ArqexRegexHint.smali")) else ""
 _e9s = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read() \
     if os.path.exists(os.path.join(SMALI, "libs", "e9.smali")) else ""
-check("14i. exemplo do regex aparece dentro da caixa da pasta", (
+check("14i. exemplo do regex aparece abaixo da caixinha quando marcada", (
       "ArqexRegexHint;->instalarPendente" in _e9s
       and "/storage/emulated/0/Download/.*pdf" in _arh
-      and "setText" in _arh and "setSelection" in _arh))
+      and "setText" in _arh and "isChecked" in _arh))
 check("14j. rotulo da caixa Regex fica curto (exemplo fora do rotulo)", (
       " - ex: /storage" not in _e9s))
 check("14h. ao usar o destino o prefixo e removido (strip) e o zip e extraido nele", (
@@ -561,7 +561,7 @@ check("15a. historico grava data, tarefa e quantidade a cada execucao", (
        if os.path.exists(os.path.join(SMALI, "libs", "ArqexTaskExtras.smali")) else "")))
 check("15b. simular monta a lista sem alterar arquivos", (
       "ArqexTaskExtras;->mostrar" in _atw and "addTaskExtras" in _atw
-      and os.path.exists(os.path.join(SMALI, "libs", "ArqexTaskExtras$Simular.smali"))
+      and os.path.exists(os.path.join(SMALI, "libs", "ArqexTaskExtras$SimularClick.smali"))
       and "Nada foi copiado" in _atw))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
