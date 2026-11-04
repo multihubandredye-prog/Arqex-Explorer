@@ -74,8 +74,8 @@ cat logcat_p0.txt logcat_f1.txt logcat_f2.txt > logcat_unzip.txt 2>/dev/null || 
 log "prova no disco: o arquivo da marca continua la depois de fechar o app"
 adb root >/dev/null 2>&1 || true
 sleep 2
-ARQ="/data/user/0/com.arqex.explorer/files/.arqex_descompactar"
-ARQ2="/data/data/com.arqex.explorer/files/.arqex_descompactar"
+ARQ="/data/user/0/com.arqex.explorer/files/reinicio/.arqex_descompactar"
+ARQ2="/data/data/com.arqex.explorer/files/reinicio/.arqex_descompactar"
 CONTEUDO="$(adb shell "ls -l $ARQ 2>/dev/null || ls -l $ARQ2 2>/dev/null" 2>/dev/null | tr -d '\r' || true)"
 echo "marca no disco:"; echo "$CONTEUDO"
 grep "ArqexUnzipDiag" logcat_unzip.txt | tail -10 || true

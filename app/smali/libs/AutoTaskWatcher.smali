@@ -5443,6 +5443,21 @@
 
     :try_start_st
     # 1) marca deixada por um arranque anterior = prova do reinicio
+    #    (caminho fixo, de proposito: qualquer processo pode criar)
+    move-object v3, v2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "/data/user/0/com.arqex.explorer/files/reinicio"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
     invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
     move-result v3
@@ -5455,6 +5470,29 @@
 
     :arqex_st_reinicio_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    # a partir daqui, pasta propria de cada processo (o app roda o teste em dois)
+    move-object v2, v3
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, "/proc"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Landroid/os/Process;->myPid()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
 
     # 2) marcar e conferir que o arquivo apareceu
     const/4 v3, 0x1
@@ -5506,10 +5544,12 @@
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # 5) deixa marcada: o proximo arranque tem que dar reinicio=ok
-    const/4 v3, 0x1
+    # 5) deixa marcada a pasta fixa: o proximo arranque tem que dar reinicio=ok
+    const-string v3, "/data/user/0/com.arqex.explorer/files/reinicio"
 
-    invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
+    const/4 v4, 0x1
+
+    invoke-static {v3, v4}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
     :try_end_st
     .catchall {:try_start_st .. :try_end_st} :catchall_st
 
