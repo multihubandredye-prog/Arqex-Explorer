@@ -5433,26 +5433,25 @@
 .end method
 
 .method public static runUnzipSelfTest()V
-    .registers 6
+    .registers 7
 
-    # Prova automatica (so no emulador do CI). A "pasta de destino" aqui e a
-    # pasta files do app. O que conta e o EFEITO no disco, nao valor de retorno.
+    # Prova automatica (so no emulador do CI).
+    # v5 guarda a pasta base do app e NAO e reaproveitado para outra coisa.
     const-string v0, "ArqexUnzipDiag"
 
-    const-string v2, "/data/user/0/com.arqex.explorer/files"
+    const-string v5, "/data/user/0/com.arqex.explorer/files"
 
     :try_start_st
-    # 1) marca deixada por um arranque anterior = prova do reinicio
-    #    (caminho fixo, de proposito: qualquer processo pode criar)
-    move-object v3, v2
-
+    # 1) a marca da pasta fixa sobrou de um arranque anterior? (prova do reinicio)
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "/data/user/0/com.arqex.explorer/files/reinicio"
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "/reinicio"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5471,30 +5470,28 @@
     :arqex_st_reinicio_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # a partir daqui, pasta propria de cada processo (o app roda o teste em dois)
-    move-object v2, v3
+    # 2) pasta só deste processo (o app roda o teste em dois processos)
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "/proc"
 
-    const-string v4, "/proc"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {}, Landroid/os/Process;->myPid()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    # 2) marcar e conferir que o arquivo apareceu
+    # 3) marcar e conferir que o marcador apareceu
     const/4 v3, 0x1
 
     invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
@@ -5512,7 +5509,7 @@
     :arqex_st_marcar_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # 3) leitura independente
+    # 4) leitura independente
     invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
     move-result v4
@@ -5526,7 +5523,7 @@
     :arqex_st_leitura_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # 4) desmarcar e conferir que o arquivo sumiu
+    # 5) desmarcar e conferir que o marcador sumiu
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
@@ -5544,8 +5541,20 @@
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # 5) deixa marcada a pasta fixa: o proximo arranque tem que dar reinicio=ok
-    const-string v3, "/data/user/0/com.arqex.explorer/files/reinicio"
+    # 6) deixa marcada a pasta fixa: o proximo arranque da reinicio=ok
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, "/reinicio"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
 
     const/4 v4, 0x1
 
