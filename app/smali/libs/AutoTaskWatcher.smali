@@ -7861,3 +7861,95 @@
     :cond_2d
     return-void
 .end method
+
+# Arqex: notificacao de fim de processo (independente do servico em segundo plano).
+.method public static declared-synchronized notifyTaskFinished(Llibs/m52;)V
+    .registers 8
+
+    if-eqz p0, :arqex_nf_fim
+
+    :try_start_arqex_nf
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->resolveAutoTaskIdForOperation(Llibs/m52;)I
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v2, "FIM op="
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget v2, p0, Llibs/m52;->Upsilon:I
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v2, " tarefa_id="
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    if-lez v0, :arqex_nf_fim
+
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->shouldSuppressNotification(Llibs/m52;)Z
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v2, "NOTIF suprimida="
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    if-eqz v0, :arqex_nf_fim
+
+    iget-object v0, p0, Llibs/m52;->Three:Ljava/lang/Object;
+    if-nez v0, :arqex_nf_base_ok
+    iget-object v0, p0, Llibs/m52;->II:Llibs/c2;
+    if-eqz v0, :arqex_nf_base_ok
+    iget-object v1, v0, Llibs/c2;->b:Ljava/lang/Object;
+    if-eqz v1, :arqex_nf_base_ok
+    check-cast v1, Llibs/rz0;
+    sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
+    if-eqz v2, :arqex_nf_base_ok
+    invoke-virtual {v1, v2, p0}, Llibs/rz0;->l(Landroid/content/Context;Llibs/m52;)V
+    const-string v1, "NOTIF base criada"
+    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    :arqex_nf_base_ok
+
+    invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
+    move-result-object v0
+    const-string v1, "en"
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
+    if-eqz v1, :arqex_nf_nao_en
+    const-string v2, "Task finished"
+    const-string v3, "Operation completed"
+    goto :arqex_nf_txt
+    :arqex_nf_nao_en
+    const-string v1, "es"
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
+    if-eqz v1, :arqex_nf_nao_es
+    const-string v2, "Tarea finalizada"
+    const-string v3, "Operaci\u00f3n completada"
+    goto :arqex_nf_txt
+    :arqex_nf_nao_es
+    const-string v2, "Tarefa conclu\u00edda"
+    const-string v3, "Opera\u00e7\u00e3o conclu\u00edda"
+    :arqex_nf_txt
+    const/4 v0, 0x0
+    const/4 v1, 0x0
+    invoke-static {v2, v3, p0, v1, v0}, Llibs/rz0;->p(Ljava/lang/String;Ljava/lang/String;Llibs/m52;ZLlibs/rp0;)V
+
+    iget-object v0, p0, Llibs/m52;->Three:Ljava/lang/Object;
+    if-nez v0, :arqex_nf_sem_msg
+    const-string v0, "NOTIF postada"
+    invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    goto :arqex_nf_fim
+    :arqex_nf_sem_msg
+    const-string v0, "NOTIF nao postada (base nula)"
+    invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    :try_end_arqex_nf
+    .catchall {:try_start_arqex_nf .. :try_end_arqex_nf} :catchall_arqex_nf
+
+    :catchall_arqex_nf
+    :arqex_nf_fim
+    return-void
+.end method

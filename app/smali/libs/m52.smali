@@ -4909,6 +4909,8 @@
     .line 1418
     move-result-object v3
 
+    invoke-static {v4, v3, v6}, Llibs/ArqexLog;->itemResult(Llibs/rp0;Ljava/lang/Object;Llibs/m52;)V
+
     .line 1419
     move-object v2, v4
 
@@ -5247,6 +5249,8 @@
     .line 1568
     .line 1569
     move-result-object v0
+
+    invoke-static {v4, v0, v6}, Llibs/ArqexLog;->itemResult(Llibs/rp0;Ljava/lang/Object;Llibs/m52;)V
 
     .line 1570
     move-object v2, v4
@@ -7521,6 +7525,8 @@
 
     .line 2628
     :goto_a43
+    move-object/from16 v0, p0
+    invoke-static {v0}, Llibs/AutoTaskWatcher;->notifyTaskFinished(Llibs/m52;)V
     return-void
 
     .line 2629

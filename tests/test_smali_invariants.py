@@ -570,6 +570,18 @@ check("16d. pasta vai para a operacao como caminho, nao como URI de documento", 
       and os.path.exists(os.path.join(SMALI, "libs", "ArqexSrcPath.smali"))))
 check("16e. log grava item por item (pasta/arquivo + caminho)", (
       "ArqexLog;->logItens" in _aeg and "PASTA " in _aeg))
+_m52 = open(os.path.join(SMALI, "libs", "m52.smali"), encoding="utf-8").read()
+_atw = open(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"), encoding="utf-8").read()
+_nf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static declared-synchronized notifyTaskFinished") or ""
+check("16f. notificacao de fim de tarefa e chamada no fim de m52.run", (
+      "AutoTaskWatcher;->notifyTaskFinished" in _m52
+      and "rz0;->p(Ljava/lang/String;Ljava/lang/String;Llibs/m52;ZLlibs/rp0;)V" in _nf
+      and "rz0;->l(Landroid/content/Context;Llibs/m52;)V" in _nf
+      and "isNotificationEnabledForTask" not in _nf))
+check("16g. log do item no ponto exato da operacao (copia e mover)", (
+      _m52.count("ArqexLog;->itemResult") == 2
+      and "itemResult" in _aeg and "dst=" in _aeg))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 
