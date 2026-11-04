@@ -293,7 +293,14 @@
     move-result-object v23
 
     .line 93
+    # Arqex: nao acrescenta mais numero ao nome (Teste -> Teste2).
+    # O titulo que o usuario digitou e o que fica salvo, mesmo que outro
+    # cartao da lista tenha o mesmo texto: quem identifica a tarefa e o id,
+    # nunca o nome. Para nao renomear nao basta sair do laco quando "e a
+    # mesma tarefa" (isso ja existia e mesmo assim renomeava quando o
+    # dialogo abria sem a tarefa de origem) - o laco inteiro sai de cena.
     if-eqz v23, :cond_8e
+    goto :cond_8e
 
     move-object/from16 v6, v23
 

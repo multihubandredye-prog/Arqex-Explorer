@@ -346,11 +346,10 @@ check("12e. build nao aceita DEX velho quando o smali recusa um arquivo",
       "smali recusou" in open(os.path.join("tools", "build.sh"), encoding="utf-8", errors="replace").read())
 _n8_path = os.path.join(SMALI, "libs", "n8.smali")
 _n8 = open(_n8_path, encoding="utf-8", errors="replace").read() if os.path.exists(_n8_path) else ""
-_ist = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
-                  ".method public static isSameTask") or ""
-check("13a. salvar uma tarefa existente nao renomeia (teste -> teste2)",
-      "isSameTask" in _n8 and "d9;->Phi:Ljava/lang/String;" in _ist
-      and "arqex_same_sim" in _ist)
+check("13a. salvar uma tarefa nunca acrescenta numero ao nome (teste -> teste2)", (
+      "e9;->h(Ljava/lang/Object;)Llibs/d9;" in _n8
+      and _n8.count("goto :goto_58") == 1
+      and "if-eqz v23, :cond_8e" in _n8 and "goto :cond_8e" in _n8))
 check("13b. diagnostico fora do rotulo (so fica a linha de debug da tarefa)",
       '|b58]' not in _atw and "nameKeys" not in _atw)
 _dkd = method_body(os.path.join(SMALI, "libs", "$d.smali"),
