@@ -72,6 +72,46 @@
     return-object v0
 .end method
 
+.method public static desligar(Ljava/lang/String;)Z
+    .registers 2
+
+    .line 72
+    const/4 v0, 0x0
+
+    :try_start_1
+    invoke-static {p0}, Llibs/ArqexUnzipMark;->arquivo(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object p0
+
+    .line 73
+    if-nez p0, :cond_8
+
+    .line 74
+    return v0
+
+    .line 76
+    :cond_8
+    invoke-virtual {p0}, Ljava/io/File;->delete()Z
+
+    .line 77
+    invoke-virtual {p0}, Ljava/io/File;->exists()Z
+
+    move-result p0
+    :try_end_f
+    .catchall {:try_start_1 .. :try_end_f} :catchall_12
+
+    xor-int/lit8 p0, p0, 0x1
+
+    return p0
+
+    .line 78
+    :catchall_12
+    move-exception p0
+
+    .line 79
+    return v0
+.end method
+
 .method public static existe(Ljava/lang/String;)Z
     .registers 2
 
@@ -107,8 +147,8 @@
     return v0
 .end method
 
-.method public static marcar(Ljava/lang/String;Z)Z
-    .registers 5
+.method public static ligar(Ljava/lang/String;)Z
+    .registers 3
 
     .line 51
     const/4 v0, 0x0
@@ -126,95 +166,46 @@
 
     .line 55
     :cond_8
-    const/4 v1, 0x1
+    invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
-    if-nez p1, :cond_20
+    move-result v1
+
+    if-eqz v1, :cond_10
 
     .line 56
-    invoke-virtual {p0}, Ljava/io/File;->exists()Z
+    const/4 p0, 0x1
 
-    move-result p1
+    return p0
 
-    if-nez p1, :cond_12
-
-    .line 57
-    return v1
-
-    .line 59
-    :cond_12
-    invoke-virtual {p0}, Ljava/io/File;->delete()Z
-
-    move-result p1
-
-    if-nez p1, :cond_1e
-
-    invoke-virtual {p0}, Ljava/io/File;->exists()Z
-
-    move-result p0
-
-    if-nez p0, :cond_1f
-
-    :cond_1e
-    const/4 v0, 0x1
-
-    :cond_1f
-    return v0
-
-    .line 61
-    :cond_20
+    .line 58
+    :cond_10
     invoke-virtual {p0}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
-    move-result-object p1
+    move-result-object v1
+
+    .line 59
+    if-eqz v1, :cond_19
+
+    .line 60
+    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
     .line 62
-    if-eqz p1, :cond_2f
-
-    invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2f
-
-    .line 63
-    invoke-virtual {p1}, Ljava/io/File;->mkdirs()Z
-
-    .line 65
-    :cond_2f
-    invoke-virtual {p0}, Ljava/io/File;->exists()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_36
-
-    .line 66
-    return v1
-
-    .line 68
-    :cond_36
+    :cond_19
     invoke-virtual {p0}, Ljava/io/File;->createNewFile()Z
 
-    move-result p1
-
-    if-nez p1, :cond_42
-
+    .line 63
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result p0
-    :try_end_40
-    .catchall {:try_start_1 .. :try_end_40} :catchall_44
+    :try_end_20
+    .catchall {:try_start_1 .. :try_end_20} :catchall_21
 
-    if-eqz p0, :cond_43
+    return p0
 
-    :cond_42
-    const/4 v0, 0x1
-
-    :cond_43
-    return v0
-
-    .line 69
-    :catchall_44
+    .line 64
+    :catchall_21
     move-exception p0
 
-    .line 70
+    .line 65
     return v0
 .end method

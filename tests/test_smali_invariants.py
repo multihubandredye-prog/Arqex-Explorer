@@ -506,7 +506,7 @@ check("14d. leitura nao depende de prefs nem de cache", (
       "ArqexUnzipStore" not in _atw and "unzipFlagsCache" not in _atw
       and "getConfigPrefs" not in _iu))
 check("14e. gravacao cria/apaga o marcador na pasta de destino", (
-      "ArqexUnzipMark;->marcar" in _sfk
+      ("ArqexUnzipMark;->ligar" in _sfk and "ArqexUnzipMark;->desligar" in _sfk)
       and os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzipMark.smali"))))
 check("14f. Salvar grava a marca na tarefa salva (dialogo -> tarefa)", (
       "setUnzipFlag" in _ots and "findDialogCheckBox" in _ots

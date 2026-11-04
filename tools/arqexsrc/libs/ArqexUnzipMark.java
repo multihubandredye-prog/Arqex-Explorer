@@ -45,27 +45,36 @@ public final class ArqexUnzipMark {
         }
     }
 
-    /** Liga ou desliga a marca. Devolve true se o estado pedido ficou valendo. */
-    public static boolean marcar(String pasta, boolean ligado) {
+    /** Liga a marca (cria o arquivo). Devolve true se ele ficou existindo. */
+    public static boolean ligar(String pasta) {
         try {
             File f = arquivo(pasta);
             if (f == null) {
                 return false;
             }
-            if (!ligado) {
-                if (!f.exists()) {
-                    return true;
-                }
-                return f.delete() || !f.exists();
-            }
-            File dir = f.getParentFile();
-            if (dir != null && !dir.isDirectory()) {
-                dir.mkdirs();
-            }
             if (f.exists()) {
                 return true;
             }
-            return f.createNewFile() || f.exists();
+            File dir = f.getParentFile();
+            if (dir != null) {
+                dir.mkdirs();
+            }
+            f.createNewFile();
+            return f.exists();
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
+    /** Desliga a marca (apaga o arquivo). Devolve true se ele nao existe mais. */
+    public static boolean desligar(String pasta) {
+        try {
+            File f = arquivo(pasta);
+            if (f == null) {
+                return false;
+            }
+            f.delete();
+            return !f.exists();
         } catch (Throwable t) {
             return false;
         }

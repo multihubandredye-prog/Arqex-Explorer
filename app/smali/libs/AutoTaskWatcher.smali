@@ -5421,9 +5421,18 @@
     :try_start_s
     iget-object v0, p0, Llibs/d9;->Pi:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
+    if-eqz p1, :arqex_suf_ligar
+
+    invoke-static {v0}, Llibs/ArqexUnzipMark;->desligar(Ljava/lang/String;)Z
     :try_end_s
     .catchall {:try_start_s .. :try_end_s} :catchall_s
+
+    return-void
+
+    :arqex_suf_ligar
+    invoke-static {v0}, Llibs/ArqexUnzipMark;->ligar(Ljava/lang/String;)Z
+    :try_end_u
+    .catchall {:try_start_s .. :try_end_u} :catchall_s
 
     :arqex_suf_fim
     return-void
@@ -5492,9 +5501,7 @@
     move-result-object v2
 
     # 3) marcar e conferir que o marcador apareceu
-    const/4 v3, 0x1
-
-    invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
+    invoke-static {v2}, Llibs/ArqexUnzipMark;->ligar(Ljava/lang/String;)Z
 
     invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
@@ -5524,9 +5531,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     # 5) desmarcar e conferir que o marcador sumiu
-    const/4 v3, 0x0
-
-    invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
+    invoke-static {v2}, Llibs/ArqexUnzipMark;->desligar(Ljava/lang/String;)Z
 
     invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
@@ -5556,9 +5561,7 @@
 
     move-result-object v3
 
-    const/4 v4, 0x1
-
-    invoke-static {v3, v4}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
+    invoke-static {v3}, Llibs/ArqexUnzipMark;->ligar(Ljava/lang/String;)Z
     :try_end_st
     .catchall {:try_start_st .. :try_end_st} :catchall_st
 
