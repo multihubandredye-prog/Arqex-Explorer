@@ -51,7 +51,7 @@ if [ -f ui.xml ]; then
 fi
 
 log "prova do descompactar: fase 1 (grava e le de volta)"
-adb logcat -c || true
+adb logcat -d > logcat_p0.txt || true
 adb shell am force-stop com.arqex.explorer || true
 sleep 2
 adb shell monkey -p com.arqex.explorer -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
@@ -69,10 +69,10 @@ adb logcat -d > logcat_f2.txt || true
 F2="$(grep "ArqexUnzipDiag" logcat_f2.txt | tail -1 || true)"
 echo "fase 2: $F2"
 
-cat logcat_f1.txt logcat_f2.txt > logcat_unzip.txt 2>/dev/null || true
+cat logcat_p0.txt logcat_f1.txt logcat_f2.txt > logcat_unzip.txt 2>/dev/null || true
 grep "ArqexUnzipDiag" logcat_unzip.txt | tail -10 || true
 FALHOU=0
-for CH in memoria prefs prefs_nova desmarcar; do
+for CH in memoria arquivo desmarcar; do
   grep -q "check $CH=ok" logcat_unzip.txt && echo "OK: $CH" || { echo "::error::verificacao '$CH' do descompactar falhou"; FALHOU=1; }
 done
 grep -q "check reinicio=ok" logcat_unzip.txt && echo "OK: marca continuou marcada depois de fechar e abrir o app" || { echo "::error::a marca nao sobreviveu a fechar o app"; FALHOU=1; }

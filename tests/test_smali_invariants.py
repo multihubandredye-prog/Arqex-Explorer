@@ -502,19 +502,20 @@ _auc = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
 check("14a. marca do descompactar e POR TAREFA (chave unzip2_<assinatura>)", (
       '"unzip2_"' in _getkey and "getTaskRuleKey" in _getkey
       and "unzip_last_state" not in _atw and "unzipState" not in _atw))
-check("14d. leitura: memoria do processo primeiro, depois as prefs", (
-      "unzipFlagsCache" in _ifs and "getConfigPrefs" in _ifs
-      and "getBoolean" in _ifs))
-check("14e. gravacao usa commit() (apply era assincrono)", (
-      "commit()Z" in _sfk and "apply()V" not in _sfk
-      and "unzipFlagsCache" in _sfk))
+check("14d. leitura: memoria do processo e arquivo proprio (sem prefs)", (
+      "unzipFlagsCache" in _ifs and "ArqexUnzipStore;->load" in _ifs
+      and "getConfigPrefs" not in _ifs))
+check("14e. gravacao vai para o arquivo proprio (fora das prefs)", (
+      "ArqexUnzipStore;->save" in _sfk and "getConfigPrefs" not in _sfk
+      and "unzipFlagsCache" in _sfk
+      and os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzipStore.smali"))))
 check("14f. Salvar grava a marca na tarefa salva (dialogo -> tarefa)", (
       "setUnzipFlag" in _ots and "findDialogCheckBox" in _ots
       and "0x5d" in _ots and "setUnzipFromDialog" in _n8))
 check("14g. a caixinha abre com o estado da tarefa", (
       "isUnzipEnabled" in _auc and "0x5d" in _auc))
 check("14h. diagnostico cobre reinicio do app (passo 0 e passo 1+)", (
-      "runUnzipSelfTest" in _atw and "arqex_diag_n" in _st
+      "runUnzipSelfTest" in _atw and "diag_passo" in _st
       and "clearUnzipCache" in _st and '"reinicio"' in _st
       and '"fase=passo1"' in _st))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (

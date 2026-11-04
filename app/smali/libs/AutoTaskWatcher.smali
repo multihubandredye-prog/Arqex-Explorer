@@ -5437,6 +5437,8 @@
     sget-object v0, Llibs/AutoTaskWatcher;->unzipFlagsCache:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    invoke-static {}, Llibs/ArqexUnzipStore;->resetCache()V
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_c
 
@@ -5447,8 +5449,11 @@
 .end method
 
 .method public static isUnzipFlagSet(Ljava/lang/String;)Z
-    .registers 5
+    .registers 4
 
+    # Desenho novo: memoria do processo -> arquivo proprio (files/arqex_unzip_flags.txt).
+    # SharedPreferences ficou de fora: dois processos do app reescrevem a mesma
+    # copia e apagam a gravacao um do outro.
     const/4 v0, 0x0
 
     if-nez p0, :arqex_ifs_fim
@@ -5462,7 +5467,7 @@
 
     check-cast v2, Ljava/lang/Boolean;
 
-    if-eqz v2, :arqex_ifs_prefs
+    if-eqz v2, :arqex_ifs_arquivo
 
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -5470,24 +5475,29 @@
 
     return v0
 
-    :arqex_ifs_prefs
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
+    :arqex_ifs_arquivo
+    sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
 
-    move-result-object v2
+    invoke-static {v2, p0}, Llibs/ArqexUnzipStore;->load(Landroid/content/Context;Ljava/lang/String;)I
 
-    if-eqz v2, :arqex_ifs_fim
+    move-result v2
+
+    if-gez v2, :arqex_ifs_fim
 
     const/4 v3, 0x0
 
-    invoke-interface {v2, p0, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    if-eqz v2, :arqex_ifs_grava
 
-    move-result v0
+    const/4 v3, 0x1
+
+    :arqex_ifs_grava
+    move v0, v3
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, p0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_f
 
@@ -5514,22 +5524,9 @@
 
     invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
+    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    move-result-object v0
-
-    if-eqz v0, :arqex_sfk_fim
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    # commit() grava no arquivo na hora; apply() era assincrono
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    invoke-static {v0, p0, p1}, Llibs/ArqexUnzipStore;->save(Landroid/content/Context;Ljava/lang/String;Z)V
     :try_end_s
     .catchall {:try_start_s .. :try_end_s} :catchall_s
 
@@ -5610,46 +5607,26 @@
 .end method
 
 .method public static runUnzipSelfTest()V
-    .registers 7
+    .registers 6
 
     # Prova automatica, so roda no emulador do CI. Cada verificacao vira uma
-    # linha de log "check <nome>=ok", para o script do workflow cobrar cada uma.
-    # passo 0: grava a marca, le de volta, desmarca e volta a marcar.
-    # passo 1 em diante: o app foi fechado e aberto - a marca tem que continuar.
-    const/4 v5, 0x0
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->getConfigPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    if-eqz v1, :arqex_st_erro
-
+    # linha "check <nome>=ok" no logcat, para o workflow cobrar cada uma.
+    # passo 0: grava, le de volta, desmarca e volta a marcar.
+    # passo 1 em diante: o app foi fechado e aberto de novo - a marca tem que continuar.
     const-string v2, "unzip2_DIAG_PROVA"
 
     :try_start_st
-    const-string v3, "arqex_diag_n"
+    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
 
-    const/4 v4, 0x0
+    if-nez v0, :arqex_st_erro
 
-    invoke-interface {v1, v3, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+    const-string v1, "diag_passo"
+
+    invoke-static {v0, v1}, Llibs/ArqexUnzipStore;->load(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v5
 
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v3
-
-    const-string v4, "arqex_diag_n"
-
-    add-int/lit8 v6, v5, 0x1
-
-    invoke-interface {v3, v4, v6}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    if-eqz v5, :arqex_st_releitura
+    if-lez v5, :arqex_st_releitura
 
     # ---------- passo 0 ----------
     const-string v3, "ArqexUnzipDiag"
@@ -5672,45 +5649,22 @@
 
     invoke-static {v4, v3}, Llibs/AutoTaskWatcher;->diagLog(Ljava/lang/String;Z)V
 
+    # esquece as copias em memoria: agora a resposta tem que vir do arquivo
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
     invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
 
     move-result v3
 
-    const-string v4, "prefs"
+    const-string v4, "arquivo"
 
     invoke-static {v4, v3}, Llibs/AutoTaskWatcher;->diagLog(Ljava/lang/String;Z)V
 
-    sget-object v3, Llibs/zt0;->g:Landroid/content/Context;
-
-    const/4 v6, 0x0
-
-    if-eqz v3, :arqex_st_prefs_nova
-
-    const-string v4, "auto_watch_config"
-
-    invoke-virtual {v3, v4, v6}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    if-eqz v3, :arqex_st_prefs_nova
-
-    invoke-interface {v3, v2, v6}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v3
-    :try_end_st
-    .catchall {:try_start_st .. :try_end_st} :catchall_st
-
-    const-string v4, "prefs_nova"
-
-    invoke-static {v4, v3}, Llibs/AutoTaskWatcher;->diagLog(Ljava/lang/String;Z)V
-
-    :arqex_st_prefs_nova
-    :try_start_u
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
+
+    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
     invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
 
@@ -5730,10 +5684,16 @@
 
     invoke-static {v4, v3}, Llibs/AutoTaskWatcher;->diagLog(Ljava/lang/String;Z)V
 
-    # deixa marcada para o passo seguinte (processo novo)
+    # deixa marcada e marca que o proximo arranque e o passo 1
     const/4 v3, 0x1
 
     invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
+
+    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
+
+    const-string v1, "diag_passo"
+
+    invoke-static {v0, v1, v3}, Llibs/ArqexUnzipStore;->save(Landroid/content/Context;Ljava/lang/String;Z)V
 
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
@@ -5758,12 +5718,9 @@
     invoke-static {v4, v3}, Llibs/AutoTaskWatcher;->diagLog(Ljava/lang/String;Z)V
 
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
-    :try_end_u
-    .catchall {:try_start_u .. :try_end_u} :catchall_u
+    :try_end_st
+    .catchall {:try_start_st .. :try_end_st} :catchall_st
 
-    return-void
-
-    :catchall_u
     return-void
 
     :catchall_st
