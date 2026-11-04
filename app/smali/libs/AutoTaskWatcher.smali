@@ -5607,31 +5607,25 @@
 .method public static runUnzipSelfTest()V
     .registers 9
 
-    # Prova automatica (so no emulador do CI), sem depender de Context.
-    # 1) se o arquivo ja tem a marca de um arranque anterior, isso e o "reinicio".
-    # 2) depois faz o ciclo completo: grava, le de volta, desmarca.
+    # Prova automatica, so roda no emulador do CI. Sem Context, sem prefs.
+    # Padrao usado aqui: comeca com a resposta pessimista e so troca quando
+    # a condicao realmente se confirma (evita o classico "if invertido").
     const-string v0, "ArqexUnzipDiag"
-
-    const-string v1, "st: inicio"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     const-string v6, "unzip2_DIAG_PROVA"
 
     :try_start_st
+    # 1) veio marca de um arranque anterior? (isso e o teste do reinicio)
     invoke-static {v6}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
 
     move-result v5
 
     if-gez v5, :arqex_st_primeiro
 
-    if-eqz v5, :arqex_st_reinicio_ok
-
     const-string v1, "check reinicio=FALHOU"
 
-    goto :arqex_st_reinicio_log
+    if-eqz v5, :arqex_st_reinicio_log
 
-    :arqex_st_reinicio_ok
     const-string v1, "check reinicio=ok"
 
     :arqex_st_reinicio_log
@@ -5644,9 +5638,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # ---------- ciclo completo ----------
+    # ---------- ciclo completo, com chave unica deste processo ----------
     :arqex_st_ciclo
-    # chave unica deste processo: os dois processos do app nao se atrapalham
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5665,46 +5658,44 @@
 
     move-result-object v2
 
+    # grava marcado
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
     const/4 v3, 0x1
 
     invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
 
+    # check memoria
     invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :arqex_st_mem_ok
-
     const-string v1, "check memoria=FALHOU"
 
-    goto :arqex_st_mem_log
+    if-eqz v3, :arqex_st_mem_log
 
-    :arqex_st_mem_ok
     const-string v1, "check memoria=ok"
 
     :arqex_st_mem_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    # check arquivo (esquecendo as copias em memoria)
     invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
 
     invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :arqex_st_arq_ok
-
     const-string v1, "check arquivo=FALHOU"
 
-    goto :arqex_st_arq_log
+    if-eqz v3, :arqex_st_arq_log
 
-    :arqex_st_arq_ok
     const-string v1, "check arquivo=ok"
 
     :arqex_st_arq_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    # check desmarcar (aqui o certo e voltar FALSE)
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
@@ -5715,19 +5706,16 @@
 
     move-result v3
 
-    if-eqz v3, :arqex_st_desm_falhou
+    const-string v1, "check desmarcar=FALHOU"
+
+    if-eqz v3, :arqex_st_desm_log
 
     const-string v1, "check desmarcar=ok"
-
-    goto :arqex_st_desm_log
-
-    :arqex_st_desm_falhou
-    const-string v1, "check desmarcar=FALHOU"
 
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # deixa a chave fixa marcada: o proximo arranque devolve "check reinicio=ok"
+    # deixa a chave fixa marcada: o proximo arranque devolve reinicio=ok
     const/4 v3, 0x1
 
     invoke-static {v6, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
