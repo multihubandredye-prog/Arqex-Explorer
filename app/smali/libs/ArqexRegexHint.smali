@@ -3,6 +3,7 @@
 .implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 # Exemplo do Regex como segunda linha do rotulo da caixinha, so quando marcada.
+# ATENCAO: temporarios sempre em v0.., paramentros ficam em p0/p1 (nunca usar vN de parametro).
 
 .field public static final EXEMPLO:Ljava/lang/String; = "/storage/emulated/0/Download/.*pdf"
 
@@ -27,7 +28,7 @@
 .end method
 
 .method public static instalar(Landroid/widget/CheckBox;Landroid/widget/EditText;)V
-    .registers 6
+    .registers 10
 
     if-eqz p0, :arqex_arh_fim
 
@@ -45,33 +46,32 @@
     move-result-object v1
 
     :arqex_arh_rot
-    # se o rotulo ja veio com a dica, corta na quebra de linha
-    const/4 v2, 0x0
+    const-string v2, "\nex: "
 
-    const-string v3, "\nex: "
+    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    move-result v2
 
-    move-result v4
+    if-lez v2, :arqex_arh_novo
 
-    if-lez v4, :arqex_arh_novo
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
     :arqex_arh_novo
-    new-instance v2, Llibs/ArqexRegexHint;
+    new-instance v3, Llibs/ArqexRegexHint;
 
-    invoke-direct {v2, p0, v1}, Llibs/ArqexRegexHint;-><init>(Landroid/widget/CheckBox;Ljava/lang/String;)V
+    invoke-direct {v3, p0, v1}, Llibs/ArqexRegexHint;-><init>(Landroid/widget/CheckBox;Ljava/lang/String;)V
 
-    invoke-virtual {p0, v2}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    invoke-virtual {p0, v3}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     invoke-virtual {p0}, Landroid/widget/CompoundButton;->isChecked()Z
 
-    move-result v3
+    move-result v4
 
-    invoke-static {p0, v1, v3}, Llibs/ArqexRegexHint;->aplicar(Landroid/widget/CheckBox;Ljava/lang/String;Z)V
+    invoke-static {p0, v1, v4}, Llibs/ArqexRegexHint;->aplicar(Landroid/widget/CheckBox;Ljava/lang/String;Z)V
     :try_end_arh
     .catchall {:try_start_arh .. :try_end_arh} :catchall_arh
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public static instalarPendente()V
-    .registers 2
+    .registers 3
 
     sget-object v0, Llibs/ArqexRegexHint;->pendenteCheck:Landroid/widget/CheckBox;
 
@@ -119,9 +119,9 @@
     :arqex_apl_liga
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v1}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;)V
 
     invoke-virtual {p0}, Landroid/widget/CheckBox;->requestLayout()V
     :try_end_apl
@@ -134,7 +134,7 @@
 .end method
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 3
+    .registers 6
 
     iget-object v0, p0, Llibs/ArqexRegexHint;->caixinha:Landroid/widget/CheckBox;
 

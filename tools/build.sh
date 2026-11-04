@@ -36,6 +36,7 @@ SRC="$WORK/src"
 
 [ -d app/smali ] || { echo "ERRO: app/smali ausente - o repositorio precisa do projeto descompactado em app/"; exit 1; }
 log "2/7 Fonte: app/ (projeto extraido no repositorio)"
+python3 tools/check_registers.py app/smali >/dev/null || { echo "ERRO: registrador de parametro usado como temporario (VerifyError)"; python3 tools/check_registers.py app/smali | tail -20; exit 1; }
 python3 tools/check_invoke_range.py app/smali >/dev/null || { echo "ERRO: chamada /range com faixa de registradores errada (VerifyError)"; python3 tools/check_invoke_range.py app/smali | tail -20; exit 1; }
 cp -a app "$SRC"
 rm -rf "$SRC/build"

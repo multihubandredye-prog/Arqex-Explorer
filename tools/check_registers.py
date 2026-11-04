@@ -107,46 +107,68 @@ def analisa(caminho):
 _NOSSOS = ("AutoTaskWatcher", "ArqexUnzip", "AppImpl")
 
 
+def _tam_parametros(params):
+    """Registradores ocupados pela lista de parametros (array conta 1)."""
+    n = 0
+    i = 0
+    while i < len(params):
+        c = params[i]
+        if c == '[':
+            while i < len(params) and params[i] == '[':
+                i += 1
+            if i < len(params) and params[i] == 'L':
+                i = params.index(';', i) + 1
+            else:
+                i += 1
+            n += 1
+            continue
+        if c == 'L':
+            i = params.index(';', i) + 1
+            n += 1
+            continue
+        if c in 'JD':
+            n += 2
+        elif c in 'ZBCSI':
+            n += 1
+        i += 1
+    return n
+
+
 def _checa_faixa_parametros(caminho):
+    """Barra o uso de vN que cai em cima de um registrador de parametro.
+
+    Com .registers N e P parametros, os parametros sao os ultimos P registradores,
+    entao temporarios so podem ir ate v(N-P-1). Esse foi o erro que derrubou o app
+    com "register v4 has type Integer but expected Reference" na beta.135.
+    """
     problemas = []
-    if not os.path.basename(caminho).startswith(_NOSSOS):
-        return problemas
     try:
         texto = open(caminho, encoding="utf-8").read()
     except Exception:
         return problemas
-    for bloco in re.finditer(r"\.method[^\n]*\(([^)]*)\)[^\n]*\n(.*?)\.end method", texto, re.S):
-        params = bloco.group(1)
-        # tira comentarios: "v4" dentro de comentario nao e uso de registrador
-        corpo = "\n".join(l.split("#")[0] for l in bloco.group(2).split("\n"))
+    padrao = r"\.method([^\n]*)\(([^)]*)\)([^\n]*)\n(.*?)\.end method"
+    for bloco in re.finditer(padrao, texto, re.S):
+        cabecalho, params, corpo = bloco.group(1), bloco.group(2), bloco.group(4)
         reg = re.search(r"\.registers\s+(\d+)", corpo)
-        loc = re.search(r"\.locals\s+(\d+)", corpo)
-        if not reg and not loc:
+        if not reg:
             continue
-        total = int(reg.group(1)) if reg else None
-        n_param = 0
-        i = 0
-        while i < len(params):
-            if params[i] == "[":
-                i += 1
-            if params[i] in "JD":
-                n_param += 2
-            elif params[i] == "L":
-                n_param += 1
-                i = params.index(";", i)
-            else:
-                n_param += 1
-            i += 1
-        if "static" not in bloco.group(0).split("(")[0]:
+        total = int(reg.group(1))
+        n_param = _tam_parametros(params)
+        if "static" not in cabecalho:
             n_param += 1
         if n_param == 0:
             continue
-        limite = total - n_param if total is not None else int(loc.group(1))
-        for uso in re.finditer(r"\bv(\d+)\b", corpo):
-            if int(uso.group(1)) >= limite:
-                linha = corpo[:uso.start()].count("\n") + 1
-                problemas.append("%s linha ~%d: usa v%s, mas os parametros comecam em v%d"
-                                 % (os.path.basename(caminho), linha, uso.group(1), limite))
+        limite = total - n_param
+        # fora strings, comentarios e nomes de rotulo (senao "v60" de um texto vira falso alarme)
+        limpo = re.sub(r'"(?:[^"\\]|\\.)*"', '""', corpo)
+        limpo = re.sub(r"(?m)#.*$", "", limpo)
+        limpo = re.sub(r":[A-Za-z_][\w$]*", "", limpo)
+        for uso in re.finditer(r"(?<![\w/$;])v(\d+)\b", limpo):
+            if limite <= 0 or int(uso.group(1)) >= limite:
+                linha = texto[:bloco.start(4)].count("\n") + 1 + limpo[:uso.start()].count("\n")
+                problemas.append(
+                    "%s:%d usa v%s mas os parametros comecam em v%d (.registers %d, %d parametros)"
+                    % (os.path.basename(caminho), linha, uso.group(1), limite, total, n_param))
                 break
     return problemas
 
@@ -206,10 +228,10 @@ def _checa_faixa_parametros(caminho):
         texto = open(caminho, encoding="utf-8").read()
     except Exception:
         return problemas
-    for bloco in _re.finditer(r"\.method[^\n]*\(([^)]*)\)[^\n]*\n(.*?)\.end method", texto, _re.S):
+    for bloco in re.finditer(r"\.method[^\n]*\(([^)]*)\)[^\n]*\n(.*?)\.end method", texto, re.S):
         params = bloco.group(1)
         corpo = bloco.group(2)
-        reg = _re.search(r"\.registers\s+(\d+)", corpo)
+        reg = re.search(r"\.registers\s+(\d+)", corpo)
         if not reg:
             continue
         total = int(reg.group(1))
@@ -231,7 +253,11 @@ def _checa_faixa_parametros(caminho):
         if n_param == 0:
             continue
         limite = total - n_param
-        for uso in _re.finditer(r"\bv(\d+)\b", corpo):
+        # fora strings, comentarios e nomes de rotulo (senao "v60" de um texto vira falso alarme)
+        limpo = re.sub(r'"(?:[^"\\]|\\.)*"', '""', corpo)
+        limpo = re.sub(r"(?m)#.*$", "", limpo)
+        limpo = re.sub(r":[A-Za-z_][\w$]*", "", limpo)
+        for uso in re.finditer(r"(?<![\w/$;])v(\d+)\b", limpo):
             if int(uso.group(1)) >= limite:
                 linha = corpo[:uso.start()].count("\n") + 1
                 problemas.append("%s linha ~%d: usa v%s, mas os parametros comecam em v%d"
