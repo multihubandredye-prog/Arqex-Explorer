@@ -7785,10 +7785,10 @@
 .end method
 
 .method public static addTaskExtras(Llibs/od;Llibs/d9;)V
-    .registers 13
+    .registers 14
 
     # Duas linhas de acao no dialogo da tarefa (so em tarefa ja salva).
-    # Nao sao caixinhas: sao linhas que abrem a janela ao toque, como os outros itens.
+    # od->Item recebe 11 parametros + o objeto = 12 registradores na chamada.
     if-eqz p0, :arqex_ate_fim
 
     if-eqz p1, :arqex_ate_fim
@@ -7802,7 +7802,7 @@
 
     const/16 v1, 0x91
 
-    const-string v2, "Simular: ver os arquivos que seriam afetados (n\u00e3o altera nada)"
+    const-string v2, "Simular: ver os arquivos que seriam afetados (n\\u00e3o altera nada)"
 
     const/4 v3, 0x0
 
@@ -7818,9 +7818,11 @@
 
     const/4 v10, 0x0
 
-    invoke-virtual/range {v0 .. v10}, Llibs/od;->Item(ILjava/lang/CharSequence;ILandroid/view/View$OnClickListener;Landroid/graphics/drawable/GradientDrawable;Ljava/lang/Integer;IIIII)Landroid/widget/TextView;
+    const/4 v11, 0x0
 
-    move-result-object v5
+    invoke-virtual/range {v0 .. v11}, Llibs/od;->Item(ILjava/lang/CharSequence;ILandroid/view/View$OnClickListener;Landroid/graphics/drawable/GradientDrawable;Ljava/lang/Integer;IIIII)Landroid/widget/TextView;
+
+    move-object v0, p0
 
     new-instance v4, Llibs/ArqexTaskExtras$HistoricoClick;
 
@@ -7828,7 +7830,7 @@
 
     const/16 v1, 0x92
 
-    const-string v2, "Ver hist\u00f3rico de execu\u00e7\u00f5es desta tarefa"
+    const-string v2, "Ver hist\\u00f3rico de execu\\u00e7\\u00f5es desta tarefa"
 
     const/4 v3, 0x0
 
@@ -7844,9 +7846,9 @@
 
     const/4 v10, 0x0
 
-    invoke-virtual/range {v0 .. v10}, Llibs/od;->Item(ILjava/lang/CharSequence;ILandroid/view/View$OnClickListener;Landroid/graphics/drawable/GradientDrawable;Ljava/lang/Integer;IIIII)Landroid/widget/TextView;
+    const/4 v11, 0x0
 
-    move-result-object v5
+    invoke-virtual/range {v0 .. v11}, Llibs/od;->Item(ILjava/lang/CharSequence;ILandroid/view/View$OnClickListener;Landroid/graphics/drawable/GradientDrawable;Ljava/lang/Integer;IIIII)Landroid/widget/TextView;
     :try_end_ate
     .catchall {:try_start_ate .. :try_end_ate} :catchall_ate
 

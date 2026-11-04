@@ -58,6 +58,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 tools/check_registers.py app/smali
+          python3 tools/check_invoke_range.py app/smali
           bash tools/build.sh
           ls -l out/Arqex-unsigned.apk
 
