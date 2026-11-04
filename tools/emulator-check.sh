@@ -64,20 +64,26 @@ rm -f instalado.apk
 if [ -n "$APK_INSTALADO" ]; then
   adb pull "$APK_INSTALADO" instalado.apk >/dev/null 2>&1 || true
 fi
-FALHOU=0
 if [ -s instalado.apk ]; then
-  MARCA_PRESENTE=0
-  for DEX in $(unzip -Z1 instalado.apk 2>/dev/null | grep -E '^classes.*\.dex$'); do
-    if unzip -p instalado.apk "$DEX" 2>/dev/null | grep -aq "ARQEXZIP1_"; then
-      echo "marca ARQEXZIP1_ encontrada em $DEX"
-      MARCA_PRESENTE=1
-    fi
-  done
-  [ "$MARCA_PRESENTE" = "1" ] && echo "OK: o app instalado tem a marca do descompactar" \
-    || { echo "::error::o APK instalado nao tem a marca ARQEXZIP1_"; FALHOU=1; }
+  if python3 -c '
+import sys, zipfile
+alvo = b"ARQEXZIP1_"
+z = zipfile.ZipFile("instalado.apk")
+achou = False
+for nome in z.namelist():
+    if nome.startswith("classes") and nome.endswith(".dex"):
+        if alvo in z.read(nome):
+            print("marca ARQEXZIP1_ encontrada em " + nome)
+            achou = True
+sys.exit(0 if achou else 1)
+'; then
+    echo "OK: o app instalado tem a marca do descompactar"
+  else
+    echo "::error::o APK instalado nao tem a marca ARQEXZIP1_"
+    exit 1
+  fi
 else
   echo "::warning::nao consegui puxar o APK instalado; pulando a conferencia da marca"
 fi
-[ "$FALHOU" = "0" ] || exit 1
 
 echo "OK: emulador verde (app abre e o binario e o build corrigido)"
