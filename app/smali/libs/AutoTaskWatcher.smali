@@ -4364,26 +4364,52 @@
 .method public static isSameTask(Llibs/d9;Llibs/d9;)Z
     .registers 4
 
+    # Arqex: mesma tarefa = mesmo id OU mesmo titulo (d9->Phi).
+    # Sem a comparacao de titulo, salvar uma tarefa sem mudar o nome caia no
+    # laco de nome unico do dialogo e virava "Teste2".
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_e
+    if-eqz p0, :arqex_same_fim
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :arqex_same_fim
 
     iget v0, p0, Llibs/d9;->Y:I
 
     iget v1, p1, Llibs/d9;->Y:I
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :arqex_same_sim
 
-    const/4 v0, 0x1
+    :try_start_arqex_same
+    iget-object v0, p0, Llibs/d9;->Phi:Ljava/lang/String;
+
+    iget-object v1, p1, Llibs/d9;->Phi:Ljava/lang/String;
+
+    if-eqz v0, :arqex_same_nao
+
+    if-eqz v1, :arqex_same_nao
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :arqex_same_sim
+    :try_end_arqex_same
+    .catchall {:try_start_arqex_same .. :try_end_arqex_same} :catchall_arqex_same
+
+    :arqex_same_nao
+    const/4 v0, 0x0
 
     return v0
 
-    :cond_d
+    :catchall_arqex_same
     const/4 v0, 0x0
 
-    :cond_e
+    return v0
+
+    :arqex_same_sim
+    const/4 v0, 0x1
+
+    :arqex_same_fim
     return v0
 .end method
 

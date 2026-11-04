@@ -565,6 +565,12 @@ check("15b. simular monta a lista sem alterar arquivos", (
       and "Nada foi copiado" in _atw))
 check("15c. linha de acao do dialogo tem largura util (nao vira buraco invisivel)", (
       "const/16 v11, -0x2" in _atw and "const/16 v10, 0x10" in _atw))
+_smart = open(os.path.join(SMALI, "libs", "SmartFeaturesV116.smali"), encoding="utf-8").read()
+check("16a. pastas vazias ocultas nao entram na lista quando os ocultos estao escondidos", (
+      "isHiddenEntry" in _smart and "isShowingHidden" in _smart
+      and "arqex_scan_visivel" in _smart))
+check("16b. salvar tarefa sem mudar o nome nao vira nome2 (isSameTask compara titulo)", (
+      "d9;->Phi:Ljava/lang/String;" in _atw and "arqex_same_sim" in _atw))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 

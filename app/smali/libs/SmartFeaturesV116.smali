@@ -3181,6 +3181,37 @@
     return v0
 .end method
 
+# Arqex: pasta oculta = nome comecando com "." (mesma regra da lista de arquivos).
+.method private static isHiddenEntry(Ljava/io/File;)Z
+    .registers 4
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :arqex_hidden_fim
+
+    :try_start_arqex_hidden
+    invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :arqex_hidden_fim
+
+    const-string v2, "."
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+    :try_end_arqex_hidden
+    .catchall {:try_start_arqex_hidden .. :try_end_arqex_hidden} :catchall_arqex_hidden
+
+    :arqex_hidden_fim
+    return v0
+
+    :catchall_arqex_hidden
+    const/4 v0, 0x0
+    return v0
+.end method
+
 .method private static isEffectivelyEmptyDir(Ljava/io/File;II)Z
     .registers 8
 
@@ -4401,6 +4432,22 @@
     :cond_28
     aget-object v4, v1, v3
 
+    # Arqex: pasta oculta e vazia nao entra na lista se os ocultos nao aparecem na tela.
+    invoke-static {v4}, Llibs/SmartFeaturesV116;->isHiddenEntry(Ljava/io/File;)Z
+
+    move-result v5
+
+    if-eqz v5, :arqex_scan_visivel
+
+    invoke-static {p0}, Llibs/SmartFeaturesV116;->isShowingHidden(Landroid/app/Activity;)Z
+
+    move-result v5
+
+    if-eqz v5, :arqex_scan_visivel
+
+    goto :cond_3a
+
+    :arqex_scan_visivel
     invoke-virtual {v4}, Ljava/io/File;->isDirectory()Z
 
     move-result v5
