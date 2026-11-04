@@ -4425,6 +4425,12 @@
     move-result-object v5
 
     .line 88
+    # Arqex: pasta vai como caminho (URI de documento nao copia os filhos).
+    invoke-static {v8, v5}, Llibs/ArqexSrcPath;->escolher(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 88
+    move-result-object v5
+
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 89
@@ -4450,6 +4456,12 @@
     move-result-object v5
 
     .line 100
+    # Arqex: pasta vai como caminho (URI de documento nao copia os filhos).
+    invoke-static {v8, v5}, Llibs/ArqexSrcPath;->escolher(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 88
+    move-result-object v5
+
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 101

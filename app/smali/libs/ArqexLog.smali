@@ -135,6 +135,9 @@
 
     invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
+    # Arqex: lista item por item (pasta/arquivo + caminho) para diagnostico.
+    invoke-static {p2}, Llibs/ArqexLog;->logItens(Ljava/util/Collection;)V
+
     :try_start_41
     invoke-static {p0, p1, p2}, Llibs/ArqexUnzip;->process(Llibs/d9;ILjava/util/Collection;)V
     :try_end_44
@@ -217,5 +220,71 @@
 
     invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
+    return-void
+.end method
+
+.method public static logItens(Ljava/util/Collection;)V
+    .registers 5
+
+    if-eqz p0, :arqex_itens_fim
+
+    :try_start_arqex_itens
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :arqex_itens_loop
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :arqex_itens_fim
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    instance-of v2, v1, Llibs/rp0;
+
+    if-eqz v2, :arqex_itens_loop
+
+    check-cast v1, Llibs/rp0;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "ITEM "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-boolean v3, v1, Llibs/rp0;->One:Z
+
+    if-eqz v3, :arqex_item_pasta
+
+    const-string v3, "arquivo "
+
+    goto :arqex_item_txt
+
+    :arqex_item_pasta
+    const-string v3, "PASTA "
+
+    :arqex_item_txt
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, v1, Llibs/rp0;->Three:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    :try_end_arqex_itens
+    .catchall {:try_start_arqex_itens .. :try_end_arqex_itens} :catchall_arqex_itens
+
+    goto :arqex_itens_loop
+
+    :catchall_arqex_itens
+    :arqex_itens_fim
     return-void
 .end method

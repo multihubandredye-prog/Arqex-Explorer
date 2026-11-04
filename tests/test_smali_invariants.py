@@ -561,6 +561,15 @@ _fnf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
 check("16c. pasta nao e descartada pelo filtro por nome (pasta teste era ignorada)", (
       "Pasta ou arquivo: decide pelo nome" in _fnf
       and "rp0;->One:Z" not in _fnf))
+_e9l = method_body(os.path.join(SMALI, "libs", "e9.smali"),
+                  ".method public static l(") or ""
+_aeg = open(os.path.join(SMALI, "libs", "ArqexLog.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "ArqexLog.smali")) else ""
+check("16d. pasta vai para a operacao como caminho, nao como URI de documento", (
+      "ArqexSrcPath;->escolher" in _e9l
+      and os.path.exists(os.path.join(SMALI, "libs", "ArqexSrcPath.smali"))))
+check("16e. log grava item por item (pasta/arquivo + caminho)", (
+      "ArqexLog;->logItens" in _aeg and "PASTA " in _aeg))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 
