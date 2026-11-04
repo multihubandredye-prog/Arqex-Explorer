@@ -554,6 +554,15 @@ check("14c. extracao le o zip do item e escreve na pasta de destino", (
       "ZipInputStream" in _azu and "getNextEntry" in _azu
       and "getCanonicalPath" in _azu and "FileOutputStream" in _azu
       and "Llibs/d9;->Pi:" in _azu))
+check("15a. historico grava data, tarefa e quantidade a cada execucao", (
+      "registrarExecucao" in _atw and "ArqexTaskExtras;->anexar" in _atw
+      and "arqex_historico.txt" in
+      (open(os.path.join(SMALI, "libs", "ArqexTaskExtras.smali"), encoding="utf-8").read()
+       if os.path.exists(os.path.join(SMALI, "libs", "ArqexTaskExtras.smali")) else "")))
+check("15b. simular monta a lista sem alterar arquivos", (
+      "ArqexTaskExtras;->mostrar" in _atw and "addTaskExtras" in _atw
+      and os.path.exists(os.path.join(SMALI, "libs", "ArqexTaskExtras$Simular.smali"))
+      and "Nada foi copiado" in _atw))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 

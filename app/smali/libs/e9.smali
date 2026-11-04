@@ -1165,6 +1165,9 @@
 
     invoke-static {v12, v11}, Llibs/AutoTaskWatcher;->addOnlyFilesCheckBox(Llibs/od;Llibs/d9;)V
 
+    # Arqex: Simular e Historico da tarefa (so em tarefa ja salva).
+    invoke-static {v12, v11}, Llibs/AutoTaskWatcher;->addTaskExtras(Llibs/od;Llibs/d9;)V
+
     invoke-static {v12, v11}, Llibs/AutoTaskWatcher;->addUnzipCheckBox(Llibs/od;Llibs/d9;)V
 
     .line 506
