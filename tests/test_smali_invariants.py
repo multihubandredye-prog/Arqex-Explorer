@@ -147,8 +147,13 @@ for _f in ("com/mixplorer/activities/PreferenceActivity.smali",
                     _ruins.append(_m.group(0).split("\n")[0][:50])
                 break
 check("8x. nenhuma instrucao antes das diretivas do metodo", not _ruins, str(_ruins[:3]))
+_aun = open(os.path.join(SMALI, "libs", "ArqexUpdateNotes.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "ArqexUpdateNotes.smali")) else ""
 check("8y. modal mostra so as novidades (corta 'Como instalar')",
-      "### Como instalar" in up)
+      "ArqexUpdateNotes;->formatar" in up and "### Como instalar" in _aun
+      and "Novidades:" in _aun)
+check("8ya. modal de atualizacao com texto curto e separado",
+      "MAX_ITENS" in _aun or "MAX_CARACTERES" in _aun)
 _wf = open(".github/workflows/build-release.yml", encoding="utf-8").read()
 check("8z. notas da release acentuadas e marcador do corte intacto",
       "Novidades desta versão:" in _wf and "### Como instalar" in _wf)
@@ -530,6 +535,16 @@ check("14f. Salvar aplica encode() no texto da pasta da tarefa", (
 check("14g. a caixinha abre com o estado da tarefa e vem marcada por padrao", (
       "ArqexUnzip;->hasMarker" in _auc and "0x1" in _auc
       and "ArqexUnzip;->lastBox" in _auc))
+_arh = open(os.path.join(SMALI, "libs", "ArqexRegexHint.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "ArqexRegexHint.smali")) else ""
+_e9s = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "e9.smali")) else ""
+check("14i. exemplo do regex aparece dentro da caixa da pasta", (
+      "ArqexRegexHint;->instalarPendente" in _e9s
+      and "/storage/emulated/0/Download/.*pdf" in _arh
+      and "setHint" in _arh))
+check("14j. rotulo da caixa Regex fica curto (exemplo fora do rotulo)", (
+      " - ex: /storage" not in _e9s))
 check("14h. ao usar o destino o prefixo e removido (strip) e o zip e extraido nele", (
       "ArqexUnzip;->strip" in _e9a
       and "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))

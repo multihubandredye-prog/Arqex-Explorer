@@ -545,163 +545,26 @@
 .method private static changelogText(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 5
 
-    .line 493
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 494
+    # Texto da caixa de atualizacao: curto e separado (versao atual -> nova,
+    # lista resumida de novidades e o que fazer). Quem monta e Llibs/ArqexUpdateNotes.
+    # p1 = versao nova, p2 = versao atual, p3 = notas da release.
+    :try_start
     invoke-static {p0}, Llibs/ArqexUpdater;->notificationsAllowed(Landroid/content/Context;)Z
 
-    move-result p0
+    move-result v0
 
-    if-nez p0, :cond_10
+    invoke-static {p3, p2, p1, v0}, Llibs/ArqexUpdateNotes;->formatar(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
-    .line 495
-    const-string p0, "Aviso: as notifica\u00e7\u00f5es do Arqex est\u00e3o bloqueadas neste aparelho, por isso voc\u00ea n\u00e3o recebe aviso autom\u00e1tico de vers\u00e3o nova. Para liberar: Configura\u00e7\u00f5es do Android > Apps > Arqex Explorer > Notifica\u00e7\u00f5es.\n\n"
+    move-result-object v0
+    :try_end
+    .catchall {:try_start .. :try_end} :catchall
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v0
 
-    .line 500
-    :cond_10
-    const-string p0, "Sua vers\u00e3o: "
+    :catchall
+    const-string v0, ""
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p0
-
-    const-string p2, "\nNova vers\u00e3o: "
-
-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 501
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p0
-
-    const/16 p1, 0xa
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    if-eqz p3, :cond_86
-
-    .line 502
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    if-lez p0, :cond_86
-
-    .line 503
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 506
-    const-string p0, "### Como instalar"
-
-    invoke-virtual {p3, p0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result p0
-
-    if-gez p0, :cond_41
-
-    .line 508
-    const-string p0, "### Codigo-fonte"
-
-    invoke-virtual {p3, p0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result p0
-
-    :cond_41
-    if-gez p0, :cond_49
-
-    .line 511
-    const-string p0, "### C\u00f3digo-fonte"
-
-    invoke-virtual {p3, p0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result p0
-
-    :cond_49
-    const/4 p1, 0x0
-
-    if-lez p0, :cond_50
-
-    .line 514
-    invoke-virtual {p3, p1, p0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p3
-
-    .line 516
-    :cond_50
-    const-string p0, "**"
-
-    const-string p2, ""
-
-    invoke-virtual {p3, p0, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 517
-    const-string p3, "###"
-
-    invoke-virtual {p0, p3, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 518
-    const-string p3, "`"
-
-    invoke-virtual {p0, p3, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 519
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result p2
-
-    const/16 p3, 0x5dc
-
-    if-le p2, p3, :cond_83
-
-    .line 520
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0, p1, p3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p0
-
-    const-string p1, " ..."
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 522
-    :cond_83
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 524
-    :cond_86
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method public static check(Landroid/content/Context;Z)V

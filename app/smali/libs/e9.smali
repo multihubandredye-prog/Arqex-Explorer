@@ -1116,21 +1116,6 @@
     .line 490
     move-result-object v4
 
-    # Arqex: mostra na frente do rotulo o exemplo que o usuario pediu.
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v6, " - ex: /storage/emulated/0/Download/.*pdf"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
     .line 491
     if-eqz v11, :cond_1f7
 
@@ -1168,6 +1153,15 @@
     .line 504
     .line 505
     move-result-object v31
+
+    # Arqex: ao marcar "Regex (...)", o exemplo entra como texto de apoio na
+    # propria caixa da pasta (e volta ao normal ao desmarcar).
+    # Passa pelos campos estaticos porque v29/v31 sao registradores altos.
+    sput-object v31, Llibs/ArqexRegexHint;->pendenteCheck:Landroid/widget/CheckBox;
+
+    sput-object v29, Llibs/ArqexRegexHint;->pendenteCampo:Landroid/widget/EditText;
+
+    invoke-static {}, Llibs/ArqexRegexHint;->instalarPendente()V
 
     invoke-static {v12, v11}, Llibs/AutoTaskWatcher;->addOnlyFilesCheckBox(Llibs/od;Llibs/d9;)V
 
