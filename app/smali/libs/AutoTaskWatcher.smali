@@ -1062,7 +1062,12 @@
 
     iget-wide v4, p0, Llibs/d9;->Lambda:J
 
-    const/4 v3, 0x1
+    # Arqex: expandir pastas nos filhos SO quando "Apenas arquivos da pasta"
+    # esta marcado. Antes vinha fixo em 1, entao a pasta em si nunca entrava
+    # na lista e nao era copiada (so os arquivos de dentro).
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
+
+    move-result v3
 
     invoke-static {v1, v2, v4, v5, v3}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
 
@@ -1137,7 +1142,9 @@
 
     iget-wide v4, v3, Llibs/d9;->Lambda:J
 
-    const/4 v6, 0x1
+    invoke-static {v3}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
+
+    move-result v6
 
     invoke-static {v8, v9, v4, v5, v6}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
 
@@ -6449,7 +6456,11 @@
 
     iget-object v2, v3, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
-    invoke-static {v2, p1, p2, p3, v6}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
+    invoke-static {v3}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
+
+    move-result v8
+
+    invoke-static {v2, p1, p2, p3, v8}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
 
     move-result-object v2
 
@@ -6471,7 +6482,11 @@
     return-object v0
 
     :cond_74
-    invoke-static {v3, p1, p2, p3, v6}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
+    invoke-static {v7}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
+
+    move-result v8
+
+    invoke-static {v3, p1, p2, p3, v8}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
 
     move-result-object v3
 
@@ -7511,7 +7526,9 @@
 
     iget-wide v2, p0, Llibs/d9;->Lambda:J
 
-    const/4 v4, 0x1
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
+
+    move-result v4
 
     invoke-static {v0, v1, v2, v3, v4}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
 
