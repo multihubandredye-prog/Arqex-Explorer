@@ -763,6 +763,10 @@
 # a copia em memoria, para a caixinha refletir na hora o que o usuario salvou.
 .field private static final unzipFlagsCache:Ljava/util/HashMap;
 
+# Contexto guardado pelo AppImpl.onCreate. Nao da para confiar so no zt0.g:
+# no arranque ele ainda esta nulo neste app.
+.field public static unzipCtx:Landroid/content/Context;
+
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
     .registers 8
 
@@ -5446,6 +5450,19 @@
     return-void
 .end method
 
+.method private static getUnzipCtx()Landroid/content/Context;
+    .registers 2
+
+    sget-object v0, Llibs/AutoTaskWatcher;->unzipCtx:Landroid/content/Context;
+
+    if-eqz v0, :arqex_guc_fim
+
+    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
+
+    :arqex_guc_fim
+    return-object v0
+.end method
+
 .method public static isUnzipFlagSet(Ljava/lang/String;)Z
     .registers 4
 
@@ -5474,7 +5491,9 @@
     return v0
 
     :arqex_ifs_arquivo
-    sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
+    invoke-static {}, Llibs/AutoTaskWatcher;->getUnzipCtx()Landroid/content/Context;
+
+    move-result-object v2
 
     invoke-static {v2, p0}, Llibs/ArqexUnzipStore;->load(Landroid/content/Context;Ljava/lang/String;)I
 
@@ -5523,6 +5542,10 @@
     invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
+
+    invoke-static {}, Llibs/AutoTaskWatcher;->getUnzipCtx()Landroid/content/Context;
+
+    move-result-object v0
 
     invoke-static {v0, p0, p1}, Llibs/ArqexUnzipStore;->save(Landroid/content/Context;Ljava/lang/String;Z)V
     :try_end_s
@@ -5620,6 +5643,13 @@
     :try_start_st
     move-object v3, p0
 
+    if-eqz v3, :arqex_st_tem_p0
+
+    invoke-static {}, Llibs/AutoTaskWatcher;->getUnzipCtx()Landroid/content/Context;
+
+    move-result-object v3
+
+    :arqex_st_tem_p0
     sget-object v7, Llibs/zt0;->g:Landroid/content/Context;
 
     if-eqz v7, :arqex_st_zt0_tem
@@ -5763,6 +5793,13 @@
 
     move-object v4, p0
 
+    if-eqz v4, :arqex_st_salva_ctx
+
+    invoke-static {}, Llibs/AutoTaskWatcher;->getUnzipCtx()Landroid/content/Context;
+
+    move-result-object v4
+
+    :arqex_st_salva_ctx
     const-string v6, "diag_passo"
 
     invoke-static {v4, v6, v3}, Llibs/ArqexUnzipStore;->save(Landroid/content/Context;Ljava/lang/String;Z)V
