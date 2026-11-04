@@ -72,7 +72,9 @@ echo "fase 2: $F2"
 cat logcat_f1.txt logcat_f2.txt > logcat_unzip.txt 2>/dev/null || true
 grep "ArqexUnzipDiag" logcat_unzip.txt | tail -10 || true
 FALHOU=0
-grep -q "fase=1 diag_ok=true" logcat_unzip.txt && echo "OK: fase 1 - marca gravada, lida de volta e desmarcada" || { echo "::error::fase 1 do descompactar falhou"; FALHOU=1; }
-grep -q "fase=2 diag_ok=true" logcat_unzip.txt && echo "OK: fase 2 - marca sobreviveu a fechar o app" || { echo "::error::fase 2 do descompactar falhou (marca nao sobreviveu ao reinicio)"; FALHOU=1; }
+for CH in memoria prefs prefs_nova desmarcar; do
+  grep -q "check $CH=ok" logcat_unzip.txt && echo "OK: $CH" || { echo "::error::verificacao '$CH' do descompactar falhou"; FALHOU=1; }
+done
+grep -q "check reinicio=ok" logcat_unzip.txt && echo "OK: marca continuou marcada depois de fechar e abrir o app" || { echo "::error::a marca nao sobreviveu a fechar o app"; FALHOU=1; }
 [ "$FALHOU" = "0" ] || exit 1
 
