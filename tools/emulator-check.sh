@@ -86,4 +86,41 @@ else
   echo "::warning::nao consegui puxar o APK instalado; pulando a conferencia da marca"
 fi
 
+log "abrindo Nova tarefa e marcando a caixinha Regex (exemplo na caixa)"
+tocar() {
+  local alvo="$1"
+  adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1 || return 1
+  adb pull /sdcard/ui.xml ui.xml >/dev/null 2>&1 || return 1
+  local xy
+  xy="$(python3 tools/tocar.py ui.xml "$alvo" 2>/dev/null | head -1)"
+  case "$xy" in
+    ""|"NAO_ACHOU"|ERRO*) echo "  (nao achei '$alvo')"; return 1 ;;
+  esac
+  echo "  toque em '$alvo' -> $xy"
+  adb shell input tap $xy >/dev/null 2>&1 || true
+  sleep 3
+  return 0
+}
+
+tocar "Tarefas" || true
+tocar "Adicionar" || tocar "+" || true
+sleep 2
+tocar "Meu Drive" || true
+tocar "Regex" || true
+sleep 2
+adb shell uiautomator dump /sdcard/ui2.xml >/dev/null 2>&1 || true
+adb pull /sdcard/ui2.xml ui2.xml >/dev/null 2>&1 || true
+EXEMPLO_OK=0
+if [ -f ui2.xml ]; then
+  if grep -q "/storage/emulated/0/Download/\.\*pdf" ui2.xml; then
+    EXEMPLO_OK=1
+    echo "OK: o exemplo apareceu dentro da caixa depois de marcar Regex"
+    grep -o 'text="[^"]*\.\*pdf[^"]*"' ui2.xml | head -2 || true
+  fi
+fi
+adb logcat -d | grep "ArqexRegexHint" | tail -5 || true
+if [ "$EXEMPLO_OK" = "0" ]; then
+  echo "::warning::nao consegui confirmar o exemplo na caixa pela automacao (ver ui2.xml no artefato)"
+fi
+
 echo "OK: emulador verde (app abre e o binario e o build corrigido)"

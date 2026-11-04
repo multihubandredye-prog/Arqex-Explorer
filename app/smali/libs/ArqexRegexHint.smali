@@ -15,14 +15,14 @@
 
 
 # instance fields
-.field private final campo:Landroid/widget/EditText;
+.field private anterior:Ljava/lang/String;
 
-.field private final normal:Ljava/lang/CharSequence;
+.field private final campo:Landroid/widget/EditText;
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/EditText;Ljava/lang/CharSequence;)V
-    .registers 3
+.method private constructor <init>(Landroid/widget/EditText;)V
+    .registers 2
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,179 +31,334 @@
     iput-object p1, p0, Llibs/ArqexRegexHint;->campo:Landroid/widget/EditText;
 
     .line 33
-    iput-object p2, p0, Llibs/ArqexRegexHint;->normal:Ljava/lang/CharSequence;
-
-    .line 34
     return-void
 .end method
 
-.method private static aplicar(Landroid/widget/EditText;Ljava/lang/CharSequence;Z)V
-    .registers 3
+.method private static aplicar(Landroid/widget/EditText;Ljava/lang/String;)V
+    .registers 5
 
-    .line 58
-    if-eqz p2, :cond_7
-
-    :try_start_2
+    .line 72
     const-string p1, "/storage/emulated/0/Download/.*pdf"
 
-    goto :goto_7
+    const-string v0, "ArqexRegexHint"
 
-    .line 59
-    :catchall_5
+    :try_start_4
+    invoke-static {p0}, Llibs/ArqexRegexHint;->conteudo(Landroid/widget/EditText;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 73
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_21
+
+    const/16 v2, 0x2a
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v1
+
+    if-gez v1, :cond_1b
+
+    goto :goto_21
+
+    .line 78
+    :cond_1b
+    const-string p0, "caixa ja tinha um padrao com *: mantido"
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_30
+
+    .line 74
+    :cond_21
+    :goto_21
+    invoke-virtual {p0, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 75
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/EditText;->setSelection(I)V
+
+    .line 76
+    const-string p0, "exemplo colocado na caixa"
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_30
+    .catchall {:try_start_4 .. :try_end_30} :catchall_31
+
+    .line 82
+    :goto_30
+    goto :goto_48
+
+    .line 80
+    :catchall_31
     move-exception p0
 
-    goto :goto_b
+    .line 81
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    .line 58
-    :cond_7
-    :goto_7
-    invoke-virtual {p0, p1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
-    :try_end_a
-    .catchall {:try_start_2 .. :try_end_a} :catchall_5
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 60
-    nop
+    const-string v1, "falhou ao aplicar: "
 
-    .line 61
-    :goto_b
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 83
+    :goto_48
     return-void
 .end method
 
-.method private static avisar(Landroid/widget/TextView;Ljava/lang/String;)V
-    .registers 4
+.method private static conteudo(Landroid/widget/EditText;)Ljava/lang/String;
+    .registers 2
 
-    .line 81
-    const/16 v0, 0x2a
+    .line 60
+    const-string v0, ""
 
     :try_start_2
-    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v0
-
-    if-ltz v0, :cond_1c
-
-    .line 82
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Regex ativo para: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_1e
-
-    .line 84
-    :cond_1c
-    const-string p1, "Regex: escreva o padrao com *, ex: /storage/emulated/0/Download/.*pdf"
-
-    .line 86
-    :goto_1e
-    invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p0
 
-    const/4 v0, 0x1
+    .line 61
+    if-nez p0, :cond_9
 
-    invoke-static {p0, p1, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    .line 62
+    return-object v0
+
+    .line 64
+    :cond_9
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
+    :try_end_d
+    .catchall {:try_start_2 .. :try_end_d} :catchall_e
 
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
-    :try_end_2a
-    .catchall {:try_start_2 .. :try_end_2a} :catchall_2b
+    return-object p0
 
-    .line 88
-    goto :goto_2c
-
-    .line 87
-    :catchall_2b
+    .line 65
+    :catchall_e
     move-exception p0
 
-    .line 89
-    :goto_2c
-    return-void
+    .line 66
+    return-object v0
 .end method
 
 .method public static instalar(Landroid/widget/CheckBox;Landroid/widget/EditText;)V
     .registers 4
 
-    .line 46
-    if-eqz p0, :cond_1b
+    .line 45
+    const-string v0, "ArqexRegexHint"
 
-    if-nez p1, :cond_5
+    if-eqz p0, :cond_37
 
-    goto :goto_1b
+    if-nez p1, :cond_7
 
-    .line 49
-    :cond_5
-    :try_start_5
-    invoke-virtual {p1}, Landroid/widget/EditText;->getHint()Ljava/lang/CharSequence;
+    goto :goto_37
 
-    move-result-object v0
-
-    .line 50
+    .line 48
+    :cond_7
+    :try_start_7
     new-instance v1, Llibs/ArqexRegexHint;
 
-    invoke-direct {v1, p1, v0}, Llibs/ArqexRegexHint;-><init>(Landroid/widget/EditText;Ljava/lang/CharSequence;)V
+    invoke-direct {v1, p1}, Llibs/ArqexRegexHint;-><init>(Landroid/widget/EditText;)V
 
     invoke-virtual {p0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 51
+    .line 49
     invoke-virtual {p0}, Landroid/widget/CheckBox;->isChecked()Z
 
     move-result p0
 
-    invoke-static {p1, v0, p0}, Llibs/ArqexRegexHint;->aplicar(Landroid/widget/EditText;Ljava/lang/CharSequence;Z)V
-    :try_end_18
-    .catchall {:try_start_5 .. :try_end_18} :catchall_19
+    if-eqz p0, :cond_19
 
-    .line 53
-    goto :goto_1a
+    .line 50
+    const/4 p0, 0x0
+
+    invoke-static {p1, p0}, Llibs/ArqexRegexHint;->aplicar(Landroid/widget/EditText;Ljava/lang/String;)V
 
     .line 52
-    :catchall_19
+    :cond_19
+    const-string p0, "ligado na caixa de pasta"
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1e
+    .catchall {:try_start_7 .. :try_end_1e} :catchall_1f
+
+    .line 55
+    goto :goto_36
+
+    .line 53
+    :catchall_1f
     move-exception p0
 
     .line 54
-    :goto_1a
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "falhou ao ligar: "
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 56
+    :goto_36
     return-void
 
-    .line 47
-    :cond_1b
-    :goto_1b
+    .line 46
+    :cond_37
+    :goto_37
     return-void
 .end method
 
 .method public static instalarPendente()V
     .registers 2
 
-    .line 38
+    .line 37
     sget-object v0, Llibs/ArqexRegexHint;->pendenteCheck:Landroid/widget/CheckBox;
 
     sget-object v1, Llibs/ArqexRegexHint;->pendenteCampo:Landroid/widget/EditText;
 
     invoke-static {v0, v1}, Llibs/ArqexRegexHint;->instalar(Landroid/widget/CheckBox;Landroid/widget/EditText;)V
 
-    .line 39
+    .line 38
     const/4 v0, 0x0
 
     sput-object v0, Llibs/ArqexRegexHint;->pendenteCheck:Landroid/widget/CheckBox;
 
-    .line 40
+    .line 39
     sput-object v0, Llibs/ArqexRegexHint;->pendenteCampo:Landroid/widget/EditText;
 
-    .line 41
+    .line 40
+    return-void
+.end method
+
+.method private static voltar(Landroid/widget/EditText;Ljava/lang/String;)V
+    .registers 5
+
+    .line 87
+    const-string v0, "ArqexRegexHint"
+
+    :try_start_2
+    invoke-static {p0}, Llibs/ArqexRegexHint;->conteudo(Landroid/widget/EditText;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 88
+    const-string v2, "/storage/emulated/0/Download/.*pdf"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_13
+
+    .line 89
+    return-void
+
+    .line 91
+    :cond_13
+    if-nez p1, :cond_18
+
+    const-string v1, ""
+
+    goto :goto_19
+
+    :cond_18
+    move-object v1, p1
+
+    :goto_19
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 92
+    if-nez p1, :cond_20
+
+    const/4 p1, 0x0
+
+    goto :goto_24
+
+    :cond_20
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    .line 93
+    :goto_24
+    invoke-virtual {p0, p1}, Landroid/widget/EditText;->setSelection(I)V
+
+    .line 94
+    const-string p0, "valor anterior devolvido"
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2c
+    .catchall {:try_start_2 .. :try_end_2c} :catchall_2d
+
+    .line 97
+    goto :goto_44
+
+    .line 95
+    :catchall_2d
+    move-exception p0
+
+    .line 96
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "falhou ao voltar: "
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 98
+    :goto_44
     return-void
 .end method
 
@@ -212,37 +367,14 @@
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .registers 4
 
-    .line 65
-    :try_start_0
+    .line 102
+    if-eqz p2, :cond_16
+
+    .line 103
+    :try_start_2
     iget-object p1, p0, Llibs/ArqexRegexHint;->campo:Landroid/widget/EditText;
 
-    iget-object v0, p0, Llibs/ArqexRegexHint;->normal:Ljava/lang/CharSequence;
-
-    invoke-static {p1, v0, p2}, Llibs/ArqexRegexHint;->aplicar(Landroid/widget/EditText;Ljava/lang/CharSequence;Z)V
-
-    .line 66
-    if-nez p2, :cond_a
-
-    .line 67
-    return-void
-
-    .line 69
-    :cond_a
-    iget-object p1, p0, Llibs/ArqexRegexHint;->campo:Landroid/widget/EditText;
-
-    invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object p1
-
-    .line 70
-    if-nez p1, :cond_15
-
-    const-string p1, ""
-
-    goto :goto_1d
-
-    :cond_15
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {p1}, Llibs/ArqexRegexHint;->conteudo(Landroid/widget/EditText;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -250,30 +382,59 @@
 
     move-result-object p1
 
-    .line 71
+    iput-object p1, p0, Llibs/ArqexRegexHint;->anterior:Ljava/lang/String;
+
+    .line 104
+    iget-object p1, p0, Llibs/ArqexRegexHint;->campo:Landroid/widget/EditText;
+
+    iget-object p2, p0, Llibs/ArqexRegexHint;->anterior:Ljava/lang/String;
+
+    invoke-static {p1, p2}, Llibs/ArqexRegexHint;->aplicar(Landroid/widget/EditText;Ljava/lang/String;)V
+
+    goto :goto_1d
+
+    .line 106
+    :cond_16
+    iget-object p1, p0, Llibs/ArqexRegexHint;->campo:Landroid/widget/EditText;
+
+    iget-object p2, p0, Llibs/ArqexRegexHint;->anterior:Ljava/lang/String;
+
+    invoke-static {p1, p2}, Llibs/ArqexRegexHint;->voltar(Landroid/widget/EditText;Ljava/lang/String;)V
+    :try_end_1d
+    .catchall {:try_start_2 .. :try_end_1d} :catchall_1e
+
+    .line 110
     :goto_1d
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    goto :goto_37
 
-    move-result p2
-
-    if-lez p2, :cond_28
-
-    .line 72
-    iget-object p2, p0, Llibs/ArqexRegexHint;->campo:Landroid/widget/EditText;
-
-    invoke-static {p2, p1}, Llibs/ArqexRegexHint;->avisar(Landroid/widget/TextView;Ljava/lang/String;)V
-    :try_end_28
-    .catchall {:try_start_0 .. :try_end_28} :catchall_29
-
-    .line 75
-    :cond_28
-    goto :goto_2a
-
-    .line 74
-    :catchall_29
+    .line 108
+    :catchall_1e
     move-exception p1
 
-    .line 76
-    :goto_2a
+    .line 109
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "falhou no clique: "
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string p2, "ArqexRegexHint"
+
+    invoke-static {p2, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 111
+    :goto_37
     return-void
 .end method
