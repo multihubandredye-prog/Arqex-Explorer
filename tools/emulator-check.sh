@@ -76,7 +76,7 @@ adb root >/dev/null 2>&1 || true
 sleep 2
 ARQ="/data/user/0/com.arqex.explorer/files/reinicio/.arqex_descompactar"
 ARQ2="/data/data/com.arqex.explorer/files/reinicio/.arqex_descompactar"
-CONTEUDO="$(adb shell "ls -l $ARQ 2>/dev/null || ls -l $ARQ2 2>/dev/null" 2>/dev/null | tr -d '\r' || true)"
+CONTEUDO="$(adb shell "ls -l $ARQ 2>/dev/null || ls -l $ARQ2 2>/dev/null; echo -n 1=\; cat $ARQ 2>/dev/null || cat $ARQ2 2>/dev/null; echo\" 2>/dev/null | tr -d '\r' || true)"
 echo "marca no disco:"; echo "$CONTEUDO"
 grep "ArqexUnzipDiag" logcat_unzip.txt | tail -10 || true
 FALHOU=0
