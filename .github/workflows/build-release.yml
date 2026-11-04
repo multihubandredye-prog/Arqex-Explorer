@@ -272,12 +272,25 @@ jobs:
             exit 0
           fi
 
-          PREV="$(git describe --tags --abbrev=0 "$SHA^" 2>/dev/null || true)"
+          # Pre-release: mudancas desde a tag anterior (o beta anterior).
+          # Release estavel: mudancas desde a ULTIMA RELEASE ESTAVEL, para que a
+          # caixa de dialogo de atualizacao que o usuario ve traga todas as
+          # modificacoes de verdade, e nao so o ultimo commit.
+          if [ "$PRERELEASE" = "true" ]; then
+            PREV="$(git describe --tags --abbrev=0 "$SHA^" 2>/dev/null || true)"
+          else
+            PREV="$(git describe --tags --abbrev=0 --match 'v[0-9]*' --exclude '*beta*' --exclude '*rc*' "$SHA^" 2>/dev/null || true)"
+          fi
           if [ -n "$PREV" ]; then
             echo "changelog desde $PREV"
-            git log --pretty='- %s' "$PREV..$SHA" | head -40 > changelog.txt
+            git log --pretty='- %s' "$PREV..$SHA" \
+              | grep -v -E '^- (Corrige o rotulo|Script do emulador|Corrige a conferencia)' \
+              | head -40 > changelog.txt
           else
             git log --pretty='- %s' -15 "$SHA" > changelog.txt
+          fi
+          if [ ! -s changelog.txt ]; then
+            echo "- Melhorias de estabilidade e correcoes internas." > changelog.txt
           fi
 
           {

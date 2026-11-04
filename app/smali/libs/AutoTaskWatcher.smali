@@ -2787,7 +2787,7 @@
 
     if-eqz v1, :cond_f
 
-    const-string v0, "Nome (ex: projetoteste_v1.7, use * como coringa, v\u00edrgula separa)"
+    const-string v0, "Nome ou caminho (ex: /storage/emulated/0/Download/.*pdf = todos os PDFs; * \u00e9 coringa; v\u00edrgula separa)"
 
     return-object v0
 
@@ -2800,12 +2800,12 @@
 
     if-eqz v0, :cond_1a
 
-    const-string v0, "Nombre (ej: proyectotest_v1.7, * es comod\u00edn, coma separa)"
+    const-string v0, "Nombre o ruta (ej: /storage/emulated/0/Download/.*pdf = todos los PDF; * es comod\u00edn; coma separa)"
 
     return-object v0
 
     :cond_1a
-    const-string v0, "Name (e.g. project_v1.7, * is a wildcard, comma separates)"
+    const-string v0, "Name or path (e.g. /storage/emulated/0/Download/.*pdf = all PDFs; * is a wildcard; comma separates)"
 
     return-object v0
 .end method
@@ -4827,131 +4827,15 @@
 .end method
 
 .method public static matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 16
+    .registers 2
 
-    const/4 v0, 0x1
+    # Filtro por nome: parte do nome, coringa (* ou .*) ou caminho completo.
+    # A regra mora em Llibs/ArqexFilter; aqui so repassamos.
+    invoke-static {p0, p1}, Llibs/ArqexFilter;->combina(Ljava/lang/String;Ljava/lang/String;)Z
 
-    if-nez p1, :cond_4
+    move-result p0
 
-    return v0
-
-    :cond_4
-    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_f
-
-    return v0
-
-    :cond_f
-    const/4 v0, 0x0
-
-    if-nez p0, :cond_13
-
-    return v0
-
-    :cond_13
-    sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, ","
-
-    invoke-virtual {p1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v2
-
-    array-length v3, v2
-
-    const/4 v4, 0x0
-
-    :goto_21
-    if-ge v4, v3, :cond_60
-
-    aget-object v5, v2, v4
-
-    invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v6
-
-    if-nez v6, :cond_5d
-
-    sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v6, "\\*"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v6
-
-    array-length v7, v6
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x1
-
-    :goto_3f
-    if-ge v8, v7, :cond_59
-
-    aget-object v11, v6, v8
-
-    invoke-virtual {v11}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v12
-
-    if-nez v12, :cond_55
-
-    invoke-virtual {v11}, Ljava/lang/String;->length()I
-
-    move-result v13
-
-    invoke-virtual {v1, v11, v9}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
-
-    move-result v12
-
-    if-ltz v12, :cond_58
-
-    add-int v9, v12, v13
-
-    :cond_55
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_3f
-
-    :cond_58
-    const/4 v10, 0x0
-
-    :cond_59
-    if-eqz v10, :cond_5d
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_5d
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_21
-
-    :cond_60
-    return v0
+    return p0
 .end method
 
 .method private static normalizeSourcePath(Ljava/lang/Object;)Ljava/lang/String;
