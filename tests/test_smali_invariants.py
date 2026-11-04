@@ -490,34 +490,33 @@ _suf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
 _getkey = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                       ".method public static getUnzipFlagKey") or ""
 _ifs = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
-                   ".method public static isUnzipFlagSet") or ""
+                   ".method public static isUnzipEnabled") or ""
 _sfk = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
-                   ".method public static setUnzipFlagKey") or ""
+                   ".method public static setUnzipFlag") or ""
 _st = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static runUnzipSelfTest") or ""
 _ots = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static declared-synchronized onTaskSaved") or ""
 _auc = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method public static addUnzipCheckBox") or ""
-check("14a. marca do descompactar e POR TAREFA (chave unzip2_<assinatura>)", (
-      '"unzip2_"' in _getkey and "getTaskRuleKey" in _getkey
+check("14a. marca do descompactar e arquivo na pasta de destino", (
+      "ArqexUnzipMark;->existe" in _iu and "Pi" in _iu
       and "unzip_last_state" not in _atw and "unzipState" not in _atw))
-check("14d. leitura: memoria do processo e arquivo proprio (sem prefs)", (
-      "unzipFlagsCache" in _ifs and "ArqexUnzipStore;->load" in _ifs
-      and "getConfigPrefs" not in _ifs))
-check("14e. gravacao vai para o arquivo proprio (fora das prefs)", (
-      "ArqexUnzipStore;->save" in _sfk and "getConfigPrefs" not in _sfk
-      and "unzipFlagsCache" in _sfk
-      and os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzipStore.smali"))))
+check("14d. leitura nao depende de prefs nem de cache", (
+      "ArqexUnzipStore" not in _atw and "unzipFlagsCache" not in _atw
+      and "getConfigPrefs" not in _iu))
+check("14e. gravacao cria/apaga o marcador na pasta de destino", (
+      "ArqexUnzipMark;->marcar" in _sfk
+      and os.path.exists(os.path.join(SMALI, "libs", "ArqexUnzipMark.smali"))))
 check("14f. Salvar grava a marca na tarefa salva (dialogo -> tarefa)", (
       "setUnzipFlag" in _ots and "findDialogCheckBox" in _ots
       and "0x5d" in _ots and "setUnzipFromDialog" in _n8))
 check("14g. a caixinha abre com o estado da tarefa", (
       "isUnzipEnabled" in _auc and "0x5d" in _auc))
 check("14h. diagnostico cobre reinicio do app (passo 0 e passo 1+)", (
-      "runUnzipSelfTest" in _atw and "primeiro_arranque" in _st
-      and "clearUnzipCache" in _st and "check reinicio=" in _st
-      and "check arquivo=" in _st))
+      "runUnzipSelfTest" in _atw and "check reinicio=" in _st
+      and "check marcar=" in _st and "check leitura=" in _st
+      and "check desmarcar=" in _st))
 check("14b. descompactar roda antes da copia/move e tira o zip da lista", (
       "ArqexUnzip;->process" in _ob and "filterTaskItems" in _ob))
 check("14c. extracao le o zip do item e escreve na pasta de destino", (

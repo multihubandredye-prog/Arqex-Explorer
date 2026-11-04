@@ -240,11 +240,6 @@
     sput-object v0, Llibs/AutoTaskWatcher;->pollRunnable:Llibs/AutoTaskWatcher$TickRunnable;
 
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Llibs/AutoTaskWatcher;->unzipFlagsCache:Ljava/util/HashMap;
     return-void
 .end method
 
@@ -758,10 +753,8 @@
 # o campo "somente arquivos".
 .field public static unzipPending:Z
 
-# Desenho novo (por tarefa): a marca do "Descompactar no destino" fica na chave
-# unzip2_<assinatura da tarefa>, junto com as outras opcoes da tarefa. Aqui fica
-# a copia em memoria, para a caixinha refletir na hora o que o usuario salvou.
-.field private static final unzipFlagsCache:Ljava/util/HashMap;
+# Desenho novo: a marca do "Descompactar no destino" e um arquivo dentro da
+# pasta de destino (libs/ArqexUnzipMark). Nao usa prefs, cache nem Context.
 
 
 .method public static addUnzipCheckBox(Llibs/od;Llibs/d9;)V
@@ -5394,158 +5387,28 @@
 # Arqex: guarda para a proxima tarefa a ser construida o valor que veio no
 # token 17 (indice 0x11) do conteudo lido do armazenamento. Assim, ao recarregar
 # as tarefas o marcador nao se perde.
-.method public static getUnzipFlagKey(Llibs/d9;)Ljava/lang/String;
-    .registers 4
-
-    const/4 v0, 0x0
-
-    if-nez p0, :arqex_guk_fim
-
-    :try_start_k
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "unzip2_"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskRuleKey(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :try_end_k
-    .catchall {:try_start_k .. :try_end_k} :catchall_k
-
-    :arqex_guk_fim
-    return-object v0
-
-    :catchall_k
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public static clearUnzipCache()V
-    .registers 2
-
-    :try_start_c
-    sget-object v0, Llibs/AutoTaskWatcher;->unzipFlagsCache:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
-
-    invoke-static {}, Llibs/ArqexUnzipStore;->resetCache()V
-    :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_c
-
-    return-void
-
-    :catchall_c
-    return-void
-.end method
-
-.method public static isUnzipFlagSet(Ljava/lang/String;)Z
-    .registers 5
-
-    # Desenho novo: memoria do processo -> arquivo proprio (sem Context, sem prefs).
-    # ATENCAO: com 1 parametro, p0 e o ultimo registrador (aqui v4). Os temporarios
-    # tem que ser v0..v3, senao sobrescrevem a propria chave.
-    const/4 v0, 0x0
-
-    if-nez p0, :arqex_ifs_fim
-
-    :try_start_f
-    sget-object v1, Llibs/AutoTaskWatcher;->unzipFlagsCache:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Boolean;
-
-    if-eqz v2, :arqex_ifs_arquivo
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-
-    :arqex_ifs_arquivo
-    invoke-static {p0}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
-
-    move-result v2
-
-    if-gez v2, :arqex_ifs_fim
-
-    const/4 v3, 0x0
-
-    if-eqz v2, :arqex_ifs_marcada
-
-    const/4 v3, 0x1
-
-    :arqex_ifs_marcada
-    move v0, v3
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v1, p0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_f
-    .catchall {:try_start_f .. :try_end_f} :catchall_f
-
-    :arqex_ifs_fim
-    return v0
-
-    :catchall_f
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public static setUnzipFlagKey(Ljava/lang/String;Z)V
-    .registers 4
-
-    if-nez p0, :arqex_sfk_fim
-
-    :try_start_s
-    sget-object v0, Llibs/AutoTaskWatcher;->unzipFlagsCache:Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Llibs/zt0;->g:Landroid/content/Context;
-
-    invoke-static {p0, p1}, Llibs/ArqexUnzipStore;->save(Ljava/lang/String;Z)V
-    :try_end_s
-    .catchall {:try_start_s .. :try_end_s} :catchall_s
-
-    :arqex_sfk_fim
-    return-void
-
-    :catchall_s
-    return-void
-.end method
-
 .method public static isUnzipEnabled(Llibs/d9;)Z
-    .registers 2
+    .registers 3
 
-    # Desenho novo: marca POR TAREFA -> chave unzip2_<assinatura da tarefa>
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getUnzipFlagKey(Llibs/d9;)Ljava/lang/String;
+    # Desenho novo: a marca e um arquivo na pasta de destino da tarefa.
+    const/4 v0, 0x0
 
-    move-result-object v0
+    if-nez p0, :arqex_iue_fim
 
-    invoke-static {v0}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
+    :try_start_i
+    iget-object v1, p0, Llibs/d9;->Pi:Ljava/lang/String;
+
+    invoke-static {v1}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
     move-result v0
+    :try_end_i
+    .catchall {:try_start_i .. :try_end_i} :catchall_i
+
+    :arqex_iue_fim
+    return v0
+
+    :catchall_i
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -5553,174 +5416,102 @@
 .method public static setUnzipFlag(Llibs/d9;Z)V
     .registers 3
 
-    invoke-static {p0}, Llibs/AutoTaskWatcher;->getUnzipFlagKey(Llibs/d9;)Ljava/lang/String;
+    if-nez p0, :arqex_suf_fim
 
-    move-result-object v0
+    :try_start_s
+    iget-object v0, p0, Llibs/d9;->Pi:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
+    invoke-static {v0, p1}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
+    :try_end_s
+    .catchall {:try_start_s .. :try_end_s} :catchall_s
 
-    return-void
-.end method
-
-.method private static diagLog(Ljava/lang/String;Z)V
-    .registers 4
-
-    :try_start_d
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "check "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-nez p1, :arqex_dl_falhou
-
-    const-string v1, "=ok"
-
-    goto :arqex_dl_fim
-
-    :arqex_dl_falhou
-    const-string v1, "=FALHOU"
-
-    :arqex_dl_fim
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "ArqexUnzipDiag"
-
-    invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_d
-
+    :arqex_suf_fim
     return-void
 
-    :catchall_d
+    :catchall_s
     return-void
 .end method
 
 .method public static runUnzipSelfTest()V
-    .registers 9
+    .registers 6
 
-    # Prova automatica, so roda no emulador do CI. Sem Context, sem prefs.
-    # Padrao usado aqui: comeca com a resposta pessimista e so troca quando
-    # a condicao realmente se confirma (evita o classico "if invertido").
+    # Prova automatica (so no emulador do CI). A "pasta de destino" usada aqui
+    # e a pasta files do proprio app, entao nao precisa de Context.
     const-string v0, "ArqexUnzipDiag"
 
-    const-string v6, "unzip2_DIAG_PROVA"
+    const-string v2, "/data/user/0/com.arqex.explorer/files"
 
     :try_start_st
-    # 1) veio marca de um arranque anterior? (isso e o teste do reinicio)
-    invoke-static {v6}, Llibs/ArqexUnzipStore;->load(Ljava/lang/String;)I
+    # 1) a marca ficou de um arranque anterior? (teste do reinicio)
+    invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
-    move-result v5
-
-    if-gez v5, :arqex_st_primeiro
+    move-result v3
 
     const-string v1, "check reinicio=FALHOU"
 
-    if-eqz v5, :arqex_st_reinicio_log
+    if-eqz v3, :arqex_st_reinicio_log
 
     const-string v1, "check reinicio=ok"
 
     :arqex_st_reinicio_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :arqex_st_ciclo
-
-    :arqex_st_primeiro
-    const-string v1, "st: primeiro_arranque"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    # ---------- ciclo completo, com chave unica deste processo ----------
-    :arqex_st_ciclo
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "unzip2_DIAG_"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v3
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    # grava marcado
-    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
-
+    # 2) marca
     const/4 v3, 0x1
 
-    invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
+    invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
 
-    # check memoria
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
+    move-result v4
 
-    move-result v3
+    const-string v1, "check marcar=FALHOU"
 
-    const-string v1, "check memoria=FALHOU"
+    if-nez v4, :arqex_st_marcar_log
 
-    if-eqz v3, :arqex_st_mem_log
+    const-string v1, "check marcar=ok"
 
-    const-string v1, "check memoria=ok"
-
-    :arqex_st_mem_log
+    :arqex_st_marcar_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # check arquivo (esquecendo as copias em memoria)
-    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
+    # 3) leitura
+    invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
+    move-result v4
 
-    move-result v3
+    const-string v1, "check leitura=FALHOU"
 
-    const-string v1, "check arquivo=FALHOU"
+    if-eqz v4, :arqex_st_leitura_log
 
-    if-eqz v3, :arqex_st_arq_log
+    const-string v1, "check leitura=ok"
 
-    const-string v1, "check arquivo=ok"
-
-    :arqex_st_arq_log
+    :arqex_st_leitura_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # check desmarcar (aqui o certo e voltar FALSE)
+    # 4) desmarcar (deixa a pasta limpa) e conferir
     const/4 v3, 0x0
 
-    invoke-static {v2, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
+    invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
 
-    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
+    move-result v4
 
-    invoke-static {v2}, Llibs/AutoTaskWatcher;->isUnzipFlagSet(Ljava/lang/String;)Z
+    invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v5
 
     const-string v1, "check desmarcar=FALHOU"
 
-    if-eqz v3, :arqex_st_desm_log
+    if-eqz v4, :arqex_st_desm_log
+
+    if-eqz v5, :arqex_st_desm_log
 
     const-string v1, "check desmarcar=ok"
 
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # deixa a chave fixa marcada: o proximo arranque devolve reinicio=ok
+    # 5) deixa marcada: o proximo arranque tem que ver "reinicio=ok"
     const/4 v3, 0x1
 
-    invoke-static {v6, v3}, Llibs/AutoTaskWatcher;->setUnzipFlagKey(Ljava/lang/String;Z)V
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->clearUnzipCache()V
+    invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
     :try_end_st
     .catchall {:try_start_st .. :try_end_st} :catchall_st
 
@@ -5729,27 +5520,9 @@
     :catchall_st
     move-exception v4
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    const-string v5, "st: excecao"
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "st: excecao "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "ArqexUnzipDiag"
-
-    invoke-static {v5, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method

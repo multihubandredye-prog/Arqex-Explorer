@@ -74,16 +74,16 @@ cat logcat_p0.txt logcat_f1.txt logcat_f2.txt > logcat_unzip.txt 2>/dev/null || 
 log "prova no disco: o arquivo da marca continua la depois de fechar o app"
 adb root >/dev/null 2>&1 || true
 sleep 2
-ARQ="/data/user/0/com.arqex.explorer/files/arqex_unzip_flags.txt"
-ARQ2="/data/data/com.arqex.explorer/files/arqex_unzip_flags.txt"
-CONTEUDO="$(adb shell "cat $ARQ 2>/dev/null || cat $ARQ2 2>/dev/null" 2>/dev/null | tr -d '\r' || true)"
-echo "conteudo do arquivo:"; echo "$CONTEUDO"
+ARQ="/data/user/0/com.arqex.explorer/files/.arqex_descompactar"
+ARQ2="/data/data/com.arqex.explorer/files/.arqex_descompactar"
+CONTEUDO="$(adb shell "ls -l $ARQ 2>/dev/null || ls -l $ARQ2 2>/dev/null" 2>/dev/null | tr -d '\r' || true)"
+echo "marca no disco:"; echo "$CONTEUDO"
 grep "ArqexUnzipDiag" logcat_unzip.txt | tail -10 || true
 FALHOU=0
-for CH in memoria arquivo desmarcar; do
+for CH in marcar leitura desmarcar; do
   grep -q "check $CH=ok" logcat_unzip.txt && echo "OK: $CH" || { echo "::error::verificacao '$CH' do descompactar falhou"; FALHOU=1; }
 done
 grep -q "check reinicio=ok" logcat_unzip.txt && echo "OK: marca continuou marcada depois de fechar e abrir o app" || { echo "::error::a marca nao sobreviveu a fechar o app"; FALHOU=1; }
-echo "$CONTEUDO" | grep -q "unzip2_DIAG_PROVA" && echo "OK: marca gravada no disco (arquivo proprio)" || { echo "::error::a marca nao esta no arquivo do app"; FALHOU=1; }
+echo "$CONTEUDO" | grep -q "arqex_descompactar" && echo "OK: marca existe no disco depois de fechar o app" || { echo "::error::a marca nao esta no disco"; FALHOU=1; }
 [ "$FALHOU" = "0" ] || exit 1
 
