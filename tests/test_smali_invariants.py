@@ -261,8 +261,12 @@ _atw = open(_atw_path, encoding="utf-8", errors="replace").read() if os.path.exi
 check("10a. filtro por nome existe (chave name_<regra>)", '"name_"' in _atw)
 check("10b. controle de filtro por nome na tela da tarefa",
       "addNameFilterControls" in _atw and "getNameFilterCheckLabel" in _atw)
-check("10c. filtro por nome aceita coringa *",
-      "matchesNameFilter" in _atw and 'const-string v6, "\\\\*"' in _atw)
+_afl = open(os.path.join(SMALI, "libs", "ArqexFilter.smali"), encoding="utf-8").read() \
+    if os.path.exists(os.path.join(SMALI, "libs", "ArqexFilter.smali")) else ""
+check("10c. filtro por nome aceita coringa * e caminho com .*",
+      "matchesNameFilter" in _atw and "ArqexFilter;->combina" in _atw
+      and ".method public static combina" in _afl
+      and ".*" in _afl and "lastIndexOf(I)I" in _afl)
 check("10d. filtro por nome e aplicado no fluxo (junto do de extensao)",
       "filterTaskItems" in _atw and _atw.count("->filterTaskItems(") >= 6)
 check("10h. filtro por nome usa chave propria e cache (name_<regra>)",

@@ -283,11 +283,12 @@ jobs:
           fi
           if [ -n "$PREV" ]; then
             echo "changelog desde $PREV"
-            git log --pretty='- %s' "$PREV..$SHA" \
-              | grep -v -E '^- (Corrige o rotulo|Script do emulador|Corrige a conferencia)' \
-              | head -40 > changelog.txt
+            git log --pretty='- %s' "$PREV..$SHA" > /tmp/commits.txt 2>/dev/null || true
+            grep -v -E '^- (Corrige o rotulo|Script do emulador|Corrige a conferencia)' \
+              /tmp/commits.txt > /tmp/commits_filtrados.txt 2>/dev/null || true
+            head -40 /tmp/commits_filtrados.txt > changelog.txt 2>/dev/null || true
           else
-            git log --pretty='- %s' -15 "$SHA" > changelog.txt
+            git log --pretty='- %s' -15 "$SHA" > changelog.txt 2>/dev/null || true
           fi
           if [ ! -s changelog.txt ]; then
             echo "- Melhorias de estabilidade e correcoes internas." > changelog.txt
