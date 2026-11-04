@@ -5435,14 +5435,14 @@
 .method public static runUnzipSelfTest()V
     .registers 6
 
-    # Prova automatica (so no emulador do CI). A "pasta de destino" usada aqui
-    # e a pasta files do proprio app, entao nao precisa de Context.
+    # Prova automatica (so no emulador do CI). A "pasta de destino" aqui e a
+    # pasta files do app. O que conta e o EFEITO no disco, nao valor de retorno.
     const-string v0, "ArqexUnzipDiag"
 
     const-string v2, "/data/user/0/com.arqex.explorer/files"
 
     :try_start_st
-    # 1) a marca ficou de um arranque anterior? (teste do reinicio)
+    # 1) marca deixada por um arranque anterior = prova do reinicio
     invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
     move-result v3
@@ -5456,23 +5456,25 @@
     :arqex_st_reinicio_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # 2) marca
+    # 2) marcar e conferir que o arquivo apareceu
     const/4 v3, 0x1
 
     invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
+
+    invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
     move-result v4
 
     const-string v1, "check marcar=FALHOU"
 
-    if-nez v4, :arqex_st_marcar_log
+    if-eqz v4, :arqex_st_marcar_log
 
     const-string v1, "check marcar=ok"
 
     :arqex_st_marcar_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # 3) leitura
+    # 3) leitura independente
     invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
     move-result v4
@@ -5486,29 +5488,25 @@
     :arqex_st_leitura_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # 4) desmarcar (deixa a pasta limpa) e conferir
+    # 4) desmarcar e conferir que o arquivo sumiu
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
 
-    move-result v4
-
     invoke-static {v2}, Llibs/ArqexUnzipMark;->existe(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v4
 
     const-string v1, "check desmarcar=FALHOU"
 
     if-eqz v4, :arqex_st_desm_log
-
-    if-eqz v5, :arqex_st_desm_log
 
     const-string v1, "check desmarcar=ok"
 
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    # 5) deixa marcada: o proximo arranque tem que ver "reinicio=ok"
+    # 5) deixa marcada: o proximo arranque tem que dar reinicio=ok
     const/4 v3, 0x1
 
     invoke-static {v2, v3}, Llibs/ArqexUnzipMark;->marcar(Ljava/lang/String;Z)Z
