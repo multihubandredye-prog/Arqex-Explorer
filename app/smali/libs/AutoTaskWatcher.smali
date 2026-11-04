@@ -5537,11 +5537,11 @@
 
     move-result v4
 
-    const-string v1, "check desmarcar=FALHOU"
+    const-string v1, "check desmarcar=ok"
 
     if-eqz v4, :arqex_st_desm_log
 
-    const-string v1, "check desmarcar=ok"
+    const-string v1, "check desmarcar=FALHOU"
 
     :arqex_st_desm_log
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
