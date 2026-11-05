@@ -1526,7 +1526,7 @@
 
 # Arqex: dá icone a todos os itens do menu (antes so o item Ajuda tinha icone).
 .method public static applyMenuIcons(Ljava/util/ArrayList;)V
-    .registers 12
+    .registers 13
 
     if-nez p0, :arqex_am_fim
 
@@ -1551,8 +1551,10 @@
 
     const/4 v3, 0x0
 
+    const/4 v8, 0x0
+
     :arqex_am_loop
-    if-ge v3, v2, :arqex_am_fim
+    if-ge v3, v2, :arqex_am_log
 
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1565,10 +1567,6 @@
     if-eqz v5, :arqex_am_loop
 
     check-cast v4, Llibs/r90;
-
-    iget-object v5, v4, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v5, :arqex_am_loop
 
     iget v5, v4, Llibs/r90;->Z:I
 
@@ -1588,7 +1586,30 @@
 
     iput-object v6, v4, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
+    add-int/lit8 v8, v8, 0x1
+
     goto :arqex_am_loop
+
+    :arqex_am_log
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    const-string v6, "MENU-ICONE aplicados="
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, " de "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
