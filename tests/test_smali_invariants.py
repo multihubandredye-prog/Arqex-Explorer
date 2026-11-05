@@ -625,6 +625,7 @@ check("16l. backup das tarefas leva tambem as opcoes marcadas (filtro/prefixo/no
       and "getAll()Ljava/util/Map;" in _abk
       and "putString" in _abk and "putBoolean" in _abk and "commit()Z" in _abk
       and "prefs_backup.txt" in _abk))
+_ami = open(os.path.join(SMALI, "libs", "ArqexMenuIcon.smali"), encoding="utf-8").read()
 _rb = open(os.path.join(SMALI, "libs", "r90.smali"), encoding="utf-8").read()
 _hg = open(os.path.join(SMALI, "libs", "HelpGuideV127.smali"), encoding="utf-8").read()
 _mu = open(os.path.join(SMALI, "libs", "ModernUiTheme.smali"), encoding="utf-8").read()
@@ -642,7 +643,9 @@ check("16m. menu com icone em todos os itens e textos pelo idioma do app", (
       and "ho2;->Add" in _mu
       and "ArqexMenuIcon;->forItem" in _rb
       and ".method public static menuIconType" in _hg
-      and "ArqexMenuIcon;-><init>" in _hg))
+      and "ArqexMenuIcon;-><init>" in _hg
+      and "invoke-virtual {p0}, Llibs/ArqexMenuIcon;->" not in _ami
+      and "invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()" in _ami))
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
 _e9 = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read()
 check("16i. 'Criar atalho' removido do dialogo e nenhum atalho e criado ao salvar a tarefa", (

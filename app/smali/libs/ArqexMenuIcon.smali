@@ -69,6 +69,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :catchall_0
+    move-object v1, v0
+
+    const-string v2, "ICONE erro ao criar o icone do menu"
+
+    invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    move-object v0, v1
+
     :arqex_fi_fim
     return-object v0
 .end method
@@ -204,13 +212,13 @@
 
     :arqex_icon_1
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v1, 0xbf733333    # -0.95f
     const v2, 0xbf733333    # -0.95f
     const v3, 0x3f733333    # 0.95f
     const v4, 0x3f733333    # 0.95f
-    invoke-virtual {p0, v1, v2, v3, v4}, Llibs/ArqexMenuIcon;->rect(FFFF)Landroid/graphics/RectF;
+    invoke-direct {p0, v1, v2, v3, v4}, Llibs/ArqexMenuIcon;->rect(FFFF)Landroid/graphics/RectF;
     move-result-object v6
     const v7, 0x42700000    # 60f
     const v8, 0x437a0000    # 250f
@@ -229,7 +237,7 @@
     goto :arqex_icon_fim
     :arqex_icon_2
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v6, 0xbf400000    # -0.75f
     const v7, 0x3d4ccccd    # 0.05f
@@ -255,7 +263,7 @@
     const v2, 0xbf59999a    # -0.85f
     const v3, 0x3f000000    # 0.5f
     const v4, 0x3eb33333    # 0.35f
-    invoke-virtual {p0, v1, v2, v3, v4}, Llibs/ArqexMenuIcon;->rect(FFFF)Landroid/graphics/RectF;
+    invoke-direct {p0, v1, v2, v3, v4}, Llibs/ArqexMenuIcon;->rect(FFFF)Landroid/graphics/RectF;
     move-result-object v6
     const v7, 0x43340000    # 180f
     const v8, 0x43340000    # 180f
@@ -264,7 +272,7 @@
     goto :arqex_icon_fim
     :arqex_icon_3
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v6, 0xbf59999a    # -0.85f
     const v7, 0x3f59999a    # 0.85f
@@ -289,7 +297,7 @@
     goto :arqex_icon_fim
     :arqex_icon_4
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v6, 0xbf666666    # -0.9f
     const v7, 0xbf266666    # -0.65f
@@ -314,7 +322,7 @@
     goto :arqex_icon_fim
     :arqex_icon_5
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v6, 0xbf666666    # -0.9f
     const v7, 0xbf59999a    # -0.85f
@@ -356,13 +364,13 @@
     const v8, 0x3f666666    # 0.9f
     const v9, 0x3f59999a    # 0.85f
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
     move-result-object v9
     const v6, 0xbf19999a    # -0.6f
     const v7, 0xbf051eb8    # -0.52f
     const v8, 0x3e051eb8    # 0.13f
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
     move-result-object v9
     const v6, 0xbf19999a    # -0.6f
     const v7, 0x3f051eb8    # 0.52f
@@ -371,7 +379,7 @@
     goto :arqex_icon_fim
     :arqex_icon_6
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v6, 0xbee66666    # -0.45f
     const v7, 0xbf4ccccd    # -0.8f
@@ -391,21 +399,21 @@
     goto :arqex_icon_fim
     :arqex_icon_7
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
     move-result-object v9
     const v6, 0xbf333333    # -0.7f
     const v7, 0xbf19999a    # -0.6f
     const v8, 0x3e23d70a    # 0.16f
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
     move-result-object v9
     const v6, 0xbf333333    # -0.7f
     const v7, 0x00000000    # 0f
     const v8, 0x3e23d70a    # 0.16f
     invoke-virtual/range {v5 .. v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->dot()Landroid/graphics/Paint;
     move-result-object v9
     const v6, 0xbf333333    # -0.7f
     const v7, 0x3f19999a    # 0.6f
@@ -429,7 +437,7 @@
     goto :arqex_icon_fim
     :arqex_icon_8
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v6, 0xbf333333    # -0.7f
     const v7, 0xbf666666    # -0.9f
@@ -469,7 +477,7 @@
     goto :arqex_icon_fim
     :arqex_icon_9
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v6, 0xbf400000    # -0.75f
     const v7, 0xbf0ccccd    # -0.55f
@@ -489,7 +497,7 @@
     goto :arqex_icon_fim
     :arqex_icon_10
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     move-object v9, v10
     const v6, 0x00000000    # 0f
@@ -519,7 +527,7 @@
     goto :arqex_icon_fim
     :arqex_icon_11
     move-object v5, p1
-    invoke-virtual {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
+    invoke-direct {p0}, Llibs/ArqexMenuIcon;->stroke()Landroid/graphics/Paint;
     move-result-object v10
     const v6, 0xbf333333    # -0.7f
     const v7, 0xbf666666    # -0.9f
