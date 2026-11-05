@@ -17,6 +17,62 @@
 .field private final tipo:I
 
 # direct methods
+.method public static forItem(Llibs/r90;)Landroid/graphics/drawable/Drawable;
+    .registers 8
+
+    const/4 v0, 0x0
+
+    if-nez p0, :arqex_fi_fim
+
+    :try_start_0
+    iget-object v1, p0, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v1, :arqex_fi_cria
+
+    return-object v1
+
+    :arqex_fi_cria
+    iget v1, p0, Llibs/r90;->Z:I
+
+    invoke-static {v1}, Llibs/HelpGuideV127;->menuIconType(I)I
+
+    move-result v1
+
+    if-gtz v1, :arqex_fi_fim
+
+    const-string v2, "TEXT_POPUP_PRIMARY"
+
+    const-string v3, "#FFEFF3F8"
+
+    invoke-static {v2, v3}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/high16 v3, 0x41b00000    # 22.0f
+
+    invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
+
+    move-result v3
+
+    new-instance v4, Llibs/ArqexMenuIcon;
+
+    invoke-direct {v4, v2, v3, v1}, Llibs/ArqexMenuIcon;-><init>(III)V
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v4, v5, v5, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    iput-object v4, p0, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
+
+    return-object v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    :arqex_fi_fim
+    return-object v0
+.end method
+
 .method public constructor <init>(III)V
     .registers 8
 

@@ -362,7 +362,16 @@
 .method public final b()Landroid/graphics/drawable/Drawable;
     .registers 11
 
-    .line 1
+    # Arqex: item de menu sem icone recebe o icone do app na hora de desenhar
+    invoke-static {p0}, Llibs/ArqexMenuIcon;->forItem(Llibs/r90;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    if-eqz v0, :arqex_b_segue
+
+    return-object v0
+
+    :arqex_b_segue
     iget-object v0, p0, Llibs/r90;->Lambda:Landroid/graphics/drawable/Drawable;
 
     .line 2

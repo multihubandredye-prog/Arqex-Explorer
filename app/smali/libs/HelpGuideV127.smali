@@ -1617,7 +1617,7 @@
     :arqex_am_fim
     return-void
 .end method
-.method private static menuIconType(I)I
+.method public static menuIconType(I)I
     .registers 3
 
     sget v0, Llibs/wh2;->menu_undo_recycle:I
