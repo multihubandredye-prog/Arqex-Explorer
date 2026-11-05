@@ -2174,6 +2174,8 @@
     goto :cond_2f
 
     :cond_2f
+    move-object v3, v2
+
     invoke-virtual {v2}, Llibs/rp0;->m()Ljava/lang/String;
 
     move-result-object v2
@@ -2182,7 +2184,23 @@
 
     move-result v2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :arqex_fbf_seg
+
+    goto :cond_1c
+
+    # Arqex: o nome do item nao bateu, mas ele pode estar DENTRO da pasta filtrada
+    # (Download/Teste/arquivo): nesse caso o caminho tem o trecho "Teste" e o item fica.
+    :arqex_fbf_seg
+    iget-object v3, v3, Llibs/rp0;->Three:Ljava/lang/String;
+
+    invoke-static {v3, v0}, Llibs/AutoTaskWatcher;->matchesAnySegment(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_39
+
+    goto :cond_1c
+
 
     :cond_39
     :goto_39
@@ -8154,8 +8172,15 @@
     move-result-object v1
     invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
+    if-lez v0, :arqex_nf_tem_id
+
+    # Arqex: sem id de tarefa (tarefa removida ou disparo por outro caminho) o aviso
+    # de fim nao saia. Agora usa o id da operacao e notifica mesmo assim.
+    iget v0, v8, Llibs/m52;->Upsilon:I
+
     if-lez v0, :arqex_nf_fim
 
+    :arqex_nf_tem_id
     invoke-static {v8}, Llibs/AutoTaskWatcher;->shouldSuppressNotification(Llibs/m52;)Z
     move-result v1
 
@@ -8376,4 +8401,53 @@
 
     :arqex_sc_fim
     return-void
+.end method
+
+# Arqex: o filtro por nome vale tambem para qualquer PASTA do caminho do item.
+# Ex.: filtro "Teste" + item "/storage/emulated/0/Download/Teste/foto.jpg" -> casa.
+.method public static matchesAnySegment(Ljava/lang/String;Ljava/lang/String;)Z
+    .registers 8
+
+    const/4 v0, 0x0
+
+    if-nez p0, :arqex_ms_fim
+
+    if-nez p1, :arqex_ms_fim
+
+    const-string v1, "/"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    :arqex_ms_loop
+    array-length v3, v1
+
+    if-ge v2, v3, :arqex_ms_fim
+
+    aget-object v3, v1, v2
+
+    invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
+    move-result v4
+
+    if-nez v4, :arqex_ms_next
+
+    invoke-static {v3, p1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
+    move-result v4
+
+    if-eqz v4, :arqex_ms_next
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :arqex_ms_next
+    add-int/lit8 v2, v2, 0x1
+
+    goto :arqex_ms_loop
+
+    :arqex_ms_fim
+    return v0
 .end method

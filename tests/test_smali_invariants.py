@@ -601,6 +601,15 @@ check("16h. pasta com filtro por nome entra inteira, inclusive quando esta DENTR
 check("16h2. depois de expandir a pasta, o filtro por nome nao roda de novo (senao o conteudo cai)", (
       "goto :arqex_filtrado" in _atw
       and "goto :arqex_manual_filtrado" in _atw))
+_ms = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static matchesAnySegment") or ""
+check("16h3. filtro por nome mantem item que esta DENTRO da pasta filtrada (ultimo filtro do a92)", (
+      "AutoTaskWatcher;->matchesAnySegment" in _fnf
+      and "matchesNameFilter" in _ms
+      and "split" in _ms))
+check("16k. notificacao de fim nao e descartada quando o id da tarefa nao resolve", (
+      "arqex_nf_tem_id" in _nf
+      and "m52;->Upsilon:I" in _nf))
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
 _e9 = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read()
 check("16i. 'Criar atalho' removido do dialogo e nenhum atalho e criado ao salvar a tarefa", (
