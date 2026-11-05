@@ -86,19 +86,19 @@
     move-result-object v2
 
     :cond_3a
-    # Arqex: o atalho da tarefa estava saindo com bitmap ofuscado. Usa o icone do app.
-    invoke-static {p0, v0}, Llibs/ArqexIcon;->Bitmap(Landroid/content/Context;I)Landroid/graphics/Bitmap;
+    # Arqex: o atalho estava saindo com bitmap ofuscado (miniatura escura recortada
+    # pelo launcher). Usa o icone adaptativo do proprio app.
+    invoke-static {p0}, Llibs/ArqexIcon;->Icon(Landroid/content/Context;)Landroid/graphics/drawable/Icon;
 
     move-result-object v3
 
-    if-eqz p3, :arqex_shot_bmp
+    if-eqz v3, :arqex_shot_bmp
 
-    move-object p3, v3
-
-    :arqex_shot_bmp
     invoke-static {p3}, Landroid/graphics/drawable/Icon;->createWithAdaptiveBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
 
     move-result-object v3
+
+    :arqex_shot_bmp
 
     invoke-virtual {v2, v3}, Landroid/content/pm/ShortcutInfo$Builder;->setIcon(Landroid/graphics/drawable/Icon;)Landroid/content/pm/ShortcutInfo$Builder;
 

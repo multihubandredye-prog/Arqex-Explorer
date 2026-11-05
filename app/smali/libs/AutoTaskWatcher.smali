@@ -1142,11 +1142,16 @@
 
     iget-wide v4, v3, Llibs/d9;->Lambda:J
 
+    # Arqex: v6 e o "marcar como visto" do original (const/4 v6, 0x1). O flag de
+    # expansao de pasta vai em v7 para NAO zerar essa marca -- era isso que fazia
+    # a tarefa "ao detectar arquivo" copiar em loop.
+    const/4 v6, 0x1
+
     invoke-static {v3}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
-    move-result v6
+    move-result v7
 
-    invoke-static {v8, v9, v4, v5, v6}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
+    invoke-static {v8, v9, v4, v5, v7}, Llibs/AutoTaskWatcher;->collectItemsFromList(Ljava/util/List;ZJZ)Ljava/util/LinkedHashSet;
 
     move-result-object v8
 

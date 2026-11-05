@@ -595,10 +595,16 @@ check("16h. pasta com filtro por nome entra inteira (caminho automatico e manual
 _shot = open(os.path.join(SMALI, "libs", "ModernUiTheme$ShortcutApi26.smali"),
              encoding="utf-8").read()
 _icon = os.path.join(SMALI, "libs", "ArqexIcon.smali")
-check("16i. icone do atalho vem do icone do app (nao do bitmap ofuscado)", (
-      os.path.exists(_icon)
-      and "ArqexIcon;->Bitmap" in _shot
-      and "BitmapFactory;->decodeResource" in open(_icon, encoding="utf-8").read()))
+_icontxt = open(_icon, encoding="utf-8").read() if os.path.exists(_icon) else ""
+check("16i. icone do atalho vem do icone do app (adaptive, nao bitmap ofuscado)", (
+      "ArqexIcon;->Icon" in _shot
+      and "Icon;->createWithResource" in _icontxt))
+_caf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                   ".method private static checkAndFire") or ""
+check("16j. tarefa 'ao detectar arquivo' nao copia em loop (marca de visto preservada)", (
+      "const/4 v6, 0x1" in _caf
+      and "invoke-static {v0, v8, v6}, Llibs/AutoTaskWatcher;->syncSeenPrefs" in _caf
+      and "move-result v7" in _caf))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 
