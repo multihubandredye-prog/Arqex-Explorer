@@ -6508,9 +6508,13 @@
 
     move-object v3, v9
 
+    goto :arqex_filtrado
+
     :arqex_sem_pastas
 
     invoke-static {v7, v3}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
+
+    :arqex_filtrado
 
     if-nez v4, :cond_81
 

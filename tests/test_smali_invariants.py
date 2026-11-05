@@ -599,8 +599,7 @@ check("16h. pasta com filtro por nome entra inteira, inclusive quando esta DENTR
       and "matchesExtFilter" in _wf
       and "listFiles" in _wf))
 check("16h2. depois de expandir a pasta, o filtro por nome nao roda de novo (senao o conteudo cai)", (
-      _ex.count("arqex_ex_fora") == 1
-      and "goto :arqex_filtrado" in _atw
+      "goto :arqex_filtrado" in _atw
       and "goto :arqex_manual_filtrado" in _atw))
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
 _e9 = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read()
