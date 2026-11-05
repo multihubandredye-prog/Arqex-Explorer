@@ -5106,6 +5106,23 @@
 
     if-eqz p2, :cond_98
 
+    # Arqex beta.154: este e o ponto por onde o motor entrega os itens da tarefa.
+    # Com filtro por nome, troca a pasta de origem inteira pela pasta que casa.
+    const/4 v4, 0x0
+
+    const-wide/16 v5, 0x0
+
+    invoke-static {v1, p2, v4, v5, v6}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
+
+    move-result-object v3
+
+    if-eqz v3, :arqex_ob_fim_exp
+
+    invoke-interface {p2}, Ljava/util/Set;->clear()V
+
+    invoke-interface {p2, v3}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+
+    :arqex_ob_fim_exp
     invoke-static {v1, p2}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
     invoke-static {v1, p1, p2}, Llibs/ArqexLog;->run(Llibs/d9;ILjava/util/Collection;)V
