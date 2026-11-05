@@ -6311,6 +6311,9 @@
 
     :catchall_210
     :cond_210
+    # Arqex: as opcoes marcadas (nome/extensao/prefixo/notificacao) tambem vao para o backup
+    invoke-static {}, Llibs/ArqexBackup;->savePrefs()V
+
     return-void
 .end method
 
