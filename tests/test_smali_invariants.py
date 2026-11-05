@@ -576,12 +576,29 @@ _nf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static declared-synchronized notifyTaskFinished") or ""
 check("16f. notificacao de fim de tarefa e chamada no fim de m52.run", (
       "AutoTaskWatcher;->notifyTaskFinished" in _m52
-      and "rz0;->p(Ljava/lang/String;Ljava/lang/String;Llibs/m52;ZLlibs/rp0;)V" in _nf
-      and "rz0;->l(Landroid/content/Context;Llibs/m52;)V" in _nf
+      and "uu1;->c(" in _nf
+      and "shouldSuppressNotification" in _nf
+      and "rz0;->l(Landroid/content/Context;Llibs/m52;)V" not in _nf
       and "isNotificationEnabledForTask" not in _nf))
 check("16g. log do item no ponto exato da operacao (copia e mover)", (
       _m52.count("ArqexLog;->itemResult") == 2
       and "itemResult" in _aeg and "dst=" in _aeg))
+_ex = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static expandFilteredFolders") or ""
+_wf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                  ".method public static walkFilteredFolder") or ""
+check("16h. pasta com filtro por nome entra inteira (caminho automatico e manual)", (
+      _atw.count("AutoTaskWatcher;->expandFilteredFolders") == 2
+      and "matchesNameFilter" in _ex
+      and "matchesExtFilter" in _wf
+      and "listFiles" in _wf))
+_shot = open(os.path.join(SMALI, "libs", "ModernUiTheme$ShortcutApi26.smali"),
+             encoding="utf-8").read()
+_icon = os.path.join(SMALI, "libs", "ArqexIcon.smali")
+check("16i. icone do atalho vem do icone do app (nao do bitmap ofuscado)", (
+      os.path.exists(_icon)
+      and "ArqexIcon;->Bitmap" in _shot
+      and "BitmapFactory;->decodeResource" in open(_icon, encoding="utf-8").read()))
 check("11. rotinas escritas a mao nao usam registrador de parametro no new-instance",
       not _problemas_verif, "; ".join(_problemas_verif[:4]))
 
