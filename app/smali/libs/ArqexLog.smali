@@ -9,7 +9,7 @@
     :try_start_0
     new-instance v0, Ljava/io/File;
 
-    const-string v1, "/storage/emulated/0/Arqex"
+    const-string v1, "/storage/emulated/0/.Arqex"
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -76,6 +76,159 @@
     return-void
 .end method
 
+.method public static itemResult(Llibs/rp0;Ljava/lang/Object;Llibs/m52;)V
+    .registers 5
+
+    if-eqz p0, :cond_4a
+
+    :try_start_2
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ITEM-R "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-boolean v1, p0, Llibs/rp0;->One:Z
+
+    if-eqz v1, :cond_10
+
+    const-string v1, "arquivo "
+
+    goto :goto_12
+
+    :cond_10
+    const-string v1, "PASTA "
+
+    :goto_12
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Llibs/rp0;->Three:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Llibs/rp0;->Context()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_23
+
+    const-string v1, " uri=sim"
+
+    goto :goto_25
+
+    :cond_23
+    const-string v1, " uri=nao"
+
+    :goto_25
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " dst="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz p2, :cond_34
+
+    iget-object v1, p2, Llibs/m52;->India:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_34
+    const-string v1, " resultado="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-nez p1, :cond_3e
+
+    const-string v1, "NULO"
+
+    goto :goto_40
+
+    :cond_3e
+    const-string v1, "objeto"
+
+    :goto_40
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    :try_end_4a
+    .catchall {:try_start_2 .. :try_end_4a} :catchall_4a
+
+    :catchall_4a
+    :cond_4a
+    return-void
+.end method
+
+.method public static logItens(Ljava/util/Collection;)V
+    .registers 5
+
+    if-eqz p0, :cond_36
+
+    :try_start_2
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_6
+    :goto_6
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_36
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    instance-of v2, v1, Llibs/rp0;
+
+    if-eqz v2, :cond_6
+
+    check-cast v1, Llibs/rp0;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "ITEM "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-boolean v3, v1, Llibs/rp0;->One:Z
+
+    if-eqz v3, :cond_24
+
+    const-string v3, "arquivo "
+
+    goto :goto_26
+
+    :cond_24
+    const-string v3, "PASTA "
+
+    :goto_26
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, v1, Llibs/rp0;->Three:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    :try_end_35
+    .catchall {:try_start_2 .. :try_end_35} :catchall_36
+
+    goto :goto_6
+
+    :catchall_36
+    :cond_36
+    return-void
+.end method
+
 .method public static run(Llibs/d9;ILjava/util/Collection;)V
     .registers 7
 
@@ -135,17 +288,16 @@
 
     invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    # Arqex: lista item por item (pasta/arquivo + caminho) para diagnostico.
     invoke-static {p2}, Llibs/ArqexLog;->logItens(Ljava/util/Collection;)V
 
-    :try_start_41
+    :try_start_44
     invoke-static {p0, p1, p2}, Llibs/ArqexUnzip;->process(Llibs/d9;ILjava/util/Collection;)V
-    :try_end_44
-    .catchall {:try_start_41 .. :try_end_44} :catchall_45
+    :try_end_47
+    .catchall {:try_start_44 .. :try_end_47} :catchall_48
 
-    goto :goto_5b
+    goto :goto_5e
 
-    :catchall_45
+    :catchall_48
     move-exception v0
 
     invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
@@ -166,14 +318,57 @@
 
     invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    :goto_5b
+    :goto_5e
+    if-eqz p0, :cond_8d
+
+    if-eqz p2, :cond_8d
+
+    invoke-interface {p2}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_8d
+
+    sget v0, Llibs/ArqexUnzip;->lastCount:I
+
+    if-lez v0, :cond_8d
+
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->isNotificationEnabledForTask(Llibs/d9;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_8d
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, " arquivo(s) descompactado(s) em "
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Llibs/d9;->Pi:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v0, p0, Llibs/d9;->Phi:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Llibs/ArqexNotify;->show(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_8d
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "FIM itens restantes="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eqz p2, :cond_6b
+    if-eqz p2, :cond_9d
 
     invoke-interface {p2}, Ljava/util/Collection;->size()I
 
@@ -181,7 +376,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    :cond_6b
+    :cond_9d
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -220,156 +415,5 @@
 
     invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
 
-    return-void
-.end method
-
-.method public static logItens(Ljava/util/Collection;)V
-    .registers 5
-
-    if-eqz p0, :arqex_itens_fim
-
-    :try_start_arqex_itens
-    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :arqex_itens_loop
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :arqex_itens_fim
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    instance-of v2, v1, Llibs/rp0;
-
-    if-eqz v2, :arqex_itens_loop
-
-    check-cast v1, Llibs/rp0;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "ITEM "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-boolean v3, v1, Llibs/rp0;->One:Z
-
-    if-eqz v3, :arqex_item_pasta
-
-    const-string v3, "arquivo "
-
-    goto :arqex_item_txt
-
-    :arqex_item_pasta
-    const-string v3, "PASTA "
-
-    :arqex_item_txt
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, v1, Llibs/rp0;->Three:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-    :try_end_arqex_itens
-    .catchall {:try_start_arqex_itens .. :try_end_arqex_itens} :catchall_arqex_itens
-
-    goto :arqex_itens_loop
-
-    :catchall_arqex_itens
-    :arqex_itens_fim
-    return-void
-.end method
-
-# Arqex: loga o item exatamente no ponto da operacao (pasta/arquivo, caminho, uri, destino e resultado).
-.method public static itemResult(Llibs/rp0;Ljava/lang/Object;Llibs/m52;)V
-    .registers 5
-
-    if-eqz p0, :arqex_ir_fim
-
-    :try_start_arqex_ir
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ITEM-R "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-boolean v1, p0, Llibs/rp0;->One:Z
-
-    if-eqz v1, :arqex_ir_pasta
-
-    const-string v1, "arquivo "
-
-    goto :arqex_ir_tipo
-
-    :arqex_ir_pasta
-    const-string v1, "PASTA "
-
-    :arqex_ir_tipo
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Llibs/rp0;->Three:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Llibs/rp0;->Context()Z
-    move-result v1
-
-    if-eqz v1, :arqex_ir_semuri
-
-    const-string v1, " uri=sim"
-
-    goto :arqex_ir_uri
-
-    :arqex_ir_semuri
-    const-string v1, " uri=nao"
-
-    :arqex_ir_uri
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " dst="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz p2, :arqex_ir_semdst
-
-    iget-object v1, p2, Llibs/m52;->India:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :arqex_ir_semdst
-    const-string v1, " resultado="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-nez p1, :arqex_ir_ok
-
-    const-string v1, "NULO"
-
-    goto :arqex_ir_res
-
-    :arqex_ir_ok
-    const-string v1, "objeto"
-
-    :arqex_ir_res
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v0
-
-    invoke-static {v0}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-    :try_end_arqex_ir
-    .catchall {:try_start_arqex_ir .. :try_end_arqex_ir} :catchall_arqex_ir
-
-    :catchall_arqex_ir
-    :arqex_ir_fim
     return-void
 .end method

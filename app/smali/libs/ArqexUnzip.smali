@@ -7,6 +7,8 @@
 
 .field public static lastBox:Landroid/widget/CheckBox;
 
+.field public static lastCount:I
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -286,35 +288,39 @@
 .method public static process(Llibs/d9;ILjava/util/Collection;)V
     .registers 12
 
-    if-eqz p0, :cond_79
+    if-eqz p0, :cond_84
 
-    if-eqz p2, :cond_79
+    if-eqz p2, :cond_84
 
     invoke-static {p0}, Llibs/AutoTaskWatcher;->isUnzipEnabled(Llibs/d9;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_79
+    if-eqz v0, :cond_84
+
+    const/4 v2, 0x0
+
+    sput v2, Llibs/ArqexUnzip;->lastCount:I
 
     const/4 v2, 0x2
 
-    if-eq p1, v2, :cond_12
+    if-eq p1, v2, :cond_15
 
     const/4 v2, 0x0
 
     const/4 v1, 0x1
 
-    if-ne p1, v1, :cond_79
+    if-ne p1, v1, :cond_84
 
-    goto :goto_13
+    goto :goto_16
 
-    :cond_12
+    :cond_15
     const/4 v2, 0x1
 
-    :goto_13
+    :goto_16
     iget-object v0, p0, Llibs/d9;->Pi:Ljava/lang/String;
 
-    if-eqz v0, :cond_79
+    if-eqz v0, :cond_84
 
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -326,7 +332,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_79
+    if-eqz v1, :cond_84
 
     new-instance v3, Ljava/io/File;
 
@@ -336,13 +342,13 @@
 
     move-result-object v4
 
-    :cond_2c
-    :goto_2c
+    :cond_2f
+    :goto_2f
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_79
+    if-eqz v5, :cond_84
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -350,19 +356,19 @@
 
     instance-of v6, v5, Llibs/rp0;
 
-    if-eqz v6, :cond_2c
+    if-eqz v6, :cond_2f
 
     check-cast v5, Llibs/rp0;
 
     iget-boolean v6, v5, Llibs/rp0;->One:Z
 
-    if-nez v6, :cond_2c
+    if-nez v6, :cond_2f
 
     invoke-virtual {v5}, Llibs/rp0;->m()Ljava/lang/String;
 
     move-result-object v6
 
-    if-eqz v6, :cond_2c
+    if-eqz v6, :cond_2f
 
     sget-object v7, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -376,7 +382,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_2c
+    if-eqz v6, :cond_2f
 
     invoke-static {v5, v3}, Llibs/ArqexUnzip;->extract(Llibs/rp0;Ljava/io/File;)Z
 
@@ -386,13 +392,22 @@
 
     invoke-static {v7, v6, v0}, Llibs/ArqexLog;->zip(Ljava/lang/String;ZLjava/lang/String;)V
 
-    if-eqz v6, :cond_2c
+    if-eqz v6, :cond_68
 
-    if-eqz v2, :cond_75
+    sget v7, Llibs/ArqexUnzip;->lastCount:I
+
+    add-int/lit8 v7, v7, 0x1
+
+    sput v7, Llibs/ArqexUnzip;->lastCount:I
+
+    :cond_68
+    if-eqz v6, :cond_2f
+
+    if-eqz v2, :cond_80
 
     iget-object v6, v5, Llibs/rp0;->Three:Ljava/lang/String;
 
-    if-eqz v6, :cond_75
+    if-eqz v6, :cond_80
 
     const-string v7, "/"
 
@@ -400,7 +415,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_75
+    if-eqz v7, :cond_80
 
     new-instance v7, Ljava/io/File;
 
@@ -408,12 +423,12 @@
 
     invoke-virtual {v7}, Ljava/io/File;->delete()Z
 
-    :cond_75
+    :cond_80
     invoke-interface {v4}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_2c
+    goto :goto_2f
 
-    :cond_79
+    :cond_84
     return-void
 .end method
 

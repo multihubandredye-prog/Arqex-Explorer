@@ -560,7 +560,8 @@ check("16a. pastas vazias ocultas nao entram na lista quando os ocultos estao es
 _fnf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static filterByNameFilter") or ""
 check("16c. pasta nao e descartada pelo filtro por nome (pasta teste era ignorada)", (
-      "Pasta ou arquivo: decide pelo nome" in _fnf
+      "AutoTaskWatcher;->matchesNameFilter" in _fnf
+      and "Iterator;->remove" in _fnf
       and "rp0;->One:Z" not in _fnf))
 _e9l = method_body(os.path.join(SMALI, "libs", "e9.smali"),
                   ".method public static l(") or ""
@@ -590,21 +591,21 @@ _wf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static walkFilteredFolder") or ""
 _sc = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static scanChildFolders") or ""
+_ap = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                 ".method public static applyFilters") or ""
 check("16h. pasta com filtro por nome entra inteira, inclusive quando esta DENTRO da origem", (
-      _atw.count("AutoTaskWatcher;->expandFilteredFolders") == 4
+      "AutoTaskWatcher;->applyFilters" in _atw.split("onBeforeAutoTaskExecute(IILjava/util/Set;)V")[1][:1800]
+      and "Collection;->clear()V" in _ap
+      and "Collection;->addAll" in _ap
+      and "AutoTaskWatcher;->arqexScan" in _ex
+      and "AutoTaskWatcher;->filterTaskItems" in _ex
       and "matchesNameFilter" in _ex
-      and "AutoTaskWatcher;->scanChildFolders" in _ex
-      and "AutoTaskWatcher;->walkFilteredFolder" in _ex
-      and "Iterator;->remove" in _ex
-      and "matchesNameFilter" in _sc
-      and "AutoTaskWatcher;->walkFilteredFolder" in _sc
-      and "matchesExtFilter" in _wf
-      and "listFiles" in _wf
-      and "expandFilteredFolders" in _atw.split("onBeforeAutoTaskExecute(IILjava/util/Set;)V")[1][:1800]
-      and "Set;->clear()V" in _atw.split("onBeforeAutoTaskExecute(IILjava/util/Set;)V")[1][:1800]))
+      and "listFiles" in (method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
+                                      ".method public static arqexScan") or "")))
 check("16h2. depois de expandir a pasta, o filtro por nome nao roda de novo (senao o conteudo cai)", (
-      "goto :arqex_filtrado" in _atw
-      and "goto :arqex_manual_filtrado" in _atw))
+      _ap.count("AutoTaskWatcher;->filterTaskItems") == 1
+      and "AutoTaskWatcher;->expandFilteredFolders" in _ap
+      and _ap.index("expandFilteredFolders") < _ap.index("filterTaskItems")))
 _ms = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                   ".method public static matchesAnySegment") or ""
 check("16h3. filtro por nome mantem item que esta DENTRO da pasta filtrada (ultimo filtro do a92)", (
@@ -612,8 +613,10 @@ check("16h3. filtro por nome mantem item que esta DENTRO da pasta filtrada (ulti
       and "matchesNameFilter" in _ms
       and "split" in _ms))
 check("16k. notificacao de fim nao e descartada quando o id da tarefa nao resolve", (
-      "arqex_nf_tem_id" in _nf
-      and "m52;->Upsilon:I" in _nf))
+      "AutoTaskWatcher;->resolveAutoTaskIdForOperation" in _nf
+      and "m52;->Upsilon:I" in _nf
+      and "if-lez v0, :cond_29" in _nf
+      and "AutoTaskWatcher;->shouldSuppressNotification" in _nf))
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
 _e9 = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read()
 check("16i. 'Criar atalho' removido do dialogo e nenhum atalho e criado ao salvar a tarefa", (

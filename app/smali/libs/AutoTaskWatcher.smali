@@ -786,6 +786,31 @@
     return-void
 .end method
 
+.method public static applyFilters(Llibs/d9;Ljava/util/Collection;)V
+    .registers 6
+
+    const/4 v0, 0x0
+
+    const-wide/16 v1, 0x0
+
+    invoke-static {p0, p1, v0, v1, v2}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_10
+
+    invoke-interface {p1}, Ljava/util/Collection;->clear()V
+
+    invoke-interface {p1, v0}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+
+    return-void
+
+    :cond_10
+    invoke-static {p0, p1}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
+
+    return-void
+.end method
+
 .method public static declared-synchronized applyPrefixToRenamePattern(ILjava/lang/String;)Ljava/lang/String;
     .registers 6
 
@@ -873,6 +898,71 @@
 
     :catchall_4b
     return-object p1
+.end method
+
+.method public static arqexScan(Ljava/io/File;Ljava/lang/String;Ljava/util/LinkedHashSet;I)V
+    .registers 11
+
+    if-ltz p3, :cond_34
+
+    invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_34
+
+    array-length v1, v0
+
+    const/4 v2, 0x0
+
+    :goto_a
+    if-ge v2, v1, :cond_34
+
+    aget-object v3, v0, v2
+
+    invoke-virtual {v3}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4, p1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_26
+
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_31
+
+    invoke-virtual {p2, v5}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
+
+    goto :goto_31
+
+    :cond_26
+    invoke-virtual {v3}, Ljava/io/File;->isDirectory()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_31
+
+    add-int/lit8 v5, p3, -0x1
+
+    invoke-static {v3, p1, p2, v5}, Llibs/AutoTaskWatcher;->arqexScan(Ljava/io/File;Ljava/lang/String;Ljava/util/LinkedHashSet;I)V
+
+    :cond_31
+    :goto_31
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_a
+
+    :cond_34
+    return-void
 .end method
 
 .method public static declared-synchronized bindIntervalCombo(Lcom/mixplorer/widgets/MiCombo;Landroid/view/View;Llibs/d9;)V
@@ -1034,7 +1124,7 @@
 
     cmp-long v0, v4, v6
 
-    if-nez v0, :cond_be
+    if-nez v0, :cond_ce
 
     iget v0, p0, Llibs/d9;->One:I
 
@@ -1062,9 +1152,6 @@
 
     iget-wide v4, p0, Llibs/d9;->Lambda:J
 
-    # Arqex: expandir pastas nos filhos SO quando "Apenas arquivos da pasta"
-    # esta marcado. Antes vinha fixo em 1, entao a pasta em si nunca entrava
-    # na lista e nao era copiada (so os arquivos de dentro).
     invoke-static {p0}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
     move-result v3
@@ -1087,16 +1174,16 @@
 
     move-result v8
 
-    if-eqz v8, :cond_39
+    if-eqz v8, :cond_3c
 
     return-void
 
-    :cond_39
+    :cond_3c
     invoke-static {v3}, Llibs/AutoTaskWatcher;->hasFreshZeroByteFile(Ljava/util/Collection;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_45
+    if-eqz v3, :cond_48
 
     const-wide/16 v4, 0x5dc
 
@@ -1104,7 +1191,7 @@
 
     return-void
 
-    :cond_45
+    :cond_48
     invoke-static {v1}, Llibs/AutoTaskWatcher;->snapshotStamps(Ljava/util/Collection;)Ljava/util/HashMap;
 
     move-result-object v1
@@ -1121,30 +1208,27 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_be
+    if-eqz v3, :cond_ce
 
     iget-wide v4, v3, Llibs/d9;->Mu:J
 
     cmp-long v8, v4, v6
 
-    if-nez v8, :cond_be
+    if-nez v8, :cond_ce
 
     iget v8, v3, Llibs/d9;->One:I
 
-    if-lez v8, :cond_63
+    if-lez v8, :cond_66
 
     return-void
 
-    :cond_63
+    :cond_66
     iget-object v8, v3, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
     iget-boolean v9, v3, Llibs/d9;->Sigma:Z
 
     iget-wide v4, v3, Llibs/d9;->Lambda:J
 
-    # Arqex: v6 e o "marcar como visto" do original (const/4 v6, 0x1). O flag de
-    # expansao de pasta vai em v7 para NAO zerar essa marca -- era isso que fazia
-    # a tarefa "ao detectar arquivo" copiar em loop.
     const/4 v6, 0x1
 
     invoke-static {v3}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
@@ -1155,18 +1239,17 @@
 
     move-result-object v8
 
-    # Arqex: mesmo filtro por nome dos outros caminhos (senao a pasta de origem inteira seria copiada)
-    if-eqz v7, :arqex_caf_sem_exp
+    if-eqz v7, :cond_7e
 
     invoke-static {v3, v8, v9, v4, v5}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
 
     move-result-object v5
 
-    if-eqz v5, :arqex_caf_sem_exp
+    if-eqz v5, :cond_7e
 
     move-object v8, v5
 
-    :arqex_caf_sem_exp
+    :cond_7e
     invoke-static {v3, v8}, Llibs/AutoTaskWatcher;->filterRenamePrefixed(Llibs/d9;Ljava/util/LinkedHashSet;)V
 
     invoke-static {v3, v8}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
@@ -1179,33 +1262,16 @@
 
     move-result v9
 
-    if-eqz v9, :cond_7f
+    if-eqz v9, :cond_8f
 
     return-void
 
-    :cond_7f
+    :cond_8f
     invoke-static {v2}, Llibs/AutoTaskWatcher;->hasFreshZeroByteFile(Ljava/util/Collection;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_8b
-
-    const-wide/16 v4, 0x4b0
-
-    invoke-static {v0, v4, v5}, Llibs/AutoTaskWatcher;->scheduleTrigger(IJ)V
-
-    return-void
-
-    :cond_8b
-    invoke-static {v8}, Llibs/AutoTaskWatcher;->snapshotStamps(Ljava/util/Collection;)Ljava/util/HashMap;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_9b
+    if-eqz v2, :cond_9b
 
     const-wide/16 v4, 0x4b0
 
@@ -1214,27 +1280,44 @@
     return-void
 
     :cond_9b
+    invoke-static {v8}, Llibs/AutoTaskWatcher;->snapshotStamps(Ljava/util/Collection;)Ljava/util/HashMap;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_ab
+
+    const-wide/16 v4, 0x4b0
+
+    invoke-static {v0, v4, v5}, Llibs/AutoTaskWatcher;->scheduleTrigger(IJ)V
+
+    return-void
+
+    :cond_ab
     invoke-static {v0}, Llibs/AutoTaskWatcher;->markTaskFiring(I)Z
 
     move-result v1
 
-    if-nez v1, :cond_a2
+    if-nez v1, :cond_b2
 
     return-void
 
-    :cond_a2
+    :cond_b2
     invoke-static {v3}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
     move-result v1
 
-    if-nez v1, :cond_ac
+    if-nez v1, :cond_bc
 
     invoke-static {v3}, Llibs/AutoTaskWatcher;->hasTaskExtFilter(Llibs/d9;)Z
 
     move-result v1
 
-    :cond_ac
-    if-eqz v1, :cond_b8
+    :cond_bc
+    if-eqz v1, :cond_c8
 
     const-string v1, "SYNC"
 
@@ -1244,18 +1327,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_bb
+    if-eqz v1, :cond_cb
 
-    :cond_b8
+    :cond_c8
     invoke-static {v0, v8, v6}, Llibs/AutoTaskWatcher;->syncSeenPrefs(ILjava/util/Collection;Z)Ljava/util/LinkedHashSet;
 
-    :cond_bb
+    :cond_cb
     invoke-static {v3}, Llibs/e9;->f(Llibs/d9;)V
-    :try_end_be
-    .catchall {:try_start_3 .. :try_end_be} :catchall_be
+    :try_end_ce
+    .catchall {:try_start_3 .. :try_end_ce} :catchall_ce
 
-    :catchall_be
-    :cond_be
+    :catchall_ce
+    :cond_ce
     return-void
 .end method
 
@@ -1881,6 +1964,105 @@
     return-void
 .end method
 
+.method public static expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
+    .registers 13
+
+    if-eqz p0, :cond_57
+
+    if-eqz p1, :cond_57
+
+    invoke-static {p0}, Llibs/AutoTaskWatcher;->getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_57
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_57
+
+    new-instance v0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_19
+    :goto_19
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_53
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    instance-of v4, v3, Llibs/rp0;
+
+    if-eqz v4, :cond_19
+
+    check-cast v3, Llibs/rp0;
+
+    iget-object v4, v3, Llibs/rp0;->Three:Ljava/lang/String;
+
+    if-eqz v4, :cond_4f
+
+    const-string v5, "/"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_4f
+
+    new-instance v5, Ljava/io/File;
+
+    invoke-direct {v5, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Ljava/io/File;->isDirectory()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4f
+
+    invoke-virtual {v3}, Llibs/rp0;->m()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6, v1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_4f
+
+    const/4 v7, 0x4
+
+    invoke-static {v5, v1, v0, v7}, Llibs/AutoTaskWatcher;->arqexScan(Ljava/io/File;Ljava/lang/String;Ljava/util/LinkedHashSet;I)V
+
+    goto :goto_19
+
+    :cond_4f
+    invoke-virtual {v0, v3}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
+
+    goto :goto_19
+
+    :cond_53
+    invoke-static {p0, v0}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
+
+    return-object v0
+
+    :cond_57
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method private static extractIntentSources(Landroid/content/Intent;Llibs/d9;)Ljava/util/List;
     .registers 5
 
@@ -2133,9 +2315,9 @@
 .method public static filterByNameFilter(Llibs/d9;Ljava/util/Collection;)V
     .registers 6
 
-    if-eqz p0, :cond_3d
+    if-eqz p0, :cond_42
 
-    if-eqz p1, :cond_3d
+    if-eqz p1, :cond_42
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
@@ -2150,7 +2332,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_42
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
@@ -2171,7 +2353,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_42
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2179,13 +2361,11 @@
 
     check-cast v2, Llibs/rp0;
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_3e
 
-    # Pasta ou arquivo: decide pelo nome, igual para os dois. Antes a pasta era
-    # sempre descartada aqui, e era por isso que a pasta "teste" nunca era copiada.
-    goto :cond_2f
+    goto :goto_2b
 
-    :cond_2f
+    :goto_2b
     move-object v3, v2
 
     invoke-virtual {v2}, Llibs/rp0;->m()Ljava/lang/String;
@@ -2196,31 +2376,22 @@
 
     move-result v2
 
-    if-nez v2, :arqex_fbf_seg
+    if-nez v2, :cond_1c
 
-    goto :cond_1c
-
-    # Arqex: o nome do item nao bateu, mas ele pode estar DENTRO da pasta filtrada
-    # (Download/Teste/arquivo): nesse caso o caminho tem o trecho "Teste" e o item fica.
-    :arqex_fbf_seg
     iget-object v3, v3, Llibs/rp0;->Three:Ljava/lang/String;
 
     invoke-static {v3, v0}, Llibs/AutoTaskWatcher;->matchesAnySegment(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-nez v2, :cond_1c
 
-    goto :cond_1c
-
-
-    :cond_39
-    :goto_39
+    :cond_3e
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_1c
 
-    :cond_3d
+    :cond_42
     return-void
 .end method
 
@@ -4328,52 +4499,49 @@
 .method public static isSameTask(Llibs/d9;Llibs/d9;)Z
     .registers 4
 
-    # Arqex: mesma tarefa = mesmo id OU mesmo titulo (d9->Phi).
-    # Sem a comparacao de titulo, salvar uma tarefa sem mudar o nome caia no
-    # laco de nome unico do dialogo e virava "Teste2".
     const/4 v0, 0x0
 
-    if-eqz p0, :arqex_same_fim
+    if-eqz p0, :cond_1e
 
-    if-eqz p1, :arqex_same_fim
+    if-eqz p1, :cond_1e
 
     iget v0, p0, Llibs/d9;->Y:I
 
     iget v1, p1, Llibs/d9;->Y:I
 
-    if-ne v0, v1, :arqex_same_sim
+    if-ne v0, v1, :cond_1d
 
-    :try_start_arqex_same
+    :try_start_b
     iget-object v0, p0, Llibs/d9;->Phi:Ljava/lang/String;
 
     iget-object v1, p1, Llibs/d9;->Phi:Ljava/lang/String;
 
-    if-eqz v0, :arqex_same_nao
+    if-eqz v0, :cond_19
 
-    if-eqz v1, :arqex_same_nao
+    if-eqz v1, :cond_19
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :arqex_same_sim
-    :try_end_arqex_same
-    .catchall {:try_start_arqex_same .. :try_end_arqex_same} :catchall_arqex_same
+    if-eqz v0, :cond_1d
+    :try_end_19
+    .catchall {:try_start_b .. :try_end_19} :catchall_1b
 
-    :arqex_same_nao
+    :cond_19
     const/4 v0, 0x0
 
     return v0
 
-    :catchall_arqex_same
+    :catchall_1b
     const/4 v0, 0x0
 
     return v0
 
-    :arqex_same_sim
+    :cond_1d
     const/4 v0, 0x1
 
-    :arqex_same_fim
+    :cond_1e
     return v0
 .end method
 
@@ -4790,6 +4958,55 @@
     return v0
 .end method
 
+.method public static matchesAnySegment(Ljava/lang/String;Ljava/lang/String;)Z
+    .registers 8
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_22
+
+    if-eqz p1, :cond_22
+
+    const-string v1, "/"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    :goto_c
+    array-length v3, v1
+
+    if-ge v2, v3, :cond_22
+
+    aget-object v3, v1, v2
+
+    invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_1f
+
+    invoke-static {v3, p1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1f
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_1f
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_c
+
+    :cond_22
+    return v0
+.end method
+
 .method public static matchesExtFilter(Ljava/lang/String;Ljava/lang/String;)Z
     .registers 10
 
@@ -5071,6 +5288,191 @@
     return-object v0
 .end method
 
+.method public static declared-synchronized notifyTaskFinished(Llibs/m52;)V
+    .registers 30
+
+    move-object/from16 v8, p0
+
+    if-eqz v8, :cond_b1
+
+    :try_start_4
+    invoke-static {v8}, Llibs/AutoTaskWatcher;->resolveAutoTaskIdForOperation(Llibs/m52;)I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "FIM op="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v2, v8, Llibs/m52;->Upsilon:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " tarefa_id="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    if-lez v0, :cond_29
+
+    iget v0, v8, Llibs/m52;->Upsilon:I
+
+    if-lez v0, :cond_b1
+
+    :cond_29
+    invoke-static {v8}, Llibs/AutoTaskWatcher;->shouldSuppressNotification(Llibs/m52;)Z
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "NOTIF suprimida="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    if-eqz v1, :cond_b1
+
+    sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
+
+    if-nez v2, :cond_b1
+
+    invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "en"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5d
+
+    const-string v4, "es"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_62
+
+    const-string v3, "Tarefa conclu\u00edda"
+
+    const-string v4, "Opera\u00e7\u00e3o conclu\u00edda"
+
+    goto :goto_66
+
+    :cond_5d
+    const-string v3, "Task finished"
+
+    const-string v4, "Operation completed"
+
+    goto :goto_66
+
+    :cond_62
+    const-string v3, "Tarea finalizada"
+
+    const-string v4, "Operaci\u00f3n completada"
+
+    :goto_66
+    new-instance v5, Landroid/content/Intent;
+
+    const-class v6, Lcom/mixplorer/activities/BrowseActivity;
+
+    invoke-direct {v5, v2, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-static {}, Llibs/zt0;->k()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    const/high16 v6, 0x40000000    # 2.0f
+
+    invoke-static {v6}, Llibs/sw1;->a(I)I
+
+    move-result v6
+
+    invoke-static {v2, v0, v5, v6}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v7
+
+    const/4 v9, 0x0
+
+    const-string v10, ""
+
+    move-object/from16 v11, v2
+
+    move/from16 v12, v0
+
+    move-object/from16 v13, v3
+
+    move-object/from16 v14, v4
+
+    move-object/from16 v15, v9
+
+    move-object/from16 v16, v10
+
+    move/from16 v17, v9
+
+    move/from16 v18, v9
+
+    move/from16 v19, v9
+
+    move-object/from16 v20, v7
+
+    move/from16 v21, v9
+
+    const/16 v22, 0x1
+
+    move/from16 v23, v22
+
+    const-string v24, "CH_COMMON"
+
+    invoke-static/range {v11 .. v24}, Llibs/uu1;->c(Landroid/content/Context;ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;ZZZLandroid/app/PendingIntent;IZZLjava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    if-nez v9, :cond_ac
+
+    invoke-static {v0, v9}, Llibs/uu1;->j(ILjava/lang/Object;)V
+
+    const-string v1, "NOTIF postada"
+
+    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    goto :goto_b1
+
+    :cond_ac
+    const-string v1, "NOTIF nao postada (uu1 devolveu null)"
+
+    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+    :try_end_b1
+    .catchall {:try_start_4 .. :try_end_b1} :catchall_b1
+
+    :catchall_b1
+    :cond_b1
+    :goto_b1
+    return-void
+.end method
+
 .method public static declared-synchronized onBeforeAutoTaskExecute(IILjava/util/Set;)V
     .registers 10
 
@@ -5106,24 +5508,7 @@
 
     if-eqz p2, :cond_98
 
-    # Arqex beta.154: este e o ponto por onde o motor entrega os itens da tarefa.
-    # Com filtro por nome, troca a pasta de origem inteira pela pasta que casa.
-    const/4 v4, 0x0
-
-    const-wide/16 v5, 0x0
-
-    invoke-static {v1, p2, v4, v5, v6}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
-
-    move-result-object v3
-
-    if-eqz v3, :arqex_ob_fim_exp
-
-    invoke-interface {p2}, Ljava/util/Set;->clear()V
-
-    invoke-interface {p2, v3}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
-
-    :arqex_ob_fim_exp
-    invoke-static {v1, p2}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
+    invoke-static {v1, p2}, Llibs/AutoTaskWatcher;->applyFilters(Llibs/d9;Ljava/util/Collection;)V
 
     invoke-static {v1, p1, p2}, Llibs/ArqexLog;->run(Llibs/d9;ILjava/util/Collection;)V
 
@@ -6498,13 +6883,13 @@
     :goto_54
     const/4 v6, 0x1
 
-    if-nez v5, :cond_6d
+    if-nez v5, :cond_79
 
-    if-eqz v4, :cond_a4
+    if-eqz v4, :cond_c6
 
-    if-nez v2, :cond_a4
+    if-nez v2, :cond_c6
 
-    if-eqz v3, :cond_a4
+    if-eqz v3, :cond_c6
 
     iget-object v2, v3, Llibs/d9;->Omicron:Ljava/util/ArrayList;
 
@@ -6516,24 +6901,36 @@
 
     move-result-object v2
 
+    invoke-static {v3, v2, p1, p2, p3}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
+
+    move-result-object v9
+
+    if-eqz v9, :cond_6f
+
+    move-object v2, v9
+
+    goto :goto_72
+
+    :cond_6f
     invoke-static {v3, v2}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
+    :goto_72
     invoke-static {v1}, Llibs/AutoTaskWatcher;->consumeManualPlay(I)Z
 
     invoke-static {v1, v2, v6}, Llibs/AutoTaskWatcher;->syncSeenPrefs(ILjava/util/Collection;Z)Ljava/util/LinkedHashSet;
 
     return-object v0
 
-    :cond_6d
+    :cond_79
     invoke-static {p0, v3}, Llibs/AutoTaskWatcher;->extractIntentSources(Landroid/content/Intent;Llibs/d9;)Ljava/util/List;
 
     move-result-object v3
 
-    if-nez v3, :cond_74
+    if-nez v3, :cond_80
 
     return-object v0
 
-    :cond_74
+    :cond_80
     invoke-static {v7}, Llibs/AutoTaskWatcher;->isOnlyFolderFiles(Llibs/d9;)Z
 
     move-result v8
@@ -6542,34 +6939,41 @@
 
     move-result-object v3
 
-    # Arqex: "Apenas arquivos da pasta" desmarcado -> a pasta inteira precisa entrar.
-    # O caminho de arquivos descarta a pasta, entao aqui a pasta com o nome filtrado
-    # e resgatada e o filtro por nome/extensao passa a ser aplicado dentro dela.
-    if-eqz v8, :arqex_sem_pastas
+    if-eqz v8, :cond_92
 
     invoke-static {v7, v3, p1, p2, p3}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
 
     move-result-object v9
 
-    if-eqz v9, :arqex_filtrado
+    if-eqz v9, :cond_9d
 
     move-object v3, v9
 
-    goto :arqex_filtrado
+    goto :goto_9d
 
-    :arqex_sem_pastas
+    :cond_92
+    invoke-static {v7, v3, p1, p2, p3}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
 
+    move-result-object v9
+
+    if-eqz v9, :cond_9a
+
+    move-object v3, v9
+
+    goto :goto_9d
+
+    :cond_9a
     invoke-static {v7, v3}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
-    :arqex_filtrado
-
-    if-nez v4, :cond_81
+    :cond_9d
+    :goto_9d
+    if-nez v4, :cond_a3
 
     invoke-static {v1}, Llibs/AutoTaskWatcher;->consumeManualPlay(I)Z
 
     return-object v3
 
-    :cond_81
+    :cond_a3
     invoke-static {v1}, Llibs/AutoTaskWatcher;->consumeManualPlay(I)Z
 
     move-result v5
@@ -6578,11 +6982,11 @@
 
     move-result-object v1
 
-    if-eqz v5, :cond_8c
+    if-eqz v5, :cond_ae
 
     return-object v3
 
-    :cond_8c
+    :cond_ae
     const-string v4, "task"
 
     invoke-virtual {p0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -6593,31 +6997,31 @@
 
     move-result v4
 
-    if-eqz v4, :cond_99
+    if-eqz v4, :cond_bb
 
     return-object v3
 
-    :cond_99
-    if-eqz v2, :cond_9c
+    :cond_bb
+    if-eqz v2, :cond_be
 
     return-object v1
 
-    :cond_9c
+    :cond_be
     invoke-virtual {v1}, Ljava/util/AbstractCollection;->isEmpty()Z
 
     move-result v2
-    :try_end_a0
-    .catchall {:try_start_4 .. :try_end_a0} :catchall_a4
+    :try_end_c2
+    .catchall {:try_start_4 .. :try_end_c2} :catchall_c6
 
-    if-eqz v2, :cond_a3
+    if-eqz v2, :cond_c5
 
     return-object v3
 
-    :cond_a3
+    :cond_c5
     return-object v1
 
-    :catchall_a4
-    :cond_a4
+    :catchall_c6
+    :cond_c6
     return-object v0
 .end method
 
@@ -6934,6 +7338,130 @@
 
     :catchall_2a
     :cond_2a
+    return-void
+.end method
+
+.method public static scanChildFolders(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
+    .registers 12
+
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v0
+
+    if-nez v0, :cond_74
+
+    const/4 v1, 0x0
+
+    :goto_c
+    array-length v6, v0
+
+    if-ge v1, v6, :cond_74
+
+    aget-object v2, v0, v1
+
+    if-nez v2, :cond_71
+
+    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3, p1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_71
+
+    invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
+
+    move-result v6
+
+    if-nez v6, :cond_45
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4, v4, p2, p3}, Llibs/AutoTaskWatcher;->walkFilteredFolder(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
+
+    invoke-static {v4}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_33
+
+    invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
+    :cond_33
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v7, "PASTA-OK "
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    goto :goto_71
+
+    :cond_45
+    if-nez p2, :cond_53
+
+    invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_53
+
+    invoke-static {v3, p2}, Llibs/AutoTaskWatcher;->matchesExtFilter(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_71
+
+    :cond_53
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_60
+
+    invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
+    :cond_60
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v7, "ARQUIVO-OK "
+
+    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    :cond_71
+    :goto_71
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_c
+
+    :cond_74
     return-void
 .end method
 
@@ -7588,7 +8116,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_36
 
     :cond_f
     iget-object v0, p0, Llibs/d9;->Omicron:Ljava/util/ArrayList;
@@ -7605,37 +8133,37 @@
 
     move-result-object v0
 
-    if-eqz v4, :arqex_manual_sem_pastas
+    if-eqz v4, :cond_27
 
     invoke-static {p0, v0, v1, v2, v3}, Llibs/AutoTaskWatcher;->expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
 
     move-result-object v5
 
-    if-eqz v5, :arqex_manual_filtrado
+    if-eqz v5, :cond_2a
 
     move-object v0, v5
 
-    goto :arqex_manual_filtrado
+    goto :goto_2a
 
-    :arqex_manual_sem_pastas
+    :cond_27
     invoke-static {p0, v0}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
 
-    :arqex_manual_filtrado
-
-    if-eqz v0, :cond_25
+    :cond_2a
+    :goto_2a
+    if-eqz v0, :cond_32
 
     invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_36
 
-    :cond_25
+    :cond_32
     invoke-static {}, Llibs/SmartFeaturesV116;->showNoMatchingTaskFilesToast()V
 
     return-void
 
-    :cond_29
+    :cond_36
     iget v0, p0, Llibs/d9;->Y:I
 
     invoke-static {v0}, Llibs/AutoTaskWatcher;->markManualPlay(I)V
@@ -7645,10 +8173,10 @@
     const-wide/16 v0, 0x15e
 
     invoke-static {v0, v1}, Llibs/SmartFeaturesV116;->scheduleAutoRefreshOpenTabs(J)V
-    :try_end_36
-    .catchall {:try_start_3 .. :try_end_36} :catchall_36
+    :try_end_43
+    .catchall {:try_start_3 .. :try_end_43} :catchall_43
 
-    :catchall_36
+    :catchall_43
     return-void
 .end method
 
@@ -7948,563 +8476,117 @@
     return-void
 .end method
 
-# Arqex: aplica o filtro por nome as PASTAS da colecao.
-# Se a origem nao casa com o filtro (ex.: origem Download, filtro "Teste"), ela NAO e
-# copiada: procura dentro dela a pasta/arquivo que casa e coloca so isso na copia.
-.method public static expandFilteredFolders(Llibs/d9;Ljava/util/Collection;ZJ)Ljava/util/LinkedHashSet;
-    .registers 20
-
-    move-object/from16 v14, p0
-
-    move-object/from16 v13, p1
-
-    invoke-static {v14}, Llibs/AutoTaskWatcher;->getTaskNameFilter(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v1, :arqex_ex_nada
-
-    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :arqex_ex_nada
-
-    invoke-static {v14}, Llibs/AutoTaskWatcher;->getTaskExtFilter(Llibs/d9;)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v0, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
-
-    if-nez v13, :arqex_ex_fim
-
-    invoke-interface {v13}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :arqex_ex_loop
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :arqex_ex_fim
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    if-nez v5, :arqex_ex_loop
-
-    instance-of v4, v5, Llibs/rp0;
-
-    if-eqz v4, :arqex_ex_loop
-
-    check-cast v5, Llibs/rp0;
-
-    iget-object v6, v5, Llibs/rp0;->Three:Ljava/lang/String;
-
-    if-nez v6, :arqex_ex_loop
-
-    const-string v4, "/"
-
-    invoke-virtual {v6, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :arqex_ex_loop
-
-    new-instance v7, Ljava/io/File;
-
-    invoke-direct {v7, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7}, Ljava/io/File;->isDirectory()Z
-
-    move-result v4
-
-    if-nez v4, :arqex_ex_loop
-
-    invoke-virtual {v7}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8, v1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v4
-
-    invoke-interface {v2}, Ljava/util/Iterator;->remove()V
-
-    if-nez v4, :arqex_ex_fora
-
-    # a pasta casa com o filtro: entra inteira (subpastas e arquivos)
-    invoke-static {v6, v6, v3, v0}, Llibs/AutoTaskWatcher;->walkFilteredFolder(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
-
-    invoke-static {v6}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
-
-    move-result-object v9
-
-    if-eqz v9, :arqex_ex_log_ok
-
-    invoke-virtual {v0, v9}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    const-string v12, "PASTA-OK "
-
-    invoke-direct {v9, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    :arqex_ex_log_ok
-    goto :arqex_ex_loop
-
-    :arqex_ex_fora
-    # a pasta NAO casa: ela nao vai para a copia; procura o filtro dentro dela
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    const-string v12, "PASTA-FORA "
-
-    invoke-direct {v9, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v12, " (procurando dentro)"
-
-    invoke-virtual {v9, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    invoke-static {v6, v1, v3, v0}, Llibs/AutoTaskWatcher;->scanChildFolders(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
-
-    goto :arqex_ex_loop
-
-    :arqex_ex_fim
-    invoke-static {v14, v0}, Llibs/AutoTaskWatcher;->filterTaskItems(Llibs/d9;Ljava/util/Collection;)V
-
-    invoke-static {v0}, Llibs/ArqexLog;->logItens(Ljava/util/Collection;)V
-
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
-
-    move-result v4
-
-    if-nez v4, :arqex_ex_tem
-
-    const-string v4, "SEM MATCH: nada com esse nome nas origens"
-
-    invoke-static {v4}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    :arqex_ex_tem
-    return-object v0
-
-    :arqex_ex_nada
-    const/4 v0, 0x0
-    return-object v0
-.end method
-
-# Arqex: coleta recursiva do conteudo de uma pasta que passou no filtro por nome.
 .method public static walkFilteredFolder(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
     .registers 15
 
     new-instance v0, Ljava/io/File;
+
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
     move-result-object v0
 
-    if-nez v0, :arqex_wf_fim
+    if-nez v0, :cond_62
 
     const/4 v1, 0x0
-    :arqex_wf_loop
+
+    :goto_c
     array-length v6, v0
-    if-ge v1, v6, :arqex_wf_fim
+
+    if-ge v1, v6, :cond_62
 
     aget-object v2, v0, v1
-    if-nez v2, :arqex_wf_next
+
+    if-nez v2, :cond_5f
 
     invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
     move-result-object v3
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
+
     move-result v6
+
     invoke-virtual {p1}, Ljava/lang/String;->length()I
+
     move-result v7
 
-    if-lt v6, v7, :arqex_wf_semrel
+    if-lt v6, v7, :cond_33
 
     invoke-virtual {v3, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
     move-result-object v4
 
     const-string v8, "/"
+
     invoke-virtual {v4, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
     move-result v6
 
-    if-eqz v6, :arqex_wf_relok
+    if-eqz v6, :cond_32
 
     const/4 v6, 0x1
+
     invoke-virtual {v4, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
     move-result-object v4
 
-    :arqex_wf_relok
-    goto :arqex_wf_relfim
+    :cond_32
+    goto :goto_37
 
-    :arqex_wf_semrel
+    :cond_33
     invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
+
     move-result-object v4
 
-    :arqex_wf_relfim
+    :goto_37
     invoke-static {v3}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
+
     move-result-object v5
 
-    if-eqz v5, :arqex_wf_next
+    if-eqz v5, :cond_5f
 
     invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
+
     move-result v6
 
-    if-nez v6, :arqex_wf_arquivo
+    if-nez v6, :cond_4a
 
     invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
     invoke-static {v3, p1, p2, p3}, Llibs/AutoTaskWatcher;->walkFilteredFolder(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
 
-    goto :arqex_wf_next
+    goto :goto_5f
 
-    :arqex_wf_arquivo
-    if-nez p2, :arqex_wf_add
+    :cond_4a
+    if-nez p2, :cond_5c
 
     invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
+
     move-result v6
 
-    if-eqz v6, :arqex_wf_add
+    if-eqz v6, :cond_5c
 
     invoke-virtual {v5}, Llibs/rp0;->m()Ljava/lang/String;
+
     move-result-object v8
 
     invoke-static {v8, p2}, Llibs/AutoTaskWatcher;->matchesExtFilter(Ljava/lang/String;Ljava/lang/String;)Z
+
     move-result v6
 
-    if-eqz v6, :arqex_wf_next
+    if-eqz v6, :cond_5f
 
-    :arqex_wf_add
+    :cond_5c
     invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    :arqex_wf_next
-    add-int/lit8 v1, v1, 0x1
-    goto :arqex_wf_loop
-
-    :arqex_wf_fim
-    return-void
-.end method
-
-# Arqex: notificacao de fim de processo, postada direto (nao depende de servico nem de progresso).
-.method public static declared-synchronized notifyTaskFinished(Llibs/m52;)V
-    .registers 30
-
-    move-object/from16 v8, p0
-
-    if-eqz v8, :arqex_nf_fim
-
-    :try_start_arqex_nf
-    invoke-static {v8}, Llibs/AutoTaskWatcher;->resolveAutoTaskIdForOperation(Llibs/m52;)I
-    move-result v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-    const-string v2, "FIM op="
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-    iget v2, v8, Llibs/m52;->Upsilon:I
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-    const-string v2, " tarefa_id="
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v1
-    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    if-lez v0, :arqex_nf_tem_id
-
-    # Arqex: sem id de tarefa (tarefa removida ou disparo por outro caminho) o aviso
-    # de fim nao saia. Agora usa o id da operacao e notifica mesmo assim.
-    iget v0, v8, Llibs/m52;->Upsilon:I
-
-    if-lez v0, :arqex_nf_fim
-
-    :arqex_nf_tem_id
-    invoke-static {v8}, Llibs/AutoTaskWatcher;->shouldSuppressNotification(Llibs/m52;)Z
-    move-result v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-    const-string v3, "NOTIF suprimida="
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v2
-    invoke-static {v2}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    if-eqz v1, :arqex_nf_fim
-
-    sget-object v2, Llibs/zt0;->g:Landroid/content/Context;
-    if-nez v2, :arqex_nf_fim
-
-    invoke-static {}, Llibs/AutoTaskWatcher;->getLangCode()Ljava/lang/String;
-    move-result-object v3
-    const-string v4, "en"
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    move-result v4
-    if-eqz v4, :arqex_nf_en
-
-    const-string v4, "es"
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    move-result v4
-    if-eqz v4, :arqex_nf_es
-
-    const-string v3, "Tarefa conclu\u00edda"
-    const-string v4, "Opera\u00e7\u00e3o conclu\u00edda"
-    goto :arqex_nf_txt
-
-    :arqex_nf_en
-    const-string v3, "Task finished"
-    const-string v4, "Operation completed"
-    goto :arqex_nf_txt
-
-    :arqex_nf_es
-    const-string v3, "Tarea finalizada"
-    const-string v4, "Operaci\u00f3n completada"
-
-    :arqex_nf_txt
-    new-instance v5, Landroid/content/Intent;
-    const-class v6, Lcom/mixplorer/activities/BrowseActivity;
-    invoke-direct {v5, v2, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-static {}, Llibs/zt0;->k()Ljava/lang/String;
-    move-result-object v6
-    invoke-virtual {v5, v6}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
-
-    const/high16 v6, 0x40000000    # 2.0f
-    invoke-static {v6}, Llibs/sw1;->a(I)I
-    move-result v6
-
-    invoke-static {v2, v0, v5, v6}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-    move-result-object v7
-
-    const/4 v9, 0x0
-    const-string v10, ""
-
-    move-object/from16 v11, v2
-    move/from16 v12, v0
-    move-object/from16 v13, v3
-    move-object/from16 v14, v4
-    move-object/from16 v15, v9
-    move-object/from16 v16, v10
-    move/from16 v17, v9
-    move/from16 v18, v9
-    move/from16 v19, v9
-    move-object/from16 v20, v7
-    move/from16 v21, v9
-    const/16 v22, 0x1
-    move/from16 v23, v22
-    const-string v24, "CH_COMMON"
-
-    invoke-static/range {v11 .. v24}, Llibs/uu1;->c(Landroid/content/Context;ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;ZZZLandroid/app/PendingIntent;IZZLjava/lang/String;)Ljava/lang/Object;
-    move-result-object v9
-
-    if-nez v9, :arqex_nf_ruim
-
-    invoke-static {v0, v9}, Llibs/uu1;->j(ILjava/lang/Object;)V
-
-    const-string v1, "NOTIF postada"
-    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-    goto :arqex_nf_fim
-
-    :arqex_nf_ruim
-    const-string v1, "NOTIF nao postada (uu1 devolveu null)"
-    invoke-static {v1}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-    :try_end_arqex_nf
-    .catchall {:try_start_arqex_nf .. :try_end_arqex_nf} :catchall_arqex_nf
-
-    :catchall_arqex_nf
-    :arqex_nf_fim
-    return-void
-.end method
-
-# Arqex: varre os FILHOS de uma origem (um nivel) atras do nome do filtro.
-# Pasta que casa entra inteira (com subpastas/arquivos); arquivo que casa entra sozinho.
-.method public static scanChildFolders(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
-    .registers 12
-
-    new-instance v0, Ljava/io/File;
-
-    invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object v0
-
-    if-nez v0, :arqex_sc_fim
-
-    const/4 v1, 0x0
-
-    :arqex_sc_loop
-    array-length v6, v0
-
-    if-ge v1, v6, :arqex_sc_fim
-
-    aget-object v2, v0, v1
-
-    if-nez v2, :arqex_sc_next
-
-    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3, p1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :arqex_sc_next
-
-    invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
-
-    move-result v6
-
-    if-nez v6, :arqex_sc_arquivo
-
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4, v4, p2, p3}, Llibs/AutoTaskWatcher;->walkFilteredFolder(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/LinkedHashSet;)V
-
-    invoke-static {v4}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
-
-    move-result-object v5
-
-    if-eqz v5, :arqex_sc_log_pasta
-
-    invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
-
-    :arqex_sc_log_pasta
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "PASTA-OK "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    goto :arqex_sc_next
-
-    :arqex_sc_arquivo
-    if-nez p2, :arqex_sc_add
-
-    invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v6
-
-    if-eqz v6, :arqex_sc_add
-
-    invoke-static {v3, p2}, Llibs/AutoTaskWatcher;->matchesExtFilter(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :arqex_sc_next
-
-    :arqex_sc_add
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Llibs/u73;->Intent(Ljava/lang/String;)Llibs/rp0;
-
-    move-result-object v5
-
-    if-eqz v5, :arqex_sc_log_file
-
-    invoke-virtual {p3, v5}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
-
-    :arqex_sc_log_file
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "ARQUIVO-OK "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
-
-    :arqex_sc_next
+    :cond_5f
+    :goto_5f
     add-int/lit8 v1, v1, 0x1
 
-    goto :arqex_sc_loop
+    goto :goto_c
 
-    :arqex_sc_fim
+    :cond_62
     return-void
-.end method
-
-# Arqex: o filtro por nome vale tambem para qualquer PASTA do caminho do item.
-# Ex.: filtro "Teste" + item "/storage/emulated/0/Download/Teste/foto.jpg" -> casa.
-.method public static matchesAnySegment(Ljava/lang/String;Ljava/lang/String;)Z
-    .registers 8
-
-    const/4 v0, 0x0
-
-    if-nez p0, :arqex_ms_fim
-
-    if-nez p1, :arqex_ms_fim
-
-    const-string v1, "/"
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    :arqex_ms_loop
-    array-length v3, v1
-
-    if-ge v2, v3, :arqex_ms_fim
-
-    aget-object v3, v1, v2
-
-    invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
-    move-result v4
-
-    if-nez v4, :arqex_ms_next
-
-    invoke-static {v3, p1}, Llibs/AutoTaskWatcher;->matchesNameFilter(Ljava/lang/String;Ljava/lang/String;)Z
-    move-result v4
-
-    if-eqz v4, :arqex_ms_next
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :arqex_ms_next
-    add-int/lit8 v2, v2, 0x1
-
-    goto :arqex_ms_loop
-
-    :arqex_ms_fim
-    return v0
 .end method

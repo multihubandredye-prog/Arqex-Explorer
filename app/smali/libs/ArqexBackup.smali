@@ -20,6 +20,18 @@
     :try_start_9
     new-instance v0, Ljava/io/File;
 
+    const-string v1, "/storage/emulated/0/.Arqex/tarefas_backup.txt"
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->isFile()Z
+
+    move-result v1
+
+    if-nez v1, :cond_21
+
+    new-instance v0, Ljava/io/File;
+
     const-string v1, "/storage/emulated/0/Arqex/tarefas_backup.txt"
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -28,7 +40,8 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    :cond_21
+    if-eqz v1, :cond_49
 
     invoke-virtual {v0}, Ljava/io/File;->length()J
 
@@ -38,7 +51,7 @@
 
     cmp-long v5, v1, v3
 
-    if-lez v5, :cond_3c
+    if-lez v5, :cond_49
 
     long-to-int v1, v1
 
@@ -62,19 +75,19 @@
 
     move-result v1
 
-    if-lez v1, :cond_3c
+    if-lez v1, :cond_49
 
     return-object v0
-    :try_end_3c
-    .catchall {:try_start_9 .. :try_end_3c} :catchall_3c
+    :try_end_49
+    .catchall {:try_start_9 .. :try_end_49} :catchall_49
 
-    :catchall_3c
-    :cond_3c
-    if-nez p0, :cond_40
+    :catchall_49
+    :cond_49
+    if-nez p0, :cond_4d
 
     const-string p0, ""
 
-    :cond_40
+    :cond_4d
     return-object p0
 .end method
 
@@ -89,7 +102,7 @@
     :try_start_3
     new-instance v0, Ljava/io/File;
 
-    const-string v1, "/storage/emulated/0/Arqex"
+    const-string v1, "/storage/emulated/0/.Arqex"
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
