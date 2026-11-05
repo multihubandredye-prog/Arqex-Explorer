@@ -81,6 +81,137 @@
     return-object v0
 .end method
 
+.method public static forId(I)Landroid/graphics/drawable/Drawable;
+    .registers 7
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-static {p0}, Llibs/HelpGuideV127;->menuIconType(I)I
+
+    move-result v1
+
+    if-gtz v1, :arqex_fid_fim
+
+    const-string v2, "TEXT_POPUP_PRIMARY"
+
+    const-string v3, "#FFEFF3F8"
+
+    invoke-static {v2, v3}, Llibs/va3;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/high16 v3, 0x41b00000    # 22.0f
+
+    invoke-static {v3}, Llibs/ModernUiTheme;->dp(F)I
+
+    move-result v3
+
+    new-instance v4, Llibs/ArqexMenuIcon;
+
+    invoke-direct {v4, v2, v3, v1}, Llibs/ArqexMenuIcon;-><init>(III)V
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v4, v5, v5, v3, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-object v4
+
+    :catchall_0
+    :arqex_fid_fim
+    return-object v0
+.end method
+
+.method public static paintRow(Landroid/view/View;)V
+    .registers 8
+
+    if-nez p0, :arqex_pr_fim
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/view/View;->getId()I
+
+    move-result v0
+
+    invoke-static {v0}, Llibs/HelpGuideV127;->menuIconType(I)I
+
+    move-result v1
+
+    if-gtz v1, :arqex_pr_fim
+
+    invoke-static {v0}, Llibs/ArqexMenuIcon;->forId(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    if-eqz v2, :arqex_pr_draw
+
+    return-void
+
+    :arqex_pr_draw
+    sget v3, Llibs/wh2;->file_name:I
+
+    invoke-virtual {p0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    instance-of v4, v3, Landroid/widget/TextView;
+
+    if-eqz v4, :arqex_pr_txt
+
+    return-void
+
+    :arqex_pr_txt
+    check-cast v3, Landroid/widget/TextView;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v3, v2, v4, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    const/high16 v4, 0x41200000    # 10.0f
+
+    invoke-static {v4}, Llibs/ModernUiTheme;->dp(F)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
+
+    sget v4, Llibs/wh2;->file_image:I
+
+    invoke-virtual {p0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    if-eqz v4, :arqex_pr_log
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
+
+    :arqex_pr_log
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "ICONE linha id="
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Llibs/ArqexLog;->add(Ljava/lang/String;)V
+
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    :arqex_pr_fim
+    return-void
+.end method
+
 .method public constructor <init>(III)V
     .registers 8
 

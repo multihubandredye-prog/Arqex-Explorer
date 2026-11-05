@@ -323,7 +323,7 @@
 .end method
 
 .method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 25
+    .registers 27
 
     .line 1
     move-object/from16 v0, p0
@@ -498,6 +498,13 @@
     .line 76
     .line 77
     invoke-virtual {v1, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    .line 78
+    if-eqz v7, :arqex_ll_row_fim
+
+    invoke-static {v1}, Llibs/ArqexMenuIcon;->paintRow(Landroid/view/View;)V
+
+    :arqex_ll_row_fim
 
     .line 78
     .line 79

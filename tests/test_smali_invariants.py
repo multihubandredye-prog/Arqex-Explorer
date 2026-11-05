@@ -633,6 +633,10 @@ check("16n. icones do menu declarados no proprio XML do menu (mesmo caminho do i
               for n in ["undo","lock","tools","filter","servers","execute","tasks","log","terminal","settings","exit"])
       and all(("android:id=\"@id/menu_%s\"" % i) in _mm
               for i in ["undo_recycle","lock","tools","filter","servers","execute","auto_tasks","send_log","open_in_terminal","settings","exit"])))
+_ll = open(os.path.join(SMALI, "libs", "ll1.smali"), encoding="utf-8").read()
+check("16o. icone do menu desenhado na propria linha do popup (nao depende do ImageView escondido)", (
+      "Llibs/ArqexMenuIcon;->paintRow(Landroid/view/View;)V" in _ll
+      and "setCompoundDrawablesRelative" in _ami))
 _rb = open(os.path.join(SMALI, "libs", "r90.smali"), encoding="utf-8").read()
 _hg = open(os.path.join(SMALI, "libs", "HelpGuideV127.smali"), encoding="utf-8").read()
 _mu = open(os.path.join(SMALI, "libs", "ModernUiTheme.smali"), encoding="utf-8").read()
