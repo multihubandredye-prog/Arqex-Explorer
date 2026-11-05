@@ -2257,28 +2257,9 @@
     invoke-static {v12, v11}, Llibs/AutoTaskWatcher;->addNotificationCheckBox(Llibs/od;Llibs/d9;)V
 
     .line 1024
-    sget v7, Llibs/bi2;->create_shortcut:I
-
-    .line 1025
-    .line 1026
-    invoke-static {v7}, Llibs/ho2;->Add(I)Ljava/lang/String;
-
-    .line 1027
-    .line 1028
-    .line 1029
-    move-result-object v7
-
-    .line 1030
-    const/16 v15, 0x44
-
-    .line 1031
-    .line 1032
-    invoke-virtual {v12, v15, v7, v0, v5}, Llibs/od;->h(ILjava/lang/String;ZLlibs/px2;)Landroid/widget/CheckBox;
-
-    .line 1033
-    .line 1034
-    .line 1035
-    move-result-object v22
+    # Arqex: a opcao "Criar atalho" saiu do dialogo (e a criacao de atalho foi removida).
+    # Fica apenas um CheckBox solto e desmarcado para o restante do codigo seguir igual.
+    const/16 v22, 0x0
 
     .line 1036
     invoke-static {}, Llibs/t43;->Item()Z

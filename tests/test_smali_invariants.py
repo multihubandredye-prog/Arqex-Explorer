@@ -593,23 +593,12 @@ check("16h. pasta com filtro por nome entra inteira (caminho automatico e manual
       and "matchesNameFilter" in _ex
       and "matchesExtFilter" in _wf
       and "listFiles" in _wf))
-_shot = open(os.path.join(SMALI, "libs", "fx1.smali"), encoding="utf-8").read()
-_icon = os.path.join(SMALI, "libs", "ArqexIcon.smali")
-_icontxt = open(_icon, encoding="utf-8").read() if os.path.exists(_icon) else ""
 _n8 = open(os.path.join(SMALI, "libs", "n8.smali"), encoding="utf-8").read()
-import base64 as _b64
-_chunks = re.findall(r'const-string v3, "([A-Za-z0-9+/=]+)"', _icontxt)
-_png = _b64.b64decode("".join(_chunks)) if _chunks else b""
-_png_ok = _png[:8] == b"\x89PNG\r\n\x1a\n" and len(_png) > 5000
-check("16i. atalho da tarefa usa o PNG do proprio icone do app (nao o de notificacao)", (
-      "ArqexIcon;->Bitmap" in _shot
-      and "Icon;->createWithBitmap" in _shot
-      and "BitmapFactory;->decodeByteArray" in _icontxt
-      and _png_ok
-      and "notification_task" not in _n8))
-check("16i2. atalho de PASTA continua com a miniatura real (nao foi trocado pelo icone do app)", (
-      "ArqexIcon" not in open(os.path.join(SMALI, "libs", "ModernUiTheme$ShortcutApi26.smali"),
-                              encoding="utf-8").read()))
+_e9 = open(os.path.join(SMALI, "libs", "e9.smali"), encoding="utf-8").read()
+check("16i. 'Criar atalho' removido do dialogo e nenhum atalho e criado ao salvar a tarefa", (
+      "create_shortcut" not in _e9
+      and "fx1;->b" not in _n8
+      and not os.path.exists(os.path.join(SMALI, "libs", "ArqexIcon.smali"))))
 _caf = method_body(os.path.join(SMALI, "libs", "AutoTaskWatcher.smali"),
                    ".method private static checkAndFire") or ""
 check("16j. tarefa 'ao detectar arquivo' nao copia em loop (marca de visto preservada)", (
